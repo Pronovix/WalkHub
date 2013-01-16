@@ -1,0 +1,12 @@
+name = "Image test"
+description = "Support module for image toolkit tests."
+package = Testing
+version = VERSION
+core = 7.x
+hidden = TRUE
+
+; Information added by drupal.org packaging script on 2012-12-19
+version = "7.18"
+project = "drupal"
+datestamp = "1355944003"
+

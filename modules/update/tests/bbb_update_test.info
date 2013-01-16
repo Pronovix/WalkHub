@@ -1,0 +1,11 @@
+name = BBB Update test
+description = Support module for update module testing.
+package = Testing
+core = 7.x
+hidden = TRUE
+
+; Information added by drupal.org packaging script on 2012-12-19
+version = "7.18"
+project = "drupal"
+datestamp = "1355944003"
+

@@ -1,0 +1,13 @@
+name = Menu
+description = Allows administrators to customize the site navigation menu.
+package = Core
+version = VERSION
+core = 7.x
+files[] = menu.test
+configure = admin/structure/menu
+
+; Information added by drupal.org packaging script on 2012-12-19
+version = "7.18"
+project = "drupal"
+datestamp = "1355944003"
+
