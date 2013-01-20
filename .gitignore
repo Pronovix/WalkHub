@@ -5,3 +5,8 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 /nbproject/private/
+
+# Ignore custom files.
+.idea
+.DS_Store
+.project
