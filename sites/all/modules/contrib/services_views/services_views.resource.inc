@@ -175,3 +175,47 @@ function services_views_execute_view($view_info) {
   $view->destroy();
   return $output;
 }
+
+/**
+ * Callback to retrieve a list of views.
+ *
+ * For all parameters, SQL wildcards (like %) can be used.
+ *
+ * @param string $name
+ *   Name of the view.
+ * @param string $description
+ *   Description of the view.
+ * @param string $tag
+ *   Tag of the view.
+ * @param string $base_table
+ *   Base table of the view.
+ * @param string $human_name
+ *   Human name of the view.
+ *
+ * @return array
+ *   List of views.
+ */
+function services_views_index($name = '', $description = '', $tag = '', $base_table = '', $human_name = '') {
+  $q = db_select('views_view', 'v')
+    ->fields('v', array('vid', 'name', 'description', 'tag', 'base_table', 'human_name', 'core'));
+  if ($name) {
+    $q->condition('name', $name, 'LIKE');
+  }
+  if ($description) {
+    $q->condition('description', $description, 'LIKE');
+  }
+  if ($tag) {
+    $q->condition('tag', $tag, 'LIKE');
+  }
+  if ($base_table) {
+    $q->condition('base_table', $base_table, 'LIKE');
+  }
+  if ($human_name) {
+    $q->condition('human_name', $human_name, 'LIKE');
+  }
+
+  return array_filter($q->execute()->fetchAllAssoc('vid'), function ($view) {
+    $loaded_view = views_get_view($view->name);
+    return $loaded_view && $loaded_view->access('default');
+  });
+}
