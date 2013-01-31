@@ -9,7 +9,7 @@
  * @param $node
  */
 function walkthrough_parser_node_presave($node) {
-  if ($node->type == 'walkthrough' && !empty($node->field_raw_input[LANGUAGE_NONE][0]['value'])) {
+  if ($node->type == 'walkthrough' && !empty($node->field_raw_input[LANGUAGE_NONE][0]['value']) && empty($node->nid)) {
     $source = field_get_items('node', $node, 'field_raw_input', LANGUAGE_NONE);
     $steps = _walkthrough_parser_break_up_to_steps($source[0]['value']);
     if (!empty($steps)) {
