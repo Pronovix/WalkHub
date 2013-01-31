@@ -45,6 +45,9 @@ function _walkthrough_parser_break_up_to_steps($source) {
   $doc = new DOMDocument();
   // Load the selenium test case.
   $doc->loadHTML($source);
+  $basexpath = new DOMXPath($doc);
+  $baseList = $basexpath->query('//link[@rel="selenium.base"]');
+  $base = $baseList->length ? $baseList->item(0)->getAttribute('href') : NULL;
   $xpath = new DOMXpath($doc);
   // Break up to steps.
   $elements = $xpath->query('//tbody/tr');
@@ -64,6 +67,12 @@ function _walkthrough_parser_break_up_to_steps($source) {
           case 2:
             $steps[$step]['description'] = $attribute->nodeValue;
             break;
+        }
+      }
+      if ($steps[$step]['action'] === 'open') {
+        $components = parse_url($steps[$step]['xpath']);
+        if (empty($components['host'])) {
+          $steps[$step]['xpath'] = $base . trim($steps[$step]['xpath'], '/');
         }
       }
     }
