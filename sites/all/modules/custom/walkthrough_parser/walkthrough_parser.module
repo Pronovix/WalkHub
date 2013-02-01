@@ -41,6 +41,49 @@ function walkthrough_parser_node_presave($node) {
  * @return array
  */
 function _walkthrough_parser_break_up_to_steps($source) {
+  static $highlightdata = array(
+    'addSelection' => 0,
+    'assignId' => 0,
+    'check' => 0,
+    'click' => 0,
+    'clickAt' => 0,
+    'contextMenu' => 0,
+    'contextMenuAt' => 0,
+    'doubleClick' => 0,
+    'doubleClickAt' => 0,
+    'dragAndDrop' => 0,
+    'dragAndDropToObject' => 0,
+    'dragdrop' => 0,
+    'fireEvent' => 0,
+    'focus' => 0,
+    'highlight' => 0,
+    'keyDown' => 0,
+    'keyPress' => 0,
+    'keyUp' => 0,
+    'mouseDown' => 0,
+    'mouseDownAt' => 0,
+    'mouseDownRight' => 0,
+    'mouseDownRightAt' => 0,
+    'mouseMove' => 0,
+    'mouseMoveAt' => 0,
+    'mouseOut' => 0,
+    'mouseOutAt' => 0,
+    'mouseOver' => 0,
+    'mouseUp' => 0,
+    'mouseUpAt' => 0,
+    'mouseUpRight' => 0,
+    'mouseUpRightAt' => 0,
+    'removeAllSelections' => 0,
+    'removeSelection' => 0,
+    'select' => 0,
+    'selectFrame' => 0,
+    'setCursorPosition' => 0,
+    'submit' => 0,
+    'type' => 0,
+    'typeKeys' => 0,
+    'uncheck' => 0,
+  );
+
   $steps = array();
   $doc = new DOMDocument();
   // Load the selenium test case.
@@ -69,6 +112,8 @@ function _walkthrough_parser_break_up_to_steps($source) {
             break;
         }
       }
+      $steps[$step]['highlight'] = isset($highlightdata[$steps[$step]['action']]) ?
+        ($highlightdata[$steps[$step]['action']] ? $steps[$step]['description'] : $steps[$step]['xpath']) : '';
       if ($steps[$step]['action'] === 'open') {
         $components = parse_url($steps[$step]['xpath']);
         if (empty($components['host'])) {
@@ -120,6 +165,10 @@ function _walkthrough_parser_create_step_node($step, $key, $walkthrough_node) {
 
   $node->field_command_3[LANGUAGE_NONE][0] = array(
     'value' => $step['description'],
+  );
+
+  $node->field_step_highlight[LANGUAGE_NONE][0] = array(
+    'value' => $step['highlight'],
   );
 
   node_save($node);
