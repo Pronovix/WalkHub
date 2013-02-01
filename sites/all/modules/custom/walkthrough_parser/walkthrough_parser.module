@@ -113,7 +113,7 @@ function _walkthrough_parser_break_up_to_steps($source) {
         }
       }
       $act = endsWith($steps[$step]['action'], 'AndWait') ?
-        substr($steps[$step]['action'], -7) : $steps[$step]['action'];
+        substr($steps[$step]['action'], 0, -7) : $steps[$step]['action'];
       $steps[$step]['highlight'] = isset($highlightdata[$act]) ?
         ($highlightdata[$act] ? $steps[$step]['description'] : $steps[$step]['xpath']) : '';
       if ($steps[$step]['action'] === 'open') {
