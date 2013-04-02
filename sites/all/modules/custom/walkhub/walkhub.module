@@ -1,17 +1,18 @@
 <?php
 /**
  * @file
+ * Code for the WalkHub feature.
  */
+
+include_once 'walkhub.features.inc';
 
 /**
  *  Implements hook_node_presave().
- *
- * @param $node
  */
-function walkthrough_parser_node_presave($node) {
+function walkhub_node_presave($node) {
   if ($node->type == 'walkthrough' && !empty($node->field_raw_input[LANGUAGE_NONE][0]['value']) && empty($node->nid)) {
     $source = field_get_items('node', $node, 'field_raw_input', LANGUAGE_NONE);
-    $steps = _walkthrough_parser_break_up_to_steps($source[0]['value']);
+    $steps = _walkhub_break_up_to_steps($source[0]['value']);
     if (!empty($steps)) {
       // Delete the previously attached steps.
       $old_steps_nids = array();
@@ -26,7 +27,7 @@ function walkthrough_parser_node_presave($node) {
       // Create new nodes based on the selenium source.
       $walkthrough_steps = array();
       foreach ($steps as $key => $step) {
-        $steps[$key]['node'] = _walkthrough_parser_create_step_node($step, $key, $node);
+        $steps[$key]['node'] = _walkhub_create_step_node($step, $key, $node);
         $walkthrough_steps[$key]['target_id'] = $steps[$key]['node']->nid;
       }
       $node->field_steps[LANGUAGE_NONE] = $walkthrough_steps;
@@ -40,7 +41,7 @@ function walkthrough_parser_node_presave($node) {
  * @param $source
  * @return array
  */
-function _walkthrough_parser_break_up_to_steps($source) {
+function _walkhub_break_up_to_steps($source) {
   static $highlightdata = array(
     'addSelection' => 0,
     'assignId' => 0,
@@ -137,8 +138,7 @@ function endsWith($haystack, $needle) {
  * @param $source
  * @return string
  */
-function _walkthrough_parser_parse_url($source) {
-  $url = NULL;
+function _walkhub_parse_url($source) {
   $doc = new DOMDocument();
   // Load the selenium test case.
   $doc->loadHTML($source);
@@ -154,7 +154,7 @@ function _walkthrough_parser_parse_url($source) {
  * @param $key
  * @return stdClass
  */
-function _walkthrough_parser_create_step_node($step, $key, $walkthrough_node) {
+function _walkhub_create_step_node($step, $key, $walkthrough_node) {
   $node = new stdClass();
   $node->title = "$walkthrough_node->title $key. step";
   $node->type = 'step';
@@ -179,5 +179,4 @@ function _walkthrough_parser_create_step_node($step, $key, $walkthrough_node) {
 
   node_save($node);
   return $node;
-
 }
