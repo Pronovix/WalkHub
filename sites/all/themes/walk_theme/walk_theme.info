@@ -1,0 +1,20 @@
+name = walk_theme
+description = Bootstrap subtheme
+version = 0.1
+core = 7.x
+base theme = bootstrap
+
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+regions[kaka]           = 'Kaka'
+
+stylesheets[all][] = css/global.css
+
+settings[toggle_name] = 0
+settings[toggle_search] = 1
