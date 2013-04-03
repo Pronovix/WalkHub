@@ -89,7 +89,7 @@
 
   </div>
 </div>
-<footer class="footer container">
+<footer class="footer">
   <div class="container">
  <?php print render($page['footer']); ?>
   </div>
