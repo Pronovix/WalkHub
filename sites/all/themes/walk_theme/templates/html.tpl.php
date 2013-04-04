@@ -3,16 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png"/>
   <?php
     global $theme_path;
   ?>
+  <link rel="apple-touch-icon" href="<?php print $theme_path; ?>/apple-touch-icon-precomposed.png"/>
   <link rel="apple-touch-icon" sizes="72x72" href="<?php print $theme_path; ?>/apple-touch-icon-72x72-precomposed.png" />
   <link rel="apple-touch-icon" sizes="114x114" href="<?php print $theme_path; ?>/apple-touch-icon-114x114-precomposed.png" />
   <link rel="apple-touch-icon" sizes="144x144" href="<?php print $theme_path; ?>/apple-touch-icon-144x144-precomposed.png" />
-
-
-
+  <link rel="logo" type="image/svg" href="<?php print $theme_path; ?>/walkhub-logo.svg"/>
   <meta name="publisher" content="walkhub.com"> 
   <meta name="robots" content="Index, Follow, All" />
   <meta name="rating" content="global" />
