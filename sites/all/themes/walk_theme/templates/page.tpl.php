@@ -89,8 +89,55 @@
 
   </div>
 </div>
-<footer class="footer">
+<footer>
+
+  <?php
+    global $theme_path;
+  ?>
+
+  <div class="copyright">
+    <div class="container">
+<div class="row-fluid">
+            <div class="span2">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details »</a></p>
+            </div><!--/span-->
+            <div class="span2">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details »</a></p>
+            </div><!--/span-->
+            <div class="span2">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details »</a></p>
+            </div><!--/span-->
+            <div class="span2">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details »</a></p>
+            </div><!--/span-->
+            <div class="span4 right">
+<object data="<?php print $theme_path; ?>/walkhub-logo.svg" type="image/svg+xml" width="220" height="106" class="logo">
+  <img src="<?php print $theme_path; ?>/images/walkhub-logo.png" class="logo" />
+</object>
+
+
+            </div><!--/span-->
+          </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="footer">
   <div class="container">
+    <div class="row-fluid show-grid">
+      <div class="span6">6</div>
+      <div class="span6 right">2013 © PRONOVIX, All rights reserved.</div>
+  </div>
+
  <?php print render($page['footer']); ?>
   </div>
+  <div>
 </footer>
