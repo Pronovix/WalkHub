@@ -98,23 +98,43 @@
 <div class="row-fluid">
             <div class="span2">
               <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details »</a></p>
+               <ul class="menu">
+                 <li>teszt1</li>
+                 <li>teszt2</li>
+                 <li>teszt3</li>
+                 <li>teszt4</li>
+                 <li>teszt5</li>
+               </ul>
             </div><!--/span-->
             <div class="span2">
               <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details »</a></p>
+               <ul class="menu">
+                 <li>teszt1</li>
+                 <li>teszt2</li>
+                 <li>teszt3</li>
+                 <li>teszt4</li>
+                 <li>teszt5</li>
+               </ul>
             </div><!--/span-->
             <div class="span2">
               <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details »</a></p>
+              <ul class="menu">
+                <li>teszt1</li>
+                <li>teszt2</li>
+                <li>teszt3</li>
+                <li>teszt4</li>
+                <li>teszt5</li>
+              </ul>
             </div><!--/span-->
             <div class="span2">
               <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details »</a></p>
+                <ul class="menu">
+                  <li>teszt1</li>
+                  <li>teszt2</li>
+                  <li>teszt3</li>
+                  <li>teszt4</li>
+                  <li>teszt5</li>
+                </ul>
             </div><!--/span-->
             <div class="span4 right">
 <object data="<?php print $theme_path; ?>/walkhub-logo.svg" type="image/svg+xml" width="220" height="106" class="logo">
@@ -131,7 +151,15 @@
   <div class="footer">
   <div class="container">
     <div class="row-fluid show-grid">
-      <div class="span6">6</div>
+      <div class="span6">
+        <ul class="menu line">
+          <li>teszt1</li>
+          <li>teszt2</li>
+          <li>teszt3</li>
+          <li>teszt4</li>
+          <li>teszt5</li>
+        </ul>
+      </div>
       <div class="span6 right">2013 © PRONOVIX, All rights reserved.</div>
   </div>
 
