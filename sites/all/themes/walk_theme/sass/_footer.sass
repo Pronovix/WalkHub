@@ -1,12 +1,20 @@
 .copyright
   background-color: #fafafa
   border-top: 1px solid #edecec 
-  padding: 20px 0
+  padding: 20px
+  background-color: #f4f4f4
+  @include filter-gradient(#f4f4f4, #fafafa, vertical)
+  @include background-image(linear-gradient(top,  #f4f4f4 0%,#fafafa 33%))
+
 
   .logo
     width: 220px
     height: 106px
     margin-top: 25px
+    @include opacity(0.5)
+
+  .logo:hover
+    @include opacity(1)
 
 .footer 
   background-image: url("../images/low_contrast_linen.png")
@@ -14,9 +22,8 @@
   background-position: center top
   margin: 0
   border: 0
-  color: #fbfbfc
-  text-decoration: none
-  text-shadow: 0 1px 0 #000
+  padding: 15px 0
+
   /* Pixel ratio of 1.5. Background-size is 1/1.5 = 66.67% (of a 150px image) */
   @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)
     background-image: url("../images/low_contrast_linen_@2X.png")
