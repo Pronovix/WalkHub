@@ -93,7 +93,7 @@ class backup_migrate_destination_files extends backup_migrate_destination {
   /**
    * File delete destination callback.
    */
-  function delete_file($file_id) {
+  function _delete_file($file_id) {
     $filepath = $this->get_filepath($file_id);
     file_unmanaged_delete($filepath);
   }
@@ -192,6 +192,9 @@ class backup_migrate_destination_files extends backup_migrate_destination {
    * Check that a web accessible directory has been properly secured, othewise attempt to secure it.
    */
   function check_web_dir($directory) {
+    // If the directory is specified with an absolute path, strip the site root.
+    $directory = substr(drupal_realpath($directory), strlen(drupal_realpath($_SERVER['DOCUMENT_ROOT']) . base_path()));
+
     file_create_htaccess($directory, TRUE);
 
     // Check the user agent to make sure we're not responding to a request from drupal itself.
@@ -239,8 +242,7 @@ class backup_migrate_destination_files extends backup_migrate_destination {
    * Check if a file can be read remotely via http.
    */
   function test_file_readable_remotely($path, $contents) {
-    $url = file_create_url($path);
-    // TODO: Proper checking for absolute paths.
+    $url = $GLOBALS['base_url'] . '/' . str_replace('\\', '/', $path);
     $result = drupal_http_request($url);
     if (!empty($result->data) && strpos($result->data, $contents) !== FALSE) {
       return TRUE;
