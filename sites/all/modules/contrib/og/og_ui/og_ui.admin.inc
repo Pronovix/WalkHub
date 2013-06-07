@@ -76,9 +76,8 @@ function og_ui_admin_settings($form_state) {
   $form['og_use_queue'] = array(
     '#type' => 'checkbox',
     '#title' => t('Use queue'),
-    '#description' => t('Use <a href="@url">"Advacned-Queue"</a> module to process operations such as deleting memberships when groups are deleted.', array('@url' => 'http://drupal.org/project/advancedqueue')),
+    '#description' => t("Use the core's queue process to operations such as deleting memberships when groups are deleted."),
     '#default_value' => variable_get('og_use_queue', FALSE),
-    '#disabled' => !module_exists('advancedqueue'),
   );
 
   $form['og_orphans_delete'] = array(
@@ -86,7 +85,6 @@ function og_ui_admin_settings($form_state) {
     '#title' => t('Delete orphans'),
     '#description' => t('Delete "Orphan" group-content (not including useres), when the group is deleted.'),
     '#default_value' => variable_get('og_orphans_delete', FALSE),
-    '#disabled' => !module_exists('advancedqueue'),
     '#states' => array(
       'visible' => array(
         ':input[name="og_use_queue"]' => array('checked' => TRUE),
@@ -134,6 +132,7 @@ function og_ui_add_users($form, &$form_state, $group_type, $gid) {
   og_set_breadcrumb($group_type, $gid, array(l(t('Group'), "$group_type/$gid/group")));
   $group = entity_load_single($group_type, $gid);
   $label = entity_label($group_type, $group);
+  list(,, $bundle) = entity_extract_ids($group_type, $group);
 
   $form['group_type'] = array('#type' => 'value', '#value' => $group_type);
   $form['gid'] = array('#type' => 'value', '#value' => $gid);
@@ -153,6 +152,15 @@ function og_ui_add_users($form, &$form_state, $group_type, $gid) {
     '#type' => 'value',
     '#value' => OG_STATE_ACTIVE,
   );
+
+  // Get all the non-default roles.
+  if ($og_roles = og_roles($group_type, $bundle, $gid, FALSE, FALSE)) {
+    $form['og_user']['roles'] = array(
+      '#type' => 'checkboxes',
+      '#options' => $og_roles,
+      '#title' => t('Roles'),
+    );
+  }
 
   $field_names = og_get_group_audience_fields();
   $field_name = !empty($form_state['values']['field_name']) ? $form_state['values']['field_name'] : key($field_names);
@@ -254,9 +262,105 @@ function og_ui_add_users_submit($form, &$form_state) {
   $og_membership->etid = $account->uid;
   $og_membership->state = $state;
   $og_membership->save();
+  // Assign roles.
+  if (!empty($form_state['values']['roles'])) {
+    foreach ($form_state['values']['roles'] as $rid) {
+      og_role_grant($group_type, $gid, $og_membership->etid, $rid);
+    }
+  }
 
-  drupal_set_message(t('%user has been added to group.', array('%user' => format_username($account))));
+  $group = entity_load_single($group_type, $gid);
+  drupal_set_message(t('%user has been added to the group %group-title.', array('%user' => format_username($account), '%group-title' => entity_label($group_type, $group))));
 }
+
+/**
+ * Add Edit membership form.
+ */
+function og_ui_edit_membership($form, &$form_state, $group_type, $gid, $og_membership) {
+  og_set_breadcrumb($group_type, $gid, array(l(t('Group'), "$group_type/$gid/group")));
+  $group = entity_load_single($group_type, $gid);
+  $label = entity_label($group_type, $group);
+  $account = user_load($og_membership->etid);
+  list(,, $bundle) = entity_extract_ids($group_type, $group);
+  // Get all the non-default roles.
+  $og_roles = og_roles($group_type, $bundle, $gid, FALSE, FALSE);
+
+  $form['group_type'] = array('#type' => 'value', '#value' => $group_type);
+  $form['gid'] = array('#type' => 'value', '#value' => $gid);
+  $form['id'] = array('#type' => 'value', '#value' => $og_membership->id);
+
+  $form['og_user'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Edit a group membership in %group', array('%group' => $label)),
+  );
+  $form['og_user']['name'] = array(
+    '#type' => 'markup',
+    '#title' => t('User name'),
+    '#markup' => $account->name,
+  );
+  if ($og_roles) {
+    $form['og_user']['roles'] = array(
+      '#type' => 'checkboxes',
+      '#options' => $og_roles,
+      '#title' => t('Roles'),
+      '#default_value' => array_keys(og_get_user_roles($group_type, $gid, $account->uid)),
+    );
+  }
+
+ // Add group membership form.
+  $values = array();
+
+  // Add group membership form. We still don't have the user or state.
+  $form_state['og_membership'] = $og_membership;
+
+  $form['membership_fields'] = array(
+    '#prefix' => '<div id="og-ui-field-name">',
+    '#suffix' => '</div>',
+    '#tree' => TRUE,
+    '#parents' => array('membership_fields'),
+  );
+  field_attach_form('og_membership', $og_membership, $form['membership_fields'], $form_state);
+
+  $form['actions'] = array('#type' => 'actions');
+  $form['actions']['submit'] = array('#type' => 'submit', '#value' => t('Update membership'));
+
+  return $form;
+}
+
+/**
+ * Validate handler; Edit membership in group.
+ */
+function og_ui_edit_membership_validate($form, &$form_state) {
+  $og_membership = $form_state['og_membership'];
+  field_attach_form_validate('og_membership', $og_membership, $form['membership_fields'], $form_state);
+}
+
+/**
+ * Submit handler; Edit membership in group.
+ */
+function og_ui_edit_membership_submit($form, &$form_state) {
+  $group_type = $form_state['values']['group_type'];
+  $gid = $form_state['values']['gid'];
+  $og_membership = $form_state['og_membership'];
+  field_attach_submit('og_membership', $og_membership, $form['membership_fields'], $form_state);
+  $og_membership->save();
+  $account = user_load($og_membership->etid);
+  // Assign roles.
+  $og_roles = og_get_user_roles($group_type, $gid, $account->uid);
+  foreach (array_keys($og_roles) as $rid) {
+    if (!in_array($rid, $form_state['values']['roles'])) {
+      og_role_revoke($group_type, $gid, $account->uid, $rid);
+    }
+  }
+  if (!empty($form_state['values']['roles'])) {
+    foreach ($form_state['values']['roles'] as $rid) {
+      og_role_grant($group_type, $gid, $og_membership->etid, $rid);
+    }
+  }
+  drupal_set_message(t('The membership has been updated.'));
+}
+
+
 
 /**
  * Form builder; OG user administration page.
@@ -751,23 +855,25 @@ function theme_og_ui_admin_permissions($variables) {
 }
 
 /**
- * Allow site admin to add or remove group fields from fieldable enteies.
+ * Allow site admin to add or remove group fields from fieldable entities.
  */
 function og_ui_field_settings($form, &$form_state) {
   $form = array();
   $options = array();
 
   $options = array();
-  foreach (entity_get_info() as $entity_type => $entity) {
-    if (!empty($entity['fieldable']) && $entity_type != 'group') {
-      foreach($entity['bundles'] as $bundle_name => $bundle) {
-        // Prefix the bundle name with the entity type.
-        $options[$entity_type][$entity_type . '__' .$bundle_name] = check_plain($bundle['label']);
-      }
+  foreach (entity_get_info() as $entity_type => $entity_info) {
+    if (empty($entity_info['fieldable'])) {
+      continue;
+    }
+    foreach($entity_info['bundles'] as $bundle_name => $bundle) {
+      // Prefix the bundle name with the entity type.
+      $entity_name = check_plain("$entity_info[label] ($entity_type)");
+      $options[$entity_name][$entity_type . ':' . $bundle_name] = filter_xss($bundle['label']);
     }
   }
 
-  $form['bundles'] = array(
+  $form['bundle'] = array(
     '#title' => t('Bundles'),
     '#type' => 'select',
     '#options' => $options,
@@ -776,27 +882,65 @@ function og_ui_field_settings($form, &$form_state) {
   $options = array();
   foreach (og_fields_info() as $field_name => $field) {
     foreach ($field['type'] as $type) {
-      $options[$type][$field_name] = filter_xss($field['instance']['label']);
+      $type_name = $type == 'group' ? t('Group') : t('Group content');
+      $options[$type_name][$field_name] = filter_xss($field['instance']['label']);
     }
   }
 
-  $form['fields'] = array(
+  $selected_field_name = !empty($form_state['values']['field_type']) ? $form_state['values']['field_type'] : OG_AUDIENCE_FIELD;
+  $selected_og_info = og_fields_info($selected_field_name);
+
+  $form['field_info_wrapper'] = array(
+    '#prefix' => '<div id="field-info-wrapper">',
+    '#suffix' => '</div>',
+    '#parents' => array('field_info_wrapper'),
+    '#type' => 'fieldset',
+  );
+
+  $form['field_info_wrapper']['field_type'] = array(
     '#title' => t('Fields'),
     '#type' => 'select',
     '#options' => $options,
+    '#required' => TRUE,
+    '#default_value' => $selected_field_name,
+    '#ajax' => array(
+      'callback' => 'og_ui_admin_fields_ajax_callback',
+      'wrapper' => 'field-info-wrapper',
+    ),
   );
 
+  $form['field_info_wrapper']['description'] = array(
+    '#markup' => $selected_og_info['description'],
+  );
+
+  if (!empty($selected_og_info['multiple'])) {
+    $form['field_info_wrapper']['field_name'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Field name'),
+      '#description' => t('This field type supports adding multiple instances on the same bundle (i.e. the field name is not hardcoded).'),
+      '#required' => TRUE,
+      '#maxlength' => 32,
+      '#default_value' => $selected_field_name,
+    );
+  }
+  else {
+    // Pass the field name as a value.
+    $form['field_name_wrapper']['field_name'] = array(
+      '#type' => 'value',
+      '#value' => $selected_field_name,
+    );
+  }
+
   $field_enabled = array();
+  $og_fields = og_fields_info();
 
-  $group_fields = og_fields_info();
-
-  $group_fields_name = array_keys($group_fields);
+  $og_fields_name = array_keys($og_fields);
 
   $entity_info = entity_get_info();
 
   // Get the fields that exist in the bundle.
   foreach (field_info_fields() as $field_name => $field) {
-    if (in_array($field_name, $group_fields_name) && !empty($field['bundles'])) {
+    if (in_array($field_name, $og_fields_name) && !empty($field['bundles'])) {
       foreach ($field['bundles'] as $entity_type => $bundles) {
         foreach ($bundles as $bundle) {
           $field_enabled[$entity_type][$bundle][] = $field_name;
@@ -824,8 +968,8 @@ function og_ui_field_settings($form, &$form_state) {
         );
         foreach ($fields as $field_name) {
           $options[] = array(
-            check_plain($group_fields[$field_name]['instance']['label']),
-            filter_xss($group_fields[$field_name]['description']),
+            check_plain($og_fields[$field_name]['instance']['label']),
+            filter_xss($og_fields[$field_name]['description']),
             l(t('Delete'), "admin/config/group/fields/$entity_type/$bundle/$field_name/delete"),
           );
         }
@@ -853,34 +997,39 @@ function og_ui_field_settings($form, &$form_state) {
   return $form;
 }
 
-function og_ui_field_settings_validate($form, &$form_state) {
-  $bundle = preg_replace('/^.*__/i', '', $form_state['values']['bundles']);
-  $entity_type = str_replace('__' . $bundle, '', $form_state['values']['bundles']);
+/**
+ * AJAX callback to to return the field name if the field supports "mulitple"
+ * instances, on the same bundle (e.g. OG_AUDIENCE_FIELD).
+ */
+function og_ui_admin_fields_ajax_callback($form, &$form_state) {
+  return $form['field_info_wrapper'];
+}
 
-  // Check if field can be attached to entity.
-  $group_field = og_fields_info($form_state['values']['fields']);
+/**
+ * Validate handler; Check if field can be attached to bundle.
+ */
+function og_ui_field_settings_validate($form, &$form_state) {
+  list($entity_type, $bundle) = explode(':', $form_state['values']['bundle']);
+  $field_name = $form_state['values']['field_name'];
+
+  $og_field = og_fields_info($form_state['values']['field_type']);
   $bundles = field_info_bundles($entity_type);
   $entity_info = entity_get_info($entity_type);
 
   $params = array(
-    '%field' => $group_field['instance']['label'],
+    '%field' => $og_field['instance']['label'],
     '%bundle' => $bundles[$bundle]['label'],
     '%entity' => $entity_info['label'],
   );
 
-  if ($form_state['values']['fields'] == OG_GROUP_FIELD && $entity_type == 'group') {
-    form_set_error('bundles', t('It is not allowed to add the group field to the group entity.'));
-  }
-
-  // Check if field doesn't exist already.
-  if (($field = field_info_field($form_state['values']['fields'])) && !empty($field['bundles'][$entity_type]) && in_array($bundle, drupal_map_assoc($field['bundles'][$entity_type]))) {
+  if (field_info_instance($entity_type, $field_name, $bundle)) {
     form_set_error('bundles', t('Field %field already exists in %bundle.', $params));
   }
 
   // Check field can be attached to entity type.
-  if (!empty($group_field['entity']) && !in_array($entity_type, $group_field['entity'])) {
+  if (!empty($og_field['entity']) && !in_array($entity_type, $og_field['entity'])) {
     $items = array();
-    foreach ($group_field['entity'] as $entity_type) {
+    foreach ($og_field['entity'] as $entity_type) {
       $info = entity_get_info($entity_type);
       $items[] = $info['label'];
     }
@@ -889,22 +1038,30 @@ function og_ui_field_settings_validate($form, &$form_state) {
 
 }
 
+/**
+ * Submit handler; Attach field can to bundle.
+ */
 function og_ui_field_settings_submit($form, &$form_state) {
-  $bundle = preg_replace('/^.*__/i', '', $form_state['values']['bundles']);
-  $entity_type = str_replace('__' . $bundle, '', $form_state['values']['bundles']);
-  $field_name = $form_state['values']['fields'];
+  list($entity_type, $bundle) = explode(':', $form_state['values']['bundle']);
+  $field_name = $form_state['values']['field_name'];
+  $field_type = $form_state['values']['field_type'];
 
-  og_create_field($field_name, $entity_type, $bundle);
+  $og_field = og_fields_info($field_type);
 
-  $group_field = og_fields_info($field_name);
-  $bundles = field_info_bundles($entity_type);
+  og_create_field($field_name, $entity_type, $bundle, $og_field);
 
   $params = array(
-    '%field' => $group_field['instance']['label'],
-    '%bundle' => $bundles[$bundle]['label'],
+    '@field-type' => $og_field['instance']['label'],
+    '@field-name' => $field_name,
+    '@bundle' => $bundle,
   );
 
-  drupal_set_message(t('Added field %field to %bundle.', $params));
+  if ($field_name == $field_type) {
+    drupal_set_message(t('Added field @field-type to @bundle.', $params));
+  }
+  else {
+    drupal_set_message(t('Added field @field-type (@field-name) to @bundle.', $params));
+  }
 }
 
 

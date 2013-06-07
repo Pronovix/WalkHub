@@ -43,8 +43,6 @@ class OgMembershipViewsController extends EntityDefaultViewsController {
     $data['og_membership']['gid']['title'] = t('Group ID');
     $data['og_membership']['gid']['help'] = t('Og membership "gid" property.');
 
-
-
     $data['og_membership']['og_roles'] = array(
       'title' => t('OG user roles in group'),
       'help' => t('Show all the roles a user belongs to in a group. Requires a relationship to users to be present.'),
@@ -53,6 +51,47 @@ class OgMembershipViewsController extends EntityDefaultViewsController {
       'real field' => 'gid',
       'field' => array(
         'handler' => 'og_handler_field_user_roles',
+      ),
+    );
+
+    $data['og_membership']['og_users_roles'] = array(
+      'title' => t('OG Roles from membership'),
+      'help' => t('The OG Roles associated with the OG membership'),
+      // Provide a possible relationship to roles through uid.
+      'relationship' => array(
+        'label' => t('OG Roles from OG membership'),
+        'base' => 'og_users_roles',
+        'base field' => 'uid',
+        'relationship field' => 'etid',
+      ),
+    );
+
+    $data['og_role'] = array(
+      'table' => array(
+        'group' => t('OG user roles'),
+        'join' => array(
+          // Attach automatically to og_users_roles relations.
+          'og_users_roles' => array(
+            'left_field' => 'rid',
+            'field' => 'rid',
+          ),
+        )
+      )
+    );
+    $data['og_role']['name'] = array(
+      'title' => t('Role Name'),
+      'help' => t('The OG role name.'),
+      'filter' => array(
+        'handler' => 'og_handler_filter_user_roles',
+      ),
+    );
+
+    // Link to edit membership
+    $data['og_membership']['edit_membership'] = array(
+      'field' => array(
+        'title' => t('Edit link'),
+        'help' => t('Provide a simple link to edit the membership.'),
+        'handler' => 'og_handler_field_og_membership_link_edit',
       ),
     );
 
@@ -94,8 +133,8 @@ function og_views_data_alter(&$data) {
       'title' => t('OG membership from @entity group', array('@entity' => ucfirst($info['label']))),
       'help' => t('The OG membership associated with the @entity group', array('@entity' => ucfirst($info['label']))),
       'relationship' => array(
-        'entity' => $entity_type,
-        'handler' => 'views_handler_relationship',
+        'group_type' => $entity_type,
+        'handler' => 'og_handler_relationship',
         'label' => t('OG membership from @entity group', array('@entity' => $entity_type)),
         'base' => 'og_membership',
         'base field' => 'gid',
@@ -109,7 +148,8 @@ function og_views_data_alter(&$data) {
       'title' => t('@entity from OG membership', array('@entity' => ucfirst($info['label']))),
       'help' => t('The @entity entity that is associated with the OG membership.', array('@entity' => $info['label'])),
       'relationship' => array(
-        'handler' => 'views_handler_relationship',
+        'entity' => $entity_type,
+        'handler' => 'og_handler_relationship',
         'label' => t('@entity from OG membership', array('@entity' => $entity_type)),
         'base' => $info['base table'],
         'base field' => $info['entity keys']['id'],
@@ -123,7 +163,8 @@ function og_views_data_alter(&$data) {
       'title' => t('Group @entity from OG membership', array('@entity' => ucfirst($info['label']))),
       'help' => t('The @entity group that is associated with the OG membership.', array('@entity' => $info['label'])),
       'relationship' => array(
-        'handler' => 'views_handler_relationship',
+        'group_type' => $entity_type,
+        'handler' => 'og_handler_relationship',
         'label' => t('Group @entity from OG membership', array('@entity' => $entity_type)),
         'base' => $info['base table'],
         'base field' => $info['entity keys']['id'],

@@ -48,7 +48,10 @@ class OgMigrateMembership extends OgEntityMigration {
     }
   }
 
-  public function prepare($entity, $row) {
+  /**
+   * Reject the source row if the group or group content are missing.
+   */
+  public function prepareRow($row) {
     $entity_type = $row->entity_type;
     $etid = $row->etid;
     $group_type = $row->group_type;
@@ -57,27 +60,46 @@ class OgMigrateMembership extends OgEntityMigration {
     if (!$group_content = entity_load_single($entity_type, $etid)) {
       // The OG membership was somehow not deleted when the entity
       // was deleted.
-      return;
+      return FALSE;
     }
 
     if (!$group = entity_load_single($group_type, $gid)) {
-      return;
+      return FALSE;
     }
+    return parent::prepareRow($row);
+  }
+
+  public function prepare($entity, $row) {
+    $entity_type = $row->entity_type;
+    $etid = $row->etid;
+    $group_type = $row->group_type;
+    $gid = $row->gid;
+
+    $group_content = entity_load_single($entity_type, $etid);
+    $group = entity_load_single($group_type, $gid);
 
     list(,, $group_bundle) = entity_extract_ids($group_type, $group);
     if (!$field_name = og_get_best_group_audience_field($entity_type, $group_content, $group_type, $group_bundle)) {
-      // Create a new field. Pick an unused name.
-      $field_name = substr("og_$group_type", 0, 32);
+      // Create a new field. Pick an unused name, if the settings don't match.
+      // To maintain some backwards compatibility, if the group type is a node,
+      // we try to set its name to OG_AUDIENCE FIELD.
+      $field_name = $group_type == 'node' ? OG_AUDIENCE_FIELD : substr("og_$group_type", 0, 32);
       $i = 1;
-      while (field_info_field($field_name)) {
+
+      $og_field = og_fields_info(OG_AUDIENCE_FIELD);
+      $og_field['field']['settings']['target_type'] = $group_type;
+      list(,, $bundle) = entity_extract_ids($entity_type, $group_content);
+
+      while ($field = field_info_field($field_name)) {
+        if ($field['settings']['target_type'] == $group_type && empty($field['settings']['handler_settings']['target_bundles']) || in_array($bundle, $field['settings']['handler_settings']['target_bundles'])) {
+          // An existing field.
+          $field_name = $field['field_name'];
+          break;
+        }
         $field_name = substr("og_$group_type", 0, 32 - strlen($i)) . $i;
         ++$i;
       }
 
-      $og_field = og_fields_info(OG_AUDIENCE_FIELD);
-      $og_field['field']['settings']['target_type'] = $group_type;
-
-      list(,, $bundle) = entity_extract_ids($entity_type, $group_content);
       og_create_field($field_name, $entity_type, $bundle, $og_field);
     }
     $entity->field_name = $field_name;
@@ -86,8 +108,7 @@ class OgMigrateMembership extends OgEntityMigration {
   /**
    * Override Migration::postImport().
    *
-   * Remove OG-memberships that should hae been deleted.
-   *
+   * Remove OG-memberships that should have been deleted.
    */
   protected function postImport() {
     if (!$this->isComplete()) {

@@ -64,10 +64,10 @@ class MigrateDestinationOGMembership extends MigrateDestination {
       throw new MigrateException('Missing group ID.');
     }
     if (empty($entity->entity_type)) {
-      throw new MigrateException('Missing enity type.');
+      throw new MigrateException('Missing entity type.');
     }
     if (empty($entity->etid)) {
-      throw new MigrateException('Missing enity ID.');
+      throw new MigrateException('Missing entity ID.');
     }
 
      // Set state, make sure legacy states from OG6 are converted to
@@ -78,13 +78,12 @@ class MigrateDestinationOGMembership extends MigrateDestination {
     else {
       $state = OG_STATE_ACTIVE;
     }
-
-    $values = array(
-      'entity_type' => $entity->entity_type,
-      'entity' => $entity->etid,
-      'state' => $state,
-      'created' => isset($entity->created) ? $entity->created : REQUEST_TIME,
-    );
+    $this->prepare($entity, $row);
+    // Allow passing OG-membership fields via og_group().
+    $values = (array) $entity;
+    $values['entity'] = $entity->etid;
+    $values['state'] = $state;
+    $values['created'] = isset($entity->created) ? $entity->created : REQUEST_TIME;
 
     $og_membership = og_group($entity->group_type, $entity->gid, $values);
 
@@ -109,7 +108,58 @@ class MigrateDestinationOGMembership extends MigrateDestination {
       }
     }
 
+    $this->complete($entity, $row);
+
     return array($og_membership->id);
+  }
+
+  /**
+   * Give handlers a shot at modifying the object before saving it.
+   *
+   * @param $entity
+   *   OGMembership object to build. Prefilled with any fields mapped in
+   *   the Migration.
+   * @param $source_row
+   *   Raw source data object - passed through to prepare handlers.
+   */
+  public function prepare($entity, stdClass $row) {
+    // We do nothing here but allow child classes to act.
+    $migration = Migration::currentMigration();
+    $entity->migrate = array(
+      'machineName' => $migration->getMachineName(),
+    );
+
+    // Call any general handlers.
+    migrate_handler_invoke_all('og_membership', 'prepare', $entity, $row);
+    // Then call any prepare handler for this specific Migration.
+    if (method_exists($migration, 'prepare')) {
+      $migration->prepare($entity, $row);
+    }
+  }
+
+  /**
+   * Give handlers a shot at modifying the object (or taking additional action)
+   * after saving it.
+   *
+   * @param $entity
+   *   OGMembership object to build. This is the complete object after
+   *   saving.
+   * @param $source_row
+   *   Raw source data object - passed through to complete handlers.
+   */
+  public function complete($entity, stdClass $row) {
+    // We do nothing here but allow child classes to act.
+    $migration = Migration::currentMigration();
+    $entity->migrate = array(
+      'machineName' => $migration->getMachineName(),
+    );
+
+    // Call any general handlers.
+    migrate_handler_invoke_all('og_membership', 'complete', $entity, $row);
+    // Then call any complete handler for this specific Migration.
+    if (method_exists($migration, 'complete')) {
+      $migration->complete($entity, $row);
+    }
   }
 
   public function fields() {

@@ -194,9 +194,13 @@ function og_context($group_type = 'node', $group = NULL) {
   global $user;
   $context = &drupal_static(__FUNCTION__, FALSE);
 
-  if (empty($group) && !empty($context) && $context['group_type'] == $group_type) {
+  if (empty($group) && $context !== FALSE && (empty($context)) || (!empty($context['group_type']) && $context['group_type'] == $group_type)) {
     return $context;
   }
+
+  // Set the context to array, so we can now this function has been already
+  // executed.
+  $context = array();
 
   if (!empty($group)) {
     // Set the group.
@@ -318,9 +322,14 @@ function og_context_provider_weight($provider) {
 /**
  * Determine the best matching context of a viewed page.
  *
+ * @param $group_type
+ *   The entity type of the group. For example, "node" or "user".
  * @param $item
  *   Optional; A menu item that context should be extracted from. If empty
  *   defaults to the current menu item by using menu_get_item().
+ *
+ * @return
+ *   The group ID for the current context.
  */
 function og_context_determine_context($group_type, $item = NULL) {
   // Enable url and node context handlers by default.
@@ -422,6 +431,12 @@ function og_context_handler_node($node = NULL) {
   }
 
   $item = menu_get_item();
+
+  if (empty($item['map'])) {
+    // User has no access to the menu item.
+    return;
+  }
+
   if ($item['path'] == 'node/%/group') {
     $node = node_load($item['map'][1]);
   }
@@ -472,13 +487,21 @@ function og_context_handler_user_edit() {
  */
 function og_context_handler_comment() {
   $item = menu_get_item();
-  // Get the last argument.
-  $cid = end($item['original_map']);
-  if (!$comment = comment_load($cid)) {
+  // Check if we are in comment/reply/%nid. No need to load the comment.
+  if (isset($item['original_map'][2]) && is_numeric($item['original_map'][2])) {
+    $node = node_load($item['original_map'][2]);
+  }
+  // Use the comment ID.
+  elseif (isset($item['original_map'][1]) && is_numeric($item['original_map'][1])) {
+    $cid = $item['original_map'][1];
+    if (!$comment = comment_load($cid)) {
+      return;
+    }
+    $node = node_load($comment->nid);
+  }
+  else {
     return;
   }
-
-  $node = node_load($comment->nid);
   return og_context_handler_node($node);
 }
 
@@ -517,4 +540,30 @@ function _group_context_handler_entity($entity_type = 'node', $entity = NULL, $p
   }
 
   return $contexts;
+}
+
+/**
+ * Helper function to handle views page access.
+ *
+ * @param $group_type
+ *   The group type.
+ * @param $perm
+ *   The group permission to search for.
+ * @param $group_id_arg
+ *   Optional; The position in arg() where the group ID can be found.
+ *
+ * @return
+ *   TRUE if user is allowed access to the page.
+ */
+function _og_context_views_page_access($group_type, $perm, $group_id_arg = FALSE) {
+  if ($group_id_arg !== '') {
+    $gid = arg($group_id_arg);
+    if (is_numeric($gid)) {
+      return og_user_access($group_type, $gid, $perm);
+    }
+  }
+  elseif ($group = og_context($group_type)) {
+    // Try to get context.
+    return og_user_access($group_type, $group['gid'], $perm);
+  }
 }

@@ -6,9 +6,9 @@ dependencies[] = og
 core = 7.x
 files[] = og_register.module
 files[] = og_register.install
-; Information added by drupal.org packaging script on 2013-01-14
-version = "7.x-2.0-rc2"
+; Information added by drupal.org packaging script on 2013-04-22
+version = "7.x-2.2"
 core = "7.x"
 project = "og"
-datestamp = "1358190466"
+datestamp = "1366630883"
 

@@ -31,7 +31,7 @@ function og_field_widget_form(&$form, &$form_state, $field, $instance, $langcode
     return;
   }
 
-  if ($field['settings']['handler'] != 'og') {
+  if ($field['settings']['handler'] != 'og' && strpos($field['settings']['handler'], 'og_') !== 0) {
     $params = array('%label' => $instance['label']);
     form_error($form, t('Field %label is a group-audience but its Entity selection mode is not defined as "Organic groups" in the field settings page.', $params));
     return;
@@ -42,7 +42,7 @@ function og_field_widget_form(&$form, &$form_state, $field, $instance, $langcode
   list($id,, $bundle) = entity_extract_ids($entity_type, $entity);
   $field_name = $field['field_name'];
 
-  $identifier = $field_name . ':' . $entity_type . ':' . $id;
+  $identifier = $field_name . ':' . $entity_type . ':' . $bundle . ':' . $id;
   if (isset($cache[$identifier])) {
     return array();
   }

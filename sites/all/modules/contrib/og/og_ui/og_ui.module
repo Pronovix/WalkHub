@@ -58,6 +58,18 @@ function og_ui_menu() {
     'file' => 'og_ui.admin.inc',
   );
 
+  // User listing pages.
+  $items['group/%/%/admin/people/edit-membership/%og_membership'] = array(
+    'title callback' => 'og_ui_menu_title_callback',
+    'title arguments' => array('Edit membership in group @group', 1, 2),
+    'type' => MENU_CALLBACK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('og_ui_edit_membership', 1, 2, 6),
+    'access callback' => 'og_ui_user_access_group',
+    'access arguments' => array('manage members', 1, 2),
+    'file' => 'og_ui.admin.inc',
+  );
+
   // Permission administration pages.
   $items['group/%/%/admin/roles'] = array(
     'title callback' => 'og_ui_menu_title_callback',
@@ -574,7 +586,7 @@ function og_ui_field_formatter_view($entity_type, $entity, $field, $instance, $l
         return;
       }
 
-      if (!empty($entity->uid) && ($entity->uid == $user->uid)) {
+      if (!empty($entity->uid) && ($entity->uid == $account->uid)) {
         // User is the group manager.
         $element[0] = array('#markup' => t('You are the group manager'));
         return $element;
@@ -595,7 +607,7 @@ function og_ui_field_formatter_view($entity_type, $entity, $field, $instance, $l
         }
 
         // Check if user can subscribe to the field.
-        if (empty($settings['field_name']) && $audience_field_name = og_get_best_group_audience_field('user', $user->uid, $entity_type, $bundle)) {
+        if (empty($settings['field_name']) && $audience_field_name = og_get_best_group_audience_field('user', $account, $entity_type, $bundle)) {
           $settings['field_name'] = $audience_field_name;
         }
         if (!$settings['field_name']) {
@@ -614,7 +626,7 @@ function og_ui_field_formatter_view($entity_type, $entity, $field, $instance, $l
           return;
         }
 
-        if (!og_check_field_cardinality('user', $user->uid, $settings['field_name'])) {
+        if (!og_check_field_cardinality('user', $account, $settings['field_name'])) {
           $element[0] = array('#markup' => format_plural($field_info['cardinality'], 'You are already registered to another group', 'You are already registered to @count groups'));
           return $element;
         }
@@ -712,6 +724,10 @@ function og_ui_field_formatter_view($entity_type, $entity, $field, $instance, $l
             '#type' => 'link',
             '#title' => $wrapper->label(),
             '#href' => $wrapper->url->value(),
+            // Add the group type and group ID, so it's easier for implementing
+            // modules to extend the formatter.
+            '#group_type' => $group_type,
+            '#gid' => $wrapper->getIdentifier(),
           );
         }
       }
@@ -1125,32 +1141,19 @@ function og_ui_migrate_api() {
   $migrations = array();
   if (db_table_exists('d6_og')) {
     $migrations['OgUiMigrateAddField'] = array('class_name' => 'OgUiMigrateAddField');
-    $migrations['OgUiPopulateField'] = array('class_name' => 'OgUiPopulateField');
     $migrations['OgUiSetRoles'] = array('class_name' => 'OgUiSetRoles');
+
+    foreach (node_type_get_names() as $bundle => $value) {
+      $machine_name = 'OgUiPopulateField' . ucfirst($bundle);
+      $migrations[$machine_name] = array(
+        'class_name' => 'OgUiPopulateField',
+        'bundle' => $bundle,
+      );
+    }
   }
   $api = array(
     'api' => 2,
     'migrations' => $migrations,
   );
   return $api;
-}
-
-/**
- * Implements hook_modules_enabled().
- *
- * Register dynamic migrate plugins for upgrading from OG6.
- */
-function og_ui_modules_enabled($modules) {
-  if (!db_table_exists('d6_og')) {
-    return;
-  }
-
-  if (!in_array('migrate', $modules) && !module_exists('migrate')) {
-    return;
-  }
-
-  foreach (node_type_get_names() as $bundle => $value) {
-    // Register dynamic migrations.
-    Migration::registerMigration('OgUiPopulateField', 'OgUiPopulateField' . ucfirst($bundle), array('bundle' => $bundle));
-  }
 }
