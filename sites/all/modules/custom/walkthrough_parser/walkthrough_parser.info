@@ -1,5 +1,0 @@
-name = Walkthrough Parser
-description = Walkthrough Parser.
-package = Walkthrough
-version = VERSION
-core = 7.x
