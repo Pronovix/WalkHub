@@ -31,6 +31,7 @@ function jquery_update_requirements($phase) {
 function jquery_update_uninstall() {
   variable_del('jquery_update_compression_type');
   variable_del('jquery_update_jquery_version');
+  variable_del('jquery_update_jquery_admin_version');
 }
 
 /**

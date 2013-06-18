@@ -35,6 +35,17 @@ function jquery_update_library() {
     'css' => array(
       $path . '/qunit.css' => array(),
     ),
+    'version' => '1.11.0',
+  );
+  $libraries['jquery_update.ajax.fix'] = array(
+    'title' => 'jQuery Update Version Fix',
+    'js' => array(
+      drupal_get_path('module', 'jquery_update') . '/js/jquery_update.js' => array(
+        'group' => JS_LIBRARY,
+        'weight' => 3,
+      ),
+    ),
+    'version' => '0.0.1'
   );
   $libraries['jquery.metadata'] = array(
     'title' => 'QUnit',
@@ -64,7 +75,6 @@ function jquery_update_library() {
  * Implementation of hook_library_alter().
  */
 function jquery_update_library_alter(&$javascript, $module) {
-
   // We are updating just the system module. For all other cases we return.
   if ($module != 'system') {
     return;
@@ -76,12 +86,30 @@ function jquery_update_library_alter(&$javascript, $module) {
   $min = variable_get('jquery_update_compression_type', 'min') == 'none' ? '' : '.min';
   $cdn = variable_get('jquery_update_jquery_cdn', 'none');
 
-  // Replace jQuery with the latest version.
+  // Replace jQuery with the alternative version.
   $version = variable_get('jquery_update_jquery_version', '1.5');
+  $admin_version = variable_get('jquery_update_jquery_admin_version', '');
+
+  if (!empty($admin_version) && path_is_admin(current_path())) {
+    if (version_compare($version, $admin_version, '!=')) {
+      $version = $admin_version;
+    }
+  }
+
+  // Always add a new jquery_version array to ajaxPageState.
+  // This is what we used to determine which version to use
+  // for any ajax callback.
+  $javascript['drupal.ajax']['js'][] = array(
+    'data' => array('ajaxPageState' => array('jquery_version' => $version)),
+    'type' => 'setting'
+  );
+  $javascript['drupal.ajax']['dependencies'][] = array('jquery_update', 'jquery_update.ajax.fix');
   jquery_update_jquery_replace($javascript, $cdn, $path, $min, $version);
 
   // Replace jQuery UI with CDN or local files. If from a CDN include all of jQuery UI.
-  jquery_update_jqueryui_replace($javascript, $cdn, $path, $min);
+  if (version_compare($version, '1.6', '>=')) {
+    jquery_update_jqueryui_replace($javascript, $cdn, $path, $min);
+  }
 
   // Replace the jQuery Cookie plugin.
   $javascript['cookie']['js']['misc/jquery.cookie.js']['data'] = $path . '/replace/ui/external/jquery.cookie.js';
@@ -114,20 +142,41 @@ function jquery_update_menu() {
 }
 
 /**
- * Implementation of hook_form_FORM_ID().
+ * Admin settings menu callback.
+ *
+ * @see jquery_update_menu().
  */
 function jquery_update_settings_form() {
-  $form['jquery_update_jquery_version'] = array(
+  $form['version_options'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Version options'),
+  );
+
+  $form['version_options']['jquery_update_jquery_version'] = array(
     '#type' => 'select',
-    '#title' => t('jQuery Version'),
+    '#title' => t('Default jQuery Version'),
     '#options' => array(
       '1.5' => '1.5',
       '1.7' => '1.7',
       '1.8' => '1.8',
     ),
     '#default_value' => variable_get('jquery_update_jquery_version', '1.5'),
-    '#description' => t('Select which jQuery version branch to use.'),
+    '#description' => t('Select which jQuery version to use by default.'),
   );
+
+  $form['version_options']['jquery_update_jquery_admin_version'] = array(
+    '#type' => 'select',
+    '#title' => t('Alternate jQuery version for administrative pages'),
+    '#options' => array(
+      '' => t('Use the default'),
+      '1.5' => '1.5',
+      '1.7' => '1.7',
+      '1.8' => '1.8',
+    ),
+    '#default_value' => variable_get('jquery_update_jquery_admin_version', ''),
+    '#description' => t('Optionally select a different version of jQuery to use on administrative pages.'),
+  );
+
   $form['jquery_update_compression_type'] = array(
     '#type' => 'radios',
     '#title' => t('jQuery compression level'),
@@ -167,6 +216,14 @@ function jquery_update_settings_form() {
  *   The version of jQuery to use.
  */
 function jquery_update_jquery_replace(&$javascript, $cdn, $path, $min, $version) {
+  // If the ajax version is set then that one always win.
+  if (!empty($_POST['ajax_page_state']['jquery_version'])) {
+    $ajax_version = $_POST['ajax_page_state']['jquery_version'];
+    if (in_array($ajax_version, array('1.5', '1.6', '1.7'))) {
+      $version = $ajax_version;
+    }
+  }
+
   // Make sure to use the latest version in given branch.
   $trueversion = NULL;
   switch ($version) {
@@ -258,22 +315,22 @@ function jquery_update_jqueryui_replace(&$javascript, $cdn, $path, $min) {
     'ui.accordion', 'ui.autocomplete', 'ui.button', 'ui.datepicker',
     'ui.dialog', 'ui.draggable', 'ui.droppable', 'ui.mouse', 'ui.position',
     'ui.progressbar', 'ui.resizable', 'ui.selectable', 'ui.slider',
-    'ui.sortable', 'ui.tabs', 'ui.widget', 'effects.blind', 'effects.bounce',
-    'effects.clip', 'effects.drop', 'effects.explode', 'effects.fade',
-    'effects.fold', 'effects.highlight', 'effects.pulsate', 'effects.scale',
-    'effects.shake', 'effects.slide', 'effects.transfer',
+    'ui.sortable', 'ui.tabs', 'ui.tooltip', 'ui.widget', 'ui.effects.blind', 'ui.effects.bounce',
+    'ui.effects-clip', 'ui.effects-drop', 'ui.effects-explode', 'ui.effects-fade',
+    'ui.effects-fold', 'ui.effects-highlight', 'ui.effects-pulsate', 'ui.effects-scale',
+    'ui.effects-shake', 'ui.effects-slide', 'ui.effects-transfer',
   ));
   $names['ui'] = 'ui.core';
   $names['effects'] = 'effects.core';
 
   switch($cdn) {
     case 'google':
-      $cdn = 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui' . $min . '.js';
+      $cdn = 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui' . $min . '.js';
       jquery_update_jqueryui_cdn($cdn, $javascript, $path, $min, $names);
       jquery_update_jqueryui_backup($javascript, $path, $min);
       break;
     case 'microsoft':
-      $cdn = 'http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.11/jquery-ui' . $min . '.js';
+      $cdn = 'http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.2/jquery-ui' . $min . '.js';
       jquery_update_jqueryui_cdn($cdn, $javascript, $path, $min, $names);
       jquery_update_jqueryui_backup($javascript, $path, $min);
       break;
@@ -323,7 +380,7 @@ function jquery_update_jqueryui_cdn($cdn, &$javascript, $path, $min, $names) {
     $corefile = 'misc/ui/jquery.' . $file . '.min.js';
     // Remove the core files.
     unset($javascript[$name]['js'][$corefile]);
-    $javascript[$name]['version'] = '1.8.11';
+    $javascript[$name]['version'] = '1.10.2';
   }
 
   // UI is used by all of UI. Add the js cdn here.
@@ -354,6 +411,6 @@ function jquery_update_jqueryui_local(&$javascript, $path, $min, $names) {
   foreach ($names as $name => $file) {
     $corefile = 'misc/ui/jquery.' . $file . '.min.js';
     $javascript[$name]['js'][$corefile]['data'] = $jspath . 'jquery.' . $file . $min . '.js';
-    $javascript[$name]['version'] = '1.8.11';
+    $javascript[$name]['version'] = '1.10.2';
   }
 }
