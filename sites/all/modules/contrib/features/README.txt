@@ -62,6 +62,16 @@ modules directory for your site and enable it on the `admin/build/modules` page.
 To take full advantage of some of the workflow benefits provided by Features,
 you should install [Drush][1].
 
+If you plan on creating or working with very large features (greater than 1000
+items), you may need to increase PHP's max_input_vars configuration directive.
+For example, adding the following line to your .htaccess file will increase the
+max_input_vars directive to 3000:
+
+php_value max_input_vars 3000
+
+If you are using Suhosin, increasing suhosin.get.max_vars,
+suhosin.post.max_vars, and suhosin.request.max_vars may also be necessary.
+
 
 Basic usage
 -----------
@@ -131,6 +141,8 @@ highly recommended.
 
 Drush usage
 -----------
+(requires Drush v4.5 or higher)
+
 Features provides several useful drush commands:
 
 - `drush features`
@@ -141,9 +153,9 @@ Features provides several useful drush commands:
 
   Write a new feature in code containing the components listed.
   If called with no arguments, display a list of available components.
-  If called with one argument, take the argument as a component name and 
+  If called with one argument, take the argument as a component name and
   attempt to create a feature with the same name.
-  
+
   The option '--destination=foo' may be used to specify the path (from Drupal
   root) where the feature should be created. The default destination is
   'sites/all/modules'.
