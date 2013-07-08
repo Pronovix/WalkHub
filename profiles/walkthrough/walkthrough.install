@@ -79,3 +79,33 @@ function walkthrough_install() {
   user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
 }
+
+/**
+ * Implements hook_install_tasks().
+ */
+function walkthrough_install_tasks() {
+  $tasks = array();
+
+  $tasks['features'] = array(
+    'display_name' => st('Install Walkthrough features'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_install_features',
+  );
+
+  return $tasks;
+}
+
+/**
+ * Install callback for installing Walkthrough features.
+ */
+function walkthrough_install_features() {
+  menu_rebuild();
+  cache_clear_all();
+  features_install_modules(array(
+    'walkhub',
+    'walkthrough_sets',
+  ));
+}
+
