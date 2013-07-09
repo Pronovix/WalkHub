@@ -1,0 +1,85 @@
+<?php
+/**
+ * @file
+ * Test Walkthrough walkhub site install process.
+ */
+
+require_once 'pronovix-selenium-testcase/px_selenium_testcase.inc';
+
+class WalkthroughSiteInstall extends PxSeleniumTestCase {
+
+  /**
+   * Tests that Walkthrough features are not overridden after site install.
+   */
+  public function testFeaturesNotOverridden() {
+    // @Todo find visible "Overridden" text.
+    // verifyTextNotPresent() is not enough, because the "Overridden" text is always visible.
+  }
+
+  /**
+   * Tests that Walkthrough features are not disabled after site install.
+   */
+  public function testFeaturesNotDisabled() {
+    $this->walkthroughFeaturesAdminPage();
+
+    // Make sure no modules are disabled.
+    $this->verifyTextNotPresent('Disabled');
+  }
+
+  /**
+   * Tests that there are no errors on the file-system settings admin page.
+   *
+   * Note that wiatForPageToLoad() cecks for drupal warnings and errors, where
+   * an error message would be written if the file system is wrongly
+   * configured.
+   * @see PxSeleniumTestCase::waitForPageToLoad()
+   */
+  public function testFileSystemSettings() {
+    $this->adminLogin();
+
+    $this->open('admin/config/media/file-system', SELENIUM_EXPECT_ERROR);
+    $this->waitForPageToLoad('30000');
+
+    // Save file system settings.
+    $this->click("id=edit-submit");
+    $this->waitForPageToLoad("30000");
+  }
+
+  /**
+   * Go to the Walkthroguh features admin page.
+   */
+  protected function walkthroughFeaturesAdminPage() {
+    $this->adminLogin();
+
+    $this->open("admin/structure/features");
+    $this->waitForPageToLoad("30000");
+    $this->click("link=Walkthrough");
+    // Pause for 10 seconds, so the feature statuses are loaded.
+    $this->pause(10000);
+  }
+
+  /**
+   * Checks that roles are present after site install.
+   *
+   * Roles:
+   * - anonymous user
+   * - authenticated user
+   */
+  public function testRolesCreated() {
+    $this->adminLogin();
+
+    $this->open("admin/people/permissions/roles");
+    $this->waitForPageToLoad("30000");
+
+    $roles = array(
+      'anonymous user',
+      'authenticated user',
+    );
+
+    foreach ($roles as $role) {
+      $this->verifyTextPresent($role);
+    }
+  }
+
+}
+
