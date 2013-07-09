@@ -1,0 +1,22 @@
+name = Walkthrough
+description = Walkthgouh walkhub
+version = VERSION
+core = 7.x
+dependencies[] = block
+dependencies[] = dblog
+
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = entityreference
+dependencies[] = field_collection
+dependencies[] = link
+dependencies[] = entity
+dependencies[] = libraries
+dependencies[] = strongarm
+dependencies[] = walkhub_client
+dependencies[] = services
+dependencies[] = services_views
+dependencies[] = rest_server
+dependencies[] = jquery_update
+dependencies[] = uuid
+dependencies[] = views
