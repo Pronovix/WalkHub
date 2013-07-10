@@ -219,21 +219,27 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: create step content.
   $permissions['create step content'] = array(
     'name' => 'create step content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: create walkthrough content.
   $permissions['create walkthrough content'] = array(
     'name' => 'create walkthrough content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: create walkthrough_set content.
   $permissions['create walkthrough_set content'] = array(
     'name' => 'create walkthrough_set content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
@@ -261,21 +267,27 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: delete own step content.
   $permissions['delete own step content'] = array(
     'name' => 'delete own step content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: delete own walkthrough content.
   $permissions['delete own walkthrough content'] = array(
     'name' => 'delete own walkthrough content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: delete own walkthrough_set content.
   $permissions['delete own walkthrough_set content'] = array(
     'name' => 'delete own walkthrough_set content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
@@ -317,21 +329,27 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: edit own step content.
   $permissions['edit own step content'] = array(
     'name' => 'edit own step content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: edit own walkthrough content.
   $permissions['edit own walkthrough content'] = array(
     'name' => 'edit own walkthrough content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: edit own walkthrough_set content.
   $permissions['edit own walkthrough_set content'] = array(
     'name' => 'edit own walkthrough_set content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
