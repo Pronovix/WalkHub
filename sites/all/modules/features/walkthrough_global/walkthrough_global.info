@@ -1,6 +1,6 @@
 name = Walkthrough global
 core = 7.x
-package = Features
+package = Walkthrough
 dependencies[] = ctools
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
