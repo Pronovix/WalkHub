@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Walkthrough permissions feature.
  */
+
+include_once 'walkthrough_permissions.features.inc';
