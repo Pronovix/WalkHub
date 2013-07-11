@@ -1,0 +1,18 @@
+/* Some sane Drupal base styles */
+
+#site-name {
+  display: inline-block;
+  font-size: 2.5em;
+  font-weight: normal;
+  line-height: 1.25;
+  margin: 0;
+  padding: 15px 0 0;
+}
+
+/* Drupal overrides */
+.block-search .form-autocomplete {background: none;}
+.description {padding:5px}
+.links .node-readmore {padding-left:0;}
+
+/* Foundation overrides */
+.button.primary {margin-right: .5em;}

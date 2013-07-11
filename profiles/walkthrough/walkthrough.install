@@ -94,6 +94,14 @@ function walkthrough_install_tasks() {
     'function' => 'walkthrough_install_features',
   );
 
+  $tasks['enable_theme'] = array(
+    'display_name' => st('Enable theme'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_enable_theme',
+  );
+
   return $tasks;
 }
 
@@ -105,7 +113,29 @@ function walkthrough_install_features() {
   cache_clear_all();
   features_install_modules(array(
     'walkhub',
+    'walkthrough_global',
+    'walkthrough_permissions',
     'walkthrough_sets',
   ));
 }
 
+/**
+ * Install callback for enabling the Walktrough theme.
+ */
+function walkthrough_enable_theme() {
+  $theme_name = 'zurb_foundation';
+  $themes = array(
+    'theme_default' => $theme_name,
+    'admin_theme' => $theme_name,
+  );
+  theme_enable($themes);
+
+  foreach ($themes as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  // Disable the default Bartik theme.
+  theme_disable(array('bartik'));
+}
