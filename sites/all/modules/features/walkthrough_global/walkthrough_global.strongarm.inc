@@ -11,29 +11,41 @@ function walkthrough_global_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_compression_type';
+  $strongarm->value = 'min';
+  $export['jquery_update_compression_type'] = $strongarm;
+
+  $strongarm = new stdClass();
   $strongarm->name = 'block_cache';
   $strongarm->value = 1;
   $export['block_cache'] = $strongarm;
 
   $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_admin_version';
+  $strongarm->value = '';
+  $export['jquery_update_jquery_admin_version'] = $strongarm;
+
+  $strongarm = new stdClass();
   $strongarm->name = 'cache';
   $strongarm->value = 1;
   $export['cache'] = $strongarm;
 
   $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_cdn';
+  $strongarm->value = 'google';
+  $export['jquery_update_jquery_cdn'] = $strongarm;
+
+  $strongarm = new stdClass();
   $strongarm->name = 'cache_lifetime';
   $strongarm->value = '0';
   $export['cache_lifetime'] = $strongarm;
 
   $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_version';
+  $strongarm->value = '1.8';
+  $export['jquery_update_jquery_version'] = $strongarm;
+
+  $strongarm = new stdClass();
   $strongarm->name = 'page_cache_maximum_age';
   $strongarm->value = '0';
   $export['page_cache_maximum_age'] = $strongarm;
@@ -45,6 +57,7 @@ function walkthrough_global_strongarm() {
   $strongarm->value = 1;
   $export['page_compression'] = $strongarm;
 
+  $strongarm = new stdClass();
   $strongarm->name = 'site_name';
   $strongarm->value = 'Walkhub';
   $export['site_name'] = $strongarm;
