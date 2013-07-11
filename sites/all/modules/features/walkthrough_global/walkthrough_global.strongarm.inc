@@ -45,6 +45,23 @@ function walkthrough_global_strongarm() {
   $strongarm->value = 1;
   $export['page_compression'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'preprocess_css';
+  $strongarm->value = 1;
+  $export['preprocess_css'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'preprocess_js';
+  $strongarm->value = 1;
+  $export['preprocess_js'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_name';
   $strongarm->value = 'Walkhub';
   $export['site_name'] = $strongarm;
