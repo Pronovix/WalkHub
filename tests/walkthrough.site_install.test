@@ -81,5 +81,18 @@ class WalkthroughSiteInstall extends PxSeleniumTestCase {
     }
   }
 
+  /**
+   * Test that the Zurb theme is set up after site install.
+   */
+  public function testTheme() {
+    $this->adminLogin();
+
+    $this->open("admin/appearance");
+    $this->waitForPageToLoad("30000");
+
+    $this->verifyTextPresent("ZURB Foundation 7.x-1.0-alpha1 (default theme)");
+
+  }
+
 }
 
