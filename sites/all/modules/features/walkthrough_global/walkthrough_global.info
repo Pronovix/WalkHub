@@ -11,5 +11,6 @@ features[variable][] = cache
 features[variable][] = cache_lifetime
 features[variable][] = page_cache_maximum_age
 features[variable][] = page_compression
+features[variable][] = site_name
 features[variable][] = theme_settings
 features[variable][] = user_register
