@@ -4,3 +4,6 @@
 [submodule "tests/pronovix-selenium-testcase"]
 	path = tests/pronovix-selenium-testcase
 	url = git@bitbucket.org:pronovix/pronovix-selenium-testcase.git
+[submodule "sites/all/modules/custom/walkhub_branding"]
+  path = sites/all/modules/custom/walkhub_branding
+  url = git@bitbucket.org:pronovix/walkhub_branding.git
