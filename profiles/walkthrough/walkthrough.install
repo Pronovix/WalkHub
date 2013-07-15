@@ -113,6 +113,7 @@ function walkthrough_install_features() {
   cache_clear_all();
   features_install_modules(array(
     'walkhub',
+    'walkhub_branding',
     'walkthrough_global',
     'walkthrough_permissions',
     'walkthrough_sets',
