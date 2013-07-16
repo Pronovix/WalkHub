@@ -78,6 +78,10 @@ function walkthrough_install() {
   // Enable default permissions for system roles.
   user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
+
+  // Set variables for the walkhub client.
+  variable_set('walkhub_client_base_url', 'http://resources.walkhub.net');
+  variable_set('walkhub_hub_origin', 'http://walkub.net');
 }
 
 /**
