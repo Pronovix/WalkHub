@@ -16,6 +16,7 @@ dependencies[] = strongarm
 dependencies[] = walkhub_client
 dependencies[] = services
 dependencies[] = services_views
+dependencies[] = rdf
 dependencies[] = rest_server
 dependencies[] = jquery_update
 dependencies[] = uuid
