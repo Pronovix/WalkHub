@@ -12,6 +12,7 @@ dependencies[] = field_collection
 dependencies[] = link
 dependencies[] = entity
 dependencies[] = libraries
+dependencies[] = legal
 dependencies[] = strongarm
 dependencies[] = walkhub_client
 dependencies[] = services
