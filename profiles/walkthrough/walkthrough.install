@@ -122,19 +122,32 @@ function walkthrough_install_tasks() {
   return $tasks;
 }
 
+
 /**
  * Install callback for installing Walkthrough features.
  */
 function walkthrough_install_features() {
   menu_rebuild();
   cache_clear_all();
-  features_install_modules(array(
+
+  $walkthrough_features = _walkthrough_get_walkthrough_features();
+  features_install_modules($walkthrough_features);
+}
+
+/**
+ * Get the list of walkthrough features.
+ *
+ * @return array
+ *   Walkthrough feature module names.
+ */
+function _walkthrough_get_walkthrough_features() {
+  return array(
     'walkhub',
     'walkhub_branding',
     'walkthrough_global',
     'walkthrough_permissions',
     'walkthrough_sets',
-  ));
+  );
 }
 
 /**
