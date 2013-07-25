@@ -154,10 +154,9 @@ function _walkthrough_get_walkthrough_features() {
  * Install callback for enabling the Walktrough theme.
  */
 function walkthrough_enable_theme() {
-  $theme_name = 'zurb_foundation';
   $themes = array(
-    'theme_default' => $theme_name,
-    'admin_theme' => $theme_name,
+    'theme_default' => 'walkhub_theme',
+    'admin_theme' => 'seven',
   );
   theme_enable($themes);
 
@@ -166,6 +165,8 @@ function walkthrough_enable_theme() {
       variable_set($var, $theme);
     }
   }
+
+  variable_set('node_admin_theme', FALSE);
 
   // Disable the default Bartik theme.
   theme_disable(array('bartik'));
