@@ -10,3 +10,6 @@
 [submodule "sites/all/themes/walkhub_theme"]
 	path = sites/all/themes/walkhub_theme
 	url = ssh://git@bitbucket.org/pronovix/walkhub_theme.git
+[submodule "resources"]
+	path = resources
+	url = git@bitbucket.org:pronovix/walkthroughresources.git
