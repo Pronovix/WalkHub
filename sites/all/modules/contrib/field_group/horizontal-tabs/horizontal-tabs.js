@@ -92,16 +92,6 @@ Drupal.horizontalTab = function (settings) {
     }
   });
 
-  // Pressing the Enter key lets you leave the tab again.
-  this.fieldset.keydown(function(event) {
-    // Enter key should not trigger inside <textarea> to allow for multi-line entries.
-    if (event.keyCode == 13 && event.target.nodeName != "TEXTAREA") {
-      // Set focus on the selected tab button again.
-      $(".horizontal-tab-button.selected a").focus();
-      return false;
-    }
-  });
-
   this.fieldset
     .bind('summaryUpdated', function () {
       self.updateSummary();
@@ -193,8 +183,10 @@ Drupal.horizontalTab.prototype = {
  */
 Drupal.theme.prototype.horizontalTab = function (settings) {
   var tab = {};
+  var idAttr = settings.fieldset.attr('id');
+
   tab.item = $('<li class="horizontal-tab-button" tabindex="-1"></li>')
-    .append(tab.link = $('<a href="#"></a>')
+    .append(tab.link = $('<a href="#' + idAttr + '"></a>')
       .append(tab.title = $('<strong></strong>').text(settings.title))
       .append(tab.summary = $('<span class="summary"></span>')
     )
