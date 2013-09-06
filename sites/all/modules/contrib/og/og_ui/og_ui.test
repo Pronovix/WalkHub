@@ -229,7 +229,7 @@ class OgUiManagePeopleTestCase extends DrupalWebTestCase {
   function setUp() {
     parent::setUp('og_ui', 'entity_feature');
     // Add OG group field.
-    og_create_field(OG_GROUP_FIELD, 'entity_test', 'main');
+    og_create_field(OG_GROUP_FIELD, 'entity_test', 'test');
   }
 
   /**
@@ -240,7 +240,7 @@ class OgUiManagePeopleTestCase extends DrupalWebTestCase {
     $this->drupalLogin($user1);
 
     // Create a group.
-    $entity = entity_create('entity_test', array('name' => 'main', 'uid' => $user1->uid));
+    $entity = entity_create('entity_test', array('name' => 'test', 'uid' => $user1->uid));
     $wrapper = entity_metadata_wrapper('entity_test', $entity);
     $wrapper->{OG_GROUP_FIELD}->set(1);
     $wrapper->save();
@@ -253,7 +253,7 @@ class OgUiManagePeopleTestCase extends DrupalWebTestCase {
     $this->drupalPost('group/entity_test/' . $entity->pid . '/admin/people/add-user', $edit, t('Add users'));
 
     // Reload user.
-  og_membership_invalidate_cache();
+    og_membership_invalidate_cache();
     $this->assertTrue(og_is_member('entity_test', $entity->pid, 'user', $user2), 'User was added to the group.');
 
     // Add the same user twice.
@@ -265,6 +265,118 @@ class OgUiManagePeopleTestCase extends DrupalWebTestCase {
     $edit['name'] = $this->randomName();
     $this->drupalPost('group/entity_test/' . $entity->pid . '/admin/people/add-user', $edit, t('Add users'));
     $this->assertText(t('You have entered an invalid user name.'), t('Invalid user name not added to group.'));
+  }
+
+  /**
+   * Test that only the correct group audience fields are shown.
+   */
+  function testOgUiAddPeopleMultipleAudienceFields() {
+    $user1 = $this->drupalCreateUser();
+    $this->drupalLogin($user1);
+
+    // Delete the default group audience field
+    field_delete_field('og_user_entity_test');
+
+    // Create three group audience fields and corresponding instances on users:
+    // - Two for the two bundles on the 'entity_test' entity type.
+    // - One for the 'entity_test2' entity type.
+    $fields['group_audience_entity_test_test'] = field_create_field(array(
+      'field_name' => 'group_audience_entity_test_test',
+      'type' => 'entityreference',
+      'settings' => array(
+        'target_type' => 'entity_test',
+        'handler' => 'og',
+        'handler_settings' => array(
+          'target_bundles' => array('test'),
+          'membership_type' => 'og_membership_type_default',
+        ),
+      ),
+    ));
+    field_create_instance(array(
+      'field_name' => 'group_audience_entity_test_test',
+      'entity_type' => 'user',
+      'bundle' => 'user',
+    ));
+
+    $field['group_audience_entity_test_test2'] = field_create_field(array(
+      'field_name' => 'group_audience_entity_test_test2',
+      'type' => 'entityreference',
+      'settings' => array(
+        'target_type' => 'entity_test',
+        'handler' => 'og',
+        'handler_settings' => array(
+          'target_bundles' => array('test2'),
+          'membership_type' => 'og_membership_type_default',
+        ),
+      ),
+    ));
+    field_create_instance(array(
+      'field_name' => 'group_audience_entity_test_test2',
+      'entity_type' => 'user',
+      'bundle' => 'user',
+    ));
+
+    $field['group_audience_entity_test2'] = field_create_field(array(
+      'field_name' => 'group_audience_entity_test2',
+      'type' => 'entityreference',
+      'settings' => array(
+        'target_type' => 'entity_test2',
+        'handler' => 'og',
+        'handler_settings' => array(
+          'membership_type' => 'og_membership_type_default',
+        ),
+      ),
+    ));
+    field_create_instance(array(
+      'field_name' => 'group_audience_entity_test2',
+      'entity_type' => 'user',
+      'bundle' => 'user',
+    ));
+
+    // Create a group belonging to the 'test' bundle of the 'entity_test' entity
+    // type.
+    $entity = entity_create('entity_test', array('name' => 'test', 'uid' => $user1->uid));
+    $wrapper = entity_metadata_wrapper('entity_test', $entity);
+    $wrapper->{OG_GROUP_FIELD}->set(1);
+    $wrapper->save();
+
+    // Because only one of the three fields applies to this entity type and
+    // bundle, no select box should be shown.
+    $this->drupalGet('group/entity_test/' . $entity->pid . '/admin/people/add-user');
+    $this->assertNoField('edit-field-name');
+
+
+    // Temporarily change the second field to apply to this bundle. Now the
+    // select box should be shown.
+    $field['group_audience_entity_test_test2']['settings']['handler_settings']['target_bundles'] = array('test');
+    field_update_field($field['group_audience_entity_test_test2']);
+    $this->drupalGet('group/entity_test/' . $entity->pid . '/admin/people/add-user');
+    $this->assertField('edit-field-name');
+    $elements = $this->xpath('//select[@id="edit-field-name"]//option');
+    $this->assertEqual(count($elements), 2, '2 options available for selection');
+    $elements = $this->xpath('//select[@id="edit-field-name"]//option[@value="group_audience_entity_test_test"]');
+    $this->assertTrue(isset($elements[0]), '<em>group_audience_entity_test_test</em> field available for selection');
+    $elements = $this->xpath('//select[@id="edit-field-name"]//option[@value="group_audience_entity_test_test2"]');
+    $this->assertTrue(isset($elements[0]), '<em>group_audience_entity_test_test2</em> field available for selection');
+
+    // Revert the field settings to the previous state.
+    $field['group_audience_entity_test_test2']['settings']['handler_settings']['target_bundles'] = array('test2');
+    field_update_field($field['group_audience_entity_test_test2']);
+    $this->drupalGet('group/entity_test/' . $entity->pid . '/admin/people/add-user');
+    $this->assertNoField('edit-field-name');
+
+    // Change the third field to apply to this entity type. In this case the
+    // select box should be shown, as well.
+    $field['group_audience_entity_test2']['settings']['target_type'] = 'entity_test';
+    field_update_field($field['group_audience_entity_test2']);
+    $this->drupalGet('group/entity_test/' . $entity->pid . '/admin/people/add-user');
+    $this->assertField('edit-field-name');
+    $elements = $this->xpath('//select[@id="edit-field-name"]//option');
+    $this->assertEqual(count($elements), 2, '2 options available for selection');
+    $elements = $this->xpath('//select[@id="edit-field-name"]//option[@value="group_audience_entity_test_test"]');
+    $this->assertTrue(isset($elements[0]), '<em>group_audience_entity_test_test</em> field available for selection');
+    $elements = $this->xpath('//select[@id="edit-field-name"]//option[@value="group_audience_entity_test2"]');
+    $this->assertTrue(isset($elements[0]), '<em>group_audience_entity_test2</em> field available for selection');
   }
 }
 
@@ -360,5 +472,79 @@ class OgUiMigrate7000TestCase extends UpgradePathTestCase {
       $this->assertEqual($permissions[$anon_rid], array_filter($node_info['anon']), t('Correct permissions were set for non-member role in @type group.', array('@type' => $node_info['name'])));
       $this->assertEqual($permissions[$auth_rid], array_filter($node_info['auth']), t('Correct permissions were set for member role in @type group.', array('@type' => $node_info['name'])));
     }
+  }
+}
+
+/**
+ * Joining to a private group status.
+ */
+class OgUiPrivateGroupStatus extends DrupalWebTestCase {
+  public $user;
+  public $group;
+
+  public static function getInfo() {
+    return array(
+      'name'  => 'Subscribe to private groups',
+      'description'  => 'Testing the automatic approval of a membership request for a private group.',
+      'group' => 'Organic groups UI',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp(array('og', 'og_access', 'og_ui'));
+    node_access_rebuild();
+
+    // Creating the content type and the necessary fields for this test.
+    $content_type = $this->drupalCreateContentType();
+    og_create_field(OG_GROUP_FIELD, 'node', $content_type->type);
+    og_create_field(OG_ACCESS_FIELD, 'node', $content_type->type);
+
+    // Creating a private group, and a user.
+    $this->group = $this->drupalCreateNode(array('type' => $content_type->type));
+
+    $wrapper = entity_metadata_wrapper('node', $this->group);
+    $wrapper->{OG_GROUP_FIELD}->set(TRUE);
+    $wrapper->{OG_ACCESS_FIELD}->set(1);
+    $wrapper->save();
+    $this->user = $this->drupalCreateUser();
+  }
+
+  /**
+   * The variable "og_ui_deny_subscribe_without_approval" responsible for
+   * determine that when the user ask to join to a private group their
+   * membership status will be pending. By default his value is true. The test
+   * has two parts:
+   *
+   * 1. Checking first that a membership request is defined as pending.
+   * 2. Change his value to false and verify that the membership status will
+   *    approved automatically.
+   */
+  public function testMemberShipRequestStatus() {
+    $this->drupalLogin($this->user);
+
+    // When the user ask to join a private group we need to verify that the
+    // membership will be pending.
+    $this->drupalPost('group/node/' . $this->group->nid . '/subscribe/og_user_node', array(), t('Join'));
+    $this->assertTrue(og_is_member('node', $this->group->nid, 'user', $this->user, array(OG_STATE_PENDING)), 'The user membership request is pending.');
+
+    // Delete the membership.
+    $query = new entityFieldQuery();
+    $result = $query
+      ->entityCondition('entity_type', 'og_membership')
+      ->propertyCondition('etid', $this->user->uid)
+      ->propertyCondition('entity_type', 'user')
+      ->propertyCondition('gid', $this->group->nid)
+      ->propertyCondition('group_type', 'node')
+      ->execute();
+    og_membership_delete_multiple(array_keys($result['og_membership']));
+
+    // Change the approval variable and ask to join the private group.
+    $roles = og_roles('node', $this->group->type);
+    og_role_grant_permissions(array_search(OG_ANONYMOUS_ROLE, $roles), array('subscribe without approval'));
+    variable_set('og_ui_deny_subscribe_without_approval', FALSE);
+
+    // Verify the user membership is approved automatically.
+    $this->drupalPost('group/node/' . $this->group->nid . '/subscribe/og_user_node', array(), t('Join'));
+    $this->assertTrue(og_is_member('node', $this->group->nid, 'user', $this->user, array(OG_STATE_ACTIVE)), 'The user membership request is active.');
   }
 }
