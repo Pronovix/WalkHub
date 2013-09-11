@@ -133,9 +133,9 @@ function _walkhub_collection_index($uid = 0) {
     ':group_type' => 'node',
   ))->fetchCol();
 
-  return array_filter(array_map(function ($node) {
+  return array_values(array_filter(array_map(function ($node) {
     return walkhub_serialize_safely(new WalkhubWalkthroughCollection($node));
-  }, node_load_multiple($nids)));
+  }, node_load_multiple($nids))));
 }
 
 /**
