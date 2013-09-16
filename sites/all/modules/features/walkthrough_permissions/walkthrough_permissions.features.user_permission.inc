@@ -291,6 +291,24 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create walkthrough_collection content'.
+  $permissions['create walkthrough_collection content'] = array(
+    'name' => 'create walkthrough_collection content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create walkthrough_public_collection content'.
+  $permissions['create walkthrough_public_collection content'] = array(
+    'name' => 'create walkthrough_public_collection content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create walkthrough_set content'.
   $permissions['create walkthrough_set content'] = array(
     'name' => 'create walkthrough_set content',
@@ -318,6 +336,20 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any walkthrough_collection content'.
+  $permissions['delete any walkthrough_collection content'] = array(
+    'name' => 'delete any walkthrough_collection content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any walkthrough_public_collection content'.
+  $permissions['delete any walkthrough_public_collection content'] = array(
+    'name' => 'delete any walkthrough_public_collection content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any walkthrough_set content'.
   $permissions['delete any walkthrough_set content'] = array(
     'name' => 'delete any walkthrough_set content',
@@ -339,6 +371,24 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'delete own walkthrough content'.
   $permissions['delete own walkthrough content'] = array(
     'name' => 'delete own walkthrough content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own walkthrough_collection content'.
+  $permissions['delete own walkthrough_collection content'] = array(
+    'name' => 'delete own walkthrough_collection content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own walkthrough_public_collection content'.
+  $permissions['delete own walkthrough_public_collection content'] = array(
+    'name' => 'delete own walkthrough_public_collection content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
     ),
@@ -390,6 +440,20 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any walkthrough_collection content'.
+  $permissions['edit any walkthrough_collection content'] = array(
+    'name' => 'edit any walkthrough_collection content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any walkthrough_public_collection content'.
+  $permissions['edit any walkthrough_public_collection content'] = array(
+    'name' => 'edit any walkthrough_public_collection content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any walkthrough_set content'.
   $permissions['edit any walkthrough_set content'] = array(
     'name' => 'edit any walkthrough_set content',
@@ -411,6 +475,24 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'edit own walkthrough content'.
   $permissions['edit own walkthrough content'] = array(
     'name' => 'edit own walkthrough content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own walkthrough_collection content'.
+  $permissions['edit own walkthrough_collection content'] = array(
+    'name' => 'edit own walkthrough_collection content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own walkthrough_public_collection content'.
+  $permissions['edit own walkthrough_public_collection content'] = array(
+    'name' => 'edit own walkthrough_public_collection content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
     ),
