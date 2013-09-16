@@ -126,9 +126,7 @@ function walkhub_collections_og_features_default_permissions() {
 
   // Exported og permission: 'node:walkthrough_collection:subscribe'
   $permissions['node:walkthrough_collection:subscribe'] = array(
-    'roles' => array(
-      'non-member' => 'non-member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:walkthrough_collection:subscribe without approval'
@@ -318,7 +316,9 @@ function walkhub_collections_og_features_default_permissions() {
 
   // Exported og permission: 'node:walkthrough_public_collection:subscribe'
   $permissions['node:walkthrough_public_collection:subscribe'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:walkthrough_public_collection:subscribe without approval'
