@@ -19,7 +19,15 @@ function walkhub_collections_ctools_plugin_api($module = NULL, $api = NULL) {
 function walkhub_collections_node_info() {
   $items = array(
     'walkthrough_collection' => array(
-      'name' => t('Collection'),
+      'name' => t('Private Collection'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'walkthrough_public_collection' => array(
+      'name' => t('Public Collection'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

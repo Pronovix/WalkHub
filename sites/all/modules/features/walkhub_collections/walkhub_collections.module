@@ -78,6 +78,11 @@ class WalkhubWalkthroughCollection implements WalkhubObject {
   /**
    * @filter none
    */
+  public $type = 'private';
+
+  /**
+   * @filter none
+   */
   public $uuid;
 
   /**
@@ -102,15 +107,28 @@ class WalkhubWalkthroughCollection implements WalkhubObject {
   }
 }
 
+class WalkhubWalkthroughPublicCollection extends WalkhubWalkthroughCollection {
+  /**
+   * @filter none
+   */
+  public $type = 'public';
+}
+
+function _walkhub_collections_serialize_safely($node) {
+  module_load_include('inc', 'walkhub');
+  $class = $node->type === 'walkthrough_public_collection' ? (new WalkhubWalkthroughPublicCollection($node)) : (new WalkhubWalkthroughCollection($node));
+  return walkhub_serialize_safely($class);
+}
+
 function _walkhub_collection_retrieve($uuid) {
   module_load_include('inc', 'walkhub');
-  $node = _walkhub_node_retrieve($uuid, 'walkthrough_collection');
-  return $node ? walkhub_serialize_safely(new WalkhubWalkthroughCollection($node)) : $node;
+  $node = _walkhub_node_retrieve($uuid, array('walkthrough_collection', 'walkthrough_public_collection'));
+  return $node ? _walkhub_collections_serialize_safely($node) : $node;
 }
 
 function _walkhub_collection_resource_access($op, $args) {
   module_load_include('inc', 'walkhub');
-  return _walkhub_node_resource_access('walkthrough_collection', $op, $args);
+  return _walkhub_node_resource_access(array('walkthrough_collection', 'walkthrough_public_collection'), $op, $args);
 }
 
 function _walkhub_collection_index($uid = 0) {
@@ -133,9 +151,7 @@ function _walkhub_collection_index($uid = 0) {
     ':group_type' => 'node',
   ))->fetchCol();
 
-  return array_values(array_filter(array_map(function ($node) {
-    return walkhub_serialize_safely(new WalkhubWalkthroughCollection($node));
-  }, node_load_multiple($nids))));
+  return array_values(array_filter(array_map('_walkhub_collections_serialize_safely', node_load_multiple($nids))));
 }
 
 /**
@@ -153,6 +169,11 @@ function walkhub_collections_walkhub_listing_alter(EntityFieldQuery $q) {
     else { // no group UUID given; the result must not be in any groups
       $q->addTag('walkhub_collections_not_in_group');
     }
+  }
+
+  if (isset($q->entityConditions['bundle']) &&
+      ($q->entityConditions['bundle']['value'] === 'walkthrough_collection' || $q->entityConditions['bundle']['value'] === 'walkthrough_public_collection')) {
+    $q->entityCondition('bundle', array('walkthrough_collection', 'walkthrough_public_collection'), 'IN');
   }
 }
 
