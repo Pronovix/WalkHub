@@ -328,7 +328,9 @@ function walkhub_collections_og_features_default_permissions() {
 
   // Exported og permission: 'node:walkthrough_public_collection:unsubscribe'
   $permissions['node:walkthrough_public_collection:unsubscribe'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:walkthrough_public_collection:update any branding content'
