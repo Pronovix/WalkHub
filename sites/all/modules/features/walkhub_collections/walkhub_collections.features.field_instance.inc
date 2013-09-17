@@ -93,7 +93,7 @@ function walkhub_collections_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
     'label' => 'Groups audience',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
@@ -121,6 +121,7 @@ function walkhub_collections_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
@@ -187,6 +188,45 @@ function walkhub_collections_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-walkthrough_collection-field_branding'
+  $field_instances['node-walkthrough_collection-field_branding'] = array(
+    'bundle' => 'walkthrough_collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_branding',
+    'label' => 'Branding',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-walkthrough_collection-group_group'
   $field_instances['node-walkthrough_collection-group_group'] = array(
     'bundle' => 'walkthrough_collection',
@@ -242,6 +282,45 @@ function walkhub_collections_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'node-walkthrough_public_collection-field_branding'
+  $field_instances['node-walkthrough_public_collection-field_branding'] = array(
+    'bundle' => 'walkthrough_public_collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_branding',
+    'label' => 'Branding',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
@@ -370,6 +449,7 @@ function walkhub_collections_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Branding');
   t('Determine if this is an OG group.');
   t('Group');
   t('Groups audience');
