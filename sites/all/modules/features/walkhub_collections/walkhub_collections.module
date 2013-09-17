@@ -90,10 +90,18 @@ class WalkhubWalkthroughCollection implements WalkhubObject {
    */
   public $title;
 
+  /**
+   * @filter none
+   */
+  public $branding;
+
   public function __construct(stdClass $node = NULL) {
     if ($node) {
+      module_load_include('inc', 'walkhub');
       $this->uuid = $node->uuid;
       $this->title = $node->title;
+      $this->branding = walkhub_field_get_references('node', $node, 'field_branding');
+      $this->branding = $this->branding ? reset($this->branding) : NULL;
     }
   }
 
