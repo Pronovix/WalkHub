@@ -162,7 +162,7 @@ function walkhub_collections_walkhub_listing_alter(EntityFieldQuery $q) {
   $group = isset($_GET['collection']) ? $_GET['collection'] : NULL;
   if ($group !== NULL) { // if collection parameter is given
     if ($group) { // group UUID given
-      $node = _walkhub_node_retrieve($group, 'walkthrough_collection');
+      $node = _walkhub_node_retrieve($group, array('walkthrough_collection', 'walkthrough_public_collection'));
       // no need to check for $node, exception will be thrown
       $q->fieldCondition('og_group_ref', 'target_id', $node->nid);
     }
