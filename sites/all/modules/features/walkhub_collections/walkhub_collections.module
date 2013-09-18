@@ -30,7 +30,9 @@ function walkhub_collections_node_presave($node) {
     }
     foreach ($steps as $step) {
       $stepnode = node_load($step);
-      $stepnode->og_group_ref = $node->og_group_ref;
+      if (isset($node->og_group_ref)) {
+        $stepnode->og_group_ref = $node->og_group_ref;
+      }
       node_save($stepnode);
     }
   }
