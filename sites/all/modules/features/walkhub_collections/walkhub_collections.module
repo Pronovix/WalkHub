@@ -10,7 +10,9 @@ include_once 'walkhub_collections.features.inc';
  * Implements hook_walkhub_import_step_alter().
  */
 function walkhub_collections_walkhub_import_step_alter($node, $walkthrough_node) {
-  $node->og_group_ref = $walkthrough_node->og_group_ref;
+  if (isset($walkthrough_node->og_group_ref)) {
+    $node->og_group_ref = $walkthrough_node->og_group_ref;
+  }
 }
 
 /**
