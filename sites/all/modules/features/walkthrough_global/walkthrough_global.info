@@ -4,6 +4,7 @@ package = Walkthrough
 dependencies[] = ctools
 dependencies[] = diff
 dependencies[] = flag
+dependencies[] = services
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
