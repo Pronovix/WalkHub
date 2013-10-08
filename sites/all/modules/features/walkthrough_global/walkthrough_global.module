@@ -5,6 +5,8 @@
  */
 
 include_once 'walkthrough_global.features.inc';
+
+
 /**
  * Implements hook_menu().
  */
@@ -42,7 +44,7 @@ function walkthrough_global_libraries_info() {
     'name' => 'phpseclib',
     'vendor url' => 'http://phpseclib.sourceforge.net',
     'download url' => 'http://phpseclib.sourceforge.net',
-    'version' => '2.1',
+    'version' => '0.3.5',
     'files' => array(
       'php' => array(
         'Crypt/RSA.php',
@@ -116,9 +118,29 @@ function walkthrough_global_services_resources() {
 }
 
 /**
- *
+ * Access callback to prevent the robots creating new account using this endpoint.
  */
 function _walkthrough_global_resource_registration_access() {
-  if (($library = libraries_load("phpseclib")) && !empty($library['loaded'])) {
+  $public_key = variable_get('walkthrough_global_public_key', NULL);
+  // Check that every necessary variable exists.
+  if (!is_null($public_key) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['mail']) && !empty($_POST['token'])) {
+    // Try to load the phpseclib library.
+    $library = libraries_load("phpseclib");
+
+    // If the library loaded successfully start the validation process.
+    if (!empty($library['loaded'])) {
+      $rsa = new Crypt_RSA();
+      $rsa->loadKey($public_key);
+      // Decrypt the received token.
+      $decrypted_token = $rsa->decrypt($_POST['token']);
+      // The following string should be the result of the decryption process.
+      $expected_token_result = $_POST['username'] . $_POST['password'] . $_POST['mail'];
+
+      if ($decrypted_token === $expected_token_result) {
+        return TRUE;
+      }
+    }
   }
+
+  return FALSE;
 }
