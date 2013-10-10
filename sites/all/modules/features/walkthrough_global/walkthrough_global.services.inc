@@ -16,6 +16,7 @@ function _walkthrough_global_resource_registration($username, $mail, $password, 
   $form_state['values'] = array(
     'name' => $username,
     'mail' => $mail,
+    'legal_accept' => 1,
     'pass' => array(
       'pass1' => $password,
       'pass2' => $password,
