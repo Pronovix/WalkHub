@@ -17,6 +17,8 @@ function _walkthrough_global_resource_registration($username, $mail, $password, 
     'name' => $username,
     'mail' => $mail,
     'legal_accept' => 1,
+    'extras-1' => 1,
+    'status' => 1,
     'pass' => array(
       'pass1' => $password,
       'pass2' => $password,
