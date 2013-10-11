@@ -77,7 +77,7 @@ function walkthrough_global_services_resources() {
             'optional' => FALSE,
           ),
           array(
-            'name' => 'rsatoken',
+            'name' => 'token',
             'type' => 'string',
             'description' => 'A valid token to filter out robots.',
             'source' => array(
