@@ -103,15 +103,16 @@ function walkthrough_global_services_resources() {
 /**
  * Access callback to prevent the robots creating new account using this endpoint.
  */
-function _walkthrough_global_resource_registration_access() {
+function _walkthrough_global_resource_registration_access($username, $mail, $password, $token) {
   // Get the secret key.
   $secret_key = variable_get('walkthrough_global_secret_key', NULL);
+
   // Check that every necessary variable exists.
-  if (!is_null($secret_key) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['mail']) && !empty($_POST['token'])) {
+  if (!is_null($secret_key)) {
     // Concatenate the username, mail and password after the secret key
-    $secret_key .= $_POST['username'] . $_POST['mail'] . $_POST['password'];
+    $secret_key .= $username . $mail . $password;
     // Check that the two hash is the same.
-    if ($_POST['token'] == sha1($secret_key)) {
+    if ($token == sha1($secret_key)) {
       return TRUE;
     }
   }
