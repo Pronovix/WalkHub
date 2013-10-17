@@ -5,3 +5,117 @@
  */
 
 include_once 'walkthrough_global.features.inc';
+
+
+/**
+ * Implements hook_menu().
+ */
+function walkthrough_global_menu() {
+  $items = array();
+
+  $items['admin/config/services/walkthrough'] = array(
+    'title' => 'Walkthrough configuration',
+    'type' => MENU_NORMAL_ITEM,
+    'access arguments' => array('administer walkthrough'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('walkthrough_global_configuration_form'),
+    'file' => 'walkthrough_global.admin.inc'
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function walkthrough_global_permission() {
+  return array(
+    'administer walkthrough' => array(
+      'title' => t('Administer walkthrough'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_services_resources().
+ */
+function walkthrough_global_services_resources() {
+  $resources = array();
+
+  $resources['walkhub-user'] = array(
+    'actions' => array(
+      'registration' => array(
+        'help' => 'Create a new user account.',
+        'callback' => '_walkthrough_global_resource_registration',
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'username',
+            'type' => 'string',
+            'description' => 'A valid username',
+            'source' => array(
+              'data' => 'username',
+            ),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'mail',
+            'type' => 'string',
+            'description' => 'A valid e-mail',
+            'source' => array(
+              'data' => 'mail',
+            ),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'password',
+            'type' => 'string',
+            'description' => 'A valid password',
+            'source' => array(
+              'data' => 'password',
+            ),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'token',
+            'type' => 'string',
+            'description' => 'A valid token to filter out robots.',
+            'source' => array(
+              'data' => 'token',
+            ),
+            'optional' => FALSE,
+          ),
+        ),
+        'access callback' => '_walkthrough_global_resource_registration_access',
+        'access arguments append' => TRUE,
+        'file' => array(
+          'type' => 'inc',
+          'module' => 'walkthrough_global',
+          'name' => 'walkthrough_global.services',
+        ),
+      ),
+    ),
+  );
+
+  return $resources;
+}
+
+/**
+ * Access callback to prevent the robots creating new account using this endpoint.
+ */
+function _walkthrough_global_resource_registration_access($username, $mail, $password, $token) {
+  // Get the secret key.
+  $secret_key = variable_get('walkthrough_global_secret_key', NULL);
+
+  // Check that every necessary variable exists.
+  if (!is_null($secret_key)) {
+    // Concatenate the username, mail and password after the secret key
+    $secret_key .= $username . $mail . $password;
+    // Check that the two hash is the same.
+    if ($token == sha1($secret_key)) {
+      return TRUE;
+    }
+  }
+
+  return FALSE;
+}
