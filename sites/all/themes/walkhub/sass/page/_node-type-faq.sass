@@ -1,0 +1,47 @@
+// ---------------------
+// FAQ Page
+// ---------------------
+
+.node-type-faq
+  .field-name-field-faq-questions
+    & > .field-items > .field-item
+      margin-bottom: 2px
+      position: relative
+
+  .field-name-field-faq-question
+    +font-size(2)
+    @extend button
+    display: block
+
+    .field-items
+      padding-right: 40px
+
+    &:after
+      +font-icomoon
+      content: '\e020'
+      display: block
+      position: absolute
+      top: .6em
+      right: 1em
+
+    &.open:after
+      content: '\e023'
+
+  .field-name-field-faq-answer
+    +font-size(1.2)
+    display: none
+    padding: 0 10px
+
+  .backtotop
+    background-repeat: no-repeat
+    padding: 10px
+    +font-size(1.2)
+    text-align: right
+    cursor: pointer
+    background-color: $color-white
+
+    &:after
+      +font-icomoon
+      content: '\e023'
+      margin-left: .3em
+      background-color: $color-white

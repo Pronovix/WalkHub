@@ -1,9 +1,8 @@
 <?php
-/**
- * Load template files
- *
- * $files   Contains alphabetized list of files that will be required
+/*
+ * @file
  */
+
 $files = array(
   'elements.inc',
   'form.inc',
@@ -14,11 +13,12 @@ $files = array(
 function _zurb_foundation_load($files) {
   $tp = drupal_get_path('theme', 'zurb_foundation');
   $file = '';
+  $dir = dirname(__FILE__);
 
   // Check file path and '.inc' extension
   foreach($files as $file) {
-    $file_path = __DIR__ .'/inc/' . $file;
-    if ( strpos($file,'.inc') > 0 && file_exists($file_path)) {
+    $file_path = $dir . '/inc/' . $file;
+    if (strpos($file,'.inc') > 0 && file_exists($file_path)) {
       require_once($file_path);
     }
   }
@@ -71,8 +71,8 @@ function zurb_foundation_html_head_alter(&$head_elements) {
  *
  * Print breadcrumbs as a list, with separators.
  */
-function zurb_foundation_breadcrumb($vars) {
-  $breadcrumb = $vars['breadcrumb'];
+function zurb_foundation_breadcrumb($variables) {
+  $breadcrumb = $variables['breadcrumb'];
 
   if (!empty($breadcrumb)) {
     // Provide a navigational heading to give context for breadcrumb links to
@@ -101,8 +101,19 @@ function zurb_foundation_field($variables) {
     $output .= '<div ' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
   }
 
-  foreach ($variables['items'] as $delta => $item) {
-    $output .= drupal_render($item);
+  // Edit module requires some extra wrappers to work.
+  if (module_exists('edit')) {
+    $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
+    foreach ($variables['items'] as $delta => $item) {
+      $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+      $output .= '<div class="' . $classes . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+    }
+    $output .= '</div>';
+  }
+  else {
+    foreach ($variables['items'] as $item) {
+      $output .= drupal_render($item);
+    }
   }
 
   // Render the top-level DIV.
@@ -136,72 +147,163 @@ function zurb_foundation_field__taxonomy_term_reference($variables) {
 }
 
 /**
- * Implements theme_links() targeting the main menu specifically
- * Outputs Foundation Nav bar http://foundation.zurb.com/docs/navigation.php
- *
+ * Implements theme_links() targeting the main menu specifically.
+ * Formats links for Top Bar http://foundation.zurb.com/docs/components/top-bar.html
  */
-function zurb_foundation_links__system_main_menu($vars) {
-  // Get all the main menu links
-  $menu_links = menu_tree_output(menu_tree_all_data('main-menu'));
+function zurb_foundation_links__topbar_main_menu($variables) {
+  // We need to fetch the links ourselves because we need the entire tree.
+  $links = menu_tree_output(menu_tree_all_data(variable_get('menu_main_links_source', 'main-menu')));
+  $output = _zurb_foundation_links($links);
+  $variables['attributes']['class'][] = 'left';
 
-  // Initialize some variables to prevent errors
-  $output = '';
-  $sub_menu = '';
-
-  foreach ($menu_links as $key => $link) {
-    // Add special class needed for Foundation dropdown menu to work
-    !empty($link['#below']) ? $link['#attributes']['class'][] = 'has-flyout' : '';
-
-    // Render top level and make sure we have an actual link
-    if (!empty($link['#href'])) {
-      $output .= '<li' . drupal_attributes($link['#attributes']) . '>' . l($link['#title'], $link['#href']);
-      // Get sub navigation links if they exist
-      foreach ($link['#below'] as $key => $sub_link) {
-        if (!empty($sub_link['#href'])) {
-          $sub_menu .= '<li>' . l($sub_link['#title'], $sub_link['#href']) . '</li>';
-        }
-      }
-      $output .= !empty($link['#below']) ? '<a href="#" class="flyout-toggle"><span> </span></a><ul class="flyout">' . $sub_menu . '</ul>' : '';
-
-      // Reset dropdown to prevent duplicates
-      unset($sub_menu);
-      $sub_menu = '';
-
-      $output .=  '</li>';
-    }
-  }
-  return '<ul class="nav-bar">' . $output . '</ul>';
+  return '<ul' . drupal_attributes($variables['attributes']) . '>' . $output . '</ul>';
 }
 
 /**
+ * Implements theme_links() targeting the secondary menu specifically.
+ * Formats links for Top Bar http://foundation.zurb.com/docs/components/top-bar.html
+ */
+function zurb_foundation_links__topbar_secondary_menu($variables) {
+  // We need to fetch the links ourselves because we need the entire tree.
+  $links = menu_tree_output(menu_tree_all_data(variable_get('menu_secondary_links_source', 'user-menu')));
+  $output = _zurb_foundation_links($links);
+  $variables['attributes']['class'][] = 'right';
+
+  return '<ul' . drupal_attributes($variables['attributes']) . '>' . $output . '</ul>';
+}
+
+/**
+ * Helper function to output a Drupal menu as a Foundation Top Bar.
+ *
+ * @param array
+ *   An array of menu links.
+ *
+ * @return string
+ *   A rendered list of links, with no <ul> or <ol> wrapper.
+ *
+ * @see zurb_foundation_links__system_main_menu()
+ * @see zurb_foundation_links__system_secondary_menu()
+ */
+function _zurb_foundation_links($links) {
+  $output = '';
+
+  foreach (element_children($links) as $key) {
+    $output .= _zurb_foundation_render_link($links[$key]);
+  }
+
+  return $output;
+}
+
+/**
+ * Helper function to recursively render sub-menus.
+ *
+ * @param array
+ *   An array of menu links.
+ *
+ * @return string
+ *   A rendered list of links, with no <ul> or <ol> wrapper.
+ *
+ * @see _zurb_foundation_links()
+ */
+function _zurb_foundation_render_link($link) {
+  $output = '';
+
+  // This is a duplicate link that won't get the dropdown class and will only
+  // show up in small-screen.
+  $small_link = $link;
+
+  if (!empty($link['#below'])) {
+    $link['#attributes']['class'][] = 'has-dropdown';
+  }
+
+  // Render top level and make sure we have an actual link.
+  if (!empty($link['#href'])) {
+    $rendered_link = NULL;
+
+    // Foundation offers some of the same functionality as Special Menu Items;
+    // ie: Dividers and Labels in the top bar. So let's make sure that we
+    // render them the Foundation way.
+    if (module_exists('special_menu_items')) {
+      if ($link['#href'] === '<nolink>') {
+        $rendered_link = '<label>' . $link['#title'] . '</label>';
+      }
+      else if ($link['#href'] === '<separator>') {
+        $link['#attributes']['class'][] = 'divider';
+        $rendered_link = '';
+      }
+    }
+
+    if (!isset($rendered_link)) {
+      $rendered_link = theme('zurb_foundation_menu_link', array('link' => $link));
+    }
+
+    // Test for localization options and apply them if they exist.
+    if (isset($link['#localized_options']['attributes']) && is_array($link['#localized_options']['attributes'])) {
+      $link['#attributes'] = array_merge($link['#attributes'], $link['#localized_options']['attributes']);
+    }
+    $output .= '<li' . drupal_attributes($link['#attributes']) . '>' . $rendered_link;
+
+    if (!empty($link['#below'])) {
+      // Add repeated link under the dropdown for small-screen.
+      $small_link['#attributes']['class'][] = 'show-for-small';
+      $sub_menu = '<li' . drupal_attributes($small_link['#attributes']) . '>' . l($link['#title'], $link['#href'], $link['#localized_options']);
+
+      // Build sub nav recursively.
+      foreach ($link['#below'] as $sub_link) {
+        if (!empty($sub_link['#href'])) {
+          $sub_menu .= _zurb_foundation_render_link($sub_link);
+        }
+      }
+
+      $output .= '<ul class="dropdown">' . $sub_menu . '</ul>';
+    }
+
+    $output .=  '</li>';
+  }
+
+  return $output;
+}
+
+/**
+ * Theme function to render a single top bar menu link.
+ */
+function theme_zurb_foundation_menu_link($variables) {
+  $link = $variables['link'];
+  return l($link['#title'], $link['#href'], $link['#localized_options']);
+}
+/*
  * Implements hook_preprocess_block()
  */
-function zurb_foundation_preprocess_block(&$vars) {
+function zurb_foundation_preprocess_block(&$variables) {
   // Convenience variable for block headers.
-  $title_class = &$vars['title_attributes_array']['class'];
+  $title_class = &$variables['title_attributes_array']['class'];
 
   // Generic block header class.
   $title_class[] = 'block-title';
 
   // In the header region visually hide block titles.
-  if ($vars['block']->region == 'header') {
+  if ($variables['block']->region == 'header') {
     $title_class[] = 'element-invisible';
   }
 
   // Add a unique class for each block for styling.
-  $vars['classes_array'][] = $vars['block_html_id'];
+  $variables['classes_array'][] = $variables['block_html_id'];
 
   // Add classes based on region.
-  switch ($vars['elements']['#block']->region) {
-    // Add a striping class
+  switch ($variables['elements']['#block']->region) {
+    // Clear blocks in this region
     case 'sidebar_first':
+      $variables['classes_array'][] = 'clearfix';
+      break;
+    // Add a striping class & clear blocks in this region
     case 'sidebar_second':
-      $vars['classes_array'][] = 'block-' . $vars['zebra'];
-    break;
+      $variables['classes_array'][] = 'block-' . $variables['zebra'];
+      $variables['classes_array'][] = 'clearfix';
+      break;
 
     case 'header':
-      $vars['classes_array'][] = 'header';
-    break;
+      $variables['classes_array'][] = 'header';
+      break;
 
     default;
   }
@@ -209,53 +311,54 @@ function zurb_foundation_preprocess_block(&$vars) {
 /**
  * Implements template_preprocess_field().
  */
-function zurb_foundation_preprocess_field(&$vars) {
-  $vars['title_attributes_array']['class'][] = 'field-label';
+function zurb_foundation_preprocess_field(&$variables) {
+  $variables['title_attributes_array']['class'][] = 'field-label';
 
   // Edit classes for taxonomy term reference fields.
-  if ($vars['field_type_css'] == 'taxonomy-term-reference') {
-    $vars['content_attributes_array']['class'][] = 'comma-separated';
+  if ($variables['field_type_css'] == 'taxonomy-term-reference') {
+    $variables['content_attributes_array']['class'][] = 'comma-separated';
   }
 
-  // Convinence variables
-  $name = $vars['element']['#field_name'];
-  $bundle = $vars['element']['#bundle'];
-  $mode = $vars['element']['#view_mode'];
-  $classes = &$vars['classes_array'];
-  $title_classes = &$vars['title_attributes_array']['class'];
-  $content_classes = &$vars['content_attributes_array']['class'];
+  // Convenience variables.
+  $name = $variables['element']['#field_name'];
+  $bundle = $variables['element']['#bundle'];
+  $mode = $variables['element']['#view_mode'];
+  $classes = &$variables['classes_array'];
+  $title_classes = &$variables['title_attributes_array']['class'];
+  $content_classes = &$variables['content_attributes_array']['class'];
   $item_classes = array();
 
-  // Global field classes
+  // Global field classes.
   $classes[] = 'field-wrapper';
   $content_classes[] = 'field-items';
   $item_classes[] = 'field-item';
 
-  // Uncomment the lines below to see variables you can use to target a field
+  // Uncomment the lines below to see variables you can use to target a field.
   // print '<strong>Name:</strong> ' . $name . '<br/>';
   // print '<strong>Bundle:</strong> ' . $bundle  . '<br/>';
   // print '<strong>Mode:</strong> ' . $mode .'<br/>';
 
-  // Add specific classes to targeted fields
+  // Add specific classes to targeted fields.
   if(isset($field)) {
     switch ($mode) {
-      // All teasers
+      // All teasers.
       case 'teaser':
         switch ($field) {
-          // Teaser read more links
+          // Teaser read more links.
           case 'node_link':
             $item_classes[] = 'more-link';
             break;
-          // Teaser descriptions
+          // Teaser descriptions.
           case 'body':
           case 'field_description':
             $item_classes[] = 'description';
             break;
         }
-      break;
+        break;
     }
   }
- // Check if exists
+
+// Check if exists
 //  switch ($field) {
 //    case 'field_authors':
 //      $title_classes[] = 'inline';
@@ -264,59 +367,59 @@ function zurb_foundation_preprocess_field(&$vars) {
 //      break;
 //  }
 
-  // Apply odd or even classes along with our custom classes to each item
-  foreach ($vars['items'] as $delta => $item) {
+  // Apply odd or even classes along with our custom classes to each item.
+  foreach ($variables['items'] as $delta => $item) {
     $item_classes[] = $delta % 2 ? 'odd' : 'even';
-    $vars['item_attributes_array'][$delta]['class'] = $item_classes;
+    $variables['item_attributes_array'][$delta]['class'] = $item_classes;
   }
 
   // Add class to a specific fields across content types.
-  switch ($vars['element']['#field_name']) {
+  switch ($variables['element']['#field_name']) {
     case 'body':
-      $vars['classes_array'] = array('body');
+      $variables['classes_array'] = array('body');
       break;
 
     case 'field_summary':
-      $vars['classes_array'][] = 'text-teaser';
+      $variables['classes_array'][] = 'text-teaser';
       break;
 
     case 'field_link':
     case 'field_date':
       // Replace classes entirely, instead of adding extra.
-      $vars['classes_array'] = array('text-content');
+      $variables['classes_array'] = array('text-content');
       break;
 
     case 'field_image':
       // Replace classes entirely, instead of adding extra.
-      $vars['classes_array'] = array('image');
+      $variables['classes_array'] = array('image');
       break;
 
     default:
       break;
   }
   // Add classes to body based on content type and view mode.
-  if ($vars['element']['#field_name'] == 'body') {
+  if ($variables['element']['#field_name'] == 'body') {
 
     // Add classes to Foobar content type.
-    if ($vars['element']['#bundle'] == 'foobar') {
-      $vars['classes_array'][] = 'text-secondary';
+    if ($variables['element']['#bundle'] == 'foobar') {
+      $variables['classes_array'][] = 'text-secondary';
     }
 
     // Add classes to other content types with view mode 'teaser';
-    elseif ($vars['element']['#view_mode'] == 'teaser') {
-      $vars['classes_array'][] = 'text-secondary';
+    elseif ($variables['element']['#view_mode'] == 'teaser') {
+      $variables['classes_array'][] = 'text-secondary';
     }
 
     // The rest is text-content.
     else {
-      $vars['classes_array'][] = 'field';
+      $variables['classes_array'][] = 'field';
     }
   }
 }
 /**
  * Implements template_preprocess_html().
  *
- * Adds additional classes
+ * Adds additional classes.
  */
 function zurb_foundation_preprocess_html(&$variables) {
   global $language;
@@ -337,8 +440,10 @@ function zurb_foundation_preprocess_html(&$variables) {
 
   // Classes for body element. Allows advanced theming based on context
   if (!$variables['is_front']) {
+
     // Add unique class for each page.
     $path = drupal_get_path_alias($_GET['q']);
+
     // Add unique class for each website section.
     list($section, ) = explode('/', $path, 2);
     $arg = explode('/', $_GET['q']);
@@ -367,42 +472,50 @@ function zurb_foundation_preprocess_html(&$variables) {
         break;
     }
   }
+  /*
+   * Zepto Fallback
+   *   Use with caution.
+   */
+  // drupal_add_js('document.write(\'<script src=/' . drupal_get_path('theme', 'zurb_foundation') .'/js/vendor/\'
+  //       + (\'__proto__\' in {} ? \'zepto\' : \'jquery\')
+  //       + \'.js><\/script>\');',
+  //       'inline', array('group',JS_LIBRARY));
 }
 
 /**
  * Implements template_preprocess_node
  *
- * Add template suggestions and classes
+ * Add template suggestions and classes.
  */
-function zurb_foundation_preprocess_node(&$vars) {
-  // Add node--node_type--view_mode.tpl.php suggestions
-  $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
+function zurb_foundation_preprocess_node(&$variables) {
+  // Add node--node_type--view_mode.tpl.php suggestions.
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
 
-  // Add node--view_mode.tpl.php suggestions
-  $vars['theme_hook_suggestions'][] = 'node__' . $vars['view_mode'];
+  // Add node--view_mode.tpl.php suggestions.
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
 
   // Add a class for the view mode.
-  if (!$vars['teaser']) {
-    $vars['classes_array'][] = 'view-mode-' . $vars['view_mode'];
+  if (!$variables['teaser']) {
+    $variables['classes_array'][] = 'view-mode-' . $variables['view_mode'];
   }
 
-  $vars['title_attributes_array']['class'][] = 'node-title';
+  $variables['title_attributes_array']['class'][] = 'node-title';
 
 //  // Add classes based on node type.
-//  switch ($vars['type']) {
+//  switch ($variables['type']) {
 //    case 'news':
 //    case 'pages':
-//      $vars['attributes_array']['class'][] = 'content-wrapper';
-//      $vars['attributes_array']['class'][] = 'text-content';
+//      $variables['attributes_array']['class'][] = 'content-wrapper';
+//      $variables['attributes_array']['class'][] = 'text-content';
 //      break;
 //  }
 //
 //  // Add classes & theme hook suggestions based on view mode.
-//  switch ($vars['view_mode']) {
+//  switch ($variables['view_mode']) {
 //    case 'block_display':
-//      $vars['theme_hook_suggestions'][] = 'node__aside';
-//      $vars['title_attributes_array']['class'] = array('title-block');
-//      $vars['attributes_array']['class'][] = 'block-content';
+//      $variables['theme_hook_suggestions'][] = 'node__aside';
+//      $variables['title_attributes_array']['class'] = array('title-block');
+//      $variables['attributes_array']['class'][] = 'block-content';
 //      break;
 //  }
 }
@@ -410,7 +523,7 @@ function zurb_foundation_preprocess_node(&$vars) {
 /**
  * Implements template_preprocess_page
  *
- * Add convenience variables and template suggestions
+ * Add convenience variables and template suggestions.
  */
 function zurb_foundation_preprocess_page(&$variables) {
   // Add page--node_type.tpl.php suggestions
@@ -424,7 +537,7 @@ function zurb_foundation_preprocess_page(&$variables) {
       'path'  => $variables['logo'],
       'alt'   => strip_tags($variables['site_name']) . ' ' . t('logo'),
       'title' => strip_tags($variables['site_name']) . ' ' . t('Home'),
-            'attributes' => array(
+      'attributes' => array(
         'class' => array('logo'),
       ),
     ));
@@ -451,10 +564,95 @@ function zurb_foundation_preprocess_page(&$variables) {
     ));
   }
 
-  // Site navigation links.
-  $variables['main_menu_links'] = '';
-  if (isset($variables['main_menu'])) {
-    $variables['main_menu_links'] = theme('links__system_main_menu', array(
+  // Top bar.
+  if ($variables['top_bar'] = theme_get_setting('zurb_foundation_top_bar_enable')) {
+    $top_bar_classes = array();
+
+    if (theme_get_setting('zurb_foundation_top_bar_grid')) {
+      $top_bar_classes[] = 'contain-to-grid';
+    }
+
+    if (theme_get_setting('zurb_foundation_top_bar_sticky')) {
+      $top_bar_classes[] = 'sticky';
+    }
+
+    if ($variables['top_bar'] == 2) {
+      $top_bar_classes[] = 'show-for-small';
+    }
+
+    $variables['top_bar_classes'] = implode(' ', $top_bar_classes);
+    $variables['top_bar_menu_text'] = theme_get_setting('zurb_foundation_top_bar_menu_text');
+
+    $top_bar_options = array();
+
+    if (!theme_get_setting('zurb_foundation_top_bar_custom_back_text')) {
+      $top_bar_options[] = 'custom_back_text:false';
+    }
+
+    if ($back_text = theme_get_setting('zurb_foundation_top_bar_back_text')) {
+      if ($back_text !== 'Back') {
+        $top_bar_options[] = "back_text:'{$back_text}'";
+      }
+    }
+
+    if (!theme_get_setting('zurb_foundation_top_bar_is_hover')) {
+      $top_bar_options[] = 'is_hover:false';
+    }
+
+    if (!theme_get_setting('zurb_foundation_top_bar_scrolltop')) {
+      $top_bar_options[] = 'scrolltop:false';
+    }
+
+    $variables['top_bar_options'] = ' data-options="' . implode('; ', $top_bar_options) . '"';
+  }
+
+  // Alternative header.
+  // This is what will show up if the top bar is disabled or enabled only for
+  // mobile.
+  if ($variables['alt_header'] = ($variables['top_bar'] != 1)) {
+    // Hide alt header on mobile if using top bar in mobile.
+    $variables['alt_header_classes'] = $variables['top_bar'] == 2 ? ' hide-for-small' : '';
+  }
+
+  // Menus for alternative header.
+  $variables['alt_main_menu'] = '';
+
+  if (!empty($variables['main_menu'])) {
+    $variables['alt_main_menu'] = theme('links__system_main_menu', array(
+      'links' => $variables['main_menu'],
+      'attributes' => array(
+        'id' => 'main-menu-links',
+        'class' => array('links', 'inline-list', 'clearfix'),
+      ),
+      'heading' => array(
+        'text' => t('Main menu'),
+        'level' => 'h2',
+        'class' => array('element-invisible'),
+      ),
+    ));
+  }
+
+  $variables['alt_secondary_menu'] = '';
+
+  if (!empty($variables['secondary_menu'])) {
+    $variables['alt_secondary_menu'] = theme('links__system_secondary_menu', array(
+      'links' => $variables['secondary_menu'],
+      'attributes' => array(
+        'id' => 'secondary-menu-links',
+        'class' => array('links', 'clearfix'),
+      ),
+      'heading' => array(
+        'text' => t('Secondary menu'),
+        'level' => 'h2',
+        'class' => array('element-invisible'),
+      ),
+    ));
+  }
+
+  // Top bar menus.
+  $variables['top_bar_main_menu'] = '';
+  if (!empty($variables['main_menu'])) {
+    $variables['top_bar_main_menu'] = theme('links__topbar_main_menu', array(
       'links' => $variables['main_menu'],
       'attributes' => array(
         'id' => 'main-menu',
@@ -468,9 +666,9 @@ function zurb_foundation_preprocess_page(&$variables) {
     ));
   }
 
-  $variables['secondary_menu_links'] = '';
-  if (isset($variables['secondary_menu'])) {
-    $variables['secondary_menu_links'] = theme('links__system_secondary_menu', array(
+  $variables['top_bar_secondary_menu'] = '';
+  if (!empty($variables['secondary_menu'])) {
+    $variables['top_bar_secondary_menu'] = theme('links__topbar_secondary_menu', array(
       'links' => $variables['secondary_menu'],
       'attributes' => array(
         'id'    => 'secondary-menu',
@@ -484,78 +682,528 @@ function zurb_foundation_preprocess_page(&$variables) {
     ));
   }
 
+  // Messages in modal.
+  $variables['zurb_foundation_messages_modal'] = theme_get_setting('zurb_foundation_messages_modal');
+
   // Convenience variables
   $left = $variables['page']['sidebar_first'];
   $right = $variables['page']['sidebar_second'];
 
   // Dynamic sidebars
   if (!empty($left) && !empty($right)) {
-    $variables['main_grid'] = 'six push-three';
-    $variables['sidebar_first_grid'] = 'three pull-six';
-    $variables['sidebar_sec_grid'] = 'three';
+    $variables['main_grid'] = 'large-6 push-3';
+    $variables['sidebar_first_grid'] = 'large-3 pull-6';
+    $variables['sidebar_sec_grid'] = 'large-3';
   } elseif (empty($left) && !empty($right)) {
-    $variables['main_grid'] = 'nine';
+    $variables['main_grid'] = 'large-9';
     $variables['sidebar_first_grid'] = '';
-    $variables['sidebar_sec_grid'] = 'three';
+    $variables['sidebar_sec_grid'] = 'large-3';
   } elseif (!empty($left) && empty($right)) {
-    $variables['main_grid'] = 'nine push-three';
-    $variables['sidebar_first_grid'] = 'three pull-nine';
+    $variables['main_grid'] = 'large-9 push-3';
+    $variables['sidebar_first_grid'] = 'large-3 pull-9';
     $variables['sidebar_sec_grid'] = '';
   } else {
-    $variables['main_grid'] = 'twelve';
+    $variables['main_grid'] = 'large-12';
     $variables['sidebar_first_grid'] = '';
     $variables['sidebar_sec_grid'] = '';
   }
 }
 
 /**
- * Implements template_preprocess_panels_pane().
- *
+ * Implements hook_css_alter()
  */
-function zurb_foundation_preprocess_panels_pane(&$vars) {
-}
+function zurb_foundation_css_alter(&$css) {
+  // Remove defaults.css file.
+  unset($css[drupal_get_path('module', 'system') . '/system.menus.css']);
 
-/**
-* Implements template_preprocess_views_views_fields().
-*/
-/* Delete me to enable
-function THEMENAME_preprocess_views_view_fields(&$vars) {
- if ($vars['view']->name == 'nodequeue_1') {
-
-   // Check if we have both an image and a summary
-   if (isset($vars['fields']['field_image'])) {
-
-     // If a combined field has been created, unset it and just show image
-     if (isset($vars['fields']['nothing'])) {
-       unset($vars['fields']['nothing']);
-     }
-
-   } elseif (isset($vars['fields']['title'])) {
-     unset ($vars['fields']['title']);
-   }
-
-   // Always unset the separate summary if set
-   if (isset($vars['fields']['field_summary'])) {
-     unset($vars['fields']['field_summary']);
-   }
- }
-}
-// */
-/**
- * Implements template_preprocess_views_view().
- */
-function zurb_foundation_preprocess_views_view(&$vars) {
-}
-
-// @TODO maybe use hook_library_alter or hook_library
-function zurb_foundation_js_alter(&$js) {
-  if (!module_exists('jquery_update')) {
-    // Swap out jQuery to use an updated version of the library.
-    $js['misc/jquery.js']['data'] = drupal_get_path('theme', 'zurb_foundation') . '/js/jquery.js';
-    $js['misc/jquery.js']['version'] = '1.8.2';
+  // Remove Drupal core CSS.
+  if (theme_get_setting('zurb_foundation_disable_core_css')) {
+    foreach($css as $path => $values) {
+      if(strpos($path, 'modules/') === 0) {
+        unset($css[$path]);
+      }
+    }
   }
+}
+
+/**
+ * Implements hook_js_alter()
+ */
+function zurb_foundation_js_alter(&$js) {
+  // Display warning if jQuery Update not present.
+  if (!module_exists('jquery_update')) {
+    drupal_set_message(t('Incorrect jQuery version detected. Zurb Foundation requires jQuery 1.7 or higher. Please install jQuery Update.'), 'error', FALSE);
+  }
+  // If it is present, check for correct jQuery version.
+  else {
+    $jquery_version = variable_get('jquery_update_jquery_version', '1.5');
+
+    if (!version_compare($jquery_version, '1.7', '>=')) {
+      drupal_set_message(t('Incorrect jQuery version detected. Zurb Foundation requires jQuery 1.7 or higher. Please change your <a href="!settings">jQuery Update settings</a>.', array('!settings' => url('admin/config/development/jquery_update'))), 'error', FALSE);
+    }
+  }
+
   // @TODO moving scripts to footer possibly remove?
-  foreach ($js as $key => $js_script) {
-    $js[$key]['scope'] = 'footer';
+  // foreach ($js as $key => $js_script) {
+  //   $js[$key]['scope'] = 'footer';
+  // }
+}
+
+/**
+ * Replace Drupal pagers with Foundation pagers.
+ */
+function zurb_foundation_pager($variables) {
+  $tags = $variables['tags'];
+  $element = $variables['element'];
+  $parameters = $variables['parameters'];
+  $quantity = $variables['quantity'];
+  global $pager_page_array, $pager_total;
+
+  // Calculate various markers within this pager piece:
+  // Middle is used to "center" pages around the current page.
+  $pager_middle = ceil($quantity / 2);
+  // Current is the page we are currently paged to.
+  $pager_current = $pager_page_array[$element] + 1;
+  // First is the first page listed by this pager piece (re-quantify).
+  $pager_first = $pager_current - $pager_middle + 1;
+  // Last is the last page listed by this pager piece (re-quantify)
+  $pager_last = $pager_current + $quantity - $pager_middle;
+  // Max is the maximum page number.
+  $pager_max = $pager_total[$element];
+  // End of marker calculations.
+
+  // Prepare for generation loop.
+  $i = $pager_first;
+  if ($pager_last > $pager_max) {
+    // Adjust "center" if at end of query.
+    $i = $i + ($pager_max - $pager_last);
+    $pager_last = $pager_max;
+  }
+  if ($i <= 0) {
+    // Adjust "center" if at start of query.
+    $pager_last = $pager_last + (1 - $i);
+    $i = 1;
+  }
+  // End of generation loop preparation.
+
+  $li_first = theme('pager_first', array('text' => (isset($tags[0]) ? $tags[0] : t('« first')), 'element' => $element, 'parameters' => $parameters));
+  $li_previous = theme('pager_previous', array('text' => (isset($tags[1]) ? $tags[1] : t('‹ previous')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('next ›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_last = theme('pager_last', array('text' => (isset($tags[4]) ? $tags[4] : t('last »')), 'element' => $element, 'parameters' => $parameters));
+
+  if ($pager_total[$element] > 1) {
+    if ($li_first) {
+      $items[] = array(
+        'class' => array('arrow'),
+        'data' => $li_first,
+      );
+    }
+    if ($li_previous) {
+      $items[] = array(
+        'class' => array('arrow'),
+        'data' => $li_previous,
+      );
+    }
+
+    // When there is more than one page, create the pager list.
+    if ($i != $pager_max) {
+      if ($i > 1) {
+        $items[] = array(
+          'class' => array('unavailable'),
+          'data' => '<a href="">&hellip;</a>',
+        );
+      }
+      // Now generate the actual pager piece.
+      for (; $i <= $pager_last && $i <= $pager_max; $i++) {
+        if ($i < $pager_current) {
+          $items[] = array(
+            'data' => theme('pager_previous', array('text' => $i, 'element' => $element, 'interval' => ($pager_current - $i), 'parameters' => $parameters)),
+          );
+        }
+        if ($i == $pager_current) {
+          $items[] = array(
+            'class' => array('current'),
+            'data' => '<a href="">' . $i . '</a>',
+          );
+        }
+        if ($i > $pager_current) {
+          $items[] = array(
+            'data' => theme('pager_next', array('text' => $i, 'element' => $element, 'interval' => ($i - $pager_current), 'parameters' => $parameters)),
+          );
+        }
+      }
+      if ($i < $pager_max) {
+        $items[] = array(
+          'class' => array('unavailable'),
+          'data' => '<a href="">&hellip;</a>',
+        );
+      }
+    }
+    // End generation.
+    if ($li_next) {
+      $items[] = array(
+        'class' => array('arrow'),
+        'data' => $li_next,
+      );
+    }
+    if ($li_last) {
+      $items[] = array(
+        'class' => array('arrow'),
+        'data' => $li_last,
+      );
+    }
+
+    $pager_links = array(
+      '#theme' => 'item_list',
+      '#items' => $items,
+      '#attributes' => array('class' => array('pagination', 'pager')),
+    );
+
+    if (theme_get_setting('zurb_foundation_pager_center')) {
+      $pager_links['#prefix'] = '<div class="pagination-centered">';
+      $pager_links['#suffix'] = '</div>';
+    }
+
+    $pager_links = drupal_render($pager_links);
+
+    return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . $pager_links;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function zurb_foundation_theme() {
+  $return = array();
+
+  $return['zurb_foundation_reveal'] = array(
+    'variables' => array(
+      // The text to display in the link.
+      'text' => '',
+      // Whether the text uses HTML.
+      'html' => FALSE,
+      // Whether the reveal uses AJAX content.
+      // This can either be set to true, to use the link's href property or be
+      // a URL to load the content from. Note that setting this parameter will
+      // override the contents of the "reveal" variable.
+      'ajax' => FALSE,
+      // The path for the link's href property. This is only really useful if
+      // you want to set 'ajax' to TRUE (see above).
+      'path' => FALSE,
+      // The content for the reveal modal. Can be either a string or a render
+      // array.
+      'reveal' => '',
+      // Extra classes to add to the link.
+      'link_classes_array' => array('zurb-foundation-reveal'),
+      // Extra classes to add to the reveal modal.
+      'reveal_classes_array' => array('expand'),
+    ),
+    'function' => 'theme_zurb_foundation_reveal',
+  );
+
+  $return['zurb_foundation_menu_link'] = array(
+    'variables' => array('link' => NULL),
+    'function' => 'theme_zurb_foundation_menu_link',
+  );
+  return $return;
+}
+
+/**
+ * Helper function to store and return markup for reveal modals on the page.
+ * This is necessary because we need to add all of the reveals to the bottom of
+ * the page to avoid unexpected behavior. For more information please refer to
+ * the official Zurb Foundation documentation.
+ *
+ * @param array
+ *   A render array for a reveal modal to store.
+ * @return array
+ *   An array of all reveal render arrays.
+ *
+ * @see theme_zurb_foundation_reveal()
+ */
+function _zurb_foundation_reveal($reveal = NULL) {
+  $reveals = &drupal_static(__FUNCTION__);
+
+  if (!isset($reveals)) {
+    $reveals = array();
+  }
+
+  if (isset($reveal)) {
+    $reveals[] = $reveal;
+  }
+
+  return $reveals;
+}
+
+
+/**
+ * Theme function to create Zurb Foundation reveal modals.
+ *
+ * @see zurb_foundation_theme()
+ * @see zurb_foundation_preprocess_region()
+ * @see _zurb_foundation_reveal()
+ */
+function theme_zurb_foundation_reveal($variables) {
+  // Generate unique IDs.
+  static $counter = 0;
+
+  // Prepare reveal markup.
+  $reveal_id = 'zf-reveal-' . ++$counter;
+  $variables['reveal_classes_array'][] = 'reveal-modal';
+  $reveal_classes = implode(' ', $variables['reveal_classes_array']);
+
+  // Render reveal contents if applicable.
+  if (is_array($variables['reveal'])) {
+    $variables['reveal'] = drupal_render($variables['reveal']);
+  }
+
+  $reveal = array(
+    '#markup' => $variables['reveal'],
+    '#prefix' => '<div id="' . $reveal_id . '" class="' . $reveal_classes . '">',
+    '#suffix' => '<a class="close-reveal-modal">&#215;</a></div>',
+  );
+
+  // Add reveal markup to static storage.
+  _zurb_foundation_reveal($reveal);
+
+  $build = array(
+    '#theme' => 'link',
+    '#text' => $variables['text'],
+    '#path' => $variables['path'] ? $variables['path'] : 'javascript:',
+    '#options' => array(
+      'attributes' => array(
+        'id' => 'zf-reveal-link-' . $counter,
+        'class' => $variables['link_classes_array'],
+        'data-reveal-id' => $reveal_id,
+      ),
+      'html' => $variables['html'],
+      'external' => TRUE,
+    ),
+  );
+
+  // Check for AJAX.
+  if ($variables['ajax']) {
+    if ($variables['ajax'] === TRUE) {
+      $variables['ajax'] = 'true';
+    }
+    $build['#options']['attributes']['data-reveal-ajax'] = $variables['ajax'];
+  }
+
+  return drupal_render($build);
+}
+
+/**
+ * Add the reveal modal markup (if any) to the page_bottom region.
+ */
+function _zurb_foundation_add_reveals() {
+  $markup = '';
+
+  // Retrieve reveal markup from static storage.
+  foreach (_zurb_foundation_reveal() as $reveal) {
+    $markup .= "\n" . drupal_render($reveal);
+  }
+
+  return $markup;
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function zurb_foundation_theme_registry_alter(&$theme_registry) {
+  // Add our own preprocess function to entities so we can add default classes
+  // to our custom Display Suite layouts.
+  $entity_info = entity_get_info();
+  foreach ($entity_info as $entity => $info) {
+    if (isset($entity_info[$entity]['fieldable']) && $entity_info[$entity]['fieldable']) {
+
+      // User uses user_profile for theming.
+      if ($entity == 'user') $entity = 'user_profile';
+
+      // Only add preprocess functions if entity exposes theme function.
+      if (isset($theme_registry[$entity])) {
+        $theme_registry[$entity]['preprocess functions'][] = 'zurb_foundation_entity_variables';
+      }
+    }
+  }
+
+  // Support for File Entity.
+  if (isset($theme_registry['file_entity'])) {
+    $theme_registry['file_entity']['preprocess functions'][] = 'zurb_foundation_entity_variables';
+  }
+
+  // Support for Entity API.
+  if (isset($theme_registry['entity'])) {
+    $theme_registry['entity']['preprocess functions'][] = 'zurb_foundation_entity_variables';
+  }
+}
+
+/**
+ * Add default classes to Display Suite regions if none are set.
+ *
+ * This approach was taken from Display Suite.
+ *
+ * @see zurb_foundation_theme_registry_alter()
+ */
+function zurb_foundation_entity_variables(&$vars) {
+  // Only alter entities that have been rendered by Display Suite.
+  if (isset($vars['rendered_by_ds'])) {
+    // If Display Suite rendered this, it's safe to assume we have the arguments
+    // necessary to grab the layout.
+    $layout = ds_get_layout($vars['elements']['#entity_type'], $vars['elements']['#bundle'], $vars['elements']['#view_mode']);
+
+    // Each layout has different regions, only set default classes if none of
+    // them have custom classes.
+    switch ($layout['layout']) {
+      case 'zf_1col':
+        if (empty($vars['ds_content_classes'])) {
+          $vars['ds_content_classes'] = ' large-12';
+        }
+        break;
+      case 'zf_2col':
+        if (empty($vars['left_classes']) && empty($vars['right_classes'])) {
+          $vars['left_classes'] = ' large-6';
+          $vars['right_classes'] = ' large-6';
+        }
+        break;
+      case 'zf_2col_stacked':
+        if (
+          empty($vars['header_classes']) && empty($vars['left_classes'])
+          && empty($vars['right_classes']) && empty($vars['footer_classes'])
+        ) {
+          $vars['header_classes'] = ' large-12';
+          $vars['left_classes'] = ' large-6';
+          $vars['right_classes'] = ' large-6';
+          $vars['footer_classes'] = ' large-12';
+        }
+        break;
+      case 'zf_2col_bricks':
+        if (empty($vars['top_classes']) && empty($vars['above_left_classes'])
+          && empty($vars['above_right_classes']) && empty($vars['middle_classes'])
+          && empty($vars['below_left_classes']) && empty($vars['below_right_classes'])
+          && empty($vars['bottom_classes'])
+        ) {
+          $vars['top_classes'] = ' large-12';
+          $vars['above_left_classes'] = ' large-6';
+          $vars['above_right_classes'] = ' large-6';
+          $vars['middle_classes'] = ' large-12';
+          $vars['below_left_classes'] = ' large-6';
+          $vars['below_right_classes'] = ' large-6';
+          $vars['bottom_classes'] = ' large-12';
+        }
+        break;
+      case 'zf_3col':
+        if (empty($vars['left_classes']) && empty($vars['middle_classes'])
+          && empty($vars['right_classes'])
+        ) {
+          $vars['left_classes'] = ' large-4';
+          $vars['middle_classes'] = ' large-4';
+          $vars['right_classes'] = ' large-4';
+        }
+        break;
+      case 'zf_3col_stacked':
+        if (
+          empty($vars['header_classes']) && empty($vars['left_classes'])
+          && empty($vars['middle_classes']) && empty($vars['right_classes'])
+          && empty($vars['footer_classes'])
+        ) {
+          $vars['header_classes'] = ' large-12';
+          $vars['left_classes'] = ' large-4';
+          $vars['middle_classes'] = ' large-4';
+          $vars['right_classes'] = ' large-4';
+          $vars['footer_classes'] = ' large-12';
+        }
+        break;
+      case 'zf_3col_bricks':
+        if (empty($vars['top_classes']) && empty($vars['above_left_classes'])
+          && empty($vars['above_middle_classes']) && empty($vars['above_right_classes'])
+          && empty($vars['middle_classes']) && empty($vars['below_left_classes'])
+          && empty($vars['below_middle_classes']) && empty($vars['below_right_classes'])
+          && empty($vars['bottom_classes'])
+        ) {
+          $vars['top_classes'] = ' large-12';
+          $vars['above_left_classes'] = ' large-4';
+          $vars['above_middle_classes'] = ' large-4';
+          $vars['above_right_classes'] = ' large-4';
+          $vars['middle_classes'] = ' large-12';
+          $vars['below_left_classes'] = ' large-4';
+          $vars['below_middle_classes'] = ' large-4';
+          $vars['below_right_classes'] = ' large-4';
+          $vars['bottom_classes'] = ' large-12';
+        }
+        break;
+      case 'zf_3row':
+        if (empty($vars['header_classes']) && empty($vars['ds_content_classes'])
+          && empty($vars['footer_classes'])
+        ) {
+          $vars['header_classes'] = ' large-12';
+          $vars['ds_content_classes'] = ' large-12';
+          $vars['footer_classes'] = ' large-12';
+        }
+        break;
+      case 'zf_4col':
+        if (empty($vars['first_classes']) && empty($vars['second_classes'])
+          && empty($vars['third_classes']) && empty($vars['fourth_classes'])
+        ) {
+          $vars['first_classes'] = ' large-3';
+          $vars['second_classes'] = ' large-3';
+          $vars['third_classes'] = ' large-3';
+          $vars['fourth_classes'] = ' large-3';
+        }
+        break;
+      case 'zf_4col_stacked':
+        if (
+          empty($vars['header_classes']) && empty($vars['first_classes'])
+          && empty($vars['second_classes']) && empty($vars['third_classes'])
+          && empty($vars['fourth_classes']) && empty($vars['footer_classes'])
+        ) {
+          $vars['header_classes'] = ' large-12';
+          $vars['first_classes'] = ' large-3';
+          $vars['second_classes'] = ' large-3';
+          $vars['third_classes'] = ' large-3';
+          $vars['fourth_classes'] = ' large-3';
+          $vars['footer_classes'] = ' large-12';
+        }
+        break;
+      case 'zf_4col_bricks':
+        if (empty($vars['top_classes']) && empty($vars['above_first_classes'])
+          && empty($vars['above_second_classes']) && empty($vars['above_third_classes'])
+          && empty($vars['above_fourth_classes']) && empty($vars['middle_classes'])
+          && empty($vars['below_first_classes']) && empty($vars['below_second_classes'])
+          && empty($vars['below_third_classes']) && empty($vars['below_fourth_classes'])
+          && empty($vars['bottom_classes'])
+        ) {
+          $vars['top_classes'] = ' large-12';
+          $vars['above_first_classes'] = ' large-3';
+          $vars['above_second_classes'] = ' large-3';
+          $vars['above_third_classes'] = ' large-3';
+          $vars['above_fourth_classes'] = ' large-3';
+          $vars['middle_classes'] = ' large-12';
+          $vars['below_first_classes'] = ' large-3';
+          $vars['below_second_classes'] = ' large-3';
+          $vars['below_third_classes'] = ' large-3';
+          $vars['below_fourth_classes'] = ' large-3';
+          $vars['bottom_classes'] = ' large-12';
+        }
+        break;
+    }
+  }
+}
+
+/**
+ * Implements hook_process_html_tag()
+ *
+ * Prunes HTML tags: http://sonspring.com/journal/html5-in-drupal-7#_pruning
+ */
+function zurb_foundation_process_html_tag(&$vars) {
+  if (theme_get_setting('zurb_foundation_html_tags')) {
+    $el = &$vars['element'];
+
+    // Remove type="..." and CDATA prefix/suffix.
+    unset($el['#attributes']['type'], $el['#value_prefix'], $el['#value_suffix']);
+
+    // Remove media="all" but leave others unaffected.
+    if (isset($el['#attributes']['media']) && $el['#attributes']['media'] === 'all') {
+      unset($el['#attributes']['media']);
+    }
   }
 }

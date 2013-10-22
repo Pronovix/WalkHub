@@ -1,0 +1,241 @@
+a
+  +transition($transition-base)
+  color: rgba(#055c8e,.8)
+
+  &:hover
+    cursor: pointer
+    color: #055c8e
+
+  &:focus
+    outline: none
+
+img, object, embed
+  max-width: 100%
+  height: auto
+
+object, embed
+  height: 100%
+
+img
+  -ms-interpolation-mode: bicubic
+
+.left
+  float: left !important
+
+.right
+  float: right !important
+
+.text-left
+  text-align: left !important
+
+.text-right
+  text-align: right !important
+
+.text-center
+  text-align: center !important
+
+.text-justify
+  text-align: justify !important
+
+.hide
+  display: none
+
+
+/* Typography resets
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td
+  margin: 0
+  padding: 0
+  direction: ltr
+
+/* Default Link Styles
+a
+  text-decoration: none
+  line-height: inherit
+  &:hover, &:focus
+    color: #2795b6
+
+  img
+    border: none
+
+/* Default paragraph styles
+p
+  +font-size(1.35)
+  font-family: inherit
+  font-weight: normal
+  margin-bottom: 1.25em
+  text-rendering: optimizeLegibility
+
+  aside
+    +font-size(1)
+    font-style: italic
+
+/* Default header styles
+h1, h2, h3, h4, h5, h6
+  +font-museo-500
+  font-style: normal
+  color: #222222
+  text-rendering: optimizeLegibility
+  margin-top: 0.2em
+  margin-bottom: 0.5em
+  line-height: 1.2125em
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small
+  font-size: 60%
+  color: #6f6f6f
+  line-height: 0
+
+h1
+  +font-size(2.525)
+  color: #6f6f6f
+
+h2
+  +font-size(2.0875)
+
+h3
+  +font-size(1.875)
+
+
+h4, h5
+  +font-size(1.525)
+
+h6
+  +font-size(1.4)
+
+
+hr
+  border: solid #dddddd
+  border-width: 1px 0 0
+  clear: both
+  margin: 1.25em 0 1.1875em
+  height: 0
+
+/* Helpful Typography Defaults
+em, i
+  font-style: italic
+  line-height: inherit
+
+strong, b
+  font-weight: bold
+  line-height: inherit
+
+small
+  font-size: 60%
+  line-height: inherit
+
+code
+  font-family: Consolas, "Liberation Mono", Courier, monospace
+  font-weight: bold
+  color: #7f0a0c
+
+/* Lists
+ul, ol, dl
+  +font-size(1.2)
+  margin-bottom: 1.25em
+  list-style-position: outside
+  font-family: inherit
+
+ul, ol
+  margin-left: 0
+
+/* Unordered Lists
+ul
+  li
+    ul, ol
+      +font-size(1.2)
+      margin-left: 1.25em
+      margin-bottom: 0
+
+  /* Override nested font-size change
+  &.square li ul, &.circle li ul, &.disc li ul
+    list-style: inherit
+  &.square
+    list-style-type: square
+  &.circle
+    list-style-type: circle
+  &.disc
+    list-style-type: disc
+  &.no-bullet
+    list-style: none
+
+/* Ordered Lists
+ol li
+  ul, ol
+    margin-left: 1.25em
+    margin-bottom: 0
+
+/* Definition Lists
+
+dl
+  dt
+    margin-bottom: 0.3em
+    font-weight: bold
+  dd
+    margin-bottom: 0.75em
+
+/* Abbreviations
+
+abbr, acronym
+  text-transform: uppercase
+  font-size: 90%
+  color: #222222
+  border-bottom: 1px dotted #dddddd
+  cursor: help
+
+abbr
+  text-transform: none
+
+/* Blockquotes
+blockquote
+  margin: 0 0 1.25em
+  padding: 0.5625em 1.25em 0 1.1875em
+  border-left: 1px solid #dddddd
+  cite
+    display: block
+    +font-size(1)
+    color: #555555
+    &:before
+      content: "\2014 \0020"
+    a
+      color: #555555
+      &:visited
+        color: #555555
+  line-height: 1.6
+  color: #6f6f6f
+  p
+    line-height: 1.6
+    color: #6f6f6f
+
+/* Microformats
+.vcard
+  display: inline-block
+  margin: 0 0 1.25em 0
+  border: 1px solid #dddddd
+  padding: 0.625em 0.75em
+  li
+    margin: 0
+    display: block
+  .fn
+    font-weight: bold
+    +font-size(1)
+
+.vevent
+  .summary
+    font-weight: bold
+  abbr
+    cursor: default
+    text-decoration: none
+    font-weight: bold
+    border: none
+    padding: 0 0.0625em
+
+@media only screen and (min-width: 768px)
+  h1, h2, h3, h4, h5, h6
+    line-height: 1.4
+  h1
+    font-size: 2.75em
+  h2
+    font-size: 2.3125em
+  h3
+    font-size: 1.6875em
+  h4
+    font-size: 1.4375em

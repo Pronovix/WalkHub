@@ -12,11 +12,11 @@ function zurb_foundation_foundation_2col_bricks_panels_layouts() {
     //'admin css' => '../foundation_panels_admin.css',
     'regions' => array(
       'top' => t('Top'),
-      'left_above' => t('Above Left'),
-      'right_above' => t('Above Right'),
+      'above_left' => t('Above Left'),
+      'above_right' => t('Above Right'),
       'middle' => t('Middle'),
-      'left_below' => t('Below Left'),
-      'right_below' => t('Below Right'),
+      'below_left' => t('Below Left'),
+      'below_right' => t('Below Right'),
       'bottom' => t('Bottom'),
     ),
   );
