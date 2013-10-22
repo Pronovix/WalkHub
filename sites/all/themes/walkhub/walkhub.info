@@ -91,6 +91,8 @@ regions[footer_thirdcolumn]  = Footer three
 regions[footer_fourthcolumn] = Footer four
 regions[footer]              = Footer
 
+regions[copyright_menu]      = Copyright Menu
+
 ; Various page elements output by the theme can be toggled on and off. The
 ; "features" control which of these check boxes display on the
 ; admin/appearance config page. This is useful for suppressing check boxes

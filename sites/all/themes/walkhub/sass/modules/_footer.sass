@@ -1,0 +1,92 @@
+// ---------------------
+// Footer Variables
+// ---------------------
+#footermain
+  +box-shadow(inset 0px 1px 2px 0px rgba($color-black,0.01))
+  background-color: $color-grey-light
+  border-top: 1px solid darken($color-grey-light, 5%)
+  color: darken($color-grey-light, 30%)
+  margin-top: 2%
+
+  .row,
+  ul
+    margin-bottom: 0
+
+  h3
+    color: darken($color-grey-light, 40%)
+
+#footer
+  +px-rem(padding, 2, 0, 2, 0)
+
+  ul li a
+    color: darken($color-grey-light, 30%)
+
+    &:hover
+      color: darken($color-grey-light, 50%)
+
+  nav
+    ul
+      list-style-type: none
+
+      li
+        border-left: 1px solid darken($color-grey-light, 5%)
+        padding-left: 1em
+        +transition($transition-base)
+
+        &:hover
+          border-left: 1px solid lighten(#7a7a7a, 15%)
+
+  .logo
+    +transition($transition-base)
+    +opacity(.65)
+    display: block
+    text-align: right
+
+    &:hover
+      +opacity(1)
+
+  #footer_logo
+    +max-screen($size-768)
+      width: 100%
+      height: auto
+
+#copyright
+  +text-shadow(1px 1px 3px rgba($color-black,1))
+  +box-shadow(inset 0px 5px 5px 0px rgba($color-black,0.25))
+  background: #2a2a2a url('../images/low_contrast_linen.png') top left repeat
+  padding: 1.25em 0 1.25em 0
+  color: $color-white
+  border-top:  1px solid $color-black
+
+  p
+    +mp0
+    +font-size(1.2)
+
+  a
+    color: $color-white
+
+  +hdpi(2)
+    background: #2a2a2a url('../images/low_contrast_linen_@2X.png') top left repeat
+
+  & > div > div
+    +font-size(1.35)
+
+  .row
+    margin-bottom: 0
+
+  ul,
+  nav
+    +mp0
+    list-style-type: none
+
+    li
+      +mp0
+      +px-rem(margin-right, .25)
+      display: inline-block
+
+      &:after
+        content: '|'
+        +px-rem(margin-left, .5)
+
+      &:last-of-type:after
+        content: ''

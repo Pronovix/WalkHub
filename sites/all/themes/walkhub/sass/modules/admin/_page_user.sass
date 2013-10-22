@@ -1,0 +1,26 @@
+// User Login
+.page-user,
+.page-user-password
+  .description
+    @extend .info-block
+
+  .form-actions
+    text-align: center
+    margin-top: 2em
+
+  #user-login,
+  #user-pass
+    max-width: 48em
+    margin: 0 auto
+    margin-top: 2%
+
+  .tabs.primary
+    max-width: 48em
+    margin: 0 auto
+
+    li
+      &:nth-child(1) a:after
+        content: "\e01b"
+
+      &:nth-child(2) a:after
+        content: "\e01a"

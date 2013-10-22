@@ -2,7 +2,7 @@
 <div role="document" class="page">
 
   <!--.l-header region -->
-  <header role="banner" class="l-header">
+  <header role="banner" class="l-header" id="main-header">
 
     <?php if ($top_bar): ?>
       <!--.top-bar -->
@@ -207,18 +207,24 @@
   <?php endif; ?>
 
   <!--.l-footer-->
-  <footer class="l-footer panel row" role="contentinfo">
+  <footer id="main-footer" role="contentinfo">
     <?php if (!empty($page['footer'])): ?>
       <div class="footer large-12 columns">
         <?php print render($page['footer']); ?>
       </div>
     <?php endif; ?>
 
-    <?php if ($site_name) :?>
-      <div class="copyright large-12 columns">
+
+    <div id="copyright" class="row">
+      <div class="cr-first large-8 columns">
+        <?php if ($copyright_menu) :?>
+          <?php print $copyright_menu; ?>
+        <?php endif; ?>
+      </div>
+      <div class="cr-first large-4 columns">
         &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
       </div>
-    <?php endif; ?>
+    </div>
   </footer>
   <!--/.footer-->
 

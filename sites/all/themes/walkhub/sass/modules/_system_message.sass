@@ -1,0 +1,57 @@
+/**
+ * @file
+ * Styles for system messages.
+
+div
+  &.messages
+    background-position: 8px 8px
+
+    /* LTR
+    background-repeat: no-repeat
+    border: 1px solid
+    margin: 6px 0
+    padding: 10px 10px 10px 50px
+  /* LTR
+
+  &.status
+    background-image: url(../../misc/message-24-ok.png)
+    border-color: #be7
+    color: #234600
+
+.ok
+  color: #234600
+
+div.status, table tr.ok
+  background-color: #f8fff0
+
+div.warning
+  background-image: url(../../misc/message-24-warning.png)
+  border-color: #ed5
+  color: #840
+
+.warning
+  color: #840
+
+div.warning, table tr.warning
+  background-color: #fffce5
+
+div.error
+  background-image: url(../../misc/message-24-error.png)
+  border-color: #ed541d
+  color: #8c2e0b
+
+.error
+  color: #8c2e0b
+
+div.error, table tr.error
+  background-color: #fef5f1
+
+div
+  &.error p.error
+    color: #333
+  &.messages ul
+    margin: 0 0 0 1em
+    /* LTR
+    padding: 0
+    li
+      list-style-image: none
