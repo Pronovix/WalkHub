@@ -218,12 +218,12 @@
 
     <div id="copyright">
       <div class="row">
-        <div class="cr-first large-8 columns">
+        <div class="cr-f large-8 columns">
           <?php if (!empty($page['copyright_menu'])): ?>
             <?php print render($page['copyright_menu']); ?>
           <?php endif; ?>
         </div>
-        <div class="cr-first large-4 columns">
+        <div class="cr-s large-4 columns">
           &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
         </div>
       </div>

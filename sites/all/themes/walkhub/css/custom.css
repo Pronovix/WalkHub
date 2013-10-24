@@ -7455,48 +7455,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   line-height: 0;
 }
 
-/* line 87, ../sass/typo/_typography.sass */
-h1 {
-  font-size: 25.25px;
-  line-height: 36.6125px;
-  font-size: 2.525rem;
-  line-height: 3.66125rem;
-  color: #6f6f6f;
-}
-
-/* line 91, ../sass/typo/_typography.sass */
-h2 {
-  font-size: 20.875px;
-  line-height: 30.26875px;
-  font-size: 2.0875rem;
-  line-height: 3.02688rem;
-}
-
-/* line 94, ../sass/typo/_typography.sass */
-h3 {
-  font-size: 18.75px;
-  line-height: 27.1875px;
-  font-size: 1.875rem;
-  line-height: 2.71875rem;
-}
-
-/* line 98, ../sass/typo/_typography.sass */
-h4, h5 {
-  font-size: 15.25px;
-  line-height: 22.1125px;
-  font-size: 1.525rem;
-  line-height: 2.21125rem;
-}
-
-/* line 101, ../sass/typo/_typography.sass */
-h6 {
-  font-size: 14px;
-  line-height: 20.3px;
-  font-size: 1.4rem;
-  line-height: 2.03rem;
-}
-
-/* line 105, ../sass/typo/_typography.sass */
+/* line 88, ../sass/typo/_typography.sass */
 hr {
   border: solid #dddddd;
   border-width: 1px 0 0;
@@ -7506,25 +7465,25 @@ hr {
 }
 
 /* Helpful Typography Defaults */
-/* line 113, ../sass/typo/_typography.sass */
+/* line 96, ../sass/typo/_typography.sass */
 em, i {
   font-style: italic;
   line-height: inherit;
 }
 
-/* line 117, ../sass/typo/_typography.sass */
+/* line 100, ../sass/typo/_typography.sass */
 strong, b {
   font-weight: bold;
   line-height: inherit;
 }
 
-/* line 121, ../sass/typo/_typography.sass */
+/* line 104, ../sass/typo/_typography.sass */
 small {
   font-size: 60%;
   line-height: inherit;
 }
 
-/* line 125, ../sass/typo/_typography.sass */
+/* line 108, ../sass/typo/_typography.sass */
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
@@ -7532,77 +7491,69 @@ code {
 }
 
 /* Lists */
-/* line 131, ../sass/typo/_typography.sass */
+/* line 114, ../sass/typo/_typography.sass */
 ul, ol, dl {
-  font-size: 12px;
-  line-height: 17.4px;
-  font-size: 1.2rem;
-  line-height: 1.74rem;
   margin-bottom: 1.25em;
   list-style-position: outside;
   font-family: inherit;
 }
 
-/* line 137, ../sass/typo/_typography.sass */
+/* line 119, ../sass/typo/_typography.sass */
 ul, ol {
   margin-left: 0;
 }
 
 /* Unordered Lists */
-/* line 141, ../sass/typo/_typography.sass */
+/* line 123, ../sass/typo/_typography.sass */
 ul {
   /* Override nested font-size change */
 }
-/* line 143, ../sass/typo/_typography.sass */
+/* line 125, ../sass/typo/_typography.sass */
 ul li ul, ul li ol {
-  font-size: 12px;
-  line-height: 17.4px;
-  font-size: 1.2rem;
-  line-height: 1.74rem;
   margin-left: 1.25em;
   margin-bottom: 0;
 }
-/* line 149, ../sass/typo/_typography.sass */
+/* line 130, ../sass/typo/_typography.sass */
 ul.square li ul, ul.circle li ul, ul.disc li ul {
   list-style: inherit;
 }
-/* line 151, ../sass/typo/_typography.sass */
+/* line 132, ../sass/typo/_typography.sass */
 ul.square {
   list-style-type: square;
 }
-/* line 153, ../sass/typo/_typography.sass */
+/* line 134, ../sass/typo/_typography.sass */
 ul.circle {
   list-style-type: circle;
 }
-/* line 155, ../sass/typo/_typography.sass */
+/* line 136, ../sass/typo/_typography.sass */
 ul.disc {
   list-style-type: disc;
 }
-/* line 157, ../sass/typo/_typography.sass */
+/* line 138, ../sass/typo/_typography.sass */
 ul.no-bullet {
   list-style: none;
 }
 
 /* Ordered Lists */
-/* line 162, ../sass/typo/_typography.sass */
+/* line 143, ../sass/typo/_typography.sass */
 ol li ul, ol li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
 }
 
 /* Definition Lists */
-/* line 169, ../sass/typo/_typography.sass */
+/* line 150, ../sass/typo/_typography.sass */
 dl dt {
   margin-bottom: 0.3em;
   font-weight: bold;
 }
-/* line 172, ../sass/typo/_typography.sass */
+/* line 153, ../sass/typo/_typography.sass */
 dl dd {
   margin-bottom: 0.75em;
 }
 
 /* Abbreviations */
-/* line 177, ../sass/typo/_typography.sass */
+/* line 158, ../sass/typo/_typography.sass */
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
@@ -7611,13 +7562,13 @@ abbr, acronym {
   cursor: help;
 }
 
-/* line 184, ../sass/typo/_typography.sass */
+/* line 165, ../sass/typo/_typography.sass */
 abbr {
   text-transform: none;
 }
 
 /* Blockquotes */
-/* line 188, ../sass/typo/_typography.sass */
+/* line 169, ../sass/typo/_typography.sass */
 blockquote {
   margin: 0 0 1.25em;
   padding: 0.5625em 1.25em 0 1.1875em;
@@ -7625,7 +7576,7 @@ blockquote {
   line-height: 1.6;
   color: #6f6f6f;
 }
-/* line 192, ../sass/typo/_typography.sass */
+/* line 173, ../sass/typo/_typography.sass */
 blockquote cite {
   display: block;
   font-size: 10px;
@@ -7634,38 +7585,38 @@ blockquote cite {
   line-height: 1.45rem;
   color: #555555;
 }
-/* line 196, ../sass/typo/_typography.sass */
+/* line 177, ../sass/typo/_typography.sass */
 blockquote cite:before {
   content: "\2014 \0020";
 }
-/* line 198, ../sass/typo/_typography.sass */
+/* line 179, ../sass/typo/_typography.sass */
 blockquote cite a {
   color: #555555;
 }
-/* line 200, ../sass/typo/_typography.sass */
+/* line 181, ../sass/typo/_typography.sass */
 blockquote cite a:visited {
   color: #555555;
 }
-/* line 204, ../sass/typo/_typography.sass */
+/* line 185, ../sass/typo/_typography.sass */
 blockquote p {
   line-height: 1.6;
   color: #6f6f6f;
 }
 
 /* Microformats */
-/* line 209, ../sass/typo/_typography.sass */
+/* line 190, ../sass/typo/_typography.sass */
 .vcard {
   display: inline-block;
   margin: 0 0 1.25em 0;
   border: 1px solid #dddddd;
   padding: 0.625em 0.75em;
 }
-/* line 214, ../sass/typo/_typography.sass */
+/* line 195, ../sass/typo/_typography.sass */
 .vcard li {
   margin: 0;
   display: block;
 }
-/* line 217, ../sass/typo/_typography.sass */
+/* line 198, ../sass/typo/_typography.sass */
 .vcard .fn {
   font-weight: bold;
   font-size: 10px;
@@ -7674,11 +7625,11 @@ blockquote p {
   line-height: 1.45rem;
 }
 
-/* line 222, ../sass/typo/_typography.sass */
+/* line 203, ../sass/typo/_typography.sass */
 .vevent .summary {
   font-weight: bold;
 }
-/* line 224, ../sass/typo/_typography.sass */
+/* line 205, ../sass/typo/_typography.sass */
 .vevent abbr {
   cursor: default;
   text-decoration: none;
@@ -7687,32 +7638,6 @@ blockquote p {
   padding: 0 0.0625em;
 }
 
-@media only screen and (min-width: 768px) {
-  /* line 232, ../sass/typo/_typography.sass */
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1.4;
-  }
-
-  /* line 234, ../sass/typo/_typography.sass */
-  h1 {
-    font-size: 2.75em;
-  }
-
-  /* line 236, ../sass/typo/_typography.sass */
-  h2 {
-    font-size: 2.3125em;
-  }
-
-  /* line 238, ../sass/typo/_typography.sass */
-  h3 {
-    font-size: 1.6875em;
-  }
-
-  /* line 240, ../sass/typo/_typography.sass */
-  h4 {
-    font-size: 1.4375em;
-  }
-}
 /* line 1, ../sass/typo/_icon.sass */
 .icon-untitled, .icon-plus, .icon-facebook, .icon-twitter, .icon-youtube, .icon-linkedin, .icon-google-plus, .icon-chevron-left, .icon-chevron-right, .icon-chevron-up, .icon-chevron-down, .icon-arrow-up, .icon-arrow-down, .icon-arrow-left, .icon-arrow-right, .icon-arrow-top-right, .icon-arrow-top-left, .icon-arrow-bottom-right, .icon-arrow-bottom-left, .icon-share, .icon-eye, .icon-user, .icon-user-2, .icon-user-3, .icon-locked, .icon-unlocked, .icon-help, .icon-exclamation-sign, .icon-close, .icon-checkmark, .icon-checkmark-2, .icon-profile, .icon-signout, .icon-reload, .icon-key {
   font-family: "icomoon";
@@ -8746,12 +8671,8 @@ header#main-header .menu li a {
 #copyright p {
   margin: 0;
   padding: 0;
-  font-size: 12px;
-  line-height: 17.4px;
-  font-size: 1.2rem;
-  line-height: 1.74rem;
 }
-/* line 65, ../sass/modules/_footer.sass */
+/* line 64, ../sass/modules/_footer.sass */
 #copyright a {
   color: white;
 }
@@ -8761,25 +8682,42 @@ header#main-header .menu li a {
     background: #2a2a2a url("../images/low_contrast_linen_@2X.png") top left repeat;
   }
 }
-/* line 71, ../sass/modules/_footer.sass */
-#copyright > div > div {
-  font-size: 13.5px;
-  line-height: 19.575px;
-  font-size: 1.35rem;
-  line-height: 1.9575rem;
-}
-/* line 74, ../sass/modules/_footer.sass */
+/* line 70, ../sass/modules/_footer.sass */
 #copyright .row {
   margin-bottom: 0;
 }
+@media screen and (max-width: 767px) {
+  /* line 73, ../sass/modules/_footer.sass */
+  #copyright .cr-f {
+    text-align: center;
+  }
+}
 /* line 77, ../sass/modules/_footer.sass */
+#copyright .cr-s {
+  line-height: 1.6em;
+}
+@media screen and (min-width: 768px) {
+  /* line 77, ../sass/modules/_footer.sass */
+  #copyright .cr-s {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 77, ../sass/modules/_footer.sass */
+  #copyright .cr-s {
+    padding-top: 7.5px;
+    padding-top: 0.75rem;
+    text-align: center;
+  }
+}
+/* line 87, ../sass/modules/_footer.sass */
 #copyright ul,
 #copyright nav {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 82, ../sass/modules/_footer.sass */
+/* line 92, ../sass/modules/_footer.sass */
 #copyright ul li,
 #copyright nav li {
   margin: 0;
@@ -8788,14 +8726,14 @@ header#main-header .menu li a {
   margin-right: 0.25rem;
   display: inline-block;
 }
-/* line 87, ../sass/modules/_footer.sass */
+/* line 97, ../sass/modules/_footer.sass */
 #copyright ul li:after,
 #copyright nav li:after {
   content: "|";
   margin-left: 5px;
   margin-left: 0.5rem;
 }
-/* line 91, ../sass/modules/_footer.sass */
+/* line 101, ../sass/modules/_footer.sass */
 #copyright ul li:last-of-type:after,
 #copyright nav li:last-of-type:after {
   content: "";
@@ -11009,24 +10947,34 @@ input.pure-input-rounded, .pure-input-rounded {
   list-style-type: none;
 }
 
-/* line 7, ../sass/page/_node-type-faq.sass */
-.node-type-walkhub-faq-page .field-name-field-walkhub-questions > .field-items > .field-item {
-  margin-bottom: 2px;
+/* line 6, ../sass/page/_node-type-faq.sass */
+.node-type-walkhub-faq-page .field-collection-view {
+  margin-top: 5px;
+  margin-top: 0.5rem;
+}
+/* line 9, ../sass/page/_node-type-faq.sass */
+.node-type-walkhub-faq-page .field-collection-view:first-of-type {
+  margin: 0;
+}
+/* line 12, ../sass/page/_node-type-faq.sass */
+.node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions {
+  font-size: 12.5px;
+  line-height: 18.125px;
+  font-size: 1.25rem;
+  line-height: 1.8125rem;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  display: block;
+  border-bottom: 1px solid #e3e3e3;
   position: relative;
 }
-/* line 11, ../sass/page/_node-type-faq.sass */
-.node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions {
-  font-size: 20px;
-  line-height: 29px;
-  font-size: 2rem;
-  line-height: 2.9rem;
-  display: block;
+/* line 19, ../sass/page/_node-type-faq.sass */
+.node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions:hover {
+  border-color: #4386cf;
 }
-/* line 15, ../sass/page/_node-type-faq.sass */
-.node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions .field-items {
-  padding-right: 40px;
-}
-/* line 18, ../sass/page/_node-type-faq.sass */
+/* line 22, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions:after {
   font-family: "icomoon";
   speak: none;
@@ -11036,47 +10984,27 @@ input.pure-input-rounded, .pure-input-rounded {
   text-decoration: inherit;
   -webkit-font-smoothing: antialiased;
   *margin-right: 0.3em;
-  content: "\e020";
-  display: block;
+  font-size: 8px;
+  line-height: 11.6px;
+  font-size: 0.8rem;
+  line-height: 1.16rem;
+  color: #626262;
   position: absolute;
-  top: 0.6em;
-  right: 1em;
+  content: "\f078";
+  top: 0.3em;
+  right: 0.3em;
 }
-/* line 26, ../sass/page/_node-type-faq.sass */
-.node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions.open:after {
-  content: "\e023";
-}
-/* line 29, ../sass/page/_node-type-faq.sass */
-.node-type-walkhub-faq-page .field-name-field-walkhub-faq-answer {
-  font-size: 12px;
-  line-height: 17.4px;
-  font-size: 1.2rem;
-  line-height: 1.74rem;
-  padding: 0 10px;
+/* line 31, ../sass/page/_node-type-faq.sass */
+.node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions.active:after {
+  content: "\f077";
 }
 /* line 34, ../sass/page/_node-type-faq.sass */
-.node-type-walkhub-faq-page .backtotop {
-  background-repeat: no-repeat;
-  padding: 10px;
-  font-size: 12px;
-  line-height: 17.4px;
-  font-size: 1.2rem;
-  line-height: 1.74rem;
-  text-align: right;
-  cursor: pointer;
-  background-color: white;
-}
-/* line 42, ../sass/page/_node-type-faq.sass */
-.node-type-walkhub-faq-page .backtotop:after {
-  font-family: "icomoon";
-  speak: none;
-  content: attr(data-icon);
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-  *margin-right: 0.3em;
-  content: "\e023";
-  margin-left: 0.3em;
-  background-color: white;
+.node-type-walkhub-faq-page .field-name-field-walkhub-faq-answer {
+  font-size: 10px;
+  line-height: 14.5px;
+  font-size: 1rem;
+  line-height: 1.45rem;
+  padding-bottom: 5px;
+  padding-bottom: 0.5rem;
+  color: #626262;
 }

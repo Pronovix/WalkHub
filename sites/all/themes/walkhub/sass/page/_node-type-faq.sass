@@ -3,44 +3,35 @@
 // ---------------------
 
 .node-type-walkhub-faq-page
-  .field-name-field-walkhub-questions
-    & > .field-items > .field-item
-      margin-bottom: 2px
-      position: relative
+  .field-collection-view
+    +px-rem(margin-top, .5)
+
+    &:first-of-type
+      margin: 0
 
   .field-name-field-walkhub-faq-questions
-    +font-size(2)
+    +font-size(1.25)
+    +transition($transition-base)
     display: block
+    border-bottom: 1px solid $color-grey
+    position: relative
 
-    .field-items
-      padding-right: 40px
+    &:hover
+      border-color: $color-blue
 
     &:after
       +font-icomoon
-      content: '\e020'
-      display: block
+      +font-size(.8)
+      color: $color-text
       position: absolute
-      top: .6em
-      right: 1em
+      content: "\f078"
+      top: .3em
+      right: .3em
 
-    &.open:after
-      content: '\e023'
+    &.active:after
+      content: "\f077"
 
   .field-name-field-walkhub-faq-answer
-    +font-size(1.2)
-    padding: 0 10px
-
-
-  .backtotop
-    background-repeat: no-repeat
-    padding: 10px
-    +font-size(1.2)
-    text-align: right
-    cursor: pointer
-    background-color: $color-white
-
-    &:after
-      +font-icomoon
-      content: '\e023'
-      margin-left: .3em
-      background-color: $color-white
+    +font-size(1)
+    +px-rem(padding-bottom, .5)
+    color: $color-text

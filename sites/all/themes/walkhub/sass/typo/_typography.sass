@@ -84,23 +84,6 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small
   color: #6f6f6f
   line-height: 0
 
-h1
-  +font-size(2.525)
-  color: #6f6f6f
-
-h2
-  +font-size(2.0875)
-
-h3
-  +font-size(1.875)
-
-
-h4, h5
-  +font-size(1.525)
-
-h6
-  +font-size(1.4)
-
 
 hr
   border: solid #dddddd
@@ -129,7 +112,6 @@ code
 
 /* Lists
 ul, ol, dl
-  +font-size(1.2)
   margin-bottom: 1.25em
   list-style-position: outside
   font-family: inherit
@@ -141,7 +123,6 @@ ul, ol
 ul
   li
     ul, ol
-      +font-size(1.2)
       margin-left: 1.25em
       margin-bottom: 0
 
@@ -227,15 +208,3 @@ blockquote
     font-weight: bold
     border: none
     padding: 0 0.0625em
-
-@media only screen and (min-width: 768px)
-  h1, h2, h3, h4, h5, h6
-    line-height: 1.4
-  h1
-    font-size: 2.75em
-  h2
-    font-size: 2.3125em
-  h3
-    font-size: 1.6875em
-  h4
-    font-size: 1.4375em

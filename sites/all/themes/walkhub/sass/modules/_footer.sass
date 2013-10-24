@@ -60,7 +60,6 @@
 
   p
     +mp0
-    +font-size(1.2)
 
   a
     color: $color-white
@@ -68,11 +67,22 @@
   +hdpi(2)
     background: #2a2a2a url('../images/low_contrast_linen_@2X.png') top left repeat
 
-  & > div > div
-    +font-size(1.35)
-
   .row
     margin-bottom: 0
+
+  .cr-f
+    +max-screen($size-768)
+      text-align: center
+
+  .cr-s
+    line-height: 1.6em
+
+    +min-screen($size-768)
+      text-align: right
+
+    +max-screen($size-768)
+      +px-rem(padding-top, .75)
+      text-align: center
 
   ul,
   nav
