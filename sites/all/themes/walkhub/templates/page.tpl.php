@@ -207,22 +207,25 @@
   <?php endif; ?>
 
   <!--.l-footer-->
-  <footer id="main-footer" role="contentinfo">
-    <?php if (!empty($page['footer'])): ?>
-      <div class="footer large-12 columns">
-        <?php print render($page['footer']); ?>
+  <footer id="footermain" role="contentinfo">
+
+    <div id="footer" class="row">
+      <div >
+
       </div>
-    <?php endif; ?>
+    </div>
 
 
-    <div id="copyright" class="row">
-      <div class="cr-first large-8 columns">
-        <?php if ($copyright_menu) :?>
-          <?php print $copyright_menu; ?>
-        <?php endif; ?>
-      </div>
-      <div class="cr-first large-4 columns">
-        &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
+    <div id="copyright">
+      <div class="row">
+        <div class="cr-first large-8 columns">
+          <?php if (!empty($page['copyright_menu'])): ?>
+            <?php print render($page['copyright_menu']); ?>
+          <?php endif; ?>
+        </div>
+        <div class="cr-first large-4 columns">
+          &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
+        </div>
       </div>
     </div>
   </footer>
