@@ -188,3 +188,14 @@ function walkhub_js_alter(&$js) {
     }
   }
 }
+
+/**
+ * Implements template_preprocess_node()
+ */
+function walkhub_preprocess_node(&$vars) {
+  $node = $vars['node'];
+  $contenttype = $vars['type'];
+  $view_mode = $vars['view_mode'];
+  $vars['theme_hook_suggestions'][] = 'node__'. $view_mode;
+  $vars['theme_hook_suggestions'][] = 'node__'. $contenttype . '__' . $view_mode;
+}
