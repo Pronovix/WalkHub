@@ -8673,12 +8673,8 @@ main {
 }
 /* line 23, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li a {
-  font-size: 14px;
-  line-height: 20.3px;
-  font-size: 1.4rem;
-  line-height: 2.03rem;
-  padding: 7.5px 10px 8.5px 10px;
-  padding: 0.75rem 1rem 0.85rem 1rem;
+  padding: 7.5px;
+  padding: 0.75rem;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: 0 -1px 0 0 #e5e4e4, 0 -2px 0 0 #fefefe;
   -moz-box-shadow: 0 -1px 0 0 #e5e4e4, 0 -2px 0 0 #fefefe;
@@ -8692,11 +8688,11 @@ main {
   display: block;
   position: relative;
 }
-/* line 35, ../sass/modules/_sidebar.sass */
+/* line 34, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li a:hover {
   background-color: #e9e9e9;
 }
-/* line 39, ../sass/modules/_sidebar.sass */
+/* line 38, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li:last-of-type a {
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
@@ -8704,16 +8700,12 @@ main {
   -o-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 44, ../sass/modules/_sidebar.sass */
+/* line 43, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li > .menu li a {
-  font-size: 12px;
-  line-height: 17.4px;
-  font-size: 1.2rem;
-  line-height: 1.74rem;
-  padding: 7.5px 10px 8.5px 20px;
-  padding: 0.75rem 1rem 0.85rem 2rem;
+  padding: 7.5px 7.5px 7.5px 15px;
+  padding: 0.75rem 0.75rem 0.75rem 1.5rem;
 }
-/* line 48, ../sass/modules/_sidebar.sass */
+/* line 46, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu > .menu > li:first-of-type > a {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -8724,7 +8716,7 @@ main {
   -o-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
-/* line 52, ../sass/modules/_sidebar.sass */
+/* line 50, ../sass/modules/_sidebar.sass */
 .sidebar .block-user {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -8736,7 +8728,7 @@ main {
   padding: 7.5px 10px 8.5px 10px;
   padding: 0.75rem 1rem 0.85rem 1rem;
 }
-/* line 58, ../sass/modules/_sidebar.sass */
+/* line 56, ../sass/modules/_sidebar.sass */
 .sidebar .block-user #edit-actions {
   text-align: center;
 }
@@ -10960,4 +10952,89 @@ input.pure-input-rounded, .pure-input-rounded {
   padding-bottom: 5px;
   padding-bottom: 0.5rem;
   color: #626262;
+}
+
+/* line 3, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .view-content table {
+  width: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/* line 8, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .view-content table tr,
+.view-id-my_walkthroughs.view-display-id-block .view-content table td {
+  margin: 0;
+  padding: 0;
+}
+/* line 12, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .view-content table tr a,
+.view-id-my_walkthroughs.view-display-id-block .view-content table td a {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0 -1px 0 0 #e5e4e4, 0 -2px 0 0 #fefefe;
+  -moz-box-shadow: 0 -1px 0 0 #e5e4e4, 0 -2px 0 0 #fefefe;
+  box-shadow: 0 -1px 0 0 #e5e4e4, 0 -2px 0 0 #fefefe;
+  display: block;
+  color: #6f6f6f;
+  position: relative;
+  background-color: #f6f6f6;
+  padding: 7.5px;
+  padding: 0.75rem;
+}
+/* line 21, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .view-content table tr a:first-letter,
+.view-id-my_walkthroughs.view-display-id-block .view-content table td a:first-letter {
+  text-transform: uppercase;
+}
+/* line 24, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .view-content table tr a:hover,
+.view-id-my_walkthroughs.view-display-id-block .view-content table td a:hover {
+  background-color: #e9e9e9;
+}
+/* line 27, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .view-content table tr.views-row-first a {
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 31, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .pagination-centered {
+  border-top: 1px solid #fefefe;
+  background-color: #e9e9e9;
+  padding: 7.5px;
+  padding: 0.75rem;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+/* line 37, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .pagination-centered a {
+  color: #6f6f6f;
+}
+/* line 40, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .pagination-centered .pager {
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+/* line 44, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .pagination-centered .pager li {
+  display: inline-block;
+  float: none;
+}
+/* line 48, ../sass/view/_my_walkthroughs.sass */
+.view-id-my_walkthroughs.view-display-id-block .pagination-centered .pager li.current a, .view-id-my_walkthroughs.view-display-id-block .pagination-centered .pager li:hover a {
+  background-color: #f6f6f6;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
 }
