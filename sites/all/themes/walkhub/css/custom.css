@@ -8673,8 +8673,8 @@ main {
 }
 /* line 23, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li a {
-  padding: 7.5px;
-  padding: 0.75rem;
+  padding: 4.5px 7.5px;
+  padding: 0.45rem 0.75rem;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: 0 -1px 0 0 #e5e4e4, 0 -2px 0 0 #fefefe;
   -moz-box-shadow: 0 -1px 0 0 #e5e4e4, 0 -2px 0 0 #fefefe;
@@ -8702,8 +8702,8 @@ main {
 }
 /* line 43, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li > .menu li a {
-  padding: 7.5px 7.5px 7.5px 15px;
-  padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+  padding: 4.5px 7.5px 4.5px 15px;
+  padding: 0.45rem 0.75rem 0.45rem 1.5rem;
 }
 /* line 46, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu > .menu > li:first-of-type > a {
