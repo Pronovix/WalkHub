@@ -363,15 +363,6 @@ $microformat-abbr-font-decoration: none !default;
     }
   }
 
-
-  @media #{$small} {
-    h1,h2,h3,h4,h5,h6 { line-height: $header-line-height; }
-    h1 { font-size: $h1-font-size; }
-    h2 { font-size: $h2-font-size; }
-    h3 { font-size: $h3-font-size; }
-    h4 { font-size: $h4-font-size; }
-  }
-
   // Only include these styles if you want them.
   @if $include-print-styles {
     /*

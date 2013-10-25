@@ -18,9 +18,10 @@ $legacy-support-for-ie7: true
 @import "normalize"
 
 // ---------------------
-// Grid include
+// Mixins include
 // ---------------------
-@import "grid/foundation"
+// Import our mixins early so they can be used by other partials.
+@import "mixins/mixins"
 
 // ---------------------
 // Variables include
@@ -28,16 +29,19 @@ $legacy-support-for-ie7: true
 @import "variables-project"
 
 // ---------------------
+// Grid include
+// ---------------------
+@import "grid/foundation"
+
+
+
+// ---------------------
 // BASE include
 // ---------------------
 // Init file contains required imports. Here's where we include normalize,
 // foundation and also compass.
 
-// ---------------------
-// Mixins include
-// ---------------------
-// Import our mixins early so they can be used by other partials.
-@import "mixins/mixins"
+
 // Styling for elements.
 @import "typo/typo"
 

@@ -1,6 +1,14 @@
 // ---------------------
 // Footer Variables
 // ---------------------
+#footer_logo,
+#footer_logo_svg
+  width: 100%
+  height: auto
+
+#footer_logo
+  +opacity(.6)
+
 #footermain
   +box-shadow(inset 0px 1px 2px 0px rgba($color-black,0.01))
   background-color: $color-grey-light
@@ -63,6 +71,9 @@
 
   a
     color: $color-white
+
+    &:hover
+      text-decoration: underline
 
   +hdpi(2)
     background: #2a2a2a url('../images/low_contrast_linen_@2X.png') top left repeat

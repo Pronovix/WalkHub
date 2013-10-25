@@ -9,17 +9,6 @@ header#main-header
   +hdpi(2)
     background: #2a2a2a url('../images/low_contrast_linen_@2X.png') top left repeat
 
-  #main-logo
-    text-align: left
-
-    a
-      display: block
-
-  #walkhub-logo
-    +max-screen($size-768)
-      width: 100%
-      height: auto
-
   .menu
     +mp0
     text-align: right
@@ -37,3 +26,13 @@ header#main-header
       a
         +font-size(1.4)
         color: $color-white
+
+#main_logo_svg
+  float: left
+  display: block
+  max-width: 6.25em
+
+#main_logo_link
+  padding-left: 0.9375em
+  padding-right: 0.9375em
+  display: block
