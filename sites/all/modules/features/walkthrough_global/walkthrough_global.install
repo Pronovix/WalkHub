@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the minimal installation profile.
+ */
+
+
+/**
+ * Install callback for enabling the Walktrough theme.
+ */
+function walkthrough_global_update_7001() {
+  // Udpated Walkhub theme Turn on (update ZURB)
+  $themes = array(
+    'theme_default' => 'walkhub',
+    'admin_theme' => 'seven',
+  );
+  theme_enable($themes);
+
+  foreach ($themes as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  variable_set('node_admin_theme', FALSE);
+
+  // Disable the default Walkhub default theme (old zurb turn off)
+  theme_disable(array('walkhub_theme'));
+}
