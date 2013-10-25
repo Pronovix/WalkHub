@@ -1,71 +1,72 @@
 name = ZURB Foundation
-description = Drupal implementation of the Foundation 3 framework
+description = Drupal implementation of the Zurb Foundation 4 framework.
 core = 7.x
 engine = phptemplate
 
 ; Image appears on admin/appearance
 screenshot = images/screenshot.png
 
+; Reset styles with normalize
+stylesheets[all][] = css/normalize.css
+
 ; Foundation framework stylesheets
 stylesheets[all][] = css/foundation.min.css
-; Uncompressed uncomment for dev or as a reference
-;stylesheets[all][] = css/foundation.css 
 
-; Base theme specific CSS
-stylesheets[all][] = css/drupal.css
-
-; Theme specific CSS
-stylesheets[all][] = css/app.css
+; Modernizr acts as a shim for HTML5 elements for older browsers
+; as well as detection for mobile devices.
+scripts[] = js/vendor/custom.modernizr.js
 
 ; Foundation framework scripts.
-scripts[] = js/modernizr.foundation.js
 scripts[] = js/foundation.min.js
-scripts[] = js/app.js
 
-; Uncompressed uncomment for development or as a reference
-; scripts[] = js/jquery.foundation.accordion.js
-; scripts[] = js/jquery.foundation.alerts.js
-; scripts[] = js/jquery.foundation.buttons.js
-; scripts[] = js/jquery.foundation.clearing.js
-; scripts[] = js/jquery.foundation.forms.js
-; scripts[] = js/jquery.foundation.joyride.js
-; scripts[] = js/jquery.foundation.magellan.js
-; scripts[] = js/jquery.foundation.mediaQueryToggle.js
-; scripts[] = js/jquery.foundation.navigation.js
-; scripts[] = js/jquery.foundation.orbit.js
-; scripts[] = js/jquery.foundation.reveal.js
-; scripts[] = js/jquery.foundation.tabs.js
-; scripts[] = js/jquery.foundation.tooltips.js
-; scripts[] = js/jquery.placeholder.js
+; Source order:
+; http://foundation.zurb.com/docs/index.html#basicHTMLMarkup
 
 ; Regions are output in the page.tpl.php
-regions[header]          = Header
-regions[navigation]      = Navigation
-regions[help]            = Help
-regions[highlighted]     = Highlighted
-regions[content]         = Content
-regions[sidebar_first]   = Left Sidebar
-regions[sidebar_second]  = Right Sidebar
-regions[footer_first]    = Footer first
-regions[footer_middle]   = Footer middle
-regions[footer_last]     = Footer last
-
-; Hidden regions
-regions_hidden[] = Page top
-regions_hidden[] = Page bottom
+regions[header]         = Header
+regions[navigation]     = Navigation
+regions[help]           = Help
+regions[highlighted]    = Highlighted
+regions[content]        = Content
+regions[sidebar_first]  = Left Sidebar
+regions[sidebar_second] = Right Sidebar
+regions[footer_first]   = Footer first
+regions[footer_middle]  = Footer middle
+regions[footer_last]    = Footer last
 
 ; Panel Layouts
 plugins[panels][layouts] = layouts
 
-; Possible theme settings
-; settings[foundation_zurb_copyright] = 1
-; settings[foundation_zurb_credit] = ''
-; settings[foundation_zurb_font_fallback] = 'sans-serif'
-; settings[foundation_zurb_font_selectors] = 'body'
+; Theme settings:
 
-; Information added by drupal.org packaging script on 2013-03-27
-version = "7.x-1.0-alpha1"
+; Top Bar.
+settings[zurb_foundation_top_bar_enable] = 1
+settings[zurb_foundation_top_bar_grid] = 0
+settings[zurb_foundation_top_bar_sticky] = 0
+settings[zurb_foundation_top_bar_menu_text] = 'Menu'
+settings[zurb_foundation_top_bar_custom_back_text] = 1
+settings[zurb_foundation_top_bar_back_text] = 'Back'
+settings[zurb_foundation_top_bar_is_hover] = 1
+settings[zurb_foundation_top_bar_scrolltop] = 1
+
+; Tooltips.
+settings[zurb_foundation_tooltip_enable] = 1
+settings[zurb_foundation_tooltip_position] = 'top'
+settings[zurb_foundation_tooltip_mode] = 'text'
+settings[zurb_foundation_tooltip_text] = 'More information?'
+settings[zurb_foundation_tooltip_touch] = 0
+
+; Styles and Scripts.
+settings[zurb_foundation_disable_core_css] = 0
+
+; Misc.
+settings[zurb_foundation_html_tags] = 1
+settings[zurb_foundation_messages_modal] = 0
+settings[zurb_foundation_pager_center] = 1
+
+; Information added by drupal.org packaging script on 2013-09-06
+version = "7.x-4.0-beta1"
 core = "7.x"
 project = "zurb-foundation"
-datestamp = "1364343624"
+datestamp = "1378480031"
 

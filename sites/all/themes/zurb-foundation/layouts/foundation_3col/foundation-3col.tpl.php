@@ -17,13 +17,13 @@
 ?>
 
 <div class="row" <?php !empty($css_id) ? print 'id="' . $css_id . '"' : ''; ?>>
-  <div class="four columns">
+  <div class="large-4 columns">
     <?php print $content['left']; ?>
   </div>
-  <div class="four columns">
+  <div class="large-4 columns">
     <?php print $content['middle']; ?>
   </div>
-  <div class="four columns">
+  <div class="large-4 columns">
     <?php print $content['right']; ?>
   </div>
 </div> <!-- panels row -->
