@@ -4,7 +4,7 @@
  * Implements template_preprocess_html().
  *
  */
-//function walkhub_preprocess_html(&$variables) {
+//function walkhub_theme_preprocess_html(&$variables) {
 //  // Add conditional CSS for IE. To use uncomment below and add IE css file
 //  drupal_add_css(path_to_theme() . '/css/ie.css', array('weight' => CSS_THEME, 'browsers' => array('!IE' => FALSE), 'preprocess' => FALSE));
 //
@@ -16,20 +16,20 @@
  * Implements template_preprocess_page
  *
  */
-//function walkhub_preprocess_page(&$variables) {
+//function walkhub_theme_preprocess_page(&$variables) {
 //}
 
 /**
  * Implements template_preprocess_node
  *
  */
-//function walkhub_preprocess_node(&$variables) {
+//function walkhub_theme_preprocess_node(&$variables) {
 //}
 
 /**
  * Implements hook_preprocess_block()
  */
-//function walkhub_preprocess_block(&$variables) {
+//function walkhub_theme_preprocess_block(&$variables) {
 //  // Add wrapping div with global class to all block content sections.
 //  $variables['content_attributes_array']['class'][] = 'block-content';
 //
@@ -69,28 +69,28 @@
 //  }
 //}
 
-//function walkhub_preprocess_views_view(&$variables) {
+//function walkhub_theme_preprocess_views_view(&$variables) {
 //}
 
 /**
  * Implements template_preprocess_panels_pane().
  *
  */
-//function walkhub_preprocess_panels_pane(&$variables) {
+//function walkhub_theme_preprocess_panels_pane(&$variables) {
 //}
 
 /**
  * Implements template_preprocess_views_views_fields().
  *
  */
-//function walkhub_preprocess_views_view_fields(&$variables) {
+//function walkhub_theme_preprocess_views_view_fields(&$variables) {
 //}
 
 /**
  * Implements theme_form_element_label()
  * Use foundation tooltips
  */
-//function walkhub_form_element_label($variables) {
+//function walkhub_theme_form_element_label($variables) {
 //  if (!empty($variables['element']['#title'])) {
 //    $variables['element']['#title'] = '<span class="secondary label">' . $variables['element']['#title'] . '</span>';
 //  }
@@ -103,7 +103,7 @@
 /**
  * Implements hook_preprocess_button().
  */
-//function walkhub_preprocess_button(&$variables) {
+//function walkhub_theme_preprocess_button(&$variables) {
 //  $variables['element']['#attributes']['class'][] = 'button';
 //  if (isset($variables['element']['#parents'][0]) && $variables['element']['#parents'][0] == 'submit') {
 //    $variables['element']['#attributes']['class'][] = 'secondary';
@@ -114,7 +114,7 @@
  * Implements hook_form_alter()
  * Example of using foundation sexy buttons
  */
-//function walkhub_form_alter(&$form, &$form_state, $form_id) {
+//function walkhub_theme_form_alter(&$form, &$form_state, $form_id) {
 //  // Sexy submit buttons
 //  if (!empty($form['actions']) && !empty($form['actions']['submit'])) {
 //    $form['actions']['submit']['#attributes'] = array('class' => array('primary', 'button', 'radius'));
@@ -122,7 +122,7 @@
 //}
 
 // Sexy preview buttons
-//function walkhub_form_comment_form_alter(&$form, &$form_state) {
+//function walkhub_theme_form_comment_form_alter(&$form, &$form_state) {
 //  $form['actions']['preview']['#attributes']['class'][] = array('class' => array('secondary', 'button', 'radius'));
 //}
 
@@ -164,7 +164,7 @@ function THEMENAME_preprocess_views_view_fields(&$variables) {
 /**
  * Implements hook_css_alter().
  */
-function walkhub_css_alter(&$css) {
+function walkhub_theme_css_alter(&$css) {
   // Always remove base theme CSS.
   $theme_path = drupal_get_path('theme', 'zurb_foundation');
 
@@ -183,7 +183,7 @@ function walkhub_css_alter(&$css) {
 /**
  * Implements hook_js_alter().
  */
-function walkhub_js_alter(&$js) {
+function walkhub_theme_js_alter(&$js) {
   // Always remove base theme JS.
   $theme_path = drupal_get_path('theme', 'zurb_foundation');
 
@@ -197,7 +197,7 @@ function walkhub_js_alter(&$js) {
 /**
  * Implements template_preprocess_node()
  */
-function walkhub_preprocess_node(&$vars) {
+function walkhub_theme_preprocess_node(&$vars) {
   $node = $vars['node'];
   $contenttype = $vars['type'];
   $view_mode = $vars['view_mode'];
@@ -209,8 +209,8 @@ function walkhub_preprocess_node(&$vars) {
 /**
  * Implements template_preprocess_page()
  */
-function walkhub_preprocess_page(&$vars) {
-  $path = drupal_get_path('theme', 'walkhub');
+function walkhub_theme_preprocess_page(&$vars) {
+  $path = drupal_get_path('theme', 'walkhub_theme');
 
   if (drupal_is_front_page() == TRUE) {
   }
