@@ -40,6 +40,17 @@ img
 .hide
   display: none
 
+button
+  +sassy-button("simple", 10px, 19px, #f4f4f5)
+  +font-size(.8)
+  padding: .45em .85em
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+  color: #6f6f6f
+
+  &:hover,
+  &:active
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+    color: #6f6f6f
 
 /* Typography resets
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td

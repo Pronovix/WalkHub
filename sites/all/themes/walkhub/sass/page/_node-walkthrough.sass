@@ -1,0 +1,116 @@
+.node-type-walkthrough
+  .node-walkthrough
+    .field-name-field-fc-steps
+      > .field-label
+        +font-museo-500
+        margin-bottom: 2%
+        +font-size(1.4)
+
+    .entity-field-collection-item
+      +px-rem(padding, .45rem, .75rem)
+      margin-bottom: 2%
+      +border-radius(.25em)
+      +text-shadow(1px 1px 1px rgba(255, 255, 255, 0.75))
+      color: #6f6f6f
+      background-color: #f6f6f6
+      position: relative
+
+      .field-name-field-fc-step-name
+        +font-museo-500
+        +font-size(1.2)
+        +px-rem(margin-bottom, .45rem)
+
+        .field-label
+          +hide-text
+
+      .field-name-field-fc-step-command-1,
+      .field-name-field-fc-step-command-2,
+      .field-name-field-fc-step-command-3,
+      .field-name-field-fc-step-show-title,
+      .field-name-field-fc-step-highlight
+        clear: left
+        +font-size(1)
+        font-weight: normal
+
+        > .field-label
+          +font-size(1)
+          font-weight: normal
+          float: left
+          width: 6em
+          margin-right: 1em
+
+    .field-collection-view.view-mode-full
+      .content:after
+        +font-size(5)
+        +opacity(.1)
+        display: block
+        position: absolute
+        bottom: -.2em
+        right: .1em
+
+      &:nth-child(1) .content:after
+        content: '0'
+      &:nth-child(2) .content:after
+        content: '1'
+      &:nth-child(3) .content:after
+        content: '2'
+      &:nth-child(4) .content:after
+        content: '3'
+      &:nth-child(5) .content:after
+        content: '4'
+      &:nth-child(6) .content:after
+        content: '5'
+      &:nth-child(7) .content:after
+        content: '6'
+      &:nth-child(8) .content:after
+        content: '7'
+      &:nth-child(9) .content:after
+        content: '8'
+      &:nth-child(10) .content:after
+        content: '9'
+      &:nth-child(11) .content:after
+        content: '10'
+      &:nth-child(12) .content:after
+        content: '11'
+      &:nth-child(13) .content:after
+        content: '12'
+      &:nth-child(14) .content:after
+        content: '13'
+      &:nth-child(15) .content:after
+        content: '14'
+      &:nth-child(16) .content:after
+        content: '15'
+      &:nth-child(17) .content:after
+        content: '16'
+      &:nth-child(18) .content:after
+        content: '17'
+
+
+    .field-collection-view-links,
+    .description.field-collection-description
+      +hide-text
+      display: none
+
+
+
+    .action-links,
+    .action-links li,
+    .links.inline,
+    .links.inline li
+      +mp0
+      display: inline-block
+
+      a
+        @extend button
+
+        &:before
+          +font-icomoon
+          +font-size(.9)
+          display: inline-block
+          margin-right: .5em
+
+    .action-links li a:before
+
+      content: "\e000"
+
+
