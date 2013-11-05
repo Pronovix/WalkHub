@@ -27,3 +27,15 @@ function walkthrough_global_update_7001() {
   // Disable the default Walkhub default theme (old zurb turn off)
   theme_disable(array('walkhub_theme'));
 }
+
+/**
+ * The site theme has been renamed.
+ * Change the default theme to walkhub_theme.
+ */
+function walkthrough_global_update_7002() {
+  $themes = array(
+    'theme_default' => 'walkhub_theme',
+  );
+  theme_enable($themes);
+  variable_set('theme_default', 'walkhub_theme');
+}
