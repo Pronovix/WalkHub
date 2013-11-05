@@ -43,8 +43,6 @@ scripts[] = js/vendor/custom.modernizr.js
 ; can comment this line and uncomment the ones below you want.
 
 ;Page JS includes
-scripts[] = js/page/faq.js
-
 scripts[] = js/foundation.min.js
 
 ; Foundation framework scripts (uncompressed).

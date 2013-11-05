@@ -204,3 +204,24 @@ function walkhub_preprocess_node(&$vars) {
   $vars['theme_hook_suggestions'][] = 'node__'. $view_mode;
   $vars['theme_hook_suggestions'][] = 'node__'. $contenttype . '__' . $view_mode;
 }
+
+
+/**
+ * Implements template_preprocess_page()
+ */
+function walkhub_preprocess_page(&$vars) {
+  $path = drupal_get_path('theme', 'walkhub');
+
+  if (drupal_is_front_page() == TRUE) {
+  }
+
+  if (isset($vars['node'])) {
+    $node = $vars['node'];
+    $vars['theme_hook_suggestions'][] = "page__" .  $node->type;
+
+    if ( $node->type == 'walkhub_faq_page') {
+      drupal_add_js($path . '/js/page/faq.js');
+    }
+
+  }
+}
