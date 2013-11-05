@@ -217,7 +217,6 @@ function walkhub_preprocess_page(&$vars) {
 
   if (isset($vars['node'])) {
     $node = $vars['node'];
-    $node_type = $node->type;
     $vars['theme_hook_suggestions'][] = "page__" .  $node->type;
 
     if ( $node->type == 'walkhub_faq_page') {
