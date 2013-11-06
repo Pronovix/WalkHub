@@ -8135,7 +8135,7 @@ div.messages ul li {
   content: "\e01a";
 }
 
-/* line 8, ../sass/modules/_admin.sass */
+/* line 5, ../sass/modules/_admin.sass */
 .tabs.primary {
   border: 0;
   margin: 0;
@@ -8145,14 +8145,14 @@ div.messages ul li {
   font-size: 1rem;
   line-height: 1.45rem;
 }
-/* line 13, ../sass/modules/_admin.sass */
+/* line 10, ../sass/modules/_admin.sass */
 .tabs.primary li {
   display: inline-block;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 18, ../sass/modules/_admin.sass */
+/* line 15, ../sass/modules/_admin.sass */
 .tabs.primary li a {
   border: 0;
   background: transparent;
@@ -8231,7 +8231,7 @@ div.messages ul li {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 29, ../sass/modules/_admin.sass */
+/* line 26, ../sass/modules/_admin.sass */
 .tabs.primary li a:after {
   font-family: "icomoon";
   speak: none;
@@ -8243,7 +8243,7 @@ div.messages ul li {
   *margin-right: 0.3em;
   margin-left: 0.5em;
 }
-/* line 33, ../sass/modules/_admin.sass */
+/* line 30, ../sass/modules/_admin.sass */
 .tabs.primary li.active a {
   border: 0;
   background: transparent;
@@ -8326,27 +8326,27 @@ div.messages ul li {
 }
 
 @media screen and (max-width: 767px) {
-  /* line 49, ../sass/modules/_admin.sass */
+  /* line 46, ../sass/modules/_admin.sass */
   html body.admin-menu.logged-in {
     margin-top: 100px !important;
   }
 }
-/* line 56, ../sass/modules/_admin.sass */
+/* line 53, ../sass/modules/_admin.sass */
 .logged-in header #header-top,
 .logged-in header #nested-menu {
   top: 2.5em;
 }
-/* line 60, ../sass/modules/_admin.sass */
+/* line 57, ../sass/modules/_admin.sass */
 .logged-in #sliding-popup {
   display: none !important;
 }
 
-/* line 64, ../sass/modules/_admin.sass */
+/* line 61, ../sass/modules/_admin.sass */
 #admin-menu .dropdown {
   display: block !important;
 }
 
-/* line 68, ../sass/modules/_admin.sass */
+/* line 65, ../sass/modules/_admin.sass */
 #tabs {
   position: fixed;
   z-index: 2000;
@@ -8356,7 +8356,7 @@ div.messages ul li {
   padding: 20px;
   width: 100%;
 }
-/* line 77, ../sass/modules/_admin.sass */
+/* line 74, ../sass/modules/_admin.sass */
 #tabs:after {
   background-image: url("../../images/video_mask.png");
   position: absolute;
@@ -8370,13 +8370,13 @@ div.messages ul li {
   right: 0;
   bottom: 0;
 }
-/* line 89, ../sass/modules/_admin.sass */
+/* line 86, ../sass/modules/_admin.sass */
 #tabs .tabs {
   margin: 0;
   padding: 0;
   border: 0;
 }
-/* line 94, ../sass/modules/_admin.sass */
+/* line 91, ../sass/modules/_admin.sass */
 #tabs .tabs li a {
   padding: 5px 10px;
   border: none;
@@ -8386,7 +8386,7 @@ div.messages ul li {
   line-height: 2.175rem;
 }
 
-/* line 100, ../sass/modules/_admin.sass */
+/* line 97, ../sass/modules/_admin.sass */
 .profile {
   font-size: 12px;
   line-height: 17.4px;
@@ -8405,14 +8405,14 @@ div.messages ul li {
   -moz-box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.25);
 }
-/* line 110, ../sass/modules/_admin.sass */
+/* line 107, ../sass/modules/_admin.sass */
 .profile header {
   padding: 0.6em 1em;
   border-bottom: 2px solid #091f30;
   margin: 0 !important;
   height: 4.5em;
 }
-/* line 116, ../sass/modules/_admin.sass */
+/* line 113, ../sass/modules/_admin.sass */
 .profile header .logo {
   width: 20%;
   float: right;
@@ -8420,7 +8420,7 @@ div.messages ul li {
   margin-top: 0.3em;
   text-align: right;
 }
-/* line 123, ../sass/modules/_admin.sass */
+/* line 120, ../sass/modules/_admin.sass */
 .profile header h1 {
   font-size: 25px;
   line-height: 36.25px;
@@ -8433,7 +8433,7 @@ div.messages ul li {
   line-height: 1em;
   padding-top: 0.35em;
 }
-/* line 132, ../sass/modules/_admin.sass */
+/* line 129, ../sass/modules/_admin.sass */
 .profile header h1 span {
   font-size: 13px;
   line-height: 18.85px;
@@ -8441,23 +8441,23 @@ div.messages ul li {
   line-height: 1.885rem;
   display: block;
 }
-/* line 136, ../sass/modules/_admin.sass */
+/* line 133, ../sass/modules/_admin.sass */
 .profile h3 {
   padding: 0em 1em;
   margin-bottom: 0;
 }
-/* line 140, ../sass/modules/_admin.sass */
+/* line 137, ../sass/modules/_admin.sass */
 .profile .field-name-og-user-node {
   padding: 0.6em 1em;
 }
-/* line 143, ../sass/modules/_admin.sass */
+/* line 140, ../sass/modules/_admin.sass */
 .profile .field-label {
   font-size: 22px;
   line-height: 31.9px;
   font-size: 2.2rem;
   line-height: 3.19rem;
 }
-/* line 146, ../sass/modules/_admin.sass */
+/* line 143, ../sass/modules/_admin.sass */
 .profile dl {
   padding: 0.6em 1em;
   font-size: 12px;
@@ -8466,14 +8466,14 @@ div.messages ul li {
   line-height: 1.74rem;
   margin: 0;
 }
-/* line 151, ../sass/modules/_admin.sass */
+/* line 148, ../sass/modules/_admin.sass */
 .profile h2.restrict {
   width: 100%;
   text-align: center;
   margin-bottom: 1em;
   display: block;
 }
-/* line 157, ../sass/modules/_admin.sass */
+/* line 154, ../sass/modules/_admin.sass */
 .profile h2.restrict:before {
   font-size: 25px;
   line-height: 36.25px;
@@ -8482,7 +8482,7 @@ div.messages ul li {
   content: "\e030";
   margin-right: 0.35em;
 }
-/* line 162, ../sass/modules/_admin.sass */
+/* line 159, ../sass/modules/_admin.sass */
 .profile a.button {
   font-size: 13px;
   line-height: 18.85px;
@@ -8493,16 +8493,16 @@ div.messages ul li {
   border: none;
   width: auto;
 }
-/* line 171, ../sass/modules/_admin.sass */
+/* line 168, ../sass/modules/_admin.sass */
 .profile a.button.login:before {
   content: "\e02e";
   margin-right: 0.85em;
 }
-/* line 175, ../sass/modules/_admin.sass */
+/* line 172, ../sass/modules/_admin.sass */
 .profile a.button.login:hover {
   border: 0;
 }
-/* line 178, ../sass/modules/_admin.sass */
+/* line 175, ../sass/modules/_admin.sass */
 .profile .button-container {
   text-align: center;
   margin: 2em 0;
@@ -8510,75 +8510,75 @@ div.messages ul li {
 }
 
 @-webkit-keyframes bounce {
-  /* line 185, ../sass/modules/_admin.sass */
+  /* line 182, ../sass/modules/_admin.sass */
   0% {
     margin: -40% auto;
   }
 
-  /* line 187, ../sass/modules/_admin.sass */
+  /* line 184, ../sass/modules/_admin.sass */
   80% {
     margin: 3% auto;
   }
 
-  /* line 189, ../sass/modules/_admin.sass */
+  /* line 186, ../sass/modules/_admin.sass */
   100% {
     margin: 5% auto;
   }
 }
 
 @-moz-keyframes bounce {
-  /* line 185, ../sass/modules/_admin.sass */
+  /* line 182, ../sass/modules/_admin.sass */
   0% {
     margin: -40% auto;
   }
 
-  /* line 187, ../sass/modules/_admin.sass */
+  /* line 184, ../sass/modules/_admin.sass */
   80% {
     margin: 3% auto;
   }
 
-  /* line 189, ../sass/modules/_admin.sass */
+  /* line 186, ../sass/modules/_admin.sass */
   100% {
     margin: 5% auto;
   }
 }
 
 @-ms-keyframes bounce {
-  /* line 185, ../sass/modules/_admin.sass */
+  /* line 182, ../sass/modules/_admin.sass */
   0% {
     margin: -40% auto;
   }
 
-  /* line 187, ../sass/modules/_admin.sass */
+  /* line 184, ../sass/modules/_admin.sass */
   80% {
     margin: 3% auto;
   }
 
-  /* line 189, ../sass/modules/_admin.sass */
+  /* line 186, ../sass/modules/_admin.sass */
   100% {
     margin: 5% auto;
   }
 }
 
 @keyframes bounce {
-  /* line 185, ../sass/modules/_admin.sass */
+  /* line 182, ../sass/modules/_admin.sass */
   0% {
     margin: -40% auto;
   }
 
-  /* line 187, ../sass/modules/_admin.sass */
+  /* line 184, ../sass/modules/_admin.sass */
   80% {
     margin: 3% auto;
   }
 
-  /* line 189, ../sass/modules/_admin.sass */
+  /* line 186, ../sass/modules/_admin.sass */
   100% {
     margin: 5% auto;
   }
 }
 
 @media screen and (max-width: 767px) {
-  /* line 201, ../sass/modules/_admin.sass */
+  /* line 198, ../sass/modules/_admin.sass */
   body.admin-menu {
     margin-top: 100px !important;
   }
@@ -9059,10 +9059,10 @@ main {
 
 /* line 2, ../sass/modules/_edit_forms.sass */
 input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"] {
-  font-size: 14px;
-  line-height: 20.3px;
-  font-size: 1.4rem;
-  line-height: 2.03rem;
+  font-size: 8px;
+  line-height: 11.6px;
+  font-size: 0.8rem;
+  line-height: 1.16rem;
   -webkit-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
   -moz-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
   box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
@@ -9103,10 +9103,10 @@ input[type="text"]:disabled, input[type="password"]:disabled, input[type="email"
 /* line 38, ../sass/modules/_edit_forms.sass */
 select,
 textarea {
-  font-size: 14px;
-  line-height: 20.3px;
-  font-size: 1.4rem;
-  line-height: 2.03rem;
+  font-size: 8px;
+  line-height: 11.6px;
+  font-size: 0.8rem;
+  line-height: 1.16rem;
   -webkit-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
   -moz-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
   box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
@@ -9172,13 +9172,22 @@ textarea:disabled {
   color: #cad2d3;
 }
 
-/* line 64, ../sass/modules/_edit_forms.sass */
+/* line 63, ../sass/modules/_edit_forms.sass */
+textarea {
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+
+/* line 67, ../sass/modules/_edit_forms.sass */
 input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
   outline: thin dotted #333333;
   outline: 1px auto #129fea;
 }
 
-/* line 70, ../sass/modules/_edit_forms.sass */
+/* line 73, ../sass/modules/_edit_forms.sass */
 input[readonly],
 select[readonly],
 textarea[readonly] {
@@ -9189,31 +9198,31 @@ textarea[readonly] {
   border-color: #cccccc;
 }
 
-/* line 79, ../sass/modules/_edit_forms.sass */
+/* line 82, ../sass/modules/_edit_forms.sass */
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border: 1px solid #ee5f5b;
 }
-/* line 85, ../sass/modules/_edit_forms.sass */
+/* line 88, ../sass/modules/_edit_forms.sass */
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
   border-color: #e9322d;
 }
 
-/* line 88, ../sass/modules/_edit_forms.sass */
+/* line 91, ../sass/modules/_edit_forms.sass */
 select {
   border: 1px solid #cccccc;
   background-color: white;
 }
-/* line 92, ../sass/modules/_edit_forms.sass */
+/* line 95, ../sass/modules/_edit_forms.sass */
 select[multiple] {
   height: auto;
 }
 
-/* line 95, ../sass/modules/_edit_forms.sass */
+/* line 98, ../sass/modules/_edit_forms.sass */
 label {
   font-size: 12px;
   line-height: 17.4px;
@@ -9223,14 +9232,14 @@ label {
   margin: 1.3rem 0 0.45rem 0;
 }
 
-/* line 99, ../sass/modules/_edit_forms.sass */
+/* line 102, ../sass/modules/_edit_forms.sass */
 fieldset {
   margin: 0;
   padding: 0.35em 0 0.75em;
   border: 0;
 }
 
-/* line 104, ../sass/modules/_edit_forms.sass */
+/* line 107, ../sass/modules/_edit_forms.sass */
 legend {
   display: block;
   width: 100%;
@@ -9241,18 +9250,18 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* line 115, ../sass/modules/_edit_forms.sass */
+/* line 118, ../sass/modules/_edit_forms.sass */
 .pure-form-stacked input[type="text"], .pure-form-stacked input[type="password"], .pure-form-stacked input[type="email"], .pure-form-stacked input[type="url"], .pure-form-stacked input[type="date"], .pure-form-stacked input[type="month"], .pure-form-stacked input[type="time"], .pure-form-stacked input[type="datetime"], .pure-form-stacked input[type="datetime-local"], .pure-form-stacked input[type="week"], .pure-form-stacked input[type="number"], .pure-form-stacked input[type="search"], .pure-form-stacked input[type="tel"], .pure-form-stacked input[type="color"] {
   display: block;
   margin: 0.25em 0;
 }
-/* line 118, ../sass/modules/_edit_forms.sass */
+/* line 121, ../sass/modules/_edit_forms.sass */
 .pure-form-stacked select, .pure-form-stacked label, .pure-form-stacked textarea {
   display: block;
   margin: 0.25em 0;
 }
 
-/* line 123, ../sass/modules/_edit_forms.sass */
+/* line 126, ../sass/modules/_edit_forms.sass */
 .pure-form-aligned input, .pure-form-aligned textarea, .pure-form-aligned select, .pure-form-aligned .pure-help-inline {
   display: inline-block;
   *display: inline;
@@ -9260,7 +9269,7 @@ legend {
   vertical-align: middle;
 }
 
-/* line 129, ../sass/modules/_edit_forms.sass */
+/* line 132, ../sass/modules/_edit_forms.sass */
 .pure-form-message-inline {
   display: inline-block;
   *display: inline;
@@ -9269,11 +9278,11 @@ legend {
 }
 
 /* Aligned Forms */
-/* line 138, ../sass/modules/_edit_forms.sass */
+/* line 141, ../sass/modules/_edit_forms.sass */
 .pure-form-aligned .pure-control-group {
   margin-bottom: 0.5em;
 }
-/* line 140, ../sass/modules/_edit_forms.sass */
+/* line 143, ../sass/modules/_edit_forms.sass */
 .pure-form-aligned .pure-control-group label {
   text-align: right;
   display: inline-block;
@@ -9281,24 +9290,24 @@ legend {
   width: 10em;
   margin: 0 1em 0 0;
 }
-/* line 146, ../sass/modules/_edit_forms.sass */
+/* line 149, ../sass/modules/_edit_forms.sass */
 .pure-form-aligned .pure-controls {
   margin: 1.5em 0 0 10em;
 }
 
 /* Rounded Inputs */
-/* line 151, ../sass/modules/_edit_forms.sass */
+/* line 154, ../sass/modules/_edit_forms.sass */
 input.pure-input-rounded, .pure-input-rounded {
   border-radius: 2em;
   padding: 0.5em 1em;
 }
 
 /* Grouped Inputs */
-/* line 158, ../sass/modules/_edit_forms.sass */
+/* line 161, ../sass/modules/_edit_forms.sass */
 .pure-group fieldset {
   margin-bottom: 10px;
 }
-/* line 160, ../sass/modules/_edit_forms.sass */
+/* line 163, ../sass/modules/_edit_forms.sass */
 .pure-group input {
   display: block;
   padding: 10px;
@@ -9307,61 +9316,61 @@ input.pure-input-rounded, .pure-input-rounded {
   position: relative;
   top: -1px;
 }
-/* line 167, ../sass/modules/_edit_forms.sass */
+/* line 170, ../sass/modules/_edit_forms.sass */
 .pure-group input:focus {
   z-index: 2;
 }
-/* line 169, ../sass/modules/_edit_forms.sass */
+/* line 172, ../sass/modules/_edit_forms.sass */
 .pure-group input:first-child {
   top: 1px;
   border-radius: 4px 4px 0 0;
 }
-/* line 172, ../sass/modules/_edit_forms.sass */
+/* line 175, ../sass/modules/_edit_forms.sass */
 .pure-group input:last-child {
   top: -2px;
   border-radius: 0 0 4px 4px;
 }
-/* line 175, ../sass/modules/_edit_forms.sass */
+/* line 178, ../sass/modules/_edit_forms.sass */
 .pure-group button, .pure-group .logged-in .main.columns .button-group li a, .logged-in .main.columns .button-group li .pure-group a, .pure-group .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .pure-group a, .pure-group .node-type-walkthrough .node-walkthrough .links.inline a, .node-type-walkthrough .node-walkthrough .links.inline .pure-group a,
 .pure-group .node-type-walkthrough .node-walkthrough .links.inline li a,
 .node-type-walkthrough .node-walkthrough .links.inline li .pure-group a {
   margin: 0.35em 0;
 }
 
-/* line 178, ../sass/modules/_edit_forms.sass */
+/* line 181, ../sass/modules/_edit_forms.sass */
 .pure-input-1 {
   width: 100%;
 }
 
-/* line 181, ../sass/modules/_edit_forms.sass */
+/* line 184, ../sass/modules/_edit_forms.sass */
 .pure-input-2-3 {
   width: 66%;
 }
 
-/* line 184, ../sass/modules/_edit_forms.sass */
+/* line 187, ../sass/modules/_edit_forms.sass */
 .pure-input-1-2 {
   width: 50%;
 }
 
-/* line 187, ../sass/modules/_edit_forms.sass */
+/* line 190, ../sass/modules/_edit_forms.sass */
 .pure-input-1-3 {
   width: 33%;
 }
 
-/* line 190, ../sass/modules/_edit_forms.sass */
+/* line 193, ../sass/modules/_edit_forms.sass */
 .pure-input-1-4 {
   width: 25%;
 }
 
 /* Block help for forms */
-/* line 196, ../sass/modules/_edit_forms.sass */
+/* line 199, ../sass/modules/_edit_forms.sass */
 .pure-form-message {
   display: block;
   color: #666666;
   font-size: 90%;
 }
 
-/* line 205, ../sass/modules/_edit_forms.sass */
+/* line 208, ../sass/modules/_edit_forms.sass */
 .filter-help a {
   font-size: 12px;
   line-height: 17.4px;
@@ -9369,523 +9378,11 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 1.74rem;
 }
 
-/* line 208, ../sass/modules/_edit_forms.sass */
+/* line 211, ../sass/modules/_edit_forms.sass */
 .form-item.form-type-select {
   margin-top: 0;
 }
 
-/* @group Base */
-/* line 3, ../sass/modules/_chosen.sass */
-.chosen-container {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 13px;
-  zoom: 1;
-  *display: inline;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-/* line 13, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-drop {
-  position: absolute;
-  top: 100%;
-  left: -9999px;
-  z-index: 1010;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  border: 1px solid #aaaaaa;
-  border-top: 0;
-  background: white;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
-}
-/* line 26, ../sass/modules/_chosen.sass */
-.chosen-container.chosen-with-drop .chosen-drop {
-  left: 0;
-}
-/* line 28, ../sass/modules/_chosen.sass */
-.chosen-container a {
-  cursor: pointer;
-}
-
-/* @end */
-/* @group Single Chosen */
-/* line 35, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-single {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  padding: 0 0 0 8px;
-  height: 23px;
-  border: 1px solid #aaaaaa;
-  border-radius: 5px;
-  background-color: white;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, white), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
-  background: -webkit-linear-gradient(top, white 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
-  background: -moz-linear-gradient(top, white 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
-  background: -o-linear-gradient(top, white 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
-  background: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
-  background-clip: padding-box;
-  box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
-  color: #444444;
-  text-decoration: none;
-  white-space: nowrap;
-  line-height: 24px;
-}
-/* line 55, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-default {
-  color: #999999;
-}
-/* line 57, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-single span {
-  display: block;
-  overflow: hidden;
-  margin-right: 26px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-/* line 63, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-single-with-deselect span {
-  margin-right: 38px;
-}
-/* line 65, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-single abbr {
-  position: absolute;
-  top: 6px;
-  right: 26px;
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: url("../images/chosen-sprite.png") -42px 1px no-repeat;
-  font-size: 1px;
-}
-/* line 74, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-single abbr:hover {
-  background-position: -42px -10px;
-}
-/* line 76, ../sass/modules/_chosen.sass */
-.chosen-container-single.chosen-disabled .chosen-single abbr:hover {
-  background-position: -42px -10px;
-}
-/* line 78, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-single div {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  width: 18px;
-  height: 100%;
-}
-/* line 85, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-single div b {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: url("../images/chosen-sprite.png") no-repeat 0px 2px;
-}
-/* line 90, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-search {
-  position: relative;
-  z-index: 1010;
-  margin: 0;
-  padding: 3px 4px;
-  white-space: nowrap;
-}
-/* line 96, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-search input[type="text"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 1px 0;
-  padding: 4px 20px 4px 5px;
-  width: 100%;
-  height: auto;
-  outline: 0;
-  border: 1px solid #aaaaaa;
-  background: white url("../images/chosen-sprite.png") no-repeat 100% -20px;
-  background: url("../images/chosen-sprite.png") no-repeat 100% -20px, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
-  background: url("../images/chosen-sprite.png") no-repeat 100% -20px, -webkit-linear-gradient(#eeeeee 1%, white 15%);
-  background: url("../images/chosen-sprite.png") no-repeat 100% -20px, -moz-linear-gradient(#eeeeee 1%, white 15%);
-  background: url("../images/chosen-sprite.png") no-repeat 100% -20px, -o-linear-gradient(#eeeeee 1%, white 15%);
-  background: url("../images/chosen-sprite.png") no-repeat 100% -20px, linear-gradient(#eeeeee 1%, #ffffff 15%);
-  font-size: 1em;
-  font-family: sans-serif;
-  line-height: normal;
-  border-radius: 0;
-}
-/* line 116, ../sass/modules/_chosen.sass */
-.chosen-container-single .chosen-drop {
-  margin-top: -1px;
-  border-radius: 0 0 4px 4px;
-  background-clip: padding-box;
-}
-/* line 120, ../sass/modules/_chosen.sass */
-.chosen-container-single.chosen-container-single-nosearch .chosen-search {
-  position: absolute;
-  left: -9999px;
-}
-
-/* @end */
-/* @group Results */
-/* line 127, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-results {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  margin: 0 4px 4px 0;
-  padding: 0 0 0 4px;
-  max-height: 240px;
-  -webkit-overflow-scrolling: touch;
-}
-/* line 135, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-results li {
-  display: none;
-  margin: 0;
-  padding: 5px 6px;
-  list-style: none;
-  line-height: 15px;
-}
-/* line 141, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-results li.active-result {
-  display: list-item;
-  cursor: pointer;
-}
-/* line 144, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-results li.disabled-result {
-  display: list-item;
-  color: #cccccc;
-  cursor: default;
-}
-/* line 148, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-results li.highlighted {
-  background-color: #3875d7;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
-  background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
-  background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
-  background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
-  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
-  color: white;
-}
-/* line 156, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-results li.no-results {
-  display: list-item;
-  background: #f4f4f4;
-}
-/* line 159, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-results li.group-result {
-  display: list-item;
-  font-weight: bold;
-  cursor: default;
-}
-/* line 163, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-results li.group-option {
-  padding-left: 15px;
-}
-/* line 165, ../sass/modules/_chosen.sass */
-.chosen-container .chosen-results li em {
-  font-style: normal;
-  text-decoration: underline;
-}
-
-/* @end */
-/* @group Multi Chosen */
-/* line 173, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices {
-  position: relative;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto !important;
-  height: 1%;
-  border: 1px solid #aaaaaa;
-  background-color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
-  background-image: -webkit-linear-gradient(#eeeeee 1%, white 15%);
-  background-image: -moz-linear-gradient(#eeeeee 1%, white 15%);
-  background-image: -o-linear-gradient(#eeeeee 1%, white 15%);
-  background-image: linear-gradient(#eeeeee 1%, #ffffff 15%);
-  cursor: text;
-}
-/* line 192, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li {
-  float: left;
-  list-style: none;
-}
-/* line 195, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li.search-field {
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-}
-/* line 199, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
-  margin: 1px 0;
-  padding: 5px;
-  height: 15px;
-  outline: 0;
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none;
-  color: #666666;
-  font-size: 100%;
-  font-family: sans-serif;
-  line-height: normal;
-  border-radius: 0;
-}
-/* line 212, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li.search-field .default {
-  color: #999999;
-}
-/* line 214, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li.search-choice {
-  position: relative;
-  margin: 3px 0 3px 5px;
-  padding: 3px 20px 3px 5px;
-  border: 1px solid #aaaaaa;
-  border-radius: 3px;
-  background-color: #e4e4e4;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-clip: padding-box;
-  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-  color: #333333;
-  line-height: 13px;
-  cursor: default;
-}
-/* line 231, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
-  position: absolute;
-  top: 4px;
-  right: 3px;
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: url("../images/chosen-sprite.png") -42px 1px no-repeat;
-  font-size: 1px;
-}
-/* line 240, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
-  background-position: -42px -10px;
-}
-/* line 242, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li.search-choice-disabled {
-  padding-right: 5px;
-  border: 1px solid #cccccc;
-  background-color: #e4e4e4;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  color: #666666;
-}
-/* line 252, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li.search-choice-focus {
-  background: #d4d4d4;
-}
-/* line 254, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close {
-  background-position: -42px -10px;
-}
-/* line 256, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-results {
-  margin: 0;
-  padding: 0;
-}
-/* line 259, ../sass/modules/_chosen.sass */
-.chosen-container-multi .chosen-drop .result-selected {
-  display: list-item;
-  color: #cccccc;
-  cursor: default;
-}
-
-/* @end */
-/* @group Active */
-/* line 268, ../sass/modules/_chosen.sass */
-.chosen-container-active .chosen-single {
-  border: 1px solid #5897fb;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-/* line 271, ../sass/modules/_chosen.sass */
-.chosen-container-active.chosen-with-drop .chosen-single {
-  border: 1px solid #aaaaaa;
-  -moz-border-radius-bottomright: 0;
-  border-bottom-right-radius: 0;
-  -moz-border-radius-bottomleft: 0;
-  border-bottom-left-radius: 0;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, white));
-  background-image: -webkit-linear-gradient(#eeeeee 20%, white 80%);
-  background-image: -moz-linear-gradient(#eeeeee 20%, white 80%);
-  background-image: -o-linear-gradient(#eeeeee 20%, white 80%);
-  background-image: linear-gradient(#eeeeee 20%, #ffffff 80%);
-  box-shadow: 0 1px 0 white inset;
-}
-/* line 283, ../sass/modules/_chosen.sass */
-.chosen-container-active.chosen-with-drop .chosen-single div {
-  border-left: none;
-  background: transparent;
-}
-/* line 286, ../sass/modules/_chosen.sass */
-.chosen-container-active.chosen-with-drop .chosen-single div b {
-  background-position: -18px 2px;
-}
-/* line 288, ../sass/modules/_chosen.sass */
-.chosen-container-active .chosen-choices {
-  border: 1px solid #5897fb;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-/* line 291, ../sass/modules/_chosen.sass */
-.chosen-container-active .chosen-choices li.search-field input[type="text"] {
-  color: #111111 !important;
-}
-
-/* @end */
-/* @group Disabled Support */
-/* line 297, ../sass/modules/_chosen.sass */
-.chosen-disabled {
-  opacity: 0.5 !important;
-  cursor: default;
-}
-/* line 300, ../sass/modules/_chosen.sass */
-.chosen-disabled .chosen-single, .chosen-disabled .chosen-choices .search-choice .search-choice-close {
-  cursor: default;
-}
-
-/* @end */
-/* @group Right to Left */
-/* line 306, ../sass/modules/_chosen.sass */
-.chosen-rtl {
-  text-align: right;
-}
-/* line 308, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-single {
-  overflow: visible;
-  padding: 0 8px 0 0;
-}
-/* line 311, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-single span {
-  margin-right: 0;
-  margin-left: 26px;
-  direction: rtl;
-}
-/* line 315, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-single-with-deselect span {
-  margin-left: 38px;
-}
-/* line 318, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-single div {
-  right: auto;
-  left: 3px;
-}
-/* line 321, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-single abbr {
-  right: auto;
-  left: 26px;
-}
-/* line 324, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-choices li {
-  float: right;
-}
-/* line 326, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-choices li.search-field input[type="text"] {
-  direction: rtl;
-}
-/* line 328, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-choices li.search-choice {
-  margin: 3px 5px 3px 0;
-  padding: 3px 5px 3px 19px;
-}
-/* line 331, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
-  right: auto;
-  left: 4px;
-}
-/* line 334, ../sass/modules/_chosen.sass */
-.chosen-rtl.chosen-container-single-nosearch .chosen-search, .chosen-rtl .chosen-drop {
-  left: 9999px;
-}
-/* line 336, ../sass/modules/_chosen.sass */
-.chosen-rtl.chosen-container-single .chosen-results {
-  margin: 0 0 4px 4px;
-  padding: 0 4px 0 0;
-}
-/* line 339, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-results li.group-option {
-  padding-right: 15px;
-  padding-left: 0;
-}
-/* line 342, ../sass/modules/_chosen.sass */
-.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
-  border-right: none;
-}
-/* line 344, ../sass/modules/_chosen.sass */
-.chosen-rtl .chosen-search input[type="text"] {
-  padding: 4px 5px 4px 20px;
-  background: white url("../images/chosen-sprite.png") no-repeat -30px -20px;
-  background: url("../images/chosen-sprite.png") no-repeat -30px -20px, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
-  background: url("../images/chosen-sprite.png") no-repeat -30px -20px, -webkit-linear-gradient(#eeeeee 1%, white 15%);
-  background: url("../images/chosen-sprite.png") no-repeat -30px -20px, -moz-linear-gradient(#eeeeee 1%, white 15%);
-  background: url("../images/chosen-sprite.png") no-repeat -30px -20px, -o-linear-gradient(#eeeeee 1%, white 15%);
-  background: url("../images/chosen-sprite.png") no-repeat -30px -20px, linear-gradient(#eeeeee 1%, #ffffff 15%);
-  direction: rtl;
-}
-/* line 354, ../sass/modules/_chosen.sass */
-.chosen-rtl.chosen-container-single .chosen-single div b {
-  background-position: 6px 2px;
-}
-/* line 356, ../sass/modules/_chosen.sass */
-.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
-  background-position: -12px 2px;
-}
-
-/* @end */
-/* @group Retina compatibility */
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
-  /* line 362, ../sass/modules/_chosen.sass */
-  .chosen-rtl .chosen-search input[type="text"] {
-    background-image: url("../images/chosen-sprite@2x.png") !important;
-    background-size: 52px 37px !important;
-    background-repeat: no-repeat !important;
-  }
-
-  /* line 368, ../sass/modules/_chosen.sass */
-  .chosen-container-single .chosen-single abbr, .chosen-container-single .chosen-single div b {
-    background-image: url("../images/chosen-sprite@2x.png") !important;
-    background-size: 52px 37px !important;
-    background-repeat: no-repeat !important;
-  }
-  /* line 372, ../sass/modules/_chosen.sass */
-  .chosen-container-single .chosen-search input[type="text"] {
-    background-image: url("../images/chosen-sprite@2x.png") !important;
-    background-size: 52px 37px !important;
-    background-repeat: no-repeat !important;
-  }
-
-  /* line 376, ../sass/modules/_chosen.sass */
-  .chosen-container-multi .chosen-choices .search-choice .search-choice-close {
-    background-image: url("../images/chosen-sprite@2x.png") !important;
-    background-size: 52px 37px !important;
-    background-repeat: no-repeat !important;
-  }
-
-  /* line 381, ../sass/modules/_chosen.sass */
-  .chosen-container .chosen-results-scroll-down span, .chosen-container .chosen-results-scroll-up span {
-    background-image: url("../images/chosen-sprite@2x.png") !important;
-    background-size: 52px 37px !important;
-    background-repeat: no-repeat !important;
-    /* @end */
-  }
-}
 /* jQuery UI - v1.10.2 - 2013-03-14
  ** http://jqueryui.com
  ** Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
@@ -11113,7 +10610,7 @@ input.pure-input-rounded, .pure-input-rounded {
 
 /* line 4, ../sass/modules/_notifications.sass */
 .info-block, .page-user .description,
-.page-user-password .description, .description, .filter-guidelines {
+.page-user-password .description, .filter-guidelines {
   font-size: 12px;
   line-height: 17.4px;
   font-size: 1.2rem;
@@ -11134,7 +10631,8 @@ input.pure-input-rounded, .pure-input-rounded {
   position: relative;
 }
 /* line 15, ../sass/modules/_notifications.sass */
-.info-block:after, .description:after, .filter-guidelines:after {
+.info-block:after, .page-user .description:after,
+.page-user-password .description:after, .filter-guidelines:after {
   font-size: 21px;
   line-height: 30.45px;
   font-size: 2.1rem;
@@ -11154,13 +10652,13 @@ input.pure-input-rounded, .pure-input-rounded {
 }
 /* line 23, ../sass/modules/_notifications.sass */
 .info-block ul, .page-user .description ul,
-.page-user-password .description ul, .description ul, .filter-guidelines ul {
+.page-user-password .description ul, .filter-guidelines ul {
   margin: 0;
   padding: 0;
 }
 /* line 26, ../sass/modules/_notifications.sass */
 .info-block ul li, .page-user .description ul li,
-.page-user-password .description ul li, .description ul li, .filter-guidelines ul li {
+.page-user-password .description ul li, .filter-guidelines ul li {
   list-style-type: none;
 }
 
@@ -11568,6 +11066,163 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 7.975px;
   font-size: 0.55rem;
   line-height: 0.7975rem;
+}
+
+/* line 3, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form > div {
+  text-align: center;
+}
+/* line 6, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form > div * {
+  text-align: left;
+}
+/* line 9, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .form-wrapper > div {
+  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
+  *zoom: 1;
+}
+/* line 121, ../sass/grid/foundation/components/_global.scss */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .form-wrapper > div:before, .page-field-collection-field-fc-steps-edit #field-collection-item-form .form-wrapper > div:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../sass/grid/foundation/components/_global.scss */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .form-wrapper > div:after {
+  clear: both;
+}
+/* line 13, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-highlight,
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-description,
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-name,
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-show-title {
+  padding: 0 7.5px;
+  padding: 0 0.75rem;
+}
+/* line 19, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form #field-fc-step-highlight-add-more-wrapper {
+  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+/* line 22, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .has-tip.top {
+  display: none;
+}
+/* line 25, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form label {
+  font-size: 10px;
+  line-height: 14.5px;
+  font-size: 1rem;
+  line-height: 1.45rem;
+  margin: 0;
+  font-weight: normal;
+  float: left;
+  width: 20%;
+  margin-right: 1em;
+  margin-top: 0.2em;
+}
+/* line 34, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form label,
+.page-field-collection-field-fc-steps-edit #field-collection-item-form input {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 38, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form label {
+  font-size: 10px;
+  line-height: 14.5px;
+  font-size: 1rem;
+  line-height: 1.45rem;
+  margin: 0;
+  font-weight: normal;
+  float: left;
+  width: 20%;
+  margin-right: 1em;
+  margin-top: 0.2em;
+}
+/* line 47, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form input,
+.page-field-collection-field-fc-steps-edit #field-collection-item-form textarea,
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .grippie {
+  float: right;
+  width: 76%;
+  margin: 0;
+}
+/* line 54, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit #field-collection-item-form #edit-field-fc-step-show-title-und {
+  width: 10%;
+  margin-right: 66%;
+  margin-top: 0.5em;
+}
+/* line 59, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit .group-fc-step-selenium {
+  margin: 10px 0;
+  margin: 1rem 0;
+}
+/* line 62, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit .group-fc-step-selenium > legend {
+  border: 0;
+}
+/* line 65, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-legend {
+  font-family: "Museo500", Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 17.4px;
+  font-size: 1.2rem;
+  line-height: 1.74rem;
+  text-align: left;
+}
+/* line 70, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-legend a {
+  color: #4d4d4d;
+}
+/* line 73, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper {
+  padding: 4.5px 7.5px;
+  padding: 0.45rem 0.75rem;
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  -ms-border-radius: 0.35em;
+  -o-border-radius: 0.35em;
+  border-radius: 0.35em;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  color: #6f6f6f;
+  background-color: #f6f6f6;
+  position: relative;
+}
+/* line 81, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div {
+  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
+  *zoom: 1;
+}
+/* line 121, ../sass/grid/foundation/components/_global.scss */
+.page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div:before, .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../sass/grid/foundation/components/_global.scss */
+.page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div:after {
+  clear: both;
+}
+/* line 85, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div:last-of-type > div > div {
+  margin: 0;
+}
+/* line 88, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit .form-submit:after {
+  font-family: "icomoon";
+  speak: none;
+  content: attr(data-icon);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  *margin-right: 0.3em;
+  content: "\e017";
+  margin-left: 0.5em;
 }
 
 /* line 3, ../sass/view/_my_walkthroughs.sass */
