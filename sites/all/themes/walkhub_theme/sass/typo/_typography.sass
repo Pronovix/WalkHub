@@ -41,6 +41,76 @@ img
   display: none
 
 
+body
+  +font-size(.85)
+  +font-pt-sansregular
+
+.logged-in
+
+  h1
+    margin-right: 8em
+
+  .main.columns
+    position: relative
+
+    .button-group
+      +font-size(.8)
+      position: absolute
+      top: 0
+      right: 0.9375em
+
+      li
+        a
+          @extend button
+          margin-right: .45em
+          padding: .4em 1em
+
+        &:last-of-type a
+          margin-right: 0
+
+
+// buttons
+button
+  +sassy-button("simple", 10px, 19px, #f4f4f5)
+  +font-size(.8)
+  +border-radius(.35em)
+  padding: .45em .85em
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+  color: #6f6f6f
+
+  &:hover,
+  &:active
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+    color: #6f6f6f
+
+// Call To action button
+.cta
+  +font-size(1)
+  +font-museo-500
+  +border-radius(.65em)
+  +transition($transition-base)
+  +box-shadow(inset 0px 0px 10px 0px rgba($color-white,.35),inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15))
+  background-color: #3b8acd
+  +filter-gradient(#3b8acd, #035787, vertical)
+  +background-image(linear-gradient(top,  #3b8acd 0%,#035787 100%))
+  padding: .45em .85em .35em
+  border: 1px solid #005b9a
+  color: #ffffff
+  +text-shadow(1px 1px 1px rgba(#000, 0.75))
+
+  &:after
+    +font-icomoon
+
+  &:hover
+    background-color: lighten(#3b8acd, 5%)
+    +filter-gradient(lighten(#3b8acd, 5%), lighten(#035787, 5%), vertical)
+    +background-image(linear-gradient(top,  lighten(#3b8acd, 5%) 0%,lighten(#035787, 5%) 100%))
+
+  &:active
+    background: #035787
+    +box-shadow(inset 0px -3px 1px rgba(255, 255, 255, .15))
+
+
 /* Typography resets
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td
   margin: 0
