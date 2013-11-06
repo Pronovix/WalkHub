@@ -280,7 +280,7 @@ legend {
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  */
 /* line 284, ../sass/_normalize.scss */
-button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
+button, .logged-in .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a,
@@ -300,7 +300,7 @@ textarea {
  * the UA stylesheet.
  */
 /* line 296, ../sass/_normalize.scss */
-button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
+button, .logged-in .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a,
@@ -315,7 +315,7 @@ input {
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
 /* line 308, ../sass/_normalize.scss */
-button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
+button, .logged-in .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a,
@@ -331,7 +331,7 @@ select {
  *    `input` and others.
  */
 /* line 323, ../sass/_normalize.scss */
-button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
+button, .logged-in .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a,
@@ -348,7 +348,7 @@ input[type="submit"] {
  * Re-set default cursor for disabled elements.
  */
 /* line 333, ../sass/_normalize.scss */
-button[disabled], .node-type-walkthrough .main.columns .button-group li a[disabled], .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled], .node-type-walkthrough .node-walkthrough .action-links a[disabled],
+button[disabled], .logged-in .main.columns .button-group li a[disabled], .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled], .node-type-walkthrough .node-walkthrough .action-links a[disabled],
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled],
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled],
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled],
@@ -398,7 +398,7 @@ input[type="search"]::-webkit-search-decoration {
  * Remove inner padding and border in Firefox 4+.
  */
 /* line 376, ../sass/_normalize.scss */
-button::-moz-focus-inner, .node-type-walkthrough .main.columns .button-group li a::-moz-focus-inner, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a::-moz-focus-inner, .node-type-walkthrough .node-walkthrough .action-links a::-moz-focus-inner,
+button::-moz-focus-inner, .logged-in .main.columns .button-group li a::-moz-focus-inner, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a::-moz-focus-inner, .node-type-walkthrough .node-walkthrough .action-links a::-moz-focus-inner,
 .node-type-walkthrough .node-walkthrough .action-links li a::-moz-focus-inner,
 .node-type-walkthrough .node-walkthrough .links.inline a::-moz-focus-inner,
 .node-type-walkthrough .node-walkthrough .links.inline li a::-moz-focus-inner,
@@ -2412,7 +2412,7 @@ blockquote p {
   }
 }
 /* line 171, ../sass/grid/foundation/components/_buttons.scss */
-button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
+button, .logged-in .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a, .button {
@@ -2437,27 +2437,27 @@ button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walk
   color: white;
 }
 /* line 122, ../sass/grid/foundation/components/_buttons.scss */
-button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
+button:hover, .logged-in .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a:hover, button:focus, .node-type-walkthrough .main.columns .button-group li a:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:focus, .node-type-walkthrough .node-walkthrough .action-links a:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a:hover, button:focus, .logged-in .main.columns .button-group li a:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:focus, .node-type-walkthrough .node-walkthrough .action-links a:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a:focus, .button:hover, .button:focus {
   background-color: #2284a1;
 }
 /* line 133, ../sass/grid/foundation/components/_buttons.scss */
-button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
+button:hover, .logged-in .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a:hover, button:focus, .node-type-walkthrough .main.columns .button-group li a:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:focus, .node-type-walkthrough .node-walkthrough .action-links a:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a:hover, button:focus, .logged-in .main.columns .button-group li a:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:focus, .node-type-walkthrough .node-walkthrough .action-links a:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a:focus, .button:hover, .button:focus {
   color: white;
 }
 /* line 176, ../sass/grid/foundation/components/_buttons.scss */
-button.secondary, .node-type-walkthrough .main.columns .button-group li a.secondary, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary, .node-type-walkthrough .node-walkthrough .action-links a.secondary,
+button.secondary, .logged-in .main.columns .button-group li a.secondary, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary, .node-type-walkthrough .node-walkthrough .action-links a.secondary,
 .node-type-walkthrough .node-walkthrough .action-links li a.secondary,
 .node-type-walkthrough .node-walkthrough .links.inline a.secondary,
 .node-type-walkthrough .node-walkthrough .links.inline li a.secondary, .button.secondary {
@@ -2466,27 +2466,27 @@ button.secondary, .node-type-walkthrough .main.columns .button-group li a.second
   color: #333333;
 }
 /* line 122, ../sass/grid/foundation/components/_buttons.scss */
-button.secondary:hover, .node-type-walkthrough .main.columns .button-group li a.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.secondary:hover,
+button.secondary:hover, .logged-in .main.columns .button-group li a.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.secondary:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.secondary:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.secondary:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.secondary:hover, button.secondary:focus, .node-type-walkthrough .main.columns .button-group li a.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.secondary:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.secondary:hover, button.secondary:focus, .logged-in .main.columns .button-group li a.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.secondary:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a.secondary:focus, .button.secondary:hover, .button.secondary:focus {
   background-color: #d0d0d0;
 }
 /* line 128, ../sass/grid/foundation/components/_buttons.scss */
-button.secondary:hover, .node-type-walkthrough .main.columns .button-group li a.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.secondary:hover,
+button.secondary:hover, .logged-in .main.columns .button-group li a.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.secondary:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.secondary:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.secondary:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.secondary:hover, button.secondary:focus, .node-type-walkthrough .main.columns .button-group li a.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.secondary:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.secondary:hover, button.secondary:focus, .logged-in .main.columns .button-group li a.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.secondary:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a.secondary:focus, .button.secondary:hover, .button.secondary:focus {
   color: #333333;
 }
 /* line 177, ../sass/grid/foundation/components/_buttons.scss */
-button.success, .node-type-walkthrough .main.columns .button-group li a.success, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success, .node-type-walkthrough .node-walkthrough .action-links a.success,
+button.success, .logged-in .main.columns .button-group li a.success, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success, .node-type-walkthrough .node-walkthrough .action-links a.success,
 .node-type-walkthrough .node-walkthrough .action-links li a.success,
 .node-type-walkthrough .node-walkthrough .links.inline a.success,
 .node-type-walkthrough .node-walkthrough .links.inline li a.success, .button.success {
@@ -2495,27 +2495,27 @@ button.success, .node-type-walkthrough .main.columns .button-group li a.success,
   color: white;
 }
 /* line 122, ../sass/grid/foundation/components/_buttons.scss */
-button.success:hover, .node-type-walkthrough .main.columns .button-group li a.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.success:hover,
+button.success:hover, .logged-in .main.columns .button-group li a.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.success:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.success:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.success:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.success:hover, button.success:focus, .node-type-walkthrough .main.columns .button-group li a.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.success:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.success:hover, button.success:focus, .logged-in .main.columns .button-group li a.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.success:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a.success:focus, .button.success:hover, .button.success:focus {
   background-color: #457a1a;
 }
 /* line 133, ../sass/grid/foundation/components/_buttons.scss */
-button.success:hover, .node-type-walkthrough .main.columns .button-group li a.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.success:hover,
+button.success:hover, .logged-in .main.columns .button-group li a.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.success:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.success:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.success:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.success:hover, button.success:focus, .node-type-walkthrough .main.columns .button-group li a.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.success:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.success:hover, button.success:focus, .logged-in .main.columns .button-group li a.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.success:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a.success:focus, .button.success:hover, .button.success:focus {
   color: white;
 }
 /* line 178, ../sass/grid/foundation/components/_buttons.scss */
-button.alert, .node-type-walkthrough .main.columns .button-group li a.alert, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert, .node-type-walkthrough .node-walkthrough .action-links a.alert,
+button.alert, .logged-in .main.columns .button-group li a.alert, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert, .node-type-walkthrough .node-walkthrough .action-links a.alert,
 .node-type-walkthrough .node-walkthrough .action-links li a.alert,
 .node-type-walkthrough .node-walkthrough .links.inline a.alert,
 .node-type-walkthrough .node-walkthrough .links.inline li a.alert, .button.alert {
@@ -2524,27 +2524,27 @@ button.alert, .node-type-walkthrough .main.columns .button-group li a.alert, .no
   color: white;
 }
 /* line 122, ../sass/grid/foundation/components/_buttons.scss */
-button.alert:hover, .node-type-walkthrough .main.columns .button-group li a.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.alert:hover,
+button.alert:hover, .logged-in .main.columns .button-group li a.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.alert:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.alert:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.alert:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.alert:hover, button.alert:focus, .node-type-walkthrough .main.columns .button-group li a.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.alert:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.alert:hover, button.alert:focus, .logged-in .main.columns .button-group li a.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.alert:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a.alert:focus, .button.alert:hover, .button.alert:focus {
   background-color: #970b0e;
 }
 /* line 133, ../sass/grid/foundation/components/_buttons.scss */
-button.alert:hover, .node-type-walkthrough .main.columns .button-group li a.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.alert:hover,
+button.alert:hover, .logged-in .main.columns .button-group li a.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.alert:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.alert:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.alert:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.alert:hover, button.alert:focus, .node-type-walkthrough .main.columns .button-group li a.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.alert:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.alert:hover, button.alert:focus, .logged-in .main.columns .button-group li a.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.alert:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a.alert:focus, .button.alert:hover, .button.alert:focus {
   color: white;
 }
 /* line 180, ../sass/grid/foundation/components/_buttons.scss */
-button.large, .node-type-walkthrough .main.columns .button-group li a.large, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.large, .node-type-walkthrough .node-walkthrough .action-links a.large,
+button.large, .logged-in .main.columns .button-group li a.large, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.large, .node-type-walkthrough .node-walkthrough .action-links a.large,
 .node-type-walkthrough .node-walkthrough .action-links li a.large,
 .node-type-walkthrough .node-walkthrough .links.inline a.large,
 .node-type-walkthrough .node-walkthrough .links.inline li a.large, .button.large {
@@ -2555,7 +2555,7 @@ button.large, .node-type-walkthrough .main.columns .button-group li a.large, .no
   font-size: 1.25em;
 }
 /* line 181, ../sass/grid/foundation/components/_buttons.scss */
-button.small, .node-type-walkthrough .main.columns .button-group li a.small, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.small, .node-type-walkthrough .node-walkthrough .action-links a.small,
+button.small, .logged-in .main.columns .button-group li a.small, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.small, .node-type-walkthrough .node-walkthrough .action-links a.small,
 .node-type-walkthrough .node-walkthrough .action-links li a.small,
 .node-type-walkthrough .node-walkthrough .links.inline a.small,
 .node-type-walkthrough .node-walkthrough .links.inline li a.small, .button.small {
@@ -2566,7 +2566,7 @@ button.small, .node-type-walkthrough .main.columns .button-group li a.small, .no
   font-size: 0.8125em;
 }
 /* line 182, ../sass/grid/foundation/components/_buttons.scss */
-button.tiny, .node-type-walkthrough .main.columns .button-group li a.tiny, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.tiny, .node-type-walkthrough .node-walkthrough .action-links a.tiny,
+button.tiny, .logged-in .main.columns .button-group li a.tiny, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.tiny, .node-type-walkthrough .node-walkthrough .action-links a.tiny,
 .node-type-walkthrough .node-walkthrough .action-links li a.tiny,
 .node-type-walkthrough .node-walkthrough .links.inline a.tiny,
 .node-type-walkthrough .node-walkthrough .links.inline li a.tiny, .button.tiny {
@@ -2577,7 +2577,7 @@ button.tiny, .node-type-walkthrough .main.columns .button-group li a.tiny, .node
   font-size: 0.6875em;
 }
 /* line 183, ../sass/grid/foundation/components/_buttons.scss */
-button.expand, .node-type-walkthrough .main.columns .button-group li a.expand, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.expand, .node-type-walkthrough .node-walkthrough .action-links a.expand,
+button.expand, .logged-in .main.columns .button-group li a.expand, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.expand, .node-type-walkthrough .node-walkthrough .action-links a.expand,
 .node-type-walkthrough .node-walkthrough .action-links li a.expand,
 .node-type-walkthrough .node-walkthrough .links.inline a.expand,
 .node-type-walkthrough .node-walkthrough .links.inline li a.expand, .button.expand {
@@ -2586,7 +2586,7 @@ button.expand, .node-type-walkthrough .main.columns .button-group li a.expand, .
   width: 100%;
 }
 /* line 185, ../sass/grid/foundation/components/_buttons.scss */
-button.left-align, .node-type-walkthrough .main.columns .button-group li a.left-align, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.left-align, .node-type-walkthrough .node-walkthrough .action-links a.left-align,
+button.left-align, .logged-in .main.columns .button-group li a.left-align, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.left-align, .node-type-walkthrough .node-walkthrough .action-links a.left-align,
 .node-type-walkthrough .node-walkthrough .action-links li a.left-align,
 .node-type-walkthrough .node-walkthrough .links.inline a.left-align,
 .node-type-walkthrough .node-walkthrough .links.inline li a.left-align, .button.left-align {
@@ -2594,7 +2594,7 @@ button.left-align, .node-type-walkthrough .main.columns .button-group li a.left-
   text-indent: 0.75em;
 }
 /* line 186, ../sass/grid/foundation/components/_buttons.scss */
-button.right-align, .node-type-walkthrough .main.columns .button-group li a.right-align, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.right-align, .node-type-walkthrough .node-walkthrough .action-links a.right-align,
+button.right-align, .logged-in .main.columns .button-group li a.right-align, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.right-align, .node-type-walkthrough .node-walkthrough .action-links a.right-align,
 .node-type-walkthrough .node-walkthrough .action-links li a.right-align,
 .node-type-walkthrough .node-walkthrough .links.inline a.right-align,
 .node-type-walkthrough .node-walkthrough .links.inline li a.right-align, .button.right-align {
@@ -2602,10 +2602,10 @@ button.right-align, .node-type-walkthrough .main.columns .button-group li a.righ
   padding-right: 0.75em;
 }
 /* line 188, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled, .node-type-walkthrough .main.columns .button-group li a.disabled, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled, .node-type-walkthrough .node-walkthrough .action-links a.disabled,
+button.disabled, .logged-in .main.columns .button-group li a.disabled, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled, .node-type-walkthrough .node-walkthrough .action-links a.disabled,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled, button[disabled], .node-type-walkthrough .main.columns .button-group li a[disabled], .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled], .node-type-walkthrough .node-walkthrough .action-links a[disabled],
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled, button[disabled], .logged-in .main.columns .button-group li a[disabled], .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled], .node-type-walkthrough .node-walkthrough .action-links a[disabled],
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled],
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled],
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled], .button.disabled, .button[disabled] {
@@ -2618,58 +2618,58 @@ button.disabled, .node-type-walkthrough .main.columns .button-group li a.disable
   box-shadow: none;
 }
 /* line 122, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled:hover, .node-type-walkthrough .main.columns .button-group li a.disabled:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled:hover,
+button.disabled:hover, .logged-in .main.columns .button-group li a.disabled:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:hover, button.disabled:focus, .node-type-walkthrough .main.columns .button-group li a.disabled:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:hover, button.disabled:focus, .logged-in .main.columns .button-group li a.disabled:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:focus, button[disabled]:hover, .node-type-walkthrough .main.columns .button-group li a[disabled]:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:focus, button[disabled]:hover, .logged-in .main.columns .button-group li a[disabled]:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled]:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled]:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled]:hover, button[disabled]:focus, .node-type-walkthrough .main.columns .button-group li a[disabled]:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled]:hover, button[disabled]:focus, .logged-in .main.columns .button-group li a[disabled]:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled]:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled]:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
   background-color: #2284a1;
 }
 /* line 133, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled:hover, .node-type-walkthrough .main.columns .button-group li a.disabled:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled:hover,
+button.disabled:hover, .logged-in .main.columns .button-group li a.disabled:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:hover, button.disabled:focus, .node-type-walkthrough .main.columns .button-group li a.disabled:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:hover, button.disabled:focus, .logged-in .main.columns .button-group li a.disabled:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:focus, button[disabled]:hover, .node-type-walkthrough .main.columns .button-group li a[disabled]:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:focus, button[disabled]:hover, .logged-in .main.columns .button-group li a[disabled]:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled]:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled]:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled]:hover, button[disabled]:focus, .node-type-walkthrough .main.columns .button-group li a[disabled]:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled]:hover, button[disabled]:focus, .logged-in .main.columns .button-group li a[disabled]:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled]:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled]:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
   color: white;
 }
 /* line 146, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled:hover, .node-type-walkthrough .main.columns .button-group li a.disabled:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled:hover,
+button.disabled:hover, .logged-in .main.columns .button-group li a.disabled:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:hover, button.disabled:focus, .node-type-walkthrough .main.columns .button-group li a.disabled:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:hover, button.disabled:focus, .logged-in .main.columns .button-group li a.disabled:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:focus, button[disabled]:hover, .node-type-walkthrough .main.columns .button-group li a[disabled]:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled:focus, button[disabled]:hover, .logged-in .main.columns .button-group li a[disabled]:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled]:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled]:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled]:hover, button[disabled]:focus, .node-type-walkthrough .main.columns .button-group li a[disabled]:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled]:hover, button[disabled]:focus, .logged-in .main.columns .button-group li a[disabled]:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled]:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled]:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled]:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled]:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
   background-color: #2ba6cb;
 }
 /* line 189, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.secondary, .node-type-walkthrough .main.columns .button-group li a.disabled.secondary, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary,
+button.disabled.secondary, .logged-in .main.columns .button-group li a.disabled.secondary, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.secondary,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.secondary,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary, button[disabled].secondary, .node-type-walkthrough .main.columns .button-group li a[disabled].secondary, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary, button[disabled].secondary, .logged-in .main.columns .button-group li a[disabled].secondary, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].secondary,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].secondary,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
@@ -2682,58 +2682,58 @@ button.disabled.secondary, .node-type-walkthrough .main.columns .button-group li
   box-shadow: none;
 }
 /* line 122, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.secondary:hover, .node-type-walkthrough .main.columns .button-group li a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:hover,
+button.disabled.secondary:hover, .logged-in .main.columns .button-group li a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.secondary:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.secondary:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:hover, button.disabled.secondary:focus, .node-type-walkthrough .main.columns .button-group li a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:hover, button.disabled.secondary:focus, .logged-in .main.columns .button-group li a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.secondary:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:focus, button[disabled].secondary:hover, .node-type-walkthrough .main.columns .button-group li a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:focus, button[disabled].secondary:hover, .logged-in .main.columns .button-group li a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].secondary:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].secondary:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary:hover, button[disabled].secondary:focus, .node-type-walkthrough .main.columns .button-group li a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary:hover, button[disabled].secondary:focus, .logged-in .main.columns .button-group li a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
   background-color: #d0d0d0;
 }
 /* line 128, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.secondary:hover, .node-type-walkthrough .main.columns .button-group li a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:hover,
+button.disabled.secondary:hover, .logged-in .main.columns .button-group li a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.secondary:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.secondary:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:hover, button.disabled.secondary:focus, .node-type-walkthrough .main.columns .button-group li a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:hover, button.disabled.secondary:focus, .logged-in .main.columns .button-group li a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.secondary:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:focus, button[disabled].secondary:hover, .node-type-walkthrough .main.columns .button-group li a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:focus, button[disabled].secondary:hover, .logged-in .main.columns .button-group li a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].secondary:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].secondary:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary:hover, button[disabled].secondary:focus, .node-type-walkthrough .main.columns .button-group li a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary:hover, button[disabled].secondary:focus, .logged-in .main.columns .button-group li a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
   color: #333333;
 }
 /* line 146, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.secondary:hover, .node-type-walkthrough .main.columns .button-group li a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:hover,
+button.disabled.secondary:hover, .logged-in .main.columns .button-group li a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.secondary:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.secondary:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:hover, button.disabled.secondary:focus, .node-type-walkthrough .main.columns .button-group li a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:hover, button.disabled.secondary:focus, .logged-in .main.columns .button-group li a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.secondary:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.secondary:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:focus, button[disabled].secondary:hover, .node-type-walkthrough .main.columns .button-group li a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.secondary:focus, button[disabled].secondary:hover, .logged-in .main.columns .button-group li a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].secondary:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].secondary:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary:hover, button[disabled].secondary:focus, .node-type-walkthrough .main.columns .button-group li a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary:hover, button[disabled].secondary:focus, .logged-in .main.columns .button-group li a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].secondary:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].secondary:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].secondary:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
   background-color: #e9e9e9;
 }
 /* line 190, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.success, .node-type-walkthrough .main.columns .button-group li a.disabled.success, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success,
+button.disabled.success, .logged-in .main.columns .button-group li a.disabled.success, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.success,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.success,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success, button[disabled].success, .node-type-walkthrough .main.columns .button-group li a[disabled].success, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success, button[disabled].success, .logged-in .main.columns .button-group li a[disabled].success, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].success,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].success,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success, .button.disabled.success, .button[disabled].success {
@@ -2746,58 +2746,58 @@ button.disabled.success, .node-type-walkthrough .main.columns .button-group li a
   box-shadow: none;
 }
 /* line 122, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.success:hover, .node-type-walkthrough .main.columns .button-group li a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:hover,
+button.disabled.success:hover, .logged-in .main.columns .button-group li a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.success:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.success:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:hover, button.disabled.success:focus, .node-type-walkthrough .main.columns .button-group li a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:hover, button.disabled.success:focus, .logged-in .main.columns .button-group li a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.success:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:focus, button[disabled].success:hover, .node-type-walkthrough .main.columns .button-group li a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:focus, button[disabled].success:hover, .logged-in .main.columns .button-group li a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].success:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].success:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success:hover, button[disabled].success:focus, .node-type-walkthrough .main.columns .button-group li a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success:hover, button[disabled].success:focus, .logged-in .main.columns .button-group li a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
   background-color: #457a1a;
 }
 /* line 133, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.success:hover, .node-type-walkthrough .main.columns .button-group li a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:hover,
+button.disabled.success:hover, .logged-in .main.columns .button-group li a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.success:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.success:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:hover, button.disabled.success:focus, .node-type-walkthrough .main.columns .button-group li a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:hover, button.disabled.success:focus, .logged-in .main.columns .button-group li a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.success:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:focus, button[disabled].success:hover, .node-type-walkthrough .main.columns .button-group li a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:focus, button[disabled].success:hover, .logged-in .main.columns .button-group li a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].success:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].success:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success:hover, button[disabled].success:focus, .node-type-walkthrough .main.columns .button-group li a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success:hover, button[disabled].success:focus, .logged-in .main.columns .button-group li a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
   color: white;
 }
 /* line 146, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.success:hover, .node-type-walkthrough .main.columns .button-group li a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:hover,
+button.disabled.success:hover, .logged-in .main.columns .button-group li a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.success:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.success:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:hover, button.disabled.success:focus, .node-type-walkthrough .main.columns .button-group li a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:hover, button.disabled.success:focus, .logged-in .main.columns .button-group li a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.success:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.success:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.success:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:focus, button[disabled].success:hover, .node-type-walkthrough .main.columns .button-group li a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.success:focus, button[disabled].success:hover, .logged-in .main.columns .button-group li a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].success:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].success:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success:hover, button[disabled].success:focus, .node-type-walkthrough .main.columns .button-group li a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success:hover, button[disabled].success:focus, .logged-in .main.columns .button-group li a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].success:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].success:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].success:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
   background-color: #5da423;
 }
 /* line 191, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.alert, .node-type-walkthrough .main.columns .button-group li a.disabled.alert, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert,
+button.disabled.alert, .logged-in .main.columns .button-group li a.disabled.alert, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.alert,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.alert,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert, button[disabled].alert, .node-type-walkthrough .main.columns .button-group li a[disabled].alert, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert, button[disabled].alert, .logged-in .main.columns .button-group li a[disabled].alert, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].alert,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].alert,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert, .button.disabled.alert, .button[disabled].alert {
@@ -2810,48 +2810,48 @@ button.disabled.alert, .node-type-walkthrough .main.columns .button-group li a.d
   box-shadow: none;
 }
 /* line 122, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.alert:hover, .node-type-walkthrough .main.columns .button-group li a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:hover,
+button.disabled.alert:hover, .logged-in .main.columns .button-group li a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.alert:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.alert:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:hover, button.disabled.alert:focus, .node-type-walkthrough .main.columns .button-group li a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:hover, button.disabled.alert:focus, .logged-in .main.columns .button-group li a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.alert:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:focus, button[disabled].alert:hover, .node-type-walkthrough .main.columns .button-group li a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:focus, button[disabled].alert:hover, .logged-in .main.columns .button-group li a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].alert:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].alert:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert:hover, button[disabled].alert:focus, .node-type-walkthrough .main.columns .button-group li a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert:hover, button[disabled].alert:focus, .logged-in .main.columns .button-group li a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
   background-color: #970b0e;
 }
 /* line 133, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.alert:hover, .node-type-walkthrough .main.columns .button-group li a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:hover,
+button.disabled.alert:hover, .logged-in .main.columns .button-group li a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.alert:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.alert:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:hover, button.disabled.alert:focus, .node-type-walkthrough .main.columns .button-group li a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:hover, button.disabled.alert:focus, .logged-in .main.columns .button-group li a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.alert:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:focus, button[disabled].alert:hover, .node-type-walkthrough .main.columns .button-group li a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:focus, button[disabled].alert:hover, .logged-in .main.columns .button-group li a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].alert:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].alert:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert:hover, button[disabled].alert:focus, .node-type-walkthrough .main.columns .button-group li a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert:hover, button[disabled].alert:focus, .logged-in .main.columns .button-group li a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
   color: white;
 }
 /* line 146, ../sass/grid/foundation/components/_buttons.scss */
-button.disabled.alert:hover, .node-type-walkthrough .main.columns .button-group li a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:hover,
+button.disabled.alert:hover, .logged-in .main.columns .button-group li a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:hover, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.alert:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.alert:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:hover, button.disabled.alert:focus, .node-type-walkthrough .main.columns .button-group li a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:hover, button.disabled.alert:focus, .logged-in .main.columns .button-group li a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled.alert:focus, .node-type-walkthrough .node-walkthrough .action-links a.disabled.alert:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled.alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled.alert:focus,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:focus, button[disabled].alert:hover, .node-type-walkthrough .main.columns .button-group li a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:hover,
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled.alert:focus, button[disabled].alert:hover, .logged-in .main.columns .button-group li a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:hover, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].alert:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].alert:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert:hover, button[disabled].alert:focus, .node-type-walkthrough .main.columns .button-group li a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:focus,
+.node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert:hover, button[disabled].alert:focus, .logged-in .main.columns .button-group li a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled].alert:focus, .node-type-walkthrough .node-walkthrough .action-links a[disabled].alert:focus,
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled].alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled].alert:focus,
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
@@ -2859,7 +2859,7 @@ button.disabled.alert:hover, .node-type-walkthrough .main.columns .button-group 
 }
 
 /* line 196, ../sass/grid/foundation/components/_buttons.scss */
-button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
+button, .logged-in .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a, .button {
@@ -2868,7 +2868,7 @@ button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walk
   -webkit-appearance: none;
 }
 /* line 198, ../sass/grid/foundation/components/_buttons.scss */
-button.tiny, .node-type-walkthrough .main.columns .button-group li a.tiny, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.tiny, .node-type-walkthrough .node-walkthrough .action-links a.tiny,
+button.tiny, .logged-in .main.columns .button-group li a.tiny, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.tiny, .node-type-walkthrough .node-walkthrough .action-links a.tiny,
 .node-type-walkthrough .node-walkthrough .action-links li a.tiny,
 .node-type-walkthrough .node-walkthrough .links.inline a.tiny,
 .node-type-walkthrough .node-walkthrough .links.inline li a.tiny, .button.tiny {
@@ -2877,7 +2877,7 @@ button.tiny, .node-type-walkthrough .main.columns .button-group li a.tiny, .node
   -webkit-appearance: none;
 }
 /* line 199, ../sass/grid/foundation/components/_buttons.scss */
-button.small, .node-type-walkthrough .main.columns .button-group li a.small, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.small, .node-type-walkthrough .node-walkthrough .action-links a.small,
+button.small, .logged-in .main.columns .button-group li a.small, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.small, .node-type-walkthrough .node-walkthrough .action-links a.small,
 .node-type-walkthrough .node-walkthrough .action-links li a.small,
 .node-type-walkthrough .node-walkthrough .links.inline a.small,
 .node-type-walkthrough .node-walkthrough .links.inline li a.small, .button.small {
@@ -2886,7 +2886,7 @@ button.small, .node-type-walkthrough .main.columns .button-group li a.small, .no
   -webkit-appearance: none;
 }
 /* line 200, ../sass/grid/foundation/components/_buttons.scss */
-button.large, .node-type-walkthrough .main.columns .button-group li a.large, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.large, .node-type-walkthrough .node-walkthrough .action-links a.large,
+button.large, .logged-in .main.columns .button-group li a.large, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.large, .node-type-walkthrough .node-walkthrough .action-links a.large,
 .node-type-walkthrough .node-walkthrough .action-links li a.large,
 .node-type-walkthrough .node-walkthrough .links.inline a.large,
 .node-type-walkthrough .node-walkthrough .links.inline li a.large, .button.large {
@@ -2897,7 +2897,7 @@ button.large, .node-type-walkthrough .main.columns .button-group li a.large, .no
 
 @media only screen {
   /* line 206, ../sass/grid/foundation/components/_buttons.scss */
-  button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
+  button, .logged-in .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
   .node-type-walkthrough .node-walkthrough .action-links li a,
   .node-type-walkthrough .node-walkthrough .links.inline a,
   .node-type-walkthrough .node-walkthrough .links.inline li a, .button {
@@ -2908,7 +2908,7 @@ button.large, .node-type-walkthrough .main.columns .button-group li a.large, .no
     transition: background-color 300ms ease-out;
   }
   /* line 68, ../sass/grid/foundation/components/_global.scss */
-  button:active, .node-type-walkthrough .main.columns .button-group li a:active, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:active, .node-type-walkthrough .node-walkthrough .action-links a:active,
+  button:active, .logged-in .main.columns .button-group li a:active, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:active, .node-type-walkthrough .node-walkthrough .action-links a:active,
   .node-type-walkthrough .node-walkthrough .action-links li a:active,
   .node-type-walkthrough .node-walkthrough .links.inline a:active,
   .node-type-walkthrough .node-walkthrough .links.inline li a:active, .button:active {
@@ -2916,7 +2916,7 @@ button.large, .node-type-walkthrough .main.columns .button-group li a.large, .no
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset;
   }
   /* line 214, ../sass/grid/foundation/components/_buttons.scss */
-  button.radius, .node-type-walkthrough .main.columns .button-group li a.radius, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.radius, .node-type-walkthrough .node-walkthrough .action-links a.radius,
+  button.radius, .logged-in .main.columns .button-group li a.radius, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.radius, .node-type-walkthrough .node-walkthrough .action-links a.radius,
   .node-type-walkthrough .node-walkthrough .action-links li a.radius,
   .node-type-walkthrough .node-walkthrough .links.inline a.radius,
   .node-type-walkthrough .node-walkthrough .links.inline li a.radius, .button.radius {
@@ -2924,7 +2924,7 @@ button.large, .node-type-walkthrough .main.columns .button-group li a.large, .no
     border-radius: 3px;
   }
   /* line 215, ../sass/grid/foundation/components/_buttons.scss */
-  button.round, .node-type-walkthrough .main.columns .button-group li a.round, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.round, .node-type-walkthrough .node-walkthrough .action-links a.round,
+  button.round, .logged-in .main.columns .button-group li a.round, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.round, .node-type-walkthrough .node-walkthrough .action-links a.round,
   .node-type-walkthrough .node-walkthrough .action-links li a.round,
   .node-type-walkthrough .node-walkthrough .links.inline a.round,
   .node-type-walkthrough .node-walkthrough .links.inline li a.round, .button.round {
@@ -2934,7 +2934,7 @@ button.large, .node-type-walkthrough .main.columns .button-group li a.large, .no
 }
 @media only screen and (min-width: 768px) {
   /* line 223, ../sass/grid/foundation/components/_buttons.scss */
-  button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
+  button, .logged-in .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
   .node-type-walkthrough .node-walkthrough .action-links li a,
   .node-type-walkthrough .node-walkthrough .links.inline a,
   .node-type-walkthrough .node-walkthrough .links.inline li a, .button {
@@ -3421,7 +3421,7 @@ label.error {
   margin-left: 0;
 }
 /* line 53, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.radius > *:first-child, .button-group.radius > *:first-child > a, .button-group.radius > *:first-child > button, .node-type-walkthrough .main.columns .button-group li .button-group.radius > *:first-child > a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .button-group.radius > *:first-child > a, .node-type-walkthrough .node-walkthrough .action-links .button-group.radius > *:first-child > a,
+.button-group.radius > *:first-child, .button-group.radius > *:first-child > a, .button-group.radius > *:first-child > button, .logged-in .main.columns .button-group li .button-group.radius > *:first-child > a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .button-group.radius > *:first-child > a, .node-type-walkthrough .node-walkthrough .action-links .button-group.radius > *:first-child > a,
 .node-type-walkthrough .node-walkthrough .action-links li .button-group.radius > *:first-child > a,
 .node-type-walkthrough .node-walkthrough .links.inline .button-group.radius > *:first-child > a,
 .node-type-walkthrough .node-walkthrough .links.inline li .button-group.radius > *:first-child > a, .button-group.radius > *:first-child > .button {
@@ -3433,7 +3433,7 @@ label.error {
   border-top-left-radius: 3px;
 }
 /* line 57, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.radius > *:last-child, .button-group.radius > *:last-child > a, .button-group.radius > *:last-child > button, .node-type-walkthrough .main.columns .button-group li .button-group.radius > *:last-child > a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .button-group.radius > *:last-child > a, .node-type-walkthrough .node-walkthrough .action-links .button-group.radius > *:last-child > a,
+.button-group.radius > *:last-child, .button-group.radius > *:last-child > a, .button-group.radius > *:last-child > button, .logged-in .main.columns .button-group li .button-group.radius > *:last-child > a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .button-group.radius > *:last-child > a, .node-type-walkthrough .node-walkthrough .action-links .button-group.radius > *:last-child > a,
 .node-type-walkthrough .node-walkthrough .action-links li .button-group.radius > *:last-child > a,
 .node-type-walkthrough .node-walkthrough .links.inline .button-group.radius > *:last-child > a,
 .node-type-walkthrough .node-walkthrough .links.inline li .button-group.radius > *:last-child > a, .button-group.radius > *:last-child > .button {
@@ -3445,7 +3445,7 @@ label.error {
   border-bottom-right-radius: 3px;
 }
 /* line 53, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.round > *:first-child, .button-group.round > *:first-child > a, .button-group.round > *:first-child > button, .node-type-walkthrough .main.columns .button-group li .button-group.round > *:first-child > a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .button-group.round > *:first-child > a, .node-type-walkthrough .node-walkthrough .action-links .button-group.round > *:first-child > a,
+.button-group.round > *:first-child, .button-group.round > *:first-child > a, .button-group.round > *:first-child > button, .logged-in .main.columns .button-group li .button-group.round > *:first-child > a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .button-group.round > *:first-child > a, .node-type-walkthrough .node-walkthrough .action-links .button-group.round > *:first-child > a,
 .node-type-walkthrough .node-walkthrough .action-links li .button-group.round > *:first-child > a,
 .node-type-walkthrough .node-walkthrough .links.inline .button-group.round > *:first-child > a,
 .node-type-walkthrough .node-walkthrough .links.inline li .button-group.round > *:first-child > a, .button-group.round > *:first-child > .button {
@@ -3457,7 +3457,7 @@ label.error {
   border-top-left-radius: 1000px;
 }
 /* line 57, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.round > *:last-child, .button-group.round > *:last-child > a, .button-group.round > *:last-child > button, .node-type-walkthrough .main.columns .button-group li .button-group.round > *:last-child > a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .button-group.round > *:last-child > a, .node-type-walkthrough .node-walkthrough .action-links .button-group.round > *:last-child > a,
+.button-group.round > *:last-child, .button-group.round > *:last-child > a, .button-group.round > *:last-child > button, .logged-in .main.columns .button-group li .button-group.round > *:last-child > a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .button-group.round > *:last-child > a, .node-type-walkthrough .node-walkthrough .action-links .button-group.round > *:last-child > a,
 .node-type-walkthrough .node-walkthrough .action-links li .button-group.round > *:last-child > a,
 .node-type-walkthrough .node-walkthrough .links.inline .button-group.round > *:last-child > a,
 .node-type-walkthrough .node-walkthrough .links.inline li .button-group.round > *:last-child > a, .button-group.round > *:last-child > .button {
@@ -3473,7 +3473,7 @@ label.error {
   width: 50%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-2 li button, .node-type-walkthrough .main.columns .button-group.even-2 li a, .button-group.even-2 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-2 li.edit a, .button-group.even-2 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-2 li a,
+.button-group.even-2 li button, .logged-in .main.columns .button-group.even-2 li a, .button-group.even-2 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-2 li.edit a, .button-group.even-2 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-2 li a,
 .button-group.even-2 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links .button-group.even-2 li a,
 .button-group.even-2 li .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -3487,7 +3487,7 @@ label.error {
   width: 33.33333%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-3 li button, .node-type-walkthrough .main.columns .button-group.even-3 li a, .button-group.even-3 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-3 li.edit a, .button-group.even-3 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-3 li a,
+.button-group.even-3 li button, .logged-in .main.columns .button-group.even-3 li a, .button-group.even-3 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-3 li.edit a, .button-group.even-3 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-3 li a,
 .button-group.even-3 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links .button-group.even-3 li a,
 .button-group.even-3 li .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -3501,7 +3501,7 @@ label.error {
   width: 25%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-4 li button, .node-type-walkthrough .main.columns .button-group.even-4 li a, .button-group.even-4 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-4 li.edit a, .button-group.even-4 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-4 li a,
+.button-group.even-4 li button, .logged-in .main.columns .button-group.even-4 li a, .button-group.even-4 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-4 li.edit a, .button-group.even-4 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-4 li a,
 .button-group.even-4 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links .button-group.even-4 li a,
 .button-group.even-4 li .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -3515,7 +3515,7 @@ label.error {
   width: 20%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-5 li button, .node-type-walkthrough .main.columns .button-group.even-5 li a, .button-group.even-5 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-5 li.edit a, .button-group.even-5 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-5 li a,
+.button-group.even-5 li button, .logged-in .main.columns .button-group.even-5 li a, .button-group.even-5 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-5 li.edit a, .button-group.even-5 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-5 li a,
 .button-group.even-5 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links .button-group.even-5 li a,
 .button-group.even-5 li .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -3529,7 +3529,7 @@ label.error {
   width: 16.66667%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-6 li button, .node-type-walkthrough .main.columns .button-group.even-6 li a, .button-group.even-6 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-6 li.edit a, .button-group.even-6 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-6 li a,
+.button-group.even-6 li button, .logged-in .main.columns .button-group.even-6 li a, .button-group.even-6 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-6 li.edit a, .button-group.even-6 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-6 li a,
 .button-group.even-6 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links .button-group.even-6 li a,
 .button-group.even-6 li .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -3543,7 +3543,7 @@ label.error {
   width: 14.28571%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-7 li button, .node-type-walkthrough .main.columns .button-group.even-7 li a, .button-group.even-7 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-7 li.edit a, .button-group.even-7 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-7 li a,
+.button-group.even-7 li button, .logged-in .main.columns .button-group.even-7 li a, .button-group.even-7 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-7 li.edit a, .button-group.even-7 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-7 li a,
 .button-group.even-7 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links .button-group.even-7 li a,
 .button-group.even-7 li .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -3557,7 +3557,7 @@ label.error {
   width: 12.5%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-8 li button, .node-type-walkthrough .main.columns .button-group.even-8 li a, .button-group.even-8 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-8 li.edit a, .button-group.even-8 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-8 li a,
+.button-group.even-8 li button, .logged-in .main.columns .button-group.even-8 li a, .button-group.even-8 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .button-group.even-8 li.edit a, .button-group.even-8 li .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .button-group.even-8 li a,
 .button-group.even-8 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links .button-group.even-8 li a,
 .button-group.even-8 li .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -7622,8 +7622,36 @@ body {
   font-weight: 200;
 }
 
-/* line 49, ../sass/typo/_typography.sass */
-button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
+/* line 50, ../sass/typo/_typography.sass */
+.logged-in h1 {
+  margin-right: 8em;
+}
+/* line 53, ../sass/typo/_typography.sass */
+.logged-in .main.columns {
+  position: relative;
+}
+/* line 56, ../sass/typo/_typography.sass */
+.logged-in .main.columns .button-group {
+  font-size: 8px;
+  line-height: 11.6px;
+  font-size: 0.8rem;
+  line-height: 1.16rem;
+  position: absolute;
+  top: 0;
+  right: 0.9375em;
+}
+/* line 63, ../sass/typo/_typography.sass */
+.logged-in .main.columns .button-group li a {
+  margin-right: 0.45em;
+  padding: 0.4em 1em;
+}
+/* line 68, ../sass/typo/_typography.sass */
+.logged-in .main.columns .button-group li:last-of-type a {
+  margin-right: 0;
+}
+
+/* line 73, ../sass/typo/_typography.sass */
+button, .logged-in .main.columns .button-group li a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .action-links a,
 .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a {
@@ -7653,19 +7681,24 @@ button, .node-type-walkthrough .main.columns .button-group li a, .node-type-walk
   line-height: 11.6px;
   font-size: 0.8rem;
   line-height: 1.16rem;
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  -ms-border-radius: 0.35em;
+  -o-border-radius: 0.35em;
+  border-radius: 0.35em;
   padding: 0.45em 0.85em;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
 /* line 15, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
-button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
+button:hover, .logged-in .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline li a:hover {
   text-decoration: none;
 }
 /* line 36, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
-button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
+button:hover, .logged-in .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline li a:hover {
@@ -7677,7 +7710,7 @@ button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .no
   background: linear-gradient(#e7e7e9, #ccccd1);
 }
 /* line 39, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
-button:active, .node-type-walkthrough .main.columns .button-group li a:active, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:active, .node-type-walkthrough .node-walkthrough .action-links a:active,
+button:active, .logged-in .main.columns .button-group li a:active, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:active, .node-type-walkthrough .node-walkthrough .action-links a:active,
 .node-type-walkthrough .node-walkthrough .action-links li a:active,
 .node-type-walkthrough .node-walkthrough .links.inline a:active,
 .node-type-walkthrough .node-walkthrough .links.inline li a:active {
@@ -7686,10 +7719,10 @@ button:active, .node-type-walkthrough .main.columns .button-group li a:active, .
   box-shadow: #c4c4c9 0 1px 2px inset;
 }
 /* line 6, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
-button.disabled, .node-type-walkthrough .main.columns .button-group li a.disabled, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled, .node-type-walkthrough .node-walkthrough .action-links a.disabled,
+button.disabled, .logged-in .main.columns .button-group li a.disabled, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled, .node-type-walkthrough .node-walkthrough .action-links a.disabled,
 .node-type-walkthrough .node-walkthrough .action-links li a.disabled,
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled,
-.node-type-walkthrough .node-walkthrough .links.inline li a.disabled, button[disabled], .node-type-walkthrough .main.columns .button-group li a[disabled], .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled], .node-type-walkthrough .node-walkthrough .action-links a[disabled],
+.node-type-walkthrough .node-walkthrough .links.inline li a.disabled, button[disabled], .logged-in .main.columns .button-group li a[disabled], .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled], .node-type-walkthrough .node-walkthrough .action-links a[disabled],
 .node-type-walkthrough .node-walkthrough .action-links li a[disabled],
 .node-type-walkthrough .node-walkthrough .links.inline a[disabled],
 .node-type-walkthrough .node-walkthrough .links.inline li a[disabled] {
@@ -7702,18 +7735,18 @@ button.disabled, .node-type-walkthrough .main.columns .button-group li a.disable
   box-shadow: none;
 }
 /* line 74, ../sass/mixins/_sassy-buttons.sass */
-button::-moz-focus-inner, .node-type-walkthrough .main.columns .button-group li a::-moz-focus-inner, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a::-moz-focus-inner, .node-type-walkthrough .node-walkthrough .action-links a::-moz-focus-inner,
+button::-moz-focus-inner, .logged-in .main.columns .button-group li a::-moz-focus-inner, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a::-moz-focus-inner, .node-type-walkthrough .node-walkthrough .action-links a::-moz-focus-inner,
 .node-type-walkthrough .node-walkthrough .action-links li a::-moz-focus-inner,
 .node-type-walkthrough .node-walkthrough .links.inline a::-moz-focus-inner,
 .node-type-walkthrough .node-walkthrough .links.inline li a::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 56, ../sass/typo/_typography.sass */
-button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
+/* line 81, ../sass/typo/_typography.sass */
+button:hover, .logged-in .main.columns .button-group li a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .action-links a:hover,
 .node-type-walkthrough .node-walkthrough .action-links li a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline a:hover,
-.node-type-walkthrough .node-walkthrough .links.inline li a:hover, button:active, .node-type-walkthrough .main.columns .button-group li a:active, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:active, .node-type-walkthrough .node-walkthrough .action-links a:active,
+.node-type-walkthrough .node-walkthrough .links.inline li a:hover, button:active, .logged-in .main.columns .button-group li a:active, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:active, .node-type-walkthrough .node-walkthrough .action-links a:active,
 .node-type-walkthrough .node-walkthrough .action-links li a:active,
 .node-type-walkthrough .node-walkthrough .links.inline a:active,
 .node-type-walkthrough .node-walkthrough .links.inline li a:active {
@@ -7721,7 +7754,7 @@ button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .no
   color: #6f6f6f;
 }
 
-/* line 62, ../sass/typo/_typography.sass */
+/* line 87, ../sass/typo/_typography.sass */
 .cta, .node-type-walkthrough .main.columns > .action-links li a {
   font-size: 10px;
   line-height: 14.5px;
@@ -7754,7 +7787,7 @@ button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .no
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
-/* line 76, ../sass/typo/_typography.sass */
+/* line 101, ../sass/typo/_typography.sass */
 .cta:after, .node-type-walkthrough .main.columns > .action-links li a:after {
   font-family: "icomoon";
   speak: none;
@@ -7765,7 +7798,7 @@ button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .no
   -webkit-font-smoothing: antialiased;
   *margin-right: 0.3em;
 }
-/* line 79, ../sass/typo/_typography.sass */
+/* line 104, ../sass/typo/_typography.sass */
 .cta:hover, .node-type-walkthrough .main.columns > .action-links li a:hover {
   background-color: #4f96d2;
   *zoom: 1;
@@ -7776,7 +7809,7 @@ button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .no
   background-image: -o-linear-gradient(top, #4f96d2 0%, #0467a0 100%);
   background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%);
 }
-/* line 84, ../sass/typo/_typography.sass */
+/* line 109, ../sass/typo/_typography.sass */
 .cta:active, .node-type-walkthrough .main.columns > .action-links li a:active {
   background: #035787;
   -webkit-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15);
@@ -7785,7 +7818,7 @@ button:hover, .node-type-walkthrough .main.columns .button-group li a:hover, .no
 }
 
 /* Typography resets */
-/* line 90, ../sass/typo/_typography.sass */
+/* line 115, ../sass/typo/_typography.sass */
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
   margin: 0;
   padding: 0;
@@ -7793,29 +7826,29 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 }
 
 /* Default Link Styles */
-/* line 96, ../sass/typo/_typography.sass */
+/* line 121, ../sass/typo/_typography.sass */
 a {
   text-decoration: none;
   line-height: inherit;
 }
-/* line 99, ../sass/typo/_typography.sass */
+/* line 124, ../sass/typo/_typography.sass */
 a:hover, a:focus {
   color: #2795b6;
 }
-/* line 102, ../sass/typo/_typography.sass */
+/* line 127, ../sass/typo/_typography.sass */
 a img {
   border: none;
 }
 
 /* Default paragraph styles */
-/* line 106, ../sass/typo/_typography.sass */
+/* line 131, ../sass/typo/_typography.sass */
 p {
   font-family: inherit;
   font-weight: normal;
   margin-bottom: 1.25em;
   text-rendering: optimizeLegibility;
 }
-/* line 112, ../sass/typo/_typography.sass */
+/* line 137, ../sass/typo/_typography.sass */
 p aside {
   font-size: 10px;
   line-height: 14.5px;
@@ -7825,7 +7858,7 @@ p aside {
 }
 
 /* Default header styles */
-/* line 117, ../sass/typo/_typography.sass */
+/* line 142, ../sass/typo/_typography.sass */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -7837,14 +7870,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2125em;
 }
 
-/* line 126, ../sass/typo/_typography.sass */
+/* line 151, ../sass/typo/_typography.sass */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 60%;
   color: #6f6f6f;
   line-height: 0;
 }
 
-/* line 132, ../sass/typo/_typography.sass */
+/* line 157, ../sass/typo/_typography.sass */
 hr {
   border: solid #dddddd;
   border-width: 1px 0 0;
@@ -7854,25 +7887,25 @@ hr {
 }
 
 /* Helpful Typography Defaults */
-/* line 140, ../sass/typo/_typography.sass */
+/* line 165, ../sass/typo/_typography.sass */
 em, i {
   font-style: italic;
   line-height: inherit;
 }
 
-/* line 144, ../sass/typo/_typography.sass */
+/* line 169, ../sass/typo/_typography.sass */
 strong, b {
   font-weight: bold;
   line-height: inherit;
 }
 
-/* line 148, ../sass/typo/_typography.sass */
+/* line 173, ../sass/typo/_typography.sass */
 small {
   font-size: 60%;
   line-height: inherit;
 }
 
-/* line 152, ../sass/typo/_typography.sass */
+/* line 177, ../sass/typo/_typography.sass */
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
@@ -7880,69 +7913,69 @@ code {
 }
 
 /* Lists */
-/* line 158, ../sass/typo/_typography.sass */
+/* line 183, ../sass/typo/_typography.sass */
 ul, ol, dl {
   margin-bottom: 1.25em;
   list-style-position: outside;
   font-family: inherit;
 }
 
-/* line 163, ../sass/typo/_typography.sass */
+/* line 188, ../sass/typo/_typography.sass */
 ul, ol {
   margin-left: 0;
 }
 
 /* Unordered Lists */
-/* line 167, ../sass/typo/_typography.sass */
+/* line 192, ../sass/typo/_typography.sass */
 ul {
   /* Override nested font-size change */
 }
-/* line 169, ../sass/typo/_typography.sass */
+/* line 194, ../sass/typo/_typography.sass */
 ul li ul, ul li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
 }
-/* line 174, ../sass/typo/_typography.sass */
+/* line 199, ../sass/typo/_typography.sass */
 ul.square li ul, ul.circle li ul, ul.disc li ul {
   list-style: inherit;
 }
-/* line 176, ../sass/typo/_typography.sass */
+/* line 201, ../sass/typo/_typography.sass */
 ul.square {
   list-style-type: square;
 }
-/* line 178, ../sass/typo/_typography.sass */
+/* line 203, ../sass/typo/_typography.sass */
 ul.circle {
   list-style-type: circle;
 }
-/* line 180, ../sass/typo/_typography.sass */
+/* line 205, ../sass/typo/_typography.sass */
 ul.disc {
   list-style-type: disc;
 }
-/* line 182, ../sass/typo/_typography.sass */
+/* line 207, ../sass/typo/_typography.sass */
 ul.no-bullet {
   list-style: none;
 }
 
 /* Ordered Lists */
-/* line 187, ../sass/typo/_typography.sass */
+/* line 212, ../sass/typo/_typography.sass */
 ol li ul, ol li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
 }
 
 /* Definition Lists */
-/* line 194, ../sass/typo/_typography.sass */
+/* line 219, ../sass/typo/_typography.sass */
 dl dt {
   margin-bottom: 0.3em;
   font-weight: bold;
 }
-/* line 197, ../sass/typo/_typography.sass */
+/* line 222, ../sass/typo/_typography.sass */
 dl dd {
   margin-bottom: 0.75em;
 }
 
 /* Abbreviations */
-/* line 202, ../sass/typo/_typography.sass */
+/* line 227, ../sass/typo/_typography.sass */
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
@@ -7951,13 +7984,13 @@ abbr, acronym {
   cursor: help;
 }
 
-/* line 209, ../sass/typo/_typography.sass */
+/* line 234, ../sass/typo/_typography.sass */
 abbr {
   text-transform: none;
 }
 
 /* Blockquotes */
-/* line 213, ../sass/typo/_typography.sass */
+/* line 238, ../sass/typo/_typography.sass */
 blockquote {
   margin: 0 0 1.25em;
   padding: 0.5625em 1.25em 0 1.1875em;
@@ -7965,7 +7998,7 @@ blockquote {
   line-height: 1.6;
   color: #6f6f6f;
 }
-/* line 217, ../sass/typo/_typography.sass */
+/* line 242, ../sass/typo/_typography.sass */
 blockquote cite {
   display: block;
   font-size: 10px;
@@ -7974,38 +8007,38 @@ blockquote cite {
   line-height: 1.45rem;
   color: #555555;
 }
-/* line 221, ../sass/typo/_typography.sass */
+/* line 246, ../sass/typo/_typography.sass */
 blockquote cite:before {
   content: "\2014 \0020";
 }
-/* line 223, ../sass/typo/_typography.sass */
+/* line 248, ../sass/typo/_typography.sass */
 blockquote cite a {
   color: #555555;
 }
-/* line 225, ../sass/typo/_typography.sass */
+/* line 250, ../sass/typo/_typography.sass */
 blockquote cite a:visited {
   color: #555555;
 }
-/* line 229, ../sass/typo/_typography.sass */
+/* line 254, ../sass/typo/_typography.sass */
 blockquote p {
   line-height: 1.6;
   color: #6f6f6f;
 }
 
 /* Microformats */
-/* line 234, ../sass/typo/_typography.sass */
+/* line 259, ../sass/typo/_typography.sass */
 .vcard {
   display: inline-block;
   margin: 0 0 1.25em 0;
   border: 1px solid #dddddd;
   padding: 0.625em 0.75em;
 }
-/* line 239, ../sass/typo/_typography.sass */
+/* line 264, ../sass/typo/_typography.sass */
 .vcard li {
   margin: 0;
   display: block;
 }
-/* line 242, ../sass/typo/_typography.sass */
+/* line 267, ../sass/typo/_typography.sass */
 .vcard .fn {
   font-weight: bold;
   font-size: 10px;
@@ -8014,11 +8047,11 @@ blockquote p {
   line-height: 1.45rem;
 }
 
-/* line 247, ../sass/typo/_typography.sass */
+/* line 272, ../sass/typo/_typography.sass */
 .vevent .summary {
   font-weight: bold;
 }
-/* line 249, ../sass/typo/_typography.sass */
+/* line 274, ../sass/typo/_typography.sass */
 .vevent abbr {
   cursor: default;
   text-decoration: none;
@@ -9537,7 +9570,7 @@ input.pure-input-rounded, .pure-input-rounded {
   border-radius: 0 0 4px 4px;
 }
 /* line 175, ../sass/modules/_edit_forms.sass */
-.pure-group button, .pure-group .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .main.columns .button-group li .pure-group a, .pure-group .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .pure-group a, .pure-group .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .pure-group a,
+.pure-group button, .pure-group .logged-in .main.columns .button-group li a, .logged-in .main.columns .button-group li .pure-group a, .pure-group .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .pure-group a, .pure-group .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .pure-group a,
 .pure-group .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links li .pure-group a,
 .pure-group .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -10170,7 +10203,7 @@ input.pure-input-rounded, .pure-input-rounded {
   float: right;
 }
 /* line 53, ../sass/modules/_jquery_ui.sass */
-.ui-dialog .ui-dialog-buttonpane button, .ui-dialog .ui-dialog-buttonpane .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .main.columns .button-group li .ui-dialog .ui-dialog-buttonpane a, .ui-dialog .ui-dialog-buttonpane .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .ui-dialog .ui-dialog-buttonpane a, .ui-dialog .ui-dialog-buttonpane .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .ui-dialog .ui-dialog-buttonpane a,
+.ui-dialog .ui-dialog-buttonpane button, .ui-dialog .ui-dialog-buttonpane .logged-in .main.columns .button-group li a, .logged-in .main.columns .button-group li .ui-dialog .ui-dialog-buttonpane a, .ui-dialog .ui-dialog-buttonpane .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .ui-dialog .ui-dialog-buttonpane a, .ui-dialog .ui-dialog-buttonpane .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .ui-dialog .ui-dialog-buttonpane a,
 .ui-dialog .ui-dialog-buttonpane .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links li .ui-dialog .ui-dialog-buttonpane a,
 .ui-dialog .ui-dialog-buttonpane .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -10207,7 +10240,7 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 1em;
 }
 /* line 10, ../sass/modules/_jquery_ui_theme.sass */
-.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button, .ui-widget .node-type-walkthrough .main.columns .button-group li a, .node-type-walkthrough .main.columns .button-group li .ui-widget a, .ui-widget .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .ui-widget a, .ui-widget .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .ui-widget a,
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button, .ui-widget .logged-in .main.columns .button-group li a, .logged-in .main.columns .button-group li .ui-widget a, .ui-widget .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit .ui-widget a, .ui-widget .node-type-walkthrough .node-walkthrough .action-links a, .node-type-walkthrough .node-walkthrough .action-links .ui-widget a,
 .ui-widget .node-type-walkthrough .node-walkthrough .action-links li a,
 .node-type-walkthrough .node-walkthrough .action-links li .ui-widget a,
 .ui-widget .node-type-walkthrough .node-walkthrough .links.inline a,
@@ -11511,49 +11544,22 @@ input.pure-input-rounded, .pure-input-rounded {
   color: #626262;
 }
 
-/* line 3, ../sass/page/_node-walkthrough.sass */
-.node-type-walkthrough h1 {
-  margin-right: 8em;
-}
-/* line 6, ../sass/page/_node-walkthrough.sass */
-.node-type-walkthrough .main.columns {
-  position: relative;
-}
-/* line 9, ../sass/page/_node-walkthrough.sass */
-.node-type-walkthrough .main.columns .button-group {
-  font-size: 8px;
-  line-height: 11.6px;
-  font-size: 0.8rem;
-  line-height: 1.16rem;
-  position: absolute;
-  top: 0;
-  right: 0.9375em;
-}
-/* line 16, ../sass/page/_node-walkthrough.sass */
-.node-type-walkthrough .main.columns .button-group li a {
-  margin-right: 0.45em;
-  padding: 0.4em 1em;
-}
-/* line 21, ../sass/page/_node-walkthrough.sass */
-.node-type-walkthrough .main.columns .button-group li:last-of-type a {
-  margin-right: 0;
-}
-/* line 25, ../sass/page/_node-walkthrough.sass */
+/* line 4, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .main.columns > .action-links li {
   text-align: center;
   list-style-type: none;
 }
-/* line 29, ../sass/page/_node-walkthrough.sass */
+/* line 8, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .main.columns > .action-links li a {
   margin: 1em 0;
   display: inline-block;
 }
-/* line 34, ../sass/page/_node-walkthrough.sass */
+/* line 13, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .main.columns > .action-links li a:after {
   content: "\e600";
   margin-left: 0.35em;
 }
-/* line 40, ../sass/page/_node-walkthrough.sass */
+/* line 19, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-steps > .field-label {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -11563,14 +11569,14 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 1.4rem;
   line-height: 2.03rem;
 }
-/* line 45, ../sass/page/_node-walkthrough.sass */
+/* line 24, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-step-description .field-label {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
   display: none;
 }
-/* line 49, ../sass/page/_node-walkthrough.sass */
+/* line 28, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item {
   padding: 0.45rem 0.75rem;
   padding: 0.45rem 0.75rem;
@@ -11585,11 +11591,11 @@ input.pure-input-rounded, .pure-input-rounded {
   background-color: #f6f6f6;
   position: relative;
 }
-/* line 58, ../sass/page/_node-walkthrough.sass */
+/* line 37, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .content {
   margin-left: 2em;
 }
-/* line 61, ../sass/page/_node-walkthrough.sass */
+/* line 40, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-name {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -11598,13 +11604,13 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 1.2rem;
   line-height: 1.74rem;
 }
-/* line 65, ../sass/page/_node-walkthrough.sass */
+/* line 44, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-name .field-label {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }
-/* line 68, ../sass/page/_node-walkthrough.sass */
+/* line 47, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-2,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-3,
@@ -11617,7 +11623,7 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 1.45rem;
   font-weight: normal;
 }
-/* line 77, ../sass/page/_node-walkthrough.sass */
+/* line 56, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1 > .field-label,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-2 > .field-label,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-3 > .field-label,
@@ -11632,7 +11638,7 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 8em;
   margin-right: 1em;
 }
-/* line 84, ../sass/page/_node-walkthrough.sass */
+/* line 63, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-show-title,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-highlight,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1,
@@ -11647,28 +11653,30 @@ input.pure-input-rounded, .pure-input-rounded {
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-10 {
   display: none;
 }
-/* line 98, ../sass/page/_node-walkthrough.sass */
+/* line 77, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full {
   position: relative;
 }
-/* line 101, ../sass/page/_node-walkthrough.sass */
+/* line 80, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links {
   position: absolute;
-  top: 0.35em;
-  right: 0.35em;
+  top: 0.5em;
+  right: 0.5em;
+  margin: 0;
 }
-/* line 106, ../sass/page/_node-walkthrough.sass */
+/* line 86, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li {
   list-style-type: none;
 }
-/* line 109, ../sass/page/_node-walkthrough.sass */
+/* line 89, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a {
   font-size: 7px;
   line-height: 10.15px;
   font-size: 0.7rem;
   line-height: 1.015rem;
+  margin: 0;
 }
-/* line 113, ../sass/page/_node-walkthrough.sass */
+/* line 94, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:after {
   font-family: "icomoon";
   speak: none;
@@ -11681,13 +11689,13 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e602";
   margin-left: 0.45em;
 }
-/* line 118, ../sass/page/_node-walkthrough.sass */
+/* line 99, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .delete {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }
-/* line 121, ../sass/page/_node-walkthrough.sass */
+/* line 102, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .content:before {
   font-size: 12px;
   line-height: 17.4px;
@@ -11700,91 +11708,91 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 0.39em;
   left: 0.6em;
 }
-/* line 129, ../sass/page/_node-walkthrough.sass */
+/* line 110, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(1) .content:before {
   content: "0";
 }
-/* line 131, ../sass/page/_node-walkthrough.sass */
+/* line 112, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(2) .content:before {
   content: "1";
 }
-/* line 133, ../sass/page/_node-walkthrough.sass */
+/* line 114, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(3) .content:before {
   content: "2";
 }
-/* line 135, ../sass/page/_node-walkthrough.sass */
+/* line 116, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(4) .content:before {
   content: "3";
 }
-/* line 137, ../sass/page/_node-walkthrough.sass */
+/* line 118, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(5) .content:before {
   content: "4";
 }
-/* line 139, ../sass/page/_node-walkthrough.sass */
+/* line 120, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(6) .content:before {
   content: "5";
 }
-/* line 141, ../sass/page/_node-walkthrough.sass */
+/* line 122, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(7) .content:before {
   content: "6";
 }
-/* line 143, ../sass/page/_node-walkthrough.sass */
+/* line 124, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(8) .content:before {
   content: "7";
 }
-/* line 145, ../sass/page/_node-walkthrough.sass */
+/* line 126, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(9) .content:before {
   content: "8";
 }
-/* line 147, ../sass/page/_node-walkthrough.sass */
+/* line 128, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(10) .content:before {
   content: "9";
 }
-/* line 149, ../sass/page/_node-walkthrough.sass */
+/* line 130, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(11) .content:before {
   content: "10";
 }
-/* line 151, ../sass/page/_node-walkthrough.sass */
+/* line 132, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(12) .content:before {
   content: "11";
 }
-/* line 153, ../sass/page/_node-walkthrough.sass */
+/* line 134, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(13) .content:before {
   content: "12";
 }
-/* line 155, ../sass/page/_node-walkthrough.sass */
+/* line 136, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(14) .content:before {
   content: "13";
 }
-/* line 157, ../sass/page/_node-walkthrough.sass */
+/* line 138, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(15) .content:before {
   content: "14";
 }
-/* line 159, ../sass/page/_node-walkthrough.sass */
+/* line 140, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(16) .content:before {
   content: "15";
 }
-/* line 161, ../sass/page/_node-walkthrough.sass */
+/* line 142, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(17) .content:before {
   content: "16";
 }
-/* line 163, ../sass/page/_node-walkthrough.sass */
+/* line 144, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(18) .content:before {
   content: "17";
 }
-/* line 166, ../sass/page/_node-walkthrough.sass */
+/* line 147, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-step-description {
   margin-top: 3.5px;
   margin-top: 0.35rem;
 }
-/* line 169, ../sass/page/_node-walkthrough.sass */
+/* line 150, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .description.field-collection-description {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
   display: none;
 }
-/* line 173, ../sass/page/_node-walkthrough.sass */
+/* line 154, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .action-links,
 .node-type-walkthrough .node-walkthrough .action-links li,
 .node-type-walkthrough .node-walkthrough .links.inline,
@@ -11793,7 +11801,7 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0;
   display: inline-block;
 }
-/* line 183, ../sass/page/_node-walkthrough.sass */
+/* line 164, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .action-links a:before,
 .node-type-walkthrough .node-walkthrough .action-links li a:before,
 .node-type-walkthrough .node-walkthrough .links.inline a:before,
@@ -11813,15 +11821,15 @@ input.pure-input-rounded, .pure-input-rounded {
   display: inline-block;
   margin-right: 0.5em;
 }
-/* line 189, ../sass/page/_node-walkthrough.sass */
+/* line 170, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .action-links li a:before {
   content: "\e000";
 }
-/* line 192, ../sass/page/_node-walkthrough.sass */
+/* line 173, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline {
   float: right;
 }
-/* line 195, ../sass/page/_node-walkthrough.sass */
+/* line 176, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline li.flag-walkthrough_broken a {
   font-size: 5.5px;
   line-height: 7.975px;

@@ -45,10 +45,35 @@ body
   +font-size(.85)
   +font-pt-sansregular
 
+.logged-in
+
+  h1
+    margin-right: 8em
+
+  .main.columns
+    position: relative
+
+    .button-group
+      +font-size(.8)
+      position: absolute
+      top: 0
+      right: 0.9375em
+
+      li
+        a
+          @extend button
+          margin-right: .45em
+          padding: .4em 1em
+
+        &:last-of-type a
+          margin-right: 0
+
+
 // buttons
 button
   +sassy-button("simple", 10px, 19px, #f4f4f5)
   +font-size(.8)
+  +border-radius(.35em)
   padding: .45em .85em
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
   color: #6f6f6f
