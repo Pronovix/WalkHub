@@ -212,6 +212,10 @@ function walkhub_theme_preprocess_node(&$vars) {
 function walkhub_theme_preprocess_page(&$vars) {
   $path = drupal_get_path('theme', 'walkhub_theme');
 
+  if (arg(0) == 'field-collection') {
+    drupal_add_js($path . '/js/page/field-collection-step-edit.js');
+  }
+
   if (drupal_is_front_page() == TRUE) {
   }
 
