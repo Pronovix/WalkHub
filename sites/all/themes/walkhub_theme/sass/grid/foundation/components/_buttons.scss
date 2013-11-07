@@ -43,23 +43,6 @@ $button-disabled-opacity: 0.6 !default;
 // Button Mixins
 //
 
-// We use this mixin to create a default button base.
-@mixin button-base($style:true, $display:$button-display) {
-  @if $style {
-    border-style: $button-border-style;
-    border-width: $button-border-width;
-    cursor: $cursor-pointer-value;
-    font-family: $button-font-family;
-    font-weight: $button-font-weight;
-    line-height: normal;
-    margin: 0 0 $button-margin-bottom;
-    position: relative;
-    text-decoration: none;
-    text-align: $button-font-align;
-  }
-  @if $display { display: $display; }
-}
-
 // We use this mixin to add button size styles
 @mixin button-size($padding:$button-med, $full-width:false, $is-input:false) {
 
@@ -106,59 +89,6 @@ $button-disabled-opacity: 0.6 !default;
     -webkit-appearance: none;
   }
 }
-
-// We use this mixin to add button color styles
-@mixin button-style($bg:$primary-color, $radius:false, $disabled:false) {
-
-  // We control which background styles are used,
-  // these can be removed by setting $bg:false
-  @if $bg {
-    // This find the lightness percentage of the background color.
-    $bg-lightness: lightness($bg);
-
-    background-color: $bg;
-    border-color: darken($bg, $button-function-factor);
-    &:hover,
-    &:focus { background-color: darken($bg, $button-function-factor); }
-
-    // We control the text color for you based on the background color.
-    @if $bg-lightness > 70% {
-      color: $button-font-color-alt;
-      &:hover,
-      &:focus { color: $button-font-color-alt; }
-    }
-    @else {
-      color: $button-font-color;
-      &:hover,
-      &:focus { color: $button-font-color; }
-    }
-  }
-
-  // We can set $disabled:true to create a disabled transparent button.
-  @if $disabled {
-    cursor: $cursor-default-value;
-    opacity: $button-disabled-opacity;
-    @if $experimental {
-      -webkit-box-shadow: none;
-    }
-    box-shadow: none;
-    &:hover,
-    &:focus { background-color: $bg; }
-  }
-
-  // We can control how much button radius us used.
-  @if $radius == true { @include radius($button-radius); }
-  @else if $radius { @include radius($radius); }
-
-}
-
-// We use this to quickly create buttons with a single mixin. As @jaredhardy puts it, "the kitchen sink mixin"
-@mixin button($padding:$button-med, $bg:$primary-color, $radius:false, $full-width:false, $disabled:false, $is-input:false, $is-prefix:false) {
-  @include button-base;
-  @include button-size($padding, $full-width, $is-input);
-  @include button-style($bg, $radius, $disabled);
-}
-
 
 //
 // Button Classes
