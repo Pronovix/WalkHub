@@ -7,5 +7,6 @@
  */
 ?>
 <div id="walkthrough-node-edit-form">
+  <?php dpm($variables); ?>
   <?php print drupal_render_children($form); ?>
 </div>
