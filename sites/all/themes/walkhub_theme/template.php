@@ -183,6 +183,11 @@ function walkthrough_global_theme() {
       'template' => 'walkthrough-steps-edit-form',
       'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/',
     ),
+    'walkthrough_node_form' => array(
+      'render element' => 'form',
+      'template' => 'walkthrough-node-form',
+      'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/',
+    ),
   );
 }
 
@@ -247,6 +252,5 @@ function walkhub_theme_preprocess_page(&$vars) {
     if ( $node->type == 'walkhub_faq_page') {
       drupal_add_js($path . '/js/page/faq.js');
     }
-
   }
 }
