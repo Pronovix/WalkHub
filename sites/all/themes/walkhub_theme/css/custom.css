@@ -10957,10 +10957,20 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-bottom: 2rem;
 }
 /* line 22, ../sass/page/_node-walkthrough-step-edit.sass */
-.page-field-collection-field-fc-steps-edit #field-collection-item-form .has-tip.top {
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .has-tip.top,
+.page-field-collection-field-fc-steps-edit #field-collection-item-form .field-edit-link,
+.page-field-collection-field-fc-steps-edit #field-collection-item-form #edit-body-und-0-format {
   display: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  border: none;
+  -moz-appearance: separator;
+  -webkit-appearance: none;
 }
-/* line 25, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 28, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form label {
   font-size: 10px;
   line-height: 14.5px;
@@ -10973,14 +10983,14 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 34, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 37, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form label,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 38, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 41, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form label {
   font-size: 10px;
   line-height: 14.5px;
@@ -10993,7 +11003,7 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 47, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 50, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form input,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form textarea,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .grippie {
@@ -11001,22 +11011,22 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 76%;
   margin: 0;
 }
-/* line 54, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 57, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form #edit-field-fc-step-show-title-und {
   width: 10%;
   margin-right: 66%;
   margin-top: 0.5em;
 }
-/* line 59, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 62, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium {
   margin: 10px 0;
   margin: 1rem 0;
 }
-/* line 62, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 65, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium > legend {
   border: 0;
 }
-/* line 65, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 68, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-legend {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -11026,11 +11036,11 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 1.74rem;
   text-align: left;
 }
-/* line 70, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 73, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-legend a {
   color: #4d4d4d;
 }
-/* line 73, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 76, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper {
   padding: 4.5px 7.5px;
   padding: 0.45rem 0.75rem;
@@ -11044,7 +11054,7 @@ input.pure-input-rounded, .pure-input-rounded {
   background-color: #f6f6f6;
   position: relative;
 }
-/* line 81, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 84, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div {
   margin-bottom: 5px;
   margin-bottom: 0.5rem;
@@ -11059,15 +11069,15 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div:after {
   clear: both;
 }
-/* line 85, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 88, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div:last-of-type > div > div {
   margin: 0;
 }
-/* line 88, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 91, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #edit-field-fc-step-name {
   display: none;
 }
-/* line 91, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 94, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .form-submit:after {
   font-family: "icomoon";
   speak: none;
@@ -11080,7 +11090,7 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e017";
   margin-left: 0.5em;
 }
-/* line 96, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 99, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .back.button {
   margin-right: 0.75em;
 }

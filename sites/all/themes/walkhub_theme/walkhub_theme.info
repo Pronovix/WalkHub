@@ -120,7 +120,7 @@ plugins[panels][layouts] = layouts
 
 ; Top Bar.
 settings[zurb_foundation_top_bar_enable] = 1
-settings[zurb_foundation_top_bar_grid] = 0
+settings[zurb_foundation_top_bar_grid] = 1
 settings[zurb_foundation_top_bar_sticky] = 0
 settings[zurb_foundation_top_bar_menu_text] = 'Menu'
 settings[zurb_foundation_top_bar_custom_back_text] = 1
