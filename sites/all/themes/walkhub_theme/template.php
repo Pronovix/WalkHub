@@ -258,3 +258,18 @@ function walkhub_theme_preprocess_page(&$vars) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_walkthrough_steps_edit_form().
+ */
+function walkhub_theme_preprocess_walkthrough_steps_edit_form(&$vars) {
+  $title = $vars['form']['field_fc_step_name'][LANGUAGE_NONE][0]['value']['#value'];
+  $description = $vars['form']['field_fc_step_description'][LANGUAGE_NONE][0]['value']['#value'];
+  $label = "$title $description";
+
+  if (empty($title)) {
+    $label = "{$vars['form']['#delta']}. step";
+  }
+
+  $vars['form']['label'] = $label;
+}
