@@ -6971,51 +6971,46 @@ object, embed {
 }
 
 /* line 19, ../sass/typo/_typography.sass */
-*:focus {
-  outline: 0;
-}
-
-/* line 22, ../sass/typo/_typography.sass */
 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 25, ../sass/typo/_typography.sass */
+/* line 22, ../sass/typo/_typography.sass */
 .left {
   float: left !important;
 }
 
-/* line 28, ../sass/typo/_typography.sass */
+/* line 25, ../sass/typo/_typography.sass */
 .right {
   float: right !important;
 }
 
-/* line 31, ../sass/typo/_typography.sass */
+/* line 28, ../sass/typo/_typography.sass */
 .text-left {
   text-align: left !important;
 }
 
-/* line 34, ../sass/typo/_typography.sass */
+/* line 31, ../sass/typo/_typography.sass */
 .text-right {
   text-align: right !important;
 }
 
-/* line 37, ../sass/typo/_typography.sass */
+/* line 34, ../sass/typo/_typography.sass */
 .text-center {
   text-align: center !important;
 }
 
-/* line 40, ../sass/typo/_typography.sass */
+/* line 37, ../sass/typo/_typography.sass */
 .text-justify {
   text-align: justify !important;
 }
 
-/* line 43, ../sass/typo/_typography.sass */
+/* line 40, ../sass/typo/_typography.sass */
 .hide {
   display: none;
 }
 
-/* line 47, ../sass/typo/_typography.sass */
+/* line 44, ../sass/typo/_typography.sass */
 body {
   font-size: 8.5px;
   line-height: 12.325px;
@@ -7025,15 +7020,15 @@ body {
   font-weight: 200;
 }
 
-/* line 53, ../sass/typo/_typography.sass */
+/* line 50, ../sass/typo/_typography.sass */
 .logged-in h1 {
   margin-right: 8em;
 }
-/* line 56, ../sass/typo/_typography.sass */
+/* line 53, ../sass/typo/_typography.sass */
 .logged-in .main.columns {
   position: relative;
 }
-/* line 59, ../sass/typo/_typography.sass */
+/* line 56, ../sass/typo/_typography.sass */
 .logged-in .main.columns .button-group {
   font-size: 8px;
   line-height: 11.6px;
@@ -7043,7 +7038,7 @@ body {
   top: 0;
   right: 0.9375em;
 }
-/* line 66, ../sass/typo/_typography.sass */
+/* line 63, ../sass/typo/_typography.sass */
 .logged-in .main.columns .button-group li a {
   font-size: 19px;
   padding: 0.5em 1.5em;
@@ -7117,17 +7112,17 @@ body {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 77, ../sass/typo/_typography.sass */
+/* line 74, ../sass/typo/_typography.sass */
 .logged-in .main.columns .button-group li a:hover, .logged-in .main.columns .button-group li a:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 82, ../sass/typo/_typography.sass */
+/* line 79, ../sass/typo/_typography.sass */
 .logged-in .main.columns .button-group li:last-of-type a {
   margin-right: 0;
 }
 
-/* line 87, ../sass/typo/_typography.sass */
+/* line 84, ../sass/typo/_typography.sass */
 button, .button, .btn {
   font-size: 19px;
   padding: 0.5em 1.5em;
@@ -7199,17 +7194,17 @@ button::-moz-focus-inner, .button::-moz-focus-inner, .btn::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 96, ../sass/typo/_typography.sass */
+/* line 93, ../sass/typo/_typography.sass */
 button i, .button i, .btn i {
   font-size: 80%;
 }
-/* line 99, ../sass/typo/_typography.sass */
+/* line 96, ../sass/typo/_typography.sass */
 button:hover, button:active, .button:hover, .button:active, .btn:hover, .btn:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
 
-/* line 105, ../sass/typo/_typography.sass */
+/* line 102, ../sass/typo/_typography.sass */
 .cta, .node-type-walkthrough .main.columns > .action-links li a {
   font-size: 10px;
   line-height: 14.5px;
@@ -7242,7 +7237,7 @@ button:hover, button:active, .button:hover, .button:active, .btn:hover, .btn:act
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
-/* line 119, ../sass/typo/_typography.sass */
+/* line 116, ../sass/typo/_typography.sass */
 .cta:after, .node-type-walkthrough .main.columns > .action-links li a:after {
   font-family: "icomoon";
   speak: none;
@@ -7253,7 +7248,7 @@ button:hover, button:active, .button:hover, .button:active, .btn:hover, .btn:act
   -webkit-font-smoothing: antialiased;
   *margin-right: 0.3em;
 }
-/* line 122, ../sass/typo/_typography.sass */
+/* line 119, ../sass/typo/_typography.sass */
 .cta:hover, .node-type-walkthrough .main.columns > .action-links li a:hover {
   background-color: #4f96d2;
   *zoom: 1;
@@ -7264,7 +7259,7 @@ button:hover, button:active, .button:hover, .button:active, .btn:hover, .btn:act
   background-image: -o-linear-gradient(top, #4f96d2 0%, #0467a0 100%);
   background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%);
 }
-/* line 127, ../sass/typo/_typography.sass */
+/* line 124, ../sass/typo/_typography.sass */
 .cta:active, .node-type-walkthrough .main.columns > .action-links li a:active {
   background: #035787;
   -webkit-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15);
@@ -7273,7 +7268,7 @@ button:hover, button:active, .button:hover, .button:active, .btn:hover, .btn:act
 }
 
 /* Typography resets */
-/* line 133, ../sass/typo/_typography.sass */
+/* line 130, ../sass/typo/_typography.sass */
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
   margin: 0;
   padding: 0;
@@ -7281,29 +7276,29 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 }
 
 /* Default Link Styles */
-/* line 139, ../sass/typo/_typography.sass */
+/* line 136, ../sass/typo/_typography.sass */
 a {
   text-decoration: none;
   line-height: inherit;
 }
-/* line 142, ../sass/typo/_typography.sass */
+/* line 139, ../sass/typo/_typography.sass */
 a:hover, a:focus {
   color: #2795b6;
 }
-/* line 145, ../sass/typo/_typography.sass */
+/* line 142, ../sass/typo/_typography.sass */
 a img {
   border: none;
 }
 
 /* Default paragraph styles */
-/* line 149, ../sass/typo/_typography.sass */
+/* line 146, ../sass/typo/_typography.sass */
 p {
   font-family: inherit;
   font-weight: normal;
   margin-bottom: 1.25em;
   text-rendering: optimizeLegibility;
 }
-/* line 155, ../sass/typo/_typography.sass */
+/* line 152, ../sass/typo/_typography.sass */
 p aside {
   font-size: 10px;
   line-height: 14.5px;
@@ -7313,7 +7308,7 @@ p aside {
 }
 
 /* Default header styles */
-/* line 160, ../sass/typo/_typography.sass */
+/* line 157, ../sass/typo/_typography.sass */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -7325,14 +7320,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2125em;
 }
 
-/* line 169, ../sass/typo/_typography.sass */
+/* line 166, ../sass/typo/_typography.sass */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 60%;
   color: #6f6f6f;
   line-height: 0;
 }
 
-/* line 175, ../sass/typo/_typography.sass */
+/* line 172, ../sass/typo/_typography.sass */
 hr {
   border: solid #dddddd;
   border-width: 1px 0 0;
@@ -7342,25 +7337,25 @@ hr {
 }
 
 /* Helpful Typography Defaults */
-/* line 183, ../sass/typo/_typography.sass */
+/* line 180, ../sass/typo/_typography.sass */
 em, i {
   font-style: italic;
   line-height: inherit;
 }
 
-/* line 187, ../sass/typo/_typography.sass */
+/* line 184, ../sass/typo/_typography.sass */
 strong, b {
   font-weight: bold;
   line-height: inherit;
 }
 
-/* line 191, ../sass/typo/_typography.sass */
+/* line 188, ../sass/typo/_typography.sass */
 small {
   font-size: 60%;
   line-height: inherit;
 }
 
-/* line 195, ../sass/typo/_typography.sass */
+/* line 192, ../sass/typo/_typography.sass */
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
@@ -7368,69 +7363,69 @@ code {
 }
 
 /* Lists */
-/* line 201, ../sass/typo/_typography.sass */
+/* line 198, ../sass/typo/_typography.sass */
 ul, ol, dl {
   margin-bottom: 1.25em;
   list-style-position: outside;
   font-family: inherit;
 }
 
-/* line 206, ../sass/typo/_typography.sass */
+/* line 203, ../sass/typo/_typography.sass */
 ul, ol {
   margin-left: 0;
 }
 
 /* Unordered Lists */
-/* line 210, ../sass/typo/_typography.sass */
+/* line 207, ../sass/typo/_typography.sass */
 ul {
   /* Override nested font-size change */
 }
-/* line 212, ../sass/typo/_typography.sass */
+/* line 209, ../sass/typo/_typography.sass */
 ul li ul, ul li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
 }
-/* line 217, ../sass/typo/_typography.sass */
+/* line 214, ../sass/typo/_typography.sass */
 ul.square li ul, ul.circle li ul, ul.disc li ul {
   list-style: inherit;
 }
-/* line 219, ../sass/typo/_typography.sass */
+/* line 216, ../sass/typo/_typography.sass */
 ul.square {
   list-style-type: square;
 }
-/* line 221, ../sass/typo/_typography.sass */
+/* line 218, ../sass/typo/_typography.sass */
 ul.circle {
   list-style-type: circle;
 }
-/* line 223, ../sass/typo/_typography.sass */
+/* line 220, ../sass/typo/_typography.sass */
 ul.disc {
   list-style-type: disc;
 }
-/* line 225, ../sass/typo/_typography.sass */
+/* line 222, ../sass/typo/_typography.sass */
 ul.no-bullet {
   list-style: none;
 }
 
 /* Ordered Lists */
-/* line 230, ../sass/typo/_typography.sass */
+/* line 227, ../sass/typo/_typography.sass */
 ol li ul, ol li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
 }
 
 /* Definition Lists */
-/* line 237, ../sass/typo/_typography.sass */
+/* line 234, ../sass/typo/_typography.sass */
 dl dt {
   margin-bottom: 0.3em;
   font-weight: bold;
 }
-/* line 240, ../sass/typo/_typography.sass */
+/* line 237, ../sass/typo/_typography.sass */
 dl dd {
   margin-bottom: 0.75em;
 }
 
 /* Abbreviations */
-/* line 245, ../sass/typo/_typography.sass */
+/* line 242, ../sass/typo/_typography.sass */
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
@@ -7439,13 +7434,13 @@ abbr, acronym {
   cursor: help;
 }
 
-/* line 252, ../sass/typo/_typography.sass */
+/* line 249, ../sass/typo/_typography.sass */
 abbr {
   text-transform: none;
 }
 
 /* Blockquotes */
-/* line 256, ../sass/typo/_typography.sass */
+/* line 253, ../sass/typo/_typography.sass */
 blockquote {
   margin: 0 0 1.25em;
   padding: 0.5625em 1.25em 0 1.1875em;
@@ -7453,7 +7448,7 @@ blockquote {
   line-height: 1.6;
   color: #6f6f6f;
 }
-/* line 260, ../sass/typo/_typography.sass */
+/* line 257, ../sass/typo/_typography.sass */
 blockquote cite {
   display: block;
   font-size: 10px;
@@ -7462,38 +7457,38 @@ blockquote cite {
   line-height: 1.45rem;
   color: #555555;
 }
-/* line 264, ../sass/typo/_typography.sass */
+/* line 261, ../sass/typo/_typography.sass */
 blockquote cite:before {
   content: "\2014 \0020";
 }
-/* line 266, ../sass/typo/_typography.sass */
+/* line 263, ../sass/typo/_typography.sass */
 blockquote cite a {
   color: #555555;
 }
-/* line 268, ../sass/typo/_typography.sass */
+/* line 265, ../sass/typo/_typography.sass */
 blockquote cite a:visited {
   color: #555555;
 }
-/* line 272, ../sass/typo/_typography.sass */
+/* line 269, ../sass/typo/_typography.sass */
 blockquote p {
   line-height: 1.6;
   color: #6f6f6f;
 }
 
 /* Microformats */
-/* line 277, ../sass/typo/_typography.sass */
+/* line 274, ../sass/typo/_typography.sass */
 .vcard {
   display: inline-block;
   margin: 0 0 1.25em 0;
   border: 1px solid #dddddd;
   padding: 0.625em 0.75em;
 }
-/* line 282, ../sass/typo/_typography.sass */
+/* line 279, ../sass/typo/_typography.sass */
 .vcard li {
   margin: 0;
   display: block;
 }
-/* line 285, ../sass/typo/_typography.sass */
+/* line 282, ../sass/typo/_typography.sass */
 .vcard .fn {
   font-weight: bold;
   font-size: 10px;
@@ -7502,11 +7497,11 @@ blockquote p {
   line-height: 1.45rem;
 }
 
-/* line 290, ../sass/typo/_typography.sass */
+/* line 287, ../sass/typo/_typography.sass */
 .vevent .summary {
   font-weight: bold;
 }
-/* line 292, ../sass/typo/_typography.sass */
+/* line 289, ../sass/typo/_typography.sass */
 .vevent abbr {
   cursor: default;
   text-decoration: none;
@@ -8750,43 +8745,338 @@ main {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  padding: 7.5px 10px 8.5px 10px;
-  padding: 0.75rem 1rem 0.85rem 1rem;
-  text-align: center;
   color: #6f6f6f;
   background-color: #f6f6f6;
+  padding: 7.5px 10px 8.5px 10px;
+  padding: 0.75rem 1rem 0.85rem 1rem;
 }
-/* line 57, ../sass/modules/_sidebar.sass */
-.sidebar .block-user h2 {
-  text-align: left;
-}
-/* line 60, ../sass/modules/_sidebar.sass */
-.sidebar .block-user label {
-  font-size: 9px;
-  line-height: 13.05px;
-  font-size: 0.9rem;
-  line-height: 1.305rem;
-  text-align: left;
-}
-/* line 64, ../sass/modules/_sidebar.sass */
-.sidebar .block-user .item-list {
-  text-align: right;
-}
-/* line 67, ../sass/modules/_sidebar.sass */
-.sidebar .block-user .item-list ul {
-  list-style-type: none;
-}
-/* line 70, ../sass/modules/_sidebar.sass */
-.sidebar .block-user .item-list ul a {
-  font-size: 0.875em;
-}
-/* line 73, ../sass/modules/_sidebar.sass */
-.sidebar .block-user #edit-pass {
-  margin-bottom: 2px;
-}
-/* line 76, ../sass/modules/_sidebar.sass */
+/* line 56, ../sass/modules/_sidebar.sass */
 .sidebar .block-user #edit-actions {
   text-align: center;
+}
+
+/* line 2, ../sass/modules/_edit_forms.sass */
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"] {
+  font-size: 8px;
+  line-height: 11.6px;
+  font-size: 0.8rem;
+  line-height: 1.16rem;
+  -webkit-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  -moz-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  padding: 5px 6px;
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid #cccccc;
+  width: 100%;
+}
+/* line 27, ../sass/modules/_edit_forms.sass */
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus {
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  border-color: #129fea;
+}
+/* line 33, ../sass/modules/_edit_forms.sass */
+input[type="text"]:disabled, input[type="password"]:disabled, input[type="email"]:disabled, input[type="url"]:disabled, input[type="date"]:disabled, input[type="month"]:disabled, input[type="time"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="week"]:disabled, input[type="number"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="color"]:disabled {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+/* line 38, ../sass/modules/_edit_forms.sass */
+select,
+textarea {
+  font-size: 8px;
+  line-height: 11.6px;
+  font-size: 0.8rem;
+  line-height: 1.16rem;
+  -webkit-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  -moz-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  padding: 5px 6px;
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid #cccccc;
+}
+/* line 69, ../sass/mixins/_mixins.sass */
+select::-webkit-scrollbar-track,
+select scrollbar-track,
+textarea::-webkit-scrollbar-track,
+textarea scrollbar-track {
+  background-color: #ebebeb;
+}
+/* line 73, ../sass/mixins/_mixins.sass */
+select::-webkit-scrollbar,
+select scrollbar,
+textarea::-webkit-scrollbar,
+textarea scrollbar {
+  width: 10px;
+  background-color: #ebebeb;
+}
+/* line 78, ../sass/mixins/_mixins.sass */
+select::-webkit-scrollbar-thumb,
+select scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb,
+textarea scrollbar-thumb {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #bfbfbf;
+}
+/* line 52, ../sass/modules/_edit_forms.sass */
+select:focus,
+textarea:focus {
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  border-color: #129fea;
+}
+/* line 58, ../sass/modules/_edit_forms.sass */
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+/* line 63, ../sass/modules/_edit_forms.sass */
+textarea {
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+
+/* line 67, ../sass/modules/_edit_forms.sass */
+input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
+  outline: thin dotted #333333;
+  outline: 1px auto #129fea;
+}
+
+/* line 73, ../sass/modules/_edit_forms.sass */
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  background: #eeeeee;
+  /* menu hover bg color */
+  color: #777777;
+  /* menu text color */
+  border-color: #cccccc;
+}
+
+/* line 82, ../sass/modules/_edit_forms.sass */
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+  color: #b94a48;
+  border: 1px solid #ee5f5b;
+}
+/* line 88, ../sass/modules/_edit_forms.sass */
+input:focus:invalid:focus,
+textarea:focus:invalid:focus,
+select:focus:invalid:focus {
+  border-color: #e9322d;
+}
+
+/* line 91, ../sass/modules/_edit_forms.sass */
+select {
+  border: 1px solid #cccccc;
+  background-color: white;
+}
+/* line 95, ../sass/modules/_edit_forms.sass */
+select[multiple] {
+  height: auto;
+}
+
+/* line 98, ../sass/modules/_edit_forms.sass */
+label {
+  font-size: 12px;
+  line-height: 17.4px;
+  font-size: 1.2rem;
+  line-height: 1.74rem;
+  margin: 13px 0 4.5px 0;
+  margin: 1.3rem 0 0.45rem 0;
+}
+
+/* line 102, ../sass/modules/_edit_forms.sass */
+fieldset {
+  margin: 0;
+  padding: 0.35em 0 0.75em;
+  border: 0;
+}
+
+/* line 107, ../sass/modules/_edit_forms.sass */
+legend {
+  display: block;
+  width: 100%;
+  padding: 0.3em 0;
+  margin-bottom: 0.3em;
+  font-size: 125%;
+  color: #333333;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* line 118, ../sass/modules/_edit_forms.sass */
+.pure-form-stacked input[type="text"], .pure-form-stacked input[type="password"], .pure-form-stacked input[type="email"], .pure-form-stacked input[type="url"], .pure-form-stacked input[type="date"], .pure-form-stacked input[type="month"], .pure-form-stacked input[type="time"], .pure-form-stacked input[type="datetime"], .pure-form-stacked input[type="datetime-local"], .pure-form-stacked input[type="week"], .pure-form-stacked input[type="number"], .pure-form-stacked input[type="search"], .pure-form-stacked input[type="tel"], .pure-form-stacked input[type="color"] {
+  display: block;
+  margin: 0.25em 0;
+}
+/* line 121, ../sass/modules/_edit_forms.sass */
+.pure-form-stacked select, .pure-form-stacked label, .pure-form-stacked textarea {
+  display: block;
+  margin: 0.25em 0;
+}
+
+/* line 126, ../sass/modules/_edit_forms.sass */
+.pure-form-aligned input, .pure-form-aligned textarea, .pure-form-aligned select, .pure-form-aligned .pure-help-inline {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+
+/* line 132, ../sass/modules/_edit_forms.sass */
+.pure-form-message-inline {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+
+/* Aligned Forms */
+/* line 141, ../sass/modules/_edit_forms.sass */
+.pure-form-aligned .pure-control-group {
+  margin-bottom: 0.5em;
+}
+/* line 143, ../sass/modules/_edit_forms.sass */
+.pure-form-aligned .pure-control-group label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10em;
+  margin: 0 1em 0 0;
+}
+/* line 149, ../sass/modules/_edit_forms.sass */
+.pure-form-aligned .pure-controls {
+  margin: 1.5em 0 0 10em;
+}
+
+/* Rounded Inputs */
+/* line 154, ../sass/modules/_edit_forms.sass */
+input.pure-input-rounded, .pure-input-rounded {
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+/* line 161, ../sass/modules/_edit_forms.sass */
+.pure-group fieldset {
+  margin-bottom: 10px;
+}
+/* line 163, ../sass/modules/_edit_forms.sass */
+.pure-group input {
+  display: block;
+  padding: 10px;
+  margin: 0;
+  border-radius: 0;
+  position: relative;
+  top: -1px;
+}
+/* line 170, ../sass/modules/_edit_forms.sass */
+.pure-group input:focus {
+  z-index: 2;
+}
+/* line 172, ../sass/modules/_edit_forms.sass */
+.pure-group input:first-child {
+  top: 1px;
+  border-radius: 4px 4px 0 0;
+}
+/* line 175, ../sass/modules/_edit_forms.sass */
+.pure-group input:last-child {
+  top: -2px;
+  border-radius: 0 0 4px 4px;
+}
+/* line 178, ../sass/modules/_edit_forms.sass */
+.pure-group button {
+  margin: 0.35em 0;
+}
+
+/* line 181, ../sass/modules/_edit_forms.sass */
+.pure-input-1 {
+  width: 100%;
+}
+
+/* line 184, ../sass/modules/_edit_forms.sass */
+.pure-input-2-3 {
+  width: 66%;
+}
+
+/* line 187, ../sass/modules/_edit_forms.sass */
+.pure-input-1-2 {
+  width: 50%;
+}
+
+/* line 190, ../sass/modules/_edit_forms.sass */
+.pure-input-1-3 {
+  width: 33%;
+}
+
+/* line 193, ../sass/modules/_edit_forms.sass */
+.pure-input-1-4 {
+  width: 25%;
+}
+
+/* Block help for forms */
+/* line 199, ../sass/modules/_edit_forms.sass */
+.pure-form-message {
+  display: block;
+  color: #666666;
+  font-size: 90%;
+}
+
+/* line 208, ../sass/modules/_edit_forms.sass */
+.filter-help a {
+  font-size: 12px;
+  line-height: 17.4px;
+  font-size: 1.2rem;
+  line-height: 1.74rem;
+}
+
+/* line 211, ../sass/modules/_edit_forms.sass */
+.form-item.form-type-select {
+  margin-top: 0;
 }
 
 /* jQuery UI - v1.10.2 - 2013-03-14
@@ -10012,7 +10302,7 @@ main {
 
 /* line 4, ../sass/modules/_notifications.sass */
 .info-block, .page-user .description,
-.page-user-password .description {
+.page-user-password .description, .filter-guidelines {
   font-size: 12px;
   line-height: 17.4px;
   font-size: 1.2rem;
@@ -10034,7 +10324,7 @@ main {
 }
 /* line 15, ../sass/modules/_notifications.sass */
 .info-block:after, .page-user .description:after,
-.page-user-password .description:after {
+.page-user-password .description:after, .filter-guidelines:after {
   font-size: 21px;
   line-height: 30.45px;
   font-size: 2.1rem;
@@ -10054,13 +10344,13 @@ main {
 }
 /* line 23, ../sass/modules/_notifications.sass */
 .info-block ul, .page-user .description ul,
-.page-user-password .description ul {
+.page-user-password .description ul, .filter-guidelines ul {
   margin: 0;
   padding: 0;
 }
 /* line 26, ../sass/modules/_notifications.sass */
 .info-block ul li, .page-user .description ul li,
-.page-user-password .description ul li {
+.page-user-password .description ul li, .filter-guidelines ul li {
   list-style-type: none;
 }
 
@@ -10175,10 +10465,12 @@ main {
 }
 /* line 34, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-answer {
+  font-size: 10px;
+  line-height: 14.5px;
+  font-size: 1rem;
+  line-height: 1.45rem;
   padding-bottom: 5px;
   padding-bottom: 0.5rem;
-  margin: 2.5px 0 5px 0;
-  margin: 0.25rem 0 0.5rem 0;
   color: #626262;
 }
 

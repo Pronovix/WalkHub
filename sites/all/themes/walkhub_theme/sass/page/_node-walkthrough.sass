@@ -87,7 +87,19 @@
           list-style-type: none
 
           &.edit a
-            @extend button
+            +sassy-button("simple", 10px, 19px, #f4f4f5)
+            +font-size(.8)
+            +border-radius(.35em)
+            padding: .45em .85em
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+            color: #6f6f6f
+            vertical-align: bottom
+
+            &:hover,
+            &:active
+              text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+              color: #6f6f6f
+
             +font-size(.7)
             margin: 0
 
@@ -158,7 +170,18 @@
       display: inline-block
 
       a
-        @extend button
+        +sassy-button("simple", 10px, 19px, #f4f4f5)
+        +font-size(.8)
+        +border-radius(.35em)
+        padding: .45em .85em
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+        color: #6f6f6f
+        vertical-align: bottom
+
+        &:hover,
+        &:active
+          text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+          color: #6f6f6f
 
         &:before
           +font-icomoon

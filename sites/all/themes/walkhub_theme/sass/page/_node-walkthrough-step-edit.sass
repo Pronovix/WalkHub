@@ -19,8 +19,11 @@
     #field-fc-step-highlight-add-more-wrapper
       +px-rem(margin-bottom, 2)
 
-    .has-tip.top
+    .has-tip.top,
+    .field-edit-link,
+    #edit-body-und-0-format
       display: none
+      +hide
 
     label
       +font-size(1)
@@ -85,7 +88,13 @@
       & > div:last-of-type  > div > div
         margin: 0
 
+  #edit-field-fc-step-name
+    display: none
+
   .form-submit:after
     +font-icomoon
     content: "\e017"
     margin-left: .5em
+
+  .back.button
+    margin-right: .75em
