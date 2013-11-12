@@ -49,9 +49,29 @@
 
   .block-user
     +border-radius(5px)
+    +px-rem(padding, .75, 1, .85, 1)
+    text-align: center
     color: #6f6f6f
     background-color: #f6f6f6
-    +px-rem(padding, .75, 1, .85, 1)
+
+    h2
+      text-align: left
+
+    label
+      +font-size(.9)
+      text-align: left
+
+    .item-list
+      text-align: right
+
+      ul
+        list-style-type: none
+
+        a
+          font-size: 0.875em
+
+    #edit-pass
+      margin-bottom: 2px
 
     #edit-actions
       text-align: center

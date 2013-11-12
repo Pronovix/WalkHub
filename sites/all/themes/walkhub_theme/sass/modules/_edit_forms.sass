@@ -13,7 +13,6 @@ input
   &[type="search"],
   &[type="tel"],
   &[type="color"]
-    +font-size(.8)
     +box-shadow(inset 0 1px 3px rgba(#ddd, .75))
     +border-radius(4px)
     +transition($transition-base)
@@ -37,7 +36,6 @@ input
 
 select,
 textarea
-  +font-size(.8)
   +box-shadow(inset 0 1px 3px rgba(#ddd, .75))
   +border-radius(4px)
   +transition($transition-base)
@@ -96,7 +94,6 @@ select
     height: auto
 
 label
-  +font-size(1.2)
   +px-rem(margin, 1.3, 0, .45, 0)
 
 fieldset
@@ -109,7 +106,6 @@ legend
   width: 100%
   padding: 0.3em 0
   margin-bottom: 0.3em
-  font-size: 125%
   color: #333
   border-bottom: 1px solid #e5e5e5
 
@@ -199,14 +195,9 @@ input.pure-input-rounded, .pure-input-rounded
 .pure-form-message
   display: block
   color: #666
-  font-size: 90%
 
 .filter-guidelines
   @extend .info-block
-
-.filter-help
-  a
-    +font-size(1.2)
 
 .form-item.form-type-select
   margin-top: 0
