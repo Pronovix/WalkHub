@@ -237,7 +237,6 @@
           <?php print ($alt_main_menu); ?>
         </nav> <!-- /#main-menu -->
       <?php endif; ?>
-
     </section>
     <?php endif; ?>
     <!-- End title, slogan and menu -->
