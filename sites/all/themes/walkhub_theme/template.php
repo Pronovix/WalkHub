@@ -273,3 +273,11 @@ function walkhub_theme_preprocess_walkthrough_steps_edit_form(&$vars) {
 
   $vars['form']['label'] = $label;
 }
+
+/**
+ * Implements hook_preprocess_walkthrough_node_form().
+ */
+function walkhub_theme_preprocess_walkthrough_node_form($vars) {
+  $path = drupal_get_path('theme', 'walkhub_theme');
+  drupal_add_js($path . '/js/page/node_form_edit.js');
+}

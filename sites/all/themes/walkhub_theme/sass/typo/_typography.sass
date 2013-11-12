@@ -65,7 +65,7 @@ body
       li
         a
           +sassy-button("simple", 10px, 19px, #f4f4f5)
-          +font-size(.8)
+          +font-size(.65)
           +border-radius(.35em)
           padding: .45em .85em
           text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
@@ -100,6 +100,10 @@ button, .button, .btn
   &:active
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
     color: #6f6f6f
+
+  &.small
+    font-size: 75%
+    font-style: italic
 
 // Call To action button
 .cta
@@ -295,3 +299,13 @@ blockquote
     font-weight: bold
     border: none
     padding: 0 0.0625em
+
+html.js input.form-autocomplete
+  background-image: url(../../../../../misc/throbber.gif)
+  background-position: 100% 7px
+  background-repeat: no-repeat
+
+  &.throbbing
+    background-image: url(../../../../../misc/throbber.gif)
+    background-position: 100% -13px
+    background-repeat: no-repeat
