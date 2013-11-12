@@ -1,8 +1,8 @@
 .page-node-add-walkthrough,
 .page-node-edit.node-type-walkthrough
 
-  .page-title
-    margin-bottom: 2em
+  #page-title
+    margin-bottom: 1em
 
   .row.l-main
     #edit-body-und-0-format,
@@ -13,7 +13,8 @@
     #group-col legend,
     #edit-og-group-ref-und .description,
     .sticky-header,
-    .tabledrag-toggle-weight
+    .tabledrag-toggle-weight,
+    .field-name-field-fc-steps thead
       display: none
 
 
@@ -85,3 +86,19 @@
     #s2id_edit-og-group-ref-und-0-default,
     #field-fc-steps-values
       width: 100%!important
+
+    .field-name-field-fc-steps
+      margin-bottom: 2em
+
+    table
+      border: 0
+
+    table tr.even,
+    table tr.alt,
+    table tr:nth-of-type(even)
+      background: transparent
+
+    #field-fc-steps-values
+      .grippie
+        width: 100%
+        float: none
