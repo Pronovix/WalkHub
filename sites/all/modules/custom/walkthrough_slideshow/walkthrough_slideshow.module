@@ -1,0 +1,225 @@
+<?php
+/**
+ * @file
+ * Create slide show display for image field.
+ */
+
+define('WALKTHROUGH_SLIDSHOW_HEIGHT', 300);
+define('WALKTHROUGH_SLIDSHOW_WIDTH', 400);
+
+/**
+ * Implements hook_menu().
+ */
+function walkthrough_slideshow_menu() {
+  $items = array();
+
+  $items['walkthrough/slideshow/%node'] = array(
+    'title' => 'walkthrough iframe',
+    'access arguments' => array('access content'),
+    'page callback' => 'walkthrough_slideshow_generate_iframe_content',
+    'page arguments' => array(2),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function walkthrough_slideshow_theme() {
+  return array(
+    'walkthrough_slideshow_iframe' => array(
+      'path' => drupal_get_path('module', 'walkthrough_slideshow') . '/templates',
+      'template' => 'walkthrough_slideshow_iframe',
+      'variables' => array(
+        'width' => NULL,
+        'height' => NULL,
+        'source' => NULL,
+      ),
+    ),
+    'walkthrough_slideshow' => array(
+      'path' => drupal_get_path('module', 'walkthrough_slideshow') . '/templates',
+      'template' => 'walkthrough_slideshow',
+      'variables' => array(
+        'slides_json' => '[]',
+        'link' => '',
+        'start_url' => '',
+        'embed_code' => '',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function walkthrough_slideshow_libraries_info() {
+  // Add BigScreen to the libraries.
+  $libraries['bigscreen'] = array(
+    'name' => 'Big Screen',
+    'vendor url' => 'http://brad.is/coding/BigScreen/',
+    'download url' => 'http://brad.is/coding/BigScreen/',
+    'machine name' => 'bigscreen',
+    'files' => array(
+      'js' => array('bigscreen.min.js'),
+    ),
+  );
+
+  // Add Supersized to the libraries.
+  $libraries['supersized_slideshow'] = array(
+    'name' => 'Supersized Slideshow',
+    'vendor url' => 'http://buildinternet.com/project/supersized/',
+    'download url' => 'http://buildinternet.com/project/supersized/download.html',
+    'machine name' => 'supersized',
+    'path' => 'slideshow/js',
+    'files' => array(
+      'js' => array(
+        'supersized.3.2.7.min.js',
+        'jquery.easing.min.js',
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function walkthrough_slideshow_field_formatter_info() {
+  return array(
+    'image_slideshow' => array(
+      'label' => t('Image slideshow'),
+      'field types' => array('image'),
+      'settings' => array(
+        'height' => WALKTHROUGH_SLIDSHOW_HEIGHT,
+        'width' => WALKTHROUGH_SLIDSHOW_WIDTH,
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function walkthrough_slideshow_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $element = array();
+
+  if ($display['type'] == 'image' || $display['type'] == 'image_slideshow') {
+    $element['height'] = array(
+      '#title' => t('Height'),
+      '#type' => 'textfield',
+      '#size' => 20,
+      '#default_value' => $settings['height'],
+      '#element_validate' => array('element_validate_integer_positive'),
+      '#required' => TRUE,
+    );
+
+    $element['width'] = array(
+      '#title' => t('Width'),
+      '#type' => 'textfield',
+      '#size' => 20,
+      '#default_value' => $settings['width'],
+      '#element_validate' => array('element_validate_integer_positive'),
+      '#required' => TRUE,
+    );
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function walkthrough_slideshow_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = '';
+
+  if ($display['type'] == 'image' || $display['type'] == 'image_slideshow') {
+    $summary = t('Width: @width Height: @height', array('@width' => $settings['width'], '@height' => $settings['height']));
+  }
+
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function walkthrough_slideshow_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+  $settings = $display['settings'];
+
+  switch ($display['type']) {
+    case 'image_slideshow':
+      if (count($items)) {
+        $element = array(
+          '#theme' => 'walkthrough_slideshow_iframe',
+          '#width' => $settings['width'],
+          '#height' => $settings['height'],
+          '#source' => url('walkthrough/slideshow/' . $entity->nid, array('absolute' => TRUE)),
+        );
+      }
+      break;
+  }
+  return $element;
+}
+
+/**
+ * Give back the raw html code of the slideshow page. It will be placed into an iframe.
+ *
+ * @param $node
+ * @param $width
+ * @param $height
+ *
+ * @return string
+ */
+function walkthrough_slideshow_generate_iframe_content($node) {
+  $images = field_get_items('node', $node, 'field_screenshots');
+
+  // Get referenced walkthrough object.
+  $walkthrough = field_get_items('node', $node, 'field_walkthrough');
+  $walkthrough = node_load($walkthrough[0]['target_id']);
+
+  // Get images belonging to the test content.
+  $slides = array();
+  foreach ($images as $image) {
+    $file = new stdClass();
+    $file->image = file_create_url($image['uri']);
+    $file->title = $image['title'];
+    $slides[] = $file;
+  }
+
+  // Get the embed code.
+  $embed = theme('walkthrough_slideshow_iframe',
+    array('width' => 400, 'height' => 300, 'source' => url('walkthrough/slideshow/' . $node->nid, array('absolute' => TRUE))));
+
+  // Create variables to client side.
+  $vars = array(
+    'slides_json' => json_encode($slides),
+    'link' => l($walkthrough->title, 'node/' . $walkthrough->nid, array('attributes' => array('target' => '_blank'))),
+    'start_url' => url('node/' . $walkthrough->nid . '/start', array('absolute' => TRUE)),
+    'embed_code' => _walkthrough_slideshow_embed($embed),
+  );
+
+  // Return the page content.
+  print theme('walkthrough_slideshow', $vars);
+}
+
+/**
+ * Gives back the HTML code which will display the embed code.
+ */
+function _walkthrough_slideshow_embed($embed_code) {
+  $form = array(
+    'embed' => array(
+      '#type' => 'textarea',
+      '#title' => t('Copy the embed code'),
+      '#value' => $embed_code,
+    ),
+  );
+  return render($form);
+}
