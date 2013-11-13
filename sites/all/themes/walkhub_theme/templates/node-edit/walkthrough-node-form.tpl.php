@@ -25,12 +25,6 @@
       <?php print render($form['additional_settings']); ?>
     </div>
   </div>
-
-
   <hr>
-
-
-
-  field_tags
   <?php print drupal_render_children($form); ?>
 </div>

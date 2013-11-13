@@ -102,3 +102,55 @@
       .grippie
         width: 100%
         float: none
+
+    .walkthrough-step-edit
+      & > .clearfix
+        +px-rem(margin, 0, .5, 1, .5)
+        +px-rem(padding, 0, .5)
+        +border-radius(0 0 .2em .2em)
+        background-color: #f6f6f6
+        position: relative
+
+      .step-title.button
+        margin: 0
+        width: 100%
+        display: block
+        height: 32px
+        overflow: hidden
+
+      .le
+        float: left
+        width: 46%
+        margin-right: 4%
+
+      .ri
+        float: right
+        width: 46%
+        margin-right: 4%
+
+      a.tabledrag-handle
+
+    #field-fc-steps-values
+      tr:nth-child(1) .step-title:before,
+      tr:nth-child(2) .step-title:before,
+      tr:nth-child(3) .step-title:before,
+      tr:nth-child(4) .step-title:before,
+      tr:nth-child(5) .step-title:before,
+      tr:nth-child(6) .step-title:before,
+      tr:nth-child(7) .step-title:before,
+      tr:nth-child(8) .step-title:before,
+      tr:nth-child(9) .step-title:before,
+      tr:nth-child(10) .step-title:before,
+      tr:nth-child(11) .step-title:before,
+      tr:nth-child(12) .step-title:before,
+      tr:nth-child(13) .step-title:before,
+      tr:nth-child(14) .step-title:before,
+      tr:nth-child(15) .step-title:before,
+      tr:nth-child(16) .step-title:before,
+      tr:nth-child(17) .step-title:before,
+      tr:nth-child(18) .step-title:before,
+      tr:nth-child(19) .step-title:before,
+      tr:nth-child(20) .step-title:before
+        content: "Step 1 -"
+        margin-right: .25em
+        font-weight: bold

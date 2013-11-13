@@ -11162,6 +11162,89 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 100%;
   float: none;
 }
+/* line 107, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit > .clearfix,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit > .clearfix {
+  margin: 0 5px 10px 5px;
+  margin: 0 0.5rem 1rem 0.5rem;
+  padding: 0 5px;
+  padding: 0 0.5rem;
+  -webkit-border-radius: 0 0 0.2em 0.2em;
+  -moz-border-radius: 0 0 0.2em 0.2em;
+  -ms-border-radius: 0 0 0.2em 0.2em;
+  -o-border-radius: 0 0 0.2em 0.2em;
+  border-radius: 0 0 0.2em 0.2em;
+  background-color: #f6f6f6;
+  position: relative;
+}
+/* line 114, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button {
+  margin: 0;
+  width: 100%;
+  display: block;
+  height: 32px;
+  overflow: hidden;
+}
+/* line 121, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .le,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .le {
+  float: left;
+  width: 46%;
+  margin-right: 4%;
+}
+/* line 126, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ri,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ri {
+  float: right;
+  width: 46%;
+  margin-right: 4%;
+}
+/* line 134, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(1) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(2) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(3) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(4) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(5) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(6) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(7) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(8) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(9) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(10) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(11) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(12) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(13) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(14) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(15) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(16) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(17) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(18) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(19) .step-title:before,
+.page-node-add-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(20) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(1) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(2) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(3) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(4) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(5) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(6) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(7) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(8) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(9) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(10) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(11) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(12) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(13) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(14) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(15) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(16) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(17) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(18) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(19) .step-title:before,
+.page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values tr:nth-child(20) .step-title:before {
+  content: "Step 1 -";
+  margin-right: 0.25em;
+  font-weight: bold;
+}
 
 /* line 3, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form > div {

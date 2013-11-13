@@ -12,6 +12,7 @@
       Drupal.walkhubStepEdit.makeButton(context, settings);
       Drupal.walkhubStepEdit.makeBackButton(context, settings);
       Drupal.walkhubStepEdit.insertIcon(context, settings);
+      Drupal.walkhubStepEdit.stepHideShow(context, settings);
     }
   };
 
@@ -33,6 +34,14 @@
       $('#edit-preview').prepend('<i class="icon-browser"></i> ');
       $('#edit-preview-changes').prepend('<i class="icon-eye"></i> ');
       $('#edit-field-fc-steps-und-add-more--2').prepend('<i class="icon-plus"></i> ');
+    },
+
+
+    stepHideShow : function(context, settings) {
+      $('.step-title.button').click(function(){
+          $('.walkthrough-step-container').toggle( "200" );
+          return false;
+        });
     }
   }
 
