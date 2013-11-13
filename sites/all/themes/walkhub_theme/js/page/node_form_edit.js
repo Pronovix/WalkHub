@@ -65,31 +65,30 @@
       });
     },
 
-
     stepHideShow : function(context, settings) {
       $('.step-title.button', context).click(function() {
-          $('.walkthrough-step-container').toggle( "200" );
+          $('.walkthrough-step-container', context).toggle( "200" );
           return false;
         });
     },
 
     openAll : function(context, settings) {
-      $('#open-all').click(function(){
-        $('.walkthrough-step-container').show( "200" );
+      $('#open-all', context).click(function(){
+        $('.walkthrough-step-container', context).show( "200" );
         return false;
       });
     },
 
     closeAll : function(context, settings) {
-      $('#callopse-all').click(function(){
-        $('.walkthrough-step-container').hide( "200" );
+      $('#callopse-all', context).click(function(){
+        $('.walkthrough-step-container', context).hide( "200" );
         return false;
       });
     },
 
     parameters : function(context, settings) {
-      $('#parameters').click(function(){
-        $('#edit-field-parameters').toggle( "200" );
+      $('#parameters', context).click(function(){
+        $('#edit-field-parameters', context).toggle( "200" );
         return false;
       });
     }
