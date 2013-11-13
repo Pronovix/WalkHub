@@ -19,8 +19,14 @@
       <?php if (!empty($form['field_fc_step_show_title'])): ?>
         <?php print render($form['field_fc_step_show_title']); ?>
       <?php endif; ?>
+      <?php if (!empty($form['field_fc_step_name'])): ?>
+        <?php print render($form['field_fc_step_name']); ?>
+      <?php endif; ?>
       <?php if (!empty($form['field_fc_step_description'])): ?>
         <?php print render($form['field_fc_step_description']); ?>
+      <?php endif; ?>
+      <?php if (!empty($form['field_fc_step_highlight'])): ?>
+        <?php print render($form['field_fc_step_highlight']); ?>
       <?php endif; ?>
     </div>
     <div class="ri">
