@@ -11528,6 +11528,19 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 0.75em;
 }
 
+/* line 2, ../sass/page/_page-walkthrough-import.sass */
+.page-walkthrough-import .description {
+  display: none;
+}
+/* line 5, ../sass/page/_page-walkthrough-import.sass */
+.page-walkthrough-import textarea {
+  min-height: 350px;
+}
+/* line 8, ../sass/page/_page-walkthrough-import.sass */
+.page-walkthrough-import .form-textarea-wrapper {
+  margin-bottom: 2em;
+}
+
 /* line 3, ../sass/view/_my_walkthroughs.sass */
 .view-id-my_walkthroughs.view-display-id-block .view-content table {
   width: 100%;
