@@ -259,6 +259,26 @@ function walkhub_theme_preprocess_page(&$vars) {
   }
 }
 
+/**
+ * Implements hook_preprocess_walkthrough_steps_edit_form().
+ */
+function walkhub_theme_preprocess_walkthrough_steps_edit_form(&$vars) {
+  $title = $vars['form']['field_fc_step_name'][LANGUAGE_NONE][0]['value']['#value'];
+  $description = $vars['form']['field_fc_step_description'][LANGUAGE_NONE][0]['value']['#value'];
+  $label = "$title $description";
+
+  $vars['stepnumber'] = $vars['form']['#delta'] + 1;
+
+  if (empty($title)) {
+    $label = "{$vars['stepnumber']}. step";
+  }
+
+  $vars['steplabel'] = $label;
+}
+
+/**
+ * Implements hook_preprocess_walkthrough_node_form().
+ */
 function walkhub_theme_preprocess_walkthrough_node_form($vars) {
   $path = drupal_get_path('theme', 'walkhub_theme');
   drupal_add_js($path . '/js/page/node_form_edit.js');

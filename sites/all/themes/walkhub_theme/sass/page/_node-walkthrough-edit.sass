@@ -1,8 +1,8 @@
 .page-node-add-walkthrough,
 .page-node-edit.node-type-walkthrough
 
-  .page-title
-    margin-bottom: 2em
+  #page-title
+    margin-bottom: 1em
 
   .row.l-main
     #edit-body-und-0-format,
@@ -13,9 +13,33 @@
     #group-col legend,
     #edit-og-group-ref-und .description,
     .sticky-header,
-    .tabledrag-toggle-weight
+    .tabledrag-toggle-weight,
+    .field-name-field-fc-steps thead,
+    #field-parameters-values thead,
+    #edit-field-parameters
       display: none
 
+    #edit-field-parameters
+      margin-left: 24%
+
+      tbody
+        +border-radius(.2em)
+        padding: 0.75rem 0.5rem
+        background-color: #f6f6f6
+
+      label
+        width: 100%
+
+      .description,
+      .form-submit
+        +font-size(.7)
+
+      .description
+        +px-rem(margin, .85, 0, .35, 0)
+
+
+    #field-parameters-add-more-wrapper
+      +px-rem(margin, 1, 0)
 
     .form-item-title,
     .form-item-body-und-0-value
@@ -85,3 +109,95 @@
     #s2id_edit-og-group-ref-und-0-default,
     #field-fc-steps-values
       width: 100%!important
+
+    .field-name-field-fc-steps
+      margin-top: 2em
+      margin-bottom: 2em
+
+      .walkthrough-step-container
+        label
+          width: 45%
+
+      .form-wrapper
+        +px-rem(margin-bottom, .45)
+
+      .field-add-more-submit
+        font-size: 75%
+        font-style: italic
+        margin-left: 4.3em
+
+    table
+      border: 0
+      width: 100%
+      background: transparent
+
+    table tr.even,
+    table tr.alt,
+    table tr:nth-of-type(even)
+      background: transparent
+
+    .draggable a.tabledrag-handle
+      +mp0
+      width: 30px
+
+      &:hover:after
+        +opacity(1)
+
+      &:after
+        +opacity(.65)
+        +mp0
+        color: #6f6f6f
+        +font-size(.8, 0)
+        +font-icomoon
+        text-align: center
+        content: "\e607"
+        display: block
+
+      .handle
+        +mp0
+        background: transparent
+
+    #field-fc-steps-values
+      .grippie
+        width: 100%
+        float: none
+
+    .walkthrough-step-edit
+      .walkthrough-step-container
+        +px-rem(margin, 0, .5, 1, .5)
+        +px-rem(padding, .75, .5)
+        +border-radius(0 0 .2em .2em)
+        background-color: #f6f6f6
+        position: relative
+        display: none
+
+        .ri button
+          +font-size(.7)
+          position: absolute
+          top: 10px
+          right: 10px
+
+        .description,
+        legend
+          display: none
+
+      .step-title.button
+        margin: 0
+        width: 100%
+        display: block
+        height: 32px
+        overflow: hidden
+
+        span
+          font-weight: bold
+          display: inline-block
+
+      .le
+        float: left
+        width: 46%
+        margin-right: 4%
+
+      .ri
+        float: right
+        width: 46%
+        margin-right: 4%

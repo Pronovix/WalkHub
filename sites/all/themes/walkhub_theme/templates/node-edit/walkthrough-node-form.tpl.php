@@ -25,12 +25,9 @@
       <?php print render($form['additional_settings']); ?>
     </div>
   </div>
-
-
   <hr>
-
-
-
-  field_tags
+  <button id="open-all" class="small"><i class="icon-folder-open-alt"></i> <?php print t ('Open all'); ?></button>
+  <button id="callopse-all" class="small"><i class="icon-folder-close-alt"></i> <?php print t ('Close all'); ?></button>
+  <button id="parameters" class="small"><i class="icon-cog"></i> <?php print t ('Parameters'); ?></button>
   <?php print drupal_render_children($form); ?>
 </div>
