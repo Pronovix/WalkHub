@@ -1,11 +1,5 @@
 (function ($, Drupal) {
 
-  Drupal.behaviors.walkhubTheme = {
-    attach: function(context, settings) {
-      Drupal.walkhubTheme.initSelect2(context, settings);
-    }
-  };
-
   Drupal.walkhubTheme = {
     initSelect2: function (context, settings) {
       var $selectElements = {};

@@ -30,6 +30,12 @@
       $(document).ready(function () {
         var timer = setInterval(hideOverlays);
 
+        // Toggle Source Code
+        $('#share').click(function(){
+          $('#embed-code').toggle( "200" );
+          return false;
+        });
+
         // Hide overlays.
         function hideOverlays() {
           $('#title-bar, #controls-wrapper').addClass('hide').fadeOut();
