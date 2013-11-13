@@ -267,11 +267,13 @@ function walkhub_theme_preprocess_walkthrough_steps_edit_form(&$vars) {
   $description = $vars['form']['field_fc_step_description'][LANGUAGE_NONE][0]['value']['#value'];
   $label = "$title $description";
 
+  $vars['stepnumber'] = $vars['form']['#delta'] + 1;
+
   if (empty($title)) {
-    $label = "{$vars['form']['#delta']}. step";
+    $label = "{$vars['stepnumber']}. step";
   }
 
-  $vars['form']['label'] = $label;
+  $vars['steplabel'] = $label;
 }
 
 /**

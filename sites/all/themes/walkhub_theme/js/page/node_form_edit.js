@@ -13,6 +13,9 @@
       Drupal.walkhubStepEdit.makeBackButton(context, settings);
       Drupal.walkhubStepEdit.insertIcon(context, settings);
       Drupal.walkhubStepEdit.stepHideShow(context, settings);
+      Drupal.walkhubStepEdit.openAll(context, settings);
+      Drupal.walkhubStepEdit.closeAll(context, settings);
+      Drupal.walkhubStepEdit.parameters(context, settings);
     }
   };
 
@@ -42,6 +45,27 @@
           $('.walkthrough-step-container').toggle( "200" );
           return false;
         });
+    },
+
+    openAll : function(context, settings) {
+      $('#open-all').click(function(){
+        $('.walkthrough-step-container').show( "200" );
+        return false;
+      });
+    },
+
+    closeAll : function(context, settings) {
+      $('#callopse-all').click(function(){
+        $('.walkthrough-step-container').hide( "200" );
+        return false;
+      });
+    },
+
+    parameters : function(context, settings) {
+      $('#parameters').click(function(){
+        $('#edit-field-parameters').toggle( "200" );
+        return false;
+      });
     }
   }
 

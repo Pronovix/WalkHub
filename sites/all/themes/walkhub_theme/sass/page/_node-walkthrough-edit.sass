@@ -98,17 +98,42 @@
     table tr:nth-of-type(even)
       background: transparent
 
+    form .field-multiple-table td.field-multiple-drag
+      +
+
+    .draggable a.tabledrag-handle
+      +mp0
+      width: 30px
+
+      &:hover:after
+        +opacity(1)
+
+      &:after
+        +opacity(.65)
+        +mp0
+        color: #6f6f6f
+        +font-size(.8, 0)
+        +font-icomoon
+        text-align: center
+        content: "\e607"
+        display: block
+
+      .handle
+        +mp0
+        background: transparent
+
     #field-fc-steps-values
       .grippie
         width: 100%
         float: none
 
     .walkthrough-step-edit
-      & > .clearfix
+      .walkthrough-step-container
         +px-rem(margin, 0, .5, 1, .5)
-        +px-rem(padding, 0, .5)
+        +px-rem(padding, .75, .5)
         +border-radius(0 0 .2em .2em)
         background-color: #f6f6f6
+        display: none
         position: relative
 
       .step-title.button
@@ -117,6 +142,10 @@
         display: block
         height: 32px
         overflow: hidden
+
+        span
+          font-weight: bold
+          display: inline-block
 
       .le
         float: left
@@ -127,30 +156,3 @@
         float: right
         width: 46%
         margin-right: 4%
-
-      a.tabledrag-handle
-
-    #field-fc-steps-values
-      tr:nth-child(1) .step-title:before,
-      tr:nth-child(2) .step-title:before,
-      tr:nth-child(3) .step-title:before,
-      tr:nth-child(4) .step-title:before,
-      tr:nth-child(5) .step-title:before,
-      tr:nth-child(6) .step-title:before,
-      tr:nth-child(7) .step-title:before,
-      tr:nth-child(8) .step-title:before,
-      tr:nth-child(9) .step-title:before,
-      tr:nth-child(10) .step-title:before,
-      tr:nth-child(11) .step-title:before,
-      tr:nth-child(12) .step-title:before,
-      tr:nth-child(13) .step-title:before,
-      tr:nth-child(14) .step-title:before,
-      tr:nth-child(15) .step-title:before,
-      tr:nth-child(16) .step-title:before,
-      tr:nth-child(17) .step-title:before,
-      tr:nth-child(18) .step-title:before,
-      tr:nth-child(19) .step-title:before,
-      tr:nth-child(20) .step-title:before
-        content: "Step 1 -"
-        margin-right: .25em
-        font-weight: bold
