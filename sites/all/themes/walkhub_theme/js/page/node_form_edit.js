@@ -66,8 +66,9 @@
     },
 
     stepHideShow : function(context, settings) {
-      $('.step-title.button', context).click(function() {
-          $('.walkthrough-step-container', context).toggle( "200" );
+      $('.walkthrough-step-edit', context).click(function() {
+        var $this = $(this);
+        $('.walkthrough-step-container', $this).toggle( "200" );
           return false;
         });
     },

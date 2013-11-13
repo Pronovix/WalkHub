@@ -6,7 +6,7 @@
  * - $form: This variable contains a walkthrough step field collection form elements
  */
 ?>
-<div class="walkthrough-step-edit step-<?php print ($stepnumber); ?>">
+<div class="walkthrough-step-edit" id="walkthrough-step-edit-step-<?php print ($stepnumber); ?>">
   <h3 class="step-title button">
     <span>
       <?php print t ('Step'); ?>
