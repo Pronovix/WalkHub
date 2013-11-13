@@ -10494,16 +10494,16 @@ input.pure-input-rounded, .pure-input-rounded {
   text-decoration: underline;
 }
 
-/* line 6, ../sass/page/_node-type-faq.sass */
+/* line 6, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-collection-view {
   margin-top: 5px;
   margin-top: 0.5rem;
 }
-/* line 9, ../sass/page/_node-type-faq.sass */
+/* line 9, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-collection-view:first-of-type {
   margin: 0;
 }
-/* line 12, ../sass/page/_node-type-faq.sass */
+/* line 12, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions {
   font-size: 12.5px;
   line-height: 18.125px;
@@ -10517,11 +10517,11 @@ input.pure-input-rounded, .pure-input-rounded {
   border-bottom: 1px solid #e3e3e3;
   position: relative;
 }
-/* line 19, ../sass/page/_node-type-faq.sass */
+/* line 19, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions:hover {
   border-color: #4386cf;
 }
-/* line 22, ../sass/page/_node-type-faq.sass */
+/* line 22, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions:after {
   font-family: "icomoon";
   speak: none;
@@ -10541,11 +10541,11 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 0.3em;
   right: 0.3em;
 }
-/* line 31, ../sass/page/_node-type-faq.sass */
+/* line 31, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions.active:after {
   content: "\f077";
 }
-/* line 34, ../sass/page/_node-type-faq.sass */
+/* line 34, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-answer {
   padding-bottom: 5px;
   padding-bottom: 0.5rem;
@@ -10554,22 +10554,22 @@ input.pure-input-rounded, .pure-input-rounded {
   color: #626262;
 }
 
-/* line 4, ../sass/page/_node-walkthrough.sass */
+/* line 4, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .main.columns > .action-links li {
   text-align: center;
   list-style-type: none;
 }
-/* line 8, ../sass/page/_node-walkthrough.sass */
+/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .main.columns > .action-links li a {
   margin: 1em 0;
   display: inline-block;
 }
-/* line 13, ../sass/page/_node-walkthrough.sass */
+/* line 13, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .main.columns > .action-links li a:after {
   content: "\e600";
   margin-left: 0.35em;
 }
-/* line 19, ../sass/page/_node-walkthrough.sass */
+/* line 19, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-steps > .field-label {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -10579,14 +10579,14 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 1.4rem;
   line-height: 2.03rem;
 }
-/* line 24, ../sass/page/_node-walkthrough.sass */
+/* line 24, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-step-description .field-label {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
   display: none;
 }
-/* line 28, ../sass/page/_node-walkthrough.sass */
+/* line 28, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item {
   padding: 0.45rem 0.75rem;
   padding: 0.45rem 0.75rem;
@@ -10601,11 +10601,11 @@ input.pure-input-rounded, .pure-input-rounded {
   background-color: #f6f6f6;
   position: relative;
 }
-/* line 37, ../sass/page/_node-walkthrough.sass */
+/* line 37, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .content {
   margin-left: 2em;
 }
-/* line 40, ../sass/page/_node-walkthrough.sass */
+/* line 40, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-name {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -10614,13 +10614,13 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 1.2rem;
   line-height: 1.74rem;
 }
-/* line 44, ../sass/page/_node-walkthrough.sass */
+/* line 44, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-name .field-label {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }
-/* line 48, ../sass/page/_node-walkthrough.sass */
+/* line 48, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-2,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-3,
@@ -10633,7 +10633,7 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 1.45rem;
   font-weight: normal;
 }
-/* line 57, ../sass/page/_node-walkthrough.sass */
+/* line 57, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1 > .field-label,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-2 > .field-label,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-3 > .field-label,
@@ -10648,7 +10648,7 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 8em;
   margin-right: 1em;
 }
-/* line 64, ../sass/page/_node-walkthrough.sass */
+/* line 64, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-show-title,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-highlight,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1,
@@ -10663,22 +10663,22 @@ input.pure-input-rounded, .pure-input-rounded {
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-10 {
   display: none;
 }
-/* line 78, ../sass/page/_node-walkthrough.sass */
+/* line 78, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full {
   position: relative;
 }
-/* line 81, ../sass/page/_node-walkthrough.sass */
+/* line 81, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links {
   position: absolute;
   top: 0.5em;
   right: 0.5em;
   margin: 0;
 }
-/* line 87, ../sass/page/_node-walkthrough.sass */
+/* line 87, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li {
   list-style-type: none;
 }
-/* line 90, ../sass/page/_node-walkthrough.sass */
+/* line 90, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a {
   font-size: 19px;
   padding: 0.5em 1.5em;
@@ -10755,12 +10755,12 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 99, ../sass/page/_node-walkthrough.sass */
+/* line 99, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 107, ../sass/page/_node-walkthrough.sass */
+/* line 107, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:after {
   font-family: "icomoon";
   speak: none;
@@ -10773,13 +10773,13 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e602";
   margin-left: 0.45em;
 }
-/* line 112, ../sass/page/_node-walkthrough.sass */
+/* line 112, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .delete {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }
-/* line 115, ../sass/page/_node-walkthrough.sass */
+/* line 115, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .content:before {
   font-size: 12px;
   line-height: 17.4px;
@@ -10792,84 +10792,84 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 0.39em;
   left: 0.6em;
 }
-/* line 123, ../sass/page/_node-walkthrough.sass */
+/* line 123, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(1) .content:before {
   content: "0";
 }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 125, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(2) .content:before {
   content: "1";
 }
-/* line 127, ../sass/page/_node-walkthrough.sass */
+/* line 127, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(3) .content:before {
   content: "2";
 }
-/* line 129, ../sass/page/_node-walkthrough.sass */
+/* line 129, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(4) .content:before {
   content: "3";
 }
-/* line 131, ../sass/page/_node-walkthrough.sass */
+/* line 131, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(5) .content:before {
   content: "4";
 }
-/* line 133, ../sass/page/_node-walkthrough.sass */
+/* line 133, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(6) .content:before {
   content: "5";
 }
-/* line 135, ../sass/page/_node-walkthrough.sass */
+/* line 135, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(7) .content:before {
   content: "6";
 }
-/* line 137, ../sass/page/_node-walkthrough.sass */
+/* line 137, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(8) .content:before {
   content: "7";
 }
-/* line 139, ../sass/page/_node-walkthrough.sass */
+/* line 139, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(9) .content:before {
   content: "8";
 }
-/* line 141, ../sass/page/_node-walkthrough.sass */
+/* line 141, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(10) .content:before {
   content: "9";
 }
-/* line 143, ../sass/page/_node-walkthrough.sass */
+/* line 143, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(11) .content:before {
   content: "10";
 }
-/* line 145, ../sass/page/_node-walkthrough.sass */
+/* line 145, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(12) .content:before {
   content: "11";
 }
-/* line 147, ../sass/page/_node-walkthrough.sass */
+/* line 147, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(13) .content:before {
   content: "12";
 }
-/* line 149, ../sass/page/_node-walkthrough.sass */
+/* line 149, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(14) .content:before {
   content: "13";
 }
-/* line 151, ../sass/page/_node-walkthrough.sass */
+/* line 151, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(15) .content:before {
   content: "14";
 }
-/* line 153, ../sass/page/_node-walkthrough.sass */
+/* line 153, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(16) .content:before {
   content: "15";
 }
-/* line 155, ../sass/page/_node-walkthrough.sass */
+/* line 155, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(17) .content:before {
   content: "16";
 }
-/* line 157, ../sass/page/_node-walkthrough.sass */
+/* line 157, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(18) .content:before {
   content: "17";
 }
-/* line 160, ../sass/page/_node-walkthrough.sass */
+/* line 160, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-step-description {
   margin-top: 3.5px;
   margin-top: 0.35rem;
 }
-/* line 163, ../sass/page/_node-walkthrough.sass */
+/* line 163, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .description.field-collection-description,
 .node-type-walkthrough .node-walkthrough .action-links-field-collection-add {
   font: 0/0 a;
@@ -10877,14 +10877,14 @@ input.pure-input-rounded, .pure-input-rounded {
   color: transparent;
   display: none;
 }
-/* line 168, ../sass/page/_node-walkthrough.sass */
+/* line 168, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline,
 .node-type-walkthrough .node-walkthrough .links.inline li {
   margin: 0;
   padding: 0;
   display: inline-block;
 }
-/* line 173, ../sass/page/_node-walkthrough.sass */
+/* line 173, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a {
   font-size: 19px;
@@ -10963,14 +10963,14 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 182, ../sass/page/_node-walkthrough.sass */
+/* line 182, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a:hover, .node-type-walkthrough .node-walkthrough .links.inline a:active,
 .node-type-walkthrough .node-walkthrough .links.inline li a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline li a:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 187, ../sass/page/_node-walkthrough.sass */
+/* line 187, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a:before,
 .node-type-walkthrough .node-walkthrough .links.inline li a:before {
   font-family: "icomoon";
@@ -10988,11 +10988,11 @@ input.pure-input-rounded, .pure-input-rounded {
   display: inline-block;
   margin-right: 0.5em;
 }
-/* line 193, ../sass/page/_node-walkthrough.sass */
+/* line 193, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline {
   float: right;
 }
-/* line 196, ../sass/page/_node-walkthrough.sass */
+/* line 196, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline li.flag-walkthrough_broken a {
   font-size: 5.5px;
   line-height: 7.975px;
@@ -11000,12 +11000,12 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 0.7975rem;
 }
 
-/* line 4, ../sass/page/_node-walkthrough-edit.sass */
+/* line 4, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough #page-title,
 .page-node-edit.node-type-walkthrough #page-title {
   margin-bottom: 1em;
 }
-/* line 8, ../sass/page/_node-walkthrough-edit.sass */
+/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-body-und-0-format,
 .page-node-add-walkthrough .row.l-main .field-edit-link,
 .page-node-add-walkthrough .row.l-main #field-raw-input-add-more-wrapper,
@@ -11034,22 +11034,27 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-step-name {
   display: none;
 }
-/* line 24, ../sass/page/_node-walkthrough-edit.sass */
+/* line 23, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .form-select,
+.page-node-edit.node-type-walkthrough .row.l-main .form-select {
+  padding: 3px !important;
+}
+/* line 27, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs checkbox,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs checkbox {
   margin: 0.5em 0 0 0;
 }
-/* line 27, ../sass/page/_node-walkthrough-edit.sass */
+/* line 30, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs .description,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .description {
   display: none;
 }
-/* line 30, ../sass/page/_node-walkthrough-edit.sass */
+/* line 33, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs .vertical-tabs-panes,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .vertical-tabs-panes {
   padding-top: 1em;
 }
-/* line 33, ../sass/page/_node-walkthrough-edit.sass */
+/* line 36, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs .vertical-tabs-list,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .vertical-tabs-list {
   font-size: 7.5px;
@@ -11057,7 +11062,7 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.75rem;
   line-height: 1.0875rem;
 }
-/* line 36, ../sass/page/_node-walkthrough-edit.sass */
+/* line 39, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs label,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs label {
   width: 55%;
@@ -11066,12 +11071,12 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.75rem;
   line-height: 1.0875rem;
 }
-/* line 40, ../sass/page/_node-walkthrough-edit.sass */
+/* line 43, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters {
   margin-left: 24%;
 }
-/* line 43, ../sass/page/_node-walkthrough-edit.sass */
+/* line 46, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters tbody,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters tbody {
   -webkit-border-radius: 0.2em;
@@ -11082,12 +11087,12 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0.75rem 0.5rem;
   background-color: #f6f6f6;
 }
-/* line 48, ../sass/page/_node-walkthrough-edit.sass */
+/* line 51, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters label,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters label {
   width: 100%;
 }
-/* line 51, ../sass/page/_node-walkthrough-edit.sass */
+/* line 54, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .description,
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .form-submit,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters .description,
@@ -11097,19 +11102,19 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.7rem;
   line-height: 1.015rem;
 }
-/* line 55, ../sass/page/_node-walkthrough-edit.sass */
+/* line 58, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .description,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters .description {
   margin: 8.5px 0 3.5px 0;
   margin: 0.85rem 0 0.35rem 0;
 }
-/* line 59, ../sass/page/_node-walkthrough-edit.sass */
+/* line 62, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-parameters-add-more-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main #field-parameters-add-more-wrapper {
   margin: 10px 0;
   margin: 1rem 0;
 }
-/* line 62, ../sass/page/_node-walkthrough-edit.sass */
+/* line 65, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .form-item-title,
 .page-node-add-walkthrough .row.l-main .form-item-body-und-0-value,
 .page-node-edit.node-type-walkthrough .row.l-main .form-item-title,
@@ -11136,7 +11141,7 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main .form-item-body-und-0-value:after {
   clear: both;
 }
-/* line 67, ../sass/page/_node-walkthrough-edit.sass */
+/* line 70, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main label,
 .page-node-edit.node-type-walkthrough .row.l-main label {
   font-size: 10px;
@@ -11150,7 +11155,7 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 76, ../sass/page/_node-walkthrough-edit.sass */
+/* line 79, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-title,
 .page-node-add-walkthrough .row.l-main #edit-body-und-0-value,
 .page-node-add-walkthrough .row.l-main .grippie,
@@ -11161,7 +11166,7 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 76%;
   margin: 0;
 }
-/* line 83, ../sass/page/_node-walkthrough-edit.sass */
+/* line 86, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set {
   *zoom: 1;
@@ -11178,41 +11183,41 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set:after {
   clear: both;
 }
-/* line 85, ../sass/page/_node-walkthrough-edit.sass */
+/* line 88, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .le,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le {
   float: left;
   float: left;
   width: 20%;
 }
-/* line 90, ../sass/page/_node-walkthrough-edit.sass */
+/* line 93, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .le .button,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .button {
   margin-top: 1.33em;
 }
-/* line 93, ../sass/page/_node-walkthrough-edit.sass */
+/* line 96, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .ri,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .ri {
   float: right;
   width: 76%;
   display: none;
 }
-/* line 98, ../sass/page/_node-walkthrough-edit.sass */
+/* line 101, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-actions,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-actions {
   text-align: center;
 }
-/* line 101, ../sass/page/_node-walkthrough-edit.sass */
+/* line 104, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .back.button,
 .page-node-edit.node-type-walkthrough .row.l-main .back.button {
   margin-right: 0.25em;
 }
-/* line 104, ../sass/page/_node-walkthrough-edit.sass */
+/* line 107, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #wrapper-fg,
 .page-node-edit.node-type-walkthrough .row.l-main #wrapper-fg {
   padding-left: 24%;
 }
-/* line 107, ../sass/page/_node-walkthrough-edit.sass */
+/* line 110, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field_tags-col,
 .page-node-add-walkthrough .row.l-main #group-col,
 .page-node-edit.node-type-walkthrough .row.l-main #field_tags-col,
@@ -11223,65 +11228,65 @@ input.pure-input-rounded, .pure-input-rounded {
   box-sizing: border-box;
   float: left;
 }
-/* line 113, ../sass/page/_node-walkthrough-edit.sass */
+/* line 116, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field_tags-col,
 .page-node-edit.node-type-walkthrough .row.l-main #field_tags-col {
   padding-right: 2%;
 }
-/* line 116, ../sass/page/_node-walkthrough-edit.sass */
+/* line 119, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #group-col,
 .page-node-edit.node-type-walkthrough .row.l-main #group-col {
   padding-left: 2%;
 }
-/* line 119, ../sass/page/_node-walkthrough-edit.sass */
+/* line 122, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-og-group-ref-und,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-og-group-ref-und {
   padding: 0;
 }
-/* line 124, ../sass/page/_node-walkthrough-edit.sass */
+/* line 127, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #og-group-ref-add-more-wrapper label,
 .page-node-edit.node-type-walkthrough .row.l-main #og-group-ref-add-more-wrapper label {
   width: 100%;
 }
-/* line 127, ../sass/page/_node-walkthrough-edit.sass */
+/* line 130, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default,
 .page-node-add-walkthrough .row.l-main #field-fc-steps-values,
 .page-node-edit.node-type-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default,
 .page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values {
   width: 100% !important;
 }
-/* line 131, ../sass/page/_node-walkthrough-edit.sass */
+/* line 134, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps {
   margin-top: 2em;
   margin-bottom: 2em;
 }
-/* line 136, ../sass/page/_node-walkthrough-edit.sass */
+/* line 139, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container label,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container label {
   width: 45%;
 }
-/* line 139, ../sass/page/_node-walkthrough-edit.sass */
+/* line 142, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .form-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .form-wrapper {
   margin-bottom: 4.5px;
   margin-bottom: 0.45rem;
 }
-/* line 142, ../sass/page/_node-walkthrough-edit.sass */
+/* line 145, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .field-add-more-submit,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .field-add-more-submit {
   font-size: 75%;
   font-style: italic;
   margin-left: 4.3em;
 }
-/* line 147, ../sass/page/_node-walkthrough-edit.sass */
+/* line 150, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main table,
 .page-node-edit.node-type-walkthrough .row.l-main table {
   border: 0;
   width: 100%;
   background: transparent;
 }
-/* line 152, ../sass/page/_node-walkthrough-edit.sass */
+/* line 155, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main table tr.even,
 .page-node-add-walkthrough .row.l-main table tr.alt,
 .page-node-add-walkthrough .row.l-main table tr:nth-of-type(even),
@@ -11290,20 +11295,20 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main table tr:nth-of-type(even) {
   background: transparent;
 }
-/* line 157, ../sass/page/_node-walkthrough-edit.sass */
+/* line 160, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle {
   margin: 0;
   padding: 0;
   width: 30px;
 }
-/* line 161, ../sass/page/_node-walkthrough-edit.sass */
+/* line 164, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle:hover:after,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle:hover:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 164, ../sass/page/_node-walkthrough-edit.sass */
+/* line 167, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle:after,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=65);
@@ -11327,20 +11332,20 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e607";
   display: block;
 }
-/* line 174, ../sass/page/_node-walkthrough-edit.sass */
+/* line 177, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle .handle,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle .handle {
   margin: 0;
   padding: 0;
   background: transparent;
 }
-/* line 179, ../sass/page/_node-walkthrough-edit.sass */
+/* line 182, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-fc-steps-values .grippie,
 .page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values .grippie {
   width: 100%;
   float: none;
 }
-/* line 184, ../sass/page/_node-walkthrough-edit.sass */
+/* line 187, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container {
   margin: 0 5px 10px 5px;
@@ -11356,7 +11361,7 @@ input.pure-input-rounded, .pure-input-rounded {
   position: relative;
   display: none;
 }
-/* line 192, ../sass/page/_node-walkthrough-edit.sass */
+/* line 195, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button {
   font-size: 7px;
@@ -11367,14 +11372,14 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 10px;
   right: 10px;
 }
-/* line 198, ../sass/page/_node-walkthrough-edit.sass */
+/* line 201, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend {
   display: none;
 }
-/* line 202, ../sass/page/_node-walkthrough-edit.sass */
+/* line 205, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button {
   margin: 0;
@@ -11383,20 +11388,20 @@ input.pure-input-rounded, .pure-input-rounded {
   height: 29px;
   overflow: hidden;
 }
-/* line 209, ../sass/page/_node-walkthrough-edit.sass */
+/* line 212, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span {
   font-weight: bold;
   display: inline-block;
 }
-/* line 213, ../sass/page/_node-walkthrough-edit.sass */
+/* line 216, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .le,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .le {
   float: left;
   width: 46%;
   margin-right: 4%;
 }
-/* line 218, ../sass/page/_node-walkthrough-edit.sass */
+/* line 221, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ri,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ri {
   float: right;
@@ -11404,15 +11409,15 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 4%;
 }
 
-/* line 3, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 3, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form > div {
   text-align: center;
 }
-/* line 6, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 6, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form > div * {
   text-align: left;
 }
-/* line 9, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 9, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .form-wrapper > div {
   margin-bottom: 5px;
   margin-bottom: 0.5rem;
@@ -11427,7 +11432,7 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .form-wrapper > div:after {
   clear: both;
 }
-/* line 13, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 13, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-highlight,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-description,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-name,
@@ -11435,12 +11440,12 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0 7.5px;
   padding: 0 0.75rem;
 }
-/* line 19, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 19, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form #field-fc-step-highlight-add-more-wrapper {
   margin-bottom: 20px;
   margin-bottom: 2rem;
 }
-/* line 22, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 22, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .has-tip.top,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .field-edit-link,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form #edit-body-und-0-format {
@@ -11454,7 +11459,7 @@ input.pure-input-rounded, .pure-input-rounded {
   -moz-appearance: separator;
   -webkit-appearance: none;
 }
-/* line 28, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 28, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form label {
   font-size: 10px;
   line-height: 14.5px;
@@ -11467,14 +11472,14 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 37, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 37, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form label,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 41, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 41, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form label {
   font-size: 10px;
   line-height: 14.5px;
@@ -11487,7 +11492,7 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 50, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 50, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form input,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form textarea,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .grippie {
@@ -11495,22 +11500,22 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 76%;
   margin: 0;
 }
-/* line 57, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 57, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form #edit-field-fc-step-show-title-und {
   width: 10%;
   margin-right: 66%;
   margin-top: 0.5em;
 }
-/* line 62, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 62, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium {
   margin: 10px 0;
   margin: 1rem 0;
 }
-/* line 65, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 65, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium > legend {
   border: 0;
 }
-/* line 68, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 68, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-legend {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -11520,11 +11525,11 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 1.74rem;
   text-align: left;
 }
-/* line 73, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 73, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-legend a {
   color: #4d4d4d;
 }
-/* line 76, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 76, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper {
   padding: 4.5px 7.5px;
   padding: 0.45rem 0.75rem;
@@ -11538,7 +11543,7 @@ input.pure-input-rounded, .pure-input-rounded {
   background-color: #f6f6f6;
   position: relative;
 }
-/* line 84, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 84, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div {
   margin-bottom: 5px;
   margin-bottom: 0.5rem;
@@ -11553,15 +11558,15 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div:after {
   clear: both;
 }
-/* line 88, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 88, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div:last-of-type > div > div {
   margin: 0;
 }
-/* line 91, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 91, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #edit-field-fc-step-name {
   display: none;
 }
-/* line 94, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 94, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .form-submit:after {
   font-family: "icomoon";
   speak: none;
@@ -11574,20 +11579,20 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e017";
   margin-left: 0.5em;
 }
-/* line 99, ../sass/page/_node-walkthrough-step-edit.sass */
+/* line 99, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .back.button {
   margin-right: 0.75em;
 }
 
-/* line 2, ../sass/page/_page-walkthrough-import.sass */
+/* line 2, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_page-walkthrough-import.sass */
 .page-walkthrough-import .description {
   display: none;
 }
-/* line 5, ../sass/page/_page-walkthrough-import.sass */
+/* line 5, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_page-walkthrough-import.sass */
 .page-walkthrough-import textarea {
   min-height: 350px;
 }
-/* line 8, ../sass/page/_page-walkthrough-import.sass */
+/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_page-walkthrough-import.sass */
 .page-walkthrough-import .form-textarea-wrapper {
   margin-bottom: 2em;
 }

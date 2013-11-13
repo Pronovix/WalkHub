@@ -165,7 +165,7 @@ function THEMENAME_preprocess_views_view_fields(&$variables) {
  *
  * Override the step edit form theme function.
  */
-function walkthrough_global_form_walkthrough_node_form_alter(&$form, &$form_state, $form_id) {
+function walkhub_theme_form_walkthrough_node_form_alter(&$form, &$form_state, $form_id) {
   if (!empty($form['field_fc_steps'][LANGUAGE_NONE])) {
     foreach (element_children($form['field_fc_steps'][LANGUAGE_NONE]) as $key) {
       $form['field_fc_steps'][LANGUAGE_NONE][$key]['#theme'] = 'walkthrough_steps_edit_form';
@@ -176,17 +176,17 @@ function walkthrough_global_form_walkthrough_node_form_alter(&$form, &$form_stat
 /**
  * Implements hook_theme().
  */
-function walkthrough_global_theme() {
+function walkhub_theme_theme() {
   return array(
     'walkthrough_steps_edit_form' => array(
       'render element' => 'form',
       'template' => 'walkthrough-steps-edit-form',
-      'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/',
+      'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/node-edit',
     ),
     'walkthrough_node_form' => array(
       'render element' => 'form',
       'template' => 'walkthrough-node-form',
-      'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/',
+      'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/node-edit',
     ),
   );
 }
@@ -265,7 +265,7 @@ function walkhub_theme_preprocess_page(&$vars) {
 function walkhub_theme_preprocess_walkthrough_steps_edit_form(&$vars) {
   $title = $vars['form']['field_fc_step_name'][LANGUAGE_NONE][0]['value']['#value'];
   $description = $vars['form']['field_fc_step_description'][LANGUAGE_NONE][0]['value']['#value'];
-  $label = "$title $description";
+  $label = "$title - $description";
 
   $vars['stepnumber'] = $vars['form']['#delta'] + 1;
 

@@ -13,9 +13,9 @@
       Drupal.walkhubStepEdit.makeBackButton(context, settings);
       Drupal.walkhubStepEdit.insertIcon(context, settings);
       Drupal.walkhubStepEdit.stepHideShow(context, settings);
-      Drupal.walkhubStepEdit.openAll(context, settings);
-      Drupal.walkhubStepEdit.closeAll(context, settings);
+      Drupal.walkhubStepEdit.callopse(context, settings);
       Drupal.walkhubStepEdit.parameters(context, settings);
+      Drupal.walkhubStepEdit.checkBox(context, settings);
     }
   };
 
@@ -74,16 +74,9 @@
         });
     },
 
-    openAll : function(context, settings) {
-      $('#open-all', context).click(function(){
-        $('.walkthrough-step-container', context).show( "200" );
-        return false;
-      });
-    },
-
-    closeAll : function(context, settings) {
-      $('#callopse-all', context).click(function(){
-        $('.walkthrough-step-container', context).hide( "200" );
+    callopse : function(context, settings) {
+      $('#callopse', context).click(function(){
+        $('.walkthrough-step-container', context).toggle( "200" );
         return false;
       });
     },
@@ -92,6 +85,17 @@
       $('#parameters', context).click(function(){
         $('#edit-field-parameters', context).toggle( "200" );
         return false;
+      });
+    },
+
+    checkBox : function(context, settings) {
+      $('.field-name-field-fc-step-show-title input', context).click(function(){
+        if( $(this).is(':checked')) {
+          $(".field-name-field-fc-step-name", context).show(200);
+        }
+        else {
+          $(".field-name-field-fc-step-name", context).hide(200);
+        }
       });
     }
   }
