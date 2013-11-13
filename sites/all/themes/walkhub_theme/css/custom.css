@@ -7027,7 +7027,7 @@ body {
 
 /* line 53, ../sass/typo/_typography.sass */
 .logged-in h1 {
-  margin-right: 8em;
+  margin-right: 11.2em;
 }
 /* line 56, ../sass/typo/_typography.sass */
 .logged-in .main.columns {
@@ -7346,7 +7346,15 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   line-height: 0;
 }
 
-/* line 184, ../sass/typo/_typography.sass */
+/* line 183, ../sass/typo/_typography.sass */
+h1 {
+  font-size: 17.5px;
+  line-height: 25.375px;
+  font-size: 1.75rem;
+  line-height: 2.5375rem;
+}
+
+/* line 186, ../sass/typo/_typography.sass */
 hr {
   border: solid #dddddd;
   border-width: 1px 0 0;
@@ -7356,25 +7364,25 @@ hr {
 }
 
 /* Helpful Typography Defaults */
-/* line 192, ../sass/typo/_typography.sass */
+/* line 194, ../sass/typo/_typography.sass */
 em, i {
   font-style: italic;
   line-height: inherit;
 }
 
-/* line 196, ../sass/typo/_typography.sass */
+/* line 198, ../sass/typo/_typography.sass */
 strong, b {
   font-weight: bold;
   line-height: inherit;
 }
 
-/* line 200, ../sass/typo/_typography.sass */
+/* line 202, ../sass/typo/_typography.sass */
 small {
   font-size: 60%;
   line-height: inherit;
 }
 
-/* line 204, ../sass/typo/_typography.sass */
+/* line 206, ../sass/typo/_typography.sass */
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
@@ -7382,69 +7390,69 @@ code {
 }
 
 /* Lists */
-/* line 210, ../sass/typo/_typography.sass */
+/* line 212, ../sass/typo/_typography.sass */
 ul, ol, dl {
   margin-bottom: 1.25em;
   list-style-position: outside;
   font-family: inherit;
 }
 
-/* line 215, ../sass/typo/_typography.sass */
+/* line 217, ../sass/typo/_typography.sass */
 ul, ol {
   margin-left: 0;
 }
 
 /* Unordered Lists */
-/* line 219, ../sass/typo/_typography.sass */
+/* line 221, ../sass/typo/_typography.sass */
 ul {
   /* Override nested font-size change */
 }
-/* line 221, ../sass/typo/_typography.sass */
+/* line 223, ../sass/typo/_typography.sass */
 ul li ul, ul li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
 }
-/* line 226, ../sass/typo/_typography.sass */
+/* line 228, ../sass/typo/_typography.sass */
 ul.square li ul, ul.circle li ul, ul.disc li ul {
   list-style: inherit;
 }
-/* line 228, ../sass/typo/_typography.sass */
+/* line 230, ../sass/typo/_typography.sass */
 ul.square {
   list-style-type: square;
 }
-/* line 230, ../sass/typo/_typography.sass */
+/* line 232, ../sass/typo/_typography.sass */
 ul.circle {
   list-style-type: circle;
 }
-/* line 232, ../sass/typo/_typography.sass */
+/* line 234, ../sass/typo/_typography.sass */
 ul.disc {
   list-style-type: disc;
 }
-/* line 234, ../sass/typo/_typography.sass */
+/* line 236, ../sass/typo/_typography.sass */
 ul.no-bullet {
   list-style: none;
 }
 
 /* Ordered Lists */
-/* line 239, ../sass/typo/_typography.sass */
+/* line 241, ../sass/typo/_typography.sass */
 ol li ul, ol li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
 }
 
 /* Definition Lists */
-/* line 246, ../sass/typo/_typography.sass */
+/* line 248, ../sass/typo/_typography.sass */
 dl dt {
   margin-bottom: 0.3em;
   font-weight: bold;
 }
-/* line 249, ../sass/typo/_typography.sass */
+/* line 251, ../sass/typo/_typography.sass */
 dl dd {
   margin-bottom: 0.75em;
 }
 
 /* Abbreviations */
-/* line 254, ../sass/typo/_typography.sass */
+/* line 256, ../sass/typo/_typography.sass */
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
@@ -7453,13 +7461,13 @@ abbr, acronym {
   cursor: help;
 }
 
-/* line 261, ../sass/typo/_typography.sass */
+/* line 263, ../sass/typo/_typography.sass */
 abbr {
   text-transform: none;
 }
 
 /* Blockquotes */
-/* line 265, ../sass/typo/_typography.sass */
+/* line 267, ../sass/typo/_typography.sass */
 blockquote {
   margin: 0 0 1.25em;
   padding: 0.5625em 1.25em 0 1.1875em;
@@ -7467,7 +7475,7 @@ blockquote {
   line-height: 1.6;
   color: #6f6f6f;
 }
-/* line 269, ../sass/typo/_typography.sass */
+/* line 271, ../sass/typo/_typography.sass */
 blockquote cite {
   display: block;
   font-size: 10px;
@@ -7476,38 +7484,38 @@ blockquote cite {
   line-height: 1.45rem;
   color: #555555;
 }
-/* line 273, ../sass/typo/_typography.sass */
+/* line 275, ../sass/typo/_typography.sass */
 blockquote cite:before {
   content: "\2014 \0020";
 }
-/* line 275, ../sass/typo/_typography.sass */
+/* line 277, ../sass/typo/_typography.sass */
 blockquote cite a {
   color: #555555;
 }
-/* line 277, ../sass/typo/_typography.sass */
+/* line 279, ../sass/typo/_typography.sass */
 blockquote cite a:visited {
   color: #555555;
 }
-/* line 281, ../sass/typo/_typography.sass */
+/* line 283, ../sass/typo/_typography.sass */
 blockquote p {
   line-height: 1.6;
   color: #6f6f6f;
 }
 
 /* Microformats */
-/* line 286, ../sass/typo/_typography.sass */
+/* line 288, ../sass/typo/_typography.sass */
 .vcard {
   display: inline-block;
   margin: 0 0 1.25em 0;
   border: 1px solid #dddddd;
   padding: 0.625em 0.75em;
 }
-/* line 291, ../sass/typo/_typography.sass */
+/* line 293, ../sass/typo/_typography.sass */
 .vcard li {
   margin: 0;
   display: block;
 }
-/* line 294, ../sass/typo/_typography.sass */
+/* line 296, ../sass/typo/_typography.sass */
 .vcard .fn {
   font-weight: bold;
   font-size: 10px;
@@ -7516,11 +7524,11 @@ blockquote p {
   line-height: 1.45rem;
 }
 
-/* line 299, ../sass/typo/_typography.sass */
+/* line 301, ../sass/typo/_typography.sass */
 .vevent .summary {
   font-weight: bold;
 }
-/* line 301, ../sass/typo/_typography.sass */
+/* line 303, ../sass/typo/_typography.sass */
 .vevent abbr {
   cursor: default;
   text-decoration: none;
@@ -7529,13 +7537,13 @@ blockquote p {
   padding: 0 0.0625em;
 }
 
-/* line 308, ../sass/typo/_typography.sass */
+/* line 310, ../sass/typo/_typography.sass */
 html.js input.form-autocomplete {
   background-image: url(../../../../../misc/throbber.gif);
   background-position: 100% 7px;
   background-repeat: no-repeat;
 }
-/* line 313, ../sass/typo/_typography.sass */
+/* line 315, ../sass/typo/_typography.sass */
 html.js input.form-autocomplete.throbbing {
   background-image: url(../../../../../misc/throbber.gif);
   background-position: 100% -13px;
@@ -11026,12 +11034,44 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-step-name {
   display: none;
 }
-/* line 23, ../sass/page/_node-walkthrough-edit.sass */
+/* line 24, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .vertical-tabs checkbox,
+.page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs checkbox {
+  margin: 0.5em 0 0 0;
+}
+/* line 27, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .vertical-tabs .description,
+.page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .description {
+  display: none;
+}
+/* line 30, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .vertical-tabs .vertical-tabs-panes,
+.page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .vertical-tabs-panes {
+  padding-top: 1em;
+}
+/* line 33, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .vertical-tabs .vertical-tabs-list,
+.page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .vertical-tabs-list {
+  font-size: 7.5px;
+  line-height: 10.875px;
+  font-size: 0.75rem;
+  line-height: 1.0875rem;
+}
+/* line 36, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .vertical-tabs label,
+.page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs label {
+  width: 55%;
+  font-size: 7.5px;
+  line-height: 10.875px;
+  font-size: 0.75rem;
+  line-height: 1.0875rem;
+}
+/* line 40, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters {
   margin-left: 24%;
 }
-/* line 26, ../sass/page/_node-walkthrough-edit.sass */
+/* line 43, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters tbody,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters tbody {
   -webkit-border-radius: 0.2em;
@@ -11042,12 +11082,12 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0.75rem 0.5rem;
   background-color: #f6f6f6;
 }
-/* line 31, ../sass/page/_node-walkthrough-edit.sass */
+/* line 48, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters label,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters label {
   width: 100%;
 }
-/* line 34, ../sass/page/_node-walkthrough-edit.sass */
+/* line 51, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .description,
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .form-submit,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters .description,
@@ -11057,19 +11097,19 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.7rem;
   line-height: 1.015rem;
 }
-/* line 38, ../sass/page/_node-walkthrough-edit.sass */
+/* line 55, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .description,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters .description {
   margin: 8.5px 0 3.5px 0;
   margin: 0.85rem 0 0.35rem 0;
 }
-/* line 42, ../sass/page/_node-walkthrough-edit.sass */
+/* line 59, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-parameters-add-more-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main #field-parameters-add-more-wrapper {
   margin: 10px 0;
   margin: 1rem 0;
 }
-/* line 45, ../sass/page/_node-walkthrough-edit.sass */
+/* line 62, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .form-item-title,
 .page-node-add-walkthrough .row.l-main .form-item-body-und-0-value,
 .page-node-edit.node-type-walkthrough .row.l-main .form-item-title,
@@ -11096,7 +11136,7 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main .form-item-body-und-0-value:after {
   clear: both;
 }
-/* line 50, ../sass/page/_node-walkthrough-edit.sass */
+/* line 67, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main label,
 .page-node-edit.node-type-walkthrough .row.l-main label {
   font-size: 10px;
@@ -11110,7 +11150,7 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 59, ../sass/page/_node-walkthrough-edit.sass */
+/* line 76, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-title,
 .page-node-add-walkthrough .row.l-main #edit-body-und-0-value,
 .page-node-add-walkthrough .row.l-main .grippie,
@@ -11121,7 +11161,7 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 76%;
   margin: 0;
 }
-/* line 66, ../sass/page/_node-walkthrough-edit.sass */
+/* line 83, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set {
   *zoom: 1;
@@ -11138,41 +11178,41 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set:after {
   clear: both;
 }
-/* line 68, ../sass/page/_node-walkthrough-edit.sass */
+/* line 85, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .le,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le {
   float: left;
   float: left;
   width: 20%;
 }
-/* line 73, ../sass/page/_node-walkthrough-edit.sass */
+/* line 90, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .le .button,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .button {
   margin-top: 1.33em;
 }
-/* line 76, ../sass/page/_node-walkthrough-edit.sass */
+/* line 93, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .ri,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .ri {
   float: right;
   width: 76%;
   display: none;
 }
-/* line 81, ../sass/page/_node-walkthrough-edit.sass */
+/* line 98, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-actions,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-actions {
   text-align: center;
 }
-/* line 84, ../sass/page/_node-walkthrough-edit.sass */
+/* line 101, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .back.button,
 .page-node-edit.node-type-walkthrough .row.l-main .back.button {
   margin-right: 0.25em;
 }
-/* line 87, ../sass/page/_node-walkthrough-edit.sass */
+/* line 104, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #wrapper-fg,
 .page-node-edit.node-type-walkthrough .row.l-main #wrapper-fg {
   padding-left: 24%;
 }
-/* line 90, ../sass/page/_node-walkthrough-edit.sass */
+/* line 107, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field_tags-col,
 .page-node-add-walkthrough .row.l-main #group-col,
 .page-node-edit.node-type-walkthrough .row.l-main #field_tags-col,
@@ -11183,65 +11223,65 @@ input.pure-input-rounded, .pure-input-rounded {
   box-sizing: border-box;
   float: left;
 }
-/* line 96, ../sass/page/_node-walkthrough-edit.sass */
+/* line 113, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field_tags-col,
 .page-node-edit.node-type-walkthrough .row.l-main #field_tags-col {
   padding-right: 2%;
 }
-/* line 99, ../sass/page/_node-walkthrough-edit.sass */
+/* line 116, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #group-col,
 .page-node-edit.node-type-walkthrough .row.l-main #group-col {
   padding-left: 2%;
 }
-/* line 102, ../sass/page/_node-walkthrough-edit.sass */
+/* line 119, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-og-group-ref-und,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-og-group-ref-und {
   padding: 0;
 }
-/* line 107, ../sass/page/_node-walkthrough-edit.sass */
+/* line 124, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #og-group-ref-add-more-wrapper label,
 .page-node-edit.node-type-walkthrough .row.l-main #og-group-ref-add-more-wrapper label {
   width: 100%;
 }
-/* line 110, ../sass/page/_node-walkthrough-edit.sass */
+/* line 127, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default,
 .page-node-add-walkthrough .row.l-main #field-fc-steps-values,
 .page-node-edit.node-type-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default,
 .page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values {
   width: 100% !important;
 }
-/* line 114, ../sass/page/_node-walkthrough-edit.sass */
+/* line 131, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps {
   margin-top: 2em;
   margin-bottom: 2em;
 }
-/* line 119, ../sass/page/_node-walkthrough-edit.sass */
+/* line 136, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container label,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container label {
   width: 45%;
 }
-/* line 122, ../sass/page/_node-walkthrough-edit.sass */
+/* line 139, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .form-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .form-wrapper {
   margin-bottom: 4.5px;
   margin-bottom: 0.45rem;
 }
-/* line 125, ../sass/page/_node-walkthrough-edit.sass */
+/* line 142, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .field-add-more-submit,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .field-add-more-submit {
   font-size: 75%;
   font-style: italic;
   margin-left: 4.3em;
 }
-/* line 130, ../sass/page/_node-walkthrough-edit.sass */
+/* line 147, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main table,
 .page-node-edit.node-type-walkthrough .row.l-main table {
   border: 0;
   width: 100%;
   background: transparent;
 }
-/* line 135, ../sass/page/_node-walkthrough-edit.sass */
+/* line 152, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main table tr.even,
 .page-node-add-walkthrough .row.l-main table tr.alt,
 .page-node-add-walkthrough .row.l-main table tr:nth-of-type(even),
@@ -11250,20 +11290,20 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main table tr:nth-of-type(even) {
   background: transparent;
 }
-/* line 140, ../sass/page/_node-walkthrough-edit.sass */
+/* line 157, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle {
   margin: 0;
   padding: 0;
   width: 30px;
 }
-/* line 144, ../sass/page/_node-walkthrough-edit.sass */
+/* line 161, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle:hover:after,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle:hover:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 147, ../sass/page/_node-walkthrough-edit.sass */
+/* line 164, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle:after,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=65);
@@ -11287,20 +11327,20 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e607";
   display: block;
 }
-/* line 157, ../sass/page/_node-walkthrough-edit.sass */
+/* line 174, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle .handle,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle .handle {
   margin: 0;
   padding: 0;
   background: transparent;
 }
-/* line 162, ../sass/page/_node-walkthrough-edit.sass */
+/* line 179, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-fc-steps-values .grippie,
 .page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values .grippie {
   width: 100%;
   float: none;
 }
-/* line 167, ../sass/page/_node-walkthrough-edit.sass */
+/* line 184, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container {
   margin: 0 5px 10px 5px;
@@ -11316,7 +11356,7 @@ input.pure-input-rounded, .pure-input-rounded {
   position: relative;
   display: none;
 }
-/* line 175, ../sass/page/_node-walkthrough-edit.sass */
+/* line 192, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button {
   font-size: 7px;
@@ -11327,14 +11367,14 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 10px;
   right: 10px;
 }
-/* line 181, ../sass/page/_node-walkthrough-edit.sass */
+/* line 198, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend {
   display: none;
 }
-/* line 185, ../sass/page/_node-walkthrough-edit.sass */
+/* line 202, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button {
   margin: 0;
@@ -11343,20 +11383,20 @@ input.pure-input-rounded, .pure-input-rounded {
   height: 29px;
   overflow: hidden;
 }
-/* line 192, ../sass/page/_node-walkthrough-edit.sass */
+/* line 209, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span {
   font-weight: bold;
   display: inline-block;
 }
-/* line 196, ../sass/page/_node-walkthrough-edit.sass */
+/* line 213, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .le,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .le {
   float: left;
   width: 46%;
   margin-right: 4%;
 }
-/* line 201, ../sass/page/_node-walkthrough-edit.sass */
+/* line 218, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ri,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ri {
   float: right;
