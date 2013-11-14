@@ -126,11 +126,12 @@ ul#slide-list li a:hover { background-position: 0 -12px; cursor: pointer; }
 /* tEmbed code styling */
 .center-cont { width: 100%; display: table-cell; vertical-align: middle; }
 
-#embed-code { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0 auto; min-height: 150px; padding: 5px; width: 215px; font-size: 17px; color: white; background: rgba(0, 0, 0, 0.75); display: none; }
+#embed-code { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0 auto; padding: 5px; width: 215px; font-size: 17px; color: white; background: rgba(0, 0, 0, 0.75); display: none; text-align: left; -webkit-transition: all 0.25s ease-in; -moz-transition: all 0.25s ease-in; -o-transition: all 0.25s ease-in; transition: all 0.25s ease-in; }
+#embed-code:hover { background: black; }
 #embed-code .form-textarea { width: 94% !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; font-size: 10px; margin: 0 0.25em; }
 #embed-code label { margin-top: 0.5em; font-size: 10px; margin-bottom: 0.2em; font-weight: normal; }
 
 .share a { color: rgba(255, 255, 255, 0.75); text-decoration: none; -webkit-transition: all 0.25s ease-in; -moz-transition: all 0.25s ease-in; -o-transition: all 0.25s ease-in; transition: all 0.25s ease-in; }
 .share a:hover { color: white; }
 
-#hidden-center { position: absolute; display: table; bottom: 42px; top: 65px; left: 1px; right: 1px; width: auto; margin: 0 auto; height: auto; }
+#hidden-center { position: absolute; display: block; bottom: 42px; top: 65px; left: 1px; right: 1px; width: 100%; margin: 0 auto; height: auto; text-align: center; vertical-align: middle; }

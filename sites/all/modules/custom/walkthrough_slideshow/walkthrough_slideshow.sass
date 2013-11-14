@@ -436,13 +436,17 @@ ul#slide-list
   -moz-box-sizing: border-box    /* Firefox, other Gecko */
   box-sizing: border-box
   margin: 0 auto
-  min-height: 150px
   padding: 5px
   width: 215px
   font-size: 17px
   color: #fff
   background: rgba(#000, .75)
   display: none
+  text-align: left
+  +transition(all .25s ease-in)
+
+  &:hover
+    background: #000
 
   .form-textarea
     width: 94% !important
@@ -469,11 +473,13 @@ ul#slide-list
 
 #hidden-center
   position: absolute
-  display: table
+  display: block
   bottom: 42px
   top: 65px
   left: 1px
   right: 1px
-  width: auto
+  width: 100%
   margin: 0 auto
   height: auto
+  text-align: center
+  vertical-align: middle

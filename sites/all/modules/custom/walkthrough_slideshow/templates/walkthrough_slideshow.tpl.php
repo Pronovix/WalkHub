@@ -139,7 +139,6 @@
 </div>
 <div id="hidden-center">
 <!--Embed code-->
-<div class="center-cont">
   <div id="embed-code">
     <?php echo $embed_code; ?>
     <div class="share">
@@ -164,7 +163,6 @@
       </a>
     </div>
   </div>
-</div>
 </div>
 <!--Control Bar-->
 <div id="controls-wrapper">
