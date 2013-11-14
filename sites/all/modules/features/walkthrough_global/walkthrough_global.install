@@ -39,3 +39,10 @@ function walkthrough_global_update_7002() {
   theme_enable($themes);
   variable_set('theme_default', 'walkhub_theme');
 }
+
+/**
+ * Enable captcha and recaptcha modules.
+ */
+function walkthrough_global_update_7003() {
+  module_enable(array('captcha', 'recaptcha'));
+}
