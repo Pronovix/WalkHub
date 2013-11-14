@@ -31,8 +31,8 @@
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default
+  @extend .button
   border: 1px solid #d3d3d3
-  background: #e6e6e6 url('../images/ui-bg_glass_75_e6e6e6_1x400.png') 50% 50% repeat-x
   font-weight: 400
   color: #555
 
@@ -43,24 +43,12 @@
     color: #555
     text-decoration: none
 
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
-  border: 1px solid #999
-  background: #dadada url('../images/ui-bg_glass_75_dadada_1x400.png') 50% 50% repeat-x
-  font-weight: 400
-  color: #212121
-
 .ui-state-hover a
   color: #212121
   text-decoration: none
   &:hover, &:link, &:visited
     color: #212121
     text-decoration: none
-
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
-  border: 1px solid #aaa
-  background: white url('../images/ui-bg_glass_65_ffffff_1x400.png') 50% 50% repeat-x
-  font-weight: 400
-  color: #212121
 
 .ui-state-active a
   color: #212121
@@ -104,22 +92,33 @@
 .ui-icon
   width: 16px
   height: 16px
-  background-image: url('../images/ui-icons_222222_256x240.png')
+  background: transparent
 
-.ui-widget-content .ui-icon, .ui-widget-header .ui-icon
-  background-image: url('../images/ui-icons_222222_256x240.png')
+.ui-widget-content .ui-icon,
+.ui-widget-header .ui-icon,
+.ui-state-default .ui-icon,
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-state-active .ui-icon,
+.ui-state-highlight .ui-icon,
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon
+  +mp0
+  background: transparent
+  text-indent: 0
+  left: 1px
+  top: 2px
 
-.ui-state-default .ui-icon
-  background-image: url('../images/ui-icons_888888_256x240.png')
+  &:before
+    +font-icomoon
+    +font-size(.7)
+    color: #6F6F6F
 
-.ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-state-active .ui-icon
-  background-image: url('../images/ui-icons_454545_256x240.png')
+  &.ui-icon-closethick:before
+    background: transparent
+    content: "\e016"
+    display: block
 
-.ui-state-highlight .ui-icon
-  background-image: url('../images/ui-icons_2e83ff_256x240.png')
-
-.ui-state-error .ui-icon, .ui-state-error-text .ui-icon
-  background-image: url('../images/ui-icons_cd0a0a_256x240.png')
 
 .ui-icon-blank
   background-position: 16px 16px
@@ -454,8 +453,7 @@
 .ui-icon-close
   background-position: -80px -128px
 
-.ui-icon-closethick
-  background-position: -96px -128px
+
 
 .ui-icon-key
   background-position: -112px -128px
@@ -643,17 +641,6 @@
 .ui-icon-grip-diagonal-se
   background-position: -80px -224px
 
-.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl
-  border-top-left-radius: 4px
-
-.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr
-  border-top-right-radius: 4px
-
-.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl
-  border-bottom-left-radius: 4px
-
-.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br
-  border-bottom-right-radius: 4px
 
 .ui-widget-overlay
   background: rgba(#000000, .75) url('../images/mask.png') 50% 50% repeat

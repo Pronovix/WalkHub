@@ -2481,7 +2481,7 @@ label small {
 
 /* Adjust padding, alignment and radius if pre/post element is a button */
 /* line 285, ../sass/grid/foundation/components/_forms.scss */
-.postfix.button {
+.postfix.button, .postfix.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.postfix {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
@@ -2491,7 +2491,7 @@ label small {
 }
 
 /* line 286, ../sass/grid/foundation/components/_forms.scss */
-.prefix.button {
+.prefix.button, .prefix.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.prefix {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
@@ -2501,7 +2501,7 @@ label small {
 }
 
 /* line 288, ../sass/grid/foundation/components/_forms.scss */
-.prefix.button.radius {
+.prefix.button.radius, .prefix.radius.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.prefix.radius {
   -webkit-border-radius: 0;
   border-radius: 0;
   -moz-border-radius-bottomleft: 3px;
@@ -2513,7 +2513,7 @@ label small {
 }
 
 /* line 289, ../sass/grid/foundation/components/_forms.scss */
-.postfix.button.radius {
+.postfix.button.radius, .postfix.radius.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.postfix.radius {
   -webkit-border-radius: 0;
   border-radius: 0;
   -moz-border-radius-topright: 3px;
@@ -2525,7 +2525,7 @@ label small {
 }
 
 /* line 290, ../sass/grid/foundation/components/_forms.scss */
-.prefix.button.round {
+.prefix.button.round, .prefix.round.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.prefix.round {
   -webkit-border-radius: 0;
   border-radius: 0;
   -moz-border-radius-bottomleft: 1000px;
@@ -2537,7 +2537,7 @@ label small {
 }
 
 /* line 291, ../sass/grid/foundation/components/_forms.scss */
-.postfix.button.round {
+.postfix.button.round, .postfix.round.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.postfix.round {
   -webkit-border-radius: 0;
   border-radius: 0;
   -moz-border-radius-topright: 1000px;
@@ -2873,7 +2873,7 @@ label.error {
   margin-left: 0;
 }
 /* line 53, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.radius > *:first-child, .button-group.radius > *:first-child > a, .button-group.radius > *:first-child > button, .button-group.radius > *:first-child > .button {
+.button-group.radius > *:first-child, .button-group.radius > *:first-child > a, .button-group.radius > *:first-child > button, .button-group.radius > *:first-child > .button, .button-group.radius > *:first-child > .ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.radius > *:first-child > button {
   -moz-border-radius-bottomleft: 3px;
   -moz-border-radius-topleft: 3px;
   -webkit-border-bottom-left-radius: 3px;
@@ -2882,7 +2882,7 @@ label.error {
   border-top-left-radius: 3px;
 }
 /* line 57, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.radius > *:last-child, .button-group.radius > *:last-child > a, .button-group.radius > *:last-child > button, .button-group.radius > *:last-child > .button {
+.button-group.radius > *:last-child, .button-group.radius > *:last-child > a, .button-group.radius > *:last-child > button, .button-group.radius > *:last-child > .button, .button-group.radius > *:last-child > .ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.radius > *:last-child > button {
   -moz-border-radius-topright: 3px;
   -moz-border-radius-bottomright: 3px;
   -webkit-border-top-right-radius: 3px;
@@ -2891,7 +2891,7 @@ label.error {
   border-bottom-right-radius: 3px;
 }
 /* line 53, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.round > *:first-child, .button-group.round > *:first-child > a, .button-group.round > *:first-child > button, .button-group.round > *:first-child > .button {
+.button-group.round > *:first-child, .button-group.round > *:first-child > a, .button-group.round > *:first-child > button, .button-group.round > *:first-child > .button, .button-group.round > *:first-child > .ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.round > *:first-child > button {
   -moz-border-radius-bottomleft: 1000px;
   -moz-border-radius-topleft: 1000px;
   -webkit-border-bottom-left-radius: 1000px;
@@ -2900,7 +2900,7 @@ label.error {
   border-top-left-radius: 1000px;
 }
 /* line 57, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.round > *:last-child, .button-group.round > *:last-child > a, .button-group.round > *:last-child > button, .button-group.round > *:last-child > .button {
+.button-group.round > *:last-child, .button-group.round > *:last-child > a, .button-group.round > *:last-child > button, .button-group.round > *:last-child > .button, .button-group.round > *:last-child > .ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.round > *:last-child > button {
   -moz-border-radius-topright: 1000px;
   -moz-border-radius-bottomright: 1000px;
   -webkit-border-top-right-radius: 1000px;
@@ -2913,7 +2913,7 @@ label.error {
   width: 50%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-2 li button, .button-group.even-2 li .button {
+.button-group.even-2 li button, .button-group.even-2 li .button, .button-group.even-2 li .ui-state-default, .button-group.even-2 li .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.even-2 li button {
   width: 100%;
 }
 /* line 80, ../sass/grid/foundation/components/_button-groups.scss */
@@ -2921,7 +2921,7 @@ label.error {
   width: 33.33333%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-3 li button, .button-group.even-3 li .button {
+.button-group.even-3 li button, .button-group.even-3 li .button, .button-group.even-3 li .ui-state-default, .button-group.even-3 li .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.even-3 li button {
   width: 100%;
 }
 /* line 80, ../sass/grid/foundation/components/_button-groups.scss */
@@ -2929,7 +2929,7 @@ label.error {
   width: 25%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-4 li button, .button-group.even-4 li .button {
+.button-group.even-4 li button, .button-group.even-4 li .button, .button-group.even-4 li .ui-state-default, .button-group.even-4 li .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.even-4 li button {
   width: 100%;
 }
 /* line 80, ../sass/grid/foundation/components/_button-groups.scss */
@@ -2937,7 +2937,7 @@ label.error {
   width: 20%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-5 li button, .button-group.even-5 li .button {
+.button-group.even-5 li button, .button-group.even-5 li .button, .button-group.even-5 li .ui-state-default, .button-group.even-5 li .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.even-5 li button {
   width: 100%;
 }
 /* line 80, ../sass/grid/foundation/components/_button-groups.scss */
@@ -2945,7 +2945,7 @@ label.error {
   width: 16.66667%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-6 li button, .button-group.even-6 li .button {
+.button-group.even-6 li button, .button-group.even-6 li .button, .button-group.even-6 li .ui-state-default, .button-group.even-6 li .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.even-6 li button {
   width: 100%;
 }
 /* line 80, ../sass/grid/foundation/components/_button-groups.scss */
@@ -2953,7 +2953,7 @@ label.error {
   width: 14.28571%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-7 li button, .button-group.even-7 li .button {
+.button-group.even-7 li button, .button-group.even-7 li .button, .button-group.even-7 li .ui-state-default, .button-group.even-7 li .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.even-7 li button {
   width: 100%;
 }
 /* line 80, ../sass/grid/foundation/components/_button-groups.scss */
@@ -2961,7 +2961,7 @@ label.error {
   width: 12.5%;
 }
 /* line 63, ../sass/grid/foundation/components/_button-groups.scss */
-.button-group.even-8 li button, .button-group.even-8 li .button {
+.button-group.even-8 li button, .button-group.even-8 li .button, .button-group.even-8 li .ui-state-default, .button-group.even-8 li .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button-group.even-8 li button {
   width: 100%;
 }
 
@@ -2990,12 +2990,12 @@ label.error {
 
 /* Dropdown Button */
 /* line 108, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button {
+.dropdown.button, .dropdown.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown {
   position: relative;
   padding-right: 3.1875em;
 }
 /* line 46, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button:before {
+.dropdown.button:before, .dropdown.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown:before {
   position: absolute;
   content: "";
   width: 0;
@@ -3006,70 +3006,70 @@ label.error {
   top: 50%;
 }
 /* line 81, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button:before {
+.dropdown.button:before, .dropdown.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown:before {
   border-width: 0.5625em;
   right: 1.5em;
   margin-top: -0.25em;
 }
 /* line 100, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button:before {
+.dropdown.button:before, .dropdown.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown:before {
   border-color: white transparent transparent transparent;
 }
 /* line 109, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.tiny {
+.dropdown.button.tiny, .dropdown.tiny.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.tiny {
   padding-right: 2.1875em;
 }
 /* line 61, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.tiny:before {
+.dropdown.button.tiny:before, .dropdown.tiny.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.tiny:before {
   border-width: 0.4375em;
   right: 0.875em;
   margin-top: -0.15625em;
 }
 /* line 100, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.tiny:before {
+.dropdown.button.tiny:before, .dropdown.tiny.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.tiny:before {
   border-color: white transparent transparent transparent;
 }
 /* line 110, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.small {
+.dropdown.button.small, .dropdown.small.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.small {
   padding-right: 2.8125em;
 }
 /* line 71, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.small:before {
+.dropdown.button.small:before, .dropdown.small.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.small:before {
   border-width: 0.5625em;
   right: 1.125em;
   margin-top: -0.21875em;
 }
 /* line 100, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.small:before {
+.dropdown.button.small:before, .dropdown.small.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.small:before {
   border-color: white transparent transparent transparent;
 }
 /* line 111, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.large {
+.dropdown.button.large, .dropdown.large.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.large {
   padding-right: 4em;
 }
 /* line 91, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.large:before {
+.dropdown.button.large:before, .dropdown.large.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.large:before {
   border-width: 0.625em;
   right: 1.75em;
   margin-top: -0.3125em;
 }
 /* line 100, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.large:before {
+.dropdown.button.large:before, .dropdown.large.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.large:before {
   border-color: white transparent transparent transparent;
 }
 /* line 112, ../sass/grid/foundation/components/_dropdown-buttons.scss */
-.dropdown.button.secondary:before {
+.dropdown.button.secondary:before, .dropdown.secondary.ui-state-default:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.dropdown.secondary:before {
   border-color: #333333 transparent transparent transparent;
 }
 
 /* Split Buttons */
 /* line 150, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button {
+.split.button, .split.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split {
   position: relative;
   padding-right: 4.8em;
 }
 /* line 53, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button span {
+.split.button span, .split.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split span {
   display: block;
   height: 100%;
   position: absolute;
@@ -3078,7 +3078,7 @@ label.error {
   border-left: solid 1px;
 }
 /* line 62, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button span:before {
+.split.button span:before, .split.ui-state-default span:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split span:before {
   position: absolute;
   content: "";
   width: 0;
@@ -3088,99 +3088,99 @@ label.error {
   left: 50%;
 }
 /* line 73, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button span:active {
+.split.button span:active, .split.ui-state-default span:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split span:active {
   background-color: rgba(0, 0, 0, 0.1);
 }
 /* line 79, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button span {
+.split.button span, .split.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split span {
   border-left-color: #1e728c;
 }
 /* line 116, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button span {
+.split.button span, .split.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split span {
   width: 3em;
 }
 /* line 117, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button span:before {
+.split.button span:before, .split.ui-state-default span:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split span:before {
   border-top-style: solid;
   border-width: 0.5625em;
   top: 1.125em;
   margin-left: -0.5625em;
 }
 /* line 142, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button span:before {
+.split.button span:before, .split.ui-state-default span:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split span:before {
   border-color: white transparent transparent transparent;
 }
 /* line 79, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.secondary span {
+.split.button.secondary span, .split.secondary.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.secondary span {
   border-left-color: #c3c3c3;
 }
 /* line 142, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.secondary span:before {
+.split.button.secondary span:before, .split.secondary.ui-state-default span:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.secondary span:before {
   border-color: white transparent transparent transparent;
 }
 /* line 79, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.alert span {
+.split.button.alert span, .split.alert.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.alert span {
   border-left-color: #7f0a0c;
 }
 /* line 79, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.success span {
+.split.button.success span, .split.success.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.success span {
   border-left-color: #396516;
 }
 /* line 156, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.tiny {
+.split.button.tiny, .split.tiny.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.tiny {
   padding-right: 3.9375em;
 }
 /* line 88, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.tiny span {
+.split.button.tiny span, .split.tiny.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.tiny span {
   width: 2.84375em;
 }
 /* line 89, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.tiny span:before {
+.split.button.tiny span:before, .split.tiny.ui-state-default span:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.tiny span:before {
   border-top-style: solid;
   border-width: 0.4375em;
   top: 0.875em;
   margin-left: -0.3125em;
 }
 /* line 157, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.small {
+.split.button.small, .split.small.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.small {
   padding-right: 3.9375em;
 }
 /* line 102, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.small span {
+.split.button.small span, .split.small.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.small span {
   width: 2.8125em;
 }
 /* line 103, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.small span:before {
+.split.button.small span:before, .split.small.ui-state-default span:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.small span:before {
   border-top-style: solid;
   border-width: 0.5625em;
   top: 0.84375em;
   margin-left: -0.5625em;
 }
 /* line 158, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.large {
+.split.button.large, .split.large.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.large {
   padding-right: 6em;
 }
 /* line 130, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.large span {
+.split.button.large span, .split.large.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.large span {
   width: 3.75em;
 }
 /* line 131, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.large span:before {
+.split.button.large span:before, .split.large.ui-state-default span:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.large span:before {
   border-top-style: solid;
   border-width: 0.625em;
   top: 1.3125em;
   margin-left: -0.5625em;
 }
 /* line 159, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.expand {
+.split.button.expand, .split.expand.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.expand {
   padding-left: 2em;
 }
 /* line 142, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.secondary span:before {
+.split.button.secondary span:before, .split.secondary.ui-state-default span:before, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.secondary span:before {
   border-color: #333333 transparent transparent transparent;
 }
 /* line 163, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.radius span {
+.split.button.radius span, .split.radius.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.radius span {
   -moz-border-radius-topright: 3px;
   -moz-border-radius-bottomright: 3px;
   -webkit-border-top-right-radius: 3px;
@@ -3189,7 +3189,7 @@ label.error {
   border-bottom-right-radius: 3px;
 }
 /* line 164, ../sass/grid/foundation/components/_split-buttons.scss */
-.split.button.round span {
+.split.button.round span, .split.round.ui-state-default span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.split.round span {
   -moz-border-radius-topright: 1000px;
   -moz-border-radius-bottomright: 1000px;
   -webkit-border-top-right-radius: 1000px;
@@ -4347,7 +4347,7 @@ label.error {
   height: 2.45em;
 }
 /* line 124, ../sass/grid/foundation/components/_top-bar.scss */
-.top-bar .button {
+.top-bar .button, .top-bar .ui-state-default, .top-bar .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .top-bar button {
   padding-top: .5em;
   padding-bottom: .5em;
   margin-bottom: 0;
@@ -4494,7 +4494,7 @@ label.error {
   font-weight: bold;
 }
 /* line 274, ../sass/grid/foundation/components/_top-bar.scss */
-.top-bar-section ul li > a.button {
+.top-bar-section ul li > a.button, .top-bar-section ul li > a.ui-state-default {
   background: #2ba6cb;
   font-size: 0.8125em;
   padding-right: 15px;
@@ -4621,7 +4621,10 @@ label.error {
   }
   /* line 380, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar input,
-  .top-bar .button {
+  .top-bar .button,
+  .top-bar .ui-state-default,
+  .top-bar .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button,
+  .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .top-bar button {
     line-height: 2em;
     font-size: 0.875em;
     height: 2em;
@@ -5236,7 +5239,7 @@ label.error {
   padding: 1.125em 1.25em 1.5em;
 }
 /* line 68, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-content-wrapper .button {
+.joyride-content-wrapper .button, .joyride-content-wrapper .ui-state-default, .joyride-content-wrapper .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .joyride-content-wrapper button {
   margin-bottom: 0 !important;
 }
 
@@ -7137,7 +7140,9 @@ body {
 }
 
 /* line 92, ../sass/typo/_typography.sass */
-button, .button, .btn {
+button, .button, .ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .btn {
   font-size: 19px;
   padding: 0.5em 1.5em;
   display: inline-block;
@@ -7175,11 +7180,11 @@ button, .button, .btn {
   vertical-align: bottom;
 }
 /* line 15, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
-button:hover, .button:hover, .btn:hover {
+button:hover, .button:hover, .ui-state-default:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover, .btn:hover {
   text-decoration: none;
 }
 /* line 36, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
-button:hover, .button:hover, .btn:hover {
+button:hover, .button:hover, .ui-state-default:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover, .btn:hover {
   background-color: #ccccd1;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e7e7e9), color-stop(100%, #ccccd1));
   background: -webkit-linear-gradient(#e7e7e9, #ccccd1);
@@ -7188,13 +7193,13 @@ button:hover, .button:hover, .btn:hover {
   background: linear-gradient(#e7e7e9, #ccccd1);
 }
 /* line 39, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
-button:active, .button:active, .btn:active {
+button:active, .button:active, .ui-state-default:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active, .btn:active {
   -webkit-box-shadow: #c4c4c9 0 1px 2px inset;
   -moz-box-shadow: #c4c4c9 0 1px 2px inset;
   box-shadow: #c4c4c9 0 1px 2px inset;
 }
 /* line 6, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
-button.disabled, button[disabled], .button.disabled, .button[disabled], .btn.disabled, .btn[disabled] {
+button.disabled, button[disabled], .button.disabled, .disabled.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.disabled, .button[disabled], [disabled].ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button[disabled], .btn.disabled, .btn[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
   background: #d9d9dd;
@@ -7204,27 +7209,31 @@ button.disabled, button[disabled], .button.disabled, .button[disabled], .btn.dis
   box-shadow: none;
 }
 /* line 74, ../sass/mixins/_sassy-buttons.sass */
-button::-moz-focus-inner, .button::-moz-focus-inner, .btn::-moz-focus-inner {
+button::-moz-focus-inner, .button::-moz-focus-inner, .ui-state-default::-moz-focus-inner,
+.ui-widget-content .ui-state-default::-moz-focus-inner,
+.ui-widget-header .ui-state-default::-moz-focus-inner, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button::-moz-focus-inner, .btn::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }
 /* line 101, ../sass/typo/_typography.sass */
-button i, .button i, .btn i {
+button i, .button i, .ui-state-default i,
+.ui-widget-content .ui-state-default i,
+.ui-widget-header .ui-state-default i, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button i, .btn i {
   font-size: 80%;
 }
 /* line 104, ../sass/typo/_typography.sass */
-button:hover, button:active, .button:hover, .button:active, .btn:hover, .btn:active {
+button:hover, button:active, .button:hover, .ui-state-default:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover, .button:active, .ui-state-default:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active, .btn:hover, .btn:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
 /* line 109, ../sass/typo/_typography.sass */
-button.small, .button.small, .btn.small {
+button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.small, .btn.small {
   font-size: 75%;
   font-style: italic;
 }
 
 /* line 114, ../sass/typo/_typography.sass */
-.cta, .node-type-walkthrough .main.columns > .action-links li a {
+.cta, .node-type-walkthrough .main.columns > .action-links li a, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type {
   font-size: 10px;
   line-height: 14.5px;
   font-size: 1rem;
@@ -7257,7 +7266,7 @@ button.small, .button.small, .btn.small {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
 /* line 128, ../sass/typo/_typography.sass */
-.cta:after, .node-type-walkthrough .main.columns > .action-links li a:after {
+.cta:after, .node-type-walkthrough .main.columns > .action-links li a:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:after {
   font-family: "icomoon";
   speak: none;
   content: attr(data-icon);
@@ -7268,7 +7277,7 @@ button.small, .button.small, .btn.small {
   *margin-right: 0.3em;
 }
 /* line 131, ../sass/typo/_typography.sass */
-.cta:hover, .node-type-walkthrough .main.columns > .action-links li a:hover {
+.cta:hover, .node-type-walkthrough .main.columns > .action-links li a:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover:first-of-type {
   background-color: #4f96d2;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4F96D2', endColorstr='#FF0467A0');
@@ -7279,7 +7288,7 @@ button.small, .button.small, .btn.small {
   background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%);
 }
 /* line 136, ../sass/typo/_typography.sass */
-.cta:active, .node-type-walkthrough .main.columns > .action-links li a:active {
+.cta:active, .node-type-walkthrough .main.columns > .action-links li a:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active:first-of-type {
   background: #035787;
   -webkit-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15);
   -moz-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15);
@@ -8256,7 +8265,7 @@ div.messages ul li {
   margin-right: 0.35em;
 }
 /* line 159, ../sass/modules/_admin.sass */
-.profile a.button {
+.profile a.button, .profile a.ui-state-default {
   font-size: 13px;
   line-height: 18.85px;
   font-size: 1.3rem;
@@ -8267,12 +8276,12 @@ div.messages ul li {
   width: auto;
 }
 /* line 168, ../sass/modules/_admin.sass */
-.profile a.button.login:before {
+.profile a.button.login:before, .profile a.login.ui-state-default:before {
   content: "\e02e";
   margin-right: 0.85em;
 }
 /* line 172, ../sass/modules/_admin.sass */
-.profile a.button.login:hover {
+.profile a.button.login:hover, .profile a.login.ui-state-default:hover {
   border: 0;
 }
 /* line 175, ../sass/modules/_admin.sass */
@@ -9295,7 +9304,6 @@ input.pure-input-rounded, .pure-input-rounded {
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
   border: 1px solid lightgrey;
-  background: #e6e6e6 url("../images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x;
   font-weight: 400;
   color: #555555;
 }
@@ -9312,1021 +9320,1011 @@ input.pure-input-rounded, .pure-input-rounded {
 }
 
 /* line 46, ../sass/modules/_jquery_ui_theme.sass */
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-  border: 1px solid #999999;
-  background: #dadada url("../images/ui-bg_glass_75_dadada_1x400.png") 50% 50% repeat-x;
-  font-weight: 400;
-  color: #212121;
-}
-
-/* line 52, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-hover a {
   color: #212121;
   text-decoration: none;
 }
-/* line 55, ../sass/modules/_jquery_ui_theme.sass */
+/* line 49, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited {
   color: #212121;
   text-decoration: none;
 }
 
-/* line 59, ../sass/modules/_jquery_ui_theme.sass */
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-  border: 1px solid #aaaaaa;
-  background: white url("../images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
-  font-weight: 400;
-  color: #212121;
-}
-
-/* line 65, ../sass/modules/_jquery_ui_theme.sass */
+/* line 53, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-active a {
   color: #212121;
   text-decoration: none;
 }
-/* line 68, ../sass/modules/_jquery_ui_theme.sass */
+/* line 56, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-active a:link, .ui-state-active a:visited {
   color: #212121;
   text-decoration: none;
 }
 
-/* line 72, ../sass/modules/_jquery_ui_theme.sass */
+/* line 60, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
   border: 1px solid #fcefa1;
   background: #fbf9ee url("../images/ui-bg_glass_55_fbf9ee_1x400.png") 50% 50% repeat-x;
   color: #363636;
 }
 
-/* line 77, ../sass/modules/_jquery_ui_theme.sass */
+/* line 65, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a, .ui-widget-header .ui-state-highlight a {
   color: #363636;
 }
 
-/* line 80, ../sass/modules/_jquery_ui_theme.sass */
+/* line 68, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
   border: 1px solid #cd0a0a;
   background: #fef1ec url("../images/ui-bg_glass_95_fef1ec_1x400.png") 50% 50% repeat-x;
   color: #cd0a0a;
 }
 
-/* line 85, ../sass/modules/_jquery_ui_theme.sass */
+/* line 73, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a, .ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text {
   color: #cd0a0a;
 }
 
-/* line 88, ../sass/modules/_jquery_ui_theme.sass */
+/* line 76, ../sass/modules/_jquery_ui_theme.sass */
 .ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary {
   font-weight: 700;
 }
 
-/* line 91, ../sass/modules/_jquery_ui_theme.sass */
+/* line 79, ../sass/modules/_jquery_ui_theme.sass */
 .ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary {
   opacity: 0.7;
   filter: Alpha(Opacity=70);
   font-weight: 400;
 }
 
-/* line 96, ../sass/modules/_jquery_ui_theme.sass */
+/* line 84, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
   opacity: 0.35;
   filter: Alpha(Opacity=35);
   background-image: none;
 }
 
-/* line 101, ../sass/modules/_jquery_ui_theme.sass */
+/* line 89, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-disabled .ui-icon {
   filter: Alpha(Opacity=35);
 }
 
-/* line 104, ../sass/modules/_jquery_ui_theme.sass */
+/* line 92, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon {
   width: 16px;
   height: 16px;
-  background-image: url("../images/ui-icons_222222_256x240.png");
+  background: transparent;
 }
 
-/* line 109, ../sass/modules/_jquery_ui_theme.sass */
-.ui-widget-content .ui-icon, .ui-widget-header .ui-icon {
-  background-image: url("../images/ui-icons_222222_256x240.png");
+/* line 97, ../sass/modules/_jquery_ui_theme.sass */
+.ui-widget-content .ui-icon,
+.ui-widget-header .ui-icon,
+.ui-state-default .ui-icon,
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-state-active .ui-icon,
+.ui-state-highlight .ui-icon,
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  text-indent: 0;
+  left: 1px;
+  top: 2px;
 }
-
 /* line 112, ../sass/modules/_jquery_ui_theme.sass */
-.ui-state-default .ui-icon {
-  background-image: url("../images/ui-icons_888888_256x240.png");
+.ui-widget-content .ui-icon:before,
+.ui-widget-header .ui-icon:before,
+.ui-state-default .ui-icon:before,
+.ui-state-hover .ui-icon:before,
+.ui-state-focus .ui-icon:before,
+.ui-state-active .ui-icon:before,
+.ui-state-highlight .ui-icon:before,
+.ui-state-error .ui-icon:before,
+.ui-state-error-text .ui-icon:before {
+  font-family: "icomoon";
+  speak: none;
+  content: attr(data-icon);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  *margin-right: 0.3em;
+  font-size: 7px;
+  line-height: 10.15px;
+  font-size: 0.7rem;
+  line-height: 1.015rem;
+  color: #6f6f6f;
+}
+/* line 117, ../sass/modules/_jquery_ui_theme.sass */
+.ui-widget-content .ui-icon.ui-icon-closethick:before,
+.ui-widget-header .ui-icon.ui-icon-closethick:before,
+.ui-state-default .ui-icon.ui-icon-closethick:before,
+.ui-state-hover .ui-icon.ui-icon-closethick:before,
+.ui-state-focus .ui-icon.ui-icon-closethick:before,
+.ui-state-active .ui-icon.ui-icon-closethick:before,
+.ui-state-highlight .ui-icon.ui-icon-closethick:before,
+.ui-state-error .ui-icon.ui-icon-closethick:before,
+.ui-state-error-text .ui-icon.ui-icon-closethick:before {
+  background: transparent;
+  content: "\e016";
+  display: block;
 }
 
-/* line 115, ../sass/modules/_jquery_ui_theme.sass */
-.ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-state-active .ui-icon {
-  background-image: url("../images/ui-icons_454545_256x240.png");
-}
-
-/* line 118, ../sass/modules/_jquery_ui_theme.sass */
-.ui-state-highlight .ui-icon {
-  background-image: url("../images/ui-icons_2e83ff_256x240.png");
-}
-
-/* line 121, ../sass/modules/_jquery_ui_theme.sass */
-.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {
-  background-image: url("../images/ui-icons_cd0a0a_256x240.png");
-}
-
-/* line 124, ../sass/modules/_jquery_ui_theme.sass */
+/* line 123, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-blank {
   background-position: 16px 16px;
 }
 
-/* line 127, ../sass/modules/_jquery_ui_theme.sass */
+/* line 126, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-n {
   background-position: 0 0;
 }
 
-/* line 130, ../sass/modules/_jquery_ui_theme.sass */
+/* line 129, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-ne {
   background-position: -16px 0;
 }
 
-/* line 133, ../sass/modules/_jquery_ui_theme.sass */
+/* line 132, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-e {
   background-position: -32px 0;
 }
 
-/* line 136, ../sass/modules/_jquery_ui_theme.sass */
+/* line 135, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-se {
   background-position: -48px 0;
 }
 
-/* line 139, ../sass/modules/_jquery_ui_theme.sass */
+/* line 138, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-s {
   background-position: -64px 0;
 }
 
-/* line 142, ../sass/modules/_jquery_ui_theme.sass */
+/* line 141, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-sw {
   background-position: -80px 0;
 }
 
-/* line 145, ../sass/modules/_jquery_ui_theme.sass */
+/* line 144, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-w {
   background-position: -96px 0;
 }
 
-/* line 148, ../sass/modules/_jquery_ui_theme.sass */
+/* line 147, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-nw {
   background-position: -112px 0;
 }
 
-/* line 151, ../sass/modules/_jquery_ui_theme.sass */
+/* line 150, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-2-n-s {
   background-position: -128px 0;
 }
 
-/* line 154, ../sass/modules/_jquery_ui_theme.sass */
+/* line 153, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-2-e-w {
   background-position: -144px 0;
 }
 
-/* line 157, ../sass/modules/_jquery_ui_theme.sass */
+/* line 156, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-n {
   background-position: 0 -16px;
 }
 
-/* line 160, ../sass/modules/_jquery_ui_theme.sass */
+/* line 159, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-ne {
   background-position: -16px -16px;
 }
 
-/* line 163, ../sass/modules/_jquery_ui_theme.sass */
+/* line 162, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-e {
   background-position: -32px -16px;
 }
 
-/* line 166, ../sass/modules/_jquery_ui_theme.sass */
+/* line 165, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-se {
   background-position: -48px -16px;
 }
 
-/* line 169, ../sass/modules/_jquery_ui_theme.sass */
+/* line 168, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-s {
   background-position: -64px -16px;
 }
 
-/* line 172, ../sass/modules/_jquery_ui_theme.sass */
+/* line 171, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-sw {
   background-position: -80px -16px;
 }
 
-/* line 175, ../sass/modules/_jquery_ui_theme.sass */
+/* line 174, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-w {
   background-position: -96px -16px;
 }
 
-/* line 178, ../sass/modules/_jquery_ui_theme.sass */
+/* line 177, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-nw {
   background-position: -112px -16px;
 }
 
-/* line 181, ../sass/modules/_jquery_ui_theme.sass */
+/* line 180, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-2-n-s {
   background-position: -128px -16px;
 }
 
-/* line 184, ../sass/modules/_jquery_ui_theme.sass */
+/* line 183, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-2-e-w {
   background-position: -144px -16px;
 }
 
-/* line 187, ../sass/modules/_jquery_ui_theme.sass */
+/* line 186, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-n {
   background-position: 0 -32px;
 }
 
-/* line 190, ../sass/modules/_jquery_ui_theme.sass */
+/* line 189, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-ne {
   background-position: -16px -32px;
 }
 
-/* line 193, ../sass/modules/_jquery_ui_theme.sass */
+/* line 192, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-e {
   background-position: -32px -32px;
 }
 
-/* line 196, ../sass/modules/_jquery_ui_theme.sass */
+/* line 195, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-se {
   background-position: -48px -32px;
 }
 
-/* line 199, ../sass/modules/_jquery_ui_theme.sass */
+/* line 198, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-s {
   background-position: -64px -32px;
 }
 
-/* line 202, ../sass/modules/_jquery_ui_theme.sass */
+/* line 201, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-sw {
   background-position: -80px -32px;
 }
 
-/* line 205, ../sass/modules/_jquery_ui_theme.sass */
+/* line 204, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-w {
   background-position: -96px -32px;
 }
 
-/* line 208, ../sass/modules/_jquery_ui_theme.sass */
+/* line 207, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-nw {
   background-position: -112px -32px;
 }
 
-/* line 211, ../sass/modules/_jquery_ui_theme.sass */
+/* line 210, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-2-n-s {
   background-position: -128px -32px;
 }
 
-/* line 214, ../sass/modules/_jquery_ui_theme.sass */
+/* line 213, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-2-ne-sw {
   background-position: -144px -32px;
 }
 
-/* line 217, ../sass/modules/_jquery_ui_theme.sass */
+/* line 216, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-2-e-w {
   background-position: -160px -32px;
 }
 
-/* line 220, ../sass/modules/_jquery_ui_theme.sass */
+/* line 219, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-2-se-nw {
   background-position: -176px -32px;
 }
 
-/* line 223, ../sass/modules/_jquery_ui_theme.sass */
+/* line 222, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowstop-1-n {
   background-position: -192px -32px;
 }
 
-/* line 226, ../sass/modules/_jquery_ui_theme.sass */
+/* line 225, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowstop-1-e {
   background-position: -208px -32px;
 }
 
-/* line 229, ../sass/modules/_jquery_ui_theme.sass */
+/* line 228, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowstop-1-s {
   background-position: -224px -32px;
 }
 
-/* line 232, ../sass/modules/_jquery_ui_theme.sass */
+/* line 231, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowstop-1-w {
   background-position: -240px -32px;
 }
 
-/* line 235, ../sass/modules/_jquery_ui_theme.sass */
+/* line 234, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-n {
   background-position: 0 -48px;
 }
 
-/* line 238, ../sass/modules/_jquery_ui_theme.sass */
+/* line 237, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-ne {
   background-position: -16px -48px;
 }
 
-/* line 241, ../sass/modules/_jquery_ui_theme.sass */
+/* line 240, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-e {
   background-position: -32px -48px;
 }
 
-/* line 244, ../sass/modules/_jquery_ui_theme.sass */
+/* line 243, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-se {
   background-position: -48px -48px;
 }
 
-/* line 247, ../sass/modules/_jquery_ui_theme.sass */
+/* line 246, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-s {
   background-position: -64px -48px;
 }
 
-/* line 250, ../sass/modules/_jquery_ui_theme.sass */
+/* line 249, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-sw {
   background-position: -80px -48px;
 }
 
-/* line 253, ../sass/modules/_jquery_ui_theme.sass */
+/* line 252, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-w {
   background-position: -96px -48px;
 }
 
-/* line 256, ../sass/modules/_jquery_ui_theme.sass */
+/* line 255, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-nw {
   background-position: -112px -48px;
 }
 
-/* line 259, ../sass/modules/_jquery_ui_theme.sass */
+/* line 258, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-2-n-s {
   background-position: -128px -48px;
 }
 
-/* line 262, ../sass/modules/_jquery_ui_theme.sass */
+/* line 261, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-2-ne-sw {
   background-position: -144px -48px;
 }
 
-/* line 265, ../sass/modules/_jquery_ui_theme.sass */
+/* line 264, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-2-e-w {
   background-position: -160px -48px;
 }
 
-/* line 268, ../sass/modules/_jquery_ui_theme.sass */
+/* line 267, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-2-se-nw {
   background-position: -176px -48px;
 }
 
-/* line 271, ../sass/modules/_jquery_ui_theme.sass */
+/* line 270, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthickstop-1-n {
   background-position: -192px -48px;
 }
 
-/* line 274, ../sass/modules/_jquery_ui_theme.sass */
+/* line 273, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthickstop-1-e {
   background-position: -208px -48px;
 }
 
-/* line 277, ../sass/modules/_jquery_ui_theme.sass */
+/* line 276, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthickstop-1-s {
   background-position: -224px -48px;
 }
 
-/* line 280, ../sass/modules/_jquery_ui_theme.sass */
+/* line 279, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthickstop-1-w {
   background-position: -240px -48px;
 }
 
-/* line 283, ../sass/modules/_jquery_ui_theme.sass */
+/* line 282, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturnthick-1-w {
   background-position: 0 -64px;
 }
 
-/* line 286, ../sass/modules/_jquery_ui_theme.sass */
+/* line 285, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturnthick-1-n {
   background-position: -16px -64px;
 }
 
-/* line 289, ../sass/modules/_jquery_ui_theme.sass */
+/* line 288, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturnthick-1-e {
   background-position: -32px -64px;
 }
 
-/* line 292, ../sass/modules/_jquery_ui_theme.sass */
+/* line 291, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturnthick-1-s {
   background-position: -48px -64px;
 }
 
-/* line 295, ../sass/modules/_jquery_ui_theme.sass */
+/* line 294, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturn-1-w {
   background-position: -64px -64px;
 }
 
-/* line 298, ../sass/modules/_jquery_ui_theme.sass */
+/* line 297, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturn-1-n {
   background-position: -80px -64px;
 }
 
-/* line 301, ../sass/modules/_jquery_ui_theme.sass */
+/* line 300, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturn-1-e {
   background-position: -96px -64px;
 }
 
-/* line 304, ../sass/modules/_jquery_ui_theme.sass */
+/* line 303, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturn-1-s {
   background-position: -112px -64px;
 }
 
-/* line 307, ../sass/modules/_jquery_ui_theme.sass */
+/* line 306, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowrefresh-1-w {
   background-position: -128px -64px;
 }
 
-/* line 310, ../sass/modules/_jquery_ui_theme.sass */
+/* line 309, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowrefresh-1-n {
   background-position: -144px -64px;
 }
 
-/* line 313, ../sass/modules/_jquery_ui_theme.sass */
+/* line 312, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowrefresh-1-e {
   background-position: -160px -64px;
 }
 
-/* line 316, ../sass/modules/_jquery_ui_theme.sass */
+/* line 315, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowrefresh-1-s {
   background-position: -176px -64px;
 }
 
-/* line 319, ../sass/modules/_jquery_ui_theme.sass */
+/* line 318, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-4 {
   background-position: 0 -80px;
 }
 
-/* line 322, ../sass/modules/_jquery_ui_theme.sass */
+/* line 321, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-4-diag {
   background-position: -16px -80px;
 }
 
-/* line 325, ../sass/modules/_jquery_ui_theme.sass */
+/* line 324, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-extlink {
   background-position: -32px -80px;
 }
 
-/* line 328, ../sass/modules/_jquery_ui_theme.sass */
+/* line 327, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-newwin {
   background-position: -48px -80px;
 }
 
-/* line 331, ../sass/modules/_jquery_ui_theme.sass */
+/* line 330, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-refresh {
   background-position: -64px -80px;
 }
 
-/* line 334, ../sass/modules/_jquery_ui_theme.sass */
+/* line 333, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-shuffle {
   background-position: -80px -80px;
 }
 
-/* line 337, ../sass/modules/_jquery_ui_theme.sass */
+/* line 336, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-transfer-e-w {
   background-position: -96px -80px;
 }
 
-/* line 340, ../sass/modules/_jquery_ui_theme.sass */
+/* line 339, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-transferthick-e-w {
   background-position: -112px -80px;
 }
 
-/* line 343, ../sass/modules/_jquery_ui_theme.sass */
+/* line 342, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-folder-collapsed {
   background-position: 0 -96px;
 }
 
-/* line 346, ../sass/modules/_jquery_ui_theme.sass */
+/* line 345, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-folder-open {
   background-position: -16px -96px;
 }
 
-/* line 349, ../sass/modules/_jquery_ui_theme.sass */
+/* line 348, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-document {
   background-position: -32px -96px;
 }
 
-/* line 352, ../sass/modules/_jquery_ui_theme.sass */
+/* line 351, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-document-b {
   background-position: -48px -96px;
 }
 
-/* line 355, ../sass/modules/_jquery_ui_theme.sass */
+/* line 354, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-note {
   background-position: -64px -96px;
 }
 
-/* line 358, ../sass/modules/_jquery_ui_theme.sass */
+/* line 357, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-mail-closed {
   background-position: -80px -96px;
 }
 
-/* line 361, ../sass/modules/_jquery_ui_theme.sass */
+/* line 360, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-mail-open {
   background-position: -96px -96px;
 }
 
-/* line 364, ../sass/modules/_jquery_ui_theme.sass */
+/* line 363, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-suitcase {
   background-position: -112px -96px;
 }
 
-/* line 367, ../sass/modules/_jquery_ui_theme.sass */
+/* line 366, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-comment {
   background-position: -128px -96px;
 }
 
-/* line 370, ../sass/modules/_jquery_ui_theme.sass */
+/* line 369, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-person {
   background-position: -144px -96px;
 }
 
-/* line 373, ../sass/modules/_jquery_ui_theme.sass */
+/* line 372, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-print {
   background-position: -160px -96px;
 }
 
-/* line 376, ../sass/modules/_jquery_ui_theme.sass */
+/* line 375, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-trash {
   background-position: -176px -96px;
 }
 
-/* line 379, ../sass/modules/_jquery_ui_theme.sass */
+/* line 378, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-locked {
   background-position: -192px -96px;
 }
 
-/* line 382, ../sass/modules/_jquery_ui_theme.sass */
+/* line 381, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-unlocked {
   background-position: -208px -96px;
 }
 
-/* line 385, ../sass/modules/_jquery_ui_theme.sass */
+/* line 384, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-bookmark {
   background-position: -224px -96px;
 }
 
-/* line 388, ../sass/modules/_jquery_ui_theme.sass */
+/* line 387, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-tag {
   background-position: -240px -96px;
 }
 
-/* line 391, ../sass/modules/_jquery_ui_theme.sass */
+/* line 390, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-home {
   background-position: 0 -112px;
 }
 
-/* line 394, ../sass/modules/_jquery_ui_theme.sass */
+/* line 393, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-flag {
   background-position: -16px -112px;
 }
 
-/* line 397, ../sass/modules/_jquery_ui_theme.sass */
+/* line 396, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-calendar {
   background-position: -32px -112px;
 }
 
-/* line 400, ../sass/modules/_jquery_ui_theme.sass */
+/* line 399, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-cart {
   background-position: -48px -112px;
 }
 
-/* line 403, ../sass/modules/_jquery_ui_theme.sass */
+/* line 402, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-pencil {
   background-position: -64px -112px;
 }
 
-/* line 406, ../sass/modules/_jquery_ui_theme.sass */
+/* line 405, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-clock {
   background-position: -80px -112px;
 }
 
-/* line 409, ../sass/modules/_jquery_ui_theme.sass */
+/* line 408, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-disk {
   background-position: -96px -112px;
 }
 
-/* line 412, ../sass/modules/_jquery_ui_theme.sass */
+/* line 411, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-calculator {
   background-position: -112px -112px;
 }
 
-/* line 415, ../sass/modules/_jquery_ui_theme.sass */
+/* line 414, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-zoomin {
   background-position: -128px -112px;
 }
 
-/* line 418, ../sass/modules/_jquery_ui_theme.sass */
+/* line 417, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-zoomout {
   background-position: -144px -112px;
 }
 
-/* line 421, ../sass/modules/_jquery_ui_theme.sass */
+/* line 420, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-search {
   background-position: -160px -112px;
 }
 
-/* line 424, ../sass/modules/_jquery_ui_theme.sass */
+/* line 423, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-wrench {
   background-position: -176px -112px;
 }
 
-/* line 427, ../sass/modules/_jquery_ui_theme.sass */
+/* line 426, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-gear {
   background-position: -192px -112px;
 }
 
-/* line 430, ../sass/modules/_jquery_ui_theme.sass */
+/* line 429, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-heart {
   background-position: -208px -112px;
 }
 
-/* line 433, ../sass/modules/_jquery_ui_theme.sass */
+/* line 432, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-star {
   background-position: -224px -112px;
 }
 
-/* line 436, ../sass/modules/_jquery_ui_theme.sass */
+/* line 435, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-link {
   background-position: -240px -112px;
 }
 
-/* line 439, ../sass/modules/_jquery_ui_theme.sass */
+/* line 438, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-cancel {
   background-position: 0 -128px;
 }
 
-/* line 442, ../sass/modules/_jquery_ui_theme.sass */
+/* line 441, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-plus {
   background-position: -16px -128px;
 }
 
-/* line 445, ../sass/modules/_jquery_ui_theme.sass */
+/* line 444, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-plusthick {
   background-position: -32px -128px;
 }
 
-/* line 448, ../sass/modules/_jquery_ui_theme.sass */
+/* line 447, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-minus {
   background-position: -48px -128px;
 }
 
-/* line 451, ../sass/modules/_jquery_ui_theme.sass */
+/* line 450, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-minusthick {
   background-position: -64px -128px;
 }
 
-/* line 454, ../sass/modules/_jquery_ui_theme.sass */
+/* line 453, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-close {
   background-position: -80px -128px;
 }
 
-/* line 457, ../sass/modules/_jquery_ui_theme.sass */
-.ui-icon-closethick {
-  background-position: -96px -128px;
-}
-
-/* line 460, ../sass/modules/_jquery_ui_theme.sass */
+/* line 458, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-key {
   background-position: -112px -128px;
 }
 
-/* line 463, ../sass/modules/_jquery_ui_theme.sass */
+/* line 461, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-lightbulb {
   background-position: -128px -128px;
 }
 
-/* line 466, ../sass/modules/_jquery_ui_theme.sass */
+/* line 464, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-scissors {
   background-position: -144px -128px;
 }
 
-/* line 469, ../sass/modules/_jquery_ui_theme.sass */
+/* line 467, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-clipboard {
   background-position: -160px -128px;
 }
 
-/* line 472, ../sass/modules/_jquery_ui_theme.sass */
+/* line 470, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-copy {
   background-position: -176px -128px;
 }
 
-/* line 475, ../sass/modules/_jquery_ui_theme.sass */
+/* line 473, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-contact {
   background-position: -192px -128px;
 }
 
-/* line 478, ../sass/modules/_jquery_ui_theme.sass */
+/* line 476, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-image {
   background-position: -208px -128px;
 }
 
-/* line 481, ../sass/modules/_jquery_ui_theme.sass */
+/* line 479, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-video {
   background-position: -224px -128px;
 }
 
-/* line 484, ../sass/modules/_jquery_ui_theme.sass */
+/* line 482, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-script {
   background-position: -240px -128px;
 }
 
-/* line 487, ../sass/modules/_jquery_ui_theme.sass */
+/* line 485, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-alert {
   background-position: 0 -144px;
 }
 
-/* line 490, ../sass/modules/_jquery_ui_theme.sass */
+/* line 488, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-info {
   background-position: -16px -144px;
 }
 
-/* line 493, ../sass/modules/_jquery_ui_theme.sass */
+/* line 491, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-notice {
   background-position: -32px -144px;
 }
 
-/* line 496, ../sass/modules/_jquery_ui_theme.sass */
+/* line 494, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-help {
   background-position: -48px -144px;
 }
 
-/* line 499, ../sass/modules/_jquery_ui_theme.sass */
+/* line 497, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-check {
   background-position: -64px -144px;
 }
 
-/* line 502, ../sass/modules/_jquery_ui_theme.sass */
+/* line 500, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-bullet {
   background-position: -80px -144px;
 }
 
-/* line 505, ../sass/modules/_jquery_ui_theme.sass */
+/* line 503, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-radio-on {
   background-position: -96px -144px;
 }
 
-/* line 508, ../sass/modules/_jquery_ui_theme.sass */
+/* line 506, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-radio-off {
   background-position: -112px -144px;
 }
 
-/* line 511, ../sass/modules/_jquery_ui_theme.sass */
+/* line 509, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-pin-w {
   background-position: -128px -144px;
 }
 
-/* line 514, ../sass/modules/_jquery_ui_theme.sass */
+/* line 512, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-pin-s {
   background-position: -144px -144px;
 }
 
-/* line 517, ../sass/modules/_jquery_ui_theme.sass */
+/* line 515, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-play {
   background-position: 0 -160px;
 }
 
-/* line 520, ../sass/modules/_jquery_ui_theme.sass */
+/* line 518, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-pause {
   background-position: -16px -160px;
 }
 
-/* line 523, ../sass/modules/_jquery_ui_theme.sass */
+/* line 521, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-seek-next {
   background-position: -32px -160px;
 }
 
-/* line 526, ../sass/modules/_jquery_ui_theme.sass */
+/* line 524, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-seek-prev {
   background-position: -48px -160px;
 }
 
-/* line 529, ../sass/modules/_jquery_ui_theme.sass */
+/* line 527, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-seek-end {
   background-position: -64px -160px;
 }
 
-/* line 532, ../sass/modules/_jquery_ui_theme.sass */
+/* line 530, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-seek-start, .ui-icon-seek-first {
   background-position: -80px -160px;
 }
 
-/* line 535, ../sass/modules/_jquery_ui_theme.sass */
+/* line 533, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-stop {
   background-position: -96px -160px;
 }
 
-/* line 538, ../sass/modules/_jquery_ui_theme.sass */
+/* line 536, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-eject {
   background-position: -112px -160px;
 }
 
-/* line 541, ../sass/modules/_jquery_ui_theme.sass */
+/* line 539, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-volume-off {
   background-position: -128px -160px;
 }
 
-/* line 544, ../sass/modules/_jquery_ui_theme.sass */
+/* line 542, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-volume-on {
   background-position: -144px -160px;
 }
 
-/* line 547, ../sass/modules/_jquery_ui_theme.sass */
+/* line 545, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-power {
   background-position: 0 -176px;
 }
 
-/* line 550, ../sass/modules/_jquery_ui_theme.sass */
+/* line 548, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-signal-diag {
   background-position: -16px -176px;
 }
 
-/* line 553, ../sass/modules/_jquery_ui_theme.sass */
+/* line 551, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-signal {
   background-position: -32px -176px;
 }
 
-/* line 556, ../sass/modules/_jquery_ui_theme.sass */
+/* line 554, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-battery-0 {
   background-position: -48px -176px;
 }
 
-/* line 559, ../sass/modules/_jquery_ui_theme.sass */
+/* line 557, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-battery-1 {
   background-position: -64px -176px;
 }
 
-/* line 562, ../sass/modules/_jquery_ui_theme.sass */
+/* line 560, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-battery-2 {
   background-position: -80px -176px;
 }
 
-/* line 565, ../sass/modules/_jquery_ui_theme.sass */
+/* line 563, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-battery-3 {
   background-position: -96px -176px;
 }
 
-/* line 568, ../sass/modules/_jquery_ui_theme.sass */
+/* line 566, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-plus {
   background-position: 0 -192px;
 }
 
-/* line 571, ../sass/modules/_jquery_ui_theme.sass */
+/* line 569, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-minus {
   background-position: -16px -192px;
 }
 
-/* line 574, ../sass/modules/_jquery_ui_theme.sass */
+/* line 572, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-close {
   background-position: -32px -192px;
 }
 
-/* line 577, ../sass/modules/_jquery_ui_theme.sass */
+/* line 575, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-triangle-e {
   background-position: -48px -192px;
 }
 
-/* line 580, ../sass/modules/_jquery_ui_theme.sass */
+/* line 578, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-triangle-s {
   background-position: -64px -192px;
 }
 
-/* line 583, ../sass/modules/_jquery_ui_theme.sass */
+/* line 581, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-triangle-w {
   background-position: -80px -192px;
 }
 
-/* line 586, ../sass/modules/_jquery_ui_theme.sass */
+/* line 584, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-triangle-n {
   background-position: -96px -192px;
 }
 
-/* line 589, ../sass/modules/_jquery_ui_theme.sass */
+/* line 587, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-arrow-e {
   background-position: -112px -192px;
 }
 
-/* line 592, ../sass/modules/_jquery_ui_theme.sass */
+/* line 590, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-arrow-s {
   background-position: -128px -192px;
 }
 
-/* line 595, ../sass/modules/_jquery_ui_theme.sass */
+/* line 593, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-arrow-w {
   background-position: -144px -192px;
 }
 
-/* line 598, ../sass/modules/_jquery_ui_theme.sass */
+/* line 596, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-arrow-n {
   background-position: -160px -192px;
 }
 
-/* line 601, ../sass/modules/_jquery_ui_theme.sass */
+/* line 599, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-zoomin {
   background-position: -176px -192px;
 }
 
-/* line 604, ../sass/modules/_jquery_ui_theme.sass */
+/* line 602, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-zoomout {
   background-position: -192px -192px;
 }
 
-/* line 607, ../sass/modules/_jquery_ui_theme.sass */
+/* line 605, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-check {
   background-position: -208px -192px;
 }
 
-/* line 610, ../sass/modules/_jquery_ui_theme.sass */
+/* line 608, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circlesmall-plus {
   background-position: 0 -208px;
 }
 
-/* line 613, ../sass/modules/_jquery_ui_theme.sass */
+/* line 611, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circlesmall-minus {
   background-position: -16px -208px;
 }
 
-/* line 616, ../sass/modules/_jquery_ui_theme.sass */
+/* line 614, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circlesmall-close {
   background-position: -32px -208px;
 }
 
-/* line 619, ../sass/modules/_jquery_ui_theme.sass */
+/* line 617, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-squaresmall-plus {
   background-position: -48px -208px;
 }
 
-/* line 622, ../sass/modules/_jquery_ui_theme.sass */
+/* line 620, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-squaresmall-minus {
   background-position: -64px -208px;
 }
 
-/* line 625, ../sass/modules/_jquery_ui_theme.sass */
+/* line 623, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-squaresmall-close {
   background-position: -80px -208px;
 }
 
-/* line 628, ../sass/modules/_jquery_ui_theme.sass */
+/* line 626, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-dotted-vertical {
   background-position: 0 -224px;
 }
 
-/* line 631, ../sass/modules/_jquery_ui_theme.sass */
+/* line 629, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-dotted-horizontal {
   background-position: -16px -224px;
 }
 
-/* line 634, ../sass/modules/_jquery_ui_theme.sass */
+/* line 632, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-solid-vertical {
   background-position: -32px -224px;
 }
 
-/* line 637, ../sass/modules/_jquery_ui_theme.sass */
+/* line 635, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-solid-horizontal {
   background-position: -48px -224px;
 }
 
-/* line 640, ../sass/modules/_jquery_ui_theme.sass */
+/* line 638, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-gripsmall-diagonal-se {
   background-position: -64px -224px;
 }
 
-/* line 643, ../sass/modules/_jquery_ui_theme.sass */
+/* line 641, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-diagonal-se {
   background-position: -80px -224px;
 }
 
-/* line 646, ../sass/modules/_jquery_ui_theme.sass */
-.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
-  border-top-left-radius: 4px;
-}
-
-/* line 649, ../sass/modules/_jquery_ui_theme.sass */
-.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
-  border-top-right-radius: 4px;
-}
-
-/* line 652, ../sass/modules/_jquery_ui_theme.sass */
-.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
-  border-bottom-left-radius: 4px;
-}
-
-/* line 655, ../sass/modules/_jquery_ui_theme.sass */
-.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
-  border-bottom-right-radius: 4px;
-}
-
-/* line 658, ../sass/modules/_jquery_ui_theme.sass */
+/* line 645, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-overlay {
   background: rgba(0, 0, 0, 0.75) url("../images/mask.png") 50% 50% repeat;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
   opacity: 0.85;
 }
 
-/* line 662, ../sass/modules/_jquery_ui_theme.sass */
+/* line 649, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-shadow {
   background: #aaaaaa url("../images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
@@ -10494,16 +10492,16 @@ input.pure-input-rounded, .pure-input-rounded {
   text-decoration: underline;
 }
 
-/* line 6, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
+/* line 6, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-collection-view {
   margin-top: 5px;
   margin-top: 0.5rem;
 }
-/* line 9, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
+/* line 9, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-collection-view:first-of-type {
   margin: 0;
 }
-/* line 12, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
+/* line 12, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions {
   font-size: 12.5px;
   line-height: 18.125px;
@@ -10517,11 +10515,11 @@ input.pure-input-rounded, .pure-input-rounded {
   border-bottom: 1px solid #e3e3e3;
   position: relative;
 }
-/* line 19, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
+/* line 19, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions:hover {
   border-color: #4386cf;
 }
-/* line 22, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
+/* line 22, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions:after {
   font-family: "icomoon";
   speak: none;
@@ -10541,11 +10539,11 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 0.3em;
   right: 0.3em;
 }
-/* line 31, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
+/* line 31, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-questions.active:after {
   content: "\f077";
 }
-/* line 34, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-type-faq.sass */
+/* line 34, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-name-field-walkhub-faq-answer {
   padding-bottom: 5px;
   padding-bottom: 0.5rem;
@@ -10554,22 +10552,22 @@ input.pure-input-rounded, .pure-input-rounded {
   color: #626262;
 }
 
-/* line 4, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 4, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .main.columns > .action-links li {
   text-align: center;
   list-style-type: none;
 }
-/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 8, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .main.columns > .action-links li a {
   margin: 1em 0;
   display: inline-block;
 }
-/* line 13, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 13, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .main.columns > .action-links li a:after {
   content: "\e600";
   margin-left: 0.35em;
 }
-/* line 19, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 19, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-steps > .field-label {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -10579,14 +10577,14 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 1.4rem;
   line-height: 2.03rem;
 }
-/* line 24, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 24, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-step-description .field-label {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
   display: none;
 }
-/* line 28, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 28, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item {
   padding: 0.45rem 0.75rem;
   padding: 0.45rem 0.75rem;
@@ -10600,12 +10598,13 @@ input.pure-input-rounded, .pure-input-rounded {
   color: #6f6f6f;
   background-color: #f6f6f6;
   position: relative;
+  min-height: 41px;
 }
-/* line 37, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 38, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .content {
   margin-left: 2em;
 }
-/* line 40, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 41, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-name {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -10614,13 +10613,13 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 1.2rem;
   line-height: 1.74rem;
 }
-/* line 44, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 45, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-name .field-label {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }
-/* line 48, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 49, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-2,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-3,
@@ -10633,7 +10632,7 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 1.45rem;
   font-weight: normal;
 }
-/* line 57, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 58, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1 > .field-label,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-2 > .field-label,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-3 > .field-label,
@@ -10648,7 +10647,7 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 8em;
   margin-right: 1em;
 }
-/* line 64, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 65, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-show-title,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-highlight,
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1,
@@ -10663,22 +10662,22 @@ input.pure-input-rounded, .pure-input-rounded {
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-10 {
   display: none;
 }
-/* line 78, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 79, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full {
   position: relative;
 }
-/* line 81, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 82, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links {
   position: absolute;
   top: 0.5em;
   right: 0.5em;
   margin: 0;
 }
-/* line 87, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 88, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li {
   list-style-type: none;
 }
-/* line 90, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 91, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a {
   font-size: 19px;
   padding: 0.5em 1.5em;
@@ -10755,12 +10754,12 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 99, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 100, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 107, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 108, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:after {
   font-family: "icomoon";
   speak: none;
@@ -10773,13 +10772,13 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e602";
   margin-left: 0.45em;
 }
-/* line 112, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 113, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .delete {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }
-/* line 115, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 116, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .content:before {
   font-size: 12px;
   line-height: 17.4px;
@@ -10792,84 +10791,84 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 0.39em;
   left: 0.6em;
 }
-/* line 123, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 124, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(1) .content:before {
   content: "0";
 }
-/* line 125, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 126, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(2) .content:before {
   content: "1";
 }
-/* line 127, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 128, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(3) .content:before {
   content: "2";
 }
-/* line 129, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 130, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(4) .content:before {
   content: "3";
 }
-/* line 131, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 132, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(5) .content:before {
   content: "4";
 }
-/* line 133, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 134, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(6) .content:before {
   content: "5";
 }
-/* line 135, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 136, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(7) .content:before {
   content: "6";
 }
-/* line 137, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 138, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(8) .content:before {
   content: "7";
 }
-/* line 139, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 140, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(9) .content:before {
   content: "8";
 }
-/* line 141, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 142, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(10) .content:before {
   content: "9";
 }
-/* line 143, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 144, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(11) .content:before {
   content: "10";
 }
-/* line 145, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 146, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(12) .content:before {
   content: "11";
 }
-/* line 147, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 148, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(13) .content:before {
   content: "12";
 }
-/* line 149, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 150, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(14) .content:before {
   content: "13";
 }
-/* line 151, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 152, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(15) .content:before {
   content: "14";
 }
-/* line 153, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 154, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(16) .content:before {
   content: "15";
 }
-/* line 155, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 156, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(17) .content:before {
   content: "16";
 }
-/* line 157, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 158, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(18) .content:before {
   content: "17";
 }
-/* line 160, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 161, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-step-description {
   margin-top: 3.5px;
   margin-top: 0.35rem;
 }
-/* line 163, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 164, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .description.field-collection-description,
 .node-type-walkthrough .node-walkthrough .action-links-field-collection-add {
   font: 0/0 a;
@@ -10877,14 +10876,14 @@ input.pure-input-rounded, .pure-input-rounded {
   color: transparent;
   display: none;
 }
-/* line 168, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 169, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline,
 .node-type-walkthrough .node-walkthrough .links.inline li {
   margin: 0;
   padding: 0;
   display: inline-block;
 }
-/* line 173, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 174, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a {
   font-size: 19px;
@@ -10963,14 +10962,14 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 182, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 183, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a:hover, .node-type-walkthrough .node-walkthrough .links.inline a:active,
 .node-type-walkthrough .node-walkthrough .links.inline li a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline li a:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 187, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 188, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a:before,
 .node-type-walkthrough .node-walkthrough .links.inline li a:before {
   font-family: "icomoon";
@@ -10988,11 +10987,11 @@ input.pure-input-rounded, .pure-input-rounded {
   display: inline-block;
   margin-right: 0.5em;
 }
-/* line 193, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 194, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline {
   float: right;
 }
-/* line 196, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough.sass */
+/* line 197, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline li.flag-walkthrough_broken a {
   font-size: 5.5px;
   line-height: 7.975px;
@@ -11000,12 +10999,12 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 0.7975rem;
 }
 
-/* line 4, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 4, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough #page-title,
 .page-node-edit.node-type-walkthrough #page-title {
   margin-bottom: 1em;
 }
-/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 8, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-body-und-0-format,
 .page-node-add-walkthrough .row.l-main .field-edit-link,
 .page-node-add-walkthrough .row.l-main #field-raw-input-add-more-wrapper,
@@ -11034,27 +11033,27 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-step-name {
   display: none;
 }
-/* line 23, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 23, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .form-select,
 .page-node-edit.node-type-walkthrough .row.l-main .form-select {
   padding: 3px !important;
 }
-/* line 27, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 27, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs checkbox,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs checkbox {
   margin: 0.5em 0 0 0;
 }
-/* line 30, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 30, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs .description,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .description {
   display: none;
 }
-/* line 33, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 33, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs .vertical-tabs-panes,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .vertical-tabs-panes {
   padding-top: 1em;
 }
-/* line 36, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 36, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs .vertical-tabs-list,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .vertical-tabs-list {
   font-size: 7.5px;
@@ -11062,7 +11061,7 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.75rem;
   line-height: 1.0875rem;
 }
-/* line 39, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 39, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs label,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs label {
   width: 55%;
@@ -11071,12 +11070,12 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.75rem;
   line-height: 1.0875rem;
 }
-/* line 43, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 43, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters {
   margin-left: 24%;
 }
-/* line 46, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 46, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters tbody,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters tbody {
   -webkit-border-radius: 0.2em;
@@ -11087,12 +11086,12 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0.75rem 0.5rem;
   background-color: #f6f6f6;
 }
-/* line 51, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 51, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters label,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters label {
   width: 100%;
 }
-/* line 54, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 54, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .description,
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .form-submit,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters .description,
@@ -11102,19 +11101,19 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.7rem;
   line-height: 1.015rem;
 }
-/* line 58, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 58, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .description,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters .description {
   margin: 8.5px 0 3.5px 0;
   margin: 0.85rem 0 0.35rem 0;
 }
-/* line 62, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 62, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-parameters-add-more-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main #field-parameters-add-more-wrapper {
   margin: 10px 0;
   margin: 1rem 0;
 }
-/* line 65, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 65, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .form-item-title,
 .page-node-add-walkthrough .row.l-main .form-item-body-und-0-value,
 .page-node-edit.node-type-walkthrough .row.l-main .form-item-title,
@@ -11141,7 +11140,7 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main .form-item-body-und-0-value:after {
   clear: both;
 }
-/* line 70, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 70, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main label,
 .page-node-edit.node-type-walkthrough .row.l-main label {
   font-size: 10px;
@@ -11155,7 +11154,7 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 79, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 79, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-title,
 .page-node-add-walkthrough .row.l-main #edit-body-und-0-value,
 .page-node-add-walkthrough .row.l-main .grippie,
@@ -11166,7 +11165,7 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 76%;
   margin: 0;
 }
-/* line 86, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 86, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set {
   *zoom: 1;
@@ -11183,41 +11182,47 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set:after {
   clear: both;
 }
-/* line 88, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 88, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .le,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le {
   float: left;
   float: left;
   width: 20%;
 }
-/* line 93, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main #ad-set .le .button,
-.page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .button {
+/* line 93, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main #ad-set .le .button, .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main #ad-set .le button,
+.page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .button,
+.page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-state-default,
+.page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button,
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le button {
   margin-top: 1.33em;
 }
-/* line 96, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 96, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .ri,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .ri {
   float: right;
   width: 76%;
   display: none;
 }
-/* line 101, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 101, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-actions,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-actions {
   text-align: center;
 }
-/* line 104, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .back.button,
-.page-node-edit.node-type-walkthrough .row.l-main .back.button {
+/* line 104, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .back.button, .page-node-add-walkthrough .row.l-main .back.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main button.back,
+.page-node-edit.node-type-walkthrough .row.l-main .back.button,
+.page-node-edit.node-type-walkthrough .row.l-main .back.ui-state-default,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back,
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main button.back {
   margin-right: 0.25em;
 }
-/* line 107, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 107, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #wrapper-fg,
 .page-node-edit.node-type-walkthrough .row.l-main #wrapper-fg {
   padding-left: 24%;
 }
-/* line 110, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 110, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field_tags-col,
 .page-node-add-walkthrough .row.l-main #group-col,
 .page-node-edit.node-type-walkthrough .row.l-main #field_tags-col,
@@ -11228,65 +11233,65 @@ input.pure-input-rounded, .pure-input-rounded {
   box-sizing: border-box;
   float: left;
 }
-/* line 116, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 116, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field_tags-col,
 .page-node-edit.node-type-walkthrough .row.l-main #field_tags-col {
   padding-right: 2%;
 }
-/* line 119, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 119, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #group-col,
 .page-node-edit.node-type-walkthrough .row.l-main #group-col {
   padding-left: 2%;
 }
-/* line 122, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 122, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-og-group-ref-und,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-og-group-ref-und {
   padding: 0;
 }
-/* line 127, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 127, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #og-group-ref-add-more-wrapper label,
 .page-node-edit.node-type-walkthrough .row.l-main #og-group-ref-add-more-wrapper label {
   width: 100%;
 }
-/* line 130, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 130, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default,
 .page-node-add-walkthrough .row.l-main #field-fc-steps-values,
 .page-node-edit.node-type-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default,
 .page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values {
   width: 100% !important;
 }
-/* line 134, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 134, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps {
   margin-top: 2em;
   margin-bottom: 2em;
 }
-/* line 139, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 139, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container label,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container label {
   width: 45%;
 }
-/* line 142, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 142, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .form-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .form-wrapper {
   margin-bottom: 4.5px;
   margin-bottom: 0.45rem;
 }
-/* line 145, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 145, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .field-add-more-submit,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .field-add-more-submit {
   font-size: 75%;
   font-style: italic;
   margin-left: 4.3em;
 }
-/* line 150, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 150, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main table,
 .page-node-edit.node-type-walkthrough .row.l-main table {
   border: 0;
   width: 100%;
   background: transparent;
 }
-/* line 155, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 155, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main table tr.even,
 .page-node-add-walkthrough .row.l-main table tr.alt,
 .page-node-add-walkthrough .row.l-main table tr:nth-of-type(even),
@@ -11295,20 +11300,20 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main table tr:nth-of-type(even) {
   background: transparent;
 }
-/* line 160, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 160, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle {
   margin: 0;
   padding: 0;
   width: 30px;
 }
-/* line 164, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 164, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle:hover:after,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle:hover:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 167, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 167, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle:after,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=65);
@@ -11332,20 +11337,20 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e607";
   display: block;
 }
-/* line 177, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 177, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle .handle,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle .handle {
   margin: 0;
   padding: 0;
   background: transparent;
 }
-/* line 182, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 182, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-fc-steps-values .grippie,
 .page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values .grippie {
   width: 100%;
   float: none;
 }
-/* line 187, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 187, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container {
   margin: 0 5px 10px 5px;
@@ -11361,7 +11366,7 @@ input.pure-input-rounded, .pure-input-rounded {
   position: relative;
   display: none;
 }
-/* line 195, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 195, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button {
   font-size: 7px;
@@ -11372,36 +11377,42 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 10px;
   right: 10px;
 }
-/* line 201, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 201, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend {
   display: none;
 }
-/* line 205, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button,
-.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button {
+/* line 205, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title,
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit button.step-title {
   margin: 0;
   width: 100%;
   display: block;
   height: 29px;
   overflow: hidden;
 }
-/* line 212, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span,
-.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span {
+/* line 212, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title span,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span,
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit button.step-title span {
   font-weight: bold;
   display: inline-block;
 }
-/* line 216, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 216, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .le,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .le {
   float: left;
   width: 46%;
   margin-right: 4%;
 }
-/* line 221, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-edit.sass */
+/* line 221, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ri,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ri {
   float: right;
@@ -11409,15 +11420,15 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 4%;
 }
 
-/* line 3, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 3, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form > div {
   text-align: center;
 }
-/* line 6, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 6, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form > div * {
   text-align: left;
 }
-/* line 9, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 9, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .form-wrapper > div {
   margin-bottom: 5px;
   margin-bottom: 0.5rem;
@@ -11432,7 +11443,7 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .form-wrapper > div:after {
   clear: both;
 }
-/* line 13, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 13, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-highlight,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-description,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .field-name-field-fc-step-name,
@@ -11440,12 +11451,12 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0 7.5px;
   padding: 0 0.75rem;
 }
-/* line 19, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 19, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form #field-fc-step-highlight-add-more-wrapper {
   margin-bottom: 20px;
   margin-bottom: 2rem;
 }
-/* line 22, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 22, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .has-tip.top,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .field-edit-link,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form #edit-body-und-0-format {
@@ -11459,7 +11470,7 @@ input.pure-input-rounded, .pure-input-rounded {
   -moz-appearance: separator;
   -webkit-appearance: none;
 }
-/* line 28, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 28, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form label {
   font-size: 10px;
   line-height: 14.5px;
@@ -11472,14 +11483,14 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 37, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 37, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form label,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 41, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 41, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form label {
   font-size: 10px;
   line-height: 14.5px;
@@ -11492,7 +11503,7 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 50, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 50, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form input,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form textarea,
 .page-field-collection-field-fc-steps-edit #field-collection-item-form .grippie {
@@ -11500,22 +11511,22 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 76%;
   margin: 0;
 }
-/* line 57, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 57, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form #edit-field-fc-step-show-title-und {
   width: 10%;
   margin-right: 66%;
   margin-top: 0.5em;
 }
-/* line 62, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 62, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium {
   margin: 10px 0;
   margin: 1rem 0;
 }
-/* line 65, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 65, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium > legend {
   border: 0;
 }
-/* line 68, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 68, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-legend {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -11525,11 +11536,11 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 1.74rem;
   text-align: left;
 }
-/* line 73, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 73, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-legend a {
   color: #4d4d4d;
 }
-/* line 76, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 76, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper {
   padding: 4.5px 7.5px;
   padding: 0.45rem 0.75rem;
@@ -11543,7 +11554,7 @@ input.pure-input-rounded, .pure-input-rounded {
   background-color: #f6f6f6;
   position: relative;
 }
-/* line 84, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 84, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div {
   margin-bottom: 5px;
   margin-bottom: 0.5rem;
@@ -11558,15 +11569,15 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div > div > div:after {
   clear: both;
 }
-/* line 88, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 88, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .group-fc-step-selenium .fieldset-wrapper > div:last-of-type > div > div {
   margin: 0;
 }
-/* line 91, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 91, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #edit-field-fc-step-name {
   display: none;
 }
-/* line 94, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
+/* line 94, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .form-submit:after {
   font-family: "icomoon";
   speak: none;
@@ -11579,20 +11590,20 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e017";
   margin-left: 0.5em;
 }
-/* line 99, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_node-walkthrough-step-edit.sass */
-.page-field-collection-field-fc-steps-edit .back.button {
+/* line 99, ../sass/page/_node-walkthrough-step-edit.sass */
+.page-field-collection-field-fc-steps-edit .back.button, .page-field-collection-field-fc-steps-edit .back.ui-state-default, .page-field-collection-field-fc-steps-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-field-collection-field-fc-steps-edit button.back {
   margin-right: 0.75em;
 }
 
-/* line 2, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_page-walkthrough-import.sass */
+/* line 2, ../sass/page/_page-walkthrough-import.sass */
 .page-walkthrough-import .description {
   display: none;
 }
-/* line 5, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_page-walkthrough-import.sass */
+/* line 5, ../sass/page/_page-walkthrough-import.sass */
 .page-walkthrough-import textarea {
   min-height: 350px;
 }
-/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/page/_page-walkthrough-import.sass */
+/* line 8, ../sass/page/_page-walkthrough-import.sass */
 .page-walkthrough-import .form-textarea-wrapper {
   margin-bottom: 2em;
 }
@@ -11680,4 +11691,106 @@ input.pure-input-rounded, .pure-input-rounded {
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
   border-radius: 2px;
+}
+
+/* line 1, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+/* line 5, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-titlebar {
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  margin: 0 -5px;
+  margin: 0 -0.5rem;
+  padding: 5px 10px;
+  padding: 0.5rem 1rem;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #e5e4e4;
+}
+/* line 12, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-titlebar .ui-dialog-title {
+  font-size: 10px;
+  line-height: 14.5px;
+  font-size: 1rem;
+  line-height: 1.45rem;
+}
+/* line 15, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-widget-content,
+.walkthrough-start-dialog .ui-widget-content p {
+  font-size: 7.5px;
+  line-height: 10.875px;
+  font-size: 0.75rem;
+  line-height: 1.0875rem;
+}
+/* line 19, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-widget-content label,
+.walkthrough-start-dialog .ui-widget-content p label {
+  margin-top: 1em;
+  margin-bottom: 0.1em;
+}
+/* line 23, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-widget-content label:first-letter,
+.walkthrough-start-dialog .ui-widget-content p label:first-letter {
+  text-transform: uppercase;
+}
+/* line 27, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog #domain {
+  margin: 0;
+}
+/* line 30, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-buttonpane {
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  margin: 0 -5px;
+  margin: 0 -0.5rem;
+  padding: 5px 10px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background-color: #f6f6f6;
+  border-top: 1px solid #e5e4e4;
+}
+/* line 38, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  vertical-align: middle;
+  float: none;
+  margin: 0 auto;
+}
+/* line 43, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
+  margin: 0;
+  padding: 0;
+  padding: 4.5px 8.5px 3.5px;
+  padding: 0.45rem 0.85rem 0.35rem;
+}
+/* line 48, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button .ui-button-text {
+  margin: 0;
+  padding: 0;
+  font-size: 7px;
+  line-height: 10.15px;
+  font-size: 0.7rem;
+  line-height: 1.015rem;
+}
+/* line 52, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type {
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  -ms-border-radius: 0.35em;
+  -o-border-radius: 0.35em;
+  border-radius: 0.35em;
+  padding: 4.5px 8.5px 3.5px;
+  padding: 0.45rem 0.85rem 0.35rem;
+  margin-right: 0.5em;
+}
+/* line 58, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:active {
+  color: white;
 }
