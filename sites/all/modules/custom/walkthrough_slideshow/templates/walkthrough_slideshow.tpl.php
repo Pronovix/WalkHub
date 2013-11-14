@@ -28,11 +28,9 @@
   <script type="text/javascript">
     jQuery(function ($) {
       $(document).ready(function () {
-        var timer = setInterval(hideOverlays);
-
         // Toggle Source Code
         $('#share').click(function(){
-          $('#embed-code').toggle( "100" );
+          $('#embed-code').toggle();
           return false;
         });
 
@@ -43,11 +41,11 @@
 
         // Show overlays.
         function displayOverlays() {
-          $('#title-bar, #controls-wrapper').removeClass('hide').fadeIn();
+          $('#title-bar, #controls-wrapper').removeClass('hide').fadeIn(0);
         }
 
         // Hover on overlays.
-        function cursorOver(timer) {
+        function cursorOut(timer) {
           clearInterval(timer);
           if ($('#title-bar').hasClass('hide') && $('#controls-wrapper').hasClass('hide')) {
             displayOverlays();
@@ -55,14 +53,12 @@
         }
 
         // Out from overlay.
-        function cursorOut() {
-          timer = setInterval(hideOverlays);
+        function cursorOver() {
+          timer = setInterval(hideOverlays, 1000);
         }
 
         // Hover.
-        $('#hidden-controls-wrapper, #hidden-title-bar, #title-bar, #controls-wrapper').hover(function () {
-          cursorOver(timer);
-        }, cursorOut);
+        $('#hidden-center').hover(cursorOver, function () {cursorOut(timer);});
 
         // Full screen.
         $('#fullscreen').click(function () {
