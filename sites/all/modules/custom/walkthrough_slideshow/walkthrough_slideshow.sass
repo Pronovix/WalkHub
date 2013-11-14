@@ -1,4 +1,11 @@
 /* 	Supersized - Fullscreen Slideshow jQuery Plugin 	Version : 3.2.7 	Site	: www.buildinternet.com/project/supersized  	Theme 	: Shutter 1.2 	Author	: Sam Dunn 	Company : One Mighty Roar (www.onemightyroar.com) 	License : MIT License / GPL License
+
+@import 'compass/support'
+@import 'compass/utilities/general/clearfix'
+@import 'compass/utilities/sprites'
+@import 'compass/css3'
+@import 'compass/layout'
+
 @font-face
   font-family: "icomoon"
   src: url("fonts/icomoon.eot")
@@ -22,11 +29,23 @@
 .icon-share:before
   content: "\e609"
 
-.icon-caret-up:before
+.icon-facebook-sign:before
   content: "\e602"
 
-.icon-caret-down:before
+.icon-google-plus-sign:before
   content: "\e603"
+
+.icon-linkedin-sign:before
+  content: "\e604"
+
+.icon-twitter-sign:before
+  content: "\e605"
+
+.icon-pinterest-sign:before
+  content: "\e60b"
+
+.icon-tumblr-sign:before
+  content: "\e60c"
 
 .icon-angle-left:before
   content: "\e600"
@@ -46,12 +65,6 @@
 .icon-play-circle:before
   content: "\e60a"
 
-.icon-last:before
-  content: "\e604"
-
-.icon-first:before
-  content: "\e605"
-
 .cf
   &:before
     content: " "
@@ -62,11 +75,17 @@
     clear: both
   *zoom: 1
 
+
+h4
+  margin-top: .5em
+  font-size: 10px
+  margin-bottom: 0.2em
+
 /* For IE 6/7 only Include this rule to trigger hasLayout and contain floats.
 
-  *
+*
   margin: 0
-    padding: 0
+  padding: 0
 
 body
   background: #111111
@@ -143,7 +162,8 @@ img
 body
   font-family: Tahoma, Geneva, sans-serif
   font-size: 10px
-  overflow: hidden
+  overflow-x: hidden
+  height: auto
 
 #controls-wrapper
   margin: 0 auto
@@ -352,7 +372,6 @@ ul#slide-list
 
     a
       color: white
-      text-decoration: none
 
   .start-button
     margin: 14px 10px 0 0
@@ -406,36 +425,62 @@ ul#slide-list
     -moz-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15)
     box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15)
 
-#hidden-title-bar
-  position: absolute
-  top: 0
-  width: 100%
-  height: 82px
-
-#hidden-controls-wrapper
-  position: absolute
-  bottom: 0
-  width: 100%
-  height: 42px
-
 /* tEmbed code styling
+.center-cont
+  width: 100%
+  display: table-cell
+  vertical-align: middle
 
 #embed-code
   -webkit-box-sizing: border-box /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box    /* Firefox, other Gecko */
   box-sizing: border-box
-  position: absolute
-  right: 43px
-  bottom: 42px
+  margin: 0 auto
   padding: 5px
   width: 215px
   font-size: 17px
   color: #fff
   background: rgba(#000, .75)
   display: none
+  text-align: left
+  +transition(all .25s ease-in)
+
+  &:hover
+    background: #000
 
   .form-textarea
     width: 94% !important
     -webkit-box-sizing: border-box /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box    /* Firefox, other Gecko */
     box-sizing: border-box
+    +border-radius(3px)
+    font-size: 10px
+    margin: 0 .25em
+    max-height: 200px
+
+  label
+    margin-top: 0.5em
+    font-size: 10px
+    margin-bottom: 0.2em
+    font-weight: bold
+
+.share a
+  color: rgba(#FFF, .75)
+  text-decoration: none
+  +transition(all .25s ease-in)
+
+  &:hover
+    color: #FFF
+
+#hidden-center
+  position: absolute
+  display: block
+  bottom: 42px
+  top: 65px
+  left: 1px
+  right: 1px
+  width: 100%
+  margin: 0 auto
+  height: auto
+  text-align: center
+  vertical-align: middle

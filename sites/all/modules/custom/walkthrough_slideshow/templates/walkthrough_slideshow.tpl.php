@@ -28,11 +28,9 @@
   <script type="text/javascript">
     jQuery(function ($) {
       $(document).ready(function () {
-        var timer = setInterval(hideOverlays);
-
         // Toggle Source Code
         $('#share').click(function(){
-          $('#embed-code').toggle( "200" );
+          $('#embed-code').toggle();
           return false;
         });
 
@@ -43,11 +41,11 @@
 
         // Show overlays.
         function displayOverlays() {
-          $('#title-bar, #controls-wrapper').removeClass('hide').fadeIn();
+          $('#title-bar, #controls-wrapper').removeClass('hide').fadeIn(0);
         }
 
         // Hover on overlays.
-        function cursorOver(timer) {
+        function cursorOut(timer) {
           clearInterval(timer);
           if ($('#title-bar').hasClass('hide') && $('#controls-wrapper').hasClass('hide')) {
             displayOverlays();
@@ -55,14 +53,12 @@
         }
 
         // Out from overlay.
-        function cursorOut() {
-          timer = setInterval(hideOverlays);
+        function cursorOver() {
+          timer = setInterval(hideOverlays, 1000);
         }
 
         // Hover.
-        $('#hidden-controls-wrapper, #hidden-title-bar, #title-bar, #controls-wrapper').hover(function () {
-          cursorOver(timer);
-        }, cursorOut);
+        $('#hidden-center').hover(cursorOver, function () {cursorOut(timer);});
 
         // Full screen.
         $('#fullscreen').click(function () {
@@ -125,7 +121,6 @@
 </div>
 
 <!--Title Bar-->
-<div id="hidden-title-bar"></div>
 <div id="title-bar" class="cf">
   <div class="title float-left">
     <h2><?php echo $link; ?></h2>
@@ -138,14 +133,34 @@
   </div>
 
 </div>
-
+<div id="hidden-center">
 <!--Embed code-->
-<div id="embed-code">
-  <?php echo $embed_code; ?>
+  <div id="embed-code">
+    <?php echo $embed_code; ?>
+    <div class="share">
+      <h4><?php echo t('Share this Walkthrough:'); ?></h4>
+      <a href="https://plus.google.com/share?url=<?php echo $start_url; ?>" target="_blank" alt="Share on Google Plus" rel="nofollow">
+        <i class="icon-google-plus-sign"></i>
+      </a>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $start_url; ?>" target="_blank" alt="Share on Linkedin" rel="nofollow">
+        <i class="icon-linkedin-sign"></i>
+      </a>
+      <a href="http://www.facebook.com/share.php?u=<?php echo $start_url; ?>" target="_blank" alt="Share on Facebook" rel="nofollow">
+        <i class="icon-facebook-sign"></i>
+      </a>
+      <a href="http://twitter.com/home?status=<?php echo $start_url; ?>" target="_blank" alt="Share on Twitter" rel="nofollow">
+        <i class="icon-twitter-sign"></i>
+      </a>
+      <a href="http://pinterest.com/pin/create/button/?url=<?php echo $start_url; ?>" alt="Share on Pinterest" target="_blank" rel="nofollow">
+        <i class="icon-pinterest-sign"></i>
+      </a>
+      <a href="http://www.tumblr.com/share?v=3&u=<?php echo $start_url; ?>" alt="Share on Tumblr" target="_blank" rel="nofollow">
+        <i class="icon-tumblr-sign"></i>
+      </a>
+    </div>
+  </div>
 </div>
-
 <!--Control Bar-->
-<div id="hidden-controls-wrapper"></div>
 <div id="controls-wrapper">
   <div id="controls" class="cf">
 
