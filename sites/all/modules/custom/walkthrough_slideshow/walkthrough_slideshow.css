@@ -123,10 +123,6 @@ ul#slide-list li a:hover { background-position: 0 -12px; cursor: pointer; }
 #startWT:hover { background-color: #4f96d2; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4F96D2', endColorstr='#FF0467A0'); background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4f96d2), color-stop(100%, #0467a0)); background-image: -webkit-linear-gradient(top, #4f96d2 0%, #0467a0 100%); background-image: -moz-linear-gradient(top, #4f96d2 0%, #0467a0 100%); background-image: -o-linear-gradient(top, #4f96d2 0%, #0467a0 100%); background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%); }
 #startWT:active { background: #035787; -webkit-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15); -moz-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15); box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15); }
 
-#hidden-title-bar { position: absolute; top: 0; width: 100%; height: 82px; }
-
-#hidden-controls-wrapper { position: absolute; bottom: 0; left: 0; width: 100%; height: 42px; }
-
 /* tEmbed code styling */
 .center-cont { width: 100%; display: table-cell; vertical-align: middle; padding-top: 8em; }
 
@@ -136,3 +132,5 @@ ul#slide-list li a:hover { background-position: 0 -12px; cursor: pointer; }
 
 .share a { color: rgba(255, 255, 255, 0.75); text-decoration: none; -webkit-transition: all 0.25s ease-in; -moz-transition: all 0.25s ease-in; -o-transition: all 0.25s ease-in; transition: all 0.25s ease-in; }
 .share a:hover { color: white; }
+
+#hidden-center { position: absolute; bottom: 42px; top: 65px; left: 1px; right: 1px; width: auto; margin: 0 auto; height: auto; }

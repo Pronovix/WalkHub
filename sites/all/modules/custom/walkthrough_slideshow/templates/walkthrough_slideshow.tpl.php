@@ -125,7 +125,6 @@
 </div>
 
 <!--Title Bar-->
-<div id="hidden-title-bar"></div>
 <div id="title-bar" class="cf">
   <div class="title float-left">
     <h2><?php echo $link; ?></h2>
@@ -138,7 +137,7 @@
   </div>
 
 </div>
-
+<div id="hidden-center">
 <!--Embed code-->
 <div class="center-cont">
   <div id="embed-code">
@@ -166,9 +165,8 @@
     </div>
   </div>
 </div>
-
+</div>
 <!--Control Bar-->
-<div id="hidden-controls-wrapper"></div>
 <div id="controls-wrapper">
   <div id="controls" class="cf">
 
