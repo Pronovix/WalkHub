@@ -5,9 +5,17 @@
 
 .icon-share:before { content: "\e609"; }
 
-.icon-caret-up:before { content: "\e602"; }
+.icon-facebook-sign:before { content: "\e602"; }
 
-.icon-caret-down:before { content: "\e603"; }
+.icon-google-plus-sign:before { content: "\e603"; }
+
+.icon-linkedin-sign:before { content: "\e604"; }
+
+.icon-twitter-sign:before { content: "\e605"; }
+
+.icon-pinterest-sign:before { content: "\e60b"; }
+
+.icon-tumblr-sign:before { content: "\e60c"; }
 
 .icon-angle-left:before { content: "\e600"; }
 
@@ -21,16 +29,16 @@
 
 .icon-play-circle:before { content: "\e60a"; }
 
-.icon-last:before { content: "\e604"; }
-
-.icon-first:before { content: "\e605"; }
-
 .cf { *zoom: 1; }
 .cf:before { content: " "; display: table; }
 .cf:after { content: " "; display: table; clear: both; }
 
-/* For IE 6/7 only Include this rule to trigger hasLayout and contain floats.   margin: 0 padding: 0 */
-body { background: #111111; height: 100%; }
+h4 { margin-top: 0.5em; font-size: 10px; margin-bottom: 0.2em; }
+
+/* For IE 6/7 only Include this rule to trigger hasLayout and contain floats. */
+* { margin: 0; padding: 0; }
+
+body { background: #111111; height: 100%; display: table; }
 
 img { border: none; }
 
@@ -51,7 +59,7 @@ img { border: none; }
 /*Speed */
 /*Quality */
 /* Controls Bar ---------------------------- */
-body { font-family: Tahoma, Geneva, sans-serif; font-size: 10px; overflow: hidden; }
+body { font-family: Tahoma, Geneva, sans-serif; font-size: 10px; overflow-x: hidden; height: auto; }
 
 #controls-wrapper { margin: 0 auto; height: 42px; width: 100%; bottom: 0px; left: 0; z-index: 4; position: fixed; border-top: 1px solid black; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#D93F3F3F', endColorstr='#E6000000'); background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, rgba(63, 63, 63, 0.85)), color-stop(100%, rgba(0, 0, 0, 0.9))); background-image: -webkit-linear-gradient(top, rgba(63, 63, 63, 0.85) 1%, rgba(0, 0, 0, 0.9) 100%); background-image: -moz-linear-gradient(top, rgba(63, 63, 63, 0.85) 1%, rgba(0, 0, 0, 0.9) 100%); background-image: -o-linear-gradient(top, rgba(63, 63, 63, 0.85) 1%, rgba(0, 0, 0, 0.9) 100%); background-image: linear-gradient(top, rgba(63, 63, 63, 0.85) 1%, rgba(0, 0, 0, 0.9) 100%); }
 
@@ -120,5 +128,11 @@ ul#slide-list li a:hover { background-position: 0 -12px; cursor: pointer; }
 #hidden-controls-wrapper { position: absolute; bottom: 0; width: 100%; height: 42px; }
 
 /* tEmbed code styling */
-#embed-code { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: absolute; right: 43px; bottom: 42px; padding: 5px; width: 215px; font-size: 17px; color: white; background: rgba(0, 0, 0, 0.75); display: none; }
-#embed-code .form-textarea { width: 94% !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.center-cont { width: 100%; display: table-cell; vertical-align: middle; padding-top: 8em; }
+
+#embed-code { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0 auto; min-height: 150px; padding: 5px; width: 215px; font-size: 17px; color: white; background: rgba(0, 0, 0, 0.75); }
+#embed-code .form-textarea { width: 94% !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; font-size: 10px; margin: 0 0.25em; }
+#embed-code label { margin-top: 0.5em; font-size: 10px; margin-bottom: 0.2em; }
+
+.share a { color: rgba(255, 255, 255, 0.75); text-decoration: none; -webkit-transition: all 0.25s ease-in; -moz-transition: all 0.25s ease-in; -o-transition: all 0.25s ease-in; transition: all 0.25s ease-in; }
+.share a:hover { color: white; }
