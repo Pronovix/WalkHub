@@ -32,7 +32,7 @@
 
         // Toggle Source Code
         $('#share').click(function(){
-          $('#embed-code').toggle( "200" );
+          $('#embed-code').toggle( "100" );
           return false;
         });
 
