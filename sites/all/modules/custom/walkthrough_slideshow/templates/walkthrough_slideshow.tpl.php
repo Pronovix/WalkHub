@@ -11,11 +11,9 @@
 <head>
   <title><?php echo t('Walkthrough Slideshow'); ?></title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-
   <link rel="stylesheet"
         href="/<?php echo drupal_get_path('module', 'walkthrough_slideshow'); ?>/walkthrough_slideshow.css"
         type="text/css" media="screen"/>
-
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <script type="text/javascript" src="/<?php echo libraries_get_path('bigscreen'); ?>/bigscreen.min.js"></script>
   <script type="text/javascript"
@@ -24,7 +22,6 @@
           src="/<?php echo libraries_get_path('supersized'); ?>/slideshow/js/supersized.3.2.7.min.js"></script>
   <script type="text/javascript"
           src="/<?php echo drupal_get_path('module', 'walkthrough_slideshow'); ?>/js/supersized.shuttered.js"></script>
-
   <script type="text/javascript">
     jQuery(function ($) {
       $(document).ready(function () {
@@ -116,31 +113,24 @@
     });
   </script>
 </head>
-
 <body>
-
 <!--Thumbnail Navigation-->
 <div id="prevthumb"></div>
 <div id="nextthumb"></div>
-
-
 <div id="thumb-tray" class="load-item">
   <div id="thumb-back"></div>
   <div id="thumb-forward"></div>
 </div>
-
 <!--Title Bar-->
 <div id="title-bar" class="cf">
   <div class="title float-left">
     <h2><?php echo $link; ?></h2>
-
   </div>
   <div class="start-button float-right">
     <a id="startWT" href="<?php echo $start_url; ?>" target="_blank">
       <?php echo t('Start Walkthrough'); ?><i class="icon-play-circle"></i>
     </a>
   </div>
-
 </div>
 <div id="hidden-center">
 <!--Embed code-->
@@ -173,11 +163,9 @@
 <!--Control Bar-->
 <div id="controls-wrapper">
   <div id="controls" class="cf">
-
     <a id="walkhub" class="float-left" href="http://walkhub.net/" target="_blank">
       <?php t('Walkhub | Special Service'); ?>
     </a>
-
     <!--Arrow Navigation-->
     <div id="navigation-buttons">
       <a id="firstslide" class="load-item">
@@ -192,9 +180,7 @@
       <a id="lastslide" class="load-item">
         <i class="icon-double-angle-right"></i>
       </a>
-
     </div>
-
     <div class="button-wrapper float-right">
       <a id="share">
         <i class="icon-share"></i>
@@ -205,6 +191,5 @@
     </div>
   </div>
 </div>
-
 </body>
 </html>
