@@ -31,8 +31,17 @@
         // Toggle Source Code
         $('#share').click(function(){
           $('#embed-code').toggle();
+          $('#supersized').toggleClass("faded").fadeIn(0);
           return false;
         });
+
+        // Toggle Source Code
+        $('#close').click(function(){
+          $('#embed-code').hide();
+          $('#supersized').removeClass("faded");
+          return false;
+        });
+
 
         // Hide overlays.
         function hideOverlays() {
@@ -136,6 +145,7 @@
 <div id="hidden-center">
 <!--Embed code-->
   <div id="embed-code">
+    <button id="close"><i class="icon-remove-sign"></i></button>
     <?php echo $embed_code; ?>
     <div class="share">
       <h4><?php echo t('Share this Walkthrough:'); ?></h4>
