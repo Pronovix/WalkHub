@@ -66,38 +66,53 @@
     },
 
     stepHideShow : function(context, settings) {
-      $('.step-title.button', context).click(function() {
+      $('.step-title.button', context).once(function() {
         var $this = $(this);
         var $container = $this.parent();
-        $('.walkthrough-step-container', $container).toggle( "200" );
+        $this.click(function() {
+          $('.walkthrough-step-container', $container).toggle( "200" );
           return false;
-        });
+          });
+        })
     },
 
     callopse : function(context, settings) {
-      $('#callopse', context).click(function(){
-        $('.walkthrough-step-container', context).toggle( "200" );
-        return false;
-      });
+      $('#callopse', context).once(function() {
+        var $this = $(this);
+        var $container = $this.parent();
+        $this.click(function() {
+          $('.walkthrough-step-container', $container).toggle( "200" );
+          return false;
+        });
+      })
     },
 
     parameters : function(context, settings) {
-      $('#parameters', context).click(function(){
-        $('#edit-field-parameters', context).toggle( "200" );
-        return false;
-      });
+      $('#parameters', context).once(function() {
+        var $this = $(this);
+        $this.click(function() {
+          $('#edit-field-parameters', context).toggle( "200" );
+          return false;
+        });
+      })
     },
 
+
     checkBox : function(context, settings) {
-      $('.field-name-field-fc-step-show-title input', context).click(function(){
-        if( $(this).is(':checked')) {
-          $(".field-name-field-fc-step-name", context).show(200);
-        }
-        else {
-          $(".field-name-field-fc-step-name", context).hide(200);
-        }
-      });
+      $('.field-name-field-fc-step-show-title input', context).once(function() {
+        var $this = $(this);
+        var $container = $this.closest(".walkthrough-step-container", context);
+        $this.click(function() {
+          if($this.is(':checked')) {
+            $(".field-name-field-fc-step-name", $container).show(200);
+          }
+          else {
+            $(".field-name-field-fc-step-name", $container).hide(200);
+          }
+        });
+      })
     }
+
   }
 
 

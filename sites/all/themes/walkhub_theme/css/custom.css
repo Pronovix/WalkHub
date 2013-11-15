@@ -7028,16 +7028,16 @@ body {
   font-weight: 200;
 }
 
-/* line 53, ../sass/typo/_typography.sass */
+/* line 52, ../sass/typo/_typography.sass */
 .logged-in h1 {
-  margin-right: 11.2em;
+  margin-top: 1.75em;
 }
-/* line 56, ../sass/typo/_typography.sass */
+/* line 55, ../sass/typo/_typography.sass */
 .logged-in .main.columns {
   position: relative;
 }
 
-/* line 59, ../sass/typo/_typography.sass */
+/* line 58, ../sass/typo/_typography.sass */
 .button-group {
   font-size: 8px;
   line-height: 11.6px;
@@ -7047,7 +7047,7 @@ body {
   top: 0;
   right: 0.9375em;
 }
-/* line 66, ../sass/typo/_typography.sass */
+/* line 65, ../sass/typo/_typography.sass */
 .button-group li a {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
@@ -7123,29 +7123,29 @@ body {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 78, ../sass/typo/_typography.sass */
+/* line 77, ../sass/typo/_typography.sass */
 .button-group li a.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 81, ../sass/typo/_typography.sass */
+/* line 80, ../sass/typo/_typography.sass */
 .button-group li a:hover, .button-group li a:active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 87, ../sass/typo/_typography.sass */
+/* line 86, ../sass/typo/_typography.sass */
 .button-group li:last-of-type a {
   margin-right: 0;
 }
 
-/* line 91, ../sass/typo/_typography.sass */
+/* line 90, ../sass/typo/_typography.sass */
 .not-logged-in .button-group {
   position: static;
 }
 
-/* line 99, ../sass/typo/_typography.sass */
+/* line 94, ../sass/typo/_typography.sass */
 button, .button, .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .btn {
@@ -7221,24 +7221,24 @@ button::-moz-focus-inner, .button::-moz-focus-inner, .ui-state-default::-moz-foc
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 108, ../sass/typo/_typography.sass */
+/* line 103, ../sass/typo/_typography.sass */
 button i, .button i, .ui-state-default i,
 .ui-widget-content .ui-state-default i,
 .ui-widget-header .ui-state-default i, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button i, .btn i {
   font-size: 80%;
 }
-/* line 111, ../sass/typo/_typography.sass */
+/* line 106, ../sass/typo/_typography.sass */
 button:hover, button:active, .button:hover, .ui-state-default:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover, .button:active, .ui-state-default:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active, .btn:hover, .btn:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 116, ../sass/typo/_typography.sass */
+/* line 111, ../sass/typo/_typography.sass */
 button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.small, .btn.small {
   font-size: 75%;
   font-style: italic;
 }
 
-/* line 121, ../sass/typo/_typography.sass */
+/* line 116, ../sass/typo/_typography.sass */
 .cta, .node-type-walkthrough .main.columns > .action-links li a, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type {
   font-size: 10px;
   line-height: 14.5px;
@@ -7271,7 +7271,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
-/* line 135, ../sass/typo/_typography.sass */
+/* line 130, ../sass/typo/_typography.sass */
 .cta:after, .node-type-walkthrough .main.columns > .action-links li a:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:after {
   font-family: "icomoon";
   speak: none;
@@ -7282,7 +7282,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
   -webkit-font-smoothing: antialiased;
   *margin-right: 0.3em;
 }
-/* line 138, ../sass/typo/_typography.sass */
+/* line 133, ../sass/typo/_typography.sass */
 .cta:hover, .node-type-walkthrough .main.columns > .action-links li a:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover:first-of-type {
   background-color: #4f96d2;
   *zoom: 1;
@@ -7293,7 +7293,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
   background-image: -o-linear-gradient(top, #4f96d2 0%, #0467a0 100%);
   background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%);
 }
-/* line 143, ../sass/typo/_typography.sass */
+/* line 138, ../sass/typo/_typography.sass */
 .cta:active, .node-type-walkthrough .main.columns > .action-links li a:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active:first-of-type {
   background: #035787;
   -webkit-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15);
@@ -7302,7 +7302,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
 }
 
 /* Typography resets */
-/* line 149, ../sass/typo/_typography.sass */
+/* line 144, ../sass/typo/_typography.sass */
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
   margin: 0;
   padding: 0;
@@ -7310,29 +7310,29 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 }
 
 /* Default Link Styles */
-/* line 155, ../sass/typo/_typography.sass */
+/* line 150, ../sass/typo/_typography.sass */
 a {
   text-decoration: none;
   line-height: inherit;
 }
-/* line 158, ../sass/typo/_typography.sass */
+/* line 153, ../sass/typo/_typography.sass */
 a:hover, a:focus {
   color: #2795b6;
 }
-/* line 161, ../sass/typo/_typography.sass */
+/* line 156, ../sass/typo/_typography.sass */
 a img {
   border: none;
 }
 
 /* Default paragraph styles */
-/* line 165, ../sass/typo/_typography.sass */
+/* line 160, ../sass/typo/_typography.sass */
 p {
   font-family: inherit;
   font-weight: normal;
   margin-bottom: 1.25em;
   text-rendering: optimizeLegibility;
 }
-/* line 171, ../sass/typo/_typography.sass */
+/* line 166, ../sass/typo/_typography.sass */
 p aside {
   font-size: 10px;
   line-height: 14.5px;
@@ -7342,7 +7342,7 @@ p aside {
 }
 
 /* Default header styles */
-/* line 176, ../sass/typo/_typography.sass */
+/* line 171, ../sass/typo/_typography.sass */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -7354,22 +7354,22 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2125em;
 }
 
-/* line 185, ../sass/typo/_typography.sass */
+/* line 180, ../sass/typo/_typography.sass */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 60%;
   color: #6f6f6f;
   line-height: 0;
 }
 
-/* line 190, ../sass/typo/_typography.sass */
+/* line 185, ../sass/typo/_typography.sass */
 h1 {
-  font-size: 17.5px;
-  line-height: 25.375px;
-  font-size: 1.75rem;
-  line-height: 2.5375rem;
+  font-size: 16.5px;
+  line-height: 23.925px;
+  font-size: 1.65rem;
+  line-height: 2.3925rem;
 }
 
-/* line 193, ../sass/typo/_typography.sass */
+/* line 188, ../sass/typo/_typography.sass */
 hr {
   border: solid #dddddd;
   border-width: 1px 0 0;
@@ -7379,25 +7379,25 @@ hr {
 }
 
 /* Helpful Typography Defaults */
-/* line 201, ../sass/typo/_typography.sass */
+/* line 196, ../sass/typo/_typography.sass */
 em, i {
   font-style: italic;
   line-height: inherit;
 }
 
-/* line 205, ../sass/typo/_typography.sass */
+/* line 200, ../sass/typo/_typography.sass */
 strong, b {
   font-weight: bold;
   line-height: inherit;
 }
 
-/* line 209, ../sass/typo/_typography.sass */
+/* line 204, ../sass/typo/_typography.sass */
 small {
   font-size: 60%;
   line-height: inherit;
 }
 
-/* line 213, ../sass/typo/_typography.sass */
+/* line 208, ../sass/typo/_typography.sass */
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
@@ -7405,69 +7405,69 @@ code {
 }
 
 /* Lists */
-/* line 219, ../sass/typo/_typography.sass */
+/* line 214, ../sass/typo/_typography.sass */
 ul, ol, dl {
   margin-bottom: 1.25em;
   list-style-position: outside;
   font-family: inherit;
 }
 
-/* line 224, ../sass/typo/_typography.sass */
+/* line 219, ../sass/typo/_typography.sass */
 ul, ol {
   margin-left: 0;
 }
 
 /* Unordered Lists */
-/* line 228, ../sass/typo/_typography.sass */
+/* line 223, ../sass/typo/_typography.sass */
 ul {
   /* Override nested font-size change */
 }
-/* line 230, ../sass/typo/_typography.sass */
+/* line 225, ../sass/typo/_typography.sass */
 ul li ul, ul li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
 }
-/* line 235, ../sass/typo/_typography.sass */
+/* line 230, ../sass/typo/_typography.sass */
 ul.square li ul, ul.circle li ul, ul.disc li ul {
   list-style: inherit;
 }
-/* line 237, ../sass/typo/_typography.sass */
+/* line 232, ../sass/typo/_typography.sass */
 ul.square {
   list-style-type: square;
 }
-/* line 239, ../sass/typo/_typography.sass */
+/* line 234, ../sass/typo/_typography.sass */
 ul.circle {
   list-style-type: circle;
 }
-/* line 241, ../sass/typo/_typography.sass */
+/* line 236, ../sass/typo/_typography.sass */
 ul.disc {
   list-style-type: disc;
 }
-/* line 243, ../sass/typo/_typography.sass */
+/* line 238, ../sass/typo/_typography.sass */
 ul.no-bullet {
   list-style: none;
 }
 
 /* Ordered Lists */
-/* line 248, ../sass/typo/_typography.sass */
+/* line 243, ../sass/typo/_typography.sass */
 ol li ul, ol li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
 }
 
 /* Definition Lists */
-/* line 255, ../sass/typo/_typography.sass */
+/* line 250, ../sass/typo/_typography.sass */
 dl dt {
   margin-bottom: 0.3em;
   font-weight: bold;
 }
-/* line 258, ../sass/typo/_typography.sass */
+/* line 253, ../sass/typo/_typography.sass */
 dl dd {
   margin-bottom: 0.75em;
 }
 
 /* Abbreviations */
-/* line 263, ../sass/typo/_typography.sass */
+/* line 258, ../sass/typo/_typography.sass */
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
@@ -7476,13 +7476,13 @@ abbr, acronym {
   cursor: help;
 }
 
-/* line 270, ../sass/typo/_typography.sass */
+/* line 265, ../sass/typo/_typography.sass */
 abbr {
   text-transform: none;
 }
 
 /* Blockquotes */
-/* line 274, ../sass/typo/_typography.sass */
+/* line 269, ../sass/typo/_typography.sass */
 blockquote {
   margin: 0 0 1.25em;
   padding: 0.5625em 1.25em 0 1.1875em;
@@ -7490,7 +7490,7 @@ blockquote {
   line-height: 1.6;
   color: #6f6f6f;
 }
-/* line 278, ../sass/typo/_typography.sass */
+/* line 273, ../sass/typo/_typography.sass */
 blockquote cite {
   display: block;
   font-size: 10px;
@@ -7499,38 +7499,38 @@ blockquote cite {
   line-height: 1.45rem;
   color: #555555;
 }
-/* line 282, ../sass/typo/_typography.sass */
+/* line 277, ../sass/typo/_typography.sass */
 blockquote cite:before {
   content: "\2014 \0020";
 }
-/* line 284, ../sass/typo/_typography.sass */
+/* line 279, ../sass/typo/_typography.sass */
 blockquote cite a {
   color: #555555;
 }
-/* line 286, ../sass/typo/_typography.sass */
+/* line 281, ../sass/typo/_typography.sass */
 blockquote cite a:visited {
   color: #555555;
 }
-/* line 290, ../sass/typo/_typography.sass */
+/* line 285, ../sass/typo/_typography.sass */
 blockquote p {
   line-height: 1.6;
   color: #6f6f6f;
 }
 
 /* Microformats */
-/* line 295, ../sass/typo/_typography.sass */
+/* line 290, ../sass/typo/_typography.sass */
 .vcard {
   display: inline-block;
   margin: 0 0 1.25em 0;
   border: 1px solid #dddddd;
   padding: 0.625em 0.75em;
 }
-/* line 300, ../sass/typo/_typography.sass */
+/* line 295, ../sass/typo/_typography.sass */
 .vcard li {
   margin: 0;
   display: block;
 }
-/* line 303, ../sass/typo/_typography.sass */
+/* line 298, ../sass/typo/_typography.sass */
 .vcard .fn {
   font-weight: bold;
   font-size: 10px;
@@ -7539,11 +7539,11 @@ blockquote p {
   line-height: 1.45rem;
 }
 
-/* line 308, ../sass/typo/_typography.sass */
+/* line 303, ../sass/typo/_typography.sass */
 .vevent .summary {
   font-weight: bold;
 }
-/* line 310, ../sass/typo/_typography.sass */
+/* line 305, ../sass/typo/_typography.sass */
 .vevent abbr {
   cursor: default;
   text-decoration: none;
@@ -7552,13 +7552,13 @@ blockquote p {
   padding: 0 0.0625em;
 }
 
-/* line 317, ../sass/typo/_typography.sass */
+/* line 312, ../sass/typo/_typography.sass */
 html.js input.form-autocomplete {
   background-image: url(../../../../../misc/throbber.gif);
   background-position: 100% 7px;
   background-repeat: no-repeat;
 }
-/* line 322, ../sass/typo/_typography.sass */
+/* line 317, ../sass/typo/_typography.sass */
 html.js input.form-autocomplete.throbbing {
   background-image: url(../../../../../misc/throbber.gif);
   background-position: 100% -13px;
