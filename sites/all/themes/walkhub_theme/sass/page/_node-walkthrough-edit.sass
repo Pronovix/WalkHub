@@ -136,8 +136,19 @@
       margin-bottom: 2em
 
       .walkthrough-step-container
+        .le,
+        .ri
+          & > div
+            +clearfix
+
+        .field-name-field-fc-step-show-title
+          label
+            width: 45%
+            float: left
+
         label
-          width: 45%
+          width: 100%
+          float: none
 
       .form-wrapper
         +px-rem(margin-bottom, .45)
