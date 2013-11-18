@@ -66,3 +66,18 @@ function walkthrough_global_update_7004() {
 function walkthrough_global_update_7005() {
   walkhub_features_revert(array('walkthrough_tests'));
 }
+
+/**
+ * Disable walkthrough_tests and enable walkthrough_screening features.
+ * Also delete the Test content type.
+ */
+function walkthrough_global_update_7006() {
+  node_type_delete('test');
+
+  if( module_exists('walkthrough_tests')) {
+    module_disable(array('walkthrough_tests'));
+    drupal_uninstall_modules(array('walkthrough_tests'));
+  }
+
+  features_install_modules(array('walkthrough_screening'));
+}
