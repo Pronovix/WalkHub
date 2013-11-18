@@ -49,44 +49,46 @@ body
   +font-pt-sansregular
 
 .logged-in
-
   h1
-    margin-right: 11.2em
+    margin-top: 1.75em
 
   .main.columns
     position: relative
 
-    .button-group
-      +font-size(.8)
-      position: absolute
-      top: 0
-      right: 0.9375em
+.button-group
+  +font-size(.8)
+  position: absolute
+  top: 0
+  right: 0.9375em
 
-      li
-        a
-          +opacity(.5)
-          +sassy-button("simple", 10px, 19px, #f4f4f5)
-          +font-size(.65)
-          +border-radius(.35em)
-          padding: .45em .85em
-          text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
-          color: #6f6f6f
-          vertical-align: bottom
-          margin-right: .45em
-          padding: .4em 1em
+  li
+    a
+      +opacity(.5)
+      +sassy-button("simple", 10px, 19px, #f4f4f5)
+      +font-size(.65)
+      +border-radius(.35em)
+      padding: .45em .85em
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+      color: #6f6f6f
+      vertical-align: bottom
+      margin-right: .45em
+      padding: .4em 1em
 
-          &.active
-            +opacity(1)
+      &.active
+        +opacity(1)
 
-          &:hover,
-          &:active
-            +opacity(1)
-            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
-            color: #6f6f6f
+      &:hover,
+      &:active
+        +opacity(1)
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+        color: #6f6f6f
 
-        &:last-of-type a
-          margin-right: 0
+    &:last-of-type a
+      margin-right: 0
 
+.not-logged-in
+  .button-group
+    position: static
 
 // buttons
 button, .button, .btn
@@ -181,7 +183,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small
   line-height: 0
 
 h1
-  +font-size(1.75)
+  +font-size(1.65)
 
 hr
   border: solid #dddddd
