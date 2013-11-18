@@ -1,6 +1,6 @@
 name = Walkhub Screening
 core = 7.x
-package = Features
+package = Walkthrough
 dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = features
