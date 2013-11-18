@@ -59,3 +59,10 @@ function walkthrough_global_update_7004() {
       ))
       ->execute();
 }
+
+/**
+ * Rename Test content type to screening.
+ */
+function walkthrough_global_update_7005() {
+  walkhub_features_revert(array('walkthrough_tests'));
+}
