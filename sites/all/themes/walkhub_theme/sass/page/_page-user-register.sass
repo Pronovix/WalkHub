@@ -1,0 +1,131 @@
+.page-user-register,
+.not-logged-in.page-user
+  #user-register-form
+    text-align: center
+
+  .button-group,
+  h1,
+  #user-register-form
+    +px-rem(max-width, 25)
+    margin: 0 auto
+
+  #edit-account
+    text-align: left
+
+  .description
+    display: none
+
+// Password Specific
+.page-user-password
+  #user-pass
+    text-align: center
+    margin: 0 auto
+    +px-rem(max-width, 25)
+    +px-rem(margin-bottom, 1)
+
+  .form-item
+    text-align: left
+
+// Login Specific
+.not-logged-in.page-user
+  #user-login
+    text-align: center
+    +px-rem(max-width, 25)
+    margin: 0 auto
+
+  .highlight
+    position: relative
+    margin: 0 auto
+    +px-rem(max-width, 25)
+    +px-rem(margin-bottom, 1)
+    +box-shadow(none)
+    color: #6f6f6f
+    background-color: #f6f6f6
+    border: 0
+
+    &:before
+      position: absolute
+      bottom: 0
+      right: .15em
+      display: block
+      +font-size(4)
+      +opacity(.15)
+      content: ":("
+
+    p,
+    p a,
+    h2
+      color: #6f6f6f
+
+  .form-item-pass
+    label
+      margin-top: 0
+
+  .form-item
+    text-align: left
+
+  .form-item-pass
+    +px-rem(margin-bottom, 1)
+
+// Register specific
+.page-user-register
+  .fieldset-wrapper
+    .form-item
+      +mp0
+      +clearfix
+      position: relative
+
+    label
+      +mp0
+      padding-left: 1.8em
+
+    input
+      +mp0
+      position: absolute
+      top: 0
+      left: 0
+      margin-top: .25em
+
+  .form-item-mail
+    label
+      margin-top: 0
+
+  #edit-legal
+    text-align: left
+    +clearfix
+    +border-radius(5px)
+    +px-rem(padding, 0.75, 1, 0.85, 1)
+    +px-rem(margin-bottom, 1.5)
+    +px-rem(margin-top, .5)
+    color: #6f6f6f
+    background-color: #f6f6f6
+
+    legend
+      +mp0
+      border: 0
+      background: 0
+
+    .fieldset-legend
+      background: #ffffff
+      border: 1px solid #ededed
+      +border-radius(3px)
+      +px-rem(padding, 0.15, .5, 0.05, .5)
+
+// Capthca Form
+#edit-captcha-form
+  width: 23.3em
+  height: 9.3em
+  overflow: hidden
+  margin: 0 auto
+  margin-bottom: 1.5em
+
+  .recaptcha_only_if_privacy
+    float: left
+    text-align: left
+    margin-top: -7px
+
+    a
+      color: #333333
+      font-size: 6.5pt
+
+
