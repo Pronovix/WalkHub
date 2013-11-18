@@ -46,3 +46,16 @@ function walkthrough_global_update_7002() {
 function walkthrough_global_update_7003() {
   module_enable(array('captcha', 'recaptcha'));
 }
+
+/**
+ * Enable recaptcha on user_register_form.
+ */
+function walkthrough_global_update_7004() {
+  $query = db_update('captcha_points')
+      ->condition('form_id', 'user_register_form')
+      ->fields(array(
+        'module' => 'recaptcha',
+        'captcha_type' => 'reCAPTCHA',
+      ))
+      ->execute();
+}
