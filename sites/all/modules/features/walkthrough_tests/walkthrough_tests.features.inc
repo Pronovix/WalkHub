@@ -19,7 +19,7 @@ function walkthrough_tests_ctools_plugin_api($module = NULL, $api = NULL) {
 function walkthrough_tests_node_info() {
   $items = array(
     'test' => array(
-      'name' => t('Test'),
+      'name' => t('Screening'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
