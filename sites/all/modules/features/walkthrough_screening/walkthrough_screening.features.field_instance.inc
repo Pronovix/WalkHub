@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * walkhub_screening.features.field_instance.inc
+ * walkthrough_screening.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function walkhub_screening_field_default_field_instances() {
+function walkthrough_screening_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-screening-field_screening_result'

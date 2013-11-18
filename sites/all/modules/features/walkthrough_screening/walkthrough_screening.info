@@ -1,4 +1,4 @@
-name = Walkhub Screening
+name = Walkthrough Screening
 core = 7.x
 package = Walkthrough
 dependencies[] = ctools
@@ -8,7 +8,6 @@ dependencies[] = image
 dependencies[] = list
 dependencies[] = options
 dependencies[] = strongarm
-dependencies[] = walkthrough_sets
 dependencies[] = walkthrough_slideshow
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2

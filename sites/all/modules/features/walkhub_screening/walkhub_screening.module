@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Walkhub Screening feature.
- */
-
-include_once 'walkhub_screening.features.inc';

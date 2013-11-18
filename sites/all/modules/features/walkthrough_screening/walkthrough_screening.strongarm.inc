@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * walkhub_screening.strongarm.inc
+ * walkthrough_screening.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function walkhub_screening_strongarm() {
+function walkthrough_screening_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

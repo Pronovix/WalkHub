@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * walkhub_screening.features.field_base.inc
+ * walkthrough_screening.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function walkhub_screening_field_default_field_bases() {
+function walkthrough_screening_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_screening_result'
