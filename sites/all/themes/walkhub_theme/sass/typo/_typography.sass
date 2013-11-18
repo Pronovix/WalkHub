@@ -86,11 +86,18 @@ body
     &:last-of-type a
       margin-right: 0
 
+.panel.callout
+  +font-size(.75)
+  +border-radius(5px)
+
+  p:last-of-type
+    margin-bottom: 0
+
+// buttons
 .not-logged-in
   .button-group
     position: static
 
-// buttons
 button, .button, .btn
   +sassy-button("simple", 10px, 19px, #f4f4f5)
   +font-size(.8)
