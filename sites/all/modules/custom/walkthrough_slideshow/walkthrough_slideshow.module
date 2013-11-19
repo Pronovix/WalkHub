@@ -179,10 +179,10 @@ function walkthrough_slideshow_field_formatter_view($entity_type, $entity, $fiel
  * @return string
  */
 function walkthrough_slideshow_generate_iframe_content($node) {
-  $images = field_get_items('node', $node, 'field_screenshots');
+  $images = field_get_items('node', $node, 'field_screening_screenshots');
 
   // Get referenced walkthrough object.
-  $walkthrough = field_get_items('node', $node, 'field_walkthrough');
+  $walkthrough = field_get_items('node', $node, 'field_screening_walkthrough');
   $walkthrough = node_load($walkthrough[0]['target_id']);
 
   // Get images belonging to the test content.
