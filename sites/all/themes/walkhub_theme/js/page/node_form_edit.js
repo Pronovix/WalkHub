@@ -91,7 +91,7 @@
       $('#parameters', context).once(function() {
         var $this = $(this);
         $this.click(function() {
-          $('#edit-field-parameters', context).toggle( "200" );
+          $('#adv-sett-proxy-param', context).toggle( "200" );
           return false;
         });
       })
