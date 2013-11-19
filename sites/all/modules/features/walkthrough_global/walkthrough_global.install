@@ -81,3 +81,25 @@ function walkthrough_global_update_7006() {
 
   features_install_modules(array('walkthrough_screening'));
 }
+
+/**
+ * Delete the test content type and nodes. Also uninstall the walkthrough_tests feature.
+ */
+function walkthrough_global_update_7007() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node');
+  $query->entityCondition('bundle', 'test');
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+  }
+
+  node_type_delete('test');
+
+  if( module_exists('walkthrough_tests')) {
+    module_disable(array('walkthrough_tests'));
+    drupal_uninstall_modules(array('walkthrough_tests'));
+  }
+}
