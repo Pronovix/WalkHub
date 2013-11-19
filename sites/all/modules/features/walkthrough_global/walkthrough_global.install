@@ -97,8 +97,8 @@ function walkthrough_global_update_7007() {
  * also features save attached for the proper settings
  */
 function walkthrough_global_update_7008() {
-  $module_list = array('metatag');
+  $module_list = array('metatag, metatag_dc, metatag_opengraph, metatag_twitter_cards, metatag_views');
   module_enable($module_list);
 
-  return 'Metatag has been enabled.';
+  return 'Metatag has been enabled with all the requested submodules';
 }
