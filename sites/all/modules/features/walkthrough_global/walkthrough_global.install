@@ -81,3 +81,24 @@ function walkthrough_global_update_7006() {
 
   features_install_modules(array('walkthrough_screening'));
 }
+
+/**
+ * Enable Token module for MetaTag
+ */
+function walkthrough_global_update_7007() {
+  $module_list = array('token');
+  module_enable($module_list);
+
+  return 'Token has been enabled.';
+}
+
+/**
+ * Enable MetaTag module for the share functionality,
+ * also features save attached for the proper settings
+ */
+function walkthrough_global_update_7008() {
+  $module_list = array('metatag, metatag_dc, metatag_opengraph, metatag_twitter_cards, metatag_views');
+  module_enable($module_list);
+
+  return 'Metatag has been enabled with all the requested submodules';
+}
