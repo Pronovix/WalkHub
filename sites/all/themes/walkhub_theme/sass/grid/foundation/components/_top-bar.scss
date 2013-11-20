@@ -71,7 +71,10 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
 /* Wrapped around .top-bar to contain to grid width */
   .contain-to-grid {
     width: 100%;
-    .top-bar { margin-bottom: $topbar-margin-bottom; }
+    .top-bar {
+      max-width: 62.5em;
+      margin: 0 auto;
+    }
   }
 
 // Wrapped around .top-bar to make it stick to the top
