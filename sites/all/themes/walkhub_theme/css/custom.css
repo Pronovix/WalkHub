@@ -5205,207 +5205,6 @@ label.error {
     background: #fff !important;
   }
 }
-/* Foundation Joyride */
-/* line 41, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-list {
-  display: none;
-}
-
-/* Default styles for the container */
-/* line 44, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide {
-  display: none;
-  position: absolute;
-  background: black;
-  color: white;
-  z-index: 101;
-  top: 0;
-  left: 2.5%;
-  font-family: inherit;
-  font-weight: normal;
-  width: 95%;
-}
-
-/* line 57, ../sass/grid/foundation/components/_joyride.scss */
-.lt-ie9 .joyride-tip-guide {
-  max-width: 800px;
-  left: 50%;
-  margin-left: -400px;
-}
-
-/* line 63, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-content-wrapper {
-  width: 100%;
-  padding: 1.125em 1.25em 1.5em;
-}
-/* line 68, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-content-wrapper .button, .joyride-content-wrapper .ui-state-default, .joyride-content-wrapper .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .joyride-content-wrapper button {
-  margin-bottom: 0 !important;
-}
-
-/* Add a little css triangle pip, older browser just miss out on the fanciness of it */
-/* line 73, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub {
-  display: block;
-  position: absolute;
-  left: 22px;
-  width: 0;
-  height: 0;
-  border: inset 14px;
-}
-/* line 81, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.top {
-  border-top-style: solid;
-  border-color: black;
-  border-top-color: transparent !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  top: -28px;
-}
-/* line 89, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.bottom {
-  border-bottom-style: solid;
-  border-color: black !important;
-  border-bottom-color: transparent !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  bottom: -28px;
-}
-/* line 98, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.right {
-  right: -28px;
-}
-/* line 99, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.left {
-  left: -28px;
-}
-
-/* Typography */
-/* line 109, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide h1,
-.joyride-tip-guide h2,
-.joyride-tip-guide h3,
-.joyride-tip-guide h4,
-.joyride-tip-guide h5,
-.joyride-tip-guide h6 {
-  line-height: 1.25;
-  margin: 0;
-  font-weight: bold;
-  color: white;
-}
-
-/* line 115, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide p {
-  margin: 0 0 1.125em 0;
-  font-size: 0.875em;
-  line-height: 1.3;
-}
-
-/* line 121, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-timer-indicator-wrap {
-  width: 50px;
-  height: 3px;
-  border: solid 1px #555555;
-  position: absolute;
-  right: 1.0625em;
-  bottom: 1em;
-}
-
-/* line 129, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-timer-indicator {
-  display: block;
-  width: 0;
-  height: inherit;
-  background: #666666;
-}
-
-/* line 136, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-close-tip {
-  position: absolute;
-  right: 12px;
-  top: 10px;
-  color: #777777 !important;
-  text-decoration: none;
-  font-size: 30px;
-  font-weight: normal;
-  line-height: .5 !important;
-}
-/* line 147, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-close-tip:hover, .joyride-close-tip:focus {
-  color: #eee !important;
-}
-
-/* line 150, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-modal-bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 100;
-  display: none;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-/* line 163, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-expose-wrapper {
-  background-color: #ffffff;
-  position: absolute;
-  border-radius: 3px;
-  z-index: 102;
-  -moz-box-shadow: 0 0 30px #ffffff;
-  -webkit-box-shadow: 0 0 15px #ffffff;
-  box-shadow: 0 0 15px #ffffff;
-}
-
-/* line 175, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-expose-cover {
-  background: transparent;
-  border-radius: 3px;
-  position: absolute;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-}
-
-/* Styles for screens that are atleast 768px; */
-@media only screen and (min-width: 768px) {
-  /* line 187, ../sass/grid/foundation/components/_joyride.scss */
-  .joyride-tip-guide {
-    width: 300px;
-    left: inherit;
-  }
-  /* line 189, ../sass/grid/foundation/components/_joyride.scss */
-  .joyride-tip-guide .joyride-nub.bottom {
-    border-color: black !important;
-    border-bottom-color: transparent !important;
-    border-left-color: transparent !important;
-    border-right-color: transparent !important;
-    bottom: -28px;
-  }
-  /* line 196, ../sass/grid/foundation/components/_joyride.scss */
-  .joyride-tip-guide .joyride-nub.right {
-    border-color: black !important;
-    border-top-color: transparent !important;
-    border-right-color: transparent !important;
-    border-bottom-color: transparent !important;
-    top: 22px;
-    left: auto;
-    right: -28px;
-  }
-  /* line 204, ../sass/grid/foundation/components/_joyride.scss */
-  .joyride-tip-guide .joyride-nub.left {
-    border-color: black !important;
-    border-top-color: transparent !important;
-    border-left-color: transparent !important;
-    border-bottom-color: transparent !important;
-    top: 22px;
-    left: -28px;
-    right: auto;
-  }
-}
 /* Clearing Styles */
 /* line 36, ../sass/grid/foundation/components/_clearing.scss */
 [data-clearing] {
@@ -7829,11 +7628,11 @@ html.js input.form-autocomplete.throbbing {
 /*
  * @file
  * Styles for system messages. */
-/* line 5, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 5, ../sass/modules/_system_message.sass */
 div {
   /* LTR */
 }
-/* line 6, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 6, ../sass/modules/_system_message.sass */
 div.messages {
   background-position: 8px 8px;
   /* LTR */
@@ -7842,79 +7641,79 @@ div.messages {
   margin: 6px 0;
   padding: 10px 10px 10px 50px;
 }
-/* line 16, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 16, ../sass/modules/_system_message.sass */
 div.status {
   background-image: url(../../misc/message-24-ok.png);
   border-color: #bbee77;
   color: #234600;
 }
 
-/* line 21, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 21, ../sass/modules/_system_message.sass */
 .ok {
   color: #234600;
 }
 
-/* line 24, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 24, ../sass/modules/_system_message.sass */
 div.status, table tr.ok {
   background-color: #f8fff0;
 }
 
-/* line 27, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 27, ../sass/modules/_system_message.sass */
 div.warning {
   background-image: url(../../misc/message-24-warning.png);
   border-color: #eedd55;
   color: #884400;
 }
 
-/* line 32, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 32, ../sass/modules/_system_message.sass */
 .warning {
   color: #884400;
 }
 
-/* line 35, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 35, ../sass/modules/_system_message.sass */
 div.warning, table tr.warning {
   background-color: #fffce5;
 }
 
-/* line 38, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 38, ../sass/modules/_system_message.sass */
 div.error {
   background-image: url(../../misc/message-24-error.png);
   border-color: #ed541d;
   color: #8c2e0b;
 }
 
-/* line 43, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 43, ../sass/modules/_system_message.sass */
 .error {
   color: #8c2e0b;
 }
 
-/* line 46, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 46, ../sass/modules/_system_message.sass */
 div.error, table tr.error {
   background-color: #fef5f1;
 }
 
-/* line 50, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 50, ../sass/modules/_system_message.sass */
 div.error p.error {
   color: #333333;
 }
-/* line 52, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 52, ../sass/modules/_system_message.sass */
 div.messages ul {
   margin: 0 0 0 1em;
   /* LTR */
   padding: 0;
 }
-/* line 56, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_system_message.sass */
+/* line 56, ../sass/modules/_system_message.sass */
 div.messages ul li {
   list-style-image: none;
 }
 
-/* line 7, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/admin/_page_user.sass */
+/* line 7, ../sass/modules/admin/_page_user.sass */
 .page-user .form-actions,
 .page-user-password .form-actions {
   text-align: center;
   margin-top: 2em;
 }
-/* line 11, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/admin/_page_user.sass */
+/* line 11, ../sass/modules/admin/_page_user.sass */
 .page-user #user-login,
 .page-user #user-pass,
 .page-user-password #user-login,
@@ -7923,24 +7722,24 @@ div.messages ul li {
   margin: 0 auto;
   margin-top: 2%;
 }
-/* line 17, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/admin/_page_user.sass */
+/* line 17, ../sass/modules/admin/_page_user.sass */
 .page-user .tabs.primary,
 .page-user-password .tabs.primary {
   max-width: 48em;
   margin: 0 auto;
 }
-/* line 22, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/admin/_page_user.sass */
+/* line 22, ../sass/modules/admin/_page_user.sass */
 .page-user .tabs.primary li:nth-child(1) a:after,
 .page-user-password .tabs.primary li:nth-child(1) a:after {
   content: "\e01b";
 }
-/* line 25, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/admin/_page_user.sass */
+/* line 25, ../sass/modules/admin/_page_user.sass */
 .page-user .tabs.primary li:nth-child(2) a:after,
 .page-user-password .tabs.primary li:nth-child(2) a:after {
   content: "\e01a";
 }
 
-/* line 5, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 5, ../sass/modules/_admin.sass */
 .tabs.primary {
   border: 0;
   margin: 0;
@@ -7950,14 +7749,14 @@ div.messages ul li {
   font-size: 1rem;
   line-height: 1.45rem;
 }
-/* line 10, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 10, ../sass/modules/_admin.sass */
 .tabs.primary li {
   display: inline-block;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 15, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 15, ../sass/modules/_admin.sass */
 .tabs.primary li a {
   border: 0;
   background: transparent;
@@ -8036,7 +7835,7 @@ div.messages ul li {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 26, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 26, ../sass/modules/_admin.sass */
 .tabs.primary li a:after {
   font-family: "icomoon";
   speak: none;
@@ -8048,7 +7847,7 @@ div.messages ul li {
   *margin-right: 0.3em;
   margin-left: 0.5em;
 }
-/* line 30, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 30, ../sass/modules/_admin.sass */
 .tabs.primary li.active a {
   border: 0;
   background: transparent;
@@ -8131,27 +7930,27 @@ div.messages ul li {
 }
 
 @media screen and (max-width: 767px) {
-  /* line 46, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+  /* line 46, ../sass/modules/_admin.sass */
   html body.admin-menu.logged-in {
     margin-top: 100px !important;
   }
 }
-/* line 53, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 53, ../sass/modules/_admin.sass */
 .logged-in header #header-top,
 .logged-in header #nested-menu {
   top: 2.5em;
 }
-/* line 57, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 57, ../sass/modules/_admin.sass */
 .logged-in #sliding-popup {
   display: none !important;
 }
 
-/* line 61, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 61, ../sass/modules/_admin.sass */
 #admin-menu .dropdown {
   display: block !important;
 }
 
-/* line 65, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 65, ../sass/modules/_admin.sass */
 #tabs {
   position: fixed;
   z-index: 2000;
@@ -8161,7 +7960,7 @@ div.messages ul li {
   padding: 20px;
   width: 100%;
 }
-/* line 74, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 74, ../sass/modules/_admin.sass */
 #tabs:after {
   background-image: url("../../images/video_mask.png");
   position: absolute;
@@ -8175,13 +7974,13 @@ div.messages ul li {
   right: 0;
   bottom: 0;
 }
-/* line 86, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 86, ../sass/modules/_admin.sass */
 #tabs .tabs {
   margin: 0;
   padding: 0;
   border: 0;
 }
-/* line 91, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+/* line 91, ../sass/modules/_admin.sass */
 #tabs .tabs li a {
   padding: 5px 10px;
   border: none;
@@ -8192,45 +7991,45 @@ div.messages ul li {
 }
 
 @media screen and (max-width: 767px) {
-  /* line 105, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_admin.sass */
+  /* line 105, ../sass/modules/_admin.sass */
   body.admin-menu {
     margin-top: 100px !important;
   }
 }
-/* line 1, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 1, ../sass/modules/_blocks.sass */
 #breadcumb {
   -webkit-box-shadow: inset 0 -3px 10px -5px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: inset 0 -3px 10px -5px rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -3px 10px -5px rgba(0, 0, 0, 0.15);
   background-color: #f6f6f6;
 }
-/* line 5, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 5, ../sass/modules/_blocks.sass */
 #breadcumb .small-12 {
   padding: 10px;
   padding: 1rem;
 }
-/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 8, ../sass/modules/_blocks.sass */
 #breadcumb ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 12, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 12, ../sass/modules/_blocks.sass */
 #breadcumb ul li {
   margin-right: 10px;
   margin-right: 1rem;
   display: inline-block;
 }
-/* line 16, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 16, ../sass/modules/_blocks.sass */
 #breadcumb ul li:last-of-type {
   margin: 0;
 }
-/* line 19, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 19, ../sass/modules/_blocks.sass */
 #breadcumb ul li:last-of-type a:after {
   content: "";
   margin: 0;
 }
-/* line 23, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 23, ../sass/modules/_blocks.sass */
 #breadcumb ul li a {
   -webkit-transition: all 0.25s ease-in;
   -moz-transition: all 0.25s ease-in;
@@ -8243,15 +8042,15 @@ div.messages ul li {
   text-shadow: 1px 1px 1px white;
   color: rgba(111, 111, 111, 0.65);
 }
-/* line 30, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 30, ../sass/modules/_blocks.sass */
 #breadcumb ul li a:hover {
   color: #6f6f6f;
 }
-/* line 33, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 33, ../sass/modules/_blocks.sass */
 #breadcumb ul li a:hover:after {
   color: rgba(111, 111, 111, 0.65);
 }
-/* line 36, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_blocks.sass */
+/* line 36, ../sass/modules/_blocks.sass */
 #breadcumb ul li a:after {
   font-family: "icomoon";
   speak: none;
@@ -8270,7 +8069,7 @@ div.messages ul li {
   content: "\f054";
 }
 
-/* line 1, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_animation.sass */
+/* line 1, ../sass/modules/_animation.sass */
 .animated, .ui-dialog {
   -o-animation-duration: 1.5s;
   -moz-animation-duration: 1.5s;
@@ -8284,54 +8083,54 @@ div.messages ul li {
 
 /* FadeIn */
 @-webkit-keyframes fadeIn {
-  /* line 7, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_animation.sass */
+  /* line 7, ../sass/modules/_animation.sass */
   0% {
     opacity: 0;
   }
 
-  /* line 9, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_animation.sass */
+  /* line 9, ../sass/modules/_animation.sass */
   100% {
     opacity: 1;
   }
 }
 
 @-moz-keyframes fadeIn {
-  /* line 14, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_animation.sass */
+  /* line 14, ../sass/modules/_animation.sass */
   0% {
     opacity: 0;
   }
 
-  /* line 16, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_animation.sass */
+  /* line 16, ../sass/modules/_animation.sass */
   100% {
     opacity: 1;
   }
 }
 
 @-o-keyframes fadeIn {
-  /* line 21, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_animation.sass */
+  /* line 21, ../sass/modules/_animation.sass */
   0% {
     opacity: 0;
   }
 
-  /* line 23, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_animation.sass */
+  /* line 23, ../sass/modules/_animation.sass */
   100% {
     opacity: 1;
   }
 }
 
 @keyframes fadeIn {
-  /* line 28, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_animation.sass */
+  /* line 28, ../sass/modules/_animation.sass */
   0% {
     opacity: 0;
   }
 
-  /* line 30, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_animation.sass */
+  /* line 30, ../sass/modules/_animation.sass */
   100% {
     opacity: 1;
   }
 }
 
-/* line 1, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_header.sass */
+/* line 1, ../sass/modules/_header.sass */
 header#main-header {
   text-shadow: 1px 1px 3px black;
   -webkit-box-shadow: inset 0px -5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -8343,19 +8142,19 @@ header#main-header {
   border-top: 1px solid black;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 1, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_header.sass */
+  /* line 1, ../sass/modules/_header.sass */
   header#main-header {
     background: #2a2a2a url("../images/low_contrast_linen_@2X.png") top left repeat;
   }
 }
-/* line 12, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_header.sass */
+/* line 12, ../sass/modules/_header.sass */
 header#main-header .menu {
   margin: 0;
   padding: 0;
   text-align: right;
   margin-top: 2em;
 }
-/* line 17, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_header.sass */
+/* line 17, ../sass/modules/_header.sass */
 header#main-header .menu li {
   margin: 0;
   padding: 0;
@@ -8364,11 +8163,11 @@ header#main-header .menu li {
   list-style-type: none;
   display: inline-block;
 }
-/* line 23, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_header.sass */
+/* line 23, ../sass/modules/_header.sass */
 header#main-header .menu li:last-of-type {
   margin: 0;
 }
-/* line 26, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_header.sass */
+/* line 26, ../sass/modules/_header.sass */
 header#main-header .menu li a {
   font-size: 14px;
   line-height: 20.3px;
@@ -8377,34 +8176,34 @@ header#main-header .menu li a {
   color: white;
 }
 
-/* line 30, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_header.sass */
+/* line 30, ../sass/modules/_header.sass */
 #main_logo_svg {
   float: left;
   display: block;
   max-width: 6.25em;
 }
 
-/* line 35, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_header.sass */
+/* line 35, ../sass/modules/_header.sass */
 #main_logo_link {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   display: block;
 }
 
-/* line 4, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 4, ../sass/modules/_footer.sass */
 #footer_logo,
 #footer_logo_svg {
   width: 100%;
   height: auto;
 }
 
-/* line 9, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 9, ../sass/modules/_footer.sass */
 #footer_logo {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
 }
 
-/* line 12, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 12, ../sass/modules/_footer.sass */
 #footermain {
   -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01);
   -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01);
@@ -8414,34 +8213,34 @@ header#main-header .menu li a {
   color: #adadad;
   margin-top: 2%;
 }
-/* line 19, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 19, ../sass/modules/_footer.sass */
 #footermain .row,
 #footermain ul {
   margin-bottom: 0;
 }
-/* line 23, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 23, ../sass/modules/_footer.sass */
 #footermain h3 {
   color: #949494;
 }
 
-/* line 26, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 26, ../sass/modules/_footer.sass */
 #footer {
   padding: 20px 0 20px 0;
   padding: 2rem 0 2rem 0;
 }
-/* line 29, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 29, ../sass/modules/_footer.sass */
 #footer ul li a {
   color: #adadad;
 }
-/* line 32, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 32, ../sass/modules/_footer.sass */
 #footer ul li a:hover {
   color: #7a7a7a;
 }
-/* line 36, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 36, ../sass/modules/_footer.sass */
 #footer nav ul {
   list-style-type: none;
 }
-/* line 39, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 39, ../sass/modules/_footer.sass */
 #footer nav ul li {
   border-left: 1px solid #ededed;
   padding-left: 1em;
@@ -8450,11 +8249,11 @@ header#main-header .menu li a {
   -o-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
 }
-/* line 44, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 44, ../sass/modules/_footer.sass */
 #footer nav ul li:hover {
   border-left: 1px solid #a0a0a0;
 }
-/* line 47, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 47, ../sass/modules/_footer.sass */
 #footer .logo {
   -webkit-transition: all 0.25s ease-in;
   -moz-transition: all 0.25s ease-in;
@@ -8465,20 +8264,20 @@ header#main-header .menu li a {
   display: block;
   text-align: right;
 }
-/* line 53, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 53, ../sass/modules/_footer.sass */
 #footer .logo:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 @media screen and (max-width: 767px) {
-  /* line 56, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+  /* line 56, ../sass/modules/_footer.sass */
   #footer #footer_logo {
     width: 100%;
     height: auto;
   }
 }
 
-/* line 61, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 61, ../sass/modules/_footer.sass */
 #copyright {
   text-shadow: 1px 1px 3px black;
   -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -8489,61 +8288,61 @@ header#main-header .menu li a {
   color: white;
   border-top: 1px solid black;
 }
-/* line 69, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 69, ../sass/modules/_footer.sass */
 #copyright p {
   margin: 0;
   padding: 0;
 }
-/* line 72, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 72, ../sass/modules/_footer.sass */
 #copyright a {
   color: white;
 }
-/* line 75, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 75, ../sass/modules/_footer.sass */
 #copyright a:hover {
   text-decoration: underline;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 61, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+  /* line 61, ../sass/modules/_footer.sass */
   #copyright {
     background: #2a2a2a url("../images/low_contrast_linen_@2X.png") top left repeat;
   }
 }
-/* line 81, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 81, ../sass/modules/_footer.sass */
 #copyright .row {
   margin-bottom: 0;
 }
 @media screen and (max-width: 767px) {
-  /* line 84, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+  /* line 84, ../sass/modules/_footer.sass */
   #copyright .cr-f {
     text-align: center;
   }
 }
-/* line 88, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 88, ../sass/modules/_footer.sass */
 #copyright .cr-s {
   line-height: 1.6em;
 }
 @media screen and (min-width: 768px) {
-  /* line 88, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+  /* line 88, ../sass/modules/_footer.sass */
   #copyright .cr-s {
     text-align: right;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 88, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+  /* line 88, ../sass/modules/_footer.sass */
   #copyright .cr-s {
     padding-top: 7.5px;
     padding-top: 0.75rem;
     text-align: center;
   }
 }
-/* line 98, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 98, ../sass/modules/_footer.sass */
 #copyright ul,
 #copyright nav {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 103, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 103, ../sass/modules/_footer.sass */
 #copyright ul li,
 #copyright nav li {
   margin: 0;
@@ -8552,32 +8351,32 @@ header#main-header .menu li a {
   margin-right: 0.25rem;
   display: inline-block;
 }
-/* line 108, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 108, ../sass/modules/_footer.sass */
 #copyright ul li:after,
 #copyright nav li:after {
   content: "|";
   margin-left: 5px;
   margin-left: 0.5rem;
 }
-/* line 112, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_footer.sass */
+/* line 112, ../sass/modules/_footer.sass */
 #copyright ul li:last-of-type:after,
 #copyright nav li:last-of-type:after {
   content: "";
 }
 
-/* line 1, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_main.sass */
+/* line 1, ../sass/modules/_main.sass */
 main {
   padding: 2% 0;
 }
 
 @media screen and (max-width: 767px) {
-  /* line 4, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_main.sass */
+  /* line 4, ../sass/modules/_main.sass */
   .sidebar-first {
     margin-top: 2%;
   }
 }
 
-/* line 2, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 2, ../sass/modules/_sidebar.sass */
 .sidebar .block {
   margin-bottom: 10px;
   margin-bottom: 1rem;
@@ -8589,7 +8388,7 @@ main {
 .sidebar .block > *:last-child, .sidebar .block > *:last-child > *:last-child, .sidebar .block > *:last-child > *:last-child > *:last-child {
   margin-bottom: 0;
 }
-/* line 7, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 7, ../sass/modules/_sidebar.sass */
 .sidebar .block h2,
 .sidebar .block h3,
 .sidebar .block h4,
@@ -8597,19 +8396,19 @@ main {
 .sidebar .block h6 {
   color: #6f6f6f;
 }
-/* line 15, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 15, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu {
   margin: 0;
   padding: 0;
 }
-/* line 18, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 18, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li {
   margin: 0;
   padding: 0;
   list-style-type: none;
   list-style-image: none;
 }
-/* line 23, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 23, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li a {
   padding: 4.5px 7.5px;
   padding: 0.45rem 0.75rem;
@@ -8626,11 +8425,11 @@ main {
   display: block;
   position: relative;
 }
-/* line 34, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 34, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li a:hover {
   background-color: #e9e9e9;
 }
-/* line 38, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 38, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li:last-of-type a {
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
@@ -8638,12 +8437,12 @@ main {
   -o-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 43, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 43, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu .menu li > .menu li a {
   padding: 4.5px 7.5px 4.5px 15px;
   padding: 0.45rem 0.75rem 0.45rem 1.5rem;
 }
-/* line 46, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 46, ../sass/modules/_sidebar.sass */
 .sidebar .block-menu > .menu > li:first-of-type > a {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -8654,7 +8453,7 @@ main {
   -o-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
-/* line 50, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 50, ../sass/modules/_sidebar.sass */
 .sidebar .block-user {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -8667,11 +8466,11 @@ main {
   color: #6f6f6f;
   background-color: #f6f6f6;
 }
-/* line 57, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 57, ../sass/modules/_sidebar.sass */
 .sidebar .block-user h2 {
   text-align: left;
 }
-/* line 60, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 60, ../sass/modules/_sidebar.sass */
 .sidebar .block-user label {
   font-size: 9px;
   line-height: 13.05px;
@@ -8679,28 +8478,28 @@ main {
   line-height: 1.305rem;
   text-align: left;
 }
-/* line 64, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 64, ../sass/modules/_sidebar.sass */
 .sidebar .block-user .item-list {
   text-align: right;
 }
-/* line 67, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 67, ../sass/modules/_sidebar.sass */
 .sidebar .block-user .item-list ul {
   list-style-type: none;
 }
-/* line 70, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 70, ../sass/modules/_sidebar.sass */
 .sidebar .block-user .item-list ul a {
   font-size: 0.875em;
 }
-/* line 73, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 73, ../sass/modules/_sidebar.sass */
 .sidebar .block-user #edit-pass {
   margin-bottom: 2px;
 }
-/* line 76, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_sidebar.sass */
+/* line 76, ../sass/modules/_sidebar.sass */
 .sidebar .block-user #edit-actions {
   text-align: center;
 }
 
-/* line 2, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 2, ../sass/modules/_edit_forms.sass */
 input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"] {
   -webkit-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
   -moz-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
@@ -8725,21 +8524,21 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
   border: 1px solid #cccccc;
   width: 100%;
 }
-/* line 26, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 26, ../sass/modules/_edit_forms.sass */
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus {
   outline: 0;
   outline: thin dotted \9;
   /* IE6-9 */
   border-color: #129fea;
 }
-/* line 32, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 32, ../sass/modules/_edit_forms.sass */
 input[type="text"]:disabled, input[type="password"]:disabled, input[type="email"]:disabled, input[type="url"]:disabled, input[type="date"]:disabled, input[type="month"]:disabled, input[type="time"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="week"]:disabled, input[type="number"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="color"]:disabled {
   cursor: not-allowed;
   background-color: #eaeded;
   color: #cad2d3;
 }
 
-/* line 37, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 37, ../sass/modules/_edit_forms.sass */
 select,
 textarea {
   -webkit-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
@@ -8791,7 +8590,7 @@ textarea scrollbar-thumb {
   border-radius: 0.2em;
   background-color: #bfbfbf;
 }
-/* line 50, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 50, ../sass/modules/_edit_forms.sass */
 select:focus,
 textarea:focus {
   outline: 0;
@@ -8799,7 +8598,7 @@ textarea:focus {
   /* IE6-9 */
   border-color: #129fea;
 }
-/* line 56, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 56, ../sass/modules/_edit_forms.sass */
 select:disabled,
 textarea:disabled {
   cursor: not-allowed;
@@ -8807,7 +8606,7 @@ textarea:disabled {
   color: #cad2d3;
 }
 
-/* line 61, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 61, ../sass/modules/_edit_forms.sass */
 textarea {
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
@@ -8816,13 +8615,13 @@ textarea {
   border-radius: 4px 4px 0 0;
 }
 
-/* line 65, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 65, ../sass/modules/_edit_forms.sass */
 input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
   outline: thin dotted #333333;
   outline: 1px auto #129fea;
 }
 
-/* line 71, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 71, ../sass/modules/_edit_forms.sass */
 input[readonly],
 select[readonly],
 textarea[readonly] {
@@ -8833,44 +8632,44 @@ textarea[readonly] {
   border-color: #cccccc;
 }
 
-/* line 80, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 80, ../sass/modules/_edit_forms.sass */
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border: 1px solid #ee5f5b;
 }
-/* line 86, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 86, ../sass/modules/_edit_forms.sass */
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
   border-color: #e9322d;
 }
 
-/* line 89, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 89, ../sass/modules/_edit_forms.sass */
 select {
   border: 1px solid #cccccc;
   background-color: white;
 }
-/* line 93, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 93, ../sass/modules/_edit_forms.sass */
 select[multiple] {
   height: auto;
 }
 
-/* line 96, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 96, ../sass/modules/_edit_forms.sass */
 label {
   margin: 13px 0 4.5px 0;
   margin: 1.3rem 0 0.45rem 0;
 }
 
-/* line 99, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 99, ../sass/modules/_edit_forms.sass */
 fieldset {
   margin: 0;
   padding: 0.35em 0 0.75em;
   border: 0;
 }
 
-/* line 104, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 104, ../sass/modules/_edit_forms.sass */
 legend {
   display: block;
   width: 100%;
@@ -8880,18 +8679,18 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* line 114, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 114, ../sass/modules/_edit_forms.sass */
 .pure-form-stacked input[type="text"], .pure-form-stacked input[type="password"], .pure-form-stacked input[type="email"], .pure-form-stacked input[type="url"], .pure-form-stacked input[type="date"], .pure-form-stacked input[type="month"], .pure-form-stacked input[type="time"], .pure-form-stacked input[type="datetime"], .pure-form-stacked input[type="datetime-local"], .pure-form-stacked input[type="week"], .pure-form-stacked input[type="number"], .pure-form-stacked input[type="search"], .pure-form-stacked input[type="tel"], .pure-form-stacked input[type="color"] {
   display: block;
   margin: 0.25em 0;
 }
-/* line 117, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 117, ../sass/modules/_edit_forms.sass */
 .pure-form-stacked select, .pure-form-stacked label, .pure-form-stacked textarea {
   display: block;
   margin: 0.25em 0;
 }
 
-/* line 122, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 122, ../sass/modules/_edit_forms.sass */
 .pure-form-aligned input, .pure-form-aligned textarea, .pure-form-aligned select, .pure-form-aligned .pure-help-inline {
   display: inline-block;
   *display: inline;
@@ -8899,7 +8698,7 @@ legend {
   vertical-align: middle;
 }
 
-/* line 128, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 128, ../sass/modules/_edit_forms.sass */
 .pure-form-message-inline {
   display: inline-block;
   *display: inline;
@@ -8908,11 +8707,11 @@ legend {
 }
 
 /* Aligned Forms */
-/* line 137, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 137, ../sass/modules/_edit_forms.sass */
 .pure-form-aligned .pure-control-group {
   margin-bottom: 0.5em;
 }
-/* line 139, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 139, ../sass/modules/_edit_forms.sass */
 .pure-form-aligned .pure-control-group label {
   text-align: right;
   display: inline-block;
@@ -8920,24 +8719,24 @@ legend {
   width: 10em;
   margin: 0 1em 0 0;
 }
-/* line 145, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 145, ../sass/modules/_edit_forms.sass */
 .pure-form-aligned .pure-controls {
   margin: 1.5em 0 0 10em;
 }
 
 /* Rounded Inputs */
-/* line 150, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 150, ../sass/modules/_edit_forms.sass */
 input.pure-input-rounded, .pure-input-rounded {
   border-radius: 2em;
   padding: 0.5em 1em;
 }
 
 /* Grouped Inputs */
-/* line 157, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 157, ../sass/modules/_edit_forms.sass */
 .pure-group fieldset {
   margin-bottom: 10px;
 }
-/* line 159, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 159, ../sass/modules/_edit_forms.sass */
 .pure-group input {
   display: block;
   padding: 10px;
@@ -8946,58 +8745,58 @@ input.pure-input-rounded, .pure-input-rounded {
   position: relative;
   top: -1px;
 }
-/* line 166, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 166, ../sass/modules/_edit_forms.sass */
 .pure-group input:focus {
   z-index: 2;
 }
-/* line 168, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 168, ../sass/modules/_edit_forms.sass */
 .pure-group input:first-child {
   top: 1px;
   border-radius: 4px 4px 0 0;
 }
-/* line 171, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 171, ../sass/modules/_edit_forms.sass */
 .pure-group input:last-child {
   top: -2px;
   border-radius: 0 0 4px 4px;
 }
-/* line 174, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 174, ../sass/modules/_edit_forms.sass */
 .pure-group button {
   margin: 0.35em 0;
 }
 
-/* line 177, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 177, ../sass/modules/_edit_forms.sass */
 .pure-input-1 {
   width: 100%;
 }
 
-/* line 180, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 180, ../sass/modules/_edit_forms.sass */
 .pure-input-2-3 {
   width: 66%;
 }
 
-/* line 183, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 183, ../sass/modules/_edit_forms.sass */
 .pure-input-1-2 {
   width: 50%;
 }
 
-/* line 186, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 186, ../sass/modules/_edit_forms.sass */
 .pure-input-1-3 {
   width: 33%;
 }
 
-/* line 189, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 189, ../sass/modules/_edit_forms.sass */
 .pure-input-1-4 {
   width: 25%;
 }
 
 /* Block help for forms */
-/* line 195, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 195, ../sass/modules/_edit_forms.sass */
 .pure-form-message {
   display: block;
   color: #666666;
 }
 
-/* line 202, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_edit_forms.sass */
+/* line 202, ../sass/modules/_edit_forms.sass */
 .form-item.form-type-select {
   margin-top: 0;
 }
@@ -9005,7 +8804,7 @@ input.pure-input-rounded, .pure-input-rounded {
 /* jQuery UI - v1.10.2 - 2013-03-14
  ** http://jqueryui.com
  ** Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
-/* line 5, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 5, ../sass/modules/_jquery_ui.sass */
 .ui-dialog {
   padding: 5px;
   padding: 0.5rem;
@@ -9021,13 +8820,13 @@ input.pure-input-rounded, .pure-input-rounded {
   left: 0;
   outline: 0;
 }
-/* line 15, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 15, ../sass/modules/_jquery_ui.sass */
 .ui-dialog .ui-dialog-titlebar {
   padding: 4px 10px;
   padding: 0.4rem 1rem;
   position: relative;
 }
-/* line 19, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 19, ../sass/modules/_jquery_ui.sass */
 .ui-dialog .ui-dialog-title {
   float: left;
   margin: 0.1em 0;
@@ -9036,7 +8835,7 @@ input.pure-input-rounded, .pure-input-rounded {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 27, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 27, ../sass/modules/_jquery_ui.sass */
 .ui-dialog .ui-dialog-titlebar-close {
   position: absolute;
   right: 0.3em;
@@ -9046,15 +8845,16 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 1px;
   height: 20px;
 }
-/* line 36, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 36, ../sass/modules/_jquery_ui.sass */
 .ui-dialog .ui-dialog-content {
+  margin: 0;
+  padding: 0;
   position: relative;
   border: 0;
-  padding: 0.5em 1em;
   background: 0;
   overflow: auto;
 }
-/* line 43, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 43, ../sass/modules/_jquery_ui.sass */
 .ui-dialog .ui-dialog-buttonpane {
   text-align: left;
   border-width: 1px 0 0;
@@ -9062,16 +8862,16 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-top: 0.5em;
   padding: 0.3em 1em 0.5em 0.4em;
 }
-/* line 50, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 50, ../sass/modules/_jquery_ui.sass */
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
   float: right;
 }
-/* line 53, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 53, ../sass/modules/_jquery_ui.sass */
 .ui-dialog .ui-dialog-buttonpane button {
   margin: 0.5em 0.4em 0.5em 0;
   cursor: pointer;
 }
-/* line 57, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 57, ../sass/modules/_jquery_ui.sass */
 .ui-dialog .ui-resizable-se {
   width: 12px;
   height: 12px;
@@ -9080,7 +8880,7 @@ input.pure-input-rounded, .pure-input-rounded {
   background-position: 16px 16px;
 }
 
-/* line 64, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui.sass */
+/* line 64, ../sass/modules/_jquery_ui.sass */
 .ui-draggable .ui-dialog-titlebar {
   cursor: move;
 }
@@ -9088,33 +8888,33 @@ input.pure-input-rounded, .pure-input-rounded {
 /* jQuery UI - v1.10.2 - 2013-03-14
  ** http://jqueryui.com
  ** Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
-/* line 5, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 5, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget {
   font-family: Verdana, Arial, sans-serif;
   font-size: 1.1em;
 }
-/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 8, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget .ui-widget {
   font-size: 1em;
 }
-/* line 10, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 10, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
   font-family: Verdana, Arial, sans-serif;
   font-size: 1em;
 }
 
-/* line 14, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 14, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-content {
   border: 1px solid #aaaaaa;
   background: white url("../images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x;
   color: #222222;
 }
-/* line 18, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 18, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-content a {
   color: #222222;
 }
 
-/* line 21, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 21, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-header {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -9126,12 +8926,12 @@ input.pure-input-rounded, .pure-input-rounded {
   background: transparent;
   border: 0;
 }
-/* line 28, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 28, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-header a {
   color: #6f6f6f;
 }
 
-/* line 31, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 31, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
@@ -9140,95 +8940,95 @@ input.pure-input-rounded, .pure-input-rounded {
   color: #555555;
 }
 
-/* line 39, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 39, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-default a {
   color: #555555;
   text-decoration: none;
 }
-/* line 42, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 42, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-default a:link, .ui-state-default a:visited {
   color: #555555;
   text-decoration: none;
 }
 
-/* line 46, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 46, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-hover a {
   color: #212121;
   text-decoration: none;
 }
-/* line 49, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 49, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited {
   color: #212121;
   text-decoration: none;
 }
 
-/* line 53, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 53, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-active a {
   color: #212121;
   text-decoration: none;
 }
-/* line 56, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 56, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-active a:link, .ui-state-active a:visited {
   color: #212121;
   text-decoration: none;
 }
 
-/* line 60, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 60, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
   border: 1px solid #fcefa1;
   background: #fbf9ee url("../images/ui-bg_glass_55_fbf9ee_1x400.png") 50% 50% repeat-x;
   color: #363636;
 }
 
-/* line 65, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 65, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a, .ui-widget-header .ui-state-highlight a {
   color: #363636;
 }
 
-/* line 68, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 68, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
   border: 1px solid #cd0a0a;
   background: #fef1ec url("../images/ui-bg_glass_95_fef1ec_1x400.png") 50% 50% repeat-x;
   color: #cd0a0a;
 }
 
-/* line 73, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 73, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a, .ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text {
   color: #cd0a0a;
 }
 
-/* line 76, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 76, ../sass/modules/_jquery_ui_theme.sass */
 .ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary {
   font-weight: 700;
 }
 
-/* line 79, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 79, ../sass/modules/_jquery_ui_theme.sass */
 .ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary {
   opacity: 0.7;
   filter: Alpha(Opacity=70);
   font-weight: 400;
 }
 
-/* line 84, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 84, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
   opacity: 0.35;
   filter: Alpha(Opacity=35);
   background-image: none;
 }
 
-/* line 89, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 89, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-disabled .ui-icon {
   filter: Alpha(Opacity=35);
 }
 
-/* line 92, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 92, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon {
   width: 16px;
   height: 16px;
   background: transparent;
 }
 
-/* line 97, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 97, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-content .ui-icon,
 .ui-widget-header .ui-icon,
 .ui-state-default .ui-icon,
@@ -9245,7 +9045,7 @@ input.pure-input-rounded, .pure-input-rounded {
   left: 1px;
   top: 2px;
 }
-/* line 112, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 112, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-content .ui-icon:before,
 .ui-widget-header .ui-icon:before,
 .ui-state-default .ui-icon:before,
@@ -9269,7 +9069,7 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 1.015rem;
   color: #6f6f6f;
 }
-/* line 117, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 117, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-content .ui-icon.ui-icon-closethick:before,
 .ui-widget-header .ui-icon.ui-icon-closethick:before,
 .ui-state-default .ui-icon.ui-icon-closethick:before,
@@ -9284,879 +9084,879 @@ input.pure-input-rounded, .pure-input-rounded {
   display: block;
 }
 
-/* line 123, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 123, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-blank {
   background-position: 16px 16px;
 }
 
-/* line 126, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 126, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-n {
   background-position: 0 0;
 }
 
-/* line 129, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 129, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-ne {
   background-position: -16px 0;
 }
 
-/* line 132, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 132, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-e {
   background-position: -32px 0;
 }
 
-/* line 135, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 135, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-se {
   background-position: -48px 0;
 }
 
-/* line 138, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 138, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-s {
   background-position: -64px 0;
 }
 
-/* line 141, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 141, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-sw {
   background-position: -80px 0;
 }
 
-/* line 144, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 144, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-w {
   background-position: -96px 0;
 }
 
-/* line 147, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 147, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-1-nw {
   background-position: -112px 0;
 }
 
-/* line 150, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 150, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-2-n-s {
   background-position: -128px 0;
 }
 
-/* line 153, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 153, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-carat-2-e-w {
   background-position: -144px 0;
 }
 
-/* line 156, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 156, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-n {
   background-position: 0 -16px;
 }
 
-/* line 159, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 159, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-ne {
   background-position: -16px -16px;
 }
 
-/* line 162, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 162, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-e {
   background-position: -32px -16px;
 }
 
-/* line 165, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 165, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-se {
   background-position: -48px -16px;
 }
 
-/* line 168, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 168, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-s {
   background-position: -64px -16px;
 }
 
-/* line 171, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 171, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-sw {
   background-position: -80px -16px;
 }
 
-/* line 174, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 174, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-w {
   background-position: -96px -16px;
 }
 
-/* line 177, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 177, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-1-nw {
   background-position: -112px -16px;
 }
 
-/* line 180, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 180, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-2-n-s {
   background-position: -128px -16px;
 }
 
-/* line 183, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 183, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-triangle-2-e-w {
   background-position: -144px -16px;
 }
 
-/* line 186, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 186, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-n {
   background-position: 0 -32px;
 }
 
-/* line 189, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 189, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-ne {
   background-position: -16px -32px;
 }
 
-/* line 192, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 192, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-e {
   background-position: -32px -32px;
 }
 
-/* line 195, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 195, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-se {
   background-position: -48px -32px;
 }
 
-/* line 198, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 198, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-s {
   background-position: -64px -32px;
 }
 
-/* line 201, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 201, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-sw {
   background-position: -80px -32px;
 }
 
-/* line 204, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 204, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-w {
   background-position: -96px -32px;
 }
 
-/* line 207, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 207, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-1-nw {
   background-position: -112px -32px;
 }
 
-/* line 210, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 210, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-2-n-s {
   background-position: -128px -32px;
 }
 
-/* line 213, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 213, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-2-ne-sw {
   background-position: -144px -32px;
 }
 
-/* line 216, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 216, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-2-e-w {
   background-position: -160px -32px;
 }
 
-/* line 219, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 219, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-2-se-nw {
   background-position: -176px -32px;
 }
 
-/* line 222, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 222, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowstop-1-n {
   background-position: -192px -32px;
 }
 
-/* line 225, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 225, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowstop-1-e {
   background-position: -208px -32px;
 }
 
-/* line 228, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 228, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowstop-1-s {
   background-position: -224px -32px;
 }
 
-/* line 231, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 231, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowstop-1-w {
   background-position: -240px -32px;
 }
 
-/* line 234, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 234, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-n {
   background-position: 0 -48px;
 }
 
-/* line 237, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 237, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-ne {
   background-position: -16px -48px;
 }
 
-/* line 240, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 240, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-e {
   background-position: -32px -48px;
 }
 
-/* line 243, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 243, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-se {
   background-position: -48px -48px;
 }
 
-/* line 246, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 246, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-s {
   background-position: -64px -48px;
 }
 
-/* line 249, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 249, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-sw {
   background-position: -80px -48px;
 }
 
-/* line 252, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 252, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-w {
   background-position: -96px -48px;
 }
 
-/* line 255, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 255, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-1-nw {
   background-position: -112px -48px;
 }
 
-/* line 258, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 258, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-2-n-s {
   background-position: -128px -48px;
 }
 
-/* line 261, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 261, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-2-ne-sw {
   background-position: -144px -48px;
 }
 
-/* line 264, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 264, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-2-e-w {
   background-position: -160px -48px;
 }
 
-/* line 267, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 267, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthick-2-se-nw {
   background-position: -176px -48px;
 }
 
-/* line 270, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 270, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthickstop-1-n {
   background-position: -192px -48px;
 }
 
-/* line 273, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 273, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthickstop-1-e {
   background-position: -208px -48px;
 }
 
-/* line 276, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 276, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthickstop-1-s {
   background-position: -224px -48px;
 }
 
-/* line 279, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 279, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowthickstop-1-w {
   background-position: -240px -48px;
 }
 
-/* line 282, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 282, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturnthick-1-w {
   background-position: 0 -64px;
 }
 
-/* line 285, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 285, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturnthick-1-n {
   background-position: -16px -64px;
 }
 
-/* line 288, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 288, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturnthick-1-e {
   background-position: -32px -64px;
 }
 
-/* line 291, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 291, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturnthick-1-s {
   background-position: -48px -64px;
 }
 
-/* line 294, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 294, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturn-1-w {
   background-position: -64px -64px;
 }
 
-/* line 297, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 297, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturn-1-n {
   background-position: -80px -64px;
 }
 
-/* line 300, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 300, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturn-1-e {
   background-position: -96px -64px;
 }
 
-/* line 303, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 303, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowreturn-1-s {
   background-position: -112px -64px;
 }
 
-/* line 306, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 306, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowrefresh-1-w {
   background-position: -128px -64px;
 }
 
-/* line 309, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 309, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowrefresh-1-n {
   background-position: -144px -64px;
 }
 
-/* line 312, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 312, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowrefresh-1-e {
   background-position: -160px -64px;
 }
 
-/* line 315, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 315, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrowrefresh-1-s {
   background-position: -176px -64px;
 }
 
-/* line 318, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 318, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-4 {
   background-position: 0 -80px;
 }
 
-/* line 321, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 321, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-arrow-4-diag {
   background-position: -16px -80px;
 }
 
-/* line 324, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 324, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-extlink {
   background-position: -32px -80px;
 }
 
-/* line 327, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 327, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-newwin {
   background-position: -48px -80px;
 }
 
-/* line 330, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 330, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-refresh {
   background-position: -64px -80px;
 }
 
-/* line 333, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 333, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-shuffle {
   background-position: -80px -80px;
 }
 
-/* line 336, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 336, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-transfer-e-w {
   background-position: -96px -80px;
 }
 
-/* line 339, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 339, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-transferthick-e-w {
   background-position: -112px -80px;
 }
 
-/* line 342, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 342, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-folder-collapsed {
   background-position: 0 -96px;
 }
 
-/* line 345, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 345, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-folder-open {
   background-position: -16px -96px;
 }
 
-/* line 348, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 348, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-document {
   background-position: -32px -96px;
 }
 
-/* line 351, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 351, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-document-b {
   background-position: -48px -96px;
 }
 
-/* line 354, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 354, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-note {
   background-position: -64px -96px;
 }
 
-/* line 357, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 357, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-mail-closed {
   background-position: -80px -96px;
 }
 
-/* line 360, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 360, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-mail-open {
   background-position: -96px -96px;
 }
 
-/* line 363, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 363, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-suitcase {
   background-position: -112px -96px;
 }
 
-/* line 366, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 366, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-comment {
   background-position: -128px -96px;
 }
 
-/* line 369, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 369, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-person {
   background-position: -144px -96px;
 }
 
-/* line 372, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 372, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-print {
   background-position: -160px -96px;
 }
 
-/* line 375, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 375, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-trash {
   background-position: -176px -96px;
 }
 
-/* line 378, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 378, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-locked {
   background-position: -192px -96px;
 }
 
-/* line 381, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 381, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-unlocked {
   background-position: -208px -96px;
 }
 
-/* line 384, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 384, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-bookmark {
   background-position: -224px -96px;
 }
 
-/* line 387, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 387, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-tag {
   background-position: -240px -96px;
 }
 
-/* line 390, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 390, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-home {
   background-position: 0 -112px;
 }
 
-/* line 393, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 393, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-flag {
   background-position: -16px -112px;
 }
 
-/* line 396, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 396, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-calendar {
   background-position: -32px -112px;
 }
 
-/* line 399, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 399, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-cart {
   background-position: -48px -112px;
 }
 
-/* line 402, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 402, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-pencil {
   background-position: -64px -112px;
 }
 
-/* line 405, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 405, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-clock {
   background-position: -80px -112px;
 }
 
-/* line 408, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 408, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-disk {
   background-position: -96px -112px;
 }
 
-/* line 411, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 411, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-calculator {
   background-position: -112px -112px;
 }
 
-/* line 414, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 414, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-zoomin {
   background-position: -128px -112px;
 }
 
-/* line 417, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 417, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-zoomout {
   background-position: -144px -112px;
 }
 
-/* line 420, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 420, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-search {
   background-position: -160px -112px;
 }
 
-/* line 423, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 423, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-wrench {
   background-position: -176px -112px;
 }
 
-/* line 426, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 426, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-gear {
   background-position: -192px -112px;
 }
 
-/* line 429, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 429, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-heart {
   background-position: -208px -112px;
 }
 
-/* line 432, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 432, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-star {
   background-position: -224px -112px;
 }
 
-/* line 435, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 435, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-link {
   background-position: -240px -112px;
 }
 
-/* line 438, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 438, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-cancel {
   background-position: 0 -128px;
 }
 
-/* line 441, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 441, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-plus {
   background-position: -16px -128px;
 }
 
-/* line 444, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 444, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-plusthick {
   background-position: -32px -128px;
 }
 
-/* line 447, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 447, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-minus {
   background-position: -48px -128px;
 }
 
-/* line 450, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 450, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-minusthick {
   background-position: -64px -128px;
 }
 
-/* line 453, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 453, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-close {
   background-position: -80px -128px;
 }
 
-/* line 458, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 458, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-key {
   background-position: -112px -128px;
 }
 
-/* line 461, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 461, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-lightbulb {
   background-position: -128px -128px;
 }
 
-/* line 464, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 464, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-scissors {
   background-position: -144px -128px;
 }
 
-/* line 467, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 467, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-clipboard {
   background-position: -160px -128px;
 }
 
-/* line 470, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 470, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-copy {
   background-position: -176px -128px;
 }
 
-/* line 473, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 473, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-contact {
   background-position: -192px -128px;
 }
 
-/* line 476, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 476, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-image {
   background-position: -208px -128px;
 }
 
-/* line 479, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 479, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-video {
   background-position: -224px -128px;
 }
 
-/* line 482, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 482, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-script {
   background-position: -240px -128px;
 }
 
-/* line 485, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 485, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-alert {
   background-position: 0 -144px;
 }
 
-/* line 488, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 488, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-info {
   background-position: -16px -144px;
 }
 
-/* line 491, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 491, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-notice {
   background-position: -32px -144px;
 }
 
-/* line 494, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 494, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-help {
   background-position: -48px -144px;
 }
 
-/* line 497, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 497, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-check {
   background-position: -64px -144px;
 }
 
-/* line 500, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 500, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-bullet {
   background-position: -80px -144px;
 }
 
-/* line 503, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 503, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-radio-on {
   background-position: -96px -144px;
 }
 
-/* line 506, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 506, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-radio-off {
   background-position: -112px -144px;
 }
 
-/* line 509, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 509, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-pin-w {
   background-position: -128px -144px;
 }
 
-/* line 512, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 512, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-pin-s {
   background-position: -144px -144px;
 }
 
-/* line 515, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 515, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-play {
   background-position: 0 -160px;
 }
 
-/* line 518, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 518, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-pause {
   background-position: -16px -160px;
 }
 
-/* line 521, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 521, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-seek-next {
   background-position: -32px -160px;
 }
 
-/* line 524, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 524, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-seek-prev {
   background-position: -48px -160px;
 }
 
-/* line 527, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 527, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-seek-end {
   background-position: -64px -160px;
 }
 
-/* line 530, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 530, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-seek-start, .ui-icon-seek-first {
   background-position: -80px -160px;
 }
 
-/* line 533, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 533, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-stop {
   background-position: -96px -160px;
 }
 
-/* line 536, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 536, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-eject {
   background-position: -112px -160px;
 }
 
-/* line 539, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 539, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-volume-off {
   background-position: -128px -160px;
 }
 
-/* line 542, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 542, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-volume-on {
   background-position: -144px -160px;
 }
 
-/* line 545, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 545, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-power {
   background-position: 0 -176px;
 }
 
-/* line 548, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 548, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-signal-diag {
   background-position: -16px -176px;
 }
 
-/* line 551, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 551, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-signal {
   background-position: -32px -176px;
 }
 
-/* line 554, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 554, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-battery-0 {
   background-position: -48px -176px;
 }
 
-/* line 557, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 557, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-battery-1 {
   background-position: -64px -176px;
 }
 
-/* line 560, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 560, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-battery-2 {
   background-position: -80px -176px;
 }
 
-/* line 563, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 563, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-battery-3 {
   background-position: -96px -176px;
 }
 
-/* line 566, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 566, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-plus {
   background-position: 0 -192px;
 }
 
-/* line 569, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 569, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-minus {
   background-position: -16px -192px;
 }
 
-/* line 572, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 572, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-close {
   background-position: -32px -192px;
 }
 
-/* line 575, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 575, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-triangle-e {
   background-position: -48px -192px;
 }
 
-/* line 578, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 578, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-triangle-s {
   background-position: -64px -192px;
 }
 
-/* line 581, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 581, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-triangle-w {
   background-position: -80px -192px;
 }
 
-/* line 584, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 584, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-triangle-n {
   background-position: -96px -192px;
 }
 
-/* line 587, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 587, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-arrow-e {
   background-position: -112px -192px;
 }
 
-/* line 590, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 590, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-arrow-s {
   background-position: -128px -192px;
 }
 
-/* line 593, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 593, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-arrow-w {
   background-position: -144px -192px;
 }
 
-/* line 596, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 596, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-arrow-n {
   background-position: -160px -192px;
 }
 
-/* line 599, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 599, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-zoomin {
   background-position: -176px -192px;
 }
 
-/* line 602, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 602, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-zoomout {
   background-position: -192px -192px;
 }
 
-/* line 605, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 605, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circle-check {
   background-position: -208px -192px;
 }
 
-/* line 608, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 608, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circlesmall-plus {
   background-position: 0 -208px;
 }
 
-/* line 611, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 611, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circlesmall-minus {
   background-position: -16px -208px;
 }
 
-/* line 614, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 614, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-circlesmall-close {
   background-position: -32px -208px;
 }
 
-/* line 617, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 617, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-squaresmall-plus {
   background-position: -48px -208px;
 }
 
-/* line 620, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 620, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-squaresmall-minus {
   background-position: -64px -208px;
 }
 
-/* line 623, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 623, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-squaresmall-close {
   background-position: -80px -208px;
 }
 
-/* line 626, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 626, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-dotted-vertical {
   background-position: 0 -224px;
 }
 
-/* line 629, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 629, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-dotted-horizontal {
   background-position: -16px -224px;
 }
 
-/* line 632, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 632, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-solid-vertical {
   background-position: -32px -224px;
 }
 
-/* line 635, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 635, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-solid-horizontal {
   background-position: -48px -224px;
 }
 
-/* line 638, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 638, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-gripsmall-diagonal-se {
   background-position: -64px -224px;
 }
 
-/* line 641, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 641, ../sass/modules/_jquery_ui_theme.sass */
 .ui-icon-grip-diagonal-se {
   background-position: -80px -224px;
 }
 
-/* line 645, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 645, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-overlay {
   background: rgba(0, 0, 0, 0.75) url("../images/mask.png") 50% 50% repeat;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
   opacity: 0.85;
 }
 
-/* line 649, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_jquery_ui_theme.sass */
+/* line 649, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-shadow {
   background: #aaaaaa url("../images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
@@ -10172,7 +9972,7 @@ input.pure-input-rounded, .pure-input-rounded {
   border-radius: 8px;
 }
 
-/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_menu.sass */
+/* line 8, ../sass/modules/_menu.sass */
 .menu-2:after {
   font-family: "icomoon";
   speak: none;
@@ -10192,7 +9992,7 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e010";
 }
 
-/* line 15, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_menu.sass */
+/* line 15, ../sass/modules/_menu.sass */
 .menu-12:after {
   font-family: "icomoon";
   speak: none;
@@ -10212,7 +10012,7 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\f08b";
 }
 
-/* line 4, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_notifications.sass */
+/* line 4, ../sass/modules/_notifications.sass */
 .info-block, .page-user .description,
 .page-user-password .description, .filter-guidelines {
   font-size: 12px;
@@ -10234,7 +10034,7 @@ input.pure-input-rounded, .pure-input-rounded {
   display: block;
   position: relative;
 }
-/* line 15, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_notifications.sass */
+/* line 15, ../sass/modules/_notifications.sass */
 .info-block:after, .page-user .description:after,
 .page-user-password .description:after, .filter-guidelines:after {
   font-size: 21px;
@@ -10254,19 +10054,19 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 0.1em;
   left: 0.5em;
 }
-/* line 23, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_notifications.sass */
+/* line 23, ../sass/modules/_notifications.sass */
 .info-block ul, .page-user .description ul,
 .page-user-password .description ul, .filter-guidelines ul {
   margin: 0;
   padding: 0;
 }
-/* line 26, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_notifications.sass */
+/* line 26, ../sass/modules/_notifications.sass */
 .info-block ul li, .page-user .description ul li,
 .page-user-password .description ul li, .filter-guidelines ul li {
   list-style-type: none;
 }
 
-/* line 1, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_breadcrumbs.sass */
+/* line 1, ../sass/modules/_breadcrumbs.sass */
 #breadcrumb {
   margin: 0;
   padding: 0;
@@ -10277,12 +10077,12 @@ input.pure-input-rounded, .pure-input-rounded {
   border-bottom: 1px solid #ededed;
   color: #adadad;
 }
-/* line 8, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_breadcrumbs.sass */
+/* line 8, ../sass/modules/_breadcrumbs.sass */
 #breadcrumb ul {
   margin: 7.5px 0;
   margin: 0.75rem 0;
 }
-/* line 11, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_breadcrumbs.sass */
+/* line 11, ../sass/modules/_breadcrumbs.sass */
 #breadcrumb ul li {
   font-size: 8px;
   line-height: 11.6px;
@@ -10290,7 +10090,7 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 1.16rem;
   display: inline-block;
 }
-/* line 15, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_breadcrumbs.sass */
+/* line 15, ../sass/modules/_breadcrumbs.sass */
 #breadcrumb ul li:after {
   font-family: "icomoon";
   speak: none;
@@ -10309,27 +10109,230 @@ input.pure-input-rounded, .pure-input-rounded {
   margin: 0 6.5px 0 5px;
   margin: 0 0.65rem 0 0.5rem;
 }
-/* line 22, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_breadcrumbs.sass */
+/* line 22, ../sass/modules/_breadcrumbs.sass */
 #breadcrumb ul li:last-of-type:after {
   content: "";
   margin: 0;
   padding: 0;
 }
-/* line 26, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_breadcrumbs.sass */
+/* line 26, ../sass/modules/_breadcrumbs.sass */
 #breadcrumb ul li a {
   color: #626262;
 }
-/* line 29, C:/xampp/htdocs/walkhub/sites/all/themes/walkhub_theme/sass/modules/_breadcrumbs.sass */
+/* line 29, ../sass/modules/_breadcrumbs.sass */
 #breadcrumb ul li a:hover {
   text-decoration: underline;
 }
 
-/* line 23, ../sass/modules/_modules.sass */
+/* line 1, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper {
+  padding: 10px;
+}
+/* line 4, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper > p {
+  font-family: "Museo500", Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  line-height: 14.5px;
+  font-size: 1rem;
+  line-height: 1.45rem;
+}
+/* line 8, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper > a,
+.joyride-content-wrapper input[type="submit"],
+.joyride-content-wrapper .joyride-next-tip {
+  font-size: 19px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF4F4F5', endColorstr='#FFBFBFC4');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4f4f5), color-stop(100%, #d9d9dd));
+  background: -webkit-linear-gradient(#f4f4f5, #d9d9dd);
+  background: -moz-linear-gradient(#f4f4f5, #d9d9dd);
+  background: -o-linear-gradient(#f4f4f5, #d9d9dd);
+  background: linear-gradient(#f4f4f5, #d9d9dd);
+  -webkit-box-shadow: white 0 1px 0 inset;
+  -moz-box-shadow: white 0 1px 0 inset;
+  box-shadow: white 0 1px 0 inset;
+  border: 1px solid #ccccd1;
+  color: white;
+  text-shadow: #afafb6 0 -1px 0;
+  font-size: 6.5px;
+  line-height: 9.425px;
+  font-size: 0.65rem;
+  line-height: 0.9425rem;
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  -ms-border-radius: 0.35em;
+  -o-border-radius: 0.35em;
+  border-radius: 0.35em;
+  padding: 0.45em 0.85em;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  color: #6f6f6f;
+  vertical-align: bottom;
+  margin-right: 0.45em;
+  padding: 0.4em 1em;
+}
+/* line 15, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.joyride-content-wrapper > a:hover,
+.joyride-content-wrapper input[type="submit"]:hover,
+.joyride-content-wrapper .joyride-next-tip:hover {
+  text-decoration: none;
+}
+/* line 36, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.joyride-content-wrapper > a:hover,
+.joyride-content-wrapper input[type="submit"]:hover,
+.joyride-content-wrapper .joyride-next-tip:hover {
+  background-color: #ccccd1;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e7e7e9), color-stop(100%, #ccccd1));
+  background: -webkit-linear-gradient(#e7e7e9, #ccccd1);
+  background: -moz-linear-gradient(#e7e7e9, #ccccd1);
+  background: -o-linear-gradient(#e7e7e9, #ccccd1);
+  background: linear-gradient(#e7e7e9, #ccccd1);
+}
+/* line 39, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.joyride-content-wrapper > a:active,
+.joyride-content-wrapper input[type="submit"]:active,
+.joyride-content-wrapper .joyride-next-tip:active {
+  -webkit-box-shadow: #c4c4c9 0 1px 2px inset;
+  -moz-box-shadow: #c4c4c9 0 1px 2px inset;
+  box-shadow: #c4c4c9 0 1px 2px inset;
+}
+/* line 6, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.joyride-content-wrapper > a.disabled, .joyride-content-wrapper > a[disabled],
+.joyride-content-wrapper input[type="submit"].disabled,
+.joyride-content-wrapper input[type="submit"][disabled],
+.joyride-content-wrapper .joyride-next-tip.disabled,
+.joyride-content-wrapper .joyride-next-tip[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #d9d9dd;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 74, ../sass/mixins/_sassy-buttons.sass */
+.joyride-content-wrapper > a::-moz-focus-inner,
+.joyride-content-wrapper input[type="submit"]::-moz-focus-inner,
+.joyride-content-wrapper .joyride-next-tip::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 21, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper > a:hover, .joyride-content-wrapper > a:active,
+.joyride-content-wrapper input[type="submit"]:hover,
+.joyride-content-wrapper input[type="submit"]:active,
+.joyride-content-wrapper .joyride-next-tip:hover,
+.joyride-content-wrapper .joyride-next-tip:active {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  color: #6f6f6f !important;
+  border: 1px solid #ccccd1 !important;
+}
+/* line 27, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset {
+  *zoom: 1;
+  text-align: left;
+  padding: 0;
+}
+/* line 121, ../sass/grid/foundation/components/_global.scss */
+.joyride-content-wrapper fieldset:before, .joyride-content-wrapper fieldset:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../sass/grid/foundation/components/_global.scss */
+.joyride-content-wrapper fieldset:after {
+  clear: both;
+}
+/* line 32, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset label {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 28%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  clear: left;
+  color: rgba(255, 255, 255, 0.8);
+}
+/* line 40, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset hr {
+  margin: 5px -10px;
+  border: 0;
+  border-top: 1px solid black;
+}
+/* line 45, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset input[type="textfield"],
+.joyride-content-wrapper fieldset textarea {
+  margin: 0;
+  padding: 0;
+  width: 72%;
+  max-width: 72%;
+  padding: 2px 1px;
+  font-size: 7.5px;
+  line-height: 10.875px;
+  font-size: 0.75rem;
+  line-height: 1.0875rem;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  -moz-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: all 0.25s ease-in;
+  display: inline-block;
+  border: 1px solid #cccccc;
+}
+/* line 59, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+}
+/* line 62, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset input[type="textfield"],
+.joyride-content-wrapper fieldset input[type="checkbox"],
+.joyride-content-wrapper fieldset textarea {
+  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
+}
+/* line 67, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper .joyride-close-tip {
+  color: #6f6f6f !important;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 1.7em;
+}
+/* line 75, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper .joyride-close-tip:hover, .joyride-content-wrapper .joyride-close-tip:active {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  color: #6f6f6f !important;
+  border: 1px solid #ccccd1 !important;
+}
+
+/* line 24, ../sass/modules/_modules.sass */
 .wt-container {
   padding-bottom: 67.5%;
   position: relative;
 }
-/* line 27, ../sass/modules/_modules.sass */
+/* line 28, ../sass/modules/_modules.sass */
 .wt-container #walkthrough-slideshow-iframe {
   position: absolute;
   top: 0;
