@@ -5205,207 +5205,6 @@ label.error {
     background: #fff !important;
   }
 }
-/* Foundation Joyride */
-/* line 41, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-list {
-  display: none;
-}
-
-/* Default styles for the container */
-/* line 44, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide {
-  display: none;
-  position: absolute;
-  background: black;
-  color: white;
-  z-index: 101;
-  top: 0;
-  left: 2.5%;
-  font-family: inherit;
-  font-weight: normal;
-  width: 95%;
-}
-
-/* line 57, ../sass/grid/foundation/components/_joyride.scss */
-.lt-ie9 .joyride-tip-guide {
-  max-width: 800px;
-  left: 50%;
-  margin-left: -400px;
-}
-
-/* line 63, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-content-wrapper {
-  width: 100%;
-  padding: 1.125em 1.25em 1.5em;
-}
-/* line 68, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-content-wrapper .button, .joyride-content-wrapper .ui-state-default, .joyride-content-wrapper .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .joyride-content-wrapper button {
-  margin-bottom: 0 !important;
-}
-
-/* Add a little css triangle pip, older browser just miss out on the fanciness of it */
-/* line 73, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub {
-  display: block;
-  position: absolute;
-  left: 22px;
-  width: 0;
-  height: 0;
-  border: inset 14px;
-}
-/* line 81, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.top {
-  border-top-style: solid;
-  border-color: black;
-  border-top-color: transparent !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  top: -28px;
-}
-/* line 89, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.bottom {
-  border-bottom-style: solid;
-  border-color: black !important;
-  border-bottom-color: transparent !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  bottom: -28px;
-}
-/* line 98, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.right {
-  right: -28px;
-}
-/* line 99, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.left {
-  left: -28px;
-}
-
-/* Typography */
-/* line 109, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide h1,
-.joyride-tip-guide h2,
-.joyride-tip-guide h3,
-.joyride-tip-guide h4,
-.joyride-tip-guide h5,
-.joyride-tip-guide h6 {
-  line-height: 1.25;
-  margin: 0;
-  font-weight: bold;
-  color: white;
-}
-
-/* line 115, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-tip-guide p {
-  margin: 0 0 1.125em 0;
-  font-size: 0.875em;
-  line-height: 1.3;
-}
-
-/* line 121, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-timer-indicator-wrap {
-  width: 50px;
-  height: 3px;
-  border: solid 1px #555555;
-  position: absolute;
-  right: 1.0625em;
-  bottom: 1em;
-}
-
-/* line 129, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-timer-indicator {
-  display: block;
-  width: 0;
-  height: inherit;
-  background: #666666;
-}
-
-/* line 136, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-close-tip {
-  position: absolute;
-  right: 12px;
-  top: 10px;
-  color: #777777 !important;
-  text-decoration: none;
-  font-size: 30px;
-  font-weight: normal;
-  line-height: .5 !important;
-}
-/* line 147, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-close-tip:hover, .joyride-close-tip:focus {
-  color: #eee !important;
-}
-
-/* line 150, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-modal-bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 100;
-  display: none;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-/* line 163, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-expose-wrapper {
-  background-color: #ffffff;
-  position: absolute;
-  border-radius: 3px;
-  z-index: 102;
-  -moz-box-shadow: 0 0 30px #ffffff;
-  -webkit-box-shadow: 0 0 15px #ffffff;
-  box-shadow: 0 0 15px #ffffff;
-}
-
-/* line 175, ../sass/grid/foundation/components/_joyride.scss */
-.joyride-expose-cover {
-  background: transparent;
-  border-radius: 3px;
-  position: absolute;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-}
-
-/* Styles for screens that are atleast 768px; */
-@media only screen and (min-width: 768px) {
-  /* line 187, ../sass/grid/foundation/components/_joyride.scss */
-  .joyride-tip-guide {
-    width: 300px;
-    left: inherit;
-  }
-  /* line 189, ../sass/grid/foundation/components/_joyride.scss */
-  .joyride-tip-guide .joyride-nub.bottom {
-    border-color: black !important;
-    border-bottom-color: transparent !important;
-    border-left-color: transparent !important;
-    border-right-color: transparent !important;
-    bottom: -28px;
-  }
-  /* line 196, ../sass/grid/foundation/components/_joyride.scss */
-  .joyride-tip-guide .joyride-nub.right {
-    border-color: black !important;
-    border-top-color: transparent !important;
-    border-right-color: transparent !important;
-    border-bottom-color: transparent !important;
-    top: 22px;
-    left: auto;
-    right: -28px;
-  }
-  /* line 204, ../sass/grid/foundation/components/_joyride.scss */
-  .joyride-tip-guide .joyride-nub.left {
-    border-color: black !important;
-    border-top-color: transparent !important;
-    border-left-color: transparent !important;
-    border-bottom-color: transparent !important;
-    top: 22px;
-    left: -28px;
-    right: auto;
-  }
-}
 /* Clearing Styles */
 /* line 36, ../sass/grid/foundation/components/_clearing.scss */
 [data-clearing] {
@@ -9048,9 +8847,10 @@ input.pure-input-rounded, .pure-input-rounded {
 }
 /* line 36, ../sass/modules/_jquery_ui.sass */
 .ui-dialog .ui-dialog-content {
+  margin: 0;
+  padding: 0;
   position: relative;
   border: 0;
-  padding: 0.5em 1em;
   background: 0;
   overflow: auto;
 }
@@ -10324,6 +10124,225 @@ input.pure-input-rounded, .pure-input-rounded {
   text-decoration: underline;
 }
 
+/* line 1, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper {
+  padding: 10px;
+}
+/* line 4, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper > p {
+  font-family: "Museo500", Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  line-height: 14.5px;
+  font-size: 1rem;
+  line-height: 1.45rem;
+}
+/* line 8, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper > a,
+.joyride-content-wrapper input[type="submit"],
+.joyride-content-wrapper .joyride-next-tip {
+  font-size: 19px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF4F4F5', endColorstr='#FFBFBFC4');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4f4f5), color-stop(100%, #d9d9dd));
+  background: -webkit-linear-gradient(#f4f4f5, #d9d9dd);
+  background: -moz-linear-gradient(#f4f4f5, #d9d9dd);
+  background: -o-linear-gradient(#f4f4f5, #d9d9dd);
+  background: linear-gradient(#f4f4f5, #d9d9dd);
+  -webkit-box-shadow: white 0 1px 0 inset;
+  -moz-box-shadow: white 0 1px 0 inset;
+  box-shadow: white 0 1px 0 inset;
+  border: 1px solid #ccccd1;
+  color: white;
+  text-shadow: #afafb6 0 -1px 0;
+  font-size: 6.5px;
+  line-height: 9.425px;
+  font-size: 0.65rem;
+  line-height: 0.9425rem;
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  -ms-border-radius: 0.35em;
+  -o-border-radius: 0.35em;
+  border-radius: 0.35em;
+  padding: 0.45em 0.85em;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  color: #6f6f6f;
+  vertical-align: bottom;
+  margin-right: 0.45em;
+  padding: 0.4em 1em;
+}
+/* line 15, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.joyride-content-wrapper > a:hover,
+.joyride-content-wrapper input[type="submit"]:hover,
+.joyride-content-wrapper .joyride-next-tip:hover {
+  text-decoration: none;
+}
+/* line 36, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.joyride-content-wrapper > a:hover,
+.joyride-content-wrapper input[type="submit"]:hover,
+.joyride-content-wrapper .joyride-next-tip:hover {
+  background-color: #ccccd1;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e7e7e9), color-stop(100%, #ccccd1));
+  background: -webkit-linear-gradient(#e7e7e9, #ccccd1);
+  background: -moz-linear-gradient(#e7e7e9, #ccccd1);
+  background: -o-linear-gradient(#e7e7e9, #ccccd1);
+  background: linear-gradient(#e7e7e9, #ccccd1);
+}
+/* line 39, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.joyride-content-wrapper > a:active,
+.joyride-content-wrapper input[type="submit"]:active,
+.joyride-content-wrapper .joyride-next-tip:active {
+  -webkit-box-shadow: #c4c4c9 0 1px 2px inset;
+  -moz-box-shadow: #c4c4c9 0 1px 2px inset;
+  box-shadow: #c4c4c9 0 1px 2px inset;
+}
+/* line 6, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.joyride-content-wrapper > a.disabled, .joyride-content-wrapper > a[disabled],
+.joyride-content-wrapper input[type="submit"].disabled,
+.joyride-content-wrapper input[type="submit"][disabled],
+.joyride-content-wrapper .joyride-next-tip.disabled,
+.joyride-content-wrapper .joyride-next-tip[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #d9d9dd;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 74, ../sass/mixins/_sassy-buttons.sass */
+.joyride-content-wrapper > a::-moz-focus-inner,
+.joyride-content-wrapper input[type="submit"]::-moz-focus-inner,
+.joyride-content-wrapper .joyride-next-tip::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 21, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper > a:hover, .joyride-content-wrapper > a:active,
+.joyride-content-wrapper input[type="submit"]:hover,
+.joyride-content-wrapper input[type="submit"]:active,
+.joyride-content-wrapper .joyride-next-tip:hover,
+.joyride-content-wrapper .joyride-next-tip:active {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  color: #6f6f6f !important;
+  border: 1px solid #ccccd1 !important;
+}
+/* line 27, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset {
+  *zoom: 1;
+  text-align: left;
+  padding: 0;
+}
+/* line 121, ../sass/grid/foundation/components/_global.scss */
+.joyride-content-wrapper fieldset:before, .joyride-content-wrapper fieldset:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../sass/grid/foundation/components/_global.scss */
+.joyride-content-wrapper fieldset:after {
+  clear: both;
+}
+/* line 32, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset label {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 28%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  clear: left;
+  color: rgba(255, 255, 255, 0.8);
+}
+/* line 40, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset hr {
+  margin: 5px -10px;
+  border: 0;
+  border-top: 1px solid black;
+}
+/* line 45, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset input[type="textfield"],
+.joyride-content-wrapper fieldset textarea {
+  margin: 0;
+  padding: 0;
+  width: 72%;
+  max-width: 72%;
+  padding: 2px 1px;
+  font-size: 7.5px;
+  line-height: 10.875px;
+  font-size: 0.75rem;
+  line-height: 1.0875rem;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  -moz-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: all 0.25s ease-in;
+  display: inline-block;
+  border: 1px solid #cccccc;
+}
+/* line 59, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+}
+/* line 62, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper fieldset input[type="textfield"],
+.joyride-content-wrapper fieldset input[type="checkbox"],
+.joyride-content-wrapper fieldset textarea {
+  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
+}
+/* line 67, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper .joyride-close-tip {
+  margin: 0;
+  padding: 0;
+  color: #6f6f6f !important;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 1.7em;
+}
+/* line 76, ../sass/modules/_joyride.sass */
+.joyride-content-wrapper .joyride-close-tip:hover, .joyride-content-wrapper .joyride-close-tip:active {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  color: #6f6f6f !important;
+  border: 1px solid #ccccd1 !important;
+}
+
+/* line 24, ../sass/modules/_modules.sass */
+.wt-container {
+  padding-bottom: 67.5%;
+  position: relative;
+}
+/* line 28, ../sass/modules/_modules.sass */
+.wt-container #walkthrough-slideshow-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* line 6, ../sass/page/_node-type-faq.sass */
 .node-type-walkhub-faq-page .field-collection-view {
   margin-top: 5px;
@@ -10444,8 +10463,9 @@ input.pure-input-rounded, .pure-input-rounded {
   line-height: 17.4px;
   font-size: 1.2rem;
   line-height: 1.74rem;
+  padding-right: 3em;
 }
-/* line 45, ../sass/page/_node-walkthrough.sass */
+/* line 46, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-name .field-label {
   font: 0/0 a;
   text-shadow: none;
@@ -10699,8 +10719,10 @@ input.pure-input-rounded, .pure-input-rounded {
 .node-type-walkthrough .node-walkthrough .field-name-field-fc-step-description {
   margin-top: 3.5px;
   margin-top: 0.35rem;
+  padding-right: 35px;
+  padding-right: 3.5rem;
 }
-/* line 164, ../sass/page/_node-walkthrough.sass */
+/* line 165, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .description.field-collection-description,
 .node-type-walkthrough .node-walkthrough .action-links-field-collection-add {
   font: 0/0 a;
@@ -10708,14 +10730,14 @@ input.pure-input-rounded, .pure-input-rounded {
   color: transparent;
   display: none;
 }
-/* line 169, ../sass/page/_node-walkthrough.sass */
+/* line 170, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline,
 .node-type-walkthrough .node-walkthrough .links.inline li {
   margin: 0;
   padding: 0;
   display: inline-block;
 }
-/* line 174, ../sass/page/_node-walkthrough.sass */
+/* line 175, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a,
 .node-type-walkthrough .node-walkthrough .links.inline li a {
   font-size: 19px;
@@ -10794,14 +10816,14 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 183, ../sass/page/_node-walkthrough.sass */
+/* line 184, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a:hover, .node-type-walkthrough .node-walkthrough .links.inline a:active,
 .node-type-walkthrough .node-walkthrough .links.inline li a:hover,
 .node-type-walkthrough .node-walkthrough .links.inline li a:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 188, ../sass/page/_node-walkthrough.sass */
+/* line 189, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a:before,
 .node-type-walkthrough .node-walkthrough .links.inline li a:before {
   font-family: "icomoon";
@@ -10819,11 +10841,11 @@ input.pure-input-rounded, .pure-input-rounded {
   display: inline-block;
   margin-right: 0.5em;
 }
-/* line 194, ../sass/page/_node-walkthrough.sass */
+/* line 195, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline {
   float: right;
 }
-/* line 197, ../sass/page/_node-walkthrough.sass */
+/* line 198, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline li.flag-walkthrough_broken a {
   font-size: 5.5px;
   line-height: 7.975px;
@@ -11240,6 +11262,12 @@ input.pure-input-rounded, .pure-input-rounded {
   display: none;
 }
 /* line 210, ../sass/page/_node-walkthrough-edit.sass */
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .grippie,
+.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .grippie {
+  float: none;
+  width: 100%;
+}
+/* line 214, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button {
   font-size: 7px;
@@ -11250,14 +11278,14 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 10px;
   right: 10px;
 }
-/* line 216, ../sass/page/_node-walkthrough-edit.sass */
+/* line 220, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend {
   display: none;
 }
-/* line 220, ../sass/page/_node-walkthrough-edit.sass */
+/* line 224, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
@@ -11269,7 +11297,7 @@ input.pure-input-rounded, .pure-input-rounded {
   height: 29px;
   overflow: hidden;
 }
-/* line 227, ../sass/page/_node-walkthrough-edit.sass */
+/* line 231, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title span,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
@@ -11278,27 +11306,27 @@ input.pure-input-rounded, .pure-input-rounded {
   font-weight: bold;
   display: inline-block;
 }
-/* line 231, ../sass/page/_node-walkthrough-edit.sass */
+/* line 235, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .le,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .le {
   float: left;
   width: 46%;
   margin-right: 4%;
 }
-/* line 236, ../sass/page/_node-walkthrough-edit.sass */
+/* line 240, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ri,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ri {
   float: right;
   width: 46%;
   margin-right: 4%;
 }
-/* line 241, ../sass/page/_node-walkthrough-edit.sass */
+/* line 245, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #adv-sett-proxy-param,
 .page-node-edit.node-type-walkthrough .row.l-main #adv-sett-proxy-param {
   padding-top: 10px;
   padding-top: 1rem;
 }
-/* line 243, ../sass/page/_node-walkthrough-edit.sass */
+/* line 247, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #adv-sett-proxy-param label,
 .page-node-edit.node-type-walkthrough .row.l-main #adv-sett-proxy-param label {
   width: 100%;
@@ -11309,18 +11337,18 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-top: 5px;
   margin-top: 0.5rem;
 }
-/* line 248, ../sass/page/_node-walkthrough-edit.sass */
+/* line 252, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #adv-sett-proxy-param .grippie,
 .page-node-edit.node-type-walkthrough .row.l-main #adv-sett-proxy-param .grippie {
   float: none;
   width: 100%;
 }
-/* line 252, ../sass/page/_node-walkthrough-edit.sass */
+/* line 256, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #adv-sett-proxy-param textarea,
 .page-node-edit.node-type-walkthrough .row.l-main #adv-sett-proxy-param textarea {
   min-height: 89px;
 }
-/* line 255, ../sass/page/_node-walkthrough-edit.sass */
+/* line 259, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-proxy-warning-message-add-more-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main #field-proxy-warning-message-add-more-wrapper {
   margin-left: 24%;

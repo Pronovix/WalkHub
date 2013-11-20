@@ -123,13 +123,15 @@
 </div>
 <!--Title Bar-->
 <div id="title-bar" class="cf">
-  <div class="title float-left">
-    <h2><?php echo $link; ?></h2>
-  </div>
-  <div class="start-button float-right">
-    <a id="startWT" href="<?php echo $start_url; ?>" target="_blank">
-      <?php echo t('Start Walkthrough'); ?><i class="icon-play-circle"></i>
-    </a>
+  <div class="cont">
+    <div class="title">
+      <h2><?php echo $link; ?></h2>
+    </div>
+    <div class="start-button">
+      <a id="startWT" href="<?php echo $start_url; ?>" target="_blank">
+        <?php echo t('Start Walkthrough'); ?><i class="icon-play-circle"></i>
+      </a>
+    </div>
   </div>
 </div>
 <div id="hidden-center">

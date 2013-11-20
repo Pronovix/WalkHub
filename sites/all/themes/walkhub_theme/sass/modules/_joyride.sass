@@ -1,0 +1,80 @@
+.joyride-content-wrapper
+  padding: 10px
+
+  & > p
+    +font-museo-500
+    +font-size(1)
+
+  & > a,
+  input[type="submit"],
+  .joyride-next-tip
+    +sassy-button("simple", 10px, 19px, #f4f4f5)
+    +font-size(.65)
+    +border-radius(.35em)
+    padding: .45em .85em
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+    color: #6f6f6f
+    vertical-align: bottom
+    margin-right: .45em
+    padding: .4em 1em
+
+    &:hover,
+    &:active
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+      color: #6f6f6f!important
+      border: 1px solid #ccccd1!important
+
+  fieldset
+    +clearfix
+    text-align: left
+    padding: 0
+
+    label
+      +mp0
+      float: left
+      width: 28%
+      +box-sizing(border-box)
+      clear: left
+      color: rgba(#fff, .8)
+
+    hr
+      margin: 5px -10px
+      border: 0
+      border-top: 1px solid #000000
+
+    input[type="textfield"],
+    textarea
+      +mp0
+      width: 72%
+      max-width: 72%
+      padding: 2px 1px
+      +font-size(.75)
+      +border-radius(4px)
+      +box-shadow(inset 0 1px 3px rgba(221, 221, 221, 0.75))
+      +box-sizing(border-box)
+      transition: all 0.25s ease-in
+      display: inline-block
+      border: 1px solid #cccccc
+
+    input[type="checkbox"]
+      +mp0
+
+    input[type="textfield"],
+    input[type="checkbox"],
+    textarea
+      +px-rem(margin-bottom, .5)
+
+  .joyride-close-tip
+    +mp0
+    color: #6f6f6f!important
+    +border-radius(50%)
+    width: 20px
+    height: 20px
+    text-align: center
+    line-height: 1.7em
+
+    &:hover,
+    &:active
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+      color: #6f6f6f!important
+      border: 1px solid #ccccd1!important
