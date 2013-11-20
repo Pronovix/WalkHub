@@ -4290,10 +4290,11 @@ label.error {
 }
 /* line 74, ../sass/grid/foundation/components/_top-bar.scss */
 .contain-to-grid .top-bar {
-  margin-bottom: 0;
+  max-width: 62.5em;
+  margin: 0 auto;
 }
 
-/* line 78, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 81, ../sass/grid/foundation/components/_top-bar.scss */
 .fixed {
   width: 100%;
   left: 0;
@@ -4301,26 +4302,26 @@ label.error {
   top: 0;
   z-index: 99;
 }
-/* line 85, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 88, ../sass/grid/foundation/components/_top-bar.scss */
 .fixed.expanded:not(.top-bar) {
   overflow-y: auto;
   height: auto;
   width: 100%;
   max-height: 100%;
 }
-/* line 91, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 94, ../sass/grid/foundation/components/_top-bar.scss */
 .fixed.expanded:not(.top-bar) .title-area {
   position: fixed;
   width: 100%;
   z-index: 99;
 }
-/* line 97, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 100, ../sass/grid/foundation/components/_top-bar.scss */
 .fixed.expanded:not(.top-bar) .top-bar-section {
   z-index: 98;
   margin-top: 45px;
 }
 
-/* line 104, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 107, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar {
   overflow: hidden;
   height: 45px;
@@ -4328,48 +4329,48 @@ label.error {
   position: relative;
   margin-bottom: 0;
 }
-/* line 112, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 115, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar ul {
   margin-bottom: 0;
   list-style: none;
 }
-/* line 117, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 120, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .row {
   max-width: none;
 }
-/* line 120, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 123, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar form,
 .top-bar input {
   margin-bottom: 0;
 }
-/* line 122, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 125, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar input {
   height: 2.45em;
 }
-/* line 124, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 127, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .button, .top-bar .ui-state-default, .top-bar .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .top-bar button {
   padding-top: .5em;
   padding-bottom: .5em;
   margin-bottom: 0;
 }
-/* line 127, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 130, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .title-area {
   position: relative;
   margin: 0;
 }
-/* line 132, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 135, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .name {
   height: 45px;
   margin: 0;
   font-size: 16px;
 }
-/* line 137, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 140, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .name h1 {
   line-height: 45px;
   font-size: 1.0625em;
   margin: 0;
 }
-/* line 141, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 144, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .name h1 a {
   font-weight: bold;
   color: white;
@@ -4377,13 +4378,13 @@ label.error {
   display: block;
   padding: 0 15px;
 }
-/* line 152, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 155, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .toggle-topbar {
   position: absolute;
   right: 0;
   top: 0;
 }
-/* line 157, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 160, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .toggle-topbar a {
   color: white;
   text-transform: uppercase;
@@ -4395,13 +4396,13 @@ label.error {
   height: 45px;
   line-height: 45px;
 }
-/* line 170, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 173, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .toggle-topbar.menu-icon {
   right: 15px;
   padding-left: 40px;
   margin-top: .65em;
 }
-/* line 175, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 178, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .toggle-topbar.menu-icon a {
   text-indent: -48px;
   width: 34px;
@@ -4410,7 +4411,7 @@ label.error {
   padding: 0;
   color: white;
 }
-/* line 183, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 186, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar .toggle-topbar.menu-icon a span {
   position: absolute;
   right: 0;
@@ -4420,26 +4421,26 @@ label.error {
   -webkit-box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
   box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
 }
-/* line 204, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 207, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar.expanded {
   height: auto;
   background: transparent;
 }
-/* line 208, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 211, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar.expanded .title-area {
   background: #111111;
 }
-/* line 211, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 214, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar.expanded .toggle-topbar a {
   color: #888888;
 }
-/* line 212, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 215, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar.expanded .toggle-topbar a span {
   -webkit-box-shadow: 0 10px 0 1px #888888, 0 16px 0 1px #888888, 0 22px 0 1px #888888;
   box-shadow: 0 10px 0 1px #888888, 0 16px 0 1px #888888, 0 22px 0 1px #888888;
 }
 
-/* line 230, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 233, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section {
   left: 0;
   position: relative;
@@ -4448,7 +4449,7 @@ label.error {
   -moz-transition: left 300ms ease-out;
   transition: left 300ms ease-out;
 }
-/* line 236, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 239, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section ul {
   width: 100%;
   height: auto;
@@ -4457,7 +4458,7 @@ label.error {
   margin: 0;
 }
 @media screen and (min-width: 940px) {
-  /* line 236, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 239, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section ul {
     float: right !important;
     padding-left: 0.9375em;
@@ -4465,7 +4466,7 @@ label.error {
   }
 }
 @media screen and (max-width: 939px) {
-  /* line 236, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 239, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section ul {
     -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
@@ -4474,7 +4475,7 @@ label.error {
     margin-top: .5em;
   }
 }
-/* line 256, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 259, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .divider,
 .top-bar-section [role="separator"] {
   border-bottom: solid 1px #2b2b2b;
@@ -4483,7 +4484,7 @@ label.error {
   height: 1px;
   width: 100%;
 }
-/* line 265, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 268, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a {
   display: block;
   width: 100%;
@@ -4493,30 +4494,30 @@ label.error {
   font-size: 0.8125em;
   font-weight: bold;
 }
-/* line 274, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 277, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button, .top-bar-section ul li > a.ui-state-default {
   background: #2ba6cb;
   font-size: 0.8125em;
   padding-right: 15px;
   padding-left: 15px;
 }
-/* line 283, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 286, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section ul li:hover > a {
   color: white;
 }
-/* line 288, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 291, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section ul li.active > a {
   color: white;
 }
-/* line 294, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 297, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .has-form {
   padding: 15px;
 }
-/* line 297, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 300, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .has-dropdown {
   position: relative;
 }
-/* line 301, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 304, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .has-dropdown > a:after {
   content: "";
   display: block;
@@ -4531,15 +4532,15 @@ label.error {
   top: 50%;
   right: 0;
 }
-/* line 313, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 316, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .has-dropdown.moved {
   position: static;
 }
-/* line 314, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 317, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .has-dropdown.moved > .dropdown {
   display: block;
 }
-/* line 321, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 324, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .dropdown {
   position: absolute;
   left: 100%;
@@ -4547,31 +4548,31 @@ label.error {
   display: none;
   z-index: 99;
 }
-/* line 328, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 331, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .dropdown li {
   width: 100%;
   height: auto;
 }
-/* line 332, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 335, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .dropdown li a {
   font-weight: normal;
   padding: 8px 15px;
 }
-/* line 335, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 338, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .dropdown li a.parent-link {
   font-weight: bold;
 }
-/* line 340, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 343, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .dropdown li.title h5 {
   margin-bottom: 0;
 }
-/* line 341, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 344, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .dropdown li.title h5 a {
   color: white;
   line-height: 22.5px;
   display: block;
 }
-/* line 349, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 352, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-section .dropdown label {
   padding: 8px 15px 2px;
   margin-bottom: 0;
@@ -4581,19 +4582,19 @@ label.error {
   font-size: 0.625em;
 }
 
-/* line 361, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 364, ../sass/grid/foundation/components/_top-bar.scss */
 .top-bar-js-breakpoint {
   width: 940px !important;
   visibility: hidden;
 }
 
-/* line 365, ../sass/grid/foundation/components/_top-bar.scss */
+/* line 368, ../sass/grid/foundation/components/_top-bar.scss */
 .js-generated {
   display: block;
 }
 
 @media only screen and (min-width: 940px) {
-  /* line 370, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 373, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar {
     *zoom: 1;
     overflow: visible;
@@ -4607,19 +4608,19 @@ label.error {
   .top-bar:after {
     clear: both;
   }
-  /* line 374, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 377, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar .toggle-topbar {
     display: none;
   }
-  /* line 376, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 379, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar .title-area {
     float: left;
   }
-  /* line 377, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 380, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar .name h1 a {
     width: auto;
   }
-  /* line 380, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 383, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar input,
   .top-bar .button,
   .top-bar .ui-state-default,
@@ -4632,53 +4633,53 @@ label.error {
     position: relative;
     top: 8px;
   }
-  /* line 389, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 392, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar.expanded {
     background: #111111;
   }
 
-  /* line 392, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 395, ../sass/grid/foundation/components/_top-bar.scss */
   .contain-to-grid .top-bar {
     max-width: 62.5em;
     margin: 0 auto;
     margin-bottom: 0;
   }
 
-  /* line 398, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 401, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section {
     -webkit-transition: none 0 0;
     -moz-transition: none 0 0;
     transition: none 0 0;
     left: 0 !important;
   }
-  /* line 402, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 405, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section ul {
     width: auto;
     height: auto !important;
     display: inline;
   }
-  /* line 407, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 410, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section ul li {
     float: left;
   }
-  /* line 409, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 412, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section ul li .js-generated {
     display: none;
   }
-  /* line 415, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 418, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section li.hover > a:not(.button) {
     color: white;
   }
-  /* line 419, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 422, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section li a:not(.button) {
     padding: 0 15px;
     line-height: 45px;
   }
-  /* line 429, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 432, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .has-dropdown > a {
     padding-right: 35px !important;
   }
-  /* line 431, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 434, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .has-dropdown > a:after {
     content: "";
     display: block;
@@ -4690,19 +4691,19 @@ label.error {
     margin-top: -2.5px;
     top: 22.5px;
   }
-  /* line 440, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 443, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .has-dropdown.moved {
     position: relative;
   }
-  /* line 441, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 444, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .has-dropdown.moved > .dropdown {
     display: none;
   }
-  /* line 445, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 448, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .has-dropdown.hover > .dropdown, .top-bar-section .has-dropdown.not-click:hover > .dropdown {
     display: block;
   }
-  /* line 452, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 455, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
     border: none;
     content: "\00bb";
@@ -4710,14 +4711,14 @@ label.error {
     margin-top: -7px;
     right: 5px;
   }
-  /* line 464, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 467, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown {
     left: 0;
     top: auto;
     background: transparent;
     min-width: 100%;
   }
-  /* line 471, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 474, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li a {
     color: white;
     line-height: 1;
@@ -4725,17 +4726,17 @@ label.error {
     padding: 7px 15px;
     background: #1e1e1e;
   }
-  /* line 479, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 482, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li label {
     white-space: nowrap;
     background: #1e1e1e;
   }
-  /* line 485, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 488, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li .dropdown {
     left: 100%;
     top: 0;
   }
-  /* line 493, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 496, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
     border-bottom: none;
     border-top: none;
@@ -4745,32 +4746,32 @@ label.error {
     height: 45px;
     width: 0;
   }
-  /* line 503, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 506, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .has-form {
     background: #111111;
     padding: 0 15px;
     height: 45px;
   }
-  /* line 511, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 514, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section ul.right li .dropdown {
     left: auto;
     right: 0;
   }
-  /* line 515, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 518, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section ul.right li .dropdown li .dropdown {
     right: 100%;
   }
 
-  /* line 525, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 528, ../sass/grid/foundation/components/_top-bar.scss */
   .no-js .top-bar-section ul li:hover > a {
     color: white;
   }
-  /* line 530, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 533, ../sass/grid/foundation/components/_top-bar.scss */
   .no-js .top-bar-section ul li:active > a {
     background: #090909;
     color: white;
   }
-  /* line 538, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 541, ../sass/grid/foundation/components/_top-bar.scss */
   .no-js .top-bar-section .has-dropdown:hover > .dropdown {
     display: block;
   }
@@ -8222,25 +8223,42 @@ header#main-header .menu li a {
 #footermain h3 {
   color: #949494;
 }
+/* line 27, ../sass/modules/_footer.sass */
+#footermain .footer-third a {
+  display: inline-block;
+  margin-right: 0.25em;
+  color: #222222;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=65);
+  opacity: 0.65;
+  font-size: 13px;
+  line-height: 18.85px;
+  font-size: 1.3rem;
+  line-height: 1.885rem;
+}
+/* line 34, ../sass/modules/_footer.sass */
+#footermain .footer-third a:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
 
-/* line 26, ../sass/modules/_footer.sass */
+/* line 37, ../sass/modules/_footer.sass */
 #footer {
   padding: 20px 0 20px 0;
   padding: 2rem 0 2rem 0;
 }
-/* line 29, ../sass/modules/_footer.sass */
+/* line 40, ../sass/modules/_footer.sass */
 #footer ul li a {
   color: #adadad;
 }
-/* line 32, ../sass/modules/_footer.sass */
+/* line 43, ../sass/modules/_footer.sass */
 #footer ul li a:hover {
   color: #7a7a7a;
 }
-/* line 36, ../sass/modules/_footer.sass */
+/* line 47, ../sass/modules/_footer.sass */
 #footer nav ul {
   list-style-type: none;
 }
-/* line 39, ../sass/modules/_footer.sass */
+/* line 50, ../sass/modules/_footer.sass */
 #footer nav ul li {
   border-left: 1px solid #ededed;
   padding-left: 1em;
@@ -8249,11 +8267,11 @@ header#main-header .menu li a {
   -o-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
 }
-/* line 44, ../sass/modules/_footer.sass */
+/* line 55, ../sass/modules/_footer.sass */
 #footer nav ul li:hover {
   border-left: 1px solid #a0a0a0;
 }
-/* line 47, ../sass/modules/_footer.sass */
+/* line 58, ../sass/modules/_footer.sass */
 #footer .logo {
   -webkit-transition: all 0.25s ease-in;
   -moz-transition: all 0.25s ease-in;
@@ -8264,20 +8282,20 @@ header#main-header .menu li a {
   display: block;
   text-align: right;
 }
-/* line 53, ../sass/modules/_footer.sass */
+/* line 64, ../sass/modules/_footer.sass */
 #footer .logo:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 @media screen and (max-width: 767px) {
-  /* line 56, ../sass/modules/_footer.sass */
+  /* line 67, ../sass/modules/_footer.sass */
   #footer #footer_logo {
     width: 100%;
     height: auto;
   }
 }
 
-/* line 61, ../sass/modules/_footer.sass */
+/* line 72, ../sass/modules/_footer.sass */
 #copyright {
   text-shadow: 1px 1px 3px black;
   -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -8288,61 +8306,61 @@ header#main-header .menu li a {
   color: white;
   border-top: 1px solid black;
 }
-/* line 69, ../sass/modules/_footer.sass */
+/* line 80, ../sass/modules/_footer.sass */
 #copyright p {
   margin: 0;
   padding: 0;
 }
-/* line 72, ../sass/modules/_footer.sass */
+/* line 83, ../sass/modules/_footer.sass */
 #copyright a {
   color: white;
 }
-/* line 75, ../sass/modules/_footer.sass */
+/* line 86, ../sass/modules/_footer.sass */
 #copyright a:hover {
   text-decoration: underline;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 61, ../sass/modules/_footer.sass */
+  /* line 72, ../sass/modules/_footer.sass */
   #copyright {
     background: #2a2a2a url("../images/low_contrast_linen_@2X.png") top left repeat;
   }
 }
-/* line 81, ../sass/modules/_footer.sass */
+/* line 92, ../sass/modules/_footer.sass */
 #copyright .row {
   margin-bottom: 0;
 }
 @media screen and (max-width: 767px) {
-  /* line 84, ../sass/modules/_footer.sass */
+  /* line 95, ../sass/modules/_footer.sass */
   #copyright .cr-f {
     text-align: center;
   }
 }
-/* line 88, ../sass/modules/_footer.sass */
+/* line 99, ../sass/modules/_footer.sass */
 #copyright .cr-s {
   line-height: 1.6em;
 }
 @media screen and (min-width: 768px) {
-  /* line 88, ../sass/modules/_footer.sass */
+  /* line 99, ../sass/modules/_footer.sass */
   #copyright .cr-s {
     text-align: right;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 88, ../sass/modules/_footer.sass */
+  /* line 99, ../sass/modules/_footer.sass */
   #copyright .cr-s {
     padding-top: 7.5px;
     padding-top: 0.75rem;
     text-align: center;
   }
 }
-/* line 98, ../sass/modules/_footer.sass */
+/* line 109, ../sass/modules/_footer.sass */
 #copyright ul,
 #copyright nav {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 103, ../sass/modules/_footer.sass */
+/* line 114, ../sass/modules/_footer.sass */
 #copyright ul li,
 #copyright nav li {
   margin: 0;
@@ -8351,14 +8369,14 @@ header#main-header .menu li a {
   margin-right: 0.25rem;
   display: inline-block;
 }
-/* line 108, ../sass/modules/_footer.sass */
+/* line 119, ../sass/modules/_footer.sass */
 #copyright ul li:after,
 #copyright nav li:after {
   content: "|";
   margin-left: 5px;
   margin-left: 0.5rem;
 }
-/* line 112, ../sass/modules/_footer.sass */
+/* line 123, ../sass/modules/_footer.sass */
 #copyright ul li:last-of-type:after,
 #copyright nav li:last-of-type:after {
   content: "";
@@ -8374,6 +8392,46 @@ main {
   .sidebar-first {
     margin-top: 2%;
   }
+}
+
+/* line 8, ../sass/modules/_main.sass */
+#featured {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01);
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01);
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01);
+  background-color: #fafafa;
+  border-bottom: 1px solid #ededed;
+  color: #adadad;
+}
+/* line 19, ../sass/modules/_main.sass */
+#featured .block-title {
+  text-align: center;
+  margin-top: 3%;
+}
+/* line 23, ../sass/modules/_main.sass */
+#featured #walkthrough-slideshow-iframe {
+  margin-bottom: 2%;
+}
+/* line 26, ../sass/modules/_main.sass */
+#featured .wt-container {
+  max-width: 34em;
+}
+/* line 29, ../sass/modules/_main.sass */
+#featured .container {
+  margin-bottom: 2.5%;
+}
+/* line 32, ../sass/modules/_main.sass */
+#featured .container a {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.5%;
+}
+/* line 37, ../sass/modules/_main.sass */
+#featured .container a:first-of-type {
+  margin-right: 1em;
 }
 
 /* line 2, ../sass/modules/_sidebar.sass */

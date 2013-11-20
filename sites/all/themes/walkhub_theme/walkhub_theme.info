@@ -91,7 +91,6 @@ regions[triptych_last]       = Callout three
 regions[footer_firstcolumn]  = Footer one
 regions[footer_secondcolumn] = Footer two
 regions[footer_thirdcolumn]  = Footer three
-regions[footer_fourthcolumn] = Footer four
 regions[footer]              = Footer
 
 regions[copyright_menu]      = Copyright Menu

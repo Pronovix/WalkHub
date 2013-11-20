@@ -256,9 +256,11 @@
 
   <?php if (!empty($page['featured'])): ?>
     <!--/.featured -->
-    <section class="l-featured row">
-      <div class="large-12 columns">
-        <?php print render($page['featured']); ?>
+    <section id="featured">
+      <div class="row">
+        <div class="large-12 columns">
+          <?php print render($page['featured']); ?>
+        </div>
       </div>
     </section>
     <!--/.l-featured -->
@@ -475,10 +477,10 @@
                 c0,4.675-3.803,8.478-8.477,8.478s-8.477-3.803-8.477-8.478C42.898,13.928,46.701,10.125,51.375,10.125z"/>
             </g>
           </g>
-                      <g id="Layer_2" display="none">
-                        <rect x="17.534" y="-65.847" display="inline" fill="none" width="62.5" height="28.75"/>
-                        <text transform="matrix(1 0 0 1 17.5337 -57.0146)" display="inline" fill="#383A3B" font-family="'Aller-Bold'" font-size="12">BETA</text>
-                      </g>
+          <g id="Layer_2" display="none">
+            <rect x="17.534" y="-65.847" display="inline" fill="none" width="62.5" height="28.75"/>
+            <text transform="matrix(1 0 0 1 17.5337 -57.0146)" display="inline" fill="#383A3B" font-family="'Aller-Bold'" font-size="12">BETA</text>
+          </g>
           </svg>
         </div>
       </div>
