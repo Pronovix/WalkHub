@@ -10309,6 +10309,8 @@ input.pure-input-rounded, .pure-input-rounded {
 }
 /* line 67, ../sass/modules/_joyride.sass */
 .joyride-content-wrapper .joyride-close-tip {
+  margin: 0;
+  padding: 0;
   color: #6f6f6f !important;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -10320,7 +10322,7 @@ input.pure-input-rounded, .pure-input-rounded {
   text-align: center;
   line-height: 1.7em;
 }
-/* line 75, ../sass/modules/_joyride.sass */
+/* line 76, ../sass/modules/_joyride.sass */
 .joyride-content-wrapper .joyride-close-tip:hover, .joyride-content-wrapper .joyride-close-tip:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f !important;
