@@ -150,6 +150,7 @@ function _walkthrough_get_walkthrough_features() {
     'walkhub_page_type_faq',
     'walkhub_page_type_news',
   );
+}
 
 /**
  * Install callback for enabling the Walktrough theme.
