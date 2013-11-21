@@ -81,7 +81,6 @@
  */
 ?>
 <div class="content clearfix">
-  <?php dpm($variables); ?>
   <?php if ($submitted) { ?>
     <div class="created">
       <span class="month"><?php echo date("M", $node->created); ?></span>
