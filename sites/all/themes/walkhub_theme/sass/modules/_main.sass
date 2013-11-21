@@ -6,34 +6,19 @@ main
     margin-top: 2%
 
 #featured
-  margin: 0
-  padding: 0
-  text-align: center
-  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01)
-  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01)
-  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01)
-  background-color: #fafafa
-  border-bottom: 1px solid #ededed
-  color: #adadad
+  +mp0
+  +px-rem(max-height, 25.5)
+  overflow: hidden
+  background-image: url('../images/feature-bg.jpg')
+  background-position: top center
+  +background-size(cover)
+  +box-shadow(inset 0px -10px 20px 0px rgba(0,0,0,0.45))
 
-  .block-title
-    text-align: center
-    margin-top: 3%
+  h1,
+  h2
+    color: $color-white
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.85)
 
-  #walkthrough-slideshow-iframe
-    margin-bottom: 2%
-
-  .wt-container
-    max-width: 34em
-
-  .container
-    margin-bottom: 2.5%
-
-    a
-      display: inline-block
-      vertical-align: middle
-      margin-bottom: .5%
-
-      &:first-of-type
-        margin-right: 1em
-
+  p
+    color: $color-white
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.85)
