@@ -8528,17 +8528,21 @@ main {
 }
 /* line 63, ../sass/modules/_temp_footer.sass */
 #footer ul li a {
+  font-size: 9px;
+  line-height: 13.05px;
+  font-size: 0.9rem;
+  line-height: 1.305rem;
   color: #adadad;
 }
-/* line 66, ../sass/modules/_temp_footer.sass */
+/* line 67, ../sass/modules/_temp_footer.sass */
 #footer ul li:hover {
   border-left: 1px solid #c7c7c7;
 }
-/* line 69, ../sass/modules/_temp_footer.sass */
+/* line 70, ../sass/modules/_temp_footer.sass */
 #footer ul li:hover a {
   color: #7a7a7a;
 }
-/* line 73, ../sass/modules/_temp_footer.sass */
+/* line 74, ../sass/modules/_temp_footer.sass */
 #footer .logo {
   -webkit-transition: all 0.25s ease-in;
   -moz-transition: all 0.25s ease-in;
@@ -8549,20 +8553,20 @@ main {
   display: block;
   text-align: right;
 }
-/* line 79, ../sass/modules/_temp_footer.sass */
+/* line 80, ../sass/modules/_temp_footer.sass */
 #footer .logo:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 @media screen and (max-width: 767px) {
-  /* line 82, ../sass/modules/_temp_footer.sass */
+  /* line 83, ../sass/modules/_temp_footer.sass */
   #footer #footer_logo {
     width: 100%;
     height: auto;
   }
 }
 
-/* line 87, ../sass/modules/_temp_footer.sass */
+/* line 88, ../sass/modules/_temp_footer.sass */
 #copyright {
   text-shadow: 1px 1px 3px black;
   -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -8573,61 +8577,72 @@ main {
   color: white;
   border-top: 1px solid black;
 }
-/* line 95, ../sass/modules/_temp_footer.sass */
+/* line 96, ../sass/modules/_temp_footer.sass */
 #copyright p {
   margin: 0;
   padding: 0;
 }
-/* line 98, ../sass/modules/_temp_footer.sass */
+/* line 99, ../sass/modules/_temp_footer.sass */
 #copyright a {
   color: white;
 }
-/* line 101, ../sass/modules/_temp_footer.sass */
+/* line 102, ../sass/modules/_temp_footer.sass */
 #copyright a:hover {
   text-decoration: underline;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 87, ../sass/modules/_temp_footer.sass */
+  /* line 88, ../sass/modules/_temp_footer.sass */
   #copyright {
     background: #2a2a2a url("../images/low_contrast_linen_@2X.png") top left repeat;
   }
 }
-/* line 107, ../sass/modules/_temp_footer.sass */
+/* line 108, ../sass/modules/_temp_footer.sass */
 #copyright .row {
   margin-bottom: 0;
 }
+/* line 111, ../sass/modules/_temp_footer.sass */
+#copyright .cr-f {
+  font-size: 9px;
+  line-height: 13.05px;
+  font-size: 0.9rem;
+  line-height: 1.305rem;
+}
 @media screen and (max-width: 767px) {
-  /* line 110, ../sass/modules/_temp_footer.sass */
+  /* line 111, ../sass/modules/_temp_footer.sass */
   #copyright .cr-f {
     text-align: center;
   }
 }
-/* line 114, ../sass/modules/_temp_footer.sass */
+/* line 117, ../sass/modules/_temp_footer.sass */
 #copyright .cr-s {
+  font-size: 9px;
+  line-height: 13.05px;
+  font-size: 0.9rem;
+  line-height: 1.305rem;
   line-height: 1.6em;
 }
 @media screen and (min-width: 768px) {
-  /* line 114, ../sass/modules/_temp_footer.sass */
+  /* line 117, ../sass/modules/_temp_footer.sass */
   #copyright .cr-s {
     text-align: right;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 114, ../sass/modules/_temp_footer.sass */
+  /* line 117, ../sass/modules/_temp_footer.sass */
   #copyright .cr-s {
     padding-top: 7.5px;
     padding-top: 0.75rem;
     text-align: center;
   }
 }
-/* line 124, ../sass/modules/_temp_footer.sass */
+/* line 128, ../sass/modules/_temp_footer.sass */
 #copyright ul,
 #copyright nav {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 129, ../sass/modules/_temp_footer.sass */
+/* line 133, ../sass/modules/_temp_footer.sass */
 #copyright ul li,
 #copyright nav li {
   margin: 0;
@@ -8636,14 +8651,14 @@ main {
   margin-right: 0.25rem;
   display: inline-block;
 }
-/* line 134, ../sass/modules/_temp_footer.sass */
+/* line 138, ../sass/modules/_temp_footer.sass */
 #copyright ul li:after,
 #copyright nav li:after {
   content: "|";
   margin-left: 5px;
   margin-left: 0.5rem;
 }
-/* line 138, ../sass/modules/_temp_footer.sass */
+/* line 142, ../sass/modules/_temp_footer.sass */
 #copyright ul li:last-of-type:after,
 #copyright nav li:last-of-type:after {
   content: "";
