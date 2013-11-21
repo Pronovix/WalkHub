@@ -102,3 +102,10 @@ function walkthrough_global_update_7008() {
 
   return 'Metatag has been enabled with all the requested submodules';
 }
+
+/**
+ * Turning on Page Types: FAQ, NEWS
+ */
+function walkthrough_global_update_7009() {
+  features_install_modules(array('walkhub_page_type_faq, walkhub_page_type_news'));
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Walkhub Page type - News feature.
+ */
+
+include_once 'walkhub_page_type_news.features.inc';

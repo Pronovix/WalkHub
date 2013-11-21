@@ -24,6 +24,16 @@ function walkthrough_slideshow_menu() {
 }
 
 /**
+ * Implements hook_entity_info_alter().
+ */
+function walkthrough_slideshow_entity_info_alter(&$entity_info) {
+     $entity_info['node']['view modes']['entity_reference'] = array(
+        'label' => t('Entity Reference'),
+        'custom settings' => TRUE,
+      );
+    }
+
+/**
  * Implements hook_theme().
  */
 function walkthrough_slideshow_theme() {
