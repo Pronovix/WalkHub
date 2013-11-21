@@ -28,11 +28,24 @@
       +px-rem(margin-top, 1)
 
       a
+        +mp0
         display: inline-block
         margin-right: .25em
         color: darken($color-grey-light, 50%)
         +opacity(.65)
         +font-size(1)
+        vertical-align: top
+
+        i
+          +font-size(1)
+
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6)
+          +px-rem(padding-top, .05)
+
+          i
+            font-size: 120%
 
         &:hover
           +opacity(1)
