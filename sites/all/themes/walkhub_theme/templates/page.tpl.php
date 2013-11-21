@@ -10,7 +10,7 @@
       <div class="<?php print $top_bar_classes; ?>">
       <?php endif; ?>
         <nav class="top-bar clearfix"<?php print $top_bar_options; ?>>
-          <a href="/" title="<?php print $site_name; ?>" id="main_logo_link">
+          <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" id="main_logo_link">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  width="90px" height="44.252px" viewBox="0 0 152.964 75.201" enable-background="new 0 0 152.964 75.201"
                  xml:space="preserve" id="main_logo_svg">
