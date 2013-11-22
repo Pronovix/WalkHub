@@ -102,3 +102,71 @@ function walkthrough_global_update_7008() {
 
   return 'Metatag has been enabled with all the requested submodules';
 }
+
+/**
+ * Convert screenshot image fileds to field collection items.
+ */
+function walkthrough_global_update_7009(&$sandbox) {
+  if (empty($sandbox['total'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['last_nid'] = 0;
+
+    // Forcefully revert all components of Walkthrough Screening feature.
+    if ($feature = features_load_feature('walkthrough_screening', TRUE)) {
+      foreach (array_keys($feature->info['features']) as $component) {
+        if (features_hook($component, 'features_revert')) {
+          features_revert(array('walkthrough_screening' => array($component)));
+        }
+      }
+    }
+
+    // Count the total number of the screening nodes.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'screening')
+      ->count();
+    $sandbox['total'] = $query->execute();
+  }
+
+  // Get the next 10 walhtrough node.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'screening')
+    ->propertyCondition('nid', $sandbox['last_nid'], '>')
+    ->propertyOrderBy('nid')
+    ->range(0, 10);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $screening_nodes = entity_load('node', $nids);
+
+    foreach ($screening_nodes as $screening_node) {
+      // Get image fields.
+      $images = field_get_items('node', $screening_node, 'field_screening_screenshots');
+
+      if ($images) {
+        // Load the step nodes to get the stored data.
+        foreach ($images as $image) {
+          // Store the field collection values.
+          $values = array();
+          $values['field_name'] = 'field_screening_fc_screenshots';
+          $values['field_fc_screenshots_screenshot'][$screening_node->language][0] = $image;
+
+          // Create the field collection entry and associate it with the node.
+          $step_entity = entity_create('field_collection_item', $values);
+          $step_entity->setHostEntity('node', $screening_node);
+          $step_entity->save();
+        }
+      }
+      // Store the last node id and update progress.
+      $sandbox['last_nid'] = $screening_node->nid;
+      $sandbox['progress']++;
+    }
+  }
+
+  // Set the finished variable based on the current progress status.
+  $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
+
+  return t('Screenshot images have been converted to field collection items.');
+}
