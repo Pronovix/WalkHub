@@ -10,7 +10,7 @@
       <div class="<?php print $top_bar_classes; ?>">
       <?php endif; ?>
         <nav class="top-bar clearfix"<?php print $top_bar_options; ?>>
-          <a href="/" title="<?php print $site_name; ?>" id="main_logo_link">
+          <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" id="main_logo_link">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  width="90px" height="44.252px" viewBox="0 0 152.964 75.201" enable-background="new 0 0 152.964 75.201"
                  xml:space="preserve" id="main_logo_svg">
@@ -256,9 +256,11 @@
 
   <?php if (!empty($page['featured'])): ?>
     <!--/.featured -->
-    <section class="l-featured row">
-      <div class="large-12 columns">
-        <?php print render($page['featured']); ?>
+    <section id="featured">
+      <div class="row">
+        <div class="large-12 columns">
+          <?php print render($page['featured']); ?>
+        </div>
       </div>
     </section>
     <!--/.l-featured -->
@@ -475,10 +477,10 @@
                 c0,4.675-3.803,8.478-8.477,8.478s-8.477-3.803-8.477-8.478C42.898,13.928,46.701,10.125,51.375,10.125z"/>
             </g>
           </g>
-                      <g id="Layer_2" display="none">
-                        <rect x="17.534" y="-65.847" display="inline" fill="none" width="62.5" height="28.75"/>
-                        <text transform="matrix(1 0 0 1 17.5337 -57.0146)" display="inline" fill="#383A3B" font-family="'Aller-Bold'" font-size="12">BETA</text>
-                      </g>
+          <g id="Layer_2" display="none">
+            <rect x="17.534" y="-65.847" display="inline" fill="none" width="62.5" height="28.75"/>
+            <text transform="matrix(1 0 0 1 17.5337 -57.0146)" display="inline" fill="#383A3B" font-family="'Aller-Bold'" font-size="12">BETA</text>
+          </g>
           </svg>
         </div>
       </div>

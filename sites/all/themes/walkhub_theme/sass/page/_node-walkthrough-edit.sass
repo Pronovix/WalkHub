@@ -16,8 +16,9 @@
     .tabledrag-toggle-weight,
     .field-name-field-fc-steps thead,
     #field-parameters-values thead,
-    #edit-field-parameters,
-    .field-name-field-fc-step-name
+    .field-name-field-fc-step-name,
+    #edit-field-proxy-warning-message-und-0-format,
+    #adv-sett-proxy-param
       display: none
 
     .form-select
@@ -131,6 +132,9 @@
     #field-fc-steps-values
       width: 100%!important
 
+      td
+        padding-right: 0
+
     .field-name-field-fc-steps
       margin-top: 2em
       margin-bottom: 2em
@@ -203,6 +207,10 @@
         position: relative
         display: none
 
+        .grippie
+          float: none
+          width: 100%
+
         .ri button
           +font-size(.7)
           position: absolute
@@ -233,3 +241,21 @@
         float: right
         width: 46%
         margin-right: 4%
+
+    #adv-sett-proxy-param
+      +px-rem(padding-top, 1)
+      label
+        width: 100%
+        +font-size(.75)
+        +px-rem(margin-top, .5)
+
+      .grippie
+        float: none
+        width: 100%
+
+      textarea
+        min-height: 89px
+
+    #field-proxy-warning-message-add-more-wrapper
+      margin-left: 24%
+      +px-rem(margin-bottom, 1)

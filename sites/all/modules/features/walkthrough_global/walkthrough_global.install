@@ -83,9 +83,30 @@ function walkthrough_global_update_7006() {
 }
 
 /**
- * Delete the test content type and nodes. Also uninstall the walkthrough_tests feature.
+ * Enable Token module for MetaTag
  */
 function walkthrough_global_update_7007() {
+  $module_list = array('token');
+  module_enable($module_list);
+
+  return 'Token has been enabled.';
+}
+
+/**
+ * Enable MetaTag module for the share functionality,
+ * also features save attached for the proper settings
+ */
+function walkthrough_global_update_7008() {
+  $module_list = array('metatag, metatag_dc, metatag_opengraph, metatag_twitter_cards, metatag_views');
+  module_enable($module_list);
+
+  return 'Metatag has been enabled with all the requested submodules';
+}
+
+/**
+ * Delete the test content type and nodes. Also uninstall the walkthrough_tests feature.
+ */
+function walkthrough_global_update_7009() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node');
   $query->entityCondition('bundle', 'test');

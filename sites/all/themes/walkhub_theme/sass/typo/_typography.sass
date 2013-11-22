@@ -43,11 +43,6 @@ img
 .hide
   display: none
 
-
-body
-  +font-size(.85)
-  +font-pt-sansregular
-
 .logged-in
   h1
     margin-top: 1.75em
@@ -129,6 +124,7 @@ button, .button, .btn
   background-color: #3b8acd
   +filter-gradient(#3b8acd, #035787, vertical)
   +background-image(linear-gradient(top,  #3b8acd 0%,#035787 100%))
+  display: inline-block
   padding: .45em .85em .35em
   border: 1px solid #005b9a
   color: #ffffff
@@ -145,13 +141,6 @@ button, .button, .btn
   &:active
     background: #035787
     +box-shadow(inset 0px -3px 1px rgba(255, 255, 255, .15))
-
-
-/* Typography resets
-div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td
-  margin: 0
-  padding: 0
-  direction: ltr
 
 /* Default Link Styles
 a
@@ -175,14 +164,6 @@ p
     font-style: italic
 
 /* Default header styles
-h1, h2, h3, h4, h5, h6
-  +font-museo-500
-  font-style: normal
-  color: #222222
-  text-rendering: optimizeLegibility
-  margin-top: 0.2em
-  margin-bottom: 0.5em
-  line-height: 1.2125em
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small
   font-size: 60%

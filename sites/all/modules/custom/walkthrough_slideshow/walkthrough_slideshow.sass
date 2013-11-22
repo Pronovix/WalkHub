@@ -1,20 +1,21 @@
 /* 	Supersized - Fullscreen Slideshow jQuery Plugin 	Version : 3.2.7 	Site	: www.buildinternet.com/project/supersized  	Theme 	: Shutter 1.2 	Author	: Sam Dunn 	Company : One Mighty Roar (www.onemightyroar.com) 	License : MIT License / GPL License
 
+/* Module Part for faster CSS write */
 @import 'compass/support'
 @import 'compass/utilities/general/clearfix'
 @import 'compass/utilities/sprites'
 @import 'compass/css3'
 @import 'compass/layout'
-
+@import 'compass/css3/user-interface'
 @import 'normalize'
 
+/* FontIcon include /
 @font-face
   font-family: "icomoon"
   src: url("fonts/icomoon.eot")
   src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.svg#icomoon") format("svg")
   font-weight: normal
   font-style: normal
-
 
 [class*="icon-"]
   font-family: "icomoon"
@@ -70,6 +71,15 @@
 .icon-remove-sign:before
   content: "\e60d"
 
+
+html
+  background: #000
+
+body
+  background: #000
+  +user-select(none)
+  +clearfix
+
 .cf
   &:before
     content: " "
@@ -80,24 +90,14 @@
     clear: both
   *zoom: 1
 
+*
+  margin: 0
+  padding: 0
 
 h4
   margin-top: .5em
   font-size: 10px
   margin-bottom: 0.2em
-
-/* For IE 6/7 only Include this rule to trigger hasLayout and contain floats.
-
-*
-  margin: 0
-  padding: 0
-
-html
-  background: #000
-
-body
-  background: #000
-  height: 100%
 
 img
   border: none
@@ -133,12 +133,15 @@ img
     display: none
     outline: none
     border: none
+
   &.speed img
     -ms-interpolation-mode: nearest-neighbor
     image-rendering: -moz-crisp-edges
+
   &.quality img
     -ms-interpolation-mode: bicubic
     image-rendering: optimizeQuality
+
   li
     display: block
     list-style: none
@@ -150,22 +153,29 @@ img
     width: 100%
     height: 100%
     background: #111111
+
   a
     width: 100%
     height: 100%
     display: block
+
   li
     &.prevslide
       z-index: -20
+
     &.activeslide
       z-index: -10
+
     &.image-loading
       background: #111111 url(img/progress.gif) no-repeat center center
       width: 100%
       height: 100%
+
       img
         visibility: hidden
-    &.prevslide img, &.activeslide img
+
+    &.prevslide img,
+    &.activeslide img
       display: inline
 
 /*Speed
@@ -187,12 +197,8 @@ body
   position: fixed
   border-top: 1px solid black
   *zoom: 1
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#D93F3F3F', endColorstr='#E6000000')
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, rgba(63, 63, 63, 0.85)), color-stop(100%, rgba(0, 0, 0, 0.9)))
-  background-image: -webkit-linear-gradient(top, rgba(63, 63, 63, 0.85) 1%, rgba(0, 0, 0, 0.9) 100%)
-  background-image: -moz-linear-gradient(top, rgba(63, 63, 63, 0.85) 1%, rgba(0, 0, 0, 0.9) 100%)
-  background-image: -o-linear-gradient(top, rgba(63, 63, 63, 0.85) 1%, rgba(0, 0, 0, 0.9) 100%)
-  background-image: linear-gradient(top, rgba(63, 63, 63, 0.85) 1%, rgba(0, 0, 0, 0.9) 100%)
+  +filter-gradient(rgba(63,63,63,0.85), rgba(0,0,0,0.9), vertical)
+  +background-image(linear-gradient(top,  rgba(63,63,63,0.85) 1%,rgba(0,0,0,0.9) 100%))
 
 #controls
   text-align: center
@@ -218,28 +224,24 @@ body
   margin: 0 20px 0 0
   line-height: 42px
 
-#firstslide, #lastslide, #prevslide, #nextslide
+#firstslide,
+#lastslide,
+#prevslide,
+#nextslide
   display: inline-block
   height: 30px
   width: 30px
   opacity: 0.6
-  -webkit-border-radius: 50%
-  -moz-border-radius: 50%
-  -ms-border-radius: 50%
-  -o-border-radius: 50%
-  border-radius: 50%
-  -webkit-transition: all 100ms ease-in-out
-  -moz-transition: all 100ms ease-in-out
-  -o-transition: all 100ms ease-in-out
-  transition: all 100ms ease-in-out
+  +border-radius(50%)
+  +transition(all 0.2s ease-in)
   background-color: rgba(0, 0, 0, 0.9)
   border: 2px solid rgba(255, 255, 255, 0.75)
   margin-top: 3px
 
-#firstslide i, #lastslide i, #prevslide i, #nextslide i
-  color: rgba(255, 255, 255, 0.75)
-  font-size: 18px
-  line-height: 30px
+  i
+    color: rgba(255, 255, 255, 0.75)
+    font-size: 18px
+    line-height: 30px
 
 .float-left
   float: left
@@ -247,49 +249,20 @@ body
 .float-right
   float: right
 
-#walkhub, #firstslide, #lastslide, #prevslide, #nextslide, #share, #fullscreen
-  -webkit-transition: all 0.2s ease-in
-  -moz-transition: all 0.2s ease-in
-  -o-transition: all 0.2s ease-in
-  transition: all 0.2s ease-in
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60)
-  opacity: 0.6
+#walkhub,
+#firstslide,
+#lastslide,
+#prevslide,
+#nextslide,
+#share,
+#fullscreen
+  +transition(all 0.2s ease-in)
+  +opacity(.6)
   cursor: pointer
 
-#walkhub
-  &:hover, &:active
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)
-    opacity: 0.95
-
-#firstslide
-  &:hover, &:active
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)
-    opacity: 0.95
-
-#lastslide
-  &:hover, &:active
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)
-    opacity: 0.95
-
-#prevslide
-  &:hover, &:active
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)
-    opacity: 0.95
-
-#nextslide
-  &:hover, &:active
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)
-    opacity: 0.95
-
-#share
-  &:hover, &:active
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)
-    opacity: 0.95
-
-#fullscreen
-  &:hover, &:active
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)
-    opacity: 0.95
+  &:hover,
+  &:active
+    +opacity(.95)
 
 #walkhub
   margin: 3px 0 2px 3px
@@ -306,12 +279,14 @@ ul#slide-list
   float: left
   position: absolute
   left: 50%
+
   li
     list-style: none
     width: 12px
     height: 12px
     float: left
     margin: 0 5px 0 0
+
     &.current-slide a
       background-position: 0 0px
       &:hover
@@ -321,6 +296,7 @@ ul#slide-list
       width: 12px
       height: 12px
       background: url("img/nav-dot.png") no-repeat 0 -24px
+
       &:hover
         background-position: 0 -12px
         cursor: pointer
@@ -329,32 +305,25 @@ ul#slide-list
   display: inline-block
   margin-top: 1px
   border-left: 1px solid #333333
-  -webkit-transition: all 100ms ease-in-out
-  -moz-transition: all 100ms ease-in-out
-  -o-transition: all 100ms ease-in-out
-  transition: all 100ms ease-in-out
+  +transition(all 0.2s ease-in)
   width: 55px
   height: 42px
   margin-left: -4px
 
-#fullscreen i, #share i
-  color: rgba(255, 255, 255, 0.8)
-  font-size: 18px
-  line-height: 40px
-  text-shadow: 1px 1px 1px black
+  i
+    color: rgba(255, 255, 255, 0.8)
+    font-size: 18px
+    line-height: 40px
+    text-shadow: 1px 1px 1px black
 
-#fullscreen:hover, #share:hover
-  cursor: pointer
-  *zoom: 1
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#D9000000', endColorstr='#D9010101')
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.85)), color-stop(1%, rgba(1, 1, 1, 0.85)), color-stop(100%, rgba(63, 63, 63, 0.9)))
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.85) 0%, rgba(1, 1, 1, 0.85) 1%, rgba(63, 63, 63, 0.9) 100%)
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.85) 0%, rgba(1, 1, 1, 0.85) 1%, rgba(63, 63, 63, 0.9) 100%)
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.85) 0%, rgba(1, 1, 1, 0.85) 1%, rgba(63, 63, 63, 0.9) 100%)
-  background-image: linear-gradient(top, rgba(0, 0, 0, 0.85) 0%, rgba(1, 1, 1, 0.85) 1%, rgba(63, 63, 63, 0.9) 100%)
+  &:hover
+    cursor: pointer
+    *zoom: 1
+    +filter-gradient(rgba(63,63,63,0.85), rgba(0,0,0,0.9), vertical)
+    +background-image(linear-gradient(top,  rgba(63,63,63,0.85) 1%,rgba(0,0,0,0.9) 100%))
 
-#fullscreen:hover i, #share:hover i
-  color: white
+    i
+      color: white
 
 #navigation-buttons
   margin: 0 auto
@@ -363,31 +332,39 @@ ul#slide-list
   height: 42px
 
 #title-bar
-  height: 65px
+  min-height: 56px
   background: rgba(0, 0, 0, 0.65)
-
   border-bottom: 1px solid black
   width: 100%
   position: absolute
   top: 0
   left: 0
 
+  .cont
+    position: relative
+    width: 100%
+
   h2
     margin: 0
     font-size: 12px
+    padding-right: 175px
 
   .title
+    +box-sizing(border-box)
     font-size: 12px
     color: white
-    margin: 10px 0 0 12px
-    max-width: 65%
+    margin: 10px 0 10px 12px
+    max-width: 100%
 
     a
       color: white
 
   .start-button
-    margin: 14px 10px 0 0
-
+    position: absolute
+    display: block
+    top: 0
+    right: 10px
+    float: right
 
 #startWT
   text-decoration: none
@@ -396,46 +373,31 @@ ul#slide-list
   font-size: .8rem
   line-height: 1.45rem
   font-weight: 200
-  -webkit-border-radius: 0.65em
-  -moz-border-radius: 0.65em
-  -ms-border-radius: 0.65em
-  -o-border-radius: 0.65em
-  border-radius: 0.65em
-  -webkit-transition: all 0.25s ease-in
-  -moz-transition: all 0.25s ease-in
-  -o-transition: all 0.25s ease-in
-  transition: all 0.25s ease-in
-  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15)
-  -moz-box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15)
-  box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15)
-  background-color: #3b8acd
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3B8ACD', endColorstr='#FF035787')
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3b8acd), color-stop(100%, #035787))
-  background-image: -webkit-linear-gradient(top, #3b8acd 0%, #035787 100%)
-  background-image: -moz-linear-gradient(top, #3b8acd 0%, #035787 100%)
-  background-image: -o-linear-gradient(top, #3b8acd 0%, #035787 100%)
-  background-image: linear-gradient(top, #3b8acd 0%, #035787 100%)
+  background-color: rgb(59,138,205)
+  +filter-gradient(#3b8acd, #035787, vertical)
+  +transition(all 0.2s ease-in)
+  +border-radius(.65em)
+  +background-image(linear-gradient(top,  rgba(59,138,205,1) 0%,rgba(3,87,135,1) 100%))
+  +box-shadow(inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15))
   padding: 0.45em 0.85em 0.35em
   border: 1px solid #005b9a
   color: white
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75)
   display: inline-block
+
   i
     display: inline-block
     margin-left: 3px
+
   &:hover
     background-color: #4f96d2
-    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4F96D2', endColorstr='#FF0467A0')
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4f96d2), color-stop(100%, #0467a0))
-    background-image: -webkit-linear-gradient(top, #4f96d2 0%, #0467a0 100%)
-    background-image: -moz-linear-gradient(top, #4f96d2 0%, #0467a0 100%)
-    background-image: -o-linear-gradient(top, #4f96d2 0%, #0467a0 100%)
-    background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%)
+    background-color: rgb(79,150,210)
+    +filter-gradient(#4f96d2, #0467a0, vertical)
+    +background-image(linear-gradient(top,  rgba(79,150,210,1) 0%,rgba(4,103,160,1) 100%))
+
   &:active
     background: #035787
-    -webkit-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15)
-    -moz-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15)
-    box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15)
+    +box-shadow(inset 0px -3px 1px rgba(255, 255, 255, 0.15))
 
 /* Embed code styling
 .center-cont
@@ -443,10 +405,10 @@ ul#slide-list
   display: table-cell
   vertical-align: middle
 
-
 #embed-code
   +box-shadow(0px 0px 20px 0px rgba(#FFF,.55))
   +box-sizing(border-box)
+  +transition(all .25s ease-in)
   margin: 0 auto
   padding: 8px 5px 5px 5px
   width: 215px
@@ -456,7 +418,6 @@ ul#slide-list
   display: none
   position: relative
   text-align: left
-  +transition(all .25s ease-in)
 
   #close
     position: absolute
@@ -509,3 +470,15 @@ ul#slide-list
   height: auto
   text-align: center
   vertical-align: middle
+
+@media screen and (max-width: 425px)
+  #share,
+  #walkhub,
+  #title-bar .title
+    display: none
+
+  #title-bar .start-button
+    position: static
+    margin-top: 10px
+    text-align: center
+    width: 100%

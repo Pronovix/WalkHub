@@ -20,29 +20,55 @@
   ul
     margin-bottom: 0
 
-  h3
-    color: darken($color-grey-light, 40%)
+  h2
+    color: lighten(#222222, 30%)
+
+  .footer-third
+    & > section:nth-child(2)
+      +px-rem(margin-top, 1)
+
+      a
+        +mp0
+        display: inline-block
+        margin-right: .25em
+        color: darken($color-grey-light, 50%)
+        +opacity(.65)
+        +font-size(1)
+        vertical-align: top
+
+        i
+          +font-size(1)
+
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6)
+          +px-rem(padding-top, .05)
+
+          i
+            font-size: 120%
+
+        &:hover
+          +opacity(1)
 
 #footer
   +px-rem(padding, 2, 0, 2, 0)
 
-  ul li a
-    color: darken($color-grey-light, 30%)
-
-    &:hover
-      color: darken($color-grey-light, 50%)
-
-  nav
-    ul
+  ul
+    li
+      +px-rem(padding-left, .5)
+      +transition($transition-base)
+      border-left: 1px solid #e6e6e6
       list-style-type: none
 
-      li
-        border-left: 1px solid darken($color-grey-light, 5%)
-        padding-left: 1em
-        +transition($transition-base)
+      a
+        color: darken($color-grey-light, 30%)
 
-        &:hover
-          border-left: 1px solid lighten(#7a7a7a, 15%)
+      &:hover
+        border-left: 1px solid darken($color-grey-light, 20%)
+
+        a
+          color: darken($color-grey-light, 50%)
+
 
   .logo
     +transition($transition-base)
