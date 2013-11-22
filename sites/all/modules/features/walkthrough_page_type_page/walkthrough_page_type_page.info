@@ -1,6 +1,6 @@
 name = Walkthrough Page type - Page
 core = 7.x
-package = Features
+package = Walkthrough
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = strongarm
