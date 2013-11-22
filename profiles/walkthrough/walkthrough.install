@@ -171,11 +171,11 @@ function _walkthrough_get_walkthrough_features() {
     'walkhub_branding',
     'walkhub_collections',
     'walkhub_page_type_faq',
+    'walkhub_page_type_news',
     'walkthrough_global',
     'walkthrough_permissions',
     'walkthrough_screening',
     'walkthrough_sets',
-    'walkthrough_tests',
   );
 }
 
