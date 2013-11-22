@@ -104,9 +104,45 @@ function walkthrough_global_update_7008() {
 }
 
 /**
+ * Turning on Page Types: FAQ, NEWS
+ */
+function walkthrough_global_update_7009() {
+  features_install_modules(array('walkhub_page_type_faq, walkhub_page_type_news'));
+}
+
+/**
+ * Delete the test content type and nodes. Also uninstall the walkthrough_tests feature.
+ */
+function walkthrough_global_update_7010() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node');
+  $query->entityCondition('bundle', 'test');
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+  }
+
+  node_type_delete('test');
+
+  if( module_exists('walkthrough_tests')) {
+    module_disable(array('walkthrough_tests'));
+    drupal_uninstall_modules(array('walkthrough_tests'));
+  }
+}
+
+/**
+ * Enable Page content type.
+ */
+function walkthrough_global_update_7011() {
+  features_install_modules(array('walkthrough_page_type_page'));
+}
+
+/**
  * Convert screenshot image fileds to field collection items.
  */
-function walkthrough_global_update_7009(&$sandbox) {
+function walkthrough_global_update_7012(&$sandbox) {
   if (empty($sandbox['total'])) {
     $sandbox['progress'] = 0;
     $sandbox['last_nid'] = 0;
@@ -174,7 +210,7 @@ function walkthrough_global_update_7009(&$sandbox) {
 /**
  * Delete Screenshot image field.
  */
-function walkthrough_global_update_7010() {
+function walkthrough_global_update_7013() {
   field_delete_field('field_screening_screenshots');
   $limit = variable_get('field_purge_batch_size', 10);
   field_purge_batch($limit);

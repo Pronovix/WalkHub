@@ -266,6 +266,18 @@
     <!--/.l-featured -->
   <?php endif; ?>
 
+  <?php if (!empty($page['news'])): ?>
+    <!--/.featured -->
+    <section id="news">
+      <div class="row">
+        <div class="large-12 columns">
+          <?php print render($page['news']); ?>
+        </div>
+      </div>
+    </section>
+    <!--/.l-featured -->
+  <?php endif; ?>
+
   <?php if ($messages && !$zurb_foundation_messages_modal): ?>
     <!--/.l-messages -->
     <section class="l-messages row">

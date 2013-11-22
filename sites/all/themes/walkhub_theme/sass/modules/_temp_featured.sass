@@ -1,0 +1,46 @@
+#featured
+  +mp0
+  +px-rem(max-height, 25.5)
+  +px-rem(padding-top, 3)
+  overflow: hidden
+  background-image: url('../images/feature-bg.jpg')
+  background-position: top center
+  +background-size(cover)
+  +box-shadow(inset 0px -10px 20px 0px rgba(0,0,0,0.45))
+
+  h1
+    margin-top: 0
+
+  h1,
+  h2
+    color: $color-white
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.85)
+
+  p
+    color: $color-white
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.85)
+
+  .cta
+    +clearfix
+    +px-rem(margin, 1, auto, 1.5)
+    +px-rem(padding-right, 2.2)
+    position: relative
+
+    p
+      margin-bottom: 0
+
+    small
+      +px-rem(margin-top, -.5)
+      display: block
+
+    i
+      position: absolute
+      top: 0.7em
+      right: 0.4em
+      +font-size(1.2)
+
+    &:hover
+      i,
+      small
+        color: $color-white
+
