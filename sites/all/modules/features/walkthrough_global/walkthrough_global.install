@@ -170,3 +170,14 @@ function walkthrough_global_update_7009(&$sandbox) {
 
   return t('Screenshot images have been converted to field collection items.');
 }
+
+/**
+ * Delete Screenshot image field.
+ */
+function walkthrough_global_update_7010() {
+  field_delete_field('field_screening_screenshots');
+  $limit = variable_get('field_purge_batch_size', 10);
+  field_purge_batch($limit);
+
+  return t('The Screenshot image field has been deleted.');
+}
