@@ -131,3 +131,10 @@ function walkthrough_global_update_7010() {
     drupal_uninstall_modules(array('walkthrough_tests'));
   }
 }
+
+/**
+ * Enable Page content type.
+ */
+function walkthrough_global_update_7011() {
+  features_install_modules(array('walkthrough_page_type_page'));
+}
