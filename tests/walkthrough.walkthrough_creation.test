@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * Test Walkthrough creation processes.
+ */
+
+require_once 'pronovix-selenium-testcase/px_selenium_testcase.inc';
+
+class WalkthroughCreation extends PxSeleniumTestCase {
+
+  public function testEmptyWalkthroughCreation() {
+    $this->open("/node/add/walkthrough");
+    $this->type("id=edit-title", "Test empty walkthrough");
+    $this->click("id=edit-submit");
+    $this->waitForPageToLoad("30000");
+    $this->assertEquals("Test empty walkthrough", $this->getText("id=page-title"));
+  }
+}
+
