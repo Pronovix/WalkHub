@@ -391,13 +391,6 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create step content'.
-  $permissions['create step content'] = array(
-    'name' => 'create step content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create url aliases'.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
@@ -466,15 +459,6 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any step content'.
-  $permissions['delete any step content'] = array(
-    'name' => 'delete any step content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any walkhub_faq_page content'.
   $permissions['delete any walkhub_faq_page content'] = array(
     'name' => 'delete any walkhub_faq_page content',
@@ -533,13 +517,6 @@ function walkthrough_permissions_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own step content'.
-  $permissions['delete own step content'] = array(
-    'name' => 'delete own step content',
-    'roles' => array(),
     'module' => 'node',
   );
 
@@ -625,15 +602,6 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any step content'.
-  $permissions['edit any step content'] = array(
-    'name' => 'edit any step content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any walkhub_faq_page content'.
   $permissions['edit any walkhub_faq_page content'] = array(
     'name' => 'edit any walkhub_faq_page content',
@@ -701,13 +669,6 @@ function walkthrough_permissions_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own step content'.
-  $permissions['edit own step content'] = array(
-    'name' => 'edit own step content',
-    'roles' => array(),
     'module' => 'node',
   );
 
