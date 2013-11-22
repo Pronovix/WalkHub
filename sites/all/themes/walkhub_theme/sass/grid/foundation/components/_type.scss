@@ -164,8 +164,7 @@ $microformat-abbr-font-decoration: none !default;
   p {
     font-family: $paragraph-font-family;
     font-weight: $paragraph-font-weight;
-    font-size: $paragraph-font-size;
-    line-height: $paragraph-line-height;
+    @include font-size(.9);
     margin-bottom: $paragraph-margin-bottom;
     text-rendering: $paragraph-text-rendering;
 
@@ -196,12 +195,12 @@ $microformat-abbr-font-decoration: none !default;
     }
   }
 
-  h1 { font-size: $h1-font-size - em-calc(30); }
-  h2 { font-size: $h2-font-size - em-calc(20); }
-  h3 { font-size: $h3-font-size - em-calc(5); }
-  h4 { font-size: $h4-font-size - em-calc(5); }
-  h5 { font-size: $h5-font-size; }
-  h6 { font-size: $h6-font-size; }
+  h1 { @include font-size(1.8);}
+  h2 { @include font-size(1.2);}
+  h3 { @include font-size(1.1);}
+  h4 { @include font-size(1);}
+  h5 { @include font-size(.9);}
+  h6 { @include font-size(.9);}
 
   .subheader { @extend %subheader; }
 
@@ -260,7 +259,7 @@ $microformat-abbr-font-decoration: none !default;
       ol {
         margin-#{$default-float}: $list-nested-margin;
         margin-bottom: 0;
-        font-size: 1em; /* Override nested font-size change */
+        @include font-size(.9);
       }
     }
     &.square,
