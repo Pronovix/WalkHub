@@ -119,7 +119,32 @@ function walkthrough_install_tasks() {
     'function' => 'walkthrough_enable_theme',
   );
 
+  $tasks['add_menu_items'] = array(
+    'display_name' => st('Add menu items'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_add_menu_items',
+  );
+
   return $tasks;
+}
+
+/**
+ * Install callback for adding the menu items.
+ */
+function walkthrough_add_menu_items(){
+  // Add walkthrough import menu item.
+  $node_add_mlid = db_query('select mlid from {menu_links} where menu_name = :menu_name and link_path = :link_path', array(':menu_name' => 'navigation', ':link_path' => 'node/add'))->fetchField();
+
+  $menu_item = array(
+    'link_path' => 'walkthrough/import',
+    'link_title' => 'Import Walkthrough',
+    'plid' => $node_add_mlid,
+    'weight' => -9,
+  );
+
+  menu_link_save($menu_item);
 }
 
 
@@ -144,11 +169,13 @@ function _walkthrough_get_walkthrough_features() {
   return array(
     'walkhub',
     'walkhub_branding',
-    'walkthrough_global',
-    'walkthrough_permissions',
-    'walkthrough_sets',
+    'walkhub_collections',
     'walkhub_page_type_faq',
     'walkhub_page_type_news',
+    'walkthrough_global',
+    'walkthrough_permissions',
+    'walkthrough_screening',
+    'walkthrough_sets',
   );
 }
 
