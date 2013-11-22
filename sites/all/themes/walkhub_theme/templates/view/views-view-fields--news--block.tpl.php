@@ -24,6 +24,7 @@
  * @ingroup views_templates
  */
 ?>
+
 <?php foreach ($fields as $id => $field): ?>
   <?php if ($field->class == 'path') : ?>
     <a href="<?php print $field->content;?>">
@@ -31,18 +32,12 @@
 <?php endforeach; ?>
 
   <?php foreach ($fields as $id => $field): ?>
-    <?php if ($field->class == 'field-wh-news-image') : ?>
+    <?php if ($field->class == 'field-wh-screening') : ?>
       <?php print $field->content;?>
     <?php endif; ?>
   <?php endforeach; ?>
 
 <div class="container">
-  <?php foreach ($fields as $id => $field): ?>
-    <?php if ($field->class == 'created') : ?>
-      <?php print $field->content;?>
-    <?php endif; ?>
-  <?php endforeach; ?>
-
   <?php foreach ($fields as $id => $field): ?>
     <?php if ($field->class == 'title') : ?>
       <?php print $field->content;?>
