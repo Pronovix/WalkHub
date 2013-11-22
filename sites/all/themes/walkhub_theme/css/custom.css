@@ -2041,12 +2041,14 @@ a img {
 p {
   font-family: inherit;
   font-weight: normal;
-  font-size: 1em;
-  line-height: 1.6;
+  font-size: 9px;
+  line-height: 13.05px;
+  font-size: 0.9rem;
+  line-height: 1.305rem;
   margin-bottom: 1.25em;
   text-rendering: optimizeLegibility;
 }
-/* line 174, ../sass/grid/foundation/components/_type.scss */
+/* line 173, ../sass/grid/foundation/components/_type.scss */
 p aside {
   font-size: 0.875em;
   line-height: 1.35;
@@ -2054,7 +2056,7 @@ p aside {
 }
 
 /* Default header styles */
-/* line 182, ../sass/grid/foundation/components/_type.scss */
+/* line 181, ../sass/grid/foundation/components/_type.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-weight: 200;
@@ -2065,44 +2067,62 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
   line-height: 1.0125em;
 }
-/* line 192, ../sass/grid/foundation/components/_type.scss */
+/* line 191, ../sass/grid/foundation/components/_type.scss */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 60%;
   color: #6f6f6f;
   line-height: 0;
 }
 
-/* line 199, ../sass/grid/foundation/components/_type.scss */
+/* line 198, ../sass/grid/foundation/components/_type.scss */
 h1 {
-  font-size: 0.875em;
+  font-size: 18px;
+  line-height: 26.1px;
+  font-size: 1.8rem;
+  line-height: 2.61rem;
+}
+
+/* line 199, ../sass/grid/foundation/components/_type.scss */
+h2 {
+  font-size: 12px;
+  line-height: 17.4px;
+  font-size: 1.2rem;
+  line-height: 1.74rem;
 }
 
 /* line 200, ../sass/grid/foundation/components/_type.scss */
-h2 {
-  font-size: 1.0625em;
+h3 {
+  font-size: 11px;
+  line-height: 15.95px;
+  font-size: 1.1rem;
+  line-height: 1.595rem;
 }
 
 /* line 201, ../sass/grid/foundation/components/_type.scss */
-h3 {
-  font-size: 1.375em;
+h4 {
+  font-size: 10px;
+  line-height: 14.5px;
+  font-size: 1rem;
+  line-height: 1.45rem;
 }
 
 /* line 202, ../sass/grid/foundation/components/_type.scss */
-h4 {
-  font-size: 1.125em;
+h5 {
+  font-size: 9px;
+  line-height: 13.05px;
+  font-size: 0.9rem;
+  line-height: 1.305rem;
 }
 
 /* line 203, ../sass/grid/foundation/components/_type.scss */
-h5 {
-  font-size: 1.125em;
-}
-
-/* line 204, ../sass/grid/foundation/components/_type.scss */
 h6 {
-  font-size: 1em;
+  font-size: 9px;
+  line-height: 13.05px;
+  font-size: 0.9rem;
+  line-height: 1.305rem;
 }
 
-/* line 208, ../sass/grid/foundation/components/_type.scss */
+/* line 207, ../sass/grid/foundation/components/_type.scss */
 hr {
   border: solid #dddddd;
   border-width: 1px 0 0;
@@ -2112,27 +2132,27 @@ hr {
 }
 
 /* Helpful Typography Defaults */
-/* line 218, ../sass/grid/foundation/components/_type.scss */
+/* line 217, ../sass/grid/foundation/components/_type.scss */
 em,
 i {
   font-style: italic;
   line-height: inherit;
 }
 
-/* line 224, ../sass/grid/foundation/components/_type.scss */
+/* line 223, ../sass/grid/foundation/components/_type.scss */
 strong,
 b {
   font-weight: bold;
   line-height: inherit;
 }
 
-/* line 229, ../sass/grid/foundation/components/_type.scss */
+/* line 228, ../sass/grid/foundation/components/_type.scss */
 small {
   font-size: 60%;
   line-height: inherit;
 }
 
-/* line 234, ../sass/grid/foundation/components/_type.scss */
+/* line 233, ../sass/grid/foundation/components/_type.scss */
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
@@ -2140,7 +2160,7 @@ code {
 }
 
 /* Lists */
-/* line 243, ../sass/grid/foundation/components/_type.scss */
+/* line 242, ../sass/grid/foundation/components/_type.scss */
 ul,
 ol,
 dl {
@@ -2151,47 +2171,49 @@ dl {
   font-family: inherit;
 }
 
-/* line 251, ../sass/grid/foundation/components/_type.scss */
+/* line 250, ../sass/grid/foundation/components/_type.scss */
 ul, ol {
   margin-left: 0;
 }
-/* line 253, ../sass/grid/foundation/components/_type.scss */
+/* line 252, ../sass/grid/foundation/components/_type.scss */
 ul.no-bullet, ol.no-bullet {
   margin-left: 0;
 }
 
 /* Unordered Lists */
-/* line 260, ../sass/grid/foundation/components/_type.scss */
+/* line 259, ../sass/grid/foundation/components/_type.scss */
 ul li ul,
 ul li ol {
   margin-left: 1.25em;
   margin-bottom: 0;
-  font-size: 1em;
-  /* Override nested font-size change */
+  font-size: 9px;
+  line-height: 13.05px;
+  font-size: 0.9rem;
+  line-height: 1.305rem;
 }
-/* line 269, ../sass/grid/foundation/components/_type.scss */
+/* line 268, ../sass/grid/foundation/components/_type.scss */
 ul.square li ul, ul.circle li ul, ul.disc li ul {
   list-style: inherit;
 }
-/* line 272, ../sass/grid/foundation/components/_type.scss */
+/* line 271, ../sass/grid/foundation/components/_type.scss */
 ul.square {
   list-style-type: square;
 }
-/* line 273, ../sass/grid/foundation/components/_type.scss */
+/* line 272, ../sass/grid/foundation/components/_type.scss */
 ul.circle {
   list-style-type: circle;
 }
-/* line 274, ../sass/grid/foundation/components/_type.scss */
+/* line 273, ../sass/grid/foundation/components/_type.scss */
 ul.disc {
   list-style-type: disc;
 }
-/* line 275, ../sass/grid/foundation/components/_type.scss */
+/* line 274, ../sass/grid/foundation/components/_type.scss */
 ul.no-bullet {
   list-style: none;
 }
 
 /* Ordered Lists */
-/* line 282, ../sass/grid/foundation/components/_type.scss */
+/* line 281, ../sass/grid/foundation/components/_type.scss */
 ol li ul,
 ol li ol {
   margin-left: 1.25em;
@@ -2199,18 +2221,18 @@ ol li ol {
 }
 
 /* Definition Lists */
-/* line 291, ../sass/grid/foundation/components/_type.scss */
+/* line 290, ../sass/grid/foundation/components/_type.scss */
 dl dt {
   margin-bottom: 0.3em;
   font-weight: bold;
 }
-/* line 295, ../sass/grid/foundation/components/_type.scss */
+/* line 294, ../sass/grid/foundation/components/_type.scss */
 dl dd {
   margin-bottom: 0.75em;
 }
 
 /* Abbreviations */
-/* line 300, ../sass/grid/foundation/components/_type.scss */
+/* line 299, ../sass/grid/foundation/components/_type.scss */
 abbr,
 acronym {
   text-transform: uppercase;
@@ -2220,35 +2242,35 @@ acronym {
   cursor: help;
 }
 
-/* line 307, ../sass/grid/foundation/components/_type.scss */
+/* line 306, ../sass/grid/foundation/components/_type.scss */
 abbr {
   text-transform: none;
 }
 
 /* Blockquotes */
-/* line 312, ../sass/grid/foundation/components/_type.scss */
+/* line 311, ../sass/grid/foundation/components/_type.scss */
 blockquote {
   margin: 0 0 1.25em;
   padding: 0.5625em 1.25em 0 1.1875em;
   border-left: 1px solid #dddddd;
 }
-/* line 317, ../sass/grid/foundation/components/_type.scss */
+/* line 316, ../sass/grid/foundation/components/_type.scss */
 blockquote cite {
   display: block;
   font-size: 0.8125em;
   color: #555555;
 }
-/* line 321, ../sass/grid/foundation/components/_type.scss */
+/* line 320, ../sass/grid/foundation/components/_type.scss */
 blockquote cite:before {
   content: "\2014 \0020";
 }
-/* line 326, ../sass/grid/foundation/components/_type.scss */
+/* line 325, ../sass/grid/foundation/components/_type.scss */
 blockquote cite a,
 blockquote cite a:visited {
   color: #555555;
 }
 
-/* line 332, ../sass/grid/foundation/components/_type.scss */
+/* line 331, ../sass/grid/foundation/components/_type.scss */
 blockquote,
 blockquote p {
   line-height: 1.6;
@@ -2256,29 +2278,29 @@ blockquote p {
 }
 
 /* Microformats */
-/* line 338, ../sass/grid/foundation/components/_type.scss */
+/* line 337, ../sass/grid/foundation/components/_type.scss */
 .vcard {
   display: inline-block;
   margin: 0 0 1.25em 0;
   border: 1px solid #dddddd;
   padding: 0.625em 0.75em;
 }
-/* line 344, ../sass/grid/foundation/components/_type.scss */
+/* line 343, ../sass/grid/foundation/components/_type.scss */
 .vcard li {
   margin: 0;
   display: block;
 }
-/* line 348, ../sass/grid/foundation/components/_type.scss */
+/* line 347, ../sass/grid/foundation/components/_type.scss */
 .vcard .fn {
   font-weight: bold;
   font-size: 0.9375em;
 }
 
-/* line 355, ../sass/grid/foundation/components/_type.scss */
+/* line 354, ../sass/grid/foundation/components/_type.scss */
 .vevent .summary {
   font-weight: bold;
 }
-/* line 357, ../sass/grid/foundation/components/_type.scss */
+/* line 356, ../sass/grid/foundation/components/_type.scss */
 .vevent abbr {
   cursor: default;
   text-decoration: none;
@@ -2293,13 +2315,13 @@ blockquote p {
  * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
  * Credit to Paul Irish and HTML5 Boilerplate (html5boilerplate.com)
 */
-/* line 374, ../sass/grid/foundation/components/_type.scss */
+/* line 373, ../sass/grid/foundation/components/_type.scss */
 .print-only {
   display: none !important;
 }
 
 @media print {
-  /* line 376, ../sass/grid/foundation/components/_type.scss */
+  /* line 375, ../sass/grid/foundation/components/_type.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -2308,49 +2330,49 @@ blockquote p {
     text-shadow: none !important;
   }
 
-  /* line 384, ../sass/grid/foundation/components/_type.scss */
+  /* line 383, ../sass/grid/foundation/components/_type.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 385, ../sass/grid/foundation/components/_type.scss */
+  /* line 384, ../sass/grid/foundation/components/_type.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 387, ../sass/grid/foundation/components/_type.scss */
+  /* line 386, ../sass/grid/foundation/components/_type.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  /* line 392, ../sass/grid/foundation/components/_type.scss */
+  /* line 391, ../sass/grid/foundation/components/_type.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 395, ../sass/grid/foundation/components/_type.scss */
+  /* line 394, ../sass/grid/foundation/components/_type.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 400, ../sass/grid/foundation/components/_type.scss */
+  /* line 399, ../sass/grid/foundation/components/_type.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
-  /* line 403, ../sass/grid/foundation/components/_type.scss */
+  /* line 402, ../sass/grid/foundation/components/_type.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 405, ../sass/grid/foundation/components/_type.scss */
+  /* line 404, ../sass/grid/foundation/components/_type.scss */
   img {
     max-width: 100% !important;
   }
@@ -2359,7 +2381,7 @@ blockquote p {
     margin: 0.5cm;
 }
 
-  /* line 411, ../sass/grid/foundation/components/_type.scss */
+  /* line 410, ../sass/grid/foundation/components/_type.scss */
   p,
   h2,
   h3 {
@@ -2367,28 +2389,28 @@ blockquote p {
     widows: 3;
   }
 
-  /* line 417, ../sass/grid/foundation/components/_type.scss */
+  /* line 416, ../sass/grid/foundation/components/_type.scss */
   h2,
   h3 {
     page-break-after: avoid;
   }
 
-  /* line 419, ../sass/grid/foundation/components/_type.scss */
+  /* line 418, ../sass/grid/foundation/components/_type.scss */
   .hide-on-print {
     display: none !important;
   }
 
-  /* line 420, ../sass/grid/foundation/components/_type.scss */
+  /* line 419, ../sass/grid/foundation/components/_type.scss */
   .print-only {
     display: block !important;
   }
 
-  /* line 421, ../sass/grid/foundation/components/_type.scss */
+  /* line 420, ../sass/grid/foundation/components/_type.scss */
   .hide-for-print {
     display: none !important;
   }
 
-  /* line 422, ../sass/grid/foundation/components/_type.scss */
+  /* line 421, ../sass/grid/foundation/components/_type.scss */
   .show-for-print {
     display: inherit !important;
   }
@@ -7149,210 +7171,6 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   line-height: 0;
 }
 
-/* line 173, ../sass/typo/_typography.sass */
-h1 {
-  font-size: 16.5px;
-  line-height: 23.925px;
-  font-size: 1.65rem;
-  line-height: 2.3925rem;
-}
-
-/* line 176, ../sass/typo/_typography.sass */
-hr {
-  border: solid #dddddd;
-  border-width: 1px 0 0;
-  clear: both;
-  margin: 1.25em 0 1.1875em;
-  height: 0;
-}
-
-/* Helpful Typography Defaults */
-/* line 184, ../sass/typo/_typography.sass */
-em, i {
-  font-style: italic;
-  line-height: inherit;
-}
-
-/* line 188, ../sass/typo/_typography.sass */
-strong, b {
-  font-weight: bold;
-  line-height: inherit;
-}
-
-/* line 192, ../sass/typo/_typography.sass */
-small {
-  font-size: 60%;
-  line-height: inherit;
-}
-
-/* line 196, ../sass/typo/_typography.sass */
-code {
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: bold;
-  color: #7f0a0c;
-}
-
-/* Lists */
-/* line 202, ../sass/typo/_typography.sass */
-ul, ol, dl {
-  margin-bottom: 1.25em;
-  list-style-position: outside;
-  font-family: inherit;
-}
-
-/* line 207, ../sass/typo/_typography.sass */
-ul, ol {
-  margin-left: 0;
-}
-
-/* Unordered Lists */
-/* line 211, ../sass/typo/_typography.sass */
-ul {
-  /* Override nested font-size change */
-}
-/* line 213, ../sass/typo/_typography.sass */
-ul li ul, ul li ol {
-  margin-left: 1.25em;
-  margin-bottom: 0;
-}
-/* line 218, ../sass/typo/_typography.sass */
-ul.square li ul, ul.circle li ul, ul.disc li ul {
-  list-style: inherit;
-}
-/* line 220, ../sass/typo/_typography.sass */
-ul.square {
-  list-style-type: square;
-}
-/* line 222, ../sass/typo/_typography.sass */
-ul.circle {
-  list-style-type: circle;
-}
-/* line 224, ../sass/typo/_typography.sass */
-ul.disc {
-  list-style-type: disc;
-}
-/* line 226, ../sass/typo/_typography.sass */
-ul.no-bullet {
-  list-style: none;
-}
-
-/* Ordered Lists */
-/* line 231, ../sass/typo/_typography.sass */
-ol li ul, ol li ol {
-  margin-left: 1.25em;
-  margin-bottom: 0;
-}
-
-/* Definition Lists */
-/* line 238, ../sass/typo/_typography.sass */
-dl dt {
-  margin-bottom: 0.3em;
-  font-weight: bold;
-}
-/* line 241, ../sass/typo/_typography.sass */
-dl dd {
-  margin-bottom: 0.75em;
-}
-
-/* Abbreviations */
-/* line 246, ../sass/typo/_typography.sass */
-abbr, acronym {
-  text-transform: uppercase;
-  font-size: 90%;
-  color: #222222;
-  border-bottom: 1px dotted #dddddd;
-  cursor: help;
-}
-
-/* line 253, ../sass/typo/_typography.sass */
-abbr {
-  text-transform: none;
-}
-
-/* Blockquotes */
-/* line 257, ../sass/typo/_typography.sass */
-blockquote {
-  margin: 0 0 1.25em;
-  padding: 0.5625em 1.25em 0 1.1875em;
-  border-left: 1px solid #dddddd;
-  line-height: 1.6;
-  color: #6f6f6f;
-}
-/* line 261, ../sass/typo/_typography.sass */
-blockquote cite {
-  display: block;
-  font-size: 10px;
-  line-height: 14.5px;
-  font-size: 1rem;
-  line-height: 1.45rem;
-  color: #555555;
-}
-/* line 265, ../sass/typo/_typography.sass */
-blockquote cite:before {
-  content: "\2014 \0020";
-}
-/* line 267, ../sass/typo/_typography.sass */
-blockquote cite a {
-  color: #555555;
-}
-/* line 269, ../sass/typo/_typography.sass */
-blockquote cite a:visited {
-  color: #555555;
-}
-/* line 273, ../sass/typo/_typography.sass */
-blockquote p {
-  line-height: 1.6;
-  color: #6f6f6f;
-}
-
-/* Microformats */
-/* line 278, ../sass/typo/_typography.sass */
-.vcard {
-  display: inline-block;
-  margin: 0 0 1.25em 0;
-  border: 1px solid #dddddd;
-  padding: 0.625em 0.75em;
-}
-/* line 283, ../sass/typo/_typography.sass */
-.vcard li {
-  margin: 0;
-  display: block;
-}
-/* line 286, ../sass/typo/_typography.sass */
-.vcard .fn {
-  font-weight: bold;
-  font-size: 10px;
-  line-height: 14.5px;
-  font-size: 1rem;
-  line-height: 1.45rem;
-}
-
-/* line 291, ../sass/typo/_typography.sass */
-.vevent .summary {
-  font-weight: bold;
-}
-/* line 293, ../sass/typo/_typography.sass */
-.vevent abbr {
-  cursor: default;
-  text-decoration: none;
-  font-weight: bold;
-  border: none;
-  padding: 0 0.0625em;
-}
-
-/* line 300, ../sass/typo/_typography.sass */
-html.js input.form-autocomplete {
-  background-image: url(../../../../../misc/throbber.gif);
-  background-position: 100% 7px;
-  background-repeat: no-repeat;
-}
-/* line 305, ../sass/typo/_typography.sass */
-html.js input.form-autocomplete.throbbing {
-  background-image: url(../../../../../misc/throbber.gif);
-  background-position: 100% -13px;
-  background-repeat: no-repeat;
-}
-
 /* line 1, ../sass/typo/_icon.sass */
 [class*="icon-"] {
   font-family: "icomoon";
@@ -8173,6 +7991,8 @@ header#main-header .menu li a {
   padding: 0;
   max-height: 255px;
   max-height: 25.5rem;
+  padding-top: 30px;
+  padding-top: 3rem;
   overflow: hidden;
   background-image: url("../images/feature-bg.jpg");
   background-position: top center;
@@ -8184,18 +8004,22 @@ header#main-header .menu li a {
   -moz-box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.45);
   box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.45);
 }
-/* line 10, ../sass/modules/_temp_featured.sass */
+/* line 11, ../sass/modules/_temp_featured.sass */
+#featured h1 {
+  margin-top: 0;
+}
+/* line 14, ../sass/modules/_temp_featured.sass */
 #featured h1,
 #featured h2 {
   color: white;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.85);
 }
-/* line 15, ../sass/modules/_temp_featured.sass */
+/* line 19, ../sass/modules/_temp_featured.sass */
 #featured p {
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.85);
 }
-/* line 19, ../sass/modules/_temp_featured.sass */
+/* line 23, ../sass/modules/_temp_featured.sass */
 #featured .cta, #featured .node-type-walkthrough .main.columns > .action-links li a, .node-type-walkthrough .main.columns > .action-links li #featured a, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type {
   *zoom: 1;
   margin: 10px auto 15px;
@@ -8213,17 +8037,17 @@ header#main-header .menu li a {
 #featured .cta:after, #featured .node-type-walkthrough .main.columns > .action-links li a:after, .node-type-walkthrough .main.columns > .action-links li #featured a:after, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type:after {
   clear: both;
 }
-/* line 25, ../sass/modules/_temp_featured.sass */
+/* line 29, ../sass/modules/_temp_featured.sass */
 #featured .cta p, #featured .node-type-walkthrough .main.columns > .action-links li a p, .node-type-walkthrough .main.columns > .action-links li #featured a p, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type p, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type p {
   margin-bottom: 0;
 }
-/* line 28, ../sass/modules/_temp_featured.sass */
+/* line 32, ../sass/modules/_temp_featured.sass */
 #featured .cta small, #featured .node-type-walkthrough .main.columns > .action-links li a small, .node-type-walkthrough .main.columns > .action-links li #featured a small, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type small, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type small {
   margin-top: -5px;
   margin-top: -0.5rem;
   display: block;
 }
-/* line 32, ../sass/modules/_temp_featured.sass */
+/* line 36, ../sass/modules/_temp_featured.sass */
 #featured .cta i, #featured .node-type-walkthrough .main.columns > .action-links li a i, .node-type-walkthrough .main.columns > .action-links li #featured a i, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type i, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type i {
   position: absolute;
   top: 0.7em;
@@ -8233,7 +8057,7 @@ header#main-header .menu li a {
   font-size: 1.2rem;
   line-height: 1.74rem;
 }
-/* line 39, ../sass/modules/_temp_featured.sass */
+/* line 43, ../sass/modules/_temp_featured.sass */
 #featured .cta:hover i, #featured .node-type-walkthrough .main.columns > .action-links li a:hover i, .node-type-walkthrough .main.columns > .action-links li #featured a:hover i, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover:first-of-type i, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:hover:first-of-type i,
 #featured .cta:hover small,
 #featured .node-type-walkthrough .main.columns > .action-links li a:hover small,
@@ -8241,6 +8065,140 @@ header#main-header .menu li a {
 #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover:first-of-type small,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:hover:first-of-type small {
   color: white;
+}
+
+/* line 1, ../sass/modules/_temp_news.sass */
+#news {
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01);
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01);
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01);
+  padding: 15px 0;
+  padding: 1.5rem 0;
+  background-color: #fafafa;
+  border-bottom: 1px solid #ededed;
+  color: #adadad;
+}
+/* line 9, ../sass/modules/_temp_news.sass */
+#news h2 {
+  text-align: center;
+  font-size: 15px;
+  line-height: 21.75px;
+  font-size: 1.5rem;
+  line-height: 2.175rem;
+}
+/* line 13, ../sass/modules/_temp_news.sass */
+#news .view-header {
+  text-align: center;
+}
+/* line 16, ../sass/modules/_temp_news.sass */
+#news ul {
+  *zoom: 1;
+  margin: 0;
+  padding: 0;
+}
+/* line 121, ../sass/grid/foundation/components/_global.scss */
+#news ul:before, #news ul:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../sass/grid/foundation/components/_global.scss */
+#news ul:after {
+  clear: both;
+}
+/* line 20, ../sass/modules/_temp_news.sass */
+#news li {
+  list-style-type: none;
+  float: left;
+  width: 31%;
+  margin: 0 1%;
+  display: block;
+  background: white;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #ededed;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  height: 64px;
+  height: 6.4rem;
+}
+/* line 34, ../sass/modules/_temp_news.sass */
+#news li a {
+  color: #adadad;
+}
+/* line 37, ../sass/modules/_temp_news.sass */
+#news li a > div {
+  float: left;
+}
+/* line 40, ../sass/modules/_temp_news.sass */
+#news li .container {
+  float: none;
+  padding: 4.5px;
+  padding: 0.45rem;
+  height: 64px;
+  height: 6.4rem;
+  margin-left: 63px;
+  margin-left: 6.3rem;
+  -webkit-box-shadow: -13px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -13px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: -13px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+/* line 47, ../sass/modules/_temp_news.sass */
+#news li p {
+  font-size: 7.5px;
+  line-height: 10.875px;
+  font-size: 0.75rem;
+  line-height: 1.0875rem;
+  height: 30px;
+  height: 3rem;
+  overflow: hidden;
+}
+/* line 52, ../sass/modules/_temp_news.sass */
+#news li h5 {
+  height: 1rem;
+  overflow: hidden;
+}
+/* line 56, ../sass/modules/_temp_news.sass */
+#news li .created {
+  position: absolute;
+  top: 0;
+  left: 0.3em;
+  width: 1.5em;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  background-color: #3b8acd;
+  border: 1px solid #005b9a;
+  border-top: 0;
+}
+/* line 68, ../sass/modules/_temp_news.sass */
+#news li .created .day {
+  font-size: 8px;
+  line-height: 11.6px;
+  font-size: 0.8rem;
+  line-height: 1.16rem;
+}
+/* line 71, ../sass/modules/_temp_news.sass */
+#news li .created .month {
+  font-size: 6.5px;
+  line-height: 9.425px;
+  font-size: 0.65rem;
+  line-height: 0.9425rem;
+}
+/* line 74, ../sass/modules/_temp_news.sass */
+#news img {
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  -ms-border-radius: 3px 0 0 3px;
+  -o-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
 }
 
 /* line 1, ../sass/modules/_temp_main.sass */

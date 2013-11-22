@@ -102,7 +102,7 @@
         <h4><?php print t('Attached Image'); ?> </h4>
         <?php
         $img_url = $variables['field_wh_news_image']['0']['uri'];  // the orig image uri
-        $style = 'medium';  // or any other custom image style you've created via /admin/config/media/image-styles
+        $style = '220x220';  // or any other custom image style you've created via /admin/config/media/image-styles
         ?>
         <img class="con" src="<?php print image_style_url($style, $img_url) ?>" width="220" height="220">
       <?php endif; ?>
