@@ -147,6 +147,8 @@ function _walkthrough_get_walkthrough_features() {
     'walkthrough_global',
     'walkthrough_permissions',
     'walkthrough_sets',
+    'walkhub_page_type_faq',
+    'walkhub_page_type_news',
   );
 }
 

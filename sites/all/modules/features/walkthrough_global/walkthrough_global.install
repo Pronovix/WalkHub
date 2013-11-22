@@ -104,9 +104,16 @@ function walkthrough_global_update_7008() {
 }
 
 /**
- * Delete the test content type and nodes. Also uninstall the walkthrough_tests feature.
+ * Turning on Page Types: FAQ, NEWS
  */
 function walkthrough_global_update_7009() {
+  features_install_modules(array('walkhub_page_type_faq, walkhub_page_type_news'));
+}
+
+/**
+ * Delete the test content type and nodes. Also uninstall the walkthrough_tests feature.
+ */
+function walkthrough_global_update_7010() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node');
   $query->entityCondition('bundle', 'test');
