@@ -20,16 +20,21 @@
   li
     list-style-type: none
     float: left
-    width: 31%
+    width: 48%
     margin: 0 1%
     display: block
     background: #FFF
-    +border-radius(3px)
     border: 1px solid #ededed
     overflow: hidden
     position: relative
+    +border-radius(3px)
     +box-shadow(0 1px 0 rgba(#000, .35))
-    +px-rem(height, 6.4)
+
+    .node-title
+      display: none
+
+    .wt-container
+      margin: 0
 
     a
       color: #adadad
@@ -38,10 +43,10 @@
         float: left
 
     .container
+      position: relative
       float: none
       +px-rem(padding, .45)
       +px-rem(height, 6.4)
-      +px-rem(margin-left, 6.3)
       +box-shadow(-13px 0px 5px 0px rgba(0,0,0,0.3))
 
     p
@@ -51,12 +56,13 @@
 
     h5
       height: 1rem
+      padding-right: 3em
       overflow: hidden
 
     .created
       position: absolute
       top: 0
-      left: .3em
+      right: .3em
       width: 1.5em
       color: $color-white
       text-shadow: 1px 1px 1px rgba(0,0,0,0.75)

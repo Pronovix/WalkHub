@@ -8111,46 +8111,51 @@ header#main-header .menu li a {
 #news li {
   list-style-type: none;
   float: left;
-  width: 31%;
+  width: 48%;
   margin: 0 1%;
   display: block;
   background: white;
+  border: 1px solid #ededed;
+  overflow: hidden;
+  position: relative;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #ededed;
-  overflow: hidden;
-  position: relative;
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
-  height: 64px;
-  height: 6.4rem;
 }
-/* line 34, ../sass/modules/_temp_news.sass */
+/* line 33, ../sass/modules/_temp_news.sass */
+#news li .node-title {
+  display: none;
+}
+/* line 36, ../sass/modules/_temp_news.sass */
+#news li .wt-container {
+  margin: 0;
+}
+/* line 39, ../sass/modules/_temp_news.sass */
 #news li a {
   color: #adadad;
 }
-/* line 37, ../sass/modules/_temp_news.sass */
+/* line 42, ../sass/modules/_temp_news.sass */
 #news li a > div {
   float: left;
 }
-/* line 40, ../sass/modules/_temp_news.sass */
+/* line 45, ../sass/modules/_temp_news.sass */
 #news li .container {
+  position: relative;
   float: none;
   padding: 4.5px;
   padding: 0.45rem;
   height: 64px;
   height: 6.4rem;
-  margin-left: 63px;
-  margin-left: 6.3rem;
   -webkit-box-shadow: -13px 0px 5px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: -13px 0px 5px 0px rgba(0, 0, 0, 0.3);
   box-shadow: -13px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
-/* line 47, ../sass/modules/_temp_news.sass */
+/* line 52, ../sass/modules/_temp_news.sass */
 #news li p {
   font-size: 7.5px;
   line-height: 10.875px;
@@ -8160,16 +8165,17 @@ header#main-header .menu li a {
   height: 3rem;
   overflow: hidden;
 }
-/* line 52, ../sass/modules/_temp_news.sass */
+/* line 57, ../sass/modules/_temp_news.sass */
 #news li h5 {
   height: 1rem;
+  padding-right: 3em;
   overflow: hidden;
 }
-/* line 56, ../sass/modules/_temp_news.sass */
+/* line 62, ../sass/modules/_temp_news.sass */
 #news li .created {
   position: absolute;
   top: 0;
-  left: 0.3em;
+  right: 0.3em;
   width: 1.5em;
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
@@ -8178,21 +8184,21 @@ header#main-header .menu li a {
   border: 1px solid #005b9a;
   border-top: 0;
 }
-/* line 68, ../sass/modules/_temp_news.sass */
+/* line 74, ../sass/modules/_temp_news.sass */
 #news li .created .day {
   font-size: 8px;
   line-height: 11.6px;
   font-size: 0.8rem;
   line-height: 1.16rem;
 }
-/* line 71, ../sass/modules/_temp_news.sass */
+/* line 77, ../sass/modules/_temp_news.sass */
 #news li .created .month {
   font-size: 6.5px;
   line-height: 9.425px;
   font-size: 0.65rem;
   line-height: 0.9425rem;
 }
-/* line 74, ../sass/modules/_temp_news.sass */
+/* line 80, ../sass/modules/_temp_news.sass */
 #news img {
   -webkit-border-radius: 3px 0 0 3px;
   -moz-border-radius: 3px 0 0 3px;
