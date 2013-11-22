@@ -172,6 +172,7 @@ function _walkthrough_get_walkthrough_features() {
     'walkhub_collections',
     'walkhub_page_type_faq',
     'walkhub_page_type_news',
+    'walkthrough_page_type_page',
     'walkthrough_global',
     'walkthrough_permissions',
     'walkthrough_screening',
