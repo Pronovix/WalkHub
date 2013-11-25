@@ -3,6 +3,8 @@ description = Walkthrough walkhub
 version = VERSION
 core = 7.x
 
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
 dependencies[] = block
 dependencies[] = captcha
 dependencies[] = color_field
@@ -52,3 +54,4 @@ dependencies[] = views_ui
 dependencies[] = walkhub_client
 dependencies[] = walkthrough
 dependencies[] = walkthrough_slideshow
+

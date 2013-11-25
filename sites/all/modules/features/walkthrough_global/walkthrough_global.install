@@ -217,3 +217,14 @@ function walkthrough_global_update_7013() {
 
   return t('The Screenshot image field has been deleted.');
 }
+
+/**
+ * Enable admin menu modules.
+ */
+function walkthrough_global_update_7014() {
+  $admin_menu_modules = array(
+    'admin_menu_toolbar',
+    'admin_menu',
+  );
+  module_enable($admin_menu_modules);
+}
