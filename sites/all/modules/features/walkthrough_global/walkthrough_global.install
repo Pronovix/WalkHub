@@ -223,7 +223,6 @@ function walkthrough_global_update_7013() {
  */
 function walkthrough_global_update_7014() {
   $admin_menu_modules = array(
-    'admin_devel',
     'admin_menu_toolbar',
     'admin_menu',
   );
