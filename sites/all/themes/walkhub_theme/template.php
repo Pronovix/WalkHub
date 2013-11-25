@@ -263,11 +263,11 @@ function walkhub_theme_preprocess_page(&$vars) {
  * Implements hook_preprocess_walkthrough_steps_edit_form().
  */
 function walkhub_theme_preprocess_walkthrough_steps_edit_form(&$vars) {
-  $title = $vars['form']['field_fc_step_name'][LANGUAGE_NONE][0]['value']['#value'];
-  $description = $vars['form']['field_fc_step_description'][LANGUAGE_NONE][0]['value']['#value'];
+  $title = isset($vars['form']['field_fc_step_name'][LANGUAGE_NONE][0]['value']['#value']) ? $vars['form']['field_fc_step_name'][LANGUAGE_NONE][0]['value']['#value'] : '';
+  $description = isset($vars['form']['field_fc_step_description'][LANGUAGE_NONE][0]['value']['#value']) ? $vars['form']['field_fc_step_description'][LANGUAGE_NONE][0]['value']['#value'] : '';
   $label = "$title - $description";
 
-  $vars['stepnumber'] = $vars['form']['#delta'] + 1;
+  $vars['stepnumber'] = (isset($vars['form']['#delta']) ? $vars['form']['#delta'] : 0) + 1;
 
   if (empty($title)) {
     $label = "{$vars['stepnumber']}. step";
