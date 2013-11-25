@@ -9,6 +9,8 @@ require_once 'pronovix-selenium-testcase/px_selenium_testcase.inc';
 class WalkthroughCreation extends PxSeleniumTestCase {
 
   public function testEmptyWalkthroughCreation() {
+    $this->adminLogin();
+
     $this->open("/node/add/walkthrough");
     $this->type("id=edit-title", "Test empty walkthrough");
     $this->click("id=edit-submit");
