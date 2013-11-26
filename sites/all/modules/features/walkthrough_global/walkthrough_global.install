@@ -228,3 +228,10 @@ function walkthrough_global_update_7014() {
   );
   module_enable($admin_menu_modules);
 }
+
+/**
+ * Revert Walkthrough permission feature.
+ */
+function walkthrough_global_update_7015() {
+  walkhub_features_revert(array('walkthrough_permissions'));
+}

@@ -430,7 +430,6 @@ function walkthrough_permissions_user_default_permissions() {
     'name' => 'create walkthrough_public_collection content',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -440,7 +439,6 @@ function walkthrough_permissions_user_default_permissions() {
     'name' => 'create walkthrough_set content',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
