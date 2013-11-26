@@ -230,7 +230,7 @@ function walkthrough_global_update_7014() {
 }
 
 /**
- * Only administrators are allowed to create walkthrough sets and public collections.
+ * Revert Walkthrough permission feature.
  */
 function walkthrough_global_update_7015() {
   walkhub_features_revert(array('walkthrough_permissions'));
