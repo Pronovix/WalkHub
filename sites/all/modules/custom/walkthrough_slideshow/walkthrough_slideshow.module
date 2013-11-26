@@ -100,7 +100,7 @@ function walkthrough_slideshow_field_formatter_info() {
   return array(
     'image_slideshow' => array(
       'label' => t('Image slideshow'),
-      'field types' => array('image'),
+      'field types' => array('image', 'field_collection'),
       'settings' => array(
         'height' => WALKTHROUGH_SLIDSHOW_HEIGHT,
         'width' => WALKTHROUGH_SLIDSHOW_WIDTH,
