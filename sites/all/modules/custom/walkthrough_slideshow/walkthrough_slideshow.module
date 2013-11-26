@@ -189,7 +189,21 @@ function walkthrough_slideshow_field_formatter_view($entity_type, $entity, $fiel
  * @return string
  */
 function walkthrough_slideshow_generate_iframe_content($node) {
-  $images = field_get_items('node', $node, 'field_screening_screenshots');
+  $images = array();
+  // Get the images from the field collection items.
+  $screenshot_collections = field_get_items('node', $node, 'field_screening_fc_screenshots');
+  foreach ($screenshot_collections as $screenshot_collection) {
+    $collection_entity = entity_load('field_collection_item', array($screenshot_collection['value']));
+    // The collection is deleted.
+    if (!$collection_entity) {
+      continue;
+    }
+    $collection_entity =  current($collection_entity);
+    $collection_image = field_get_items('field_collection_item', $collection_entity, 'field_fc_screenshots_screenshot');
+    if ($collection_image) {
+      $images[] = current($collection_image);
+    }
+  }
 
   // Get referenced walkthrough object.
   $walkthrough = field_get_items('node', $node, 'field_screening_walkthrough');
