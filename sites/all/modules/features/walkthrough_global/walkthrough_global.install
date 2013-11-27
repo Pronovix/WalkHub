@@ -248,3 +248,12 @@ function walkthrough_global_update_7016() {
       ->condition('theme', 'seven', '=')
       ->execute();
 }
+
+/**
+ * Remove br from full html text filter
+ */
+function walkthrough_global_update_7017() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
