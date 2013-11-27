@@ -1,12 +1,67 @@
 #featured
   +mp0
   +px-rem(max-height, 25.5)
-  +px-rem(padding-top, 3)
+  +px-rem(padding, 2.5, 0, 1.5)
   overflow: hidden
-  background-image: url('../images/feature-bg.jpg')
+  background-color: #000000
+  background-image: url('../images/office.jpg')
   background-position: top center
   +background-size(cover)
-  +box-shadow(inset 0px -10px 20px 0px rgba(0,0,0,0.45))
+  position: relative
+  +box-shadow(inset 0px -10px 20px 0px rgba(0,0,0,0.15))
+
+  &:before
+    +opacity(.7)
+    background: rgba(#000, .75) url('../images/mask.png') repeat top center
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    content: ''
+    display: block
+    width: 100%
+
+  // New Boxes
+  .box-container
+
+    text-align: center
+
+    .box
+      +px-rem(padding, .25, .6)
+      +px-rem(margin-bottom, .45)
+      +border-radius(.35em)
+      background: rgba($color-white, .9)
+
+      h6
+        +font-size(1.4, 1)
+        margin-bottom: 0
+
+      &.blue
+        background-color: #3b8acd
+        +filter-gradient(#3b8acd, #035787, vertical)
+        +background-image(linear-gradient(top,  #3b8acd 0%,#035787 100%))
+        +text-shadow(1px 1px 1px rgba(#000, 0.75))
+        color: #ffffff
+
+        h4
+          +font-size(1.6)
+          color: $color-white
+          margin-bottom: 0
+
+        .rounded
+          +border-radius(50%)
+          background-color: darken(#035787, 3%)
+          display: block
+          width: 1em
+          height: 1em
+          +font-size(1.5,1.4)
+          margin: 0 auto
+          font-style: normal
+
+        small
+          font-size: 95%
+
 
   h1
     margin-top: 0
@@ -43,4 +98,3 @@
       i,
       small
         color: $color-white
-
