@@ -7172,7 +7172,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 /* line 1, ../sass/typo/_icon.sass */
-[class*="icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   font-family: "icomoon";
   speak: none;
   font-style: normal;
@@ -7186,236 +7186,251 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 /* line 13, ../sass/typo/_icon.sass */
+.icon-logo-minus:before {
+  content: "\e60c";
+}
+
+/* line 16, ../sass/typo/_icon.sass */
 .icon-bitbucket:before {
   content: "\e608";
 }
 
-/* line 16, ../sass/typo/_icon.sass */
+/* line 19, ../sass/typo/_icon.sass */
+.icon-logo-plus:before {
+  content: "\e60d";
+}
+
+/* line 22, ../sass/typo/_icon.sass */
 .icon-github-sign:before {
   content: "\e609";
 }
 
-/* line 19, ../sass/typo/_icon.sass */
+/* line 25, ../sass/typo/_icon.sass */
 .icon-youtube-sign:before {
   content: "\e60a";
 }
 
-/* line 22, ../sass/typo/_icon.sass */
+/* line 28, ../sass/typo/_icon.sass */
 .icon-edit:before {
   content: "\e60b";
 }
 
-/* line 25, ../sass/typo/_icon.sass */
+/* line 31, ../sass/typo/_icon.sass */
 .icon-resize-vertical:before {
   content: "\e607";
 }
 
-/* line 28, ../sass/typo/_icon.sass */
+/* line 34, ../sass/typo/_icon.sass */
 .icon-cog:before {
   content: "\e603";
 }
 
-/* line 31, ../sass/typo/_icon.sass */
+/* line 37, ../sass/typo/_icon.sass */
 .icon-trash:before {
   content: "\e604";
 }
 
-/* line 34, ../sass/typo/_icon.sass */
+/* line 40, ../sass/typo/_icon.sass */
 .icon-upload:before {
   content: "\e605";
 }
 
-/* line 37, ../sass/typo/_icon.sass */
+/* line 43, ../sass/typo/_icon.sass */
 .icon-browser:before {
   content: "\e606";
 }
 
-/* line 40, ../sass/typo/_icon.sass */
+/* line 46, ../sass/typo/_icon.sass */
+.icon-edit:before {
+  content: "\e602";
+}
+
+/* line 49, ../sass/typo/_icon.sass */
 .icon-play:before {
   content: "\e600";
 }
 
-/* line 43, ../sass/typo/_icon.sass */
+/* line 52, ../sass/typo/_icon.sass */
 .icon-pencil:before {
   content: "\e601";
 }
 
-/* line 46, ../sass/typo/_icon.sass */
+/* line 55, ../sass/typo/_icon.sass */
 .icon-uniF001:before {
   content: "\f001";
 }
 
-/* line 49, ../sass/typo/_icon.sass */
+/* line 58, ../sass/typo/_icon.sass */
 .icon-uniF000:before {
   content: "\f000";
 }
 
-/* line 52, ../sass/typo/_icon.sass */
+/* line 61, ../sass/typo/_icon.sass */
 .icon-plus:before {
   content: "\e000";
 }
 
-/* line 55, ../sass/typo/_icon.sass */
+/* line 64, ../sass/typo/_icon.sass */
 .icon-facebook:before {
   content: "\e001";
 }
 
-/* line 58, ../sass/typo/_icon.sass */
+/* line 67, ../sass/typo/_icon.sass */
 .icon-twitter:before {
   content: "\e002";
 }
 
-/* line 61, ../sass/typo/_icon.sass */
+/* line 70, ../sass/typo/_icon.sass */
 .icon-youtube:before {
   content: "\e003";
 }
 
-/* line 64, ../sass/typo/_icon.sass */
+/* line 73, ../sass/typo/_icon.sass */
 .icon-linkedin:before {
   content: "\e004";
 }
 
-/* line 67, ../sass/typo/_icon.sass */
+/* line 76, ../sass/typo/_icon.sass */
 .icon-google-plus:before {
   content: "\e005";
 }
 
-/* line 70, ../sass/typo/_icon.sass */
+/* line 79, ../sass/typo/_icon.sass */
 .icon-chevron-left:before {
   content: "\f053";
 }
 
-/* line 73, ../sass/typo/_icon.sass */
+/* line 82, ../sass/typo/_icon.sass */
 .icon-chevron-right:before {
   content: "\f054";
 }
 
-/* line 76, ../sass/typo/_icon.sass */
+/* line 85, ../sass/typo/_icon.sass */
 .icon-chevron-up:before {
   content: "\f077";
 }
 
-/* line 79, ../sass/typo/_icon.sass */
+/* line 88, ../sass/typo/_icon.sass */
 .icon-chevron-down:before {
   content: "\f078";
 }
 
-/* line 82, ../sass/typo/_icon.sass */
+/* line 91, ../sass/typo/_icon.sass */
 .icon-arrow-up:before {
   content: "\e006";
 }
 
-/* line 85, ../sass/typo/_icon.sass */
+/* line 94, ../sass/typo/_icon.sass */
 .icon-arrow-down:before {
   content: "\e007";
 }
 
-/* line 88, ../sass/typo/_icon.sass */
+/* line 97, ../sass/typo/_icon.sass */
 .icon-arrow-left:before {
   content: "\e008";
 }
 
-/* line 91, ../sass/typo/_icon.sass */
+/* line 100, ../sass/typo/_icon.sass */
 .icon-arrow-right:before {
   content: "\e009";
 }
 
-/* line 94, ../sass/typo/_icon.sass */
+/* line 103, ../sass/typo/_icon.sass */
 .icon-arrow-top-right:before {
   content: "\e00a";
 }
 
-/* line 97, ../sass/typo/_icon.sass */
+/* line 106, ../sass/typo/_icon.sass */
 .icon-arrow-bottom-left:before {
   content: "\e00d";
 }
 
-/* line 100, ../sass/typo/_icon.sass */
+/* line 109, ../sass/typo/_icon.sass */
 .icon-share:before {
   content: "\e00e";
 }
 
-/* line 103, ../sass/typo/_icon.sass */
+/* line 112, ../sass/typo/_icon.sass */
 .icon-eye:before {
   content: "\e00f";
 }
 
-/* line 106, ../sass/typo/_icon.sass */
+/* line 115, ../sass/typo/_icon.sass */
 .icon-user:before {
   content: "\e010";
 }
 
-/* line 109, ../sass/typo/_icon.sass */
+/* line 118, ../sass/typo/_icon.sass */
 .icon-user2:before {
   content: "\e011";
 }
 
-/* line 112, ../sass/typo/_icon.sass */
+/* line 121, ../sass/typo/_icon.sass */
 .icon-user3:before {
   content: "\e012";
 }
 
-/* line 115, ../sass/typo/_icon.sass */
+/* line 124, ../sass/typo/_icon.sass */
 .icon-locked:before {
   content: "\e013";
 }
 
-/* line 118, ../sass/typo/_icon.sass */
+/* line 127, ../sass/typo/_icon.sass */
 .icon-unlocked:before {
   content: "\e014";
 }
 
-/* line 121, ../sass/typo/_icon.sass */
+/* line 130, ../sass/typo/_icon.sass */
 .icon-help:before {
   content: "\e015";
 }
 
-/* line 124, ../sass/typo/_icon.sass */
+/* line 133, ../sass/typo/_icon.sass */
 .icon-exclamation-sign:before {
   content: "\f06a";
 }
 
-/* line 127, ../sass/typo/_icon.sass */
+/* line 136, ../sass/typo/_icon.sass */
 .icon-close:before {
   content: "\e016";
 }
 
-/* line 130, ../sass/typo/_icon.sass */
+/* line 139, ../sass/typo/_icon.sass */
 .icon-checkmark:before {
   content: "\e017";
 }
 
-/* line 133, ../sass/typo/_icon.sass */
+/* line 142, ../sass/typo/_icon.sass */
 .icon-checkmark2:before {
   content: "\e018";
 }
 
-/* line 136, ../sass/typo/_icon.sass */
+/* line 145, ../sass/typo/_icon.sass */
 .icon-profile:before {
   content: "\e019";
 }
 
-/* line 139, ../sass/typo/_icon.sass */
+/* line 148, ../sass/typo/_icon.sass */
 .icon-signout:before {
   content: "\f08b";
 }
 
-/* line 142, ../sass/typo/_icon.sass */
+/* line 151, ../sass/typo/_icon.sass */
 .icon-reload:before {
   content: "\e01a";
 }
 
-/* line 145, ../sass/typo/_icon.sass */
+/* line 154, ../sass/typo/_icon.sass */
 .icon-key:before {
   content: "\e01b";
 }
 
-/* line 148, ../sass/typo/_icon.sass */
+/* line 157, ../sass/typo/_icon.sass */
 .icon-arrow-bottom-right:before {
   content: "\e00c";
 }
 
-/* line 151, ../sass/typo/_icon.sass */
+/* line 160, ../sass/typo/_icon.sass */
 .icon-arrow-top-left:before {
   content: "\e00b";
 }
@@ -8950,8 +8965,8 @@ input.pure-input-rounded, .pure-input-rounded {
  ** Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 /* line 5, ../sass/modules/_jquery_ui.sass */
 .ui-dialog {
-  padding: 5px;
-  padding: 0.5rem;
+  padding: 10px;
+  padding: 1rem;
   -o-animation-name: fadeIn;
   -moz-animation-name: fadeIn;
   -webkit-animation-name: fadeIn;
@@ -11693,27 +11708,133 @@ input.pure-input-rounded, .pure-input-rounded {
   padding-top: 0;
 }
 /* line 5, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog fieldset {
+  padding-bottom: 0;
+}
+/* line 9, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog form label:last-of-type {
+  width: 70px;
+  float: left;
+}
+/* line 13, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog form .button, .walkthrough-start-dialog form .ui-state-default,
+.walkthrough-start-dialog form .ui-widget-content .ui-state-default,
+.ui-widget-content .walkthrough-start-dialog form .ui-state-default,
+.walkthrough-start-dialog form .ui-widget-header .ui-state-default,
+.ui-widget-header .walkthrough-start-dialog form .ui-state-default, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button {
+  display: block;
+  margin: 0.5em 0;
+  font-size: 7px;
+  line-height: 10.15px;
+  font-size: 0.7rem;
+  line-height: 1.015rem;
+  color: #222222;
+  position: relative;
+}
+/* line 20, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog form .button:after, .walkthrough-start-dialog form .ui-state-default:after,
+.walkthrough-start-dialog form .ui-widget-content .ui-state-default:after,
+.ui-widget-content .walkthrough-start-dialog form .ui-state-default:after,
+.walkthrough-start-dialog form .ui-widget-header .ui-state-default:after,
+.ui-widget-header .walkthrough-start-dialog form .ui-state-default:after, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button:after {
+  position: absolute;
+  top: 0.05em;
+  right: 0.05em;
+  font-family: "icomoon";
+  speak: none;
+  content: attr(data-icon);
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  *margin-right: 0.3em;
+  font-size: 15px;
+  line-height: 15px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  content: "\e60d";
+}
+/* line 28, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog form .button.checked, .walkthrough-start-dialog form .checked.ui-state-default,
+.walkthrough-start-dialog form .ui-widget-content .checked.ui-state-default,
+.ui-widget-content .walkthrough-start-dialog form .checked.ui-state-default,
+.walkthrough-start-dialog form .ui-widget-header .checked.ui-state-default,
+.ui-widget-header .walkthrough-start-dialog form .checked.ui-state-default, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button.checked, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button.checked {
+  background-color: #f4f4f5;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFC4C4C9', endColorstr='#FFA9A9B2');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c4c4c9), color-stop(100%, #a9a9b2));
+  background-image: -webkit-linear-gradient(top, #c4c4c9 0%, #a9a9b2 100%);
+  background-image: -moz-linear-gradient(top, #c4c4c9 0%, #a9a9b2 100%);
+  background-image: -o-linear-gradient(top, #c4c4c9 0%, #a9a9b2 100%);
+  background-image: linear-gradient(top, #c4c4c9 0%, #a9a9b2 100%);
+  -webkit-box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0 inset;
+  -moz-box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0 inset;
+}
+/* line 34, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog form .button.checked:hover, .walkthrough-start-dialog form .checked.ui-state-default:hover,
+.walkthrough-start-dialog form .ui-widget-content .checked.ui-state-default:hover,
+.ui-widget-content .walkthrough-start-dialog form .checked.ui-state-default:hover,
+.walkthrough-start-dialog form .ui-widget-header .checked.ui-state-default:hover,
+.ui-widget-header .walkthrough-start-dialog form .checked.ui-state-default:hover, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button.checked:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button.checked:hover {
+  background-color: #f4f4f5;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFBFBFC4', endColorstr='#FFA3A3AD');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bfbfc4), color-stop(100%, #a3a3ad));
+  background-image: -webkit-linear-gradient(top, #bfbfc4 0%, #a3a3ad 100%);
+  background-image: -moz-linear-gradient(top, #bfbfc4 0%, #a3a3ad 100%);
+  background-image: -o-linear-gradient(top, #bfbfc4 0%, #a3a3ad 100%);
+  background-image: linear-gradient(top, #bfbfc4 0%, #a3a3ad 100%);
+  -webkit-box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0 inset;
+  -moz-box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0 inset;
+}
+/* line 40, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog form .button.checked:active, .walkthrough-start-dialog form .checked.ui-state-default:active,
+.walkthrough-start-dialog form .ui-widget-content .checked.ui-state-default:active,
+.ui-widget-content .walkthrough-start-dialog form .checked.ui-state-default:active,
+.walkthrough-start-dialog form .ui-widget-header .checked.ui-state-default:active,
+.ui-widget-header .walkthrough-start-dialog form .checked.ui-state-default:active, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button.checked:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button.checked:active {
+  -webkit-box-shadow: #afafb6 0 1px 2px inset;
+  -moz-box-shadow: #afafb6 0 1px 2px inset;
+  box-shadow: #afafb6 0 1px 2px inset;
+}
+/* line 43, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog form .button.checked:after, .walkthrough-start-dialog form .checked.ui-state-default:after,
+.walkthrough-start-dialog form .ui-widget-content .checked.ui-state-default:after,
+.ui-widget-content .walkthrough-start-dialog form .checked.ui-state-default:after,
+.walkthrough-start-dialog form .ui-widget-header .checked.ui-state-default:after,
+.ui-widget-header .walkthrough-start-dialog form .checked.ui-state-default:after, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button.checked:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button.checked:after {
+  content: "\e60c";
+}
+/* line 46, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog form #useproxy {
+  margin: 0;
+  margin-top: 1em;
+}
+/* line 50, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-titlebar {
   -webkit-border-radius: 3px 3px 0 0;
   -moz-border-radius: 3px 3px 0 0;
   -ms-border-radius: 3px 3px 0 0;
   -o-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
-  margin: 0 -5px;
-  margin: 0 -0.5rem;
+  margin: 0 -10px 10px;
+  margin: 0 -1rem 1rem;
   padding: 5px 10px;
   padding: 0.5rem 1rem;
   background-color: #f6f6f6;
   border-bottom: 1px solid #e5e4e4;
 }
-/* line 12, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 57, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-titlebar .ui-dialog-title {
   font-size: 10px;
   line-height: 14.5px;
   font-size: 1rem;
   line-height: 1.45rem;
 }
-/* line 15, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 60, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-widget-content,
 .walkthrough-start-dialog .ui-widget-content p {
   font-size: 7.5px;
@@ -11721,50 +11842,50 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.75rem;
   line-height: 1.0875rem;
 }
-/* line 19, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 64, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-widget-content label,
 .walkthrough-start-dialog .ui-widget-content p label {
   margin-top: 1em;
   margin-bottom: 0.1em;
 }
-/* line 23, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 68, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-widget-content label:first-letter,
 .walkthrough-start-dialog .ui-widget-content p label:first-letter {
   text-transform: uppercase;
 }
-/* line 27, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 72, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog #domain {
   margin: 0;
 }
-/* line 30, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 75, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-buttonpane {
   -webkit-border-radius: 0 0 3px 3px;
   -moz-border-radius: 0 0 3px 3px;
   -ms-border-radius: 0 0 3px 3px;
   -o-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
-  margin: 0 -5px;
-  margin: 0 -0.5rem;
+  margin: 0 -10px;
+  margin: 0 -1rem;
   padding: 5px 10px;
   padding: 0.5rem 1rem;
   text-align: center;
   background-color: #f6f6f6;
   border-top: 1px solid #e5e4e4;
 }
-/* line 38, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 83, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
   vertical-align: middle;
   float: none;
   margin: 0 auto;
 }
-/* line 43, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 88, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
   margin: 0;
   padding: 0;
   padding: 4.5px 8.5px 3.5px;
   padding: 0.45rem 0.85rem 0.35rem;
 }
-/* line 48, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 93, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button .ui-button-text {
   margin: 0;
   padding: 0;
@@ -11773,7 +11894,11 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.7rem;
   line-height: 1.015rem;
 }
-/* line 52, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 97, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:last-of-type {
+  color: #222222;
+}
+/* line 100, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type {
   -webkit-border-radius: 0.35em;
   -moz-border-radius: 0.35em;
@@ -11784,7 +11909,11 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0.45rem 0.85rem 0.35rem;
   margin-right: 0.5em;
 }
-/* line 58, ../sass/dialog/_walkthrough-start-dialog.sass */
+/* line 106, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:active {
   color: white;
+}
+/* line 110, ../sass/dialog/_walkthrough-start-dialog.sass */
+.walkthrough-start-dialog .ui-dialog-buttonpane .starter a {
+  display: block;
 }
