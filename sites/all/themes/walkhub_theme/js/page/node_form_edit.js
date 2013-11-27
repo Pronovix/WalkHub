@@ -15,7 +15,8 @@
       Drupal.walkhubStepEdit.stepHideShow(context, settings);
       Drupal.walkhubStepEdit.callopse(context, settings);
       Drupal.walkhubStepEdit.parameters(context, settings);
-      Drupal.walkhubStepEdit.checkBox(context, settings);
+      Drupal.walkhubStepEdit.initShowTitleTextfieldStates(context, settings);
+      Drupal.walkhubStepEdit.showTitleStateChange(context, settings);
     }
   };
 
@@ -97,20 +98,36 @@
       })
     },
 
-
-    checkBox : function(context, settings) {
-      $('.field-name-field-fc-step-show-title input', context).once(function() {
+    /**
+     * Go through every walkthrough step and set the Title field visibility
+     * according to the value of the Show title checkbox.
+     *
+     * @param context
+     * @param settings
+     */
+    initShowTitleTextfieldStates : function(context, settings) {
+      $('.field-name-field-fc-step-show-title', context).each(function() {
         var $this = $(this);
-        var $container = $this.closest(".walkthrough-step-container", context);
-        $this.click(function() {
-          if($this.is(':checked')) {
-            $(".field-name-field-fc-step-name", $container).show(200);
-          }
-          else {
-            $(".field-name-field-fc-step-name", $container).hide(200);
-          }
-        });
-      })
+        var $titleContainer = $this.siblings(".field-name-field-fc-step-name", context);
+        if ($('input[type="checkbox"]', $this).is(':checked')) {
+          $titleContainer.show(200);
+        }
+        else {
+          $titleContainer.hide(200);
+        }
+      });
+    },
+
+    /**
+     * Handle the Show title checkbox click event.
+     *
+     * @param context
+     * @param settings
+     */
+    showTitleStateChange: function(context, settings) {
+      $('.field-name-field-fc-step-show-title input[type="checkbox"]').click(function() {
+        Drupal.walkhubStepEdit.initShowTitleTextfieldStates(context, settings);
+      });
     }
 
   }
