@@ -72,7 +72,7 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
   .contain-to-grid {
     width: 100%;
     .top-bar {
-      max-width: 62.5em;
+      max-width: 60.5em;
       margin: 0 auto;
     }
   }
@@ -393,7 +393,7 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
     }
 
     .contain-to-grid .top-bar {
-      max-width: $row-width;
+      max-width: 60.5em;
       margin: 0 auto;
       margin-bottom: $topbar-margin-bottom;
     }
@@ -422,6 +422,9 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
         a:not(.button) {
           padding: 0 $topbar-height / 3;
           line-height: $topbar-height;
+        }
+        &:last-of-type a{
+          padding-right: 0;
         }
       }
 

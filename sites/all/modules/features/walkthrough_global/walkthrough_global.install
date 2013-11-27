@@ -235,3 +235,16 @@ function walkthrough_global_update_7014() {
 function walkthrough_global_update_7015() {
   walkhub_features_revert(array('walkthrough_permissions'));
 }
+
+/**
+ * Remove walkthrough menu from the bottom on the admin interface
+ */
+function walkthrough_global_update_7016() {
+    db_update('block')
+      ->fields(array(
+        'region' => -1,
+    ))
+      ->condition('delta', array('management', 'navigation', 'user-menu'), 'in')
+      ->condition('theme', 'seven', '=')
+      ->execute();
+}
