@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* normalize.css v2.1.1 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -8945,7 +8945,7 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-top: 0;
 }
 
-/* jQuery UI - v1.10.2 - 2013-03-14
+/*! jQuery UI - v1.10.2 - 2013-03-14
  ** http://jqueryui.com
  ** Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 /* line 5, ../sass/modules/_jquery_ui.sass */
@@ -9029,7 +9029,7 @@ input.pure-input-rounded, .pure-input-rounded {
   cursor: move;
 }
 
-/* jQuery UI - v1.10.2 - 2013-03-14
+/*! jQuery UI - v1.10.2 - 2013-03-14
  ** http://jqueryui.com
  ** Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 /* line 5, ../sass/modules/_jquery_ui_theme.sass */
@@ -10729,7 +10729,6 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-add-walkthrough .row.l-main .tabledrag-toggle-weight,
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps thead,
 .page-node-add-walkthrough .row.l-main #field-parameters-values thead,
-.page-node-add-walkthrough .row.l-main .field-name-field-fc-step-name,
 .page-node-add-walkthrough .row.l-main #edit-field-proxy-warning-message-und-0-format,
 .page-node-add-walkthrough .row.l-main #adv-sett-proxy-param,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-body-und-0-format,
@@ -10743,32 +10742,31 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main .tabledrag-toggle-weight,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps thead,
 .page-node-edit.node-type-walkthrough .row.l-main #field-parameters-values thead,
-.page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-step-name,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-proxy-warning-message-und-0-format,
 .page-node-edit.node-type-walkthrough .row.l-main #adv-sett-proxy-param {
   display: none;
 }
-/* line 24, ../sass/page/_node-walkthrough-edit.sass */
+/* line 23, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .form-select,
 .page-node-edit.node-type-walkthrough .row.l-main .form-select {
   padding: 3px !important;
 }
-/* line 28, ../sass/page/_node-walkthrough-edit.sass */
+/* line 27, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs checkbox,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs checkbox {
   margin: 0.5em 0 0 0;
 }
-/* line 31, ../sass/page/_node-walkthrough-edit.sass */
+/* line 30, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs .description,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .description {
   display: none;
 }
-/* line 34, ../sass/page/_node-walkthrough-edit.sass */
+/* line 33, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs .vertical-tabs-panes,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .vertical-tabs-panes {
   padding-top: 1em;
 }
-/* line 37, ../sass/page/_node-walkthrough-edit.sass */
+/* line 36, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs .vertical-tabs-list,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs .vertical-tabs-list {
   font-size: 7.5px;
@@ -10776,7 +10774,7 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.75rem;
   line-height: 1.0875rem;
 }
-/* line 40, ../sass/page/_node-walkthrough-edit.sass */
+/* line 39, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .vertical-tabs label,
 .page-node-edit.node-type-walkthrough .row.l-main .vertical-tabs label {
   width: 55%;
@@ -10785,12 +10783,12 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.75rem;
   line-height: 1.0875rem;
 }
-/* line 44, ../sass/page/_node-walkthrough-edit.sass */
+/* line 43, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters {
   margin-left: 24%;
 }
-/* line 47, ../sass/page/_node-walkthrough-edit.sass */
+/* line 46, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters tbody,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters tbody {
   -webkit-border-radius: 0.2em;
@@ -10801,12 +10799,12 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0.75rem 0.5rem;
   background-color: #f6f6f6;
 }
-/* line 52, ../sass/page/_node-walkthrough-edit.sass */
+/* line 51, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters label,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters label {
   width: 100%;
 }
-/* line 55, ../sass/page/_node-walkthrough-edit.sass */
+/* line 54, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .description,
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .form-submit,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters .description,
@@ -10816,19 +10814,19 @@ input.pure-input-rounded, .pure-input-rounded {
   font-size: 0.7rem;
   line-height: 1.015rem;
 }
-/* line 59, ../sass/page/_node-walkthrough-edit.sass */
+/* line 58, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-field-parameters .description,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-field-parameters .description {
   margin: 8.5px 0 3.5px 0;
   margin: 0.85rem 0 0.35rem 0;
 }
-/* line 63, ../sass/page/_node-walkthrough-edit.sass */
+/* line 62, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-parameters-add-more-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main #field-parameters-add-more-wrapper {
   margin: 10px 0;
   margin: 1rem 0;
 }
-/* line 66, ../sass/page/_node-walkthrough-edit.sass */
+/* line 65, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .form-item-title,
 .page-node-add-walkthrough .row.l-main .form-item-body-und-0-value,
 .page-node-edit.node-type-walkthrough .row.l-main .form-item-title,
@@ -10855,7 +10853,7 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main .form-item-body-und-0-value:after {
   clear: both;
 }
-/* line 71, ../sass/page/_node-walkthrough-edit.sass */
+/* line 70, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main label,
 .page-node-edit.node-type-walkthrough .row.l-main label {
   font-size: 10px;
@@ -10869,7 +10867,7 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 1em;
   margin-top: 0.2em;
 }
-/* line 80, ../sass/page/_node-walkthrough-edit.sass */
+/* line 79, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-title,
 .page-node-add-walkthrough .row.l-main #edit-body-und-0-value,
 .page-node-add-walkthrough .row.l-main .grippie,
@@ -10880,7 +10878,7 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 76%;
   margin: 0;
 }
-/* line 87, ../sass/page/_node-walkthrough-edit.sass */
+/* line 86, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set {
   *zoom: 1;
@@ -10897,14 +10895,14 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set:after {
   clear: both;
 }
-/* line 89, ../sass/page/_node-walkthrough-edit.sass */
+/* line 88, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .le,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le {
   float: left;
   float: left;
   width: 20%;
 }
-/* line 94, ../sass/page/_node-walkthrough-edit.sass */
+/* line 93, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .le .button, .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main #ad-set .le button,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .button,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-state-default,
@@ -10912,19 +10910,19 @@ input.pure-input-rounded, .pure-input-rounded {
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le button {
   margin-top: 1.33em;
 }
-/* line 97, ../sass/page/_node-walkthrough-edit.sass */
+/* line 96, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .ri,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .ri {
   float: right;
   width: 76%;
   display: none;
 }
-/* line 102, ../sass/page/_node-walkthrough-edit.sass */
+/* line 101, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-actions,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-actions {
   text-align: center;
 }
-/* line 105, ../sass/page/_node-walkthrough-edit.sass */
+/* line 104, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .back.button, .page-node-add-walkthrough .row.l-main .back.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main button.back,
 .page-node-edit.node-type-walkthrough .row.l-main .back.button,
 .page-node-edit.node-type-walkthrough .row.l-main .back.ui-state-default,
@@ -10932,12 +10930,12 @@ input.pure-input-rounded, .pure-input-rounded {
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main button.back {
   margin-right: 0.25em;
 }
-/* line 108, ../sass/page/_node-walkthrough-edit.sass */
+/* line 107, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #wrapper-fg,
 .page-node-edit.node-type-walkthrough .row.l-main #wrapper-fg {
   padding-left: 24%;
 }
-/* line 111, ../sass/page/_node-walkthrough-edit.sass */
+/* line 110, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field_tags-col,
 .page-node-add-walkthrough .row.l-main #group-col,
 .page-node-edit.node-type-walkthrough .row.l-main #field_tags-col,
@@ -10948,47 +10946,47 @@ input.pure-input-rounded, .pure-input-rounded {
   box-sizing: border-box;
   float: left;
 }
-/* line 117, ../sass/page/_node-walkthrough-edit.sass */
+/* line 116, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field_tags-col,
 .page-node-edit.node-type-walkthrough .row.l-main #field_tags-col {
   padding-right: 2%;
 }
-/* line 120, ../sass/page/_node-walkthrough-edit.sass */
+/* line 119, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #group-col,
 .page-node-edit.node-type-walkthrough .row.l-main #group-col {
   padding-left: 2%;
 }
-/* line 123, ../sass/page/_node-walkthrough-edit.sass */
+/* line 122, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #edit-og-group-ref-und,
 .page-node-edit.node-type-walkthrough .row.l-main #edit-og-group-ref-und {
   padding: 0;
 }
-/* line 128, ../sass/page/_node-walkthrough-edit.sass */
+/* line 127, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #og-group-ref-add-more-wrapper label,
 .page-node-edit.node-type-walkthrough .row.l-main #og-group-ref-add-more-wrapper label {
   width: 100%;
 }
-/* line 131, ../sass/page/_node-walkthrough-edit.sass */
+/* line 130, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default,
 .page-node-add-walkthrough .row.l-main #field-fc-steps-values,
 .page-node-edit.node-type-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default,
 .page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values {
   width: 100% !important;
 }
-/* line 135, ../sass/page/_node-walkthrough-edit.sass */
+/* line 134, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default td,
 .page-node-add-walkthrough .row.l-main #field-fc-steps-values td,
 .page-node-edit.node-type-walkthrough .row.l-main #s2id_edit-og-group-ref-und-0-default td,
 .page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values td {
   padding-right: 0;
 }
-/* line 138, ../sass/page/_node-walkthrough-edit.sass */
+/* line 137, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps {
   margin-top: 2em;
   margin-bottom: 2em;
 }
-/* line 145, ../sass/page/_node-walkthrough-edit.sass */
+/* line 144, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container .le > div,
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container .ri > div,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container .le > div,
@@ -11013,39 +11011,39 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container .ri > div:after {
   clear: both;
 }
-/* line 149, ../sass/page/_node-walkthrough-edit.sass */
+/* line 148, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container .field-name-field-fc-step-show-title label,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container .field-name-field-fc-step-show-title label {
   width: 45%;
   float: left;
 }
-/* line 153, ../sass/page/_node-walkthrough-edit.sass */
+/* line 152, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container label,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .walkthrough-step-container label {
   width: 100%;
   float: none;
 }
-/* line 157, ../sass/page/_node-walkthrough-edit.sass */
+/* line 156, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .form-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .form-wrapper {
   margin-bottom: 4.5px;
   margin-bottom: 0.45rem;
 }
-/* line 160, ../sass/page/_node-walkthrough-edit.sass */
+/* line 159, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .field-name-field-fc-steps .field-add-more-submit,
 .page-node-edit.node-type-walkthrough .row.l-main .field-name-field-fc-steps .field-add-more-submit {
   font-size: 75%;
   font-style: italic;
   margin-left: 4.3em;
 }
-/* line 165, ../sass/page/_node-walkthrough-edit.sass */
+/* line 164, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main table,
 .page-node-edit.node-type-walkthrough .row.l-main table {
   border: 0;
   width: 100%;
   background: transparent;
 }
-/* line 170, ../sass/page/_node-walkthrough-edit.sass */
+/* line 169, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main table tr.even,
 .page-node-add-walkthrough .row.l-main table tr.alt,
 .page-node-add-walkthrough .row.l-main table tr:nth-of-type(even),
@@ -11054,20 +11052,20 @@ input.pure-input-rounded, .pure-input-rounded {
 .page-node-edit.node-type-walkthrough .row.l-main table tr:nth-of-type(even) {
   background: transparent;
 }
-/* line 175, ../sass/page/_node-walkthrough-edit.sass */
+/* line 174, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle {
   margin: 0;
   padding: 0;
   width: 30px;
 }
-/* line 179, ../sass/page/_node-walkthrough-edit.sass */
+/* line 178, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle:hover:after,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle:hover:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 182, ../sass/page/_node-walkthrough-edit.sass */
+/* line 181, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle:after,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=65);
@@ -11091,20 +11089,20 @@ input.pure-input-rounded, .pure-input-rounded {
   content: "\e607";
   display: block;
 }
-/* line 192, ../sass/page/_node-walkthrough-edit.sass */
+/* line 191, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .draggable a.tabledrag-handle .handle,
 .page-node-edit.node-type-walkthrough .row.l-main .draggable a.tabledrag-handle .handle {
   margin: 0;
   padding: 0;
   background: transparent;
 }
-/* line 197, ../sass/page/_node-walkthrough-edit.sass */
+/* line 196, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-fc-steps-values .grippie,
 .page-node-edit.node-type-walkthrough .row.l-main #field-fc-steps-values .grippie {
   width: 100%;
   float: none;
 }
-/* line 202, ../sass/page/_node-walkthrough-edit.sass */
+/* line 201, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container {
   margin: 0 5px 10px 5px;
@@ -11120,13 +11118,13 @@ input.pure-input-rounded, .pure-input-rounded {
   position: relative;
   display: none;
 }
-/* line 210, ../sass/page/_node-walkthrough-edit.sass */
+/* line 209, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .grippie,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .grippie {
   float: none;
   width: 100%;
 }
-/* line 214, ../sass/page/_node-walkthrough-edit.sass */
+/* line 213, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .ri button {
   font-size: 7px;
@@ -11137,14 +11135,14 @@ input.pure-input-rounded, .pure-input-rounded {
   top: 10px;
   right: 10px;
 }
-/* line 220, ../sass/page/_node-walkthrough-edit.sass */
+/* line 219, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend {
   display: none;
 }
-/* line 224, ../sass/page/_node-walkthrough-edit.sass */
+/* line 223, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
@@ -11156,7 +11154,7 @@ input.pure-input-rounded, .pure-input-rounded {
   height: 29px;
   overflow: hidden;
 }
-/* line 231, ../sass/page/_node-walkthrough-edit.sass */
+/* line 230, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title span,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
@@ -11165,27 +11163,27 @@ input.pure-input-rounded, .pure-input-rounded {
   font-weight: bold;
   display: inline-block;
 }
-/* line 235, ../sass/page/_node-walkthrough-edit.sass */
+/* line 234, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .le,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .le {
   float: left;
   width: 46%;
   margin-right: 4%;
 }
-/* line 240, ../sass/page/_node-walkthrough-edit.sass */
+/* line 239, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ri,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ri {
   float: right;
   width: 46%;
   margin-right: 4%;
 }
-/* line 245, ../sass/page/_node-walkthrough-edit.sass */
+/* line 244, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #adv-sett-proxy-param,
 .page-node-edit.node-type-walkthrough .row.l-main #adv-sett-proxy-param {
   padding-top: 10px;
   padding-top: 1rem;
 }
-/* line 247, ../sass/page/_node-walkthrough-edit.sass */
+/* line 246, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #adv-sett-proxy-param label,
 .page-node-edit.node-type-walkthrough .row.l-main #adv-sett-proxy-param label {
   width: 100%;
@@ -11196,18 +11194,18 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-top: 5px;
   margin-top: 0.5rem;
 }
-/* line 252, ../sass/page/_node-walkthrough-edit.sass */
+/* line 251, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #adv-sett-proxy-param .grippie,
 .page-node-edit.node-type-walkthrough .row.l-main #adv-sett-proxy-param .grippie {
   float: none;
   width: 100%;
 }
-/* line 256, ../sass/page/_node-walkthrough-edit.sass */
+/* line 255, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #adv-sett-proxy-param textarea,
 .page-node-edit.node-type-walkthrough .row.l-main #adv-sett-proxy-param textarea {
   min-height: 89px;
 }
-/* line 259, ../sass/page/_node-walkthrough-edit.sass */
+/* line 258, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #field-proxy-warning-message-add-more-wrapper,
 .page-node-edit.node-type-walkthrough .row.l-main #field-proxy-warning-message-add-more-wrapper {
   margin-left: 24%;
