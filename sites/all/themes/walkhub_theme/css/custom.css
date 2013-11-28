@@ -6862,8 +6862,9 @@ img {
   position: absolute;
   top: 0;
   right: 0.9375em;
+  z-index: 999;
 }
-/* line 60, ../sass/typo/_typography.sass */
+/* line 61, ../sass/typo/_typography.sass */
 .button-group li a {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
@@ -6939,24 +6940,24 @@ img {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 72, ../sass/typo/_typography.sass */
+/* line 73, ../sass/typo/_typography.sass */
 .button-group li a.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 75, ../sass/typo/_typography.sass */
+/* line 76, ../sass/typo/_typography.sass */
 .button-group li a:hover, .button-group li a:active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 81, ../sass/typo/_typography.sass */
+/* line 82, ../sass/typo/_typography.sass */
 .button-group li:last-of-type a {
   margin-right: 0;
 }
 
-/* line 84, ../sass/typo/_typography.sass */
+/* line 85, ../sass/typo/_typography.sass */
 .panel.callout {
   font-size: 7.5px;
   line-height: 10.875px;
@@ -6968,17 +6969,17 @@ img {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 88, ../sass/typo/_typography.sass */
+/* line 89, ../sass/typo/_typography.sass */
 .panel.callout p:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 93, ../sass/typo/_typography.sass */
+/* line 94, ../sass/typo/_typography.sass */
 .not-logged-in .button-group {
   position: static;
 }
 
-/* line 96, ../sass/typo/_typography.sass */
+/* line 97, ../sass/typo/_typography.sass */
 button, .button, .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .btn {
@@ -7054,24 +7055,24 @@ button::-moz-focus-inner, .button::-moz-focus-inner, .ui-state-default::-moz-foc
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 105, ../sass/typo/_typography.sass */
+/* line 106, ../sass/typo/_typography.sass */
 button i, .button i, .ui-state-default i,
 .ui-widget-content .ui-state-default i,
 .ui-widget-header .ui-state-default i, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button i, .btn i {
   font-size: 80%;
 }
-/* line 108, ../sass/typo/_typography.sass */
+/* line 109, ../sass/typo/_typography.sass */
 button:hover, button:active, .button:hover, .ui-state-default:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover, .button:active, .ui-state-default:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active, .btn:hover, .btn:active {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
   color: #6f6f6f;
 }
-/* line 113, ../sass/typo/_typography.sass */
+/* line 114, ../sass/typo/_typography.sass */
 button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.small, .btn.small {
   font-size: 75%;
   font-style: italic;
 }
 
-/* line 118, ../sass/typo/_typography.sass */
+/* line 119, ../sass/typo/_typography.sass */
 .cta, #signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default,
 #signup #mc_embed_signup .ui-widget-content input.ui-state-default,
 .ui-widget-content #signup #mc_embed_signup input.ui-state-default,
@@ -7109,7 +7110,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
-/* line 133, ../sass/typo/_typography.sass */
+/* line 134, ../sass/typo/_typography.sass */
 .cta:after, #signup #mc_embed_signup input.button:after, #signup #mc_embed_signup input.ui-state-default:after,
 #signup #mc_embed_signup .ui-widget-content input.ui-state-default:after,
 .ui-widget-content #signup #mc_embed_signup input.ui-state-default:after,
@@ -7124,7 +7125,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
   -webkit-font-smoothing: antialiased;
   *margin-right: 0.3em;
 }
-/* line 136, ../sass/typo/_typography.sass */
+/* line 137, ../sass/typo/_typography.sass */
 .cta:hover, #signup #mc_embed_signup input.button:hover, #signup #mc_embed_signup input.ui-state-default:hover,
 #signup #mc_embed_signup .ui-widget-content input.ui-state-default:hover,
 .ui-widget-content #signup #mc_embed_signup input.ui-state-default:hover,
@@ -7139,7 +7140,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
   background-image: -o-linear-gradient(top, #4f96d2 0%, #0467a0 100%);
   background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%);
 }
-/* line 141, ../sass/typo/_typography.sass */
+/* line 142, ../sass/typo/_typography.sass */
 .cta:active, #signup #mc_embed_signup input.button:active, #signup #mc_embed_signup input.ui-state-default:active,
 #signup #mc_embed_signup .ui-widget-content input.ui-state-default:active,
 .ui-widget-content #signup #mc_embed_signup input.ui-state-default:active,
@@ -7152,29 +7153,29 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
 }
 
 /* Default Link Styles */
-/* line 146, ../sass/typo/_typography.sass */
+/* line 147, ../sass/typo/_typography.sass */
 a {
   text-decoration: none;
   line-height: inherit;
 }
-/* line 149, ../sass/typo/_typography.sass */
+/* line 150, ../sass/typo/_typography.sass */
 a:hover, a:focus {
   color: #2795b6;
 }
-/* line 152, ../sass/typo/_typography.sass */
+/* line 153, ../sass/typo/_typography.sass */
 a img {
   border: none;
 }
 
 /* Default paragraph styles */
-/* line 156, ../sass/typo/_typography.sass */
+/* line 157, ../sass/typo/_typography.sass */
 p {
   font-family: inherit;
   font-weight: normal;
   margin-bottom: 1.25em;
   text-rendering: optimizeLegibility;
 }
-/* line 162, ../sass/typo/_typography.sass */
+/* line 163, ../sass/typo/_typography.sass */
 p aside {
   font-size: 10px;
   line-height: 14.5px;
@@ -7184,7 +7185,7 @@ p aside {
 }
 
 /* Default header styles */
-/* line 168, ../sass/typo/_typography.sass */
+/* line 169, ../sass/typo/_typography.sass */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 60%;
   color: #6f6f6f;
@@ -8013,7 +8014,7 @@ header#main-header .menu li a {
   padding: 2.5rem 0 1.5rem;
   overflow: hidden;
   background-color: black;
-  background-image: url('../images/office.jpg?1385628764');
+  background-image: url('../images/office.jpg?1385645148');
   background-position: top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8042,7 +8043,7 @@ header#main-header .menu li a {
 #featured .box-container {
   text-align: center;
 }
-/* line 29, ../sass/modules/_temp_featured.sass */
+/* line 28, ../sass/modules/_temp_featured.sass */
 #featured .box-container .box {
   padding: 2.5px 6px;
   padding: 0.25rem 0.6rem;
@@ -8055,7 +8056,7 @@ header#main-header .menu li a {
   border-radius: 0.35em;
   background: rgba(255, 255, 255, 0.9);
 }
-/* line 35, ../sass/modules/_temp_featured.sass */
+/* line 34, ../sass/modules/_temp_featured.sass */
 #featured .box-container .box h6 {
   font-size: 14px;
   line-height: 10px;
@@ -8063,7 +8064,7 @@ header#main-header .menu li a {
   line-height: 1rem;
   margin-bottom: 0;
 }
-/* line 39, ../sass/modules/_temp_featured.sass */
+/* line 38, ../sass/modules/_temp_featured.sass */
 #featured .box-container .box.blue {
   background-color: #3b8acd;
   *zoom: 1;
@@ -8076,7 +8077,7 @@ header#main-header .menu li a {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
   color: white;
 }
-/* line 46, ../sass/modules/_temp_featured.sass */
+/* line 45, ../sass/modules/_temp_featured.sass */
 #featured .box-container .box.blue h4 {
   font-size: 16px;
   line-height: 23.2px;
@@ -8085,7 +8086,7 @@ header#main-header .menu li a {
   color: white;
   margin-bottom: 0;
 }
-/* line 51, ../sass/modules/_temp_featured.sass */
+/* line 50, ../sass/modules/_temp_featured.sass */
 #featured .box-container .box.blue .rounded {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -8103,26 +8104,28 @@ header#main-header .menu li a {
   margin: 0 auto;
   font-style: normal;
 }
-/* line 61, ../sass/modules/_temp_featured.sass */
-#featured .box-container .box.blue small {
+/* line 60, ../sass/modules/_temp_featured.sass */
+#featured .box-container .box small {
   font-size: 95%;
+  margin-top: 0.35em;
+  display: block;
 }
-/* line 64, ../sass/modules/_temp_featured.sass */
+/* line 65, ../sass/modules/_temp_featured.sass */
 #featured h1 {
   margin-top: 0;
 }
-/* line 67, ../sass/modules/_temp_featured.sass */
+/* line 68, ../sass/modules/_temp_featured.sass */
 #featured h1,
 #featured h2 {
   color: white;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.85);
 }
-/* line 72, ../sass/modules/_temp_featured.sass */
+/* line 73, ../sass/modules/_temp_featured.sass */
 #featured p {
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.85);
 }
-/* line 76, ../sass/modules/_temp_featured.sass */
+/* line 77, ../sass/modules/_temp_featured.sass */
 #featured .cta, #featured #signup #mc_embed_signup input.button, #signup #mc_embed_signup #featured input.button, #featured #signup #mc_embed_signup input.ui-state-default, #signup #mc_embed_signup #featured input.ui-state-default, #featured .node-type-walkthrough .main.columns > .action-links li a, .node-type-walkthrough .main.columns > .action-links li #featured a, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type {
   *zoom: 1;
   margin: 10px auto 15px;
@@ -8140,17 +8143,17 @@ header#main-header .menu li a {
 #featured .cta:after, #featured #signup #mc_embed_signup input.button:after, #signup #mc_embed_signup #featured input.button:after, #featured #signup #mc_embed_signup input.ui-state-default:after, #signup #mc_embed_signup #featured input.ui-state-default:after, #featured .node-type-walkthrough .main.columns > .action-links li a:after, .node-type-walkthrough .main.columns > .action-links li #featured a:after, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type:after {
   clear: both;
 }
-/* line 82, ../sass/modules/_temp_featured.sass */
+/* line 83, ../sass/modules/_temp_featured.sass */
 #featured .cta p, #featured #signup #mc_embed_signup input.button p, #signup #mc_embed_signup #featured input.button p, #featured #signup #mc_embed_signup input.ui-state-default p, #signup #mc_embed_signup #featured input.ui-state-default p, #featured .node-type-walkthrough .main.columns > .action-links li a p, .node-type-walkthrough .main.columns > .action-links li #featured a p, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type p, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type p {
   margin-bottom: 0;
 }
-/* line 85, ../sass/modules/_temp_featured.sass */
+/* line 86, ../sass/modules/_temp_featured.sass */
 #featured .cta small, #featured #signup #mc_embed_signup input.button small, #signup #mc_embed_signup #featured input.button small, #featured #signup #mc_embed_signup input.ui-state-default small, #signup #mc_embed_signup #featured input.ui-state-default small, #featured .node-type-walkthrough .main.columns > .action-links li a small, .node-type-walkthrough .main.columns > .action-links li #featured a small, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type small, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type small {
   margin-top: -5px;
   margin-top: -0.5rem;
   display: block;
 }
-/* line 89, ../sass/modules/_temp_featured.sass */
+/* line 90, ../sass/modules/_temp_featured.sass */
 #featured .cta i, #featured #signup #mc_embed_signup input.button i, #signup #mc_embed_signup #featured input.button i, #featured #signup #mc_embed_signup input.ui-state-default i, #signup #mc_embed_signup #featured input.ui-state-default i, #featured .node-type-walkthrough .main.columns > .action-links li a i, .node-type-walkthrough .main.columns > .action-links li #featured a i, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type i, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:first-of-type i {
   position: absolute;
   top: 0.7em;
@@ -8160,7 +8163,7 @@ header#main-header .menu li a {
   font-size: 1.2rem;
   line-height: 1.74rem;
 }
-/* line 96, ../sass/modules/_temp_featured.sass */
+/* line 97, ../sass/modules/_temp_featured.sass */
 #featured .cta:hover i, #featured #signup #mc_embed_signup input.button:hover i, #signup #mc_embed_signup #featured input.button:hover i, #featured #signup #mc_embed_signup input.ui-state-default:hover i, #signup #mc_embed_signup #featured input.ui-state-default:hover i, #featured .node-type-walkthrough .main.columns > .action-links li a:hover i, .node-type-walkthrough .main.columns > .action-links li #featured a:hover i, #featured .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover:first-of-type i, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset #featured button:hover:first-of-type i,
 #featured .cta:hover small,
 #featured #signup #mc_embed_signup input.button:hover small,
@@ -8175,7 +8178,16 @@ header#main-header .menu li a {
 }
 
 /* line 1, ../sass/modules/_temp_news.sass */
-#news {
+#content-bottom {
+  margin: 0;
+  padding: 0;
+  padding: 15px 0;
+  padding: 1.5rem 0;
+}
+
+/* line 5, ../sass/modules/_temp_news.sass */
+#news,
+#news-bottom {
   margin: 0;
   padding: 0;
   -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01);
@@ -8185,37 +8197,53 @@ header#main-header .menu li a {
   padding: 1.5rem 0;
   background-color: #fafafa;
   border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
   color: #adadad;
 }
-/* line 9, ../sass/modules/_temp_news.sass */
-#news h2 {
-  text-align: center;
+/* line 15, ../sass/modules/_temp_news.sass */
+#news .wt-container,
+#news-bottom .wt-container {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 19, ../sass/modules/_temp_news.sass */
+#news h2,
+#news-bottom h2 {
   font-size: 15px;
   line-height: 21.75px;
   font-size: 1.5rem;
   line-height: 2.175rem;
 }
-/* line 13, ../sass/modules/_temp_news.sass */
-#news .view-header {
+/* line 22, ../sass/modules/_temp_news.sass */
+#news .view-header,
+#news-bottom .view-header {
   text-align: center;
 }
-/* line 16, ../sass/modules/_temp_news.sass */
-#news ul {
+/* line 25, ../sass/modules/_temp_news.sass */
+#news ul,
+#news-bottom ul {
   *zoom: 1;
   margin: 0;
   padding: 0;
 }
 /* line 121, ../sass/grid/foundation/components/_global.scss */
-#news ul:before, #news ul:after {
+#news ul:before, #news ul:after,
+#news-bottom ul:before,
+#news-bottom ul:after {
   content: " ";
   display: table;
 }
 /* line 122, ../sass/grid/foundation/components/_global.scss */
-#news ul:after {
+#news ul:after,
+#news-bottom ul:after {
   clear: both;
 }
-/* line 20, ../sass/modules/_temp_news.sass */
-#news li {
+/* line 29, ../sass/modules/_temp_news.sass */
+#news li,
+#news-bottom li {
   list-style-type: none;
   float: left;
   width: 48%;
@@ -8234,8 +8262,9 @@ header#main-header .menu li a {
   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
 }
-/* line 33, ../sass/modules/_temp_news.sass */
-#news li .wt-container {
+/* line 42, ../sass/modules/_temp_news.sass */
+#news li .wt-container,
+#news-bottom li .wt-container {
   -webkit-border-radius: 3px 3px 0 0;
   -moz-border-radius: 3px 3px 0 0;
   -ms-border-radius: 3px 3px 0 0;
@@ -8243,20 +8272,24 @@ header#main-header .menu li a {
   border-radius: 3px 3px 0 0;
   margin: 0;
 }
-/* line 37, ../sass/modules/_temp_news.sass */
-#news li .node-title {
+/* line 46, ../sass/modules/_temp_news.sass */
+#news li .node-title,
+#news-bottom li .node-title {
   display: none;
 }
-/* line 40, ../sass/modules/_temp_news.sass */
-#news li a {
+/* line 49, ../sass/modules/_temp_news.sass */
+#news li a,
+#news-bottom li a {
   color: #adadad;
 }
-/* line 43, ../sass/modules/_temp_news.sass */
-#news li a > div {
+/* line 52, ../sass/modules/_temp_news.sass */
+#news li a > div,
+#news-bottom li a > div {
   float: left;
 }
-/* line 46, ../sass/modules/_temp_news.sass */
-#news li .container {
+/* line 55, ../sass/modules/_temp_news.sass */
+#news li .container,
+#news-bottom li .container {
   position: relative;
   float: none;
   padding: 4.5px;
@@ -8264,8 +8297,9 @@ header#main-header .menu li a {
   height: 64px;
   height: 6.4rem;
 }
-/* line 52, ../sass/modules/_temp_news.sass */
-#news li p {
+/* line 61, ../sass/modules/_temp_news.sass */
+#news li p,
+#news-bottom li p {
   font-size: 7.5px;
   line-height: 10.875px;
   font-size: 0.75rem;
@@ -8274,14 +8308,16 @@ header#main-header .menu li a {
   height: 3rem;
   overflow: hidden;
 }
-/* line 57, ../sass/modules/_temp_news.sass */
-#news li h5 {
+/* line 66, ../sass/modules/_temp_news.sass */
+#news li h5,
+#news-bottom li h5 {
   height: 1rem;
   padding-right: 3em;
   overflow: hidden;
 }
-/* line 62, ../sass/modules/_temp_news.sass */
-#news li .created {
+/* line 71, ../sass/modules/_temp_news.sass */
+#news li .created,
+#news-bottom li .created {
   position: absolute;
   top: 0;
   right: 0.3em;
@@ -8293,22 +8329,25 @@ header#main-header .menu li a {
   border: 1px solid #005b9a;
   border-top: 0;
 }
-/* line 74, ../sass/modules/_temp_news.sass */
-#news li .created .day {
+/* line 83, ../sass/modules/_temp_news.sass */
+#news li .created .day,
+#news-bottom li .created .day {
   font-size: 8px;
   line-height: 11.6px;
   font-size: 0.8rem;
   line-height: 1.16rem;
 }
-/* line 77, ../sass/modules/_temp_news.sass */
-#news li .created .month {
+/* line 86, ../sass/modules/_temp_news.sass */
+#news li .created .month,
+#news-bottom li .created .month {
   font-size: 6.5px;
   line-height: 9.425px;
   font-size: 0.65rem;
   line-height: 0.9425rem;
 }
-/* line 80, ../sass/modules/_temp_news.sass */
-#news img {
+/* line 89, ../sass/modules/_temp_news.sass */
+#news img,
+#news-bottom img {
   -webkit-border-radius: 3px 0 0 3px;
   -moz-border-radius: 3px 0 0 3px;
   -ms-border-radius: 3px 0 0 3px;
@@ -8532,7 +8571,7 @@ main {
   padding: 2.5rem 0 1.5rem;
   margin-bottom: -2%;
   text-align: center;
-  background-image: url('../images/signup.jpg?1385628764');
+  background-image: url('../images/signup.jpg?1385645148');
   background-repeat: no-repeat;
   background-position: bottom center;
   position: relative;
