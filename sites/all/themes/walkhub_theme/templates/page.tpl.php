@@ -320,8 +320,6 @@
 
       <a id="main-content"></a>
 
-
-
       <?php if ($title && !$is_front): ?>
         <?php print render($title_prefix); ?>
         <h1 id="page-title" class="title"><?php print $title; ?></h1>
@@ -372,6 +370,18 @@
     </section>
     <!--/.triptych -->
   <?php endif; ?>
+
+<?php if (!empty($page['signup'])): ?>
+  <!--.signup -->
+  <section id="signup">
+    <div class="row">
+      <div class="large-12 columns">
+        <?php print render($page['signup']); ?>
+      </div>
+    </div>
+  </section>
+  <!--/.signup -->
+<?php endif; ?>
 
   <!--.l-footer-->
   <footer id="footermain" role="contentinfo">
