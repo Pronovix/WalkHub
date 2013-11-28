@@ -3,7 +3,7 @@
   +px-rem(padding, 2.5, 0, 1.5)
   overflow: hidden
   background-color: #000000
-  background-image: url('../images/office.jpg')
+  background-image: image_url('office.jpg')
   background-position: top center
   +background-size(cover)
   position: relative
@@ -11,7 +11,7 @@
 
   &:before
     +opacity(.7)
-    background: rgba(#000, .75) url('../images/mask.png') repeat top center
+    background: rgba(#000, .75) inline-image('mask.png') repeat top center
     position: absolute
     top: 0
     right: 0

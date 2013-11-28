@@ -8013,7 +8013,7 @@ header#main-header .menu li a {
   padding: 2.5rem 0 1.5rem;
   overflow: hidden;
   background-color: black;
-  background-image: url("../images/office.jpg");
+  background-image: url('../images/office.jpg?1385628764');
   background-position: top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8028,7 +8028,7 @@ header#main-header .menu li a {
 #featured:before {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
-  background: rgba(0, 0, 0, 0.75) url("../images/mask.png") repeat top center;
+  background: rgba(0, 0, 0, 0.75) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAQUlEQVRYw+3RoREAMAgAMQxX9l8YTEdAIPLqfSJfdfwuv9ZDjx49evTo0aNHjx49evTo0aNHjx49evTo0aNHf6kB1wDSjeDV0HAAAAAASUVORK5CYII=') repeat top center;
   position: absolute;
   top: 0;
   right: 0;
@@ -8532,7 +8532,7 @@ main {
   padding: 2.5rem 0 1.5rem;
   margin-bottom: -2%;
   text-align: center;
-  background-image: url('../images/signup.jpg?1385632107');
+  background-image: url('../images/signup.jpg?1385628764');
   background-repeat: no-repeat;
   background-position: bottom center;
   position: relative;
@@ -8566,6 +8566,11 @@ main {
   text-align: center;
 }
 /* line 31, ../sass/modules/_temp_signup.sass */
+#signup #mc_embed_signup form label:first-of-type {
+  margin: 0;
+  padding: 0;
+}
+/* line 34, ../sass/modules/_temp_signup.sass */
 #signup #mc_embed_signup input.email,
 #signup #mc_embed_signup input.button,
 #signup #mc_embed_signup input.ui-state-default,
@@ -8575,7 +8580,7 @@ main {
 .ui-widget-header #signup #mc_embed_signup input.ui-state-default {
   margin: 0 auto;
 }
-/* line 35, ../sass/modules/_temp_signup.sass */
+/* line 38, ../sass/modules/_temp_signup.sass */
 #signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default,
 #signup #mc_embed_signup .ui-widget-content input.ui-state-default,
 .ui-widget-content #signup #mc_embed_signup input.ui-state-default,
@@ -8583,7 +8588,7 @@ main {
 .ui-widget-header #signup #mc_embed_signup input.ui-state-default {
   padding: 0.35em 0.85em 0.35em;
 }
-/* line 39, ../sass/modules/_temp_signup.sass */
+/* line 42, ../sass/modules/_temp_signup.sass */
 #signup #mc_embed_signup h3 {
   color: white;
   font-size: 13.5px;
