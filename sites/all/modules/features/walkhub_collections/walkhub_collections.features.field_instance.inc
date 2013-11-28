@@ -24,6 +24,12 @@ function walkhub_collections_field_default_field_instances() {
         'type' => 'og_list_default',
         'weight' => 17,
       ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -82,6 +88,12 @@ function walkhub_collections_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 6,
+      ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -142,6 +154,12 @@ function walkhub_collections_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 6,
+      ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -204,6 +222,12 @@ function walkhub_collections_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 1,
       ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -245,6 +269,12 @@ function walkhub_collections_field_default_field_instances() {
           'field_name' => FALSE,
         ),
         'type' => 'og_group_subscribe',
+        'weight' => 0,
+      ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -301,6 +331,12 @@ function walkhub_collections_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 1,
       ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -342,6 +378,12 @@ function walkhub_collections_field_default_field_instances() {
           'field_name' => FALSE,
         ),
         'type' => 'og_group_subscribe',
+        'weight' => 0,
+      ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -395,6 +437,12 @@ function walkhub_collections_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 8,
+      ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'full' => array(
         'label' => 'above',
