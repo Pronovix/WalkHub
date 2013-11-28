@@ -8209,7 +8209,7 @@ header#main-header .menu li a {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 19, ../sass/modules/_temp_news.sass */
+/* line 18, ../sass/modules/_temp_news.sass */
 #news h2,
 #news-bottom h2 {
   font-size: 15px;
@@ -8217,12 +8217,12 @@ header#main-header .menu li a {
   font-size: 1.5rem;
   line-height: 2.175rem;
 }
-/* line 22, ../sass/modules/_temp_news.sass */
+/* line 21, ../sass/modules/_temp_news.sass */
 #news .view-header,
 #news-bottom .view-header {
   text-align: center;
 }
-/* line 25, ../sass/modules/_temp_news.sass */
+/* line 24, ../sass/modules/_temp_news.sass */
 #news ul,
 #news-bottom ul {
   *zoom: 1;
@@ -8241,7 +8241,7 @@ header#main-header .menu li a {
 #news-bottom ul:after {
   clear: both;
 }
-/* line 29, ../sass/modules/_temp_news.sass */
+/* line 28, ../sass/modules/_temp_news.sass */
 #news li,
 #news-bottom li {
   list-style-type: none;
@@ -8262,7 +8262,7 @@ header#main-header .menu li a {
   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
 }
-/* line 42, ../sass/modules/_temp_news.sass */
+/* line 41, ../sass/modules/_temp_news.sass */
 #news li .wt-container,
 #news-bottom li .wt-container {
   -webkit-border-radius: 3px 3px 0 0;
@@ -8272,22 +8272,22 @@ header#main-header .menu li a {
   border-radius: 3px 3px 0 0;
   margin: 0;
 }
-/* line 46, ../sass/modules/_temp_news.sass */
+/* line 45, ../sass/modules/_temp_news.sass */
 #news li .node-title,
 #news-bottom li .node-title {
   display: none;
 }
-/* line 49, ../sass/modules/_temp_news.sass */
+/* line 48, ../sass/modules/_temp_news.sass */
 #news li a,
 #news-bottom li a {
   color: #adadad;
 }
-/* line 52, ../sass/modules/_temp_news.sass */
+/* line 51, ../sass/modules/_temp_news.sass */
 #news li a > div,
 #news-bottom li a > div {
   float: left;
 }
-/* line 55, ../sass/modules/_temp_news.sass */
+/* line 54, ../sass/modules/_temp_news.sass */
 #news li .container,
 #news-bottom li .container {
   position: relative;
@@ -8297,7 +8297,7 @@ header#main-header .menu li a {
   height: 64px;
   height: 6.4rem;
 }
-/* line 61, ../sass/modules/_temp_news.sass */
+/* line 60, ../sass/modules/_temp_news.sass */
 #news li p,
 #news-bottom li p {
   font-size: 7.5px;
@@ -8308,14 +8308,14 @@ header#main-header .menu li a {
   height: 3rem;
   overflow: hidden;
 }
-/* line 66, ../sass/modules/_temp_news.sass */
+/* line 65, ../sass/modules/_temp_news.sass */
 #news li h5,
 #news-bottom li h5 {
   height: 1rem;
   padding-right: 3em;
   overflow: hidden;
 }
-/* line 71, ../sass/modules/_temp_news.sass */
+/* line 70, ../sass/modules/_temp_news.sass */
 #news li .created,
 #news-bottom li .created {
   position: absolute;
@@ -8329,7 +8329,7 @@ header#main-header .menu li a {
   border: 1px solid #005b9a;
   border-top: 0;
 }
-/* line 83, ../sass/modules/_temp_news.sass */
+/* line 82, ../sass/modules/_temp_news.sass */
 #news li .created .day,
 #news-bottom li .created .day {
   font-size: 8px;
@@ -8337,7 +8337,7 @@ header#main-header .menu li a {
   font-size: 0.8rem;
   line-height: 1.16rem;
 }
-/* line 86, ../sass/modules/_temp_news.sass */
+/* line 85, ../sass/modules/_temp_news.sass */
 #news li .created .month,
 #news-bottom li .created .month {
   font-size: 6.5px;
@@ -8345,7 +8345,7 @@ header#main-header .menu li a {
   font-size: 0.65rem;
   line-height: 0.9425rem;
 }
-/* line 89, ../sass/modules/_temp_news.sass */
+/* line 88, ../sass/modules/_temp_news.sass */
 #news img,
 #news-bottom img {
   -webkit-border-radius: 3px 0 0 3px;
@@ -8378,6 +8378,9 @@ main {
 }
 /* line 15, ../sass/modules/_temp_main.sass */
 .wt-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
