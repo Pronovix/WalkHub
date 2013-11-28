@@ -1,0 +1,45 @@
+#signup
+  +mp0
+  +px-rem(padding, 2.5, 0, 1.5)
+  margin-bottom: -2%
+  text-align: center
+  background-image: image_url('signup.jpg')
+  background-repeat: no-repeat
+  background-position: bottom center
+  position: relative
+  +background-size(cover)
+
+  &:before
+    +opacity(.5)
+    background: rgba(#000, .75) url('../images/mask.png') repeat bottom center
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    content: ''
+    display: block
+    width: 100%
+
+  #mc_embed_signup
+    background: transparent
+
+    form
+      +mp0
+      text-align: center
+
+      label:first-of-type
+        +mp0
+
+    input.email,
+    input.button
+      margin: 0 auto
+
+    input.button
+      @extend .cta
+      padding: 0.35em 0.85em 0.35em
+
+    h3
+      color: $color-white
+      +font-size(1.35)
+      text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.85)

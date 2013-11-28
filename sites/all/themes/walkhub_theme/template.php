@@ -1,176 +1,48 @@
 <?php
 
 /**
- * Implements template_preprocess_html().
- *
+ * Apple Touch Icons
  */
-//function walkhub_theme_preprocess_html(&$variables) {
-//  // Add conditional CSS for IE. To use uncomment below and add IE css file
-//  drupal_add_css(path_to_theme() . '/css/ie.css', array('weight' => CSS_THEME, 'browsers' => array('!IE' => FALSE), 'preprocess' => FALSE));
-//
-//  // Need legacy support for IE downgrade to Foundation 2 or use JS file below
-//  // drupal_add_js('http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js', 'external');
-//}
+function walkhub_theme_preprocess(&$vars, $hook) {
+  global $theme;
+  global $base_url;
+  $path = drupal_get_path('theme', $theme);
+  $path_walkhub_theme = drupal_get_path('theme', 'walkhub_theme');
 
-/**
- * Implements template_preprocess_page
- *
- */
-//function walkhub_theme_preprocess_page(&$variables) {
-//}
+  //http://api.drupal.org/api/drupal/includes--theme.inc/function/template_preprocess_html/7
+  $vars['walkhub_theme_poorthemers_helper'] = "";
+  //For third-generation iPad with high-resolution Retina display
+  $appletouchicon = '<link rel="apple-touch-icon" sizes="144x144" href="' . $base_url .'/'. $path . '/apple-touch-icon-144x144-precomposed.png">'. "\n";
+  //For iPhone with high-resolution Retina display
+  $appletouchicon .= '<link rel="apple-touch-icon" sizes="114x114" href="' . $base_url .'/'. $path . '/apple-touch-icon-114x114-precomposed.png">'. "\n";
+  //For first- and second-generation iPad:
+  $appletouchicon .= '<link rel="apple-touch-icon" sizes="72x72" href="' . $base_url .'/'.  $path . '/apple-touch-icon-72x72-precomposed.png">' . "\n";
+  //For non-Retina iPhone, iPod Touch, and Android 2.1+ devices
+  $appletouchicon .=  '<link rel="apple-touch-icon" href="' . $base_url .'/'.  $path . '/apple-touch-icon-precomposed.png">' . "\n";
+  $appletouchicon .=  '<link rel="apple-touch-startup-image" href="' . $base_url .'/'.  $path . '/apple-startup.png">' . "\n";
 
-/**
- * Implements template_preprocess_node
- *
- */
-//function walkhub_theme_preprocess_node(&$variables) {
-//}
+  if ( $hook == "html" ) {
+    // =======================================| HTML |========================================
 
-/**
- * Implements hook_preprocess_block()
- */
-//function walkhub_theme_preprocess_block(&$variables) {
-//  // Add wrapping div with global class to all block content sections.
-//  $variables['content_attributes_array']['class'][] = 'block-content';
-//
-//  // Convenience variable for classes based on block ID
-//  $block_id = $variables['block']->module . '-' . $variables['block']->delta;
-//
-//  // Add classes based on a specific block
-//  switch ($block_id) {
-//    // System Navigation block
-//    case 'system-navigation':
-//      // Custom class for entire block
-//      $variables['classes_array'][] = 'system-nav';
-//      // Custom class for block title
-//      $variables['title_attributes_array']['class'][] = 'system-nav-title';
-//      // Wrapping div with custom class for block content
-//      $variables['content_attributes_array']['class'] = 'system-nav-content';
-//      break;
-//
-//    // User Login block
-//    case 'user-login':
-//      // Hide title
-//      $variables['title_attributes_array']['class'][] = 'element-invisible';
-//      break;
-//
-//    // Example of adding Foundation classes
-//    case 'block-foo': // Target the block ID
-//      // Set grid column or mobile classes or anything else you want.
-//      $variables['classes_array'][] = 'six columns';
-//      break;
-//  }
-//
-//  // Add template suggestions for blocks from specific modules.
-//  switch($variables['elements']['#block']->module) {
-//    case 'menu':
-//      $variables['theme_hook_suggestions'][] = 'block__nav';
-//    break;
-//  }
-//}
-
-//function walkhub_theme_preprocess_views_view(&$variables) {
-//}
-
-/**
- * Implements template_preprocess_panels_pane().
- *
- */
-//function walkhub_theme_preprocess_panels_pane(&$variables) {
-//}
-
-/**
- * Implements template_preprocess_views_views_fields().
- *
- */
-//function walkhub_theme_preprocess_views_view_fields(&$variables) {
-//}
-
-/**
- * Implements theme_form_element_label()
- * Use foundation tooltips
- */
-//function walkhub_theme_form_element_label($variables) {
-//  if (!empty($variables['element']['#title'])) {
-//    $variables['element']['#title'] = '<span class="secondary label">' . $variables['element']['#title'] . '</span>';
-//  }
-//  if (!empty($variables['element']['#description'])) {
-//    $variables['element']['#description'] = ' <span data-tooltip="top" class="has-tip tip-top" data-width="250" title="' . $variables['element']['#description'] . '">' . t('More information?') . '</span>';
-//  }
-//  return theme_form_element_label($variables);
-//}
-
-/**
- * Implements hook_preprocess_button().
- */
-//function walkhub_theme_preprocess_button(&$variables) {
-//  $variables['element']['#attributes']['class'][] = 'button';
-//  if (isset($variables['element']['#parents'][0]) && $variables['element']['#parents'][0] == 'submit') {
-//    $variables['element']['#attributes']['class'][] = 'secondary';
-//  }
-//}
-
-/**
- * Implements hook_form_alter()
- * Example of using foundation sexy buttons
- */
-//function walkhub_theme_form_alter(&$form, &$form_state, $form_id) {
-//  // Sexy submit buttons
-//  if (!empty($form['actions']) && !empty($form['actions']['submit'])) {
-//    $form['actions']['submit']['#attributes'] = array('class' => array('primary', 'button', 'radius'));
-//  }
-//}
-
-// Sexy preview buttons
-//function walkhub_theme_form_comment_form_alter(&$form, &$form_state) {
-//  $form['actions']['preview']['#attributes']['class'][] = array('class' => array('secondary', 'button', 'radius'));
-//}
-
-
-/**
- * Implements template_preprocess_panels_pane().
- */
-// function zurb_foundation_preprocess_panels_pane(&$variables) {
-// }
-
-/**
-* Implements template_preprocess_views_views_fields().
-*/
-/* Delete me to enable
-function THEMENAME_preprocess_views_view_fields(&$variables) {
- if ($variables['view']->name == 'nodequeue_1') {
-
-   // Check if we have both an image and a summary
-   if (isset($variables['fields']['field_image'])) {
-
-     // If a combined field has been created, unset it and just show image
-     if (isset($variables['fields']['nothing'])) {
-       unset($variables['fields']['nothing']);
-     }
-
-   } elseif (isset($variables['fields']['title'])) {
-     unset ($variables['fields']['title']);
-   }
-
-   // Always unset the separate summary if set
-   if (isset($variables['fields']['field_summary'])) {
-     unset($variables['fields']['field_summary']);
-   }
- }
+    //get the path for the site
+    $vars['walkhub_theme_path'] = $base_url .'/'. $path_walkhub_theme;
+    $vars['appletouchicon'] = $appletouchicon;
+  }
 }
 
-// */
 /**
- * Implements hook_form_FORM_ID_alter().
- *
- * Override the step edit form theme function.
+ * Implements html_head_alter().
  */
-function walkhub_theme_form_walkthrough_node_form_alter(&$form, &$form_state, $form_id) {
-  if (!empty($form['field_fc_steps'][LANGUAGE_NONE])) {
-    foreach (element_children($form['field_fc_steps'][LANGUAGE_NONE]) as $key) {
-      $form['field_fc_steps'][LANGUAGE_NONE][$key]['#theme'] = 'walkthrough_steps_edit_form';
-    }
-  }
+function hummel_theme_html_head_alter(&$head_elements) {
+  // Optimize mobile viewport.
+  $head_elements['mobile_viewport'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1.0',
+    ),
+  );
 }
 
 /**
