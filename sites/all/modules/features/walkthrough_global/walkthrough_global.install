@@ -107,7 +107,7 @@ function walkthrough_global_update_7008() {
  * Turning on Page Types: FAQ, NEWS
  */
 function walkthrough_global_update_7009() {
-  features_install_modules(array('walkhub_page_type_faq, walkhub_page_type_news'));
+  features_install_modules(array('walkhub_page_type_faq', 'walkhub_page_type_news'));
 }
 
 /**
@@ -237,7 +237,7 @@ function walkthrough_global_update_7015() {
 }
 
 /**
- * Remove walkthrough menu from the bottom on the admin interface
+ * Remove walkthrough menu from the bottom on the admin interface.
  */
 function walkthrough_global_update_7016() {
     db_update('block')
@@ -250,7 +250,7 @@ function walkthrough_global_update_7016() {
 }
 
 /**
- * Remove br from full html text filter
+ * Remove br from full html text filter.
  */
 function walkthrough_global_update_7017() {
   walkhub_features_revert(array('walkthrough_global'));
