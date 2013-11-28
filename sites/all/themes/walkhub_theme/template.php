@@ -31,9 +31,24 @@ function walkhub_theme_preprocess(&$vars, $hook) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter()
+ * Override the step edit form theme function.
  * Implements html_head_alter().
  */
-function hummel_theme_html_head_alter(&$head_elements) {
+
+function walkhub_theme_form_walkthrough_node_form_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['field_fc_steps'][LANGUAGE_NONE])) {
+    foreach (element_children($form['field_fc_steps'][LANGUAGE_NONE]) as $key) {
+      $form['field_fc_steps'][LANGUAGE_NONE][$key]['#theme'] = 'walkthrough_steps_edit_form';
+    }
+  }
+}
+
+
+/**
+ * Implements html_head_alter().
+ */
+function walkhub_theme_html_head_alter(&$head_elements) {
   // Optimize mobile viewport.
   $head_elements['mobile_viewport'] = array(
     '#type' => 'html_tag',
