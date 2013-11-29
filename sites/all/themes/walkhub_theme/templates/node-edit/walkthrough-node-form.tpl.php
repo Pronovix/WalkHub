@@ -9,6 +9,7 @@
 <div id="walkthrough-node-edit-form">
   <?php print render($form['title']); ?>
   <?php print render($form['body']); ?>
+  <?php print render($form['field_prerequisites']); ?>
   <div id="wrapper-fg" class="clearfix">
     <div id="field_tags-col">
       <?php print render($form['field_tags']); ?>
