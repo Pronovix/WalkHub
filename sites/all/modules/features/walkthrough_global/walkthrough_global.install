@@ -257,3 +257,48 @@ function walkthrough_global_update_7017() {
 
   return t('Walkhub Global feature reverted.');
 }
+
+/**
+ * Delete step content type.
+ */
+function walkthrough_global_update_7018(&$sandbox) {
+  if (empty($sandbox['total'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['last_nid'] = 0;
+
+    // Count the total number of the step nodes.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'step')
+      ->count();
+    $sandbox['total'] = $query->execute();
+  }
+
+  // Get the next 50 step node.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'step')
+    ->propertyCondition('nid', $sandbox['last_nid'], '>')
+    ->propertyOrderBy('nid')
+    ->range(0, 50);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    // Delete them.
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+
+    // Store the last node id and update progress.
+    $sandbox['last_nid'] = max($nids);
+    $sandbox['progress']+= count($nids);
+  }
+
+  // Set the finished variable based on the current progress status.
+  $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
+
+  if ($sandbox['#finished']) {
+    node_type_delete('step');
+  }
+
+  return t('Removed step content type.');
+}
