@@ -52,7 +52,7 @@ class WalkthroughSiteInstall extends PxSeleniumTestCase {
     $this->adminLogin();
 
     $this->open("admin/structure/features");
-    $this->waitForPageToLoad("30000");
+    $this->waitForPageToLoad("300000");
     $this->click("link=Walkthrough");
     // Pause for 10 seconds, so the feature statuses are loaded.
     $this->pause(10000);
