@@ -46,10 +46,10 @@
 <!--[if IE 8]><html class="no-js lt-ie9" lang="hu"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="hu"> <!--<![endif]-->
 <head>
-  <?php print $appletouchicon; ?>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
+  <?php print $appletouchicon; ?>
   <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script src="<?php print $walkhub_theme_path; ?>/scripts/vendor/respond.min.js"></script>
