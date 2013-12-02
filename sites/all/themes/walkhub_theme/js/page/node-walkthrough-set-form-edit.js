@@ -16,8 +16,6 @@
       Drupal.walkhubStepEdit.stepHideShow(context, settings);
       Drupal.walkhubStepEdit.callopse(context, settings);
       Drupal.walkhubStepEdit.parameters(context, settings);
-      Drupal.walkhubStepEdit.initShowTitleTextfieldStates(context, settings);
-      Drupal.walkhubStepEdit.showTitleStateChange(context, settings);
     }
   };
 
