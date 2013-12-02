@@ -17,26 +17,32 @@
       <?php print render($form['og_group_ref']); ?>
     </div>
   </div>
-  <div id="ad-set">
-    <div class="le">
-      </div>
+  <div class="button-holder">
+    <a class="button small open" id="parameters"><?php print t ('Parameters/Proxy Warning'); ?></a>
+    <a class="button small open" id="img-set-trigger"><?php print t ('Walkthrough set branding'); ?></a>
+    <a class="button small open" id="advset"><?php print t ('Advanced Settings'); ?></a>
+  </div>
+  <div class="clearfix">
     <div class="ri">
-      <?php print render($form['additional_settings']); ?>
+      <div id="add-set-hide">
+        <?php print render($form['additional_settings']); ?>
+      </div>
+      <div id="image-edit-cont-hide">
+        <hr>
+        <h4><?php print t ('Walkthrough set branding'); ?></h4>
+        <div class="clearfix" id="image-edit-cont">
+          <?php print render($form['field_logo']); ?>
+          <?php print render($form['field_icon']); ?>
+          <?php print render($form['field_detail_image']); ?>
+        </div>
+      </div>
+      <div id="adv-sett-proxy-param" class="clearfix">
+        <?php print render($form['field_proxy_warning_message']); ?>
+        <?php print render($form['field_parameters']); ?>
+      </div>
     </div>
   </div>
-  <hr>
-  <h3><?php print t ('Set images'); ?></h3>
-  <div class="clearfix" id="image-edit-cont">
-    <?php print render($form['field_logo']); ?>
-    <?php print render($form['field_icon']); ?>
-    <?php print render($form['field_detail_image']); ?>
-  </div>
-  <hr>
+    <hr>
   <button id="callopse" class="small"><i class="icon-folder-open-alt"></i> <?php print t ('Open/Close all'); ?></button>
-  <button id="parameters" class="small"><i class="icon-cog"></i> <?php print t ('Proxy Warning/Parameters'); ?></button>
-  <div id="adv-sett-proxy-param" class="clearfix">
-    <?php print render($form['field_proxy_warning_message']); ?>
-    <?php print render($form['field_parameters']); ?>
-  </div>
   <?php print drupal_render_children($form); ?>
 </div>
