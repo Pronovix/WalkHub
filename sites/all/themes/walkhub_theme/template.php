@@ -31,25 +31,45 @@ function walkhub_theme_preprocess(&$vars, $hook) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter()
- * Override the step edit form theme function.
- * Implements html_head_alter().
- */
-
-function walkhub_theme_form_walkthrough_node_form_alter(&$form, &$form_state, $form_id) {
-  if (!empty($form['field_fc_steps'][LANGUAGE_NONE])) {
-    foreach (element_children($form['field_fc_steps'][LANGUAGE_NONE]) as $key) {
-      $form['field_fc_steps'][LANGUAGE_NONE][$key]['#theme'] = 'walkthrough_steps_edit_form';
-    }
-  }
-}
-
-
-/**
- * Implements html_head_alter().
+ * Implements hook_html_head_alter().
  */
 function walkhub_theme_html_head_alter(&$head_elements) {
+  // HTML5 charset declaration.
+  $head_elements['system_meta_content_type']['#attributes'] = array(
+    'charset' => 'utf-8',
+  );
+
+  // Old mobile dec
+  $head_elements['mobileoptimized'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'MobileOptimized',
+      'content' => 'width',
+    ),
+  );
+
+  // Old mobile dec
+  $head_elements['handheldfriendly'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'HandheldFriendly',
+      'content' => 'true',
+    ),
+  );
+
   // Optimize mobile viewport.
+  $head_elements['rating'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'rating',
+      'content' => 'global',
+    ),
+  );
+
+  // Global Rating SEO.
   $head_elements['mobile_viewport'] = array(
     '#type' => 'html_tag',
     '#tag' => 'meta',
@@ -58,6 +78,56 @@ function walkhub_theme_html_head_alter(&$head_elements) {
       'content' => 'width=device-width, initial-scale=1.0',
     ),
   );
+
+  // ClearType
+  $head_elements['cleartype'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'http-equiv' => 'cleartype',
+      'content' => 'on',
+    ),
+  );
+
+  // Force IE to use Chrome Frame if installed.
+  $head_elements['chrome_frame'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'http-equiv' => 'x-ua-compatible',
+      'content' => 'ie=edge, chrome=1',
+    ),
+  );
+
+  // Remove image toolbar in IE.
+  $head_elements['ie_image_toolbar'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'http-equiv' => 'ImageToolbar',
+      'content' => 'false',
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ * Override the step edit form theme function.
+ * Implements html_head_alter().
+ */
+function walkhub_theme_form_walkthrough_node_form_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['field_fc_steps'][LANGUAGE_NONE])) {
+    foreach (element_children($form['field_fc_steps'][LANGUAGE_NONE]) as $key) {
+      $form['field_fc_steps'][LANGUAGE_NONE][$key]['#theme'] = 'walkthrough_steps_edit_form';
+    }
+  }
+}
+function walkhub_theme_form_walkthrough_set_node_form_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['field_walkthroughs'][LANGUAGE_NONE])) {
+    foreach (element_children($form['field_walkthroughs'][LANGUAGE_NONE]) as $key) {
+      $form['field_walkthroughs'][LANGUAGE_NONE][$key]['#theme'] = 'walkthrough_set_steps_edit_form';
+    }
+  }
 }
 
 /**
@@ -65,14 +135,24 @@ function walkhub_theme_html_head_alter(&$head_elements) {
  */
 function walkhub_theme_theme() {
   return array(
+    'walkthrough_node_form' => array(
+      'render element' => 'form',
+      'template' => 'walkthrough-node-form',
+      'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/node-edit',
+    ),
     'walkthrough_steps_edit_form' => array(
       'render element' => 'form',
       'template' => 'walkthrough-steps-edit-form',
       'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/node-edit',
     ),
-    'walkthrough_node_form' => array(
+    'walkthrough_set_node_form' => array(
       'render element' => 'form',
-      'template' => 'walkthrough-node-form',
+      'template' => 'walkthrough-set-node-form',
+      'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/node-edit',
+    ),
+    'walkthrough_set_steps_edit_form' => array(
+      'render element' => 'form',
+      'template' => 'walkthrough-set-steps-edit-form',
       'path' => drupal_get_path('theme', 'walkhub_theme') . '/templates/node-edit',
     ),
   );
@@ -164,9 +244,35 @@ function walkhub_theme_preprocess_walkthrough_steps_edit_form(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_walkthrough_set_steps_edit_form().
+ */
+function walkhub_theme_preprocess_walkthrough_set_steps_edit_form(&$vars) {
+  $title = isset($vars['form']['field_fc_step_name'][LANGUAGE_NONE][0]['value']['#value']) ? $vars['form']['field_fc_step_name'][LANGUAGE_NONE][0]['value']['#value'] : '';
+  $description = isset($vars['form']['field_fc_step_description'][LANGUAGE_NONE][0]['value']['#value']) ? $vars['form']['field_fc_step_description'][LANGUAGE_NONE][0]['value']['#value'] : '';
+  $label = "$title - $description";
+
+  $vars['stepnumber'] = (isset($vars['form']['#delta']) ? $vars['form']['#delta'] : 0) + 1;
+
+  if (empty($title)) {
+    $label = "{$vars['stepnumber']}. Walkthrough";
+  }
+
+  $vars['steplabel'] = $label;
+}
+
+
+/**
  * Implements hook_preprocess_walkthrough_node_form().
  */
 function walkhub_theme_preprocess_walkthrough_node_form($vars) {
   $path = drupal_get_path('theme', 'walkhub_theme');
-  drupal_add_js($path . '/js/page/node_form_edit.js');
+  drupal_add_js($path . '/js/page/node-walkthrough-form-edit.js');
+}
+
+/**
+ * Implements hook_preprocess_walkthrough_set_node_form().
+ */
+function walkhub_theme_preprocess_walkthrough_set_node_form($vars) {
+  $path = drupal_get_path('theme', 'walkhub_theme');
+  drupal_add_js($path . '/js/page/node-walkthrough-set-form-edit.js');
 }
