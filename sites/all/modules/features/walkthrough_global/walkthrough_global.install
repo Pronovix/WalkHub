@@ -302,3 +302,10 @@ function walkthrough_global_update_7018(&$sandbox) {
 
   return t('Removed step content type.');
 }
+
+/**
+ * Revert walkthrough screening feature.
+ */
+function walkthrough_global_update_7019() {
+  walkhub_features_revert(array('walkthrough_screening'));
+}
