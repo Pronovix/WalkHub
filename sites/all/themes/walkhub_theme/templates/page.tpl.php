@@ -309,8 +309,6 @@
   <?php endif; ?>
 
   <main role="main" class="row l-main">
-
-
     <div class="<?php print $main_grid; ?> main columns">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlight panel callout">
@@ -319,8 +317,6 @@
       <?php endif; ?>
 
       <a id="main-content"></a>
-
-
 
       <?php if ($title && !$is_front): ?>
         <?php print render($title_prefix); ?>
@@ -357,25 +353,44 @@
   </main>
   <!--/.main-->
 
-  <?php if (!empty($page['triptych_first']) || !empty($page['triptych_middle']) || !empty($page['triptych_last'])): ?>
-    <!--.triptych-->
-    <section class="l-triptych row">
-      <div class="triptych-first large-4 columns">
-        <?php print render($page['triptych_first']); ?>
+<?php if (!empty($page['news-bottom'])): ?>
+  <!--/.news-bottom -->
+  <section id="news-bottom">
+    <div class="row">
+      <div class="large-12 columns">
+        <?php print render($page['news-bottom']); ?>
       </div>
-      <div class="triptych-middle large-4 columns">
-        <?php print render($page['triptych_middle']); ?>
+    </div>
+  </section>
+  <!--/.news-bottom -->
+<?php endif; ?>
+
+<?php if (!empty($page['content-bottom'])): ?>
+  <!--/.content-bottom-->
+  <section id="content-bottom">
+    <div class="row">
+      <div class="large-12 columns">
+        <?php print render($page['content-bottom']); ?>
       </div>
-      <div class="triptych-last large-4 columns">
-        <?php print render($page['triptych_last']); ?>
+    </div>
+  </section>
+  <!--/.content-bottom -->
+<?php endif; ?>
+
+<?php if (!empty($page['signup'])): ?>
+  <!--.signup -->
+  <section id="signup">
+    <div class="row">
+      <div class="large-12 columns">
+        <?php print render($page['signup']); ?>
       </div>
-    </section>
-    <!--/.triptych -->
-  <?php endif; ?>
+    </div>
+  </section>
+  <!--/.signup -->
+<?php endif; ?>
 
   <!--.l-footer-->
   <footer id="footermain" role="contentinfo">
-
     <div id="footer" class="row">
       <div >
         <?php if (!empty($page['footer_firstcolumn'])): ?>

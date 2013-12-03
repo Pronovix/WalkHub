@@ -107,7 +107,7 @@ function walkthrough_global_update_7008() {
  * Turning on Page Types: FAQ, NEWS
  */
 function walkthrough_global_update_7009() {
-  features_install_modules(array('walkhub_page_type_faq, walkhub_page_type_news'));
+  features_install_modules(array('walkhub_page_type_faq', 'walkhub_page_type_news'));
 }
 
 /**
@@ -234,4 +234,71 @@ function walkthrough_global_update_7014() {
  */
 function walkthrough_global_update_7015() {
   walkhub_features_revert(array('walkthrough_permissions'));
+}
+
+/**
+ * Remove walkthrough menu from the bottom on the admin interface.
+ */
+function walkthrough_global_update_7016() {
+    db_update('block')
+      ->fields(array(
+        'region' => -1,
+    ))
+      ->condition('delta', array('management', 'navigation', 'user-menu'), 'in')
+      ->condition('theme', 'seven', '=')
+      ->execute();
+}
+
+/**
+ * Remove br from full html text filter.
+ */
+function walkthrough_global_update_7017() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
+
+/**
+ * Delete step content type.
+ */
+function walkthrough_global_update_7018(&$sandbox) {
+  if (empty($sandbox['total'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['last_nid'] = 0;
+
+    // Count the total number of the step nodes.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'step')
+      ->count();
+    $sandbox['total'] = $query->execute();
+  }
+
+  // Get the next 50 step node.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'step')
+    ->propertyCondition('nid', $sandbox['last_nid'], '>')
+    ->propertyOrderBy('nid')
+    ->range(0, 50);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    // Delete them.
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+
+    // Store the last node id and update progress.
+    $sandbox['last_nid'] = max($nids);
+    $sandbox['progress']+= count($nids);
+  }
+
+  // Set the finished variable based on the current progress status.
+  $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
+
+  if ($sandbox['#finished']) {
+    node_type_delete('step');
+  }
+
+  return t('Removed step content type.');
 }

@@ -7,13 +7,15 @@
  */
 ?>
 <div class="walkthrough-step-edit" id="walkthrough-step-edit-step-<?php print ($stepnumber); ?>">
-  <h3 class="step-title button">
-    <span>
+  <div class="step-title button clearfix">
+    <h3>
       <?php print t ('Step'); ?>
       <?php print ($stepnumber); ?> -
-    </span>
+    </h3>
+    <h3>
     <?php print ($steplabel); ?>
-  </h3>
+    </h3>
+  </div>
   <div class="walkthrough-step-container clearfix">
     <div class="le">
       <?php if (!empty($form['field_fc_step_show_title'])): ?>

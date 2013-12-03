@@ -80,20 +80,28 @@ scripts[] = scripts/select2/select2.js
 
 regions[header]              = Header
 regions[help]                = Help
+
 regions[highlighted]         = Highlighted
 regions[featured]            = Featured
+
 regions[news]                = News
 regions[content]             = Content
 regions[sidebar_first]       = Left Sidebar
 regions[sidebar_second]      = Right Sidebar
-regions[triptych_first]      = Callout one
-regions[triptych_middle]     = Callout two
-regions[triptych_last]       = Callout three
+
+regions[news-bottom]         = News bottom
+regions[content-bottom]      = Content bottom
+
+;Signup
+regions[signup]  = Signup [For mailchimp signup]
+
+;Footer
 regions[footer_firstcolumn]  = Footer one
 regions[footer_secondcolumn] = Footer two
 regions[footer_thirdcolumn]  = Footer three
 regions[footer]              = Footer
 
+;Copyright
 regions[copyright_menu]      = Copyright Menu
 
 ; Various page elements output by the theme can be toggled on and off. The

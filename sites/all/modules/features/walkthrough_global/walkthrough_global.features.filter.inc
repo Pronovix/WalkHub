@@ -18,11 +18,6 @@ function walkthrough_global_filter_default_formats() {
     'status' => 1,
     'weight' => 0,
     'filters' => array(
-      'filter_autop' => array(
-        'weight' => 0,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'filter_url' => array(
         'weight' => 0,
         'status' => 1,

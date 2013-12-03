@@ -16,7 +16,6 @@
     .tabledrag-toggle-weight,
     .field-name-field-fc-steps thead,
     #field-parameters-values thead,
-    .field-name-field-fc-step-name,
     #edit-field-proxy-warning-message-und-0-format,
     #adv-sett-proxy-param
       display: none
@@ -101,6 +100,13 @@
 
     #edit-actions
       text-align: center
+
+      a,
+      button
+        margin-right: .25em
+
+    #callopse
+      margin-right: .25em
 
     .back.button
       margin-right: .25em
@@ -222,14 +228,21 @@
           display: none
 
       .step-title.button
+        padding-top: .55em
         margin: 0
         width: 100%
         display: block
-        height: 29px
         overflow: hidden
 
+        h3
+          color: #6f6f6f
+          +font-size(.9)
+          margin-right: .25em
+          display: inline-block
+          margin: 0
+          padding: 0
+
         span
-          font-weight: bold
           display: inline-block
 
       .le

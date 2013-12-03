@@ -98,6 +98,12 @@ function walkhub_page_type_faq_field_default_field_instances() {
         'type' => 'field_collection_view',
         'weight' => 0,
       ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),

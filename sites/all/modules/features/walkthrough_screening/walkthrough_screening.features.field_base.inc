@@ -164,6 +164,7 @@ function walkthrough_screening_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'walkthrough' => 'walkthrough',
+          'walkthrough_set' => 'walkthrough_set',
         ),
       ),
       'target_type' => 'node',
