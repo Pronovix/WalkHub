@@ -100,15 +100,12 @@ function walkthrough_screening_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection',
+        'module' => 'walkthrough_slideshow',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
+          'height' => 300,
+          'width' => 400,
         ),
-        'type' => 'field_collection_view',
+        'type' => 'image_slideshow',
         'weight' => 4,
       ),
       'entity_reference' => array(
