@@ -1,6 +1,7 @@
 name = Walkthrough
 description = Walkthrough walkhub
 version = VERSION
+distribution_name = Walkhub
 core = 7.x
 
 dependencies[] = admin_menu
@@ -45,7 +46,6 @@ dependencies[] = system
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = token
-dependencies[] = update
 dependencies[] = user
 dependencies[] = uuid
 dependencies[] = views
@@ -54,4 +54,3 @@ dependencies[] = views_ui
 dependencies[] = walkhub_client
 dependencies[] = walkthrough
 dependencies[] = walkthrough_slideshow
-
