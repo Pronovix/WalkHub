@@ -61,4 +61,3 @@ features[variable][] = recaptcha_theme
 features[variable][] = site_name
 features[variable][] = theme_settings
 features[variable][] = user_register
-features[variable][] = walkthrough_global_secret_key
