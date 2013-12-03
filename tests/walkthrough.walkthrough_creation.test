@@ -30,12 +30,13 @@ class WalkthroughCreation extends PxSeleniumTestCase {
     // Explode the newly created node's url, to get the node nid.
     $exploded_url = explode('/', $this->getRelativeUrl());
     if (!empty($exploded_url[2]) && is_numeric($exploded_url[2])) {
+      $nid = $exploded_url[2];
       // Create a walkthrough
       $this->open("/node/add/walkthrough");
       $this->type("id=edit-title", "Test walkthrough prerequisites");
 
       // Set the prerequisite field to point at the previously created walkthrough.
-      $this->type("id=edit-field-prerequisites-und-0-target-id", "Test empty Walkthrough ({$exploded_url[2]})");
+      $this->type("id=edit-field-prerequisites-und-0-target-id", "Test empty Walkthrough ({$nid})");
       $this->click("id=edit-submit");
       $this->waitForPageToLoad("30000");
 
