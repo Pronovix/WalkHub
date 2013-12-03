@@ -103,6 +103,122 @@ function walkthrough_global_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'clone_menu_links';
+  $strongarm->value = '0';
+  $export['clone_menu_links'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_method';
+  $strongarm->value = 'save-edit';
+  $export['clone_method'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_nodes_without_confirm';
+  $strongarm->value = '0';
+  $export['clone_nodes_without_confirm'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_omitted';
+  $strongarm->value = array(
+    'branding' => 'branding',
+    'walkhub_faq_page' => 'walkhub_faq_page',
+    'walkhub_news' => 'walkhub_news',
+    'page' => 'page',
+    'walkthrough_collection' => 'walkthrough_collection',
+    'walkthrough_public_collection' => 'walkthrough_public_collection',
+    'screening' => 'screening',
+    'step' => 'step',
+    'walkthrough_set' => 'walkthrough_set',
+    'walkthrough' => 0,
+  );
+  $export['clone_omitted'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_branding';
+  $strongarm->value = 0;
+  $export['clone_reset_branding'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_page';
+  $strongarm->value = 0;
+  $export['clone_reset_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_screening';
+  $strongarm->value = 0;
+  $export['clone_reset_screening'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_step';
+  $strongarm->value = 0;
+  $export['clone_reset_step'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_walkhub_faq_page';
+  $strongarm->value = 0;
+  $export['clone_reset_walkhub_faq_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_walkhub_news';
+  $strongarm->value = 0;
+  $export['clone_reset_walkhub_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_walkthrough';
+  $strongarm->value = 0;
+  $export['clone_reset_walkthrough'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_walkthrough_collection';
+  $strongarm->value = 0;
+  $export['clone_reset_walkthrough_collection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_walkthrough_public_collection';
+  $strongarm->value = 0;
+  $export['clone_reset_walkthrough_public_collection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_reset_walkthrough_set';
+  $strongarm->value = 0;
+  $export['clone_reset_walkthrough_set'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_use_node_type_name';
+  $strongarm->value = 0;
+  $export['clone_use_node_type_name'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_compression_type';
   $strongarm->value = 'min';
   $export['jquery_update_compression_type'] = $strongarm;
