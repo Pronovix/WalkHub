@@ -49,11 +49,11 @@ function walkthrough_screening_flag_default_flags() {
     'access_author' => 'own',
     'show_contextual_link' => FALSE,
     'i18n' => 0,
-    'api_version' => 3,
     'module' => 'walkthrough_screening',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 
