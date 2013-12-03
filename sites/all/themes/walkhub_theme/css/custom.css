@@ -7073,11 +7073,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
 }
 
 /* line 119, ../sass/typo/_typography.sass */
-.cta, #signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default,
-#signup #mc_embed_signup .ui-widget-content input.ui-state-default,
-.ui-widget-content #signup #mc_embed_signup input.ui-state-default,
-#signup #mc_embed_signup .ui-widget-header input.ui-state-default,
-.ui-widget-header #signup #mc_embed_signup input.ui-state-default, .node-type-walkthrough .main.columns > .action-links li a, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type {
+.cta, #signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default, .node-type-walkthrough .main.columns > .action-links li a, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type {
   font-size: 10px;
   line-height: 14.5px;
   font-size: 1rem;
@@ -7111,11 +7107,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
 /* line 134, ../sass/typo/_typography.sass */
-.cta:after, #signup #mc_embed_signup input.button:after, #signup #mc_embed_signup input.ui-state-default:after,
-#signup #mc_embed_signup .ui-widget-content input.ui-state-default:after,
-.ui-widget-content #signup #mc_embed_signup input.ui-state-default:after,
-#signup #mc_embed_signup .ui-widget-header input.ui-state-default:after,
-.ui-widget-header #signup #mc_embed_signup input.ui-state-default:after, .node-type-walkthrough .main.columns > .action-links li a:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:after {
+.cta:after, #signup #mc_embed_signup input.button:after, #signup #mc_embed_signup input.ui-state-default:after, .node-type-walkthrough .main.columns > .action-links li a:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:after {
   font-family: "icomoon";
   speak: none;
   content: attr(data-icon);
@@ -7126,11 +7118,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
   *margin-right: 0.3em;
 }
 /* line 137, ../sass/typo/_typography.sass */
-.cta:hover, #signup #mc_embed_signup input.button:hover, #signup #mc_embed_signup input.ui-state-default:hover,
-#signup #mc_embed_signup .ui-widget-content input.ui-state-default:hover,
-.ui-widget-content #signup #mc_embed_signup input.ui-state-default:hover,
-#signup #mc_embed_signup .ui-widget-header input.ui-state-default:hover,
-.ui-widget-header #signup #mc_embed_signup input.ui-state-default:hover, .node-type-walkthrough .main.columns > .action-links li a:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover:first-of-type {
+.cta:hover, #signup #mc_embed_signup input.button:hover, #signup #mc_embed_signup input.ui-state-default:hover, .node-type-walkthrough .main.columns > .action-links li a:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover:first-of-type {
   background-color: #4f96d2;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4F96D2', endColorstr='#FF0467A0');
@@ -7141,11 +7129,7 @@ button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog 
   background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%);
 }
 /* line 142, ../sass/typo/_typography.sass */
-.cta:active, #signup #mc_embed_signup input.button:active, #signup #mc_embed_signup input.ui-state-default:active,
-#signup #mc_embed_signup .ui-widget-content input.ui-state-default:active,
-.ui-widget-content #signup #mc_embed_signup input.ui-state-default:active,
-#signup #mc_embed_signup .ui-widget-header input.ui-state-default:active,
-.ui-widget-header #signup #mc_embed_signup input.ui-state-default:active, .node-type-walkthrough .main.columns > .action-links li a:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active:first-of-type {
+.cta:active, #signup #mc_embed_signup input.button:active, #signup #mc_embed_signup input.ui-state-default:active, .node-type-walkthrough .main.columns > .action-links li a:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active:first-of-type {
   background: #035787;
   -webkit-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15);
   -moz-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15);
@@ -7194,7 +7178,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 
 /* line 175, ../sass/typo/_typography.sass */
 html.js input.form-autocomplete {
-  background-image: url('../images/throbber.gif?1385980534');
+  background-image: url('../images/throbber.gif?1385989591');
   background-position: 100% 8px;
   background-repeat: no-repeat;
   -webkit-transition: none;
@@ -8034,7 +8018,7 @@ header#main-header .menu li a {
   padding: 2.5rem 0 1.5rem;
   overflow: hidden;
   background-color: black;
-  background-image: url('../images/office.jpg?1385645148');
+  background-image: url('../images/office.jpg?1385713278');
   background-position: top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8594,7 +8578,7 @@ main {
   padding: 2.5rem 0 1.5rem;
   margin-bottom: -2%;
   text-align: center;
-  background-image: url('../images/signup.jpg?1385645148');
+  background-image: url('../images/signup.jpg?1385713278');
   background-repeat: no-repeat;
   background-position: bottom center;
   position: relative;
@@ -8635,19 +8619,11 @@ main {
 /* line 34, ../sass/modules/_temp_signup.sass */
 #signup #mc_embed_signup input.email,
 #signup #mc_embed_signup input.button,
-#signup #mc_embed_signup input.ui-state-default,
-#signup #mc_embed_signup .ui-widget-content input.ui-state-default,
-.ui-widget-content #signup #mc_embed_signup input.ui-state-default,
-#signup #mc_embed_signup .ui-widget-header input.ui-state-default,
-.ui-widget-header #signup #mc_embed_signup input.ui-state-default {
+#signup #mc_embed_signup input.ui-state-default {
   margin: 0 auto;
 }
 /* line 38, ../sass/modules/_temp_signup.sass */
-#signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default,
-#signup #mc_embed_signup .ui-widget-content input.ui-state-default,
-.ui-widget-content #signup #mc_embed_signup input.ui-state-default,
-#signup #mc_embed_signup .ui-widget-header input.ui-state-default,
-.ui-widget-header #signup #mc_embed_signup input.ui-state-default {
+#signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default {
   padding: 0.35em 0.85em 0.35em;
 }
 /* line 42, ../sass/modules/_temp_signup.sass */
@@ -11290,7 +11266,7 @@ input.pure-input-rounded, .pure-input-rounded {
   float: right;
 }
 /* line 165, ../sass/page/_node-walkthrough.sass */
-.node-type-walkthrough .node-walkthrough .links.inline li.flag-walkthrough_broken a {
+.node-type-walkthrough .node-walkthrough .links.inline li span.flag-wrapper a {
   font-size: 5.5px;
   line-height: 7.975px;
   font-size: 0.55rem;
@@ -11488,17 +11464,9 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 20%;
 }
 /* line 93, ../sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main #ad-set .le .button, .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default,
-.page-node-add-walkthrough .row.l-main #ad-set .le .ui-widget-content .ui-state-default,
-.ui-widget-content .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default,
-.page-node-add-walkthrough .row.l-main #ad-set .le .ui-widget-header .ui-state-default,
-.ui-widget-header .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main #ad-set .le button,
+.page-node-add-walkthrough .row.l-main #ad-set .le .button, .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main #ad-set .le button,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .button,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-state-default,
-.page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-widget-content .ui-state-default,
-.ui-widget-content .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-state-default,
-.page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-widget-header .ui-state-default,
-.ui-widget-header .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-state-default,
 .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le button {
   margin-top: 1.33em;
@@ -11528,17 +11496,9 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 0.25em;
 }
 /* line 111, ../sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .back.button, .page-node-add-walkthrough .row.l-main .back.ui-state-default,
-.page-node-add-walkthrough .row.l-main .ui-widget-content .back.ui-state-default,
-.ui-widget-content .page-node-add-walkthrough .row.l-main .back.ui-state-default,
-.page-node-add-walkthrough .row.l-main .ui-widget-header .back.ui-state-default,
-.ui-widget-header .page-node-add-walkthrough .row.l-main .back.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main button.back,
+.page-node-add-walkthrough .row.l-main .back.button, .page-node-add-walkthrough .row.l-main .back.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main button.back,
 .page-node-edit.node-type-walkthrough .row.l-main .back.button,
 .page-node-edit.node-type-walkthrough .row.l-main .back.ui-state-default,
-.page-node-edit.node-type-walkthrough .row.l-main .ui-widget-content .back.ui-state-default,
-.ui-widget-content .page-node-edit.node-type-walkthrough .row.l-main .back.ui-state-default,
-.page-node-edit.node-type-walkthrough .row.l-main .ui-widget-header .back.ui-state-default,
-.ui-widget-header .page-node-edit.node-type-walkthrough .row.l-main .back.ui-state-default,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main button.back {
   margin-right: 0.25em;
@@ -11756,17 +11716,9 @@ input.pure-input-rounded, .pure-input-rounded {
   display: none;
 }
 /* line 230, ../sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default,
-.ui-widget-content .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default,
-.ui-widget-header .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title,
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
-.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default,
-.ui-widget-content .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
-.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default,
-.ui-widget-header .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit button.step-title {
   padding-top: 0.55em;
@@ -11776,17 +11728,9 @@ input.pure-input-rounded, .pure-input-rounded {
   overflow: hidden;
 }
 /* line 237, ../sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default h3,
-.ui-widget-content .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default h3,
-.ui-widget-header .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title h3,
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title h3,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button h3,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
-.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default h3,
-.ui-widget-content .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
-.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default h3,
-.ui-widget-header .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit button.step-title h3 {
   color: #6f6f6f;
@@ -11800,17 +11744,9 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0;
 }
 /* line 245, ../sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default span,
-.ui-widget-content .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default span,
-.ui-widget-header .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title span,
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title span,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button span,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
-.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default span,
-.ui-widget-content .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
-.page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default span,
-.ui-widget-header .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
 .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit button.step-title span {
   display: inline-block;
@@ -12070,17 +12006,9 @@ input.pure-input-rounded, .pure-input-rounded {
   width: 20%;
 }
 /* line 100, ../sass/page/_node-walkthrough-set-edit.sass */
-.page-node-add-walkthrough-set .row.l-main #ad-set .le .button, .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-state-default,
-.page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-widget-content .ui-state-default,
-.ui-widget-content .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-state-default,
-.page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-widget-header .ui-state-default,
-.ui-widget-header .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough-set .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main #ad-set .le button,
+.page-node-add-walkthrough-set .row.l-main #ad-set .le .button, .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough-set .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main #ad-set .le button,
 .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .button,
 .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-state-default,
-.page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-widget-content .ui-state-default,
-.ui-widget-content .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-state-default,
-.page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-widget-header .ui-state-default,
-.ui-widget-header .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-state-default,
 .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le button {
   margin-top: 1.33em;
@@ -12110,17 +12038,9 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-right: 0.25em;
 }
 /* line 119, ../sass/page/_node-walkthrough-set-edit.sass */
-.page-node-add-walkthrough-set .row.l-main .back.button, .page-node-add-walkthrough-set .row.l-main .back.ui-state-default,
-.page-node-add-walkthrough-set .row.l-main .ui-widget-content .back.ui-state-default,
-.ui-widget-content .page-node-add-walkthrough-set .row.l-main .back.ui-state-default,
-.page-node-add-walkthrough-set .row.l-main .ui-widget-header .back.ui-state-default,
-.ui-widget-header .page-node-add-walkthrough-set .row.l-main .back.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main button.back,
+.page-node-add-walkthrough-set .row.l-main .back.button, .page-node-add-walkthrough-set .row.l-main .back.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main button.back,
 .page-node-edit.node-type-walkthrough-set .row.l-main .back.button,
 .page-node-edit.node-type-walkthrough-set .row.l-main .back.ui-state-default,
-.page-node-edit.node-type-walkthrough-set .row.l-main .ui-widget-content .back.ui-state-default,
-.ui-widget-content .page-node-edit.node-type-walkthrough-set .row.l-main .back.ui-state-default,
-.page-node-edit.node-type-walkthrough-set .row.l-main .ui-widget-header .back.ui-state-default,
-.ui-widget-header .page-node-edit.node-type-walkthrough-set .row.l-main .back.ui-state-default,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main button.back {
   margin-right: 0.25em;
@@ -12347,17 +12267,9 @@ input.pure-input-rounded, .pure-input-rounded {
   display: none;
 }
 /* line 246, ../sass/page/_node-walkthrough-set-edit.sass */
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default,
-.ui-widget-content .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default,
-.ui-widget-header .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title,
+.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
-.page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default,
-.ui-widget-content .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
-.page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default,
-.ui-widget-header .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title {
   padding-top: 0.55em;
@@ -12367,17 +12279,9 @@ input.pure-input-rounded, .pure-input-rounded {
   overflow: hidden;
 }
 /* line 253, ../sass/page/_node-walkthrough-set-edit.sass */
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default h3,
-.ui-widget-content .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default h3,
-.ui-widget-header .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title h3,
+.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title h3,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button h3,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
-.page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default h3,
-.ui-widget-content .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
-.page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default h3,
-.ui-widget-header .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title h3 {
   color: #6f6f6f;
@@ -12391,17 +12295,9 @@ input.pure-input-rounded, .pure-input-rounded {
   padding: 0;
 }
 /* line 261, ../sass/page/_node-walkthrough-set-edit.sass */
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button span, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default span,
-.ui-widget-content .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default span,
-.ui-widget-header .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default span, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title span,
+.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button span, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default span, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title span,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button span,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
-.page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default span,
-.ui-widget-content .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
-.page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default span,
-.ui-widget-header .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default span,
 .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title span,
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title span {
   display: inline-block;
@@ -12771,11 +12667,7 @@ input.pure-input-rounded, .pure-input-rounded {
   margin-left: 0.5em;
 }
 /* line 99, ../sass/page/_node-walkthrough-step-edit.sass */
-.page-field-collection-field-fc-steps-edit .back.button, .page-field-collection-field-fc-steps-edit .back.ui-state-default,
-.page-field-collection-field-fc-steps-edit .ui-widget-content .back.ui-state-default,
-.ui-widget-content .page-field-collection-field-fc-steps-edit .back.ui-state-default,
-.page-field-collection-field-fc-steps-edit .ui-widget-header .back.ui-state-default,
-.ui-widget-header .page-field-collection-field-fc-steps-edit .back.ui-state-default, .page-field-collection-field-fc-steps-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-field-collection-field-fc-steps-edit button.back {
+.page-field-collection-field-fc-steps-edit .back.button, .page-field-collection-field-fc-steps-edit .back.ui-state-default, .page-field-collection-field-fc-steps-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-field-collection-field-fc-steps-edit button.back {
   margin-right: 0.75em;
 }
 
