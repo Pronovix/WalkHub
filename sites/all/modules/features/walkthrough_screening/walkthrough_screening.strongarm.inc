@@ -28,6 +28,12 @@ function walkthrough_screening_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'entity_reference' => array(
+        'custom_settings' => TRUE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
