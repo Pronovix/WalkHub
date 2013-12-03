@@ -9,7 +9,7 @@
 
   Drupal.behaviors.walkhubFormEdit = {
     attach: function (context, settings) {
-      Drupal.walkhubStepEdit.makeButton(context, settings);
+      Drupal.walkhubStepEdit.advsettings(context, settings);
       Drupal.walkhubStepEdit.makeBackButton(context, settings);
       Drupal.walkhubStepEdit.insertIcon(context, settings);
       Drupal.walkhubStepEdit.stepHideShow(context, settings);
@@ -21,16 +21,28 @@
   };
 
   Drupal.walkhubStepEdit = {
-    makeButton : function(context, settings) {
-      $('#ad-set .le', context).once('makeButton', function() {
+    /**
+     * Drupal base settings container
+     *
+     * @param context
+     * @param settings
+     */
+    advsettings : function(context, settings) {
+      $('#advset', context).once(function() {
         var $this = $(this);
-        $this.append('<a class="button small open"><i class="icon-cog"></i>' + Drupal.t("Advanced Settings") + '</a>').click(function() {
-            $("#ad-set .ri").toggle( "200" );
-            return false;
-          });
+        $this.click(function() {
+          $('#ad-set .ri', context).slideToggle( "200" );
+          return false;
+        });
       })
     },
 
+    /**
+     * Backbutton make and function
+     *
+     * @param context
+     * @param settings
+     */
     makeBackButton : function(context, settings) {
       $('#edit-submit', context).once('makeBackButton', function() {
         var $this = $(this);
@@ -38,7 +50,12 @@
       });
     },
 
-
+    /**
+     * Insert icons the bottom of the editor page
+     *
+     * @param context
+     * @param settings
+     */
     insertIcon : function(context, settings) {
       $('#edit-delete', context).once('delete-button', function() {
         var $this = $(this);
@@ -66,45 +83,65 @@
       });
     },
 
+    /**
+    * Open/Close functionality for one Step
+    *
+    * @param context
+    * @param settings
+    */
     stepHideShow : function(context, settings) {
       $('.step-title.button', context).once(function() {
         var $this = $(this);
         var $container = $this.parent();
         $this.click(function() {
-          $('.walkthrough-step-container', $container).toggle( "200" );
+          $('.walkthrough-step-container', $container).slideToggle( "200" );
           return false;
           });
         })
     },
 
+    /**
+    * Open/Close functionality for all of the
+    * Steps in one button
+    *
+    * @param context
+    * @param settings
+    */
     callopse : function(context, settings) {
       $('#callopse', context).once(function() {
         var $this = $(this);
         var $container = $this.parent();
         $this.click(function() {
-          $('.walkthrough-step-container', $container).toggle( "200" );
-          return false;
-        });
-      })
-    },
-
-    parameters : function(context, settings) {
-      $('#parameters', context).once(function() {
-        var $this = $(this);
-        $this.click(function() {
-          $('#adv-sett-proxy-param', context).toggle( "200" );
+          $('.walkthrough-step-container', $container).slideToggle( "200" );
           return false;
         });
       })
     },
 
     /**
-     * Go through every walkthrough step and set the Title field visibility
-     * according to the value of the Show title checkbox.
-     *
-     * @param context
-     * @param settings
-     */
+    * Parameters/Proxy Warning button function, slideToggle
+    * the respective div
+    *
+    * @param context
+    * @param settings
+    */
+    parameters : function(context, settings) {
+      $('#parameters', context).once(function() {
+        var $this = $(this);
+        $this.click(function() {
+          $('#adv-sett-proxy-param', context).slideToggle( "200" );
+          return false;
+        });
+      })
+    },
+
+    /**
+    * Go through every walkthrough step and set the Title field visibility
+    * according to the value of the Show title checkbox.
+    *
+    * @param context
+    * @param settings
+    */
     initShowTitleTextfieldStates : function(context, settings) {
       $('.field-name-field-fc-step-show-title', context).each(function() {
         var $this = $(this);
@@ -119,11 +156,11 @@
     },
 
     /**
-     * Handle the Show title checkbox click event.
-     *
-     * @param context
-     * @param settings
-     */
+    * Handle the Show title checkbox click event.
+    *
+    * @param context
+    * @param settings
+    */
     showTitleStateChange: function(context, settings) {
       $('.field-name-field-fc-step-show-title input[type="checkbox"]').click(function() {
         Drupal.walkhubStepEdit.initShowTitleTextfieldStates(context, settings);

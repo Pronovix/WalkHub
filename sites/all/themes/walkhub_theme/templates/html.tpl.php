@@ -46,14 +46,10 @@
 <!--[if IE 8]><html class="no-js lt-ie9" lang="hu"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="hu"> <!--<![endif]-->
 <head>
-  <meta name="MobileOptimized" content="width">
-  <meta name="HandheldFriendly" content="true">
-  <meta http-equiv="cleartype" content="on">
-  <meta name="rating" content="global" />
-  <?php print $appletouchicon; ?>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
+  <?php print $appletouchicon; ?>
   <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script src="<?php print $walkhub_theme_path; ?>/scripts/vendor/respond.min.js"></script>
@@ -64,16 +60,7 @@
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
   <?php print $page_top; ?>
-  <?php
-  $output = str_replace(array("\r\n", "\r"), "\n", $page);
-  $lines = explode("\n", $output);
-  $new_lines = array();
-  foreach ($lines as $i => $line) {
-    if(!empty($line))
-      $new_lines[] = trim($line);
-  }
-  ?>
-  <?php print implode($new_lines); ?>
+  <?php print $page; ?>
   <?php print $scripts; ?>
   <?php print $page_bottom; ?>
   <?php print _zurb_foundation_add_reveals(); ?>

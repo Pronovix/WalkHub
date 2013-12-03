@@ -14,21 +14,21 @@
     <div id="field_tags-col">
       <?php print render($form['field_tags']); ?>
     </div>
-
     <div id="group-col">
       <?php print render($form['og_group_ref']); ?>
     </div>
   </div>
   <div id="ad-set">
     <div class="le">
-      </div>
+      <a class="button small open" id="advset"><i class="icon-cog"></i> <?php print t ('Advanced Settings'); ?></a>
+    </div>
     <div class="ri">
       <?php print render($form['additional_settings']); ?>
     </div>
   </div>
   <hr>
   <button id="callopse" class="small"><i class="icon-folder-open-alt"></i> <?php print t ('Open/Close all'); ?></button>
-  <button id="parameters" class="small"><i class="icon-cog"></i> <?php print t ('Proxy Warning/Parameters'); ?></button>
+  <button id="parameters" class="small"><i class="icon-cog"></i> <?php print t ('Parameters/Proxy Warning'); ?></button>
   <div id="adv-sett-proxy-param" class="clearfix">
     <?php print render($form['field_proxy_warning_message']); ?>
     <?php print render($form['field_parameters']); ?>

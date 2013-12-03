@@ -170,3 +170,14 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small
   font-size: 60%
   color: #6f6f6f
   line-height: 0
+
+
+html.js input.form-autocomplete
+  background-image: image_url('throbber.gif')
+  background-position: 100% 8px
+  background-repeat: no-repeat
+  +transition(none)
+
+html.js input.throbbing
+  +transition(none)
+  background-position: 100% -13px
