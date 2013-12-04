@@ -8,15 +8,9 @@
 </FilesMatch>
 
 # Font mime fix.
-# Apache config.
 <FilesMatch ".(eot|ttf|otf|woff)">
  Header set Access-Control-Allow-Origin "*"
 </FilesMatch>
-
-# nginx config.
-if ($filename ~* ^.*?\.(eot)|(ttf)|(woff)$){
- add_header Access-Control-Allow-Origin *;
-}
 
 # Don't show directory listings for URLs which map to a directory.
 Options -Indexes
