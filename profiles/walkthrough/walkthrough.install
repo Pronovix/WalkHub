@@ -23,6 +23,7 @@ function walkthrough_install() {
       'weight' => 0,
       'region' => 'content',
       'pages' => '',
+      'title' => '',
       'cache' => -1,
     ),
     array(
@@ -32,7 +33,8 @@ function walkthrough_install() {
       'status' => 1,
       'weight' => 0,
       'region' => 'sidebar_first',
-      'pages' => '',
+      'pages' => '<front>',
+      'title' => '',
       'cache' => -1,
     ),
     array(
@@ -42,7 +44,8 @@ function walkthrough_install() {
       'status' => 1,
       'weight' => 0,
       'region' => 'sidebar_first',
-      'pages' => '',
+      'pages' => '<front>',
+      'title' => '<none>',
       'cache' => -1,
     ),
     array(
@@ -52,7 +55,8 @@ function walkthrough_install() {
       'status' => 1,
       'weight' => 1,
       'region' => 'sidebar_first',
-      'pages' => '',
+      'pages' => '<front>',
+      'title' => '',
       'cache' => -1,
     ),
     array(
@@ -63,6 +67,7 @@ function walkthrough_install() {
       'weight' => 0,
       'region' => 'help',
       'pages' => '',
+      'title' => '',
       'cache' => -1,
     ),
     array(
@@ -74,16 +79,19 @@ function walkthrough_install() {
       'region' => 'sidebar_first',
       'custom' => 0,
       'visibility' => 0,
-      'pages' => '',
-      'title' => '',
+      'pages' => '<front>',
+      'title' => '<none>',
       'cache' => -1,
     ),
   );
-  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'title', 'cache'));
   foreach ($values as $record) {
     $query->values($record);
   }
   $query->execute();
+
+  _walkthrough_add_additional_blocks();
+  _walkthrough_add_additional_blocks_and_referencing_records();
 
   // Allow visitor account creation, but with administrative approval.
   variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
@@ -207,5 +215,359 @@ function walkthrough_enable_theme() {
  */
 function walkthrough_update_7001() {
   module_enable(array('googleanalytics'));
+}
+
+function _walkthrough_add_additional_blocks() {
+  $bartik_theme = variable_get('theme_default', 'bartik');
+  $walkhub_theme = 'walkhub_theme';
+  $seven_theme = 'seven';
+
+  $values = array(
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'management',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -6,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'navigation',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -5,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'user-menu',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -4,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -7,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $seven_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $seven_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => $seven_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'views',
+      'delta' => 'my_walkthroughs-block',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -3,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => 'my-content\\r\\n<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+  );
+
+  $merge_query = db_merge('block');
+
+  foreach ($values as $record) {
+    $merge_query
+      ->key((array('module' => $record['module'],
+                   'delta' =>  $record['delta'],
+                   'theme' =>  $record['theme'])))
+      ->fields($record)
+      ->execute();
+  }
+}
+
+function _walkthrough_add_additional_blocks_and_referencing_records() {
+  $walkhub_theme = 'walkhub_theme';
+  $full_html = 'full_html';
+
+  $block_custom_table_values = array(
+    array(
+      'body' => 'The Walkthrough workshop is finished, so it\'s no longer possible to create an account. If you want to <a href="http://eepurl.com/uYjy9">get a notification about the next workshop</a> or just want to stay informed about the project <a href="http://eepurl.com/uYjy9">sign up for our newsletter at http://eepurl.com/uYjy9</a>.',
+      'info' => 'WalkHub invitations are closed again',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<!-- Begin MailChimp Signup Form --><link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">',
+      'info' => 'Mailchimp signupform',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<div class="small-8 columns">
+                 <h1>Automated documentation, tests & demos</h1>
+                 <h2>It is very painful to update your tests and documentation every time you change something in your web application. What if you could get automatically updated documentation & functional tests for free?</h2>
+                 <a class="cta big" href="http://eepurl.com/uYjy9" title="Get an invite" rel="follow"><p>Get an invite</p><small>Sign up for our mailing list</small> <i class="icon-pencil"></i></a>
+                 </div>
+                 <div class="small-4 columns">
+                 <div class="box-container">
+                 <div class="box blue">
+                 <h4>Walkthrough</h4>
+                 <i class="rounded"> = </i>
+                 </div>
+                 <div class="box">
+                 <h6>Demo</h6>
+                 <small>that shows that it works</small>
+                 </div>
+                 <div class="box">
+                 <h6>Test</h6>
+                 <small>that verifies if it still works</small>
+                 </div>
+                 <div class="box">
+                 <h6>Documentation</h6>
+                 <small>that explains how it works</small>
+                 </div>
+                 </div>
+                 </div>',
+      'info' => 'Front Page Heading',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<div class="row">
+                 <div class="small-12 columns">
+                 <h3>Featured Walktroughs</h3>
+                 </div>
+                 <div class="small-6 columns">
+                 <div class="wt-container">
+                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+                 </div>
+                 </div>
+                 <div class="small-6 columns">
+                 <div class="wt-container">
+                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3352" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+                 </div>
+                 </div>
+                 </div>',
+      'info' => 'Sample WT Top',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<div class="row">
+                 <div class="small-12 columns">
+                 <h3>Walktroughs</h3>
+                 </div>
+                 <div class="small-6 columns">
+                 <div class="wt-container">
+                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+                 </div>
+                 </div>
+                 <div class="small-6 columns">
+                 <div class="wt-container">
+                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+                 </div>
+                 </div>
+                 </div>',
+      'info' => 'Walktroughts bottom',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<div class="row">
+                 <div class="small-4 columns">
+                 <h3>Is your documentation up to date?</h3>
+                 <p>Whenever something changes on your web application, it is really painful to update all the screenshot and videos you\'ve included in your documentation. Instead of helping your users, outdated documentation will confuse your users.</p>
+                 <p>WalkHub automatically tests if your documentation is still up to date. You can even make it automatically regenerate all your screenshots when you update your site.</p>
+                 </div>
+                 <div class="small-4 columns">
+                 <h3>Do you like giving demos?</h3>
+                 <p>Developers don\'t like demos: you loose days waiting until agendas fit and spend hours preparing. Demos easily fail and sometimes need to be repeated. But worst of all at the end of the process you have nothing to show for all that work.</p>
+                 <p>On WalkHub a demo is a guided Walkthrough that runs on top of a site. Through commenting it\'s possible to automate the feedback and sign off process. Walkthroughs can be reused for testing and documentation.</p>
+                 </p>
+                 </div>
+                 <div class="small-4 columns">
+                 <h3>Are you testing all your features?</h3>
+                 <p>Tests are stored as code in a code repository, this means that testing becomes a fairly technical job that requires a developer and that is untransparent to a project manager. Only in some of the best funded projects is the test coverage verified.A Walkthrough starts as a test recorded with Selenium IDE. Something that doesn\'t require any technical knowledge.</p>
+                 </div>
+                 </div>',
+      'info' => 'Bottom Content',
+      'format' => $full_html,
+    ),
+  );
+
+  $query = db_insert('block_custom')->fields(array('body', 'info', 'format'));
+  foreach ($block_custom_table_values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+
+  $block_table_values = array(
+    array(
+      'module' => 'block',
+      'delta' => '1',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -10,
+      'region' => 'highlighted',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => 'user',
+      'title' => 'WalkHub closed for signups',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '2',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'signup',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '3',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'featured',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '4',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'news',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '5',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'news-bottom',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '6',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content-bottom',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+  );
+
+  $merge_query = db_merge('block');
+
+  foreach ($block_table_values as $record) {
+    $merge_query
+      ->key((array('module' => $record['module'],
+        'delta' =>  $record['delta'],
+        'theme' =>  $record['theme'])))
+      ->fields($record)
+      ->execute();
+  }
 }
 
