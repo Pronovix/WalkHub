@@ -319,3 +319,10 @@ function walkthrough_global_update_7020() {
   walkhub_features_revert(array('walkhub'));
   return t('Walkhub feature has been reverted.');
 }
+
+/**
+ * Enable the node clone module.
+ */
+function walkthrough_global_update_7021() {
+  module_enable(array('node_clone'));
+}
