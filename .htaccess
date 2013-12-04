@@ -139,5 +139,10 @@ DirectoryIndex index.php index.html index.htm
       # Force proxies to cache gzipped & non-gzipped css/js files separately.
       Header append Vary Accept-Encoding
     </FilesMatch>
+
+    # Font mime fix.
+    <FilesMatch ".(eot|ttf|otf|woff)">
+     Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
   </IfModule>
 </IfModule>
