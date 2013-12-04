@@ -62,9 +62,20 @@
       +px-rem(margin, 1, 0)
 
     .form-item-title,
-    .form-item-body-und-0-value
+    .form-item-body-und-0-value,
+    #field-prerequisites-add-more-wrapper
       +clearfix
       +px-rem(margin-bottom, 1)
+
+    #field-prerequisites-add-more-wrapper
+      position: relative
+
+      thead
+        display: none
+
+      & > .form-item
+        padding-top: 1.4em
+        padding-left: 24%
 
     label
       +font-size(1)
