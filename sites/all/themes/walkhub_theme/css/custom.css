@@ -7192,7 +7192,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   line-height: 0;
 }
 
-/* line 175, ../sass/typo/_typography.sass */
+/* line 174, ../sass/typo/_typography.sass */
 html.js input.form-autocomplete {
   background-image: url('../images/throbber.gif?1386001669');
   background-position: 100% 9px;
@@ -7203,7 +7203,7 @@ html.js input.form-autocomplete {
   transition: none;
 }
 
-/* line 181, ../sass/typo/_typography.sass */
+/* line 180, ../sass/typo/_typography.sass */
 html.js input.throbbing {
   -webkit-transition: none;
   -moz-transition: none;
@@ -8400,14 +8400,19 @@ main {
   padding: 2% 0;
 }
 
+/* line 5, ../sass/modules/_temp_main.sass */
+.l-messages .columns {
+  padding-top: 2em;
+}
+
 @media screen and (max-width: 767px) {
-  /* line 4, ../sass/modules/_temp_main.sass */
+  /* line 8, ../sass/modules/_temp_main.sass */
   .sidebar-first {
     margin-top: 2%;
   }
 }
 
-/* line 8, ../sass/modules/_temp_main.sass */
+/* line 12, ../sass/modules/_temp_main.sass */
 .wt-container {
   margin-bottom: 10px;
   margin-bottom: 1rem;
@@ -8416,7 +8421,7 @@ main {
   height: 0;
   overflow: hidden;
 }
-/* line 15, ../sass/modules/_temp_main.sass */
+/* line 19, ../sass/modules/_temp_main.sass */
 .wt-container iframe {
   position: absolute;
   top: 0;
@@ -13009,6 +13014,88 @@ input.pure-input-rounded, .pure-input-rounded {
 #edit-captcha-form .recaptcha_only_if_privacy a {
   color: #333333;
   font-size: 6.5pt;
+}
+
+/* line 2, ../sass/page/_page-node-clone.sass */
+.page-node-clone #edit-cancel {
+  font-size: 19px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF4F4F5', endColorstr='#FFBFBFC4');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4f4f5), color-stop(100%, #d9d9dd));
+  background: -webkit-linear-gradient(#f4f4f5, #d9d9dd);
+  background: -moz-linear-gradient(#f4f4f5, #d9d9dd);
+  background: -o-linear-gradient(#f4f4f5, #d9d9dd);
+  background: linear-gradient(#f4f4f5, #d9d9dd);
+  -webkit-box-shadow: white 0 1px 0 inset;
+  -moz-box-shadow: white 0 1px 0 inset;
+  box-shadow: white 0 1px 0 inset;
+  border: 1px solid #ccccd1;
+  color: white;
+  text-shadow: #afafb6 0 -1px 0;
+  font-size: 8px;
+  line-height: 11.6px;
+  font-size: 0.8rem;
+  line-height: 1.16rem;
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  -ms-border-radius: 0.35em;
+  -o-border-radius: 0.35em;
+  border-radius: 0.35em;
+  padding: 0.45em 0.85em;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  color: #6f6f6f;
+  vertical-align: bottom;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+/* line 15, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.page-node-clone #edit-cancel:hover {
+  text-decoration: none;
+}
+/* line 36, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.page-node-clone #edit-cancel:hover {
+  background-color: #ccccd1;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e7e7e9), color-stop(100%, #ccccd1));
+  background: -webkit-linear-gradient(#e7e7e9, #ccccd1);
+  background: -moz-linear-gradient(#e7e7e9, #ccccd1);
+  background: -o-linear-gradient(#e7e7e9, #ccccd1);
+  background: linear-gradient(#e7e7e9, #ccccd1);
+}
+/* line 39, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.page-node-clone #edit-cancel:active {
+  -webkit-box-shadow: #c4c4c9 0 1px 2px inset;
+  -moz-box-shadow: #c4c4c9 0 1px 2px inset;
+  box-shadow: #c4c4c9 0 1px 2px inset;
+}
+/* line 6, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
+.page-node-clone #edit-cancel.disabled, .page-node-clone #edit-cancel[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #d9d9dd;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 74, ../sass/mixins/_sassy-buttons.sass */
+.page-node-clone #edit-cancel::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 12, ../sass/page/_page-node-clone.sass */
+.page-node-clone #edit-cancel:hover, .page-node-clone #edit-cancel:active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+  color: #6f6f6f;
 }
 
 /* line 3, ../sass/view/_my_walkthroughs.sass */
