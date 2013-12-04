@@ -8,13 +8,7 @@
 ?>
 <div class="walkthrough-step-edit" id="walkthrough-step-edit-step-<?php print ($stepnumber); ?>">
   <div class="step-title button clearfix">
-    <h3>
-      <?php print t ('Walkthrough'); ?>
-      <?php print ($stepnumber); ?> -
-    </h3>
-    <h3>
-    <?php print ($steplabel); ?>
-    </h3>
+    <h3><b><?php print t ('Walkthrough'); ?> <?php print ($stepnumber); ?></b> - <?php print ($steplabel); ?></h3>
   </div>
   <div class="walkthrough-step-container clearfix">
     <?php echo drupal_render_children($form)?>
