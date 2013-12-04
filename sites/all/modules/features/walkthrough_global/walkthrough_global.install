@@ -311,3 +311,11 @@ function walkthrough_global_update_7019() {
 
   return t('Walkthrough Screening feature is reverted.');
 }
+
+/**
+ * Change the walkthrough content type prerequisite field label.
+ */
+function walkthrough_global_update_7020() {
+  walkhub_features_revert(array('walkhub'));
+  return t('Walkhub feature has been reverted.');
+}
