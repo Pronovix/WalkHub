@@ -7,11 +7,6 @@
   Order allow,deny
 </FilesMatch>
 
-# Font mime fix.
-<FilesMatch ".(eot|ttf|otf|woff)">
- Header set Access-Control-Allow-Origin "*"
-</FilesMatch>
-
 # Don't show directory listings for URLs which map to a directory.
 Options -Indexes
 
@@ -143,6 +138,11 @@ DirectoryIndex index.php index.html index.htm
       Header set Content-Encoding gzip
       # Force proxies to cache gzipped & non-gzipped css/js files separately.
       Header append Vary Accept-Encoding
+    </FilesMatch>
+
+    # Font mime fix.
+    <FilesMatch ".(eot|ttf|otf|woff)">
+     Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
   </IfModule>
 </IfModule>
