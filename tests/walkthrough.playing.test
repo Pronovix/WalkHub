@@ -30,6 +30,7 @@ class WalkthroughPlaying extends PxSeleniumTestCase {
     $this->assertEquals($title, $this->getText("id=page-title"));
 
     $this->click("link=Start walkthrough");
+    $this->waitForElementPresent("//button[@type='button']", "30000");
     $this->click("//button[@type='button']");
 
     $this->waitForElementPresent("css=div.joyride-content-wrapper", "30000");
