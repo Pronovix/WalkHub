@@ -36,13 +36,6 @@ function walkhub_collections_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:walkthrough_collection:create step content'
-  $permissions['node:walkthrough_collection:create step content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:walkthrough_collection:create walkthrough content'
   $permissions['node:walkthrough_collection:create walkthrough content'] = array(
     'roles' => array(
@@ -62,11 +55,6 @@ function walkhub_collections_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:walkthrough_collection:delete any step content'
-  $permissions['node:walkthrough_collection:delete any step content'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:walkthrough_collection:delete any walkthrough content'
   $permissions['node:walkthrough_collection:delete any walkthrough content'] = array(
     'roles' => array(),
@@ -80,13 +68,6 @@ function walkhub_collections_og_features_default_permissions() {
   // Exported og permission: 'node:walkthrough_collection:delete own branding content'
   $permissions['node:walkthrough_collection:delete own branding content'] = array(
     'roles' => array(),
-  );
-
-  // Exported og permission: 'node:walkthrough_collection:delete own step content'
-  $permissions['node:walkthrough_collection:delete own step content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
   );
 
   // Exported og permission: 'node:walkthrough_collection:delete own walkthrough content'
@@ -146,13 +127,6 @@ function walkhub_collections_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:walkthrough_collection:update any step content'
-  $permissions['node:walkthrough_collection:update any step content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:walkthrough_collection:update any walkthrough content'
   $permissions['node:walkthrough_collection:update any walkthrough content'] = array(
     'roles' => array(
@@ -177,13 +151,6 @@ function walkhub_collections_og_features_default_permissions() {
   // Exported og permission: 'node:walkthrough_collection:update own branding content'
   $permissions['node:walkthrough_collection:update own branding content'] = array(
     'roles' => array(),
-  );
-
-  // Exported og permission: 'node:walkthrough_collection:update own step content'
-  $permissions['node:walkthrough_collection:update own step content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
   );
 
   // Exported og permission: 'node:walkthrough_collection:update own walkthrough content'
@@ -226,13 +193,6 @@ function walkhub_collections_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:walkthrough_public_collection:create step content'
-  $permissions['node:walkthrough_public_collection:create step content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:walkthrough_public_collection:create walkthrough content'
   $permissions['node:walkthrough_public_collection:create walkthrough content'] = array(
     'roles' => array(
@@ -252,11 +212,6 @@ function walkhub_collections_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:walkthrough_public_collection:delete any step content'
-  $permissions['node:walkthrough_public_collection:delete any step content'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:walkthrough_public_collection:delete any walkthrough content'
   $permissions['node:walkthrough_public_collection:delete any walkthrough content'] = array(
     'roles' => array(),
@@ -270,13 +225,6 @@ function walkhub_collections_og_features_default_permissions() {
   // Exported og permission: 'node:walkthrough_public_collection:delete own branding content'
   $permissions['node:walkthrough_public_collection:delete own branding content'] = array(
     'roles' => array(),
-  );
-
-  // Exported og permission: 'node:walkthrough_public_collection:delete own step content'
-  $permissions['node:walkthrough_public_collection:delete own step content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
   );
 
   // Exported og permission: 'node:walkthrough_public_collection:delete own walkthrough content'
@@ -338,13 +286,6 @@ function walkhub_collections_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:walkthrough_public_collection:update any step content'
-  $permissions['node:walkthrough_public_collection:update any step content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:walkthrough_public_collection:update any walkthrough content'
   $permissions['node:walkthrough_public_collection:update any walkthrough content'] = array(
     'roles' => array(
@@ -369,13 +310,6 @@ function walkhub_collections_og_features_default_permissions() {
   // Exported og permission: 'node:walkthrough_public_collection:update own branding content'
   $permissions['node:walkthrough_public_collection:update own branding content'] = array(
     'roles' => array(),
-  );
-
-  // Exported og permission: 'node:walkthrough_public_collection:update own step content'
-  $permissions['node:walkthrough_public_collection:update own step content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
   );
 
   // Exported og permission: 'node:walkthrough_public_collection:update own walkthrough content'
