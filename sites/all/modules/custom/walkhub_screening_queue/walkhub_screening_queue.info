@@ -1,0 +1,6 @@
+name = Walkhub Screening Queue
+description = Back-end logic implementation for the screening queue feature.
+core = 7.x
+package = Walkthrough
+
+dependencies[] = walkthrough_screening

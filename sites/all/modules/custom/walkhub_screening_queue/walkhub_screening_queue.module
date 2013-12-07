@@ -1,0 +1,5 @@
+<?php
+/**
+ * Back-end logic implementation for the screening queue feature.
+ */
+
