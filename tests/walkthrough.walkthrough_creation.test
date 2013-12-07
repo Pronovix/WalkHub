@@ -17,5 +17,37 @@ class WalkthroughCreation extends PxSeleniumTestCase {
     $this->waitForPageToLoad("30000");
     $this->assertEquals("Test empty walkthrough", $this->getText("id=page-title"));
   }
+
+  /**
+   * Test walkthrough prerequisites.
+   */
+  public function testWalkthroughPrerequisites() {
+    $this->adminLogin();
+
+    // Create an empty walkthrough.
+    $this->testEmptyWalkthroughCreation();
+
+    $title = $this->randomString();
+    // Explode the newly created node's url, to get the node nid.
+    $exploded_url = explode('/', $this->getRelativeUrl());
+    if (!empty($exploded_url[2]) && is_numeric($exploded_url[2])) {
+      $nid = $exploded_url[2];
+      // Create a walkthrough
+      $this->open("/node/add/walkthrough");
+      $this->type("id=edit-title", $title);
+
+      // Set the prerequisite field to point at the previously created walkthrough.
+      $this->type("id=edit-field-prerequisites-und-0-target-id", "Test empty Walkthrough ({$nid})");
+      $this->click("id=edit-submit");
+      $this->waitForPageToLoad("30000");
+
+      $this->assertEquals($title, $this->getText("id=page-title"));
+
+      $this->click("link=Start walkthrough");
+      sleep(2);
+
+      $this->verifyTextPresent("Test empty walkthrough");
+    }
+  }
 }
 

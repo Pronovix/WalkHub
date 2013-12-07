@@ -1,12 +1,14 @@
 name = Walkthrough
 description = Walkthrough walkhub
 version = VERSION
+distribution_name = Walkhub
 core = 7.x
 
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
 dependencies[] = block
 dependencies[] = captcha
+dependencies[] = clone
 dependencies[] = color_field
 dependencies[] = ctools
 dependencies[] = diff
@@ -45,7 +47,6 @@ dependencies[] = system
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = token
-dependencies[] = update
 dependencies[] = user
 dependencies[] = uuid
 dependencies[] = views

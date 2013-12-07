@@ -12,7 +12,7 @@
 /**
  * Implements hook_exit().
  *
- * Reverts walkthrough features on exit.
+ * Reverts walkthrough overridden features on exit.
  */
 function walkthrough_exit() {
   // Exit if content is already imported.
@@ -35,7 +35,7 @@ function walkthrough_exit() {
   if ($site_installed) {
     walkthrough_rebuild_features();
     variable_set('walkthrough_features_reverted', TRUE);
-    watchdog('walkthrough', t('Reverted all wallkthrough features.'), array(), WATCHDOG_INFO);
+    watchdog('walkthrough', t('Reverted all walkthrough features.'), array(), WATCHDOG_INFO);
   }
 }
 
@@ -46,25 +46,23 @@ function walkthrough_exit() {
  * Features sometimes stuck in overriden phase after installing.
  */
 function walkthrough_rebuild_features() {
-  module_load_include('inc', 'features', 'features.export');
-  module_load_include('install', 'walkthrough');
-  features_include();
+  module_load_include('install', 'walkhub');
 
-  $features_to_revert = _walkthrough_get_walkthrough_features();
-
-  foreach ($features_to_revert as $module) {
-    if (($feature = feature_load($module, TRUE)) && module_exists($module)) {
-      $components = array();
-      // Forcefully revert all components of a feature.
-      foreach (array_keys($feature->info['features']) as $component) {
-        if (features_hook($component, 'features_revert')) {
-          $components[] = $component;
-        }
-      }
-    }
-    foreach ($components as $component) {
-      features_revert(array($module => array($component)));
-    }
-  }
+  $features_to_revert = _walkthrough_get_overridden_features();
+  walkhub_features_revert($features_to_revert);
 }
 
+/**
+ * Get features which stuck in overridden mode after installing.
+ *
+ * @return array
+ *   List of features.
+ */
+function _walkthrough_get_overridden_features() {
+  return array(
+    'walkhub',
+    'walkhub_branding',
+    'walkthrough_global',
+    'walkthrough_permissions',
+  );
+}

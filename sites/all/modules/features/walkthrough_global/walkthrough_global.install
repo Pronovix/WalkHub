@@ -308,4 +308,20 @@ function walkthrough_global_update_7018(&$sandbox) {
  */
 function walkthrough_global_update_7019() {
   walkhub_features_revert(array('walkthrough_screening'));
+  return t('Walkthrough Screening feature is reverted.');
+}
+
+/**
+ * Change the walkthrough content type prerequisite field label.
+ */
+function walkthrough_global_update_7020() {
+  walkhub_features_revert(array('walkhub'));
+  return t('Walkhub feature has been reverted.');
+}
+
+/**
+ * Enable the node clone module.
+ */
+function walkthrough_global_update_7021() {
+  module_enable(array('clone'));
 }

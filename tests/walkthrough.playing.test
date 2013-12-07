@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ * Test Walkthrough playing processes.
+ */
+
+require_once 'pronovix-selenium-testcase/px_selenium_testcase.inc';
+
+class WalkthroughPlaying extends PxSeleniumTestCase {
+
+  /**
+   * Tests if a simple walkthrough on pronovix.com starts (via the proxy).
+   */
+  public function testWalkthroughPlaying() {
+    $title = $this->randomString();
+    $this->adminLogin();
+
+    $this->click("link=Import Walkthrough");
+    $this->waitForPageToLoad("30000");
+
+    $this->type("id=edit-selenium-code", file_get_contents("walkthroughs/pronovix.html"));
+    $this->click("id=edit-next");
+    $this->waitForPageToLoad("30000");
+
+    $this->type("id=edit-title", $title);
+    $this->type("id=edit-body", $this->randomString());
+    $this->click("id=edit-save");
+    $this->waitForPageToLoad("30000");
+
+    $this->assertEquals($title, $this->getText("id=page-title"));
+
+    $this->click("link=Start walkthrough");
+    $this->waitForElementPresent("//button[@type='button']", "30000");
+    $this->click("//button[@type='button']");
+
+    $this->waitForElementPresent("css=div.joyride-content-wrapper", "30000");
+  }
+
+}
+
