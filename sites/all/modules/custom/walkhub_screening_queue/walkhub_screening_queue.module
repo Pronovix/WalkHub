@@ -3,3 +3,29 @@
  * Back-end logic implementation for the screening queue feature.
  */
 
+/**
+ * Mark for screening flag's machine name.
+ */
+define('MARK_FOR_SCREENING_FLAG_NAME', 'mark_for_screening');
+
+
+/**
+ * Implements hook_flag_flag().
+ */
+function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flagging) {
+  if ($flagging->flag_name == "mark_for_screening") {
+    global $user;
+    $flagging->field_marked_by[LANGUAGE_NONE][0]['target_id'] = $user->uid;
+    field_attach_update('flagging', $flagging);
+  }
+}
+
+/**
+ * Implements hook_flag_unflag().
+ */
+function walkhub_screening_queue_flag_unflag($flag, $entity_id, $account, $flagging) {
+  if ($flagging->flag_name == "mark_for_screening") {
+    unset($flagging->field_marked_by);
+    field_attach_update('flagging', $flagging);
+  }
+}
