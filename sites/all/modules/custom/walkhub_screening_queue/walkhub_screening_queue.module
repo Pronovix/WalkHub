@@ -13,7 +13,7 @@ define('MARK_FOR_SCREENING_FLAG_NAME', 'mark_for_screening');
  * Implements hook_flag_flag().
  */
 function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flagging) {
-  if ($flagging->flag_name == "mark_for_screening") {
+  if ($flagging->flag_name == MARK_FOR_SCREENING_FLAG_NAME) {
     global $user;
     $flagging->field_marked_by[LANGUAGE_NONE][0]['target_id'] = $user->uid;
     field_attach_update('flagging', $flagging);
@@ -24,8 +24,43 @@ function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flaggin
  * Implements hook_flag_unflag().
  */
 function walkhub_screening_queue_flag_unflag($flag, $entity_id, $account, $flagging) {
-  if ($flagging->flag_name == "mark_for_screening") {
+  if ($flagging->flag_name == MARK_FOR_SCREENING_FLAG_NAME) {
     unset($flagging->field_marked_by);
     field_attach_update('flagging', $flagging);
   }
+}
+
+/**
+ * Implements hook_services_resources().
+ */
+function walkhub_screening_queue_services_resources() {
+  $resources = array();
+
+  $resources['walkhub-walkthrough-screening-queue'] = array(
+    'index' => array(
+      'callback' => '_walkhub_screening_queue_get_queue',
+      'file' => array(
+        'type' => 'inc',
+        'module' => 'walkhub_screening_queue',
+        'name' => 'walkhub_screening_queue.services'
+      ),
+      'access arguments' => array('access content'),
+      'args' => array(),
+    ),
+  );
+
+  $resources['walkhub-walkthrough-set-screening-queue'] = array(
+    'index' => array(
+      'callback' => 'walkhub_walkthrough_set_screening_queue_get_queue',
+      'file' => array(
+        'type' => 'inc',
+        'module' => 'walkhub_screening_queue',
+        'name' => 'walkhub_screening_queue.services'
+      ),
+      'access arguments' => array('access content'),
+      'args' => array(),
+    ),
+  );
+
+  return $resources;
 }
