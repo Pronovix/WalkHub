@@ -46,7 +46,7 @@ function walkthrough_screening_flag_default_flags() {
     ),
     'show_as_field' => 0,
     'show_on_form' => 0,
-    'access_author' => 'own',
+    'access_author' => '',
     'show_contextual_link' => FALSE,
     'i18n' => 0,
     'module' => 'walkthrough_screening',
