@@ -53,6 +53,7 @@ dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui
 dependencies[] = walkhub_client
+dependencies[] = walkhub_screening_queue
 dependencies[] = walkthrough
 dependencies[] = walkthrough_slideshow
 
