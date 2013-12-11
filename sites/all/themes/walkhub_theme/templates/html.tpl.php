@@ -54,6 +54,7 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script src="<?php print $walkhub_theme_path; ?>/scripts/vendor/respond.min.js"></script>
   <![endif]-->
+  <?php print $scripts; ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div class="skip-link">
@@ -61,7 +62,6 @@
   </div>
   <?php print $page_top; ?>
   <?php print $page; ?>
-  <?php print $scripts; ?>
   <?php print $page_bottom; ?>
   <?php print _zurb_foundation_add_reveals(); ?>
   <script>
