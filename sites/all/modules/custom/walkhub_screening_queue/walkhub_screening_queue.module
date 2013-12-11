@@ -4,10 +4,6 @@
  */
 
 /**
- * Mark for screening flag's machine name.
- */
-define('MARK_FOR_SCREENING_FLAG_NAME', 'mark_for_screening');
-/**
  * Mark for screening flag entity id (fid).
  */
 define('MARK_FOR_SCREENING_FLAG_ID', 2);

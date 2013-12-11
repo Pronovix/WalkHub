@@ -9,7 +9,7 @@
  * The walkhub-walkthrough-screening-queue service resource callback function.
  *
  * @return array
- *  An array filled wit walkthroughs or walkthrough_set uuid that has marked for screening.
+ *  An array of nodes that were marked for screening.
  */
 function _walkhub_screening_queue_get_queue() {
   $query = db_select('node', 'n');
