@@ -326,3 +326,12 @@ function walkthrough_global_update_7020() {
 function walkthrough_global_update_7021() {
   module_enable(array('clone'));
 }
+
+/**
+ * Remove jQuery CDN setting.
+ */
+function walkthrough_global_update_7022() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
