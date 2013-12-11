@@ -49,18 +49,5 @@ function walkhub_screening_queue_services_resources() {
     ),
   );
 
-  $resources['walkhub-walkthrough-set-screening-queue'] = array(
-    'index' => array(
-      'callback' => 'walkhub_walkthrough_set_screening_queue_get_queue',
-      'file' => array(
-        'type' => 'inc',
-        'module' => 'walkhub_screening_queue',
-        'name' => 'walkhub_screening_queue.services'
-      ),
-      'access arguments' => array('access content'),
-      'args' => array(),
-    ),
-  );
-
   return $resources;
 }
