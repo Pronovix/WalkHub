@@ -6,12 +6,6 @@
 
 
 /**
- * Mark for screening flag entity id (fid).
- */
-define('MARK_FOR_SCREENING_FID', 2);
-
-
-/**
  * The walkhub-walkthrough-screening-queue service resource callback function.
  *
  * @return array

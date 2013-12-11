@@ -7,13 +7,51 @@
  * Mark for screening flag's machine name.
  */
 define('MARK_FOR_SCREENING_FLAG_NAME', 'mark_for_screening');
+/**
+ * Mark for screening flag entity id (fid).
+ */
+define('MARK_FOR_SCREENING_FLAG_ID', 2);
 
+
+/**
+ * Implements hook_permission():
+ */
+function walkhub_screening_queue_permission() {
+  return array(
+    'mark any content for screening' => array(
+      'title' => t('Mark any content for screening'),
+    ),
+    'mark own content for screening' => array(
+      'title' => t('Mark own content for screening'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_flag_access().
+ */
+function walkhub_screening_queue_flag_access($flag, $entity_id, $action, $account) {
+  if ($flag->fid == MARK_FOR_SCREENING_FLAG_ID) {
+    // Check that the current user has access to mark any content for screening.
+    if (user_access('mark any content for screening', $account)) {
+      return TRUE;
+    }
+
+    // Check that the current user has access to mark any content for screening.
+    $entity = entity_load($flag->entity_type, array($entity_id));
+    if (reset($entity)->uid == $account->uid && user_access('mark own content for screening', $account)) {
+      return TRUE;
+    }
+
+    return FALSE;
+  }
+}
 
 /**
  * Implements hook_flag_flag().
  */
 function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flagging) {
-  if ($flagging->flag_name == MARK_FOR_SCREENING_FLAG_NAME) {
+  if ($flag->fid == MARK_FOR_SCREENING_FLAG_ID) {
     global $user;
     $flagging->field_marked_by[LANGUAGE_NONE][0]['target_id'] = $user->uid;
     field_attach_update('flagging', $flagging);
@@ -24,7 +62,7 @@ function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flaggin
  * Implements hook_flag_unflag().
  */
 function walkhub_screening_queue_flag_unflag($flag, $entity_id, $account, $flagging) {
-  if ($flagging->flag_name == MARK_FOR_SCREENING_FLAG_NAME) {
+  if ($flag->fid == MARK_FOR_SCREENING_FLAG_ID) {
     unset($flagging->field_marked_by);
     field_attach_update('flagging', $flagging);
   }
