@@ -325,3 +325,10 @@ function walkthrough_global_update_7020() {
 function walkthrough_global_update_7021() {
   module_enable(array('clone'));
 }
+
+/**
+ * Enable the walkhub_screening_queue module.
+ */
+function walkthrough_global_update_7022() {
+  module_enable(array('walkhub_screening_queue'));
+}
