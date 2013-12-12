@@ -33,4 +33,3 @@ features[variable][] = menu_parent_screening
 features[variable][] = node_options_screening
 features[variable][] = node_preview_screening
 features[variable][] = node_submitted_screening
-project path = /tmp/
