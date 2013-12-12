@@ -129,7 +129,6 @@ function walkthrough_update_7001() {
 }
 
 function _walkthrough_add_additional_blocks() {
-  $bartik_theme = variable_get('theme_default', 'bartik');
   $walkhub_theme = 'walkhub_theme';
   $seven_theme = 'seven';
 
