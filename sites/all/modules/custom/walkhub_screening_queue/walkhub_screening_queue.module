@@ -3,11 +3,6 @@
  * Back-end logic implementation for the screening queue feature.
  */
 
-/**
- * Mark for screening flag entity id (fid).
- */
-define('MARK_FOR_SCREENING_FLAG_ID', 2);
-
 
 /**
  * Implements hook_permission():
@@ -27,7 +22,10 @@ function walkhub_screening_queue_permission() {
  * Implements hook_flag_access().
  */
 function walkhub_screening_queue_flag_access($flag, $entity_id, $action, $account) {
-  if ($flag->fid == MARK_FOR_SCREENING_FLAG_ID) {
+   // Load the mark for screening flag by machine name.
+  $mark_for_screening = flag_get_flag('mark_for_screening');
+
+  if (!empty($mark_for_screening) && $flag->fid == $mark_for_screening->fid) {
     // Check that the current user has access to mark any content for screening.
     if (user_access('mark any content for screening', $account)) {
       return TRUE;
@@ -47,8 +45,12 @@ function walkhub_screening_queue_flag_access($flag, $entity_id, $action, $accoun
  * Implements hook_flag_flag().
  */
 function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flagging) {
-  if ($flag->fid == MARK_FOR_SCREENING_FLAG_ID) {
+   // Load the mark for screening flag by machine name.
+  $mark_for_screening = flag_get_flag('mark_for_screening');
+
+  if (!empty($mark_for_screening) && $flag->fid == $mark_for_screening->fid) {
     global $user;
+    // Update the mark for screening flag marked by user reference field.
     $flagging->field_marked_by[LANGUAGE_NONE][0]['target_id'] = $user->uid;
     field_attach_update('flagging', $flagging);
   }
@@ -58,7 +60,11 @@ function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flaggin
  * Implements hook_flag_unflag().
  */
 function walkhub_screening_queue_flag_unflag($flag, $entity_id, $account, $flagging) {
-  if ($flag->fid == MARK_FOR_SCREENING_FLAG_ID) {
+   // Load the mark for screening flag by machine name.
+  $mark_for_screening = flag_get_flag('mark_for_screening');
+
+  if (!empty($mark_for_screening) && $flag->fid == $mark_for_screening->fid) {
+    // Unset the mark for screening flag marked by user reference field.
     unset($flagging->field_marked_by);
     field_attach_update('flagging', $flagging);
   }
