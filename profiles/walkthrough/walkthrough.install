@@ -132,7 +132,7 @@ function walkthrough_enable_theme() {
 /**
  * Disables the update module
  */
-function walkthrough_disable_update_module () {
+function walkthrough_disable_update_module() {
   if (module_exists('update')) {
     module_disable(array('update'));
   }
@@ -286,9 +286,11 @@ function _walkthrough_add_additional_blocks() {
 
   foreach ($values as $record) {
     $merge_query
-      ->key((array('module' => $record['module'],
-        'delta' =>  $record['delta'],
-        'theme' =>  $record['theme'])))
+      ->key(array(
+        'module' => $record['module'],
+        'delta' => $record['delta'],
+        'theme' => $record['theme'],
+      ))
       ->fields($record)
       ->execute();
   }

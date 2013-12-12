@@ -65,7 +65,9 @@ function _walkthrough_get_overridden_features() {
     'walkthrough_permissions',
   );
 }
-
+/**
+ * Hides update form from site install
+ */
 function walkthrough_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id === 'install_configure_form') {
     $form['update_notifications']['#access'] = FALSE;
