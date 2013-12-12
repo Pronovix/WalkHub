@@ -326,7 +326,7 @@ function walkthrough_global_update_7021() {
   module_enable(array('clone'));
 }
 
-  /**
+/**
  * Remove jQuery CDN setting.
  */
 function walkthrough_global_update_7022() {
