@@ -14,17 +14,6 @@
 function walkthrough_install() {
   _walkthrough_add_additional_blocks();
   _walkthrough_add_additional_blocks_and_referencing_records();
-
-  // Allow visitor account creation, but with administrative approval.
-  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
-
-  // Enable default permissions for system roles.
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
-
-  // Set variables for the walkhub client.
-  variable_set('walkhub_client_base_url', 'http://resources.walkhub.net');
-  variable_set('walkhub_hub_origin', 'http://walkub.net');
 }
 
 /**
