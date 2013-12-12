@@ -796,9 +796,9 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'export walkthrough to selenium'.
-  $permissions['export walkthrough to selenium'] = array(
-    'name' => 'export walkthrough to selenium',
+  // Exported permission: 'export walkthrough'.
+  $permissions['export walkthrough'] = array(
+    'name' => 'export walkthrough',
     'roles' => array(),
     'module' => 'walkhub',
   );
