@@ -12,97 +12,8 @@
  * @see system_install()
  */
 function walkthrough_install() {
-  // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'bartik');
-  $values = array(
-    array(
-      'module' => 'system',
-      'delta' => 'main',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'content',
-      'pages' => '',
-      'title' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'user',
-      'delta' => 'login',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'sidebar_first',
-      'pages' => '<front>',
-      'title' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'system',
-      'delta' => 'navigation',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'sidebar_first',
-      'pages' => '<front>',
-      'title' => '<none>',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'system',
-      'delta' => 'management',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 1,
-      'region' => 'sidebar_first',
-      'pages' => '<front>',
-      'title' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'system',
-      'delta' => 'help',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'help',
-      'pages' => '',
-      'title' => '',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'system',
-      'delta' => 'user-menu',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'sidebar_first',
-      'custom' => 0,
-      'visibility' => 0,
-      'pages' => '<front>',
-      'title' => '<none>',
-      'cache' => -1,
-    ),
-  );
-  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'title', 'cache'));
-  foreach ($values as $record) {
-    $query->values($record);
-  }
-  $query->execute();
-
   _walkthrough_add_additional_blocks();
   _walkthrough_add_additional_blocks_and_referencing_records();
-
-  // Allow visitor account creation, but with administrative approval.
-  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
-
-  // Enable default permissions for system roles.
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
-
-  // Set variables for the walkhub client.
-  variable_set('walkhub_client_base_url', 'http://resources.walkhub.net');
-  variable_set('walkhub_hub_origin', 'http://walkub.net');
 }
 
 /**
@@ -133,6 +44,14 @@ function walkthrough_install_tasks() {
     'type' => 'normal',
     'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
     'function' => 'walkthrough_add_menu_items',
+  );
+
+  $tasks['disable_update_module'] = array(
+    'display_name' => st('Disable update module'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_disable_update_module',
   );
 
   return $tasks;
@@ -211,6 +130,15 @@ function walkthrough_enable_theme() {
 }
 
 /**
+ * Disables the update module
+ */
+function walkthrough_disable_update_module() {
+  if (module_exists('update')) {
+    module_disable(array('update'));
+  }
+}
+
+/**
  * Enable Google Analytics module.
  */
 function walkthrough_update_7001() {
@@ -218,7 +146,6 @@ function walkthrough_update_7001() {
 }
 
 function _walkthrough_add_additional_blocks() {
-  $bartik_theme = variable_get('theme_default', 'bartik');
   $walkhub_theme = 'walkhub_theme';
   $seven_theme = 'seven';
 
@@ -359,9 +286,11 @@ function _walkthrough_add_additional_blocks() {
 
   foreach ($values as $record) {
     $merge_query
-      ->key((array('module' => $record['module'],
-                   'delta' =>  $record['delta'],
-                   'theme' =>  $record['theme'])))
+      ->key(array(
+        'module' => $record['module'],
+        'delta' => $record['delta'],
+        'theme' => $record['theme'],
+      ))
       ->fields($record)
       ->execute();
   }
