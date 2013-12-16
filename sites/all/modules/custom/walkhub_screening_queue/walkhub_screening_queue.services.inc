@@ -28,3 +28,54 @@ function _walkhub_screening_queue_get_queue() {
 
   return $query->execute()->fetchAll();
 }
+
+/**
+ * Create screening node.
+ *
+ * @param string $title
+ * @param string $lang
+ *
+ * @return
+ *  The newly created screening node uuid.
+ */
+function _walkhub_screening_queue_create_screening($title, $lang = LANGUAGE_NONE) {
+  $node = new stdClass();
+  $node->title = $title;
+  $node->type = 'screening';
+  $node->language = $lang;
+  node_object_prepare($node);
+
+  node_save($node);
+
+  return $node->uuid;
+}
+
+/**
+ *
+ */
+function _walkhub_screening_queue_update_screening($uuid, $time, $junit, $screenshots) {
+  $screening = entity_load('node', FALSE, array('uuid' => $uuid));
+  if (!empty($screening) && $screening->type == "screening") {
+    $lang = $screening->language;
+
+    if (!empty($time)) {
+      $screening->field_screening_time[$lang][0]['value'] = $time;
+    }
+
+    if (!empty($junit)) {
+      $screening->field_sreening_junit[$lang][0]['value'] = $time;
+    }
+
+    if (!empty($screenshots)) {
+
+    }
+  }
+}
+
+/**
+ * 
+ */
+function _walkhub_screening_queue_resource_access($op = 'view', $args = array()) {
+  module_load_include('inc', 'walkhub');
+  return _walkhub_node_resource_access('screening', $op, $args);
+}

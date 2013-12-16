@@ -4,4 +4,5 @@ core = 7.x
 package = Walkthrough
 
 dependencies[] = flag
+dependencies[] = services
 dependencies[] = walkthrough_screening
