@@ -42,6 +42,7 @@ dependencies[] = rdf
 dependencies[] = recaptcha
 dependencies[] = rest_server
 dependencies[] = services
+dependencies[] = services_oauth
 dependencies[] = services_views
 dependencies[] = strongarm
 dependencies[] = syslog
@@ -58,4 +59,3 @@ dependencies[] = walkhub_client
 dependencies[] = walkhub_screening_queue
 dependencies[] = walkthrough
 dependencies[] = walkthrough_slideshow
-
