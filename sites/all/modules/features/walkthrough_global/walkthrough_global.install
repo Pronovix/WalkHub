@@ -357,3 +357,9 @@ function walkthrough_global_update_7024() {
   return t('Enabled OAuth modules.');
 }
 
+function walkthrough_global_update_7025() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
+

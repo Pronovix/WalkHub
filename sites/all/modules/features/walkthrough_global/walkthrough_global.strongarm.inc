@@ -134,7 +134,6 @@ function walkthrough_global_strongarm() {
     'walkthrough_public_collection' => 'walkthrough_public_collection',
     'screening' => 'screening',
     'step' => 'step',
-    'walkthrough_set' => 'walkthrough_set',
     'walkthrough' => 0,
   );
   $export['clone_omitted'] = $strongarm;
