@@ -82,6 +82,40 @@ function walkthrough_global_services_resources() {
 }
 
 /**
+ * Implements hook_permission().
+ */
+function walkthrough_global_permission() {
+  return array(
+    'clone accessible content' => array(
+      'title' => t('Clone content you can access'),
+    ),
+  );
+}
+/**
+ * Implements hook_access_cloning().
+ */
+function walkthrough_global_access_cloning($node) {
+  global $user;
+  $access = FALSE;
+
+  if (_clone_is_permitted($node->type) && node_access('view', $node) && node_access('create', $node->type)) {
+    //Clone accessible content
+    $access = (user_access('clone accessible content') && node_access('edit', $node->type));
+  }
+  else {
+    $access = FALSE;
+  }
+
+  drupal_alter("clone_access", $access, $node);
+  return $access;
+}
+
+function _clone_is_permitted($type) {
+  $omitted = variable_get('clone_omitted', array());
+  return empty($omitted[$type]);
+}
+
+/**
  * Access callback to prevent the robots creating new account using this endpoint.
  */
 function _walkthrough_global_resource_registration_access($username, $mail, $password, $token) {
