@@ -342,3 +342,24 @@ function walkthrough_global_update_7023() {
   module_enable(array('walkhub_screening_queue'));
   return t('Walkhub screening queue module has been enabled.');
 }
+
+/**
+ * Enable OAuth modules.
+ */
+function walkthrough_global_update_7024() {
+  $modules = array(
+    'oauth_common',
+    'oauth_common_providerui',
+    'services_oauth'
+  );
+
+  module_enable($modules);
+  return t('Enabled OAuth modules.');
+}
+
+function walkthrough_global_update_7025() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
+
