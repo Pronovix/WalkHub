@@ -52,28 +52,48 @@ function _walkhub_screening_queue_create_screening($title, $lang = LANGUAGE_NONE
 
 /**
  *
+ *
+ * @param $uuid
+ * @param $time
+ * @param $junit
+ * @param $screenshots
  */
 function _walkhub_screening_queue_update_screening($uuid, $time, $junit, $screenshots) {
   $screening = entity_load('node', FALSE, array('uuid' => $uuid));
-  if (!empty($screening) && $screening->type == "screening") {
-    $lang = $screening->language;
+  if (!empty($screening)) {
+    $screening = reset($screening);
 
-    if (!empty($time)) {
-      $screening->field_screening_time[$lang][0]['value'] = $time;
-    }
+    if ($screening->type == "screening") {
+      $lang = $screening->language;
 
-    if (!empty($junit)) {
-      $screening->field_sreening_junit[$lang][0]['value'] = $time;
-    }
+      $field_instance = field_info_instance('node', 'field_screening_time', 'screening');
+      if (!empty($time) && !empty($field_instance)) {
+        $screening->field_screening_time[$lang][0]['value'] = $time;
+      }
 
-    if (!empty($screenshots)) {
+      $field_instance = field_info_instance('node', 'field_screening_junit', 'screening');
+      if (!empty($junit) && !empty($field_instance)) {
+        $screening->field_screening_junit[$lang][0]['value'] = $junit;
+      }
 
+      $field_instance = field_info_instance('field_collection_item', 'field_fc_screenshots_screenshot',
+        'field_screening_fc_screenshots');
+
+      module_load_include('inc', 'services', 'resources/node_resources');
+      list($files, $file_objs) = _node_resource_file_save_upload('screening', 'field_fc_screenshots_screenshot');
+      if (!empty($screenshots) && is_array($screenshots) && !empty($field_instance)) {
+        foreach ($file_objs as $file) {
+
+        }
+      }
+
+      entity_save('node', $screening);
     }
   }
 }
 
 /**
- * 
+ *
  */
 function _walkhub_screening_queue_resource_access($op = 'view', $args = array()) {
   module_load_include('inc', 'walkhub');

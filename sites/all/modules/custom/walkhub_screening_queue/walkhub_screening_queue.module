@@ -114,7 +114,7 @@ function walkhub_screening_queue_services_resources() {
             'name' => 'language',
             'optional' => TRUE,
             'source' => 'data',
-            'description' => 'The node title',
+            'description' => 'The node language',
             'type' => 'string',
             'default value' => LANGUAGE_NONE,
           ),
@@ -169,7 +169,7 @@ function walkhub_screening_queue_services_resources() {
             'description' => 'The last test result.',
             'default value' => array(),
             'source' => array(
-              'data' => 'junit',
+              'data' => 'screenshots',
             ),
           ),
         ),
