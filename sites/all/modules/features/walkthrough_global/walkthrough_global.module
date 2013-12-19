@@ -82,6 +82,35 @@ function walkthrough_global_services_resources() {
 }
 
 /**
+ * Implements hook_permission().
+ */
+function walkthrough_global_permission() {
+  return array(
+    'clone accessible content' => array(
+      'title' => t('Clone content you can access'),
+    ),
+  );
+}
+/**
+ * Implements hook_access_cloning().
+ */
+function walkthrough_global_clone_access_alter(&$access, &$node) {
+  global $user;
+  $access = FALSE;
+
+  //Check general requirements for a node if it's cloneable
+  if (_clone_is_permitted($node->type) && node_access('view', $node) && node_access('create', $node->type)) {
+    //Check for 'clone accessible content' specific requirements
+    $access = (user_access('clone accessible content') && node_access('update', $node));
+  }
+}
+
+function _clone_is_permitted($type) {
+  $omitted = variable_get('clone_omitted', array());
+  return empty($omitted[$type]);
+}
+
+/**
  * Access callback to prevent the robots creating new account using this endpoint.
  */
 function _walkthrough_global_resource_registration_access($username, $mail, $password, $token) {
