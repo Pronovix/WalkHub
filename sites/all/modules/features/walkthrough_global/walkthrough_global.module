@@ -94,20 +94,15 @@ function walkthrough_global_permission() {
 /**
  * Implements hook_access_cloning().
  */
-function walkthrough_global_access_cloning($node) {
+function walkthrough_global_clone_access_alter(&$access, &$node) {
   global $user;
   $access = FALSE;
 
+  //Check general requirements for a node if it's cloneable
   if (_clone_is_permitted($node->type) && node_access('view', $node) && node_access('create', $node->type)) {
-    //Clone accessible content
-    $access = (user_access('clone accessible content') && node_access('edit', $node->type));
+    //Check for 'clone accessible content' specific requirements
+    $access = (user_access('clone accessible content') && node_access('update', $node));
   }
-  else {
-    $access = FALSE;
-  }
-
-  drupal_alter("clone_access", $access, $node);
-  return $access;
 }
 
 function _clone_is_permitted($type) {
