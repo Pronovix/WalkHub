@@ -1,11 +1,12 @@
 <?php
 /**
+ * @file
  * Back-end logic implementation for the screening queue feature.
  */
 
 
 /**
- * Implements hook_permission():
+ * Implements hook_permission().
  */
 function walkhub_screening_queue_permission() {
   return array(
@@ -22,7 +23,7 @@ function walkhub_screening_queue_permission() {
  * Implements hook_flag_access().
  */
 function walkhub_screening_queue_flag_access($flag, $entity_id, $action, $account) {
-   // Load the mark for screening flag by machine name.
+  // Load the mark for screening flag by machine name.
   $mark_for_screening = flag_get_flag('mark_for_screening');
 
   if (!empty($mark_for_screening) && $flag->fid == $mark_for_screening->fid) {
@@ -36,16 +37,16 @@ function walkhub_screening_queue_flag_access($flag, $entity_id, $action, $accoun
     if (reset($entity)->uid == $account->uid && user_access('mark own content for screening', $account)) {
       return TRUE;
     }
-
-    return FALSE;
   }
+
+  return FALSE;
 }
 
 /**
  * Implements hook_flag_flag().
  */
 function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flagging) {
-   // Load the mark for screening flag by machine name.
+  // Load the mark for screening flag by machine name.
   $mark_for_screening = flag_get_flag('mark_for_screening');
 
   if (!empty($mark_for_screening) && $flag->fid == $mark_for_screening->fid) {
@@ -60,7 +61,7 @@ function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flaggin
  * Implements hook_flag_unflag().
  */
 function walkhub_screening_queue_flag_unflag($flag, $entity_id, $account, $flagging) {
-   // Load the mark for screening flag by machine name.
+  // Load the mark for screening flag by machine name.
   $mark_for_screening = flag_get_flag('mark_for_screening');
 
   if (!empty($mark_for_screening) && $flag->fid == $mark_for_screening->fid) {
@@ -78,7 +79,7 @@ function walkhub_screening_queue_services_resources() {
   $file_path = array(
     'type' => 'inc',
     'module' => 'walkhub_screening_queue',
-    'name' => 'walkhub_screening_queue.services'
+    'name' => 'walkhub_screening_queue.services',
   );
 
   $access_callback_path = array(

@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- *  Resource implementations.
+ * Screening queue resource implementations.
  */
 
 
@@ -35,8 +35,8 @@ function walkhub_screening_queue_get_queue() {
  * @param string $title
  * @param string $lang
  *
- * @return
- *  The newly created screening node uuid.
+ * @return string
+ *   The newly created screening node uuid.
  */
 function walkhub_screening_queue_create_screening($title, $lang = LANGUAGE_NONE) {
   $node = new stdClass();
@@ -180,8 +180,10 @@ function _walkhub_screening_queue_resource_access($op = 'view', $args = array())
 /**
  * Saves an image from base64 data.
  *
- * @param $base64_data string
- * @param $filename string
+ * @param string $base64_data
+ *   Base64 PNG image data.
+ * @param string $filename
+ *   Target file name.
  *
  * @return string|bool
  *   String of the filename on success, FALSE othwerwise.
