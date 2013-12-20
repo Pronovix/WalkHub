@@ -166,7 +166,7 @@ function walkhub_screening_queue_services_resources() {
             'name' => 'screenshots',
             'optional' => TRUE,
             'type' => 'array',
-            'description' => 'The last test result.',
+            'description' => 'The screenshot with a base64 encoded png files, and step references.',
             'default value' => array(),
             'source' => array(
               'data' => 'screenshots',

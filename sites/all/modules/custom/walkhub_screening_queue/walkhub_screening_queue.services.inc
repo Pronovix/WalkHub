@@ -76,15 +76,32 @@ function _walkhub_screening_queue_update_screening($uuid, $time, $junit, $screen
         $screening->field_screening_junit[$lang][0]['value'] = $junit;
       }
 
-      $field_instance = field_info_instance('field_collection_item', 'field_fc_screenshots_screenshot',
-        'field_screening_fc_screenshots');
+      foreach ($screenshots as $screenshot) {
+        // @todo get next step by default
+        $step = $screenshot['step'];
 
-      module_load_include('inc', 'services', 'resources/node_resources');
-      list($files, $file_objs) = _node_resource_file_save_upload('screening', 'field_fc_screenshots_screenshot');
-      if (!empty($screenshots) && is_array($screenshots) && !empty($field_instance)) {
-        foreach ($file_objs as $file) {
+        $file_uri = _walkhub_screening_screenshot_directory() . $screening->nid . '-' . $step . '-' . drupal_random_key() . '.png';
+        $file_path = _walkhub_screening_save_base64_image($screenshot['file'], $file_uri);
 
-        }
+        $file = new stdClass();
+        $file->filename = basename($file_path);
+        $file->filepath = $file_path;
+        $file->filemime = file_get_mimetype($file_path);
+        $file->filesize = filesize($file_path);
+        $file->uri = $file_uri;
+
+        $file->uid = $screening->uid;
+        $file->status = FILE_STATUS_PERMANENT;
+        file_save($file);
+
+        $fc = entity_create('field_collection_item', array(
+          'field_name' => 'field_screening_fc_screenshots',
+        ));
+
+        $fc->field_fc_screenshots_step[$lang][0]['target_id'] = $step;
+        $fc->field_fc_screenshots_screenshot[$lang][0]['fid'] = $file->fid;
+        $fc->setHostEntity('node', $screening);
+        $fc->save();
       }
 
       entity_save('node', $screening);
@@ -98,4 +115,36 @@ function _walkhub_screening_queue_update_screening($uuid, $time, $junit, $screen
 function _walkhub_screening_queue_resource_access($op = 'view', $args = array()) {
   module_load_include('inc', 'walkhub');
   return _walkhub_node_resource_access('screening', $op, $args);
+}
+
+/**
+ * Saves an image from base64 data.
+ *
+ * @param $base64_data string
+ * @param $filename string
+ *
+ * @return string|bool
+ *   String of the filename on success, FALSE othwerwise.
+ */
+function _walkhub_screening_save_base64_image($base64_data, $filename) {
+  $tmpfile = drupal_tempnam(file_directory_temp(), 'wh-screening-');
+  file_put_contents($tmpfile, base64_decode($base64_data, TRUE));
+
+  $file = file_unmanaged_copy($tmpfile, $filename);
+  unlink($tmpfile);
+
+  return $file;
+}
+
+/**
+ * Prepares the screenshot directory.
+ *
+ * @return string
+ *   Screenshot directory.
+ */
+function _walkhub_screening_screenshot_directory() {
+  $directory = 'public://wh-screening/';
+  file_prepare_directory($directory, FILE_CREATE_DIRECTORY|FILE_MODIFY_PERMISSIONS);
+
+  return $directory;
 }
