@@ -94,8 +94,8 @@ function walkhub_screening_queue_update_screening($uuid, $time, $junit, $screens
 /**
  * Helper function to save a screenshot in a screening.
  *
- * @param array $screening
- *   Screenshot structure.
+ * @param object $screening
+ *   Walkthrough screening node.
  * @param array $screenshot
  *   Screenshot structure.
  *   [step] => (Optional) Step entity id
