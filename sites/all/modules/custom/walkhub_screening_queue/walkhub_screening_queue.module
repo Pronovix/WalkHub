@@ -89,7 +89,7 @@ function walkhub_screening_queue_services_resources() {
 
   $resources['walkhub-walkthrough-screening-queue'] = array(
     'index' => array(
-      'callback' => '_walkhub_screening_queue_get_queue',
+      'callback' => 'walkhub_screening_queue_get_queue',
       'file' => $file_path,
       'access arguments' => array('access content'),
       'args' => array(),
@@ -101,7 +101,7 @@ function walkhub_screening_queue_services_resources() {
       'create' => array(
         'help' => 'Create a screening node',
         'file' => $file_path,
-        'callback' => '_walkhub_screening_queue_create_screening',
+        'callback' => 'walkhub_screening_queue_create_screening',
         'args' => array(
           array(
             'name' => 'title',
@@ -127,7 +127,7 @@ function walkhub_screening_queue_services_resources() {
       'update' => array(
         'help' => 'Update a screening node',
         'file' => $file_path,
-        'callback' => '_walkhub_screening_queue_update_screening',
+        'callback' => 'walkhub_screening_queue_update_screening',
         'access callback' => '_walkhub_screening_queue_resource_access',
         'access arguments' => array('update'),
         'access arguments append' => TRUE,
