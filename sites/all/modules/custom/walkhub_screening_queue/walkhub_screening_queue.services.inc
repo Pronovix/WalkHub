@@ -123,13 +123,37 @@ function _walkhub_screening_queue_save_screenshot($screening, $screenshot) {
     'field_name' => 'field_screening_fc_screenshots',
   ));
 
-  // @Todo check if step is part of the walkthrough referenced.
   if ($step) {
-    $fc->field_fc_screenshots_step[$lang][0]['target_id'] = $step;
+    $walkthrough = entity_metadata_wrapper('node', $screening)->field_screening_walkthrough->value();
+    if (_walkhub_screening_queue_walkthrough_has_step($walkthrough, $step)) {
+      $fc->field_fc_screenshots_step[$lang][0]['target_id'] = $step;
+    }
   }
   $fc->field_fc_screenshots_screenshot[$lang][0]['fid'] = $file->fid;
   $fc->setHostEntity('node', $screening);
   $fc->save();
+}
+
+/**
+ * Helper function to check if a step is referenced in the walkthrough.
+ *
+ * @param object $walkthrough
+ *   Walkthrough node object.
+ * @param int $step
+ *   Step entity id.
+ *
+ * @return bool
+ *   TRUE if Walkthrough has $step as a step, FALSE otherwise.
+ */
+function _walkhub_screening_queue_walkthrough_has_step($walkthrough, $step) {
+  $walkthrough_entity = entity_metadata_wrapper('node', $walkthrough);
+  foreach ($walkthrough_entity->field_fc_steps->getIterator() as $step_wrapper) {
+    if ($step_wrapper->item_id->value() == $step) {
+      return TRUE;
+    }
+  }
+
+  return FALSE;
 }
 
 /**
@@ -147,14 +171,21 @@ function _walkhub_screening_queue_get_next_step($screening) {
   $walkthrough = entity_metadata_wrapper('node', $screening)->field_screening_walkthrough->value();
   $steps = $walkthrough->field_fc_steps[$lang];
 
+  // Get existing steps into an array.
   $steps = array_map(function($step) {
     return $step['revision_id'];
   }, $steps);
 
   if ($walkthrough) {
     $screenshots = entity_metadata_wrapper('node', $screening)->field_screening_fc_screenshots->value();
+
+    // Get steps of the screenshots into an array.
     $screenshots = array_map(function($screenshot) {
-      return $screenshot->field_fc_screenshots_step[LANGUAGE_NONE][0]['target_id'];
+      $value = NULL;
+      if (!empty($screenshot->field_fc_screenshots_step[LANGUAGE_NONE])) {
+         $value = $screenshot->field_fc_screenshots_step[language_none][0]['target_id'];
+      }
+      return $value;
     }, $screenshots);
 
     // Find the first step we don't have a screenshot of.
