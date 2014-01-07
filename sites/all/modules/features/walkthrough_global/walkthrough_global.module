@@ -92,7 +92,7 @@ function walkthrough_global_permission() {
   );
 }
 /**
- * Implements clone_access_alter().
+ * Implements hook_access_alter().
  */
 function walkthrough_global_clone_access_alter(&$access, &$node) {
   global $user;
