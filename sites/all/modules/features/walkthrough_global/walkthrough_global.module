@@ -92,7 +92,7 @@ function walkthrough_global_permission() {
   );
 }
 /**
- * Implements hook_access_cloning().
+ * Implements clone_access_alter().
  */
 function walkthrough_global_clone_access_alter(&$access, &$node) {
   global $user;
@@ -108,6 +108,40 @@ function walkthrough_global_clone_access_alter(&$access, &$node) {
 function _clone_is_permitted($type) {
   $omitted = variable_get('clone_omitted', array());
   return empty($omitted[$type]);
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function walkthrough_global_menu_alter(&$items) {
+  // Redirect field_collection view pages to parent node
+  foreach (field_info_fields() as $field) {
+    if ($field['type'] == 'field_collection')  {
+      $path = field_collection_field_get_path($field);
+      if (isset($items["{$path}/%field_collection_item"])) {
+        $items["{$path}/%field_collection_item"]['page callback'] = 'walkthrough_global_field_collection_item_page_redirect';
+      }
+    }
+  }
+}
+
+function walkthrough_global_field_collection_item_page_redirect($field_collection_item) {
+  $item_id = $field_collection_item->item_id;
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'walkthrough')
+    ->fieldCondition('field_fc_steps', 'value', $item_id)
+    ->range(0,1);
+
+
+  $result = $query->execute();
+
+  if ($result) {
+    foreach (array_keys($result['node']) as $nid) {
+      drupal_goto('node/' . $nid);
+    }
+  }
 }
 
 /**
