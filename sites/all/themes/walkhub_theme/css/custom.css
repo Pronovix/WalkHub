@@ -4374,6 +4374,9 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 345, ../sass/page/_node-walkthrough-set-edit.sass */
 .page-node-add-walkthrough-set .row.l-main #edit-field-walkthroughs-und-0-field-parameters label, .page-node-edit.node-type-walkthrough-set .row.l-main #edit-field-walkthroughs-und-0-field-parameters label { width: 100%; margin-right: 0; }
 
+/* line 351, ../sass/page/_node-walkthrough-set-edit.sass */
+.page-node-add-walkthrough-set .ajax-new-content .walkthrough-step-edit .walkthrough-step-container, .page-node-edit.node-type-walkthrough-set .ajax-new-content .walkthrough-step-edit .walkthrough-step-container { display: block !important; }
+
 /* line 3, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit #field-collection-item-form > div { text-align: center; }
 /* line 6, ../sass/page/_node-walkthrough-step-edit.sass */
