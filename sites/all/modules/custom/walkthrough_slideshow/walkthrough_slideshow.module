@@ -180,6 +180,66 @@ function walkthrough_slideshow_field_formatter_view($entity_type, $entity, $fiel
 }
 
 /**
+ * Implements hook_field_extra_fields().
+ */
+function walkthrough_slideshow_field_extra_fields() {
+  $extra_fields['node']['walkthrough'] = array(
+    'display' => array(
+      'walkthrough_screening_widget' => array(
+        'label' => t('Screening'),
+        'description' => t(''),
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  return $extra_fields;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function walkthrough_slideshow_node_view($node, $view_mode, $langcode) {
+  // Only add if the view mode is for a full view, although we
+  // could control this via the Field UI too using 'hidden'.
+  if ($node->type == 'walkthrough') {
+    $node->content['walkthrough_screening_widget'] = array(
+      '#markup' => _walkthrough_slideshow_insert_latest_screening_node_widget($node),
+    );
+  }
+}
+
+/**
+ * Provides the embed code for the matching screening node
+ */
+function _walkthrough_slideshow_insert_latest_screening_node_widget($node) {
+  $widget_embed_code = "";
+
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'screening')
+    ->fieldCondition('field_screening_walkthrough', 'target_id', $node->nid)
+    ->range(0,1);
+
+  $result_array = $query->execute();
+  $result_node = array_values($result_array['node'])[0];;
+
+  if($result_node) {
+    $widget_embed_code = '<div class="body field">
+        <iframe id="walkthrough-slideshow-iframe"
+                frameborder="0"
+                width="600"
+                height="450"
+                src="http://walkhub.net/walkthrough/slideshow/' . intval($result_node->nid) .'"
+                allowfullscreen=""> Your browser doesn\'t support iframes.
+        </iframe>
+      </div>';
+  }
+  return $widget_embed_code;
+}
+
+/**
  * Give back the raw html code of the slideshow page. It will be placed into an iframe.
  *
  * @param $node
