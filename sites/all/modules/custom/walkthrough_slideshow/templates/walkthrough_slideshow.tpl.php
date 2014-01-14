@@ -12,16 +12,16 @@
   <title><?php echo t('Walkthrough Slideshow'); ?></title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
   <link rel="stylesheet"
-        href="/<?php echo drupal_get_path('module', 'walkthrough_slideshow'); ?>/walkthrough_slideshow.css"
+        href="<?php echo $GLOBALS['base_url'] . '/' . drupal_get_path('module', 'walkthrough_slideshow'); ?>/walkthrough_slideshow.css"
         type="text/css" media="screen"/>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/<?php echo libraries_get_path('bigscreen'); ?>/bigscreen.min.js"></script>
+  <script type="text/javascript" src="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('bigscreen'); ?>/bigscreen.min.js"></script>
   <script type="text/javascript"
-          src="/<?php echo libraries_get_path('supersized'); ?>/slideshow/js/jquery.easing.min.js"></script>
+          src="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('supersized'); ?>/slideshow/js/jquery.easing.min.js"></script>
   <script type="text/javascript"
-          src="/<?php echo libraries_get_path('supersized'); ?>/slideshow/js/supersized.3.2.7.min.js"></script>
+          src="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('supersized'); ?>/slideshow/js/supersized.3.2.7.min.js"></script>
   <script type="text/javascript"
-          src="/<?php echo drupal_get_path('module', 'walkthrough_slideshow'); ?>/js/supersized.shuttered.js"></script>
+          src="<?php echo $GLOBALS['base_url'] . '/' . drupal_get_path('module', 'walkthrough_slideshow'); ?>/js/supersized.shuttered.js"></script>
   <script type="text/javascript">
     jQuery(function ($) {
       $(document).ready(function () {
