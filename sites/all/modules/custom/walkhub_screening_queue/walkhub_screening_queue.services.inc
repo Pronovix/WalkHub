@@ -33,18 +33,46 @@ function walkhub_screening_queue_get_queue() {
  * Create screening node.
  *
  * @param string $title
+ *   Node title.
  * @param string $lang
+ *   (Optional) Node language.
+ * @param string|int $referenced_walkthrough
+ *   Walkthrough node nid or uuid.
  *
  * @return string
  *   The newly created screening node uuid.
  */
-function walkhub_screening_queue_create_screening($title, $lang = LANGUAGE_NONE) {
+function walkhub_screening_queue_create_screening($title, $lang = NULL, $referenced_walkthrough = NULL) {
+  if ($lang === NULL) {
+    $lang = LANGUAGE_NONE;
+  }
+
   $node = new stdClass();
   $node->title = $title;
   $node->type = 'screening';
   $node->language = $lang;
-  node_object_prepare($node);
 
+  // Save walkthrough reference.
+  if ($referenced_walkthrough) {
+    $walkthrough = NULL;
+
+    // Try loading by node id.
+    if (is_numeric($referenced_walkthrough)) {
+      $walkthrough = node_load($referenced_walkthrough);
+    }
+
+    // Try loading by uuid.
+    if (!$walkthrough) {
+      $walkthroughs = entity_load('node', FALSE, array('uuid' => $referenced_walkthrough));
+      $walkthrough = array_pop($walkthroughs);
+    }
+
+    if ($walkthrough) {
+      $node->field_screening_walkthrough[$lang][0]['target_id'] = $walkthrough->nid;
+    }
+  }
+
+  node_object_prepare($node);
   node_save($node);
 
   return $node->uuid;
@@ -125,7 +153,7 @@ function _walkhub_screening_queue_save_screenshot($screening, $screenshot) {
 
   if ($step) {
     $walkthrough = entity_metadata_wrapper('node', $screening)->field_screening_walkthrough->value();
-    if (_walkhub_screening_queue_walkthrough_has_step($walkthrough, $step)) {
+    if ($walkthrough && _walkhub_screening_queue_walkthrough_has_step($walkthrough, $step)) {
       $fc->field_fc_screenshots_step[$lang][0]['target_id'] = $step;
     }
   }

@@ -107,17 +107,30 @@ function walkhub_screening_queue_services_resources() {
           array(
             'name' => 'title',
             'optional' => FALSE,
-            'source' => 'data',
+            'source' => array(
+              'data' => 'title',
+            ),
             'description' => 'The node title',
             'type' => 'string',
           ),
           array(
             'name' => 'language',
             'optional' => TRUE,
-            'source' => 'data',
+            'source' => array(
+              'data' => 'language',
+            ),
             'description' => 'The node language',
             'type' => 'string',
-            'default value' => LANGUAGE_NONE,
+            'default value' => NULL,
+          ),
+          array(
+            'name' => 'referenced_walkthrough',
+            'optional' => TRUE,
+            'source' => array(
+              'data' => 'referenced_walkthrough',
+            ),
+            'description' => 'Referenced walkthrough',
+            'type' => 'string',
           ),
         ),
         'access callback' => '_node_resource_access',
