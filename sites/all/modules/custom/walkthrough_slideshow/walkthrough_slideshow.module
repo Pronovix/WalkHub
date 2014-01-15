@@ -247,3 +247,35 @@ function _walkthrough_slideshow_embed($embed_code) {
   );
   return render($form);
 }
+
+/**
+ * Implements hook_field_collection_item_view().
+ */
+function walkthrough_slideshow_field_collection_item_view($field_collection_item, $view_mode, $langcode) {
+  if ($field_collection_item->field_name === 'field_fc_steps') {
+    // Get screenshot belonging to the actual step.
+    $query = new EntityFieldQuery();
+    $result = $query->entityCondition('entity_type', 'field_collection_item')
+      ->entityCondition('bundle', 'field_screening_fc_screenshots')
+      ->fieldCondition('field_fc_screenshots_step', 'target_id', $field_collection_item->item_id)
+      ->range(0, 1)
+      ->execute();
+
+    if (isset($result['field_collection_item'])) {
+      $item_id = reset(array_keys($result['field_collection_item']));
+      $screening_field = reset(entity_load('field_collection_item', array($item_id)));
+    }
+
+    if (isset($screening_field)) {
+      $image = field_get_items('field_collection_item', $screening_field, 'field_fc_screenshots_screenshot');
+      $image = reset($image);
+
+      $field_collection_item->content['screenshot'] = array(
+        '#theme' => 'image_style',
+        '#style_name' => 'thumbnail',
+        '#path' => $image['uri'],
+        '#weight' => -1,
+      );
+    }
+  }
+}
