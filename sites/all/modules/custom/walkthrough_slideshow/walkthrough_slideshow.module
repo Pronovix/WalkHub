@@ -224,7 +224,7 @@ function _walkthrough_slideshow_insert_latest_screening_node_widget($node) {
     ->range(0, 1);
 
   $result_array = $query->execute();
-  $result_node = array_values($result_array['node'])[0];
+  $result_node = reset($result_array['node']);
 
   $node = node_load($result_node->nid);
 
