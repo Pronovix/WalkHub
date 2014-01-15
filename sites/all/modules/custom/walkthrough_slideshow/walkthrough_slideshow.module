@@ -187,7 +187,7 @@ function walkthrough_slideshow_field_extra_fields() {
     'display' => array(
       'walkthrough_screening_widget' => array(
         'label' => t('Screening'),
-        'description' => t(''),
+        'description' => t('Widget of the last result walkthrough screening.'),
         'weight' => 0,
       ),
     ),
@@ -221,14 +221,14 @@ function _walkthrough_slideshow_insert_latest_screening_node_widget($node) {
     ->entityCondition('bundle', 'screening')
     ->fieldCondition('field_screening_walkthrough', 'target_id', $node->nid)
     ->propertyOrderBy('created', 'DESC')
-    ->range(0,1);
+    ->range(0, 1);
 
   $result_array = $query->execute();
-  $result_node = array_values($result_array['node'])[0];;
+  $result_node = array_values($result_array['node'])[0];
 
   $node = node_load($result_node->nid);
 
-  if($node) {
+  if ($node) {
     $source = url('walkthrough/slideshow/' . $node->nid, array('absolute' => TRUE));
     return theme('walkthrough_slideshow_iframe', array('width' => 400, 'height' => 300, 'source' => $source));
   }
@@ -256,8 +256,7 @@ function walkthrough_slideshow_generate_iframe_content($node) {
  * @param $node
  * @return array
  */
-function walkthrough_slideshow_get_iframe_content($node)
-{
+function walkthrough_slideshow_get_iframe_content($node) {
   $images = array();
   // Get the images from the field collection items.
   $screenshot_collections = field_get_items('node', $node, 'field_screening_fc_screenshots');
