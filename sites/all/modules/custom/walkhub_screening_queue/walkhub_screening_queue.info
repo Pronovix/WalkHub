@@ -3,5 +3,7 @@ description = Back-end logic implementation for the screening queue feature.
 core = 7.x
 package = Walkthrough
 
+dependencies[] = entity
 dependencies[] = flag
+dependencies[] = services
 dependencies[] = walkthrough_screening
