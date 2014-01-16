@@ -21,7 +21,7 @@ function walkthrough_slideshow_menu() {
   );
 
   $items['walkthrough/%node/%'] = array(
-    'title' => 'walkthrough step screenshot',
+    'title' => 'Walkthrough step screenshot',
     'access arguments' => array('access content'),
     'page callback' => 'walkthrough_slideshow_step_screenshot',
     'page arguments' => array(1, 2),
@@ -372,24 +372,26 @@ function walkthrough_slideshow_field_collection_item_view($field_collection_item
  * @see walkthrough_slideshow_menu().
  */
 function walkthrough_slideshow_step_screenshot($walkthrough, $step) {
-  $content = '<div class="wt-no-image">No image is found.</div>';
   $steps = field_get_items('node', $walkthrough, 'field_fc_steps');
-
   // We start the numbering from 1 instead of zero, like Drupal does, so we have to decrease the value we got.
   $item_id = $steps[$step-1]['value'];
+  if ($item_id) {
+    // Get proper screening field item.
+    $screening_field = walkthrough_slideshow_get_screening_item_by_step($item_id);
+    // Get proper screenshot.
+    $image = field_get_items('field_collection_item', $screening_field, 'field_fc_screenshots_screenshot');
+    $image = reset($image);
 
-  // Get proper screening field item.
-  $screening_field = walkthrough_slideshow_get_screening_item_by_step($item_id);
-
-  // Get proper screenshot.
-  $image = field_get_items('field_collection_item', $screening_field, 'field_fc_screenshots_screenshot');
-  $image = reset($image);
-
-  // Display the screenshot.
-  $file = file_create_url($image['uri']);
-  header('Content-Type:' . $image['type']);
-  header('Content-Length: ' . $image['filesize']);
-  readfile($file);
+    if (!empty($image)) {
+      // Display the screenshot.
+      $file = file_create_url($image['uri']);
+      header('Content-Type:' . $image['type']);
+      header('Content-Length: ' . $image['filesize']);
+      readfile($file);
+      return;
+    }
+  }
+  return '<div class="wt-no-image">' . t('No image is found.') . '</div>';
 }
 
 /**
