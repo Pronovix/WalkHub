@@ -7,6 +7,12 @@
 define('WALKTHROUGH_SLIDSHOW_HEIGHT', 300);
 define('WALKTHROUGH_SLIDSHOW_WIDTH', 400);
 
+// Field names.
+define('WALKTHROUGH_FIELD_STEPS', 'field_fc_steps');
+define('WALKTHROUGH_FIELD_SCREENING_STEP', 'field_fc_screenshots_step');
+define('WALKTHROUGH_FIELD_SCREENING_SCREENSHOT', 'field_fc_screenshots_screenshot');
+
+
 /**
  * Implements hook_menu().
  */
@@ -18,6 +24,13 @@ function walkthrough_slideshow_menu() {
     'access arguments' => array('access content'),
     'page callback' => 'walkthrough_slideshow_generate_iframe_content',
     'page arguments' => array(2),
+  );
+
+  $items['walkthrough/%node/%'] = array(
+    'title' => 'Walkthrough step screenshot',
+    'access arguments' => array('access content'),
+    'page callback' => 'walkthrough_slideshow_step_screenshot',
+    'page arguments' => array(1, 2),
   );
 
   return $items;
@@ -312,4 +325,101 @@ function _walkthrough_slideshow_embed($embed_code) {
     ),
   );
   return render($form);
+}
+
+/**
+ * Implements hook_field_collection_item_view().
+ */
+function walkthrough_slideshow_field_collection_item_view($field_collection_item, $view_mode, $langcode) {
+  if ($field_collection_item->field_name === WALKTHROUGH_FIELD_STEPS) {
+    $walkthrough = menu_get_object();
+    $steps = field_get_items('node', $walkthrough, WALKTHROUGH_FIELD_STEPS);
+
+    // Get the position of the actual step in the walkthrough.
+    foreach ($steps as $key => $value) {
+      if ($value['value'] === $field_collection_item->item_id) {
+        // We want to start the numbering from 1 instead of 0.
+        $step = $key+1;
+      }
+    }
+
+    // Get screening filed item based on WT step item.
+    $screening_field = walkthrough_slideshow_get_screening_item_by_step($field_collection_item->item_id);
+
+    if (isset($screening_field)) {
+      $image = field_get_items('field_collection_item', $screening_field, WALKTHROUGH_FIELD_SCREENING_SCREENSHOT);
+      $image = reset($image);
+      $thumbnail = theme('image_style', array('path' => $image['uri'], 'style_name' => 'thumbnail'));
+
+      $field_collection_item->content['screenshot'] = array(
+        '#theme' => 'link',
+        '#text' => $thumbnail,
+        '#path' => 'walkthrough/' . $walkthrough->nid . '/' . $step,
+        '#options' => array(
+          'attributes' => array(
+            'class' => 'walkthrough-step-screenshot',
+            'target' => '_blank',
+          ),
+          'html' => TRUE,
+        ),
+        '#weight' => -1,
+      );
+    }
+  }
+}
+
+/**
+ * Display the screenshot for a given step in a walkthrough, if exists.
+ *
+ * @param $walkthrough
+ *   Node object of the walkthrough.
+ * @param $step
+ *   Integer number. The position of the step in the given walkthrough.
+ *
+ * @see walkthrough_slideshow_menu().
+ */
+function walkthrough_slideshow_step_screenshot($walkthrough, $step) {
+  $steps = field_get_items('node', $walkthrough, WALKTHROUGH_FIELD_STEPS);
+  // We start the numbering from 1 instead of zero, like Drupal does, so we have to decrease the value we got.
+  $item_id = $steps[$step-1]['value'];
+  if ($item_id) {
+    // Get proper screening field item.
+    $screening_field = walkthrough_slideshow_get_screening_item_by_step($item_id);
+    // Get proper screenshot.
+    $image = field_get_items('field_collection_item', $screening_field, WALKTHROUGH_FIELD_SCREENING_SCREENSHOT);
+    $image = reset($image);
+
+    if (!empty($image)) {
+      // Display the screenshot.
+      $file = file_create_url($image['uri']);
+      header('Content-Type:' . $image['type']);
+      header('Content-Length: ' . $image['filesize']);
+      readfile($file);
+      drupal_exit();
+    }
+  }
+  return '<div class="wt-no-image">' . t('No image is found.') . '</div>';
+}
+
+/**
+ * Return a screening file item based on a walkthrough step id.
+ *
+ * @param $step_id
+ *   Id of a walkthrough step field collection item.
+ * @return mixed|null
+ *   The screening item object(field collection item) or NULL.
+ */
+function walkthrough_slideshow_get_screening_item_by_step($step_id) {
+  $query = new EntityFieldQuery();
+  $result = $query->entityCondition('entity_type', 'field_collection_item')
+    ->entityCondition('bundle', 'field_screening_fc_screenshots')
+    ->fieldCondition(WALKTHROUGH_FIELD_SCREENING_STEP, 'target_id', $step_id)
+    ->range(0, 1)
+    ->execute();
+
+  if (isset($result['field_collection_item'])) {
+    $item_id = reset(array_keys($result['field_collection_item']));
+    return reset(entity_load('field_collection_item', array($item_id)));
+  }
+  return NULL;
 }
