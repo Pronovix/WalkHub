@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* normalize.css v2.1.1 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.1 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
 /** Correct `block` display not defined in IE 8/9. */
 /* line 22, ../sass/_normalize.scss */
@@ -2438,13 +2438,13 @@ button:hover, button:active, .button:hover, .ui-state-default:hover, .walkthroug
 button.small, .button.small, .small.ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.small, .btn.small { font-size: 75%; font-style: italic; }
 
 /* line 119, ../sass/typo/_typography.sass */
-.cta, #signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default, #signup #mc_embed_signup .ui-widget-content input.ui-state-default, .ui-widget-content #signup #mc_embed_signup input.ui-state-default, #signup #mc_embed_signup .ui-widget-header input.ui-state-default, .ui-widget-header #signup #mc_embed_signup input.ui-state-default, .node-type-walkthrough .main.columns > .action-links li a, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type { font-size: 10px; line-height: 14.5px; font-size: 1rem; line-height: 1.45rem; font-family: "Museo500", Arial, Helvetica, sans-serif; font-weight: 200; -webkit-border-radius: 0.65em; -moz-border-radius: 0.65em; -ms-border-radius: 0.65em; -o-border-radius: 0.65em; border-radius: 0.65em; -webkit-transition: all 0.25s ease-in; -moz-transition: all 0.25s ease-in; -o-transition: all 0.25s ease-in; transition: all 0.25s ease-in; -webkit-box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15); -moz-box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15); box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15); background-color: #3b8acd; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3B8ACD', endColorstr='#FF035787'); background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3b8acd), color-stop(100%, #035787)); background-image: -webkit-linear-gradient(top, #3b8acd 0%, #035787 100%); background-image: -moz-linear-gradient(top, #3b8acd 0%, #035787 100%); background-image: -o-linear-gradient(top, #3b8acd 0%, #035787 100%); background-image: linear-gradient(top, #3b8acd 0%, #035787 100%); display: inline-block; padding: 0.45em 0.85em 0.35em; border: 1px solid #005b9a; color: white; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75); }
+.cta, #signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default, .node-type-walkthrough .main.columns > .action-links li a, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type { font-size: 10px; line-height: 14.5px; font-size: 1rem; line-height: 1.45rem; font-family: "Museo500", Arial, Helvetica, sans-serif; font-weight: 200; -webkit-border-radius: 0.65em; -moz-border-radius: 0.65em; -ms-border-radius: 0.65em; -o-border-radius: 0.65em; border-radius: 0.65em; -webkit-transition: all 0.25s ease-in; -moz-transition: all 0.25s ease-in; -o-transition: all 0.25s ease-in; transition: all 0.25s ease-in; -webkit-box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15); -moz-box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15); box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.35), inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15); background-color: #3b8acd; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3B8ACD', endColorstr='#FF035787'); background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3b8acd), color-stop(100%, #035787)); background-image: -webkit-linear-gradient(top, #3b8acd 0%, #035787 100%); background-image: -moz-linear-gradient(top, #3b8acd 0%, #035787 100%); background-image: -o-linear-gradient(top, #3b8acd 0%, #035787 100%); background-image: linear-gradient(top, #3b8acd 0%, #035787 100%); display: inline-block; padding: 0.45em 0.85em 0.35em; border: 1px solid #005b9a; color: white; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75); }
 /* line 134, ../sass/typo/_typography.sass */
-.cta:after, #signup #mc_embed_signup input.button:after, #signup #mc_embed_signup input.ui-state-default:after, #signup #mc_embed_signup .ui-widget-content input.ui-state-default:after, .ui-widget-content #signup #mc_embed_signup input.ui-state-default:after, #signup #mc_embed_signup .ui-widget-header input.ui-state-default:after, .ui-widget-header #signup #mc_embed_signup input.ui-state-default:after, .node-type-walkthrough .main.columns > .action-links li a:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:after { font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; }
+.cta:after, #signup #mc_embed_signup input.button:after, #signup #mc_embed_signup input.ui-state-default:after, .node-type-walkthrough .main.columns > .action-links li a:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:after { font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; }
 /* line 137, ../sass/typo/_typography.sass */
-.cta:hover, #signup #mc_embed_signup input.button:hover, #signup #mc_embed_signup input.ui-state-default:hover, #signup #mc_embed_signup .ui-widget-content input.ui-state-default:hover, .ui-widget-content #signup #mc_embed_signup input.ui-state-default:hover, #signup #mc_embed_signup .ui-widget-header input.ui-state-default:hover, .ui-widget-header #signup #mc_embed_signup input.ui-state-default:hover, .node-type-walkthrough .main.columns > .action-links li a:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover:first-of-type { background-color: #4f96d2; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4F96D2', endColorstr='#FF0467A0'); background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4f96d2), color-stop(100%, #0467a0)); background-image: -webkit-linear-gradient(top, #4f96d2 0%, #0467a0 100%); background-image: -moz-linear-gradient(top, #4f96d2 0%, #0467a0 100%); background-image: -o-linear-gradient(top, #4f96d2 0%, #0467a0 100%); background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%); }
+.cta:hover, #signup #mc_embed_signup input.button:hover, #signup #mc_embed_signup input.ui-state-default:hover, .node-type-walkthrough .main.columns > .action-links li a:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover:first-of-type { background-color: #4f96d2; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4F96D2', endColorstr='#FF0467A0'); background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4f96d2), color-stop(100%, #0467a0)); background-image: -webkit-linear-gradient(top, #4f96d2 0%, #0467a0 100%); background-image: -moz-linear-gradient(top, #4f96d2 0%, #0467a0 100%); background-image: -o-linear-gradient(top, #4f96d2 0%, #0467a0 100%); background-image: linear-gradient(top, #4f96d2 0%, #0467a0 100%); }
 /* line 142, ../sass/typo/_typography.sass */
-.cta:active, #signup #mc_embed_signup input.button:active, #signup #mc_embed_signup input.ui-state-default:active, #signup #mc_embed_signup .ui-widget-content input.ui-state-default:active, .ui-widget-content #signup #mc_embed_signup input.ui-state-default:active, #signup #mc_embed_signup .ui-widget-header input.ui-state-default:active, .ui-widget-header #signup #mc_embed_signup input.ui-state-default:active, .node-type-walkthrough .main.columns > .action-links li a:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active:first-of-type { background: #035787; -webkit-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15); -moz-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15); box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15); }
+.cta:active, #signup #mc_embed_signup input.button:active, #signup #mc_embed_signup input.ui-state-default:active, .node-type-walkthrough .main.columns > .action-links li a:active, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active:first-of-type { background: #035787; -webkit-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15); -moz-box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15); box-shadow: inset 0px -3px 1px rgba(255, 255, 255, 0.15); }
 
 /* Default Link Styles */
 /* line 147, ../sass/typo/_typography.sass */
@@ -2465,7 +2465,7 @@ p aside { font-size: 10px; line-height: 14.5px; font-size: 1rem; line-height: 1.
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; }
 
 /* line 174, ../sass/typo/_typography.sass */
-html.js input.form-autocomplete { background-image: url('../images/throbber.gif?1386001669'); background-position: 100% 9px; background-repeat: no-repeat; -webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none; }
+html.js input.form-autocomplete { background-image: url('../images/throbber.gif?1389796759'); background-position: 100% 9px; background-repeat: no-repeat; -webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none; }
 
 /* line 180, ../sass/typo/_typography.sass */
 html.js input.throbbing { -webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none; background-position: 100% -12px; }
@@ -2793,7 +2793,7 @@ header#main-header .menu li a { font-size: 14px; line-height: 20.3px; font-size:
 #main_logo_link { padding-left: 0.9375em; padding-right: 0.9375em; display: block; }
 
 /* line 1, ../sass/modules/_temp_featured.sass */
-#featured { margin: 0; padding: 0; padding: 25px 0 15px; padding: 2.5rem 0 1.5rem; overflow: hidden; background-color: black; background-image: url('../images/office.jpg?1385645148'); background-position: top center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; position: relative; -webkit-box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.15); box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.15); }
+#featured { margin: 0; padding: 0; padding: 25px 0 15px; padding: 2.5rem 0 1.5rem; overflow: hidden; background-color: black; background-image: url('../images/office.jpg?1389796759'); background-position: top center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; position: relative; -webkit-box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.15); box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.15); }
 /* line 12, ../sass/modules/_temp_featured.sass */
 #featured:before { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; background: rgba(0, 0, 0, 0.75) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAQUlEQVRYw+3RoREAMAgAMQxX9l8YTEdAIPLqfSJfdfwuv9ZDjx49evTo0aNHjx49evTo0aNHjx49evTo0aNHf6kB1wDSjeDV0HAAAAAASUVORK5CYII=') repeat top center; position: absolute; top: 0; right: 0; bottom: 0; left: 0; content: ""; display: block; width: 100%; }
 /* line 25, ../sass/modules/_temp_featured.sass */
@@ -2940,7 +2940,7 @@ main { padding: 2% 0; }
 .sidebar .block-user #edit-actions { text-align: center; }
 
 /* line 1, ../sass/modules/_temp_signup.sass */
-#signup { margin: 0; padding: 0; padding: 25px 0 15px; padding: 2.5rem 0 1.5rem; margin-bottom: -2%; text-align: center; background-image: url('../images/signup.jpg?1385645148'); background-repeat: no-repeat; background-position: bottom center; position: relative; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+#signup { margin: 0; padding: 0; padding: 25px 0 15px; padding: 2.5rem 0 1.5rem; margin-bottom: -2%; text-align: center; background-image: url('../images/signup.jpg?1389796759'); background-repeat: no-repeat; background-position: bottom center; position: relative; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 /* line 12, ../sass/modules/_temp_signup.sass */
 #signup:before { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; background: rgba(0, 0, 0, 0.75) url("../images/mask.png") repeat bottom center; position: absolute; top: 0; right: 0; bottom: 0; left: 0; content: ""; display: block; width: 100%; }
 /* line 24, ../sass/modules/_temp_signup.sass */
@@ -2950,9 +2950,9 @@ main { padding: 2% 0; }
 /* line 31, ../sass/modules/_temp_signup.sass */
 #signup #mc_embed_signup form label:first-of-type { margin: 0; padding: 0; }
 /* line 34, ../sass/modules/_temp_signup.sass */
-#signup #mc_embed_signup input.email, #signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default, #signup #mc_embed_signup .ui-widget-content input.ui-state-default, .ui-widget-content #signup #mc_embed_signup input.ui-state-default, #signup #mc_embed_signup .ui-widget-header input.ui-state-default, .ui-widget-header #signup #mc_embed_signup input.ui-state-default { margin: 0 auto; }
+#signup #mc_embed_signup input.email, #signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default { margin: 0 auto; }
 /* line 38, ../sass/modules/_temp_signup.sass */
-#signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default, #signup #mc_embed_signup .ui-widget-content input.ui-state-default, .ui-widget-content #signup #mc_embed_signup input.ui-state-default, #signup #mc_embed_signup .ui-widget-header input.ui-state-default, .ui-widget-header #signup #mc_embed_signup input.ui-state-default { padding: 0.35em 0.85em 0.35em; }
+#signup #mc_embed_signup input.button, #signup #mc_embed_signup input.ui-state-default { padding: 0.35em 0.85em 0.35em; }
 /* line 42, ../sass/modules/_temp_signup.sass */
 #signup #mc_embed_signup h3 { color: white; font-size: 13.5px; line-height: 19.575px; font-size: 1.35rem; line-height: 1.9575rem; text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.85); }
 
@@ -3136,7 +3136,7 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 201, ../sass/modules/_edit_forms.sass */
 .form-item.form-type-select { margin-top: 0; }
 
-/* jQuery UI - v1.10.2 - 2013-03-14
+/*! jQuery UI - v1.10.2 - 2013-03-14
  ** http://jqueryui.com
  ** Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 /* line 5, ../sass/modules/_jquery_ui.sass */
@@ -3161,7 +3161,7 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 64, ../sass/modules/_jquery_ui.sass */
 .ui-draggable .ui-dialog-titlebar { cursor: move; }
 
-/* jQuery UI - v1.10.2 - 2013-03-14
+/*! jQuery UI - v1.10.2 - 2013-03-14
  ** http://jqueryui.com
  ** Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 /* line 5, ../sass/modules/_jquery_ui_theme.sass */
@@ -3810,22 +3810,24 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 38, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .content { margin-left: 2em; }
 /* line 41, ../sass/page/_node-walkthrough.sass */
+.node-type-walkthrough .node-walkthrough .entity-field-collection-item .content .walkthrough-step-screenshot { float: left; margin-right: 10px; }
+/* line 45, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-name { font-family: "Museo500", Arial, Helvetica, sans-serif; font-weight: 200; font-size: 12px; line-height: 17.4px; font-size: 1.2rem; line-height: 1.74rem; padding-right: 3em; }
-/* line 46, ../sass/page/_node-walkthrough.sass */
+/* line 50, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-name .field-label { font: 0/0 a; text-shadow: none; color: transparent; }
-/* line 49, ../sass/page/_node-walkthrough.sass */
+/* line 53, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-2, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-3, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-show-title, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-highlight { clear: left; font-size: 10px; line-height: 14.5px; font-size: 1rem; line-height: 1.45rem; font-weight: normal; }
-/* line 58, ../sass/page/_node-walkthrough.sass */
+/* line 62, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1 > .field-label, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-2 > .field-label, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-3 > .field-label, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-show-title > .field-label, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-highlight > .field-label { font-size: 10px; line-height: 14.5px; font-size: 1rem; line-height: 1.45rem; font-weight: normal; float: left; width: 8em; margin-right: 1em; }
-/* line 65, ../sass/page/_node-walkthrough.sass */
+/* line 69, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-show-title, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-highlight, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-1, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-2, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-3, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-4, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-5, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-6, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-7, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-8, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-9, .node-type-walkthrough .node-walkthrough .entity-field-collection-item .field-name-field-fc-step-command-10 { display: none; }
-/* line 79, ../sass/page/_node-walkthrough.sass */
+/* line 83, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full { position: relative; }
-/* line 82, ../sass/page/_node-walkthrough.sass */
+/* line 86, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links { position: absolute; top: 0.5em; right: 0.5em; margin: 0; }
-/* line 88, ../sass/page/_node-walkthrough.sass */
+/* line 92, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li { list-style-type: none; }
-/* line 91, ../sass/page/_node-walkthrough.sass */
+/* line 95, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a { font-size: 19px; padding: 0.5em 1.5em; display: inline-block; cursor: pointer; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF4F4F5', endColorstr='#FFBFBFC4'); background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4f4f5), color-stop(100%, #d9d9dd)); background: -webkit-linear-gradient(#f4f4f5, #d9d9dd); background: -moz-linear-gradient(#f4f4f5, #d9d9dd); background: -o-linear-gradient(#f4f4f5, #d9d9dd); background: linear-gradient(#f4f4f5, #d9d9dd); -webkit-box-shadow: white 0 1px 0 inset; -moz-box-shadow: white 0 1px 0 inset; box-shadow: white 0 1px 0 inset; border: 1px solid #ccccd1; color: white; text-shadow: #afafb6 0 -1px 0; font-size: 8px; line-height: 11.6px; font-size: 0.8rem; line-height: 1.16rem; -webkit-border-radius: 0.35em; -moz-border-radius: 0.35em; -ms-border-radius: 0.35em; -o-border-radius: 0.35em; border-radius: 0.35em; padding: 0.45em 0.85em; text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75); color: #6f6f6f; vertical-align: bottom; font-size: 7px; line-height: 10.15px; font-size: 0.7rem; line-height: 1.015rem; margin: 0; }
 /* line 15, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover { text-decoration: none; }
@@ -3837,223 +3839,223 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a.disabled, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a[disabled] { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; background: #d9d9dd; cursor: default; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 /* line 74, ../sass/mixins/_sassy-buttons.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a::-moz-focus-inner { padding: 0 !important; margin: -1px !important; }
-/* line 100, ../sass/page/_node-walkthrough.sass */
+/* line 104, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:hover, .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:active { text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75); color: #6f6f6f; }
-/* line 108, ../sass/page/_node-walkthrough.sass */
+/* line 112, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links li.edit a:after { font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; content: "\e602"; margin-left: 0.45em; }
-/* line 113, ../sass/page/_node-walkthrough.sass */
+/* line 117, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .field-collection-view-links .delete { font: 0/0 a; text-shadow: none; color: transparent; }
-/* line 116, ../sass/page/_node-walkthrough.sass */
+/* line 120, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full .content:before { font-size: 12px; line-height: 17.4px; font-size: 1.2rem; line-height: 1.74rem; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=35); opacity: 0.35; display: block; position: absolute; top: 0.39em; left: 0.6em; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(0) .content:before { content: "0"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(1) .content:before { content: "1"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(2) .content:before { content: "2"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(3) .content:before { content: "3"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(4) .content:before { content: "4"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(5) .content:before { content: "5"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(6) .content:before { content: "6"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(7) .content:before { content: "7"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(8) .content:before { content: "8"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(9) .content:before { content: "9"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(10) .content:before { content: "10"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(11) .content:before { content: "11"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(12) .content:before { content: "12"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(13) .content:before { content: "13"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(14) .content:before { content: "14"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(15) .content:before { content: "15"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(16) .content:before { content: "16"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(17) .content:before { content: "17"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(18) .content:before { content: "18"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(19) .content:before { content: "19"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(20) .content:before { content: "20"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(21) .content:before { content: "21"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(22) .content:before { content: "22"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(23) .content:before { content: "23"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(24) .content:before { content: "24"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(25) .content:before { content: "25"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(26) .content:before { content: "26"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(27) .content:before { content: "27"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(28) .content:before { content: "28"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(29) .content:before { content: "29"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(30) .content:before { content: "30"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(31) .content:before { content: "31"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(32) .content:before { content: "32"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(33) .content:before { content: "33"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(34) .content:before { content: "34"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(35) .content:before { content: "35"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(36) .content:before { content: "36"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(37) .content:before { content: "37"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(38) .content:before { content: "38"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(39) .content:before { content: "39"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(40) .content:before { content: "40"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(41) .content:before { content: "41"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(42) .content:before { content: "42"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(43) .content:before { content: "43"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(44) .content:before { content: "44"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(45) .content:before { content: "45"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(46) .content:before { content: "46"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(47) .content:before { content: "47"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(48) .content:before { content: "48"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(49) .content:before { content: "49"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(50) .content:before { content: "50"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(51) .content:before { content: "51"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(52) .content:before { content: "52"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(53) .content:before { content: "53"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(54) .content:before { content: "54"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(55) .content:before { content: "55"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(56) .content:before { content: "56"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(57) .content:before { content: "57"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(58) .content:before { content: "58"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(59) .content:before { content: "59"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(60) .content:before { content: "60"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(61) .content:before { content: "61"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(62) .content:before { content: "62"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(63) .content:before { content: "63"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(64) .content:before { content: "64"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(65) .content:before { content: "65"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(66) .content:before { content: "66"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(67) .content:before { content: "67"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(68) .content:before { content: "68"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(69) .content:before { content: "69"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(70) .content:before { content: "70"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(71) .content:before { content: "71"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(72) .content:before { content: "72"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(73) .content:before { content: "73"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(74) .content:before { content: "74"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(75) .content:before { content: "75"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(76) .content:before { content: "76"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(77) .content:before { content: "77"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(78) .content:before { content: "78"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(79) .content:before { content: "79"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(80) .content:before { content: "80"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(81) .content:before { content: "81"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(82) .content:before { content: "82"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(83) .content:before { content: "83"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(84) .content:before { content: "84"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(85) .content:before { content: "85"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(86) .content:before { content: "86"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(87) .content:before { content: "87"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(88) .content:before { content: "88"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(89) .content:before { content: "89"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(90) .content:before { content: "90"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(91) .content:before { content: "91"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(92) .content:before { content: "92"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(93) .content:before { content: "93"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(94) .content:before { content: "94"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(95) .content:before { content: "95"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(96) .content:before { content: "96"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(97) .content:before { content: "97"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(98) .content:before { content: "98"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(99) .content:before { content: "99"; }
-/* line 125, ../sass/page/_node-walkthrough.sass */
+/* line 129, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .field-collection-view.view-mode-full:nth-child(100) .content:before { content: "100"; }
-/* line 128, ../sass/page/_node-walkthrough.sass */
-.node-type-walkthrough .node-walkthrough .field-name-field-fc-step-description { margin-top: 3.5px; margin-top: 0.35rem; padding-right: 35px; padding-right: 3.5rem; }
 /* line 132, ../sass/page/_node-walkthrough.sass */
+.node-type-walkthrough .node-walkthrough .field-name-field-fc-step-description { margin-top: 3.5px; margin-top: 0.35rem; padding-right: 35px; padding-right: 3.5rem; }
+/* line 136, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .description.field-collection-description, .node-type-walkthrough .node-walkthrough .action-links-field-collection-add { font: 0/0 a; text-shadow: none; color: transparent; display: none; }
-/* line 137, ../sass/page/_node-walkthrough.sass */
+/* line 141, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline, .node-type-walkthrough .node-walkthrough .links.inline li { margin: 0; padding: 0; display: inline-block; }
-/* line 142, ../sass/page/_node-walkthrough.sass */
+/* line 146, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a, .node-type-walkthrough .node-walkthrough .links.inline li a { font-size: 19px; padding: 0.5em 1.5em; display: inline-block; cursor: pointer; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF4F4F5', endColorstr='#FFBFBFC4'); background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4f4f5), color-stop(100%, #d9d9dd)); background: -webkit-linear-gradient(#f4f4f5, #d9d9dd); background: -moz-linear-gradient(#f4f4f5, #d9d9dd); background: -o-linear-gradient(#f4f4f5, #d9d9dd); background: linear-gradient(#f4f4f5, #d9d9dd); -webkit-box-shadow: white 0 1px 0 inset; -moz-box-shadow: white 0 1px 0 inset; box-shadow: white 0 1px 0 inset; border: 1px solid #ccccd1; color: white; text-shadow: #afafb6 0 -1px 0; font-size: 8px; line-height: 11.6px; font-size: 0.8rem; line-height: 1.16rem; -webkit-border-radius: 0.35em; -moz-border-radius: 0.35em; -ms-border-radius: 0.35em; -o-border-radius: 0.35em; border-radius: 0.35em; padding: 0.45em 0.85em; text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75); color: #6f6f6f; vertical-align: bottom; }
 /* line 15, ../sass/mixins/sassy-buttons/_sassy-button-pseudo-states.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a:hover, .node-type-walkthrough .node-walkthrough .links.inline li a:hover { text-decoration: none; }
@@ -4065,13 +4067,13 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 .node-type-walkthrough .node-walkthrough .links.inline a.disabled, .node-type-walkthrough .node-walkthrough .links.inline a[disabled], .node-type-walkthrough .node-walkthrough .links.inline li a.disabled, .node-type-walkthrough .node-walkthrough .links.inline li a[disabled] { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; background: #d9d9dd; cursor: default; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 /* line 74, ../sass/mixins/_sassy-buttons.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a::-moz-focus-inner, .node-type-walkthrough .node-walkthrough .links.inline li a::-moz-focus-inner { padding: 0 !important; margin: -1px !important; }
-/* line 151, ../sass/page/_node-walkthrough.sass */
+/* line 155, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a:hover, .node-type-walkthrough .node-walkthrough .links.inline a:active, .node-type-walkthrough .node-walkthrough .links.inline li a:hover, .node-type-walkthrough .node-walkthrough .links.inline li a:active { text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75); color: #6f6f6f; }
-/* line 156, ../sass/page/_node-walkthrough.sass */
+/* line 160, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline a:before, .node-type-walkthrough .node-walkthrough .links.inline li a:before { font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; font-size: 9px; line-height: 13.05px; font-size: 0.9rem; line-height: 1.305rem; display: inline-block; margin-right: 0.5em; }
-/* line 162, ../sass/page/_node-walkthrough.sass */
+/* line 166, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline { float: right; }
-/* line 165, ../sass/page/_node-walkthrough.sass */
+/* line 169, ../sass/page/_node-walkthrough.sass */
 .node-type-walkthrough .node-walkthrough .links.inline li.flag-walkthrough_broken a { font-size: 5.5px; line-height: 7.975px; font-size: 0.55rem; line-height: 0.7975rem; }
 
 /* line 4, ../sass/page/_node-walkthrough-edit.sass */
@@ -4127,7 +4129,7 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 98, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .le, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le { float: left; float: left; width: 20%; }
 /* line 103, ../sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main #ad-set .le .button, .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough .row.l-main #ad-set .le .ui-widget-content .ui-state-default, .ui-widget-content .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough .row.l-main #ad-set .le .ui-widget-header .ui-state-default, .ui-widget-header .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main #ad-set .le button, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .button, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-widget-content .ui-state-default, .ui-widget-content .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-widget-header .ui-state-default, .ui-widget-header .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le button { margin-top: 1.33em; }
+.page-node-add-walkthrough .row.l-main #ad-set .le .button, .page-node-add-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main #ad-set .le button, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .button, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main #ad-set .le button { margin-top: 1.33em; }
 /* line 106, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #ad-set .ri, .page-node-edit.node-type-walkthrough .row.l-main #ad-set .ri { float: right; width: 76%; display: none; }
 /* line 111, ../sass/page/_node-walkthrough-edit.sass */
@@ -4137,7 +4139,7 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 118, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #callopse, .page-node-edit.node-type-walkthrough .row.l-main #callopse { margin-right: 0.25em; }
 /* line 121, ../sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .back.button, .page-node-add-walkthrough .row.l-main .back.ui-state-default, .page-node-add-walkthrough .row.l-main .ui-widget-content .back.ui-state-default, .ui-widget-content .page-node-add-walkthrough .row.l-main .back.ui-state-default, .page-node-add-walkthrough .row.l-main .ui-widget-header .back.ui-state-default, .ui-widget-header .page-node-add-walkthrough .row.l-main .back.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main button.back, .page-node-edit.node-type-walkthrough .row.l-main .back.button, .page-node-edit.node-type-walkthrough .row.l-main .back.ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main .ui-widget-content .back.ui-state-default, .ui-widget-content .page-node-edit.node-type-walkthrough .row.l-main .back.ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main .ui-widget-header .back.ui-state-default, .ui-widget-header .page-node-edit.node-type-walkthrough .row.l-main .back.ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main button.back { margin-right: 0.25em; }
+.page-node-add-walkthrough .row.l-main .back.button, .page-node-add-walkthrough .row.l-main .back.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main button.back, .page-node-edit.node-type-walkthrough .row.l-main .back.button, .page-node-edit.node-type-walkthrough .row.l-main .back.ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main button.back { margin-right: 0.25em; }
 /* line 124, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main #wrapper-fg, .page-node-edit.node-type-walkthrough .row.l-main #wrapper-fg { padding-left: 24%; }
 /* line 127, ../sass/page/_node-walkthrough-edit.sass */
@@ -4193,9 +4195,9 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 236, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container .description, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-step-container legend { display: none; }
 /* line 240, ../sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default, .ui-widget-content .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default, .ui-widget-header .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default, .ui-widget-content .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default, .ui-widget-header .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit button.step-title { padding-top: 0.55em; margin: 0; width: 100%; display: block; overflow: hidden; text-overflow: ellipsis; height: 2.55em; }
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit button.step-title { padding-top: 0.55em; margin: 0; width: 100%; display: block; overflow: hidden; text-overflow: ellipsis; height: 2.55em; }
 /* line 249, ../sass/page/_node-walkthrough-edit.sass */
-.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default h3, .ui-widget-content .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default h3, .ui-widget-header .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title h3, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default h3, .ui-widget-content .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default h3, .ui-widget-header .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit button.step-title h3 { color: #6f6f6f; font-size: 9px; line-height: 13.05px; font-size: 0.9rem; line-height: 1.305rem; margin-right: 0.25em; display: inline-block; margin: 0; padding: 0; overflow: hidden; text-overflow: ellipsis; height: 2.6em; }
+.page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough .row.l-main .walkthrough-step-edit button.step-title h3, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit button.step-title h3 { color: #6f6f6f; font-size: 9px; line-height: 13.05px; font-size: 0.9rem; line-height: 1.305rem; margin-right: 0.25em; display: inline-block; margin: 0; padding: 0; overflow: hidden; text-overflow: ellipsis; height: 2.6em; }
 /* line 260, ../sass/page/_node-walkthrough-edit.sass */
 .page-node-add-walkthrough .row.l-main .walkthrough-step-edit .le, .page-node-edit.node-type-walkthrough .row.l-main .walkthrough-step-edit .le { float: left; width: 46%; margin-right: 4%; }
 /* line 265, ../sass/page/_node-walkthrough-edit.sass */
@@ -4260,7 +4262,7 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 95, ../sass/page/_node-walkthrough-set-edit.sass */
 .page-node-add-walkthrough-set .row.l-main #ad-set .le, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le { float: left; float: left; width: 20%; }
 /* line 100, ../sass/page/_node-walkthrough-set-edit.sass */
-.page-node-add-walkthrough-set .row.l-main #ad-set .le .button, .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-widget-content .ui-state-default, .ui-widget-content .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-widget-header .ui-state-default, .ui-widget-header .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough-set .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main #ad-set .le button, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .button, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-widget-content .ui-state-default, .ui-widget-content .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-widget-header .ui-state-default, .ui-widget-header .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le button { margin-top: 1.33em; }
+.page-node-add-walkthrough-set .row.l-main #ad-set .le .button, .page-node-add-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-add-walkthrough-set .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main #ad-set .le button, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .button, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .le button { margin-top: 1.33em; }
 /* line 103, ../sass/page/_node-walkthrough-set-edit.sass */
 .page-node-add-walkthrough-set .row.l-main #ad-set .ri, .page-node-edit.node-type-walkthrough-set .row.l-main #ad-set .ri { float: right; width: 76%; display: none; }
 /* line 108, ../sass/page/_node-walkthrough-set-edit.sass */
@@ -4270,7 +4272,7 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 115, ../sass/page/_node-walkthrough-set-edit.sass */
 .page-node-add-walkthrough-set .row.l-main #callopse, .page-node-edit.node-type-walkthrough-set .row.l-main #callopse { margin-right: 0.25em; }
 /* line 119, ../sass/page/_node-walkthrough-set-edit.sass */
-.page-node-add-walkthrough-set .row.l-main .back.button, .page-node-add-walkthrough-set .row.l-main .back.ui-state-default, .page-node-add-walkthrough-set .row.l-main .ui-widget-content .back.ui-state-default, .ui-widget-content .page-node-add-walkthrough-set .row.l-main .back.ui-state-default, .page-node-add-walkthrough-set .row.l-main .ui-widget-header .back.ui-state-default, .ui-widget-header .page-node-add-walkthrough-set .row.l-main .back.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main button.back, .page-node-edit.node-type-walkthrough-set .row.l-main .back.button, .page-node-edit.node-type-walkthrough-set .row.l-main .back.ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main .ui-widget-content .back.ui-state-default, .ui-widget-content .page-node-edit.node-type-walkthrough-set .row.l-main .back.ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main .ui-widget-header .back.ui-state-default, .ui-widget-header .page-node-edit.node-type-walkthrough-set .row.l-main .back.ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main button.back { margin-right: 0.25em; }
+.page-node-add-walkthrough-set .row.l-main .back.button, .page-node-add-walkthrough-set .row.l-main .back.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main button.back, .page-node-edit.node-type-walkthrough-set .row.l-main .back.button, .page-node-edit.node-type-walkthrough-set .row.l-main .back.ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main button.back { margin-right: 0.25em; }
 /* line 122, ../sass/page/_node-walkthrough-set-edit.sass */
 .page-node-add-walkthrough-set .row.l-main #wrapper-fg, .page-node-edit.node-type-walkthrough-set .row.l-main #wrapper-fg { padding-left: 24%; }
 /* line 125, ../sass/page/_node-walkthrough-set-edit.sass */
@@ -4330,9 +4332,9 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 242, ../sass/page/_node-walkthrough-set-edit.sass */
 .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-step-container .description, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-step-container legend, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-step-container .description, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-step-container legend { display: none; }
 /* line 246, ../sass/page/_node-walkthrough-set-edit.sass */
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default, .ui-widget-content .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default, .ui-widget-header .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default, .ui-widget-content .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default, .ui-widget-header .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title { padding-top: 0.55em; margin: 0; width: 100%; display: block; overflow: hidden; text-overflow: ellipsis; height: 2.55em; }
+.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title { padding-top: 0.55em; margin: 0; width: 100%; display: block; overflow: hidden; text-overflow: ellipsis; height: 2.55em; }
 /* line 255, ../sass/page/_node-walkthrough-set-edit.sass */
-.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default h3, .ui-widget-content .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default h3, .ui-widget-header .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title h3, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-content .step-title.ui-state-default h3, .ui-widget-content .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .ui-widget-header .step-title.ui-state-default h3, .ui-widget-header .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title h3 { color: #6f6f6f; font-size: 9px; line-height: 13.05px; font-size: 0.9rem; line-height: 1.305rem; margin-right: 0.25em; display: inline-block; margin: 0; padding: 0; overflow: hidden; text-overflow: ellipsis; height: 2.6em; }
+.page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title h3, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.button h3, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .step-title.ui-state-default h3, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.step-title h3, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit button.step-title h3 { color: #6f6f6f; font-size: 9px; line-height: 13.05px; font-size: 0.9rem; line-height: 1.305rem; margin-right: 0.25em; display: inline-block; margin: 0; padding: 0; overflow: hidden; text-overflow: ellipsis; height: 2.6em; }
 /* line 266, ../sass/page/_node-walkthrough-set-edit.sass */
 .page-node-add-walkthrough-set .row.l-main .walkthrough-step-edit .le, .page-node-edit.node-type-walkthrough-set .row.l-main .walkthrough-step-edit .le { float: left; width: 46%; margin-right: 4%; }
 /* line 271, ../sass/page/_node-walkthrough-set-edit.sass */
@@ -4426,7 +4428,7 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 94, ../sass/page/_node-walkthrough-step-edit.sass */
 .page-field-collection-field-fc-steps-edit .form-submit:after { font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; content: "\e017"; margin-left: 0.5em; }
 /* line 99, ../sass/page/_node-walkthrough-step-edit.sass */
-.page-field-collection-field-fc-steps-edit .back.button, .page-field-collection-field-fc-steps-edit .back.ui-state-default, .page-field-collection-field-fc-steps-edit .ui-widget-content .back.ui-state-default, .ui-widget-content .page-field-collection-field-fc-steps-edit .back.ui-state-default, .page-field-collection-field-fc-steps-edit .ui-widget-header .back.ui-state-default, .ui-widget-header .page-field-collection-field-fc-steps-edit .back.ui-state-default, .page-field-collection-field-fc-steps-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-field-collection-field-fc-steps-edit button.back { margin-right: 0.75em; }
+.page-field-collection-field-fc-steps-edit .back.button, .page-field-collection-field-fc-steps-edit .back.ui-state-default, .page-field-collection-field-fc-steps-edit .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button.back, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .page-field-collection-field-fc-steps-edit button.back { margin-right: 0.75em; }
 
 /* line 2, ../sass/page/_page-walkthrough-import.sass */
 .page-walkthrough-import .description { display: none; }
@@ -4539,9 +4541,9 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 /* line 9, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog form label:last-of-type { width: 70px; float: left; }
 /* line 13, ../sass/dialog/_walkthrough-start-dialog.sass */
-.walkthrough-start-dialog form .button, .walkthrough-start-dialog form .ui-state-default, .walkthrough-start-dialog form .ui-widget-content .ui-state-default, .ui-widget-content .walkthrough-start-dialog form .ui-state-default, .walkthrough-start-dialog form .ui-widget-header .ui-state-default, .ui-widget-header .walkthrough-start-dialog form .ui-state-default, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button { display: block; margin: 0.5em 0; font-size: 7px; line-height: 10.15px; font-size: 0.7rem; line-height: 1.015rem; color: #222222; position: relative; }
+.walkthrough-start-dialog form .button, .walkthrough-start-dialog form .ui-state-default, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button { display: block; margin: 0.5em 0; font-size: 7px; line-height: 10.15px; font-size: 0.7rem; line-height: 1.015rem; color: #222222; position: relative; }
 /* line 20, ../sass/dialog/_walkthrough-start-dialog.sass */
-.walkthrough-start-dialog form .button:after, .walkthrough-start-dialog form .ui-state-default:after, .walkthrough-start-dialog form .ui-widget-content .ui-state-default:after, .ui-widget-content .walkthrough-start-dialog form .ui-state-default:after, .walkthrough-start-dialog form .ui-widget-header .ui-state-default:after, .ui-widget-header .walkthrough-start-dialog form .ui-state-default:after, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button:after { position: absolute; top: 0.05em; right: 0.05em; font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; font-size: 15px; line-height: 15px; font-size: 1.5rem; line-height: 1.5rem; content: "\e60e"; }
+.walkthrough-start-dialog form .button:after, .walkthrough-start-dialog form .ui-state-default:after, .walkthrough-start-dialog form .ui-dialog-buttonpane .ui-dialog-buttonset button:after, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset form button:after { position: absolute; top: 0.05em; right: 0.05em; font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; font-size: 15px; line-height: 15px; font-size: 1.5rem; line-height: 1.5rem; content: "\e60e"; }
 /* line 28, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog form #useproxy { margin: 0; margin-top: 1em; }
 /* line 32, ../sass/dialog/_walkthrough-start-dialog.sass */
