@@ -37,9 +37,9 @@ function walkhub_screening_queue_flag_access($flag, $entity_id, $action, $accoun
     if (reset($entity)->uid == $account->uid && user_access('mark own content for screening', $account)) {
       return TRUE;
     }
-  }
 
-  return FALSE;
+    return FALSE;
+  }
 }
 
 /**
