@@ -41,7 +41,7 @@ function walkthrough_screening_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
