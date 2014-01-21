@@ -357,7 +357,7 @@ function _walkthrough_slideshow_embed($embed_code) {
  */
 function walkthrough_slideshow_field_collection_item_view($field_collection_item, $view_mode, $langcode) {
   if ($field_collection_item->field_name === WALKTHROUGH_FIELD_STEPS) {
-    $step = walkhub_get_position_from_step(arg(1), $field_collection_item->item_id);
+    $step = walkhub_get_position_from_step($field_collection_item->hostEntityId(), $field_collection_item->item_id);
     // Get screening filed item based on WT step item.
     $screening_field = walkthrough_slideshow_get_screening_item_by_step($field_collection_item->item_id);
 
@@ -369,7 +369,7 @@ function walkthrough_slideshow_field_collection_item_view($field_collection_item
       $field_collection_item->content['screenshot'] = array(
         '#theme' => 'link',
         '#text' => $thumbnail,
-        '#path' => 'walkthrough/' . arg(1) . '/' . $step . '/current-screenshot',
+        '#path' => 'walkthrough/' . $field_collection_item->hostEntityId() . '/' . $step . '/current-screenshot',
         '#options' => array(
           'attributes' => array(
             'class' => 'walkthrough-step-screenshot',
