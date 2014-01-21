@@ -8,7 +8,6 @@ define('WALKTHROUGH_SLIDSHOW_HEIGHT', 300);
 define('WALKTHROUGH_SLIDSHOW_WIDTH', 400);
 
 // Field names.
-define('WALKTHROUGH_FIELD_STEPS', 'field_fc_steps');
 define('WALKTHROUGH_FIELD_SCREENING_STEP', 'field_fc_screenshots_step');
 define('WALKTHROUGH_FIELD_SCREENING_SCREENSHOT', 'field_fc_screenshots_screenshot');
 
@@ -358,17 +357,7 @@ function _walkthrough_slideshow_embed($embed_code) {
  */
 function walkthrough_slideshow_field_collection_item_view($field_collection_item, $view_mode, $langcode) {
   if ($field_collection_item->field_name === WALKTHROUGH_FIELD_STEPS) {
-    $walkthrough = menu_get_object();
-    $steps = field_get_items('node', $walkthrough, WALKTHROUGH_FIELD_STEPS);
-
-    // Get the position of the actual step in the walkthrough.
-    foreach ($steps as $key => $value) {
-      if ($value['value'] === $field_collection_item->item_id) {
-        // We want to start the numbering from 1 instead of 0.
-        $step = $key+1;
-      }
-    }
-
+    $step = walkhub_get_position_from_step(arg(1), $field_collection_item->item_id);
     // Get screening filed item based on WT step item.
     $screening_field = walkthrough_slideshow_get_screening_item_by_step($field_collection_item->item_id);
 
@@ -380,7 +369,7 @@ function walkthrough_slideshow_field_collection_item_view($field_collection_item
       $field_collection_item->content['screenshot'] = array(
         '#theme' => 'link',
         '#text' => $thumbnail,
-        '#path' => 'walkthrough/' . $walkthrough->nid . '/' . $step . '/current-screenshot',
+        '#path' => 'walkthrough/' . arg(1) . '/' . $step . '/current-screenshot',
         '#options' => array(
           'attributes' => array(
             'class' => 'walkthrough-step-screenshot',
@@ -389,7 +378,7 @@ function walkthrough_slideshow_field_collection_item_view($field_collection_item
           ),
           'html' => TRUE,
         ),
-        '#weight' => -1,
+        '#weight' => -10,
       );
     }
   }
