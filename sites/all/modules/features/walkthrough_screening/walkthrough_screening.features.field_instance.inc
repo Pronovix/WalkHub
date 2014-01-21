@@ -174,7 +174,52 @@ function walkthrough_screening_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 41,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-screening-field_screening_junit'
+  $field_instances['node-screening-field_screening_junit'] = array(
+    'bundle' => 'screening',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_screening_junit',
+    'label' => 'Junit',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 9,
     ),
   );
 
@@ -187,9 +232,8 @@ function walkthrough_screening_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'entity_reference' => array(
@@ -217,7 +261,53 @@ function walkthrough_screening_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-screening-field_screening_time'
+  $field_instances['node-screening-field_screening_time'] = array(
+    'bundle' => 'screening',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_screening_time',
+    'label' => 'Time',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => 'second|seconds',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 8,
     ),
   );
 
@@ -272,11 +362,13 @@ function walkthrough_screening_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Junit');
   t('Marked by');
   t('Result');
   t('Screenshot');
   t('Screenshots');
   t('Step');
+  t('Time');
   t('Walkthrough');
 
   return $field_instances;

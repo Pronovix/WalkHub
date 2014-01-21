@@ -47,14 +47,7 @@ function walkthrough_screening_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_fc_screenshots_step',
-    'foreign keys' => array(
-      'field_collection_item' => array(
-        'columns' => array(
-          'target_id' => 'item_id',
-        ),
-        'table' => 'field_collection_item',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -90,14 +83,7 @@ function walkthrough_screening_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_marked_by',
-    'foreign keys' => array(
-      'users' => array(
-        'columns' => array(
-          'target_id' => 'uid',
-        ),
-        'table' => 'users',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -143,6 +129,33 @@ function walkthrough_screening_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
+  // Exported field_base: 'field_screening_junit'
+  $field_bases['field_screening_junit'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_screening_junit',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_screening_result'
   $field_bases['field_screening_result'] = array(
     'active' => 1,
@@ -170,6 +183,24 @@ function walkthrough_screening_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_screening_time'
+  $field_bases['field_screening_time'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_screening_time',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
+  );
+
   // Exported field_base: 'field_screening_walkthrough'
   $field_bases['field_screening_walkthrough'] = array(
     'active' => 1,
@@ -177,14 +208,7 @@ function walkthrough_screening_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_screening_walkthrough',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
