@@ -48,6 +48,14 @@
       .content
         margin-left: 2em
 
+        .wt-step-position
+          +font-size(1.4)
+          +px-rem(left, 1)
+          +opacity(.5)
+          +px-rem(top, .5)
+          position: absolute
+
+
         .walkthrough-step-screenshot
           float: left
           margin-right: 10px
@@ -132,18 +140,6 @@
 
         .delete
           +hide-text
-
-      .content:before
-        +font-size(1.2)
-        +opacity(.35)
-        display: block
-        position: absolute
-        top: 0.39em
-        left: .6em
-
-      @for $i from 0 through 100
-        &:nth-child(#{$i}) .content:before
-          content: '#{$i}'
 
     .field-name-field-fc-step-description
       +px-rem(margin-top, .35)
