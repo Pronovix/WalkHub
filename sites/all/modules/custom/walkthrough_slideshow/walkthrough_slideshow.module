@@ -19,6 +19,13 @@ define('WALKTHROUGH_FIELD_SCREENING_SCREENSHOT', 'field_fc_screenshots_screensho
 function walkthrough_slideshow_menu() {
   $items = array();
 
+  $items['walkthrough/%node/slideshow'] = array(
+    'title' => 'Slideshow',
+    'access arguments' => array('access content'),
+    'page callback' => 'walkthrough_slideshow_latest_content',
+    'page arguments' => array(1),
+  );
+
   $items['walkthrough/slideshow/%node'] = array(
     'title' => 'walkthrough iframe',
     'access arguments' => array('access content'),
@@ -216,10 +223,24 @@ function walkthrough_slideshow_node_view($node, $view_mode, $langcode) {
   // Only add if the view mode is for a full view, although we
   // could control this via the Field UI too using 'hidden'.
   if ($node->type == 'walkthrough') {
+    $markup = _walkthrough_slideshow_insert_latest_screening_node_widget($node);
+
+    // If screening exists, add the permalink too.
+    if ($markup) {
+      $markup .= l(t('Screening'), 'walkthrough/' . $node->nid . '/slideshow',
+        array(
+          'attributes' => array(
+            'class' => array('wt-screening-permalink'),
+            'target' => '_blank',
+          )
+        )
+      );
+    }
+
     $node->content['walkthrough_screening_widget'] = array(
-      '#markup' => _walkthrough_slideshow_insert_latest_screening_node_widget($node),
+      '#markup' => $markup,
       '#prefix' => '<div class="wt-screening-widget-field">',
-      '#suffix' => '</div>',
+      '#suffix' => '</div>' ,
     );
   }
 }
@@ -227,26 +248,29 @@ function walkthrough_slideshow_node_view($node, $view_mode, $langcode) {
 /**
  * Provides the embed code for the matching screening node
  */
-function _walkthrough_slideshow_insert_latest_screening_node_widget($node) {
-  $query = new EntityFieldQuery();
-  $query
-    ->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'screening')
-    ->fieldCondition('field_screening_walkthrough', 'target_id', $node->nid)
-    ->propertyOrderBy('created', 'DESC')
-    ->range(0, 1);
-
-  $result_array = $query->execute();
-  $result_node = reset($result_array['node']);
-
-  $node = node_load($result_node->nid);
-
+function _walkthrough_slideshow_insert_latest_screening_node_widget($walkthrough) {
+  $node = walkthrough_get_latest_screening_from_walkthrough($walkthrough);
   if ($node) {
     $source = url('walkthrough/slideshow/' . $node->nid, array('absolute' => TRUE));
     return theme('walkthrough_slideshow_iframe', array('width' => 400, 'height' => 300, 'source' => $source));
   }
 
   return "";
+}
+
+function walkthrough_get_latest_screening_from_walkthrough($walkthrough) {
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'screening')
+    ->fieldCondition('field_screening_walkthrough', 'target_id', $walkthrough->nid)
+    ->propertyOrderBy('created', 'DESC')
+    ->range(0, 1);
+
+  $result_array = $query->execute();
+  $result_node = reset($result_array['node']);
+
+  return node_load($result_node->nid);
 }
 
 /**
@@ -266,6 +290,8 @@ function walkthrough_slideshow_generate_iframe_content($node) {
 }
 
 /**
+ * Return the variables array to be able to render the slideshow.
+ *
  * @param $node
  * @return array
  */
@@ -301,7 +327,7 @@ function walkthrough_slideshow_get_iframe_content($node) {
 
   // Get the embed code.
   $embed = theme('walkthrough_slideshow_iframe',
-    array('width' => 400, 'height' => 300, 'source' => url('walkthrough/slideshow/' . $node->nid, array('absolute' => TRUE))));
+    array('width' => 400, 'height' => 300, 'source' => url('walkthrough/' . $walkthrough->nid . '/slideshow', array('absolute' => TRUE))));
 
   // Create variables to client side.
   $vars = array(
@@ -424,4 +450,22 @@ function walkthrough_slideshow_get_screening_item_by_step($step_id) {
     return reset(entity_load('field_collection_item', array($item_id)));
   }
   return NULL;
+}
+
+/**
+ * Display the latest screening belonging to the given walkthrough
+ *
+ * @param $walkthrough
+ *   The walkthrough object we want to get the latest related screenshot to.
+ */
+function walkthrough_slideshow_latest_content($walkthrough) {
+  $output = '';
+  $screening = walkthrough_get_latest_screening_from_walkthrough($walkthrough);
+  if ($screening) {
+    $vars = walkthrough_slideshow_get_iframe_content($screening);
+    $output = theme('walkthrough_slideshow', $vars);
+  }
+
+  // Return the page content.
+  print $output;
 }
