@@ -91,8 +91,10 @@ function walkhub_screening_queue_create_screening($title, $lang = NULL, $referen
  *   Screenshot structure.
  *   [step] => (Optional)Step entity id
  *   [file] => Base64 encoded png file
+ * @param string $result
+ *   Screening result (Successful, Broken, Timeout).
  */
-function walkhub_screening_queue_update_screening($uuid, $time, $junit, $screenshots) {
+function walkhub_screening_queue_update_screening($uuid, $time, $junit, $screenshots, $result) {
   $screening = entity_load('node', FALSE, array('uuid' => $uuid));
   if (!empty($screening)) {
     $screening = reset($screening);
@@ -102,12 +104,17 @@ function walkhub_screening_queue_update_screening($uuid, $time, $junit, $screens
 
       $field_instance = field_info_instance('node', 'field_screening_time', 'screening');
       if (!empty($time) && !empty($field_instance)) {
-        $screening->field_screening_time[$lang][0]['value'] = $time;
+        $screening->field_screening_time[$lang][0]['value'] = (float) $time;
       }
 
       $field_instance = field_info_instance('node', 'field_screening_junit', 'screening');
       if (!empty($junit) && !empty($field_instance)) {
         $screening->field_screening_junit[$lang][0]['value'] = $junit;
+      }
+
+      $field_instance = field_info_instance('node', 'field_screening_result', 'screening');
+      if (!empty($result) && !empty($field_instance)) {
+        $screening->field_screening_result[$lang][0]['value'] = $result;
       }
 
       foreach ($screenshots as $screenshot) {

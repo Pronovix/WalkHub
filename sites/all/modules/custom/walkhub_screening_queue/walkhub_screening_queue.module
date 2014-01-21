@@ -186,6 +186,16 @@ function walkhub_screening_queue_services_resources() {
               'data' => 'screenshots',
             ),
           ),
+          array(
+            'name' => 'result',
+            'optional' => TRUE,
+            'type' => 'string',
+            'description' => 'If the screening was successful or not.',
+            'default value' => NULL,
+            'source' => array(
+              'data' => 'result',
+            ),
+          ),
         ),
       ),
     ),
