@@ -101,6 +101,7 @@ function _walkthrough_get_walkthrough_features() {
     'walkhub_page_type_news',
     'walkthrough_page_type_page',
     'walkthrough_global',
+    'walkthrough_notfication',
     'walkthrough_permissions',
     'walkthrough_screening',
     'walkthrough_sets',

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Walkthrough notification feature.
+ */
+
+include_once 'walkthrough_notification.features.inc';

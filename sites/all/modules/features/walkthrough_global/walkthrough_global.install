@@ -363,3 +363,16 @@ function walkthrough_global_update_7025() {
   return t('Walkhub Global feature reverted.');
 }
 
+/**
+ * Enable notifications.
+ */
+function walkthrough_global_update_7026() {
+  $modules = array(
+    'message',
+    'message_notify',
+    'rules',
+  );
+
+  module_enable($modules);
+  features_install_modules(array('walkthrough_notification'));
+}
