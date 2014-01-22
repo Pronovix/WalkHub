@@ -350,16 +350,24 @@ function walkthrough_global_update_7024() {
   $modules = array(
     'oauth_common',
     'oauth_common_providerui',
-    'services_oauth'
+    'services_oauth',
   );
 
   module_enable($modules);
   return t('Enabled OAuth modules.');
 }
 
+/**
+ * Revert overridden features.
+ */
 function walkthrough_global_update_7025() {
-  walkhub_features_revert(array('walkthrough_global'));
+  $features_to_revert = array(
+    'walkhub_collections',
+    'walkthrough_global',
+    'walkthrough_screening',
+  );
+  walkhub_features_revert($features_to_revert);
 
-  return t('Walkhub Global feature reverted.');
+  return t('Walkhub Features reverted.');
 }
 
