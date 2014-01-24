@@ -49,12 +49,13 @@
         margin-left: 2em
 
         .wt-step-position
-          +font-size(1.4)
-          +px-rem(left, 1)
-          +opacity(.5)
+          +font-size(1.25)
+          +px-rem(left, .65)
           +px-rem(top, .5)
+          +px-rem(width, 1.5)
+          color: rgba(#6f6f6f, .6)
+          text-align: right
           position: absolute
-
 
         .walkthrough-step-screenshot
           float: left
@@ -178,5 +179,7 @@
     .links.inline
       float: right
 
-      li.flag-walkthrough_broken a
-        +font-size(.55)
+      li.flag-walkthrough_broken,
+      li.flag-mark_for_screening
+        a
+          +font-size(.6)
