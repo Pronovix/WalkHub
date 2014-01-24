@@ -384,3 +384,12 @@ function walkthrough_global_update_7026() {
   module_enable($modules);
   features_install_modules(array('walkthrough_notification'));
 }
+
+/**
+ * Enable Subscriptions.
+ */
+function walkthrough_global_update_7027() {
+  features_install_modules(array('walkthrough_notification'));
+
+  return t('Subscriptions has been enabled.');
+}

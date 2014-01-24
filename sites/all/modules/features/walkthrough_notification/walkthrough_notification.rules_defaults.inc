@@ -43,5 +43,37 @@ function walkthrough_notification_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_log_updated_walkthroughs'] = entity_import('rules_config', '{ "rules_log_updated_walkthroughs" : {
+      "LABEL" : "Log updated walkthroughs",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "message_notify" ],
+      "ON" : { "node_update--walkthrough" : { "bundle" : "walkthrough" } },
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "message",
+              "param_type" : "walkthrough_has_been_updated",
+              "param_user" : [ "node:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-updated-walkthrough" ],
+            "value" : [ "node" ]
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "node:flag-subscribe-content-user" ] },
+            "ITEM" : { "list_item" : "Current list item" },
+            "DO" : [
+              { "message_notify_process" : { "message" : [ "entity-created" ], "mail" : "[list-item:mail]" } }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }
