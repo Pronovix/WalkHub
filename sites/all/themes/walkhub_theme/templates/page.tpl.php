@@ -117,8 +117,32 @@
   <?php if (!empty($breadcrumb)): ?>
     <section id="breadcrumb">
       <div class="row">
-        <div class="large-12 columns">
+        <div class="large-8 medium-8 small-12 columns">
           <?php print render($breadcrumb); ?>
+        </div>
+        <div class="large-4 medium-4 small-12 columns">
+          <ul class="share">
+            <li>
+              <a class="gl" href="https://plus.google.com/share?url=http%3A%2F%2Fwalkhub.net<?php print url($_GET['q']); ?>">
+                <i class="fa fa-2x fa-google-plus-square"></i>
+              </a>
+            </li>
+            <li>
+              <a class="li" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwalkhub.net<?php print url($_GET['q']); ?>">
+                <i class="fa fa-2x fa-linkedin-square"></i>
+              </a>
+            </li>
+            <li>
+              <a class="fb" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwalkhub.net<?php print url($_GET['q']); ?>">
+                <i class="fa fa-2x fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a class="tw" href="http://twitter.com/home?status=http%3A%2F%2Fwalkhub.net<?php print url($_GET['q']); ?>">
+                <i class="fa fa-2x fa-twitter-square"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

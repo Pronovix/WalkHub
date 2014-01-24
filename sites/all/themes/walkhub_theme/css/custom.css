@@ -4110,13 +4110,25 @@ main { padding: 2% 0; }
 /* line 11, ../sass/modules/_temp_breadcrumbs.sass */
 #breadcrumb ul li { font-size: 8px; line-height: 11.6px; font-size: 0.8rem; line-height: 1.16rem; display: inline-block; }
 /* line 15, ../sass/modules/_temp_breadcrumbs.sass */
-#breadcrumb ul li:after { font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; font-size: 5.5px; line-height: 12px; font-size: 0.55rem; line-height: 1.2rem; content: "\f054"; color: #626262; margin: 0 6.5px 0 5px; margin: 0 0.65rem 0 0.5rem; }
-/* line 22, ../sass/modules/_temp_breadcrumbs.sass */
-#breadcrumb ul li:last-of-type:after { content: ""; margin: 0; padding: 0; }
-/* line 26, ../sass/modules/_temp_breadcrumbs.sass */
 #breadcrumb ul li a { color: #626262; }
-/* line 29, ../sass/modules/_temp_breadcrumbs.sass */
+/* line 18, ../sass/modules/_temp_breadcrumbs.sass */
 #breadcrumb ul li a:hover { text-decoration: underline; }
+/* line 23, ../sass/modules/_temp_breadcrumbs.sass */
+#breadcrumb .breadcrumbs li:after { font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; font-size: 5.5px; line-height: 12px; font-size: 0.55rem; line-height: 1.2rem; content: "\f054"; color: #626262; margin: 0 6.5px 0 5px; margin: 0 0.65rem 0 0.5rem; }
+/* line 30, ../sass/modules/_temp_breadcrumbs.sass */
+#breadcrumb .breadcrumbs li:last-of-type:after { content: ""; margin: 0; padding: 0; }
+/* line 34, ../sass/modules/_temp_breadcrumbs.sass */
+#breadcrumb .share { text-align: right; }
+/* line 37, ../sass/modules/_temp_breadcrumbs.sass */
+#breadcrumb .share li { margin-right: 5px; margin-right: 0.5rem; }
+/* line 41, ../sass/modules/_temp_breadcrumbs.sass */
+#breadcrumb .share a.gl:hover { color: #c63d2d; }
+/* line 44, ../sass/modules/_temp_breadcrumbs.sass */
+#breadcrumb .share a.li:hover { color: #4875b4; }
+/* line 47, ../sass/modules/_temp_breadcrumbs.sass */
+#breadcrumb .share a.fb:hover { color: #3b5998; }
+/* line 50, ../sass/modules/_temp_breadcrumbs.sass */
+#breadcrumb .share a.tw:hover { color: #33ccff; }
 
 /* line 2, ../sass/modules/_temp_sidebar.sass */
 .sidebar .block { margin-bottom: 10px; margin-bottom: 1rem; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }

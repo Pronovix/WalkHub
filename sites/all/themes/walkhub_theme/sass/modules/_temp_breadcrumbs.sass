@@ -12,6 +12,14 @@
       +font-size(.8)
       display: inline-block
 
+      a
+        color: $color-text
+
+        &:hover
+          text-decoration: underline
+
+  .breadcrumbs
+    li
       &:after
         +font-icomoon
         +font-size(.55,1.2)
@@ -23,8 +31,21 @@
         content: ""
         +mp0
 
-      a
-        color: $color-text
+  .share
+    text-align: right
 
-        &:hover
-          text-decoration: underline
+    li
+      +px-rem(margin-right, .5)
+
+    a
+      &.gl:hover
+        color: $color-social-google-plus
+
+      &.li:hover
+        color: $color-social-linkedin
+
+      &.fb:hover
+        color: $color-social-facebook
+
+      &.tw:hover
+        color: $color-social-twitter
