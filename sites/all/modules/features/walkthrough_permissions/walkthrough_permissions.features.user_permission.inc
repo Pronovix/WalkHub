@@ -382,6 +382,13 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'clone accessible content'.
+  $permissions['clone accessible content'] = array(
+    'name' => 'clone accessible content',
+    'roles' => array(),
+    'module' => 'walkthrough_global',
+  );
+
   // Exported permission: 'clone node'.
   $permissions['clone node'] = array(
     'name' => 'clone node',
@@ -797,10 +804,21 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'export walkthrough'.
-  $permissions['export walkthrough'] = array(
-    'name' => 'export walkthrough',
-    'roles' => array(),
+  // Exported permission: 'export any walkthrough'.
+  $permissions['export any walkthrough'] = array(
+    'name' => 'export any walkthrough',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'walkhub',
+  );
+
+  // Exported permission: 'export own walkthrough'.
+  $permissions['export own walkthrough'] = array(
+    'name' => 'export own walkthrough',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'walkhub',
   );
 
