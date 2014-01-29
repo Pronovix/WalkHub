@@ -403,3 +403,24 @@ function walkthrough_global_update_7028() {
 
   return t('Walkhub Features reverted.');
 }
+
+/**
+ * Enable Views Field View module.
+ */
+function walkthrough_global_update_7029() {
+  $modules = array(
+    'views_field_view',
+  );
+
+  module_enable($modules);
+  return t('Enabled Views Field View module.');
+}
+
+/**
+ * Enable Walkhub User Dashboard feature module.
+ */
+function walkthrough_global_update_7030() {
+  features_install_modules(array('walkhub_user_dashboard'));
+
+  return t('Enabled Walkhub User Dashboard feature module.');
+}
