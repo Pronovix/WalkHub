@@ -59,6 +59,7 @@ dependencies[] = user
 dependencies[] = uuid
 dependencies[] = views
 dependencies[] = views_bulk_operations
+dependencies[] = views_field_view
 dependencies[] = views_ui
 dependencies[] = walkhub_client
 dependencies[] = walkhub_screening_queue

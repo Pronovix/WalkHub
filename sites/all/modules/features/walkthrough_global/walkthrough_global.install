@@ -417,10 +417,10 @@ function walkthrough_global_update_7029() {
 }
 
 /**
- * Enable Wlakhub User Dashboard feature module.
+ * Enable Walkhub User Dashboard feature module.
  */
 function walkthrough_global_update_7030() {
   features_install_modules(array('walkhub_user_dashboard'));
 
-  return t('Enabled Walkhub USer Dashboard feature module.');
+  return t('Enabled Walkhub User Dashboard feature module.');
 }
