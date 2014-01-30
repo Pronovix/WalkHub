@@ -12,14 +12,31 @@ function walkhub_theme_preprocess(&$vars, $hook) {
   //http://api.drupal.org/api/drupal/includes--theme.inc/function/template_preprocess_html/7
   $vars['walkhub_theme_poorthemers_helper'] = "";
   //For third-generation iPad with high-resolution Retina display
+  $appletouchicon = '<link rel="apple-touch-icon" sizes="152x152" href="' . $base_url .'/'. $path . '/apple-touch-icon-152x152-precomposed.png">'. "\n";
+  //For third-generation iPad with high-resolution Retina display
   $appletouchicon = '<link rel="apple-touch-icon" sizes="144x144" href="' . $base_url .'/'. $path . '/apple-touch-icon-144x144-precomposed.png">'. "\n";
   //For iPhone with high-resolution Retina display
+  $appletouchicon .= '<link rel="apple-touch-icon" sizes="120x120" href="' . $base_url .'/'. $path . '/apple-touch-icon-120x120-precomposed.png">'. "\n";
+  //For iPhone with high-resolution Retina display
   $appletouchicon .= '<link rel="apple-touch-icon" sizes="114x114" href="' . $base_url .'/'. $path . '/apple-touch-icon-114x114-precomposed.png">'. "\n";
+  //For iPhone with high-resolution Retina display
+  $appletouchicon .= '<link rel="apple-touch-icon" sizes="76x76" href="' . $base_url .'/'. $path . '/apple-touch-icon-76x76-precomposed.png">'. "\n";
   //For first- and second-generation iPad:
   $appletouchicon .= '<link rel="apple-touch-icon" sizes="72x72" href="' . $base_url .'/'.  $path . '/apple-touch-icon-72x72-precomposed.png">' . "\n";
+  //For first- and second-generation iPad:
+  $appletouchicon .= '<link rel="apple-touch-icon" sizes="57x57" href="' . $base_url .'/'.  $path . '/apple-touch-icon-57x57-precomposed.png">' . "\n";
   //For non-Retina iPhone, iPod Touch, and Android 2.1+ devices
-  $appletouchicon .=  '<link rel="apple-touch-icon" href="' . $base_url .'/'.  $path . '/apple-touch-icon-precomposed.png">' . "\n";
-  $appletouchicon .=  '<link rel="apple-touch-startup-image" href="' . $base_url .'/'.  $path . '/apple-startup.png">' . "\n";
+  $appletouchicon .=  '<link rel="apple-touch-icon" href="' . $base_url .'/'.  $path . '/apple-touch-icon-57x57-precomposed.png">' . "\n";
+  //Startup image for iPhone 3GS, 2011 iPod Touch
+  $appletouchicon .=  '<link rel="apple-touch-startup-image" href="' . $base_url .'/'.  $path . '/apple-startup-320x460.png" media="screen and (max-device-width : 320px)">' . "\n";
+  //Startup image for iPhone 4, 4S and 2011 iPod Touch
+  $appletouchicon .=  '<link rel="apple-touch-startup-image" href="' . $base_url .'/'.  $path . '/apple-startup-640x920.png" media="(max-device-width : 480px) and (-webkit-min-device-pixel-ratio : 2)">' . "\n";
+  //Startup image for iPhone 5 and 2012 iPod Touch
+  $appletouchicon .=  '<link rel="apple-touch-startup-image" href="' . $base_url .'/'.  $path . '/apple-startup-640x1096.png" media="(max-device-width : 548px) and (-webkit-min-device-pixel-ratio : 2)">' . "\n";
+  //Startup image for iPad landscape
+  $appletouchicon .=  '<link rel="apple-touch-startup-image" href="' . $base_url .'/'.  $path . '/apple-startup-1024x748.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)">' . "\n";
+  //Startup image for iPad Portrait
+  $appletouchicon .=  '<link rel="apple-touch-startup-image" href="' . $base_url .'/'.  $path . '/apple-startup-768x1004.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)">' . "\n";
 
   if ( $hook == "html" ) {
     // =======================================| HTML |========================================

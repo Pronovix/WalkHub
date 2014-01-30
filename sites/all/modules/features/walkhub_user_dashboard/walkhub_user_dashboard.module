@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Walkhub User Dashboard feature.
+ */
+
+include_once 'walkhub_user_dashboard.features.inc';

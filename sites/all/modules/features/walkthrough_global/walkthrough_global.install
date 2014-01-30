@@ -393,3 +393,107 @@ function walkthrough_global_update_7027() {
 
   return t('Subscriptions has been enabled.');
 }
+
+/**
+ * Revert walkhub feature.
+ */
+function walkthrough_global_update_7028() {
+  $features_to_revert = array('walkhub');
+  walkhub_features_revert($features_to_revert);
+
+  return t('Walkhub Features reverted.');
+}
+
+/**
+ * Enable Views Field View module.
+ */
+function walkthrough_global_update_7029() {
+  $modules = array(
+    'views_field_view',
+  );
+
+  module_enable($modules);
+  return t('Enabled Views Field View module.');
+}
+
+/**
+ * Enable Walkhub User Dashboard feature module.
+ */
+function walkthrough_global_update_7030() {
+  features_install_modules(array('walkhub_user_dashboard'));
+
+  return t('Enabled Walkhub User Dashboard feature module.');
+}
+
+/**
+ * Set use proxy flags
+ */
+function walkthrough_global_update_7031(&$sandbox) {
+  $use_proxy = 1;
+
+  if (variable_get('walkhub_use_proxy', FALSE)) {
+    $use_proxy = 1;
+  } else {
+    $use_proxy = 0;
+  }
+
+  if (empty($sandbox['total'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['last_nid'] = 0;
+    $sandbox['total'] = _walkthrough_global_get_number_of_walkthrough_nodes();
+  }
+
+  // Get the next 50 walkthrough node.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'walkthrough')
+    ->propertyCondition('nid', $sandbox['last_nid'], '>')
+    ->propertyOrderBy('nid')
+    ->range(0, 50);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $walkthrough_nodes = entity_load('node', $nids);
+
+    foreach ($walkthrough_nodes as $walkthrough_node) {
+      $walkthrough_node->field_play_via_proxy[LANGUAGE_NONE][0]['value'] = $use_proxy;
+      node_save($walkthrough_node);
+
+      // Store the last node id and update progress.
+      $sandbox['last_nid'] = max($nids);
+      $sandbox['progress']++;
+    }
+  }
+  // Set the finished variable based on the current progress status.
+  $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
+
+  $message = 'Update returned with the following result: Variable named walkhub_use_proxy was ';
+
+  if ($sandbox['#finished']) {
+    variable_del('walkhub_use_proxy');
+    $message = $message . 'deleted. ';
+
+  } else {
+    $message = $message . 'NOT deleted. ';
+  }
+
+  $message = $message . 'On all walkthrough nodes proxy was ';
+
+  if ($use_proxy) {
+    $message = $message . 'enabled. ';
+  } else {
+    $message = $message . 'disabled. ';
+  }
+
+  return t($message);
+}
+
+function _walkthrough_global_get_number_of_walkthrough_nodes() {
+  $result = db_select('node', 'n')
+    ->fields('n')
+    ->condition('type', 'walkthrough')
+    ->execute();
+
+  return $result->rowCount();
+}
