@@ -8,33 +8,93 @@ require_once 'pronovix-selenium-testcase/px_selenium_testcase.inc';
 
 class WalkthroughPlaying extends PxSeleniumTestCase {
 
+  public function provider() {
+    // scan walkthroughs/ directory
+    $allcontent = scandir('./walkthroughs');
+    $relevantcontent = array_diff($allcontent, array('..', '.'));
+    $converted = array_map(function ($item) {
+      return array($item);
+    }, $relevantcontent);
+    return array_values($converted);
+  }
+
   /**
-   * Tests if a simple walkthrough on pronovix.com starts (via the proxy).
+   * @dataProvider provider
    */
-  public function testWalkthroughPlaying() {
+  public function testWalkthrough($filename) {
+    $test = file_get_contents("walkthroughs/{$filename}");
+
     $title = $this->randomString();
+
     $this->adminLogin();
 
-    $this->click("link=Import Walkthrough");
-    $this->waitForPageToLoad("30000");
+    mock($this->byLinkText('Import Walkthrough'))->click();
 
-    $this->type("id=edit-selenium-code", file_get_contents("walkthroughs/pronovix.html"));
-    $this->click("id=edit-next");
-    $this->waitForPageToLoad("30000");
+    mock($this->byId('edit-selenium-code'))->value($test);
+    mock($this->byId('edit-next'))->click();
 
-    $this->type("id=edit-title", $title);
-    $this->type("id=edit-body", $this->randomString());
-    $this->click("id=edit-save");
-    $this->waitForPageToLoad("30000");
+    mock($this->byId('edit-title'))->value($title);
+    mock($this->byId('edit-body'))->value($this->randomString());
+    mock($this->byId('edit-save'))->click();
 
-    $this->assertEquals($title, $this->getText("id=page-title"));
+    $this->assertEquals($title, mock($this->byId('page-title'))->text());
 
-    $this->click("link=Start walkthrough");
-    $this->waitForElementPresent("//button[@type='button']", "30000");
-    $this->click("//button[@type='button']");
+    mock($this->byLinkText('Start walkthrough'))->click();
+    $wu = new PHPUnit_Extensions_Selenium2TestCase_WaitUntil($this);
+    $self = $this;
+    $wu->run(function () use ($self) {
+      return ($item = $self->byXPath('//button[@type=\'button\']')) ? $item : NULL;
+    }, 30000);
+    mock($this->byXPath("//button[@type='button']"))->click();
 
-    $this->waitForElementPresent("css=div.joyride-content-wrapper", "30000");
+    $this->frame($this->byCssSelector('#ui-id-2'));
+
+    for ($i = 0, $steps = $this->numberOfSteps($test) - 1; $i < $steps; $i++) {
+      sleep(1);
+      mock($this->byCssSelector('.joyride-next-tip'))->click();
+    }
+
+
+    $text = mock($this->byCssSelector('.joyride-content-wrapper'))->text();
+    $this->assertTrue($text && (strpos($text, 'This is the end of this walkthrough.') !== FALSE),
+      'Walkthrough is not finished correctly');
   }
+
+  protected function numberOfSteps($test) {
+    $doc = new DOMDocument();
+    $doc->loadHTML($test);
+    $xpath = new DOMXpath($doc);
+    $elements = $xpath->query('//tbody/tr');
+    return $elements ? $elements->length : NULL;
+  }
+
+//  /**
+//   * Tests if a simple walkthrough on pronovix.com starts (via the proxy).
+//   */
+//  public function testWalkthroughPlaying() {
+//    $title = $this->randomString();
+//    $this->adminLogin();
+//
+//    $this->click("link=Import Walkthrough");
+//    $this->waitForPageToLoad("30000");
+//
+//    $this->type("id=edit-selenium-code", file_get_contents("walkthroughs/pronovix.html"));
+//    $this->click("id=edit-next");
+//    $this->waitForPageToLoad("30000");
+//
+//    $this->type("id=edit-title", $title);
+//    $this->type("id=edit-body", $this->randomString());
+//    $this->click("id=edit-save");
+//    $this->waitForPageToLoad("30000");
+//
+//    $this->assertEquals($title, $this->getText("id=page-title"));
+//
+//    $this->click("link=Start walkthrough");
+//    $this->waitForElementPresent("//button[@type='button']", "30000");
+//    $this->click("//button[@type='button']");
+//
+//    $this->waitForElementPresent("css=div.joyride-content-wrapper", "30000");
+//  }
 
 }
 
