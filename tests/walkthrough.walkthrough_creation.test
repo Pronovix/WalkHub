@@ -14,7 +14,7 @@ class WalkthroughCreation extends PxSeleniumTestCase {
     $this->open("/node/add/walkthrough");
     $this->type("id=edit-title", "Test empty walkthrough");
     $this->click("id=edit-submit");
-    $this->waitForPageToLoad("30000");
+    $this->waitForPageToLoad(30000);
     $this->assertEquals("Test empty walkthrough", $this->getText("id=page-title"));
   }
 
@@ -39,7 +39,7 @@ class WalkthroughCreation extends PxSeleniumTestCase {
       // Set the prerequisite field to point at the previously created walkthrough.
       $this->type("id=edit-field-prerequisites-und-0-target-id", "Test empty Walkthrough ({$nid})");
       $this->click("id=edit-submit");
-      $this->waitForPageToLoad("30000");
+      $this->waitForPageToLoad(30000);
 
       $this->assertEquals($title, $this->getText("id=page-title"));
 
