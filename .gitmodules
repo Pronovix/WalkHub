@@ -13,3 +13,6 @@
 [submodule "resources"]
 	path = resources
 	url = git@bitbucket.org:pronovix/walkthroughresources.git
+[submodule "walkhub_client"]
+  path = walkhub_client
+  url = http://git.drupal.org/project/walkhub_client.git
