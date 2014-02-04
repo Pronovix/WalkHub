@@ -403,6 +403,7 @@ function walkthrough_permissions_user_default_permissions() {
     'name' => 'clone own nodes',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'clone',
   );
@@ -806,7 +807,9 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'export any walkthrough'.
   $permissions['export any walkthrough'] = array(
     'name' => 'export any walkthrough',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'walkhub',
   );
 
