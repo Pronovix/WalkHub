@@ -403,7 +403,6 @@ function walkthrough_permissions_user_default_permissions() {
     'name' => 'clone own nodes',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'clone',
   );
@@ -807,18 +806,14 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'export any walkthrough'.
   $permissions['export any walkthrough'] = array(
     'name' => 'export any walkthrough',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
+    'roles' => array(),
     'module' => 'walkhub',
   );
 
   // Exported permission: 'export own walkthrough'.
   $permissions['export own walkthrough'] = array(
     'name' => 'export own walkthrough',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'walkhub',
   );
 

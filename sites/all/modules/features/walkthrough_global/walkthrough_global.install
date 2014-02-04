@@ -497,3 +497,15 @@ function _walkthrough_global_get_number_of_walkthrough_nodes() {
 
   return $result->rowCount();
 }
+
+/**
+ * Enable CKEditor module.
+ */
+function walkthrough_global_update_7032() {
+  $modules = array(
+    'ckeditor',
+  );
+
+  module_enable($modules);
+  return t('Enabled CKEditor module.');
+}
