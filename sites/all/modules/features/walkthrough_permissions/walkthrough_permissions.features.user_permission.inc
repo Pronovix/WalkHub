@@ -816,7 +816,9 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'export own walkthrough'.
   $permissions['export own walkthrough'] = array(
     'name' => 'export own walkthrough',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'walkhub',
   );
 
