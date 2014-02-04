@@ -148,4 +148,3 @@ features[user_permission][] = view revisions
 features[user_permission][] = view the administration theme
 features[user_role][] = Administrator
 features[variable][] = user_admin_role
-project path = /tmp/
