@@ -148,7 +148,7 @@ function walkthrough_global_update_7012(&$sandbox) {
     $sandbox['last_nid'] = 0;
 
     // Forcefully revert all components of Walkthrough Screening feature.
-    if ($feature = features_load_feature('walkthrough_screening', TRUE)) {
+    if (($feature = features_load_feature('walkthrough_screening', TRUE))) {
       foreach (array_keys($feature->info['features']) as $component) {
         if (features_hook($component, 'features_revert')) {
           features_revert(array('walkthrough_screening' => array($component)));
@@ -296,7 +296,7 @@ function walkthrough_global_update_7018(&$sandbox) {
   // Set the finished variable based on the current progress status.
   $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
 
-  if ($sandbox['#finished']) {
+  if ($sandbox['progress'] == $sandbox['total']) {
     node_type_delete('step');
   }
 
@@ -470,7 +470,7 @@ function walkthrough_global_update_7031(&$sandbox) {
 
   $message = 'Update returned with the following result: Variable named walkhub_use_proxy was ';
 
-  if ($sandbox['#finished']) {
+  if ($sandbox['progress'] == $sandbox['total']) {
     variable_del('walkhub_use_proxy');
     $message = $message . 'deleted. ';
 
@@ -496,4 +496,16 @@ function _walkthrough_global_get_number_of_walkthrough_nodes() {
     ->execute();
 
   return $result->rowCount();
+}
+
+/**
+ * Enable CKEditor module.
+ */
+function walkthrough_global_update_7032() {
+  $modules = array(
+    'ckeditor',
+  );
+
+  module_enable($modules);
+  return t('Enabled CKEditor module.');
 }
