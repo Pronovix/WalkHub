@@ -3,7 +3,7 @@
 	url = http://git.drupal.org/project/walkhub.git
 [submodule "tests/pronovix-selenium-testcase"]
 	path = tests/pronovix-selenium-testcase
-	url = git@bitbucket.org:pronovix/pronovix-selenium-testcase.git
+	url = https://github.com/Pronovix/Pronovix-Selenium-Testcase.git
 [submodule "sites/all/modules/custom/walkhub_branding"]
   path = sites/all/modules/custom/walkhub_branding
   url = git@bitbucket.org:pronovix/walkhub_branding.git
