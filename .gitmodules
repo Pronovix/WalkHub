@@ -12,7 +12,7 @@
 	url = ssh://git@bitbucket.org/pronovix/walkhub_theme.git
 [submodule "resources"]
 	path = resources
-	url = git@bitbucket.org:pronovix/walkthroughresources.git
+	url = https://github.com/Pronovix/Walkhub-resources.git
 [submodule "sites/all/modules/custom/walkhub_client"]
 	path = sites/all/modules/custom/walkhub_client
 	url = http://git.drupal.org/project/walkhub_client.git
