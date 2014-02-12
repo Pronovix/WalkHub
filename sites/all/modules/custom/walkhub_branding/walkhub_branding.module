@@ -1,0 +1,201 @@
+<?php
+/**
+ * @file
+ * Code for the Walkhub Branding feature.
+ */
+
+include_once 'walkhub_branding.features.inc';
+
+/**
+ * Implements hook_services_resources().
+ */
+function walkhub_branding_services_resources() {
+  $resource = array();
+
+  $resource['walkhub-branding'] = array(
+    'operations' => array(
+      'retrieve' => array(
+        'callback' => '_walkhub_branding_retrieve',
+        'args' => array(
+          array(
+            'name' => 'id',
+            'optional' => FALSE,
+            'source' => array('path' => 0),
+            'type' => 'string',
+          ),
+        ),
+        'access callback' => '_walkhub_branding_access',
+        'access arguments' => array('view'),
+        'access arguments append' => TRUE,
+      ),
+    ),
+  );
+
+  return $resource;
+}
+
+class WalkhubBranding implements WalkhubObject {
+
+  /**
+   * @filter none
+   */
+  public $uuid;
+
+  /**
+   * @filter check_plain
+   */
+  public $title;
+
+  /**
+   * @filter none
+   */
+  public $branding_logo;
+
+  /**
+   * @filter check_plain
+   */
+  public $welcome_text;
+
+  /**
+   * @filter none
+   */
+  public $textfield_color;
+
+  /**
+   * @filter none
+   */
+  public $textfield_bgcolor;
+
+  /**
+   * @filter none
+   */
+  public $button_color;
+
+  /**
+   * @filter none
+   */
+  public $button_bgcolor;
+
+  /**
+   * @filter none
+   */
+  public $screen_bgcolor;
+
+  /**
+   * @filter none
+   */
+  public $title_label_color;
+
+  /**
+   * @filter none
+   */
+  public $cell_title_color;
+
+  /**
+   * @filter none
+   */
+  public $cell_detail_color;
+
+  /**
+   * @filter none
+   */
+  public $cell_bgcolor;
+
+  /**
+   * @filter none
+   */
+  public $free_frame;
+
+  /**
+   * @filter none
+   */
+  public $description_color;
+
+  /**
+   * @filter none
+   */
+  public $welcome_screen_bgcolor;
+
+  /**
+   * @filter none
+   */
+  public $description_bgcolor;
+
+  /**
+   * @filter none
+   */
+  public $frame_color;
+
+  public function __construct(stdClass $node = NULL) {
+    if ($node) {
+      module_load_include('inc', 'walkhub');
+      $this->uuid = $node->uuid;
+      $this->title = $node->title;
+      $this->branding_logo = walkhub_image_field_get_url($node, 'field_branding_logo');
+      $this->welcome_text = walkhub_field_get_value($node, 'field_welcome_text');
+      $this->free_frame = walkhub_image_field_get_url($node, 'field_free_frame');
+
+      $color_fields = array(
+        'textfield_color',
+        'textfield_bgcolor',
+        'button_color',
+        'button_bgcolor',
+        'screen_bgcolor',
+        'title_label_color',
+        'cell_title_color',
+        'cell_detail_color',
+        'cell_bgcolor',
+        'description_color',
+        'welcome_screen_bgcolor',
+        'description_bgcolor',
+        'frame_color',
+      );
+      foreach ($color_fields as $color_field) {
+        $this->{$color_field} = self::getColor($node, "field_{$color_field}");
+      }
+    }
+  }
+
+  protected static function getColor($node, $field) {
+    return walkhub_field_get_value($node, $field, FALSE, LANGUAGE_NONE, 'rgb');
+  }
+
+  /**
+   * Applies the contents of this container object to an existing entity.
+   *
+   * @param stdClass $entity
+   */
+  public function applyOnEntity($entity) {
+    // TODO: Implement applyOnEntity() method.
+  }
+
+}
+
+function _walkhub_branding_retrieve($id) {
+  module_load_include('inc', 'walkhub');
+  if (is_numeric($id)) {
+    $uuids = walkhub_field_get_references('node', user_load($id), 'field_branding');
+    if ($uuids) {
+      $id = reset($uuids);
+    }
+  }
+
+  $node = _walkhub_node_retrieve($id, 'branding');
+  return $node ? walkhub_serialize_safely(new WalkhubBranding($node)) : $node;
+}
+
+function _walkhub_branding_access($op = 'view', $args = array()) {
+  global $user;
+  $id = isset($args[0]) ? $args[0] : NULL;
+  if ($id === NULL) {
+    return FALSE;
+  }
+
+  if (is_numeric($id)) {
+    return $user->uid != 0 && $user->uid == $id;
+  }
+  else {
+    module_load_include('inc', 'walkhub');
+    return _walkhub_node_resource_access('branding', $op, $args);
+  }
+}
