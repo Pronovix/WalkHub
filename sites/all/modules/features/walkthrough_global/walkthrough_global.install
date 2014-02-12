@@ -509,3 +509,9 @@ function walkthrough_global_update_7032() {
   module_enable($modules);
   return t('Enabled CKEditor module.');
 }
+/**
+ * Enables the Blog entry features feature
+ */
+function walkthrough_global_update_7033() {
+  features_install_modules(array('blog_entry_features'));
+}
