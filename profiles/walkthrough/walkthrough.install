@@ -95,6 +95,7 @@ function walkthrough_install_features() {
 function _walkthrough_get_walkthrough_features() {
   return array(
     'walkhub',
+    'walkhub_blog',
     'walkhub_branding',
     'walkhub_collections',
     'walkhub_page_type_faq',
