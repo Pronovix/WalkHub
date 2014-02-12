@@ -15,4 +15,4 @@
 	url = https://github.com/Pronovix/Walkhub-resources.git
 [submodule "sites/all/modules/custom/walkhub_client"]
 	path = sites/all/modules/custom/walkhub_client
-	url = http://git.drupal.org/project/walkhub_client.git
+	url = https://github.com/Pronovix/Walkhub-client.git
