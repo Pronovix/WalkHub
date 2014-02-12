@@ -509,3 +509,12 @@ function walkthrough_global_update_7032() {
   module_enable($modules);
   return t('Enabled CKEditor module.');
 }
+
+/**
+ * Enable Walkhub blog feature
+ */
+function walkthrough_global_update_7033() {
+  features_install_modules(array('walkhub_blog'));
+
+  return t('Enabled Walkhub blog feature module.');
+}
