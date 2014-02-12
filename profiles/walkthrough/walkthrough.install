@@ -106,7 +106,7 @@ function _walkthrough_get_walkthrough_features() {
     'walkthrough_permissions',
     'walkthrough_screening',
     'walkthrough_sets',
-    'walkthrough_screening',
+    'blog_entry_feaures',
   );
 }
 
