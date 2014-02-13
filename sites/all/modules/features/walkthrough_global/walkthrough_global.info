@@ -64,4 +64,3 @@ features[variable][] = recaptcha_theme
 features[variable][] = site_name
 features[variable][] = theme_settings
 features[variable][] = user_register
-project path = sites/all/modules/features
