@@ -509,3 +509,38 @@ function walkthrough_global_update_7032() {
   module_enable($modules);
   return t('Enabled CKEditor module.');
 }
+
+/**
+ * Enable Walkhub blog feature
+ */
+function walkthrough_global_update_7033() {
+  features_install_modules(array('walkhub_blog'));
+
+  return t('Enabled Walkhub blog feature module.');
+}
+/**
+ * Adds terms in Blog category taxonomy vocabulary
+ */
+function walkthrough_global_update_7034() {
+
+  $blog_category_vocabulary =  taxonomy_vocabulary_machine_name_load('blog_category');
+  $vid = $blog_category_vocabulary->vid;
+
+  $demo_term = new stdClass();
+  $demo_term->name = 'Demo';
+  $demo_term->vid = $vid;
+  taxonomy_term_save($demo_term);
+
+  $test_term = new stdClass();
+  $test_term->name = 'Test';
+  $test_term->vid = $vid;
+  taxonomy_term_save($test_term);
+  taxonomy_term_save($test_term);
+
+  $documentation_term = new stdClass();
+  $documentation_term->name = 'Documentation';
+  $documentation_term->vid = $vid;
+  taxonomy_term_save($documentation_term);
+
+  return t('Added terms to Blog category vocabulary');
+}
