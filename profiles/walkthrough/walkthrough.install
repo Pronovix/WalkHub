@@ -46,6 +46,14 @@ function walkthrough_install_tasks() {
     'function' => 'walkthrough_add_menu_items',
   );
 
+  $tasks['add_taxonomy_terms'] = array(
+    'display_name' => st('Add taxonomy terms'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_add_taxonomy_terms',
+  );
+
   $tasks['disable_update_module'] = array(
     'display_name' => st('Disable update module'),
     'display' => TRUE,
@@ -55,6 +63,14 @@ function walkthrough_install_tasks() {
   );
 
   return $tasks;
+}
+
+/**
+ * Install callback to add taxonomy terms.
+ */
+function walkthrough_add_taxonomy_terms() {
+  module_load_include('install', 'walkthrough_global');
+  _walkthrough_global_add_blog_taxonomy_terms();
 }
 
 /**
