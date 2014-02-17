@@ -403,6 +403,7 @@ function walkthrough_permissions_user_default_permissions() {
     'name' => 'clone own nodes',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'clone',
   );
