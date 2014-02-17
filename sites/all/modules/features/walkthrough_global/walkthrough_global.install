@@ -519,10 +519,18 @@ function walkthrough_global_update_7033() {
 
   return t('Enabled Walkhub blog feature module.');
 }
+
 /**
- * Adds terms in Blog category taxonomy vocabulary
+ * Adds terms in Blog category taxonomy vocabulary.
  */
 function walkthrough_global_update_7034() {
+  _walkthrough_global_add_blog_taxonomy_terms();
+}
+
+/**
+ * Helper function to add Blog taxonomy terms.
+ */
+function _walkthrough_global_add_blog_taxonomy_terms() {
   $blog_category_vocabulary =  taxonomy_vocabulary_machine_name_load('blog_category');
   $vid = $blog_category_vocabulary->vid;
 
