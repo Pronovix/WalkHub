@@ -544,3 +544,11 @@ function _walkthrough_global_add_blog_taxonomy_terms() {
 
   return t('Added terms to Blog category vocabulary');
 }
+
+/**
+ * Revert permissions feature.
+ */
+function walkthrough_global_update_7035() {
+  walkhub_features_revert(array('walkthrough_permissions'));
+}
+
