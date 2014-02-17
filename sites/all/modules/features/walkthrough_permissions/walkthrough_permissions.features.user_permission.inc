@@ -1177,6 +1177,123 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'services',
   );
 
+  // Exported permission: 'show format selection for field_collection_item'.
+  $permissions['show format selection for field_collection_item'] = array(
+    'name' => 'show format selection for field_collection_item',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for flagging'.
+  $permissions['show format selection for flagging'] = array(
+    'name' => 'show format selection for flagging',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for message'.
+  $permissions['show format selection for message'] = array(
+    'name' => 'show format selection for message',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for message_type'.
+  $permissions['show format selection for message_type'] = array(
+    'name' => 'show format selection for message_type',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for message_type_category'.
+  $permissions['show format selection for message_type_category'] = array(
+    'name' => 'show format selection for message_type_category',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for node'.
+  $permissions['show format selection for node'] = array(
+    'name' => 'show format selection for node',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for og_membership'.
+  $permissions['show format selection for og_membership'] = array(
+    'name' => 'show format selection for og_membership',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for og_membership_type'.
+  $permissions['show format selection for og_membership_type'] = array(
+    'name' => 'show format selection for og_membership_type',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for rules_config'.
+  $permissions['show format selection for rules_config'] = array(
+    'name' => 'show format selection for rules_config',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for taxonomy_term'.
+  $permissions['show format selection for taxonomy_term'] = array(
+    'name' => 'show format selection for taxonomy_term',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for user'.
+  $permissions['show format selection for user'] = array(
+    'name' => 'show format selection for user',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format tips'.
+  $permissions['show format tips'] = array(
+    'name' => 'show format tips',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show more format tips link'.
+  $permissions['show more format tips link'] = array(
+    'name' => 'show more format tips link',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
   // Exported permission: 'skip CAPTCHA'.
   $permissions['skip CAPTCHA'] = array(
     'name' => 'skip CAPTCHA',
