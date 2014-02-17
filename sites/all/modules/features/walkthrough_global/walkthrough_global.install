@@ -549,6 +549,9 @@ function _walkthrough_global_add_blog_taxonomy_terms() {
  * Revert permissions feature.
  */
 function walkthrough_global_update_7035() {
+
+  features_install_modules(array('better_formats'));
+
   walkhub_features_revert(array('walkthrough_permissions'));
 }
 
