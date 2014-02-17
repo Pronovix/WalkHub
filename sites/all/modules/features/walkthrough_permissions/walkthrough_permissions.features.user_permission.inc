@@ -56,6 +56,33 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access own authorizations'.
+  $permissions['access own authorizations'] = array(
+    'name' => 'access own authorizations',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'access own consumers'.
+  $permissions['access own consumers'] = array(
+    'name' => 'access own consumers',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'access rules debug'.
+  $permissions['access rules debug'] = array(
+    'name' => 'access rules debug',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
@@ -115,6 +142,24 @@ function walkthrough_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'block',
+  );
+
+  // Exported permission: 'administer ckeditor'.
+  $permissions['administer ckeditor'] = array(
+    'name' => 'administer ckeditor',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'ckeditor',
+  );
+
+  // Exported permission: 'administer consumers'.
+  $permissions['administer consumers'] = array(
+    'name' => 'administer consumers',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'oauth_common',
   );
 
   // Exported permission: 'administer content types'.
@@ -205,6 +250,15 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'menu',
   );
 
+  // Exported permission: 'administer message types'.
+  $permissions['administer message types'] = array(
+    'name' => 'administer message types',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'message',
+  );
+
   // Exported permission: 'administer meta tags'.
   $permissions['administer meta tags'] = array(
     'name' => 'administer meta tags',
@@ -232,6 +286,24 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'administer oauth'.
+  $permissions['administer oauth'] = array(
+    'name' => 'administer oauth',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'administer pathauto'.
+  $permissions['administer pathauto'] = array(
+    'name' => 'administer pathauto',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'pathauto',
+  );
+
   // Exported permission: 'administer permissions'.
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
@@ -248,6 +320,24 @@ function walkthrough_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'recaptcha',
+  );
+
+  // Exported permission: 'administer redirects'.
+  $permissions['administer redirects'] = array(
+    'name' => 'administer redirects',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'redirect',
+  );
+
+  // Exported permission: 'administer rules'.
+  $permissions['administer rules'] = array(
+    'name' => 'administer rules',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'rules',
   );
 
   // Exported permission: 'administer services'.
@@ -363,6 +453,15 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'bypass rules access'.
+  $permissions['bypass rules access'] = array(
+    'name' => 'bypass rules access',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'cancel account'.
   $permissions['cancel account'] = array(
     'name' => 'cancel account',
@@ -403,9 +502,24 @@ function walkthrough_permissions_user_default_permissions() {
     'name' => 'clone own nodes',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'clone',
+  );
+
+  // Exported permission: 'create blog_entry content'.
+  $permissions['create blog_entry content'] = array(
+    'name' => 'create blog_entry content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create messages'.
+  $permissions['create messages'] = array(
+    'name' => 'create messages',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'message',
   );
 
   // Exported permission: 'create page content'.
@@ -485,6 +599,22 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'customize ckeditor'.
+  $permissions['customize ckeditor'] = array(
+    'name' => 'customize ckeditor',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'ckeditor',
+  );
+
+  // Exported permission: 'delete any blog_entry content'.
+  $permissions['delete any blog_entry content'] = array(
+    'name' => 'delete any blog_entry content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
@@ -546,6 +676,13 @@ function walkthrough_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own blog_entry content'.
+  $permissions['delete own blog_entry content'] = array(
+    'name' => 'delete own blog_entry content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -629,6 +766,13 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in blog_category'.
+  $permissions['delete terms in blog_category'] = array(
+    'name' => 'delete terms in blog_category',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in tags'.
   $permissions['delete terms in tags'] = array(
     'name' => 'delete terms in tags',
@@ -645,6 +789,13 @@ function walkthrough_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'admin_menu',
+  );
+
+  // Exported permission: 'edit any blog_entry content'.
+  $permissions['edit any blog_entry content'] = array(
+    'name' => 'edit any blog_entry content',
+    'roles' => array(),
+    'module' => 'node',
   );
 
   // Exported permission: 'edit any page content'.
@@ -724,6 +875,13 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'metatag',
   );
 
+  // Exported permission: 'edit own blog_entry content'.
+  $permissions['edit own blog_entry content'] = array(
+    'name' => 'edit own blog_entry content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit own page content'.
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
@@ -795,6 +953,13 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit terms in blog_category'.
+  $permissions['edit terms in blog_category'] = array(
+    'name' => 'edit terms in blog_category',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in tags'.
   $permissions['edit terms in tags'] = array(
     'name' => 'edit terms in tags',
@@ -807,19 +972,29 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'export any walkthrough'.
   $permissions['export any walkthrough'] = array(
     'name' => 'export any walkthrough',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
+    'roles' => array(),
     'module' => 'walkhub',
   );
 
   // Exported permission: 'export own walkthrough'.
   $permissions['export own walkthrough'] = array(
     'name' => 'export own walkthrough',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'walkhub',
+  );
+
+  // Exported permission: 'flag mark_for_screening'.
+  $permissions['flag mark_for_screening'] = array(
+    'name' => 'flag mark_for_screening',
+    'roles' => array(),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'flag subscribe_content'.
+  $permissions['flag subscribe_content'] = array(
+    'name' => 'flag subscribe_content',
+    'roles' => array(),
+    'module' => 'flag',
   );
 
   // Exported permission: 'flag walkthrough_broken'.
@@ -883,6 +1058,70 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'mark any content for screening'.
+  $permissions['mark any content for screening'] = array(
+    'name' => 'mark any content for screening',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'walkhub_screening_queue',
+  );
+
+  // Exported permission: 'mark own content for screening'.
+  $permissions['mark own content for screening'] = array(
+    'name' => 'mark own content for screening',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'walkhub_screening_queue',
+  );
+
+  // Exported permission: 'notify of path changes'.
+  $permissions['notify of path changes'] = array(
+    'name' => 'notify of path changes',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'pathauto',
+  );
+
+  // Exported permission: 'oauth authorize any consumers'.
+  $permissions['oauth authorize any consumers'] = array(
+    'name' => 'oauth authorize any consumers',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'oauth authorize consumers in walkthrough_selenium_executor'.
+  $permissions['oauth authorize consumers in walkthrough_selenium_executor'] = array(
+    'name' => 'oauth authorize consumers in walkthrough_selenium_executor',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'oauth register any consumers'.
+  $permissions['oauth register any consumers'] = array(
+    'name' => 'oauth register any consumers',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'oauth register consumers in walkthrough_selenium_executor'.
+  $permissions['oauth register consumers in walkthrough_selenium_executor'] = array(
+    'name' => 'oauth register consumers in walkthrough_selenium_executor',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'oauth_common',
+  );
+
   // Exported permission: 'opt-in or out of tracking'.
   $permissions['opt-in or out of tracking'] = array(
     'name' => 'opt-in or out of tracking',
@@ -944,6 +1183,20 @@ function walkthrough_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'captcha',
+  );
+
+  // Exported permission: 'unflag mark_for_screening'.
+  $permissions['unflag mark_for_screening'] = array(
+    'name' => 'unflag mark_for_screening',
+    'roles' => array(),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag subscribe_content'.
+  $permissions['unflag subscribe_content'] = array(
+    'name' => 'unflag subscribe_content',
+    'roles' => array(),
+    'module' => 'flag',
   );
 
   // Exported permission: 'unflag walkthrough_broken'.
