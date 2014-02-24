@@ -267,9 +267,13 @@ function walkthrough_get_latest_screening_from_walkthrough($walkthrough) {
     ->range(0, 1);
 
   $result_array = $query->execute();
-  $result_node = reset($result_array['node']);
 
-  return node_load($result_node->nid);
+  if ($result_array) {
+    $result_node = reset($result_array['node']);
+    return node_load($result_node->nid);
+  }
+
+  return FALSE;
 }
 
 /**
