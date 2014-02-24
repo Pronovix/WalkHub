@@ -50,8 +50,8 @@ jQuery(function ($) {
     // Full screen.
     $('#fullscreen').click(function () {
       // Disable Bigscreen mode on <IE11.
-      var supported_browser = !($('body').is('ie') && !$('body').is('ie11'));
-      if (supported_browser && BigScreen.enabled) {
+      var biscreen_supported_browser = !($('body').is('ie') && !$('body').is('ie11'));
+      if (bigscreen_supported_browser && BigScreen && BigScreen.enabled) {
         BigScreen.toggle();
       } else {
         // If bigscreen is not supported, lets show a popup.

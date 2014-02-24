@@ -15,7 +15,9 @@
         href="<?php echo $GLOBALS['base_url'] . '/' . drupal_get_path('module', 'walkthrough_slideshow'); ?>/walkthrough_slideshow.css"
         type="text/css" media="screen"/>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <!--[if !IE|IE 11]-->
   <script type="text/javascript" src="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('bigscreen'); ?>/bigscreen.min.js"></script>
+  <!--[endif]-->
   <script type="text/javascript"
           src="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('supersized'); ?>/slideshow/js/jquery.easing.min.js"></script>
   <script type="text/javascript"
