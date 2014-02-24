@@ -49,8 +49,27 @@ jQuery(function ($) {
 
     // Full screen.
     $('#fullscreen').click(function () {
-      if (BigScreen.enabled) {
+      // Disable Bigscreen mode on <IE11.
+      var supported_browser = !($('body').is('ie') && !$('body').is('ie11'));
+      if (supported_browser && BigScreen.enabled) {
         BigScreen.toggle();
+      } else {
+        // If bigscreen is not supported, lets show a popup.
+        var window_options, popup;
+
+        window_options = 'height=' + (screen.height) + ','
+          + 'width=' + (screen.width) + ','
+          + 'fullscreen=1,'
+          + 'menubar=0,'
+          + 'resizable=0,'
+          + 'status=0,'
+          + 'titlebar=0,'
+          + 'location=0,'
+          + 'toolbar=0';
+        popup = window.open(location.href, 'Walkthrough', window_options);
+        if (window.focus) {
+          popup.focus();
+        }
       }
     });
 

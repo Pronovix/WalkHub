@@ -27,8 +27,11 @@
   </script>
   <script type="text/javascript"
           src="<?php echo $GLOBALS['base_url'] . '/' . drupal_get_path('module', 'walkthrough_slideshow'); ?>/js/walkthrough_slideshow.js"></script>
+  <script type="text/javascript">
+          src="<?php print drupal_get_path('module', 'browserclass') . '/browserclass.js'; ?>"
+  </script>
 </head>
-<body>
+<body class="<?php print implode(' ', browserclass_get_classes()); ?>">
 <!--Thumbnail Navigation-->
 <div id="prevthumb"></div>
 <div id="nextthumb"></div>
