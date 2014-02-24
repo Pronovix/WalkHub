@@ -7,6 +7,7 @@ core = 7.x
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
 dependencies[] = block
+dependencies[] = browserclass
 dependencies[] = captcha
 dependencies[] = clone
 dependencies[] = color_field

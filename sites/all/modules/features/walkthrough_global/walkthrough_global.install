@@ -555,3 +555,11 @@ function walkthrough_global_update_7035() {
   walkhub_features_revert(array('walkthrough_permissions'));
 }
 
+/**
+ * Enable browserclass module.
+ */
+function walkthrough_global_update_7036() {
+  module_enable(array('browserclass'));
+
+  return t('Enabled Browser class module');
+}

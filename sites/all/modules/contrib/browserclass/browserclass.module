@@ -1,0 +1,353 @@
+<?php
+/**
+ * @file
+ *
+ *
+ *
+ * @author Kálmán Hosszu - http://drupal.org/user/267481
+ */
+
+define('BROWSERCLASS_OPERATION_WITHOUT_JS', 0);
+define('BROWSERCLASS_OPERATION_WITH_JS', 1);
+
+/**
+ * Class masks - defines the kind of the classes.
+ */
+define('BROWSERCLASS_BROWSER', 1);
+define('BROWSERCLASS_PLATFORM', 2);
+define('BROWSERCLASS_MOBILE', 4);
+define('BROWSERCLASS_OTHER_CLASSES', 8);
+define('BROWSERCLASS_ALL',
+  BROWSERCLASS_BROWSER |
+  BROWSERCLASS_PLATFORM |
+  BROWSERCLASS_MOBILE |
+  BROWSERCLASS_OTHER_CLASSES
+);
+
+
+/**
+ * Implementation of hook_menu().
+ *
+ * @return An array of menu items.
+ */
+function browserclass_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/browserclass'] = array(
+    'title' => 'Browser class',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('browserclass_settings_form'),
+    'access arguments' => array('administer browser class'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_permission().
+ *
+ * @return array An array of valid permissions for the browserclass module
+ */
+function browserclass_permission() {
+  return array(
+    'administer browser class' => array(
+      'title' => 'Administer browser class',
+      'description' => 'Configure Browser class module, set JavaScript operation.',
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_init().
+ */
+function browserclass_init() {
+  if (((variable_get('browserclass_operation', BROWSERCLASS_OPERATION_WITHOUT_JS) == BROWSERCLASS_OPERATION_WITH_JS)
+    || variable_get('cache', 0) != 0) && ($browser_classes = browserclass_get_classes())) {
+
+    drupal_add_js(drupal_get_path('module', 'browserclass') . '/browserclass.js', array('scope' => 'footer'));
+  }
+}
+
+/**
+ * Implementation of hook_preprocess_html().
+ *
+ * @param array $vars
+ */
+function browserclass_preprocess_html(&$vars) {
+  if ((variable_get('browserclass_operation', BROWSERCLASS_OPERATION_WITHOUT_JS) == BROWSERCLASS_OPERATION_WITHOUT_JS) &&
+    (variable_get('cache', 0) == 0) && ($browser_classes = browserclass_get_classes())) {
+
+    $vars['classes_array'] = array_merge($vars['classes_array'], $browser_classes);
+    $vars['browser_classes'] = $browser_classes;
+
+  }
+}
+
+/**
+ * Build browserclass_settings_form form.
+ *
+ * @param array $form_state
+ * @return array The created form.
+ */
+function browserclass_settings_form($form_state) {
+  $form = array();
+
+  $form['browserclass_operation'] = array(
+    '#type' => 'radios',
+    '#title' => t('Operation'),
+    '#options' => array(
+      BROWSERCLASS_OPERATION_WITH_JS => t('Always add the class with JavaScript'),
+      BROWSERCLASS_OPERATION_WITHOUT_JS => t('Only use JavaScript if page cache is enabled'),
+    ),
+    '#default_value' => variable_get('browserclass_operation', BROWSERCLASS_OPERATION_WITHOUT_JS),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Get classes.
+ *
+ * @return array of classes
+ */
+function browserclass_get_classes($types = BROWSERCLASS_ALL) {
+  $classes = array();
+
+  // User agent doesn't set always, for example on rss readers.
+  if (isset($_SERVER['HTTP_USER_AGENT'])) {
+    $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
+
+    if ($types & BROWSERCLASS_BROWSER) {
+      $classes = array_merge($classes, browserclass_check_browser($agent));
+    }
+
+    if ($types & BROWSERCLASS_PLATFORM) {
+      $classes = array_merge($classes, browserclass_check_platform($agent));
+    }
+
+    if ($types & BROWSERCLASS_OTHER_CLASSES) {
+      // Merge other modules classes
+      $classes = array_merge($classes, module_invoke_all('browserclass_classes', $agent));
+    }
+
+    if ($types & BROWSERCLASS_MOBILE) {
+      $classes[] = browserclass_is_mobile_devide($agent, $classes) ? 'mobile' : 'desktop';
+    }
+  }
+
+  return $classes;
+}
+
+/**
+ * Detect browser.
+ *
+ * @param string $agent Lowercase version of user agent.
+ * @return array of detected platforms
+ */
+function browserclass_check_browser($agent) {
+  $classes = array();
+
+  // Add ie extra class with the version number
+  $ie_pattern = '/(?:\b(ms)?ie\s+|\btrident\/7\.0;.*\s+rv:)(\d+)/';
+  $ie_matches = array();
+  $ie_m = preg_match($ie_pattern, $agent, $ie_matches);
+
+  if ($ie_m === 1) {
+    $classes[] = 'ie';
+
+    if (isset($ie_matches[2])) {
+      $classes[] = 'ie' . $ie_matches[2];
+    }
+  }
+
+  if (stristr($agent, 'opera') !== FALSE) {
+    $classes[] = 'opera';
+    $aresult = explode('/', stristr($agent, 'version'));
+    if(isset($aresult[1])) {
+      $aversion = explode(' ', $aresult[1]);
+      $classes[] = 'opera' . _browserclass_clear_version($aversion[0]);
+    }
+  }
+
+  // Check for chrome desktop first, then chrome mobile, lastly check for
+  // safari, as these are mutually exclusive.
+  if (stristr($agent, 'chrome') !== FALSE) {
+    $classes[] = 'chrome';
+    $aresult = explode('/', stristr($agent, 'chrome'));
+    $aversion = explode(' ', $aresult[1]);
+    $classes[] = 'chrome' . _browserclass_clear_version($aversion[0]);
+  }
+  elseif (stristr($agent, 'crios') !== FALSE) {
+    $classes[] = 'chrome';
+
+    $aresult = explode('/', stristr($agent, 'crios'));
+    if (isset($aresult[1])) {
+      $aversion = explode(' ', $aresult[1]);
+      $classes[] = 'chrome' . _browserclass_clear_version($aversion[0]);
+    }
+  }
+  elseif (stristr($agent, 'safari') !== FALSE) {
+    $classes[] = 'safari';
+
+    $aresult = explode('/', stristr($agent, 'version'));
+    if(isset($aresult[1])) {
+      $aversion = explode(' ', $aresult[1]);
+      $classes[] = 'safari' . _browserclass_clear_version($aversion[0]);
+    }
+  }
+
+  if (stristr($agent, 'netscape') !== FALSE) {
+    $classes[] = 'netscape';
+    if (preg_match('/navigator\/([^ ]*)/', $agent, $matches)) {
+      $classes[] = 'netscape' . _browserclass_clear_version($matches[1]);
+    }
+    elseif (preg_match('/netscape6?\/([^ ]*)/', $agent, $matches)) {
+      $classes[] = 'netscape' . _browserclass_clear_version($matches[1]);
+    }
+  }
+
+  if (stristr($agent, 'firefox') !== FALSE) {
+    $classes[] = 'ff';
+
+    if(preg_match("/firefox[\/ \(]([^ ;\)]+)/", $agent, $matches)) {
+      $classes[] = 'ff' . _browserclass_clear_version($matches[1]);
+    }
+  }
+
+  if (stristr($agent, 'konqueror') !== FALSE) {
+    $classes[] = 'konqueror';
+    $aresult = explode(' ', stristr($agent, 'konqueror'));
+    $aversion = explode('/', $aresult[0]);
+    $classes[] = 'konqueror' . _browserclass_clear_version($aversion[1]);
+  }
+
+  if (stristr($agent, 'dillo') !== FALSE) {
+    $classes[] = 'dillo';
+  }
+
+  if (stristr($agent, 'chimera') !== FALSE) {
+    $classes[] = 'chimera';
+  }
+
+  if (stristr($agent, 'beonex') !== FALSE) {
+    $classes[] = 'beonex';
+  }
+
+  if (stristr($agent, 'aweb') !== FALSE) {
+    $classes[] = 'aweb';
+  }
+
+  if (stristr($agent, 'amaya') !== FALSE) {
+    $classes[] = 'amaya';
+  }
+
+  if (stristr($agent, 'icab') !== FALSE) {
+    $classes[] = 'icab';
+  }
+
+  if (stristr($agent, 'lynx') !== FALSE) {
+    $classes[] = 'lynx';
+  }
+
+  if (stristr($agent, 'galeon') !== FALSE) {
+    $classes[] = 'galeon';
+  }
+
+  if (stristr($agent, 'opera mini') !== FALSE) {
+    $classes[] = 'operamini';
+
+    $resultant = stristr($agent, 'opera mini');
+    if(preg_match('/\//', $resultant)) {
+      $aresult = explode('/', $resultant);
+      $aversion = explode(' ', $aresult[1]);
+      $classes[] = 'operamini' . _browserclass_clear_version($aversion[0]);
+    }
+    else {
+      $aversion = explode(' ', stristr($resultant, 'opera mini'));
+      $classes[] = 'operamini' . _browserclass_clear_version($aversion[1]);
+    }
+  }
+
+  return $classes;
+}
+
+/**
+ * Detect platform.
+ *
+ * @param string $agent Lowercase version of user agent.
+ * @return array of detected platforms
+ */
+function browserclass_check_platform($agent) {
+  $classes = array();
+
+  if (stristr($agent, 'windows') !== FALSE) {
+    $classes[] = 'win';
+  }
+  elseif (stristr($agent, 'ipad') !== FALSE) {
+    $classes[] = 'ipad';
+  }
+  elseif (stristr($agent, 'ipod') !== FALSE) {
+    $classes[] = 'ipod';
+  }
+  elseif (stristr($agent, 'iphone') !== FALSE) {
+    $classes[] = 'iphone';
+  }
+  elseif (stristr($agent, 'mac') !== FALSE) {
+    $classes[] = 'mac';
+  }
+  elseif (stristr($agent, 'android') !== FALSE) {
+    $classes[] = 'android';
+  }
+  elseif (stristr($agent, 'linux') !== FALSE) {
+    $classes[] = 'linux';
+  }
+  elseif (stristr($agent, 'nokia') !== FALSE) {
+    $classes[] = 'nokia';
+  }
+  elseif (stristr($agent, 'blackberry') !== FALSE) {
+    $classes[] = 'blackberry';
+  }
+  elseif (stristr($agent, 'freebsd') !== FALSE) {
+    $classes[] = 'freebsd';
+  }
+  elseif (stristr($agent, 'openbsd') !== FALSE) {
+    $classes[] = 'openbsd';
+  }
+  elseif (stristr($agent, 'netbsd') !== FALSE) {
+    $classes[] = 'netbsd';
+  }
+
+  return $classes;
+}
+
+function browserclass_is_mobile_devide($agent, $classes) {
+  $mobile_devices = array('ipad', 'ipod', 'iphone', 'android', 'blackberry', 'operamini');
+
+  foreach ($mobile_devices as $mobile) {
+    if (in_array($mobile, $classes)) {
+      return TRUE;
+    }
+  }
+
+  if (isset($_SERVER['HTTP_X_WAP_PROFILE'])||isset($_SERVER['HTTP_PROFILE'])) {
+    return TRUE;
+  }
+
+  if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/', $agent)) {
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Remove not supported characters from version.
+ *
+ * @param string $version
+ * @return string
+ */
+function _browserclass_clear_version($version) {
+  $version = preg_replace('/[^0-9,.,a-z,A-Z-]/','',$version);
+  return substr($version, 0, strpos($version, '.'));
+}
