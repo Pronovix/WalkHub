@@ -50,7 +50,7 @@ jQuery(function ($) {
     // Full screen.
     $('#fullscreen').click(function () {
       // Disable Bigscreen mode on <IE11.
-      var biscreen_supported_browser = !($('body').is('ie') && !$('body').is('ie11'));
+      var bigscreen_supported_browser = !($('body').is('ie') && !$('body').is('ie11'));
       if (bigscreen_supported_browser && BigScreen && BigScreen.enabled) {
         BigScreen.toggle();
       } else {
@@ -109,5 +109,10 @@ jQuery(function ($) {
       progress_bar: 0,            // Timer for each slide
       mouse_scrub: 0
     });
+  });
+
+  // Progress to next slide on clicking the image.
+  $('#hidden-center').click(function() {
+    api.nextSlide();
   });
 });
