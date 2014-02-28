@@ -241,6 +241,18 @@ function walkhub_theme_preprocess_page(&$vars) {
       drupal_add_js($path . '/js/page/faq.js');
     }
   }
+
+  // Blog Date Format
+  if (isset($vars['node'])) {
+    $node = $vars['node'];
+    $node_type = $node->type;
+    $vars['theme_hook_suggestions'][] = "page__" . $node_type;
+
+    if ($node_type == 'blog_entry') {
+      $vars['date'] = format_date($vars['node']->created, 'custom', 'F j');
+    }
+
+  }
 }
 
 /**

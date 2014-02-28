@@ -50,9 +50,11 @@
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $appletouchicon; ?>
+  <meta name="apple-mobile-web-app-title" content="<?php print $head_title; ?>">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="<?php print $walkhub_theme_path; ?>/scripts/vendor/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <?php print $scripts; ?>
 </head>

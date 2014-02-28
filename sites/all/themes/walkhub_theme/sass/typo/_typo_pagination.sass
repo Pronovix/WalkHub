@@ -1,0 +1,20 @@
+// ---------------------
+// Cleaner Pagination
+// ---------------------
+ul.pagination,
+ul.pager
+  +mp0
+  text-align: center
+
+  li
+    +px-rem(margin-left, .5)
+    float: none
+    list-style-type: none
+    display: inline-block
+
+    &:first-of-type
+      margin: 0
+
+    & > a,
+    & > span
+      @extend .btn
