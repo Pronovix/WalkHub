@@ -131,6 +131,7 @@ function walkhub_user_dashboard_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Walkthrough';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Global: View */
@@ -159,6 +160,12 @@ function walkhub_user_dashboard_views_default_views() {
   $handler->display->display_options['fields']['view_2']['display'] = 'block_4';
   $handler->display->display_options['fields']['view_2']['arguments'] = '[!nid] ';
   $handler->display->display_options['path'] = 'user/%/dashboard';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Dashboard';
+  $handler->display->display_options['menu']['description'] = 'Overview of your walkthroughs';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Latest screening execution time */
   $handler = $view->new_display('block', 'Latest screening execution time', 'block_1');
