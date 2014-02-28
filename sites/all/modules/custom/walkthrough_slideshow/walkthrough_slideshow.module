@@ -337,25 +337,41 @@ function walkthrough_slideshow_get_iframe_content($node) {
   if ($walkthrough) {
     $slideshow_variables['start_url'] = url('node/' . $walkthrough->nid . '/start', array('absolute' => TRUE));
     $slideshow_variables['link'] = l($walkthrough->title, 'node/' . $walkthrough->nid, array('attributes' => array('target' => '_blank')));
-
-    // Get the embed code.
-    $embed_code_variables = array(
-      'width' => 400,
-      'height' => 300,
-    );
-    $embed_code_variables['source'] = url('walkthrough/' . $walkthrough->nid . '/slideshow', array('absolute' => TRUE));
-    $embed = theme('walkthrough_slideshow_iframe', $embed_code_variables);
-
-    $slideshow_variables['embed_code'] = _walkthrough_slideshow_embed($embed);
+    $slideshow_variables['embed_code'] = _walkthrough_slideshow_embed($walkthrough);
   }
 
   return $slideshow_variables;
 }
 
 /**
- * Gives back the HTML code which will display the embed code.
+ * Helper function to get the embed code for the slideshow for a walkthrough.
+ *
+ * @param $walkthrough
+ * @return string
  */
-function _walkthrough_slideshow_embed($embed_code) {
+function _walkthrough_slideshow_get_embed_code_variables($walkthrough) {
+  $embed_code_variables = array(
+    'width' => 400,
+    'height' => 300,
+  );
+  $embed_code_variables['source'] = url('walkthrough/' . $walkthrough->nid . '/slideshow', array('absolute' => TRUE));
+  $embed_code = theme('walkthrough_slideshow_iframe', $embed_code_variables);
+
+  return $embed_code;
+}
+
+/**
+ * Gives back the HTML code which will display the embed code.
+ *
+ * @param $walkthrough
+ *   Walkthrough to render the embed code for.
+ *
+ * @return string
+ *   Embed code.
+ */
+function _walkthrough_slideshow_embed($walkthrough) {
+  $embed_code = _walkthrough_slideshow_get_embed_code_variables($walkthrough);
+
   $form = array(
     'embed' => array(
       '#type' => 'textarea',
