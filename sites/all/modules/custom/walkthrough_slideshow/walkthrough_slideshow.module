@@ -328,26 +328,27 @@ function walkthrough_slideshow_get_iframe_content($node) {
     $slides[] = $file;
   }
 
-  // Get the embed code.
-  $embed_code_variables = array(
-    'width' => 400,
-    'height' => 300,
-  );
-
-  if ($walkthrough) {
-    $embed_code_variables['source'] = url('walkthrough/' . $walkthrough->nid . '/slideshow', array('absolute' => TRUE));
-  }
-
-  $embed = theme('walkthrough_slideshow_iframe', $embed_code_variables);
-
   // Create variables to client side.
   $slideshow_variables = array(
     'slides_json' => json_encode($slides),
-    'link' => l($walkthrough->title, 'node/' . $walkthrough->nid, array('attributes' => array('target' => '_blank'))),
-    'start_url' => url('node/' . $walkthrough->nid . '/start', array('absolute' => TRUE)),
-    'embed_code' => _walkthrough_slideshow_embed($embed),
     'share_dialog' => TRUE,
   );
+
+  if ($walkthrough) {
+    $slideshow_variables['start_url'] = url('node/' . $walkthrough->nid . '/start', array('absolute' => TRUE));
+    $slideshow_variables['link'] = l($walkthrough->title, 'node/' . $walkthrough->nid, array('attributes' => array('target' => '_blank')));
+
+    // Get the embed code.
+    $embed_code_variables = array(
+      'width' => 400,
+      'height' => 300,
+    );
+    $embed_code_variables['source'] = url('walkthrough/' . $walkthrough->nid . '/slideshow', array('absolute' => TRUE));
+    $embed = theme('walkthrough_slideshow_iframe', $embed_code_variables);
+
+    $slideshow_variables['embed_code'] = _walkthrough_slideshow_embed($embed);
+  }
+
   return $slideshow_variables;
 }
 
