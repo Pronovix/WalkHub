@@ -565,7 +565,7 @@ function walkthrough_global_update_7036() {
 }
 
 /**
- * Enable browserclass module.
+ * Enable Walkhub Comments module.
  */
 function walkthrough_global_update_7037() {
   $walkhub_comments = array('walkhub_comments');
