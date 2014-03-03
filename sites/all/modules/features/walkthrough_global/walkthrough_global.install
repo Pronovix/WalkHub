@@ -575,3 +575,10 @@ function walkthrough_global_update_7037() {
 
   return t('Enabled Walkhub comments module');
 }
+
+/**
+ * Rever Walkhub feature.
+ */
+function walkthrough_global_update_7038() {
+  walkhub_features_revert(array('walkhub'));
+}
