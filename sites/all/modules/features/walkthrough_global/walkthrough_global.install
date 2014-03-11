@@ -563,3 +563,15 @@ function walkthrough_global_update_7036() {
 
   return t('Enabled Browser class module');
 }
+
+/**
+ * Enable browserclass module.
+ */
+function walkthrough_global_update_7037() {
+  $walkhub_comments = array('walkhub_comments');
+
+  module_enable($walkhub_comments);
+  features_install_modules($walkhub_comments);
+
+  return t('Enabled Walkhub comments module');
+}
