@@ -12,6 +12,7 @@ dependencies[] = markdown
 dependencies[] = metatag
 dependencies[] = services
 dependencies[] = strongarm
+dependencies[] = walkhub_comments
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[filter][] = full_html
