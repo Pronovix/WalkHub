@@ -110,4 +110,9 @@ jQuery(function ($) {
       mouse_scrub: 0
     });
   });
+
+  // Progress to next slide on clicking the image.
+  $('#hidden-center').click(function() {
+    api.nextSlide();
+  });
 });
