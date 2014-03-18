@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file
+ * Code for the Walkhub comments feature.
+ */
+
+include_once 'walkhub_comments.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function walkhub_comments_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'comment_node_walkthrough_form') {
+    $form['field_related_step']['#access'] = FALSE;
+  }
+}
