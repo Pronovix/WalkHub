@@ -25,11 +25,6 @@ function walkthrough_global_filter_default_formats() {
           'filter_url_length' => 72,
         ),
       ),
-      'filter_markdown' => array(
-        'weight' => 0,
-        'status' => 1,
-        'settings' => array(),
-      ),
     ),
   );
 
