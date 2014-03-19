@@ -1,0 +1,521 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the minimal installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Performs actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function walkthrough_install() {
+  _walkthrough_add_additional_blocks();
+  _walkthrough_add_additional_blocks_and_referencing_records();
+}
+
+/**
+ * Implements hook_install_tasks().
+ */
+function walkthrough_install_tasks() {
+  $tasks = array();
+
+  $tasks['features'] = array(
+    'display_name' => st('Install Walkthrough features'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_install_features',
+  );
+
+  $tasks['enable_theme'] = array(
+    'display_name' => st('Enable theme'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_enable_theme',
+  );
+
+  $tasks['add_menu_items'] = array(
+    'display_name' => st('Add menu items'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_add_menu_items',
+  );
+
+  $tasks['add_taxonomy_terms'] = array(
+    'display_name' => st('Add taxonomy terms'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_add_taxonomy_terms',
+  );
+
+  $tasks['disable_update_module'] = array(
+    'display_name' => st('Disable update module'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    'function' => 'walkthrough_disable_update_module',
+  );
+
+  return $tasks;
+}
+
+/**
+ * Install callback to add taxonomy terms.
+ */
+function walkthrough_add_taxonomy_terms() {
+  module_load_include('install', 'walkthrough_global');
+  _walkthrough_global_add_blog_taxonomy_terms();
+}
+
+/**
+ * Install callback for adding the menu items.
+ */
+function walkthrough_add_menu_items(){
+  // Add walkthrough import menu item.
+  $node_add_mlid = db_query('select mlid from {menu_links} where menu_name = :menu_name and link_path = :link_path', array(':menu_name' => 'navigation', ':link_path' => 'node/add'))->fetchField();
+
+  $menu_item = array(
+    'link_path' => 'walkthrough/import',
+    'link_title' => 'Import Walkthrough',
+    'plid' => $node_add_mlid,
+    'weight' => -9,
+  );
+
+  menu_link_save($menu_item);
+}
+
+
+/**
+ * Install callback for installing Walkthrough features.
+ */
+function walkthrough_install_features() {
+  menu_rebuild();
+  cache_clear_all();
+
+  $walkthrough_features = _walkthrough_get_walkthrough_features();
+  features_install_modules($walkthrough_features);
+}
+
+/**
+ * Get the list of walkthrough features.
+ *
+ * @return array
+ *   Walkthrough feature module names.
+ */
+function _walkthrough_get_walkthrough_features() {
+  return array(
+    'walkhub',
+    'walkhub_blog',
+    'walkhub_branding',
+    'walkhub_collections',
+    'walkhub_page_type_faq',
+    'walkhub_page_type_news',
+    'walkhub_user_dashboard',
+    'walkthrough_page_type_page',
+    'walkthrough_global',
+    'walkthrough_notification',
+    'walkthrough_permissions',
+    'walkthrough_screening',
+    'walkthrough_sets',
+  );
+}
+
+/**
+ * Install callback for enabling the Walktrough theme.
+ */
+function walkthrough_enable_theme() {
+  $themes = array(
+    'theme_default' => 'walkhub_theme',
+    'admin_theme' => 'seven',
+  );
+  theme_enable($themes);
+
+  foreach ($themes as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  variable_set('node_admin_theme', FALSE);
+
+  // Disable the default Bartik theme.
+  theme_disable(array('bartik'));
+}
+
+/**
+ * Disables the update module
+ */
+function walkthrough_disable_update_module() {
+  if (module_exists('update')) {
+    module_disable(array('update'));
+  }
+}
+
+/**
+ * Enable Google Analytics module.
+ */
+function walkthrough_update_7001() {
+  module_enable(array('googleanalytics'));
+}
+
+function _walkthrough_add_additional_blocks() {
+  $walkhub_theme = 'walkhub_theme';
+  $seven_theme = 'seven';
+
+  $values = array(
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'management',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -6,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'navigation',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -5,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'user-menu',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -4,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -7,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $seven_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $seven_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => $seven_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '<front>',
+      'title' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'views',
+      'delta' => 'my_walkthroughs-block',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -3,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => 'my-content\\r\\n<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+  );
+
+  $merge_query = db_merge('block');
+
+  foreach ($values as $record) {
+    $merge_query
+      ->key(array(
+        'module' => $record['module'],
+        'delta' => $record['delta'],
+        'theme' => $record['theme'],
+      ))
+      ->fields($record)
+      ->execute();
+  }
+}
+
+function _walkthrough_add_additional_blocks_and_referencing_records() {
+  $walkhub_theme = 'walkhub_theme';
+  $full_html = 'full_html';
+
+  $block_custom_table_values = array(
+    array(
+      'body' => 'The Walkthrough workshop is finished, so it\'s no longer possible to create an account. If you want to <a href="http://eepurl.com/uYjy9">get a notification about the next workshop</a> or just want to stay informed about the project <a href="http://eepurl.com/uYjy9">sign up for our newsletter at http://eepurl.com/uYjy9</a>.',
+      'info' => 'WalkHub invitations are closed again',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<!-- Begin MailChimp Signup Form --><link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">',
+      'info' => 'Mailchimp signupform',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<div class="small-8 columns">
+                 <h1>Automated documentation, tests & demos</h1>
+                 <h2>It is very painful to update your tests and documentation every time you change something in your web application. What if you could get automatically updated documentation & functional tests for free?</h2>
+                 <a class="cta big" href="http://eepurl.com/uYjy9" title="Get an invite" rel="follow"><p>Get an invite</p><small>Sign up for our mailing list</small> <i class="icon-pencil"></i></a>
+                 </div>
+                 <div class="small-4 columns">
+                 <div class="box-container">
+                 <div class="box blue">
+                 <h4>Walkthrough</h4>
+                 <i class="rounded"> = </i>
+                 </div>
+                 <div class="box">
+                 <h6>Demo</h6>
+                 <small>that shows that it works</small>
+                 </div>
+                 <div class="box">
+                 <h6>Test</h6>
+                 <small>that verifies if it still works</small>
+                 </div>
+                 <div class="box">
+                 <h6>Documentation</h6>
+                 <small>that explains how it works</small>
+                 </div>
+                 </div>
+                 </div>',
+      'info' => 'Front Page Heading',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<div class="row">
+                 <div class="small-12 columns">
+                 <h3>Featured Walktroughs</h3>
+                 </div>
+                 <div class="small-6 columns">
+                 <div class="wt-container">
+                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+                 </div>
+                 </div>
+                 <div class="small-6 columns">
+                 <div class="wt-container">
+                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3352" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+                 </div>
+                 </div>
+                 </div>',
+      'info' => 'Sample WT Top',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<div class="row">
+                 <div class="small-12 columns">
+                 <h3>Walktroughs</h3>
+                 </div>
+                 <div class="small-6 columns">
+                 <div class="wt-container">
+                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+                 </div>
+                 </div>
+                 <div class="small-6 columns">
+                 <div class="wt-container">
+                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+                 </div>
+                 </div>
+                 </div>',
+      'info' => 'Walktroughts bottom',
+      'format' => $full_html,
+    ),
+    array(
+      'body' => '<div class="row">
+                 <div class="small-4 columns">
+                 <h3>Is your documentation up to date?</h3>
+                 <p>Whenever something changes on your web application, it is really painful to update all the screenshot and videos you\'ve included in your documentation. Instead of helping your users, outdated documentation will confuse your users.</p>
+                 <p>WalkHub automatically tests if your documentation is still up to date. You can even make it automatically regenerate all your screenshots when you update your site.</p>
+                 </div>
+                 <div class="small-4 columns">
+                 <h3>Do you like giving demos?</h3>
+                 <p>Developers don\'t like demos: you loose days waiting until agendas fit and spend hours preparing. Demos easily fail and sometimes need to be repeated. But worst of all at the end of the process you have nothing to show for all that work.</p>
+                 <p>On WalkHub a demo is a guided Walkthrough that runs on top of a site. Through commenting it\'s possible to automate the feedback and sign off process. Walkthroughs can be reused for testing and documentation.</p>
+                 </p>
+                 </div>
+                 <div class="small-4 columns">
+                 <h3>Are you testing all your features?</h3>
+                 <p>Tests are stored as code in a code repository, this means that testing becomes a fairly technical job that requires a developer and that is untransparent to a project manager. Only in some of the best funded projects is the test coverage verified.A Walkthrough starts as a test recorded with Selenium IDE. Something that doesn\'t require any technical knowledge.</p>
+                 </div>
+                 </div>',
+      'info' => 'Bottom Content',
+      'format' => $full_html,
+    ),
+  );
+
+  $query = db_insert('block_custom')->fields(array('body', 'info', 'format'));
+  foreach ($block_custom_table_values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+
+  $block_table_values = array(
+    array(
+      'module' => 'block',
+      'delta' => '1',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => -10,
+      'region' => 'highlighted',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => 'user',
+      'title' => 'WalkHub closed for signups',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '2',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'signup',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '3',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'featured',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '<front>',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '4',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'news',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '5',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'news-bottom',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'block',
+      'delta' => '6',
+      'theme' => $walkhub_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content-bottom',
+      'custom' => 0,
+      'visibility' => 1,
+      'pages' => '',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+  );
+
+  $merge_query = db_merge('block');
+
+  foreach ($block_table_values as $record) {
+    $merge_query
+      ->key((array('module' => $record['module'],
+        'delta' =>  $record['delta'],
+        'theme' =>  $record['theme'])))
+      ->fields($record)
+      ->execute();
+  }
+}
+
