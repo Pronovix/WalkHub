@@ -12,7 +12,7 @@ Installation
     $ cd /Users/Shared
 
   - Copy and paste this into your shell to install everything:
-    $ curl -L -s http://goo.gl/5w30CH | bash
+    $ curl -L -s http://goo.gl/dXUbub | bash
   
     What it will do:
     - Clone Drupal from drupal.org
