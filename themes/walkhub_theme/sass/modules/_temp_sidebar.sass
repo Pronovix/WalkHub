@@ -1,0 +1,77 @@
+.sidebar
+  .block
+    +px-rem(margin-bottom, 1)
+    +box-sizing(border-box)
+    +lastchild
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+      color: #6f6f6f
+
+  .block-menu
+    .menu
+      +mp0
+
+      li
+        +mp0
+        list-style-type: none
+        list-style-image: none
+
+        a
+          +px-rem(padding, .45, .75)
+          +text-shadow(1px 1px 1px rgba(#FFFFFF, .75))
+          +box-shadow(0 -1px 0 0 #e5e4e4,0 -2px 0 0 #fefefe)
+          +transition($transition-base)
+          color: #6f6f6f
+          background-color: #f6f6f6
+          display: block
+
+          position: relative
+
+          &:hover
+            background-color: darken(#f6f6f6, 5%)
+
+        &:last-of-type
+          a
+            +border-radius(0 0 5px 5px)
+
+        > .menu
+          li
+            a
+              +px-rem(padding, .45, .75, .45, 1.5)
+
+    & > .menu > li:first-of-type > a
+      +box-shadow(none)
+      +border-radius(5px 5px 0 0)
+
+  .block-user
+    +border-radius(5px)
+    +px-rem(padding, .75, 1, .85, 1)
+    text-align: center
+    color: #6f6f6f
+    background-color: #f6f6f6
+
+    h2
+      text-align: left
+
+    label
+      +font-size(.9)
+      text-align: left
+
+    .item-list
+      text-align: right
+
+      ul
+        list-style-type: none
+
+        a
+          font-size: 0.875em
+
+    #edit-pass
+      margin-bottom: 2px
+
+    #edit-actions
+      text-align: center

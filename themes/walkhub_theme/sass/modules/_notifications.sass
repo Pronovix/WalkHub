@@ -1,0 +1,27 @@
+// ---------------------
+// info Block
+// ---------------------
+.info-block
+  +font-size(1.2)
+  +border-radius(4px)
+  +px-rem(margin-top, .25)
+  +px-rem(padding, 0.75, 1, 0.85, 4)
+  color: #3a87ad
+  background-color: #d9edf7
+  border-color: #bce8f1
+  display: block
+  position: relative
+
+  &:after
+    +font-size(2.1)
+    +font-icomoon
+    content: "\f06a"
+    position: absolute
+    top: .1em
+    left: .5em
+
+  ul
+    +mp0
+
+    li
+      list-style-type: none

@@ -1,0 +1,106 @@
+// ---------------------
+// admin pages include
+// ---------------------
+@import "admin/page_user"
+.tabs.primary
+  border: 0
+  +mp0
+  +font-size(1)
+
+  li
+    display: inline-block
+    +mp0
+    list-style-type: none
+
+    a
+      border: 0
+      background: transparent
+      +mp0
+      +sassy-button("simple", 10px, 19px, #f6f6f6, #dddddd, lighten(#333,12%), "inset")
+      +border-radius(.5em)
+      +font-size(1.25)
+      +px-rem(padding, .5, 1)
+      +transition($transition-base)
+      margin-right: .5em
+
+      &:after
+        +font-icomoon
+        margin-left: .5em
+
+    &.active a
+      border: 0
+      background: transparent
+      +mp0
+      +sassy-button("simple", 10px, 19px, #f6f6f6, #dddddd, lighten(#333,12%), "inset")
+      +border-radius(.5em)
+      +font-size(1.25)
+      +px-rem(padding, .5, 1)
+      +transition($transition-base)
+      margin-right: .5em
+      +opacity(.50)
+
+// ---------------------
+// Admin themeing
+// ---------------------
++max-screen($size-768)
+  html body.admin-menu.logged-in
+    margin-top: 100px !important
+
+
+// Header mod for visibility
+.logged-in
+  header
+    #header-top,
+    #nested-menu
+      top: 2.5em
+
+  #sliding-popup
+    display: none!important
+
+#admin-menu
+  .dropdown
+    display: block!important
+
+// Admin Tabs
+#tabs
+  position: fixed
+  z-index: 2000
+  bottom: 0
+  left: 0
+  background-color: rgba(0,0,0,.75)
+  padding: 20px
+  width: 100%
+
+  &:after
+    background-image: image-url('mask.png')
+    position: absolute
+    width: 100%
+    +opacity(65)
+    content: ''
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+  .tabs
+    +mp0
+    border: 0
+
+    li
+      a
+        padding: 5px 10px
+        border: none
+        +font-size(1.5)
+
+
+// ---------------------
+// Responsive States
+// ---------------------
+
+// ---------------------
+// > 780
+// ---------------------
++max-screen($size-768)
+  body.admin-menu
+    margin-top: 100px!important

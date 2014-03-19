@@ -1,0 +1,42 @@
+#breadcumb
+  +box-shadow(inset 0 -3px 10px -5px rgba(#000,.15))
+  background-color: #f6f6f6
+
+  .small-12
+    +px-rem(padding, 1)
+
+  ul
+    +mp0
+    list-style-type: none
+
+    li
+      +px-rem(margin-right, 1)
+      display: inline-block
+
+      &:last-of-type
+        margin: 0
+
+        a:after
+          content: ""
+          margin: 0
+
+      a
+        +transition($transition-base)
+        +font-size(1.2)
+        +text-shadow(1px 1px 1px #FFFFFF)
+        color: rgba(#6f6f6f, .65)
+
+
+        &:hover
+          color: #6f6f6f
+
+          &:after
+            color: rgba(#6f6f6f, .65)
+
+        &:after
+          +font-icomoon
+          +font-size(.8)
+          +px-rem(margin-left, .75)
+          content: "\f054"
+
+

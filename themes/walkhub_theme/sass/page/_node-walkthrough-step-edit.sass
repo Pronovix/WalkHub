@@ -1,0 +1,100 @@
+.page-field-collection-field-fc-steps-edit
+  #field-collection-item-form
+    & > div
+      text-align: center
+
+      & *
+        text-align: left
+
+    .form-wrapper > div
+      +px-rem(margin-bottom, .5)
+      +clearfix
+
+    .field-name-field-fc-step-highlight,
+    .field-name-field-fc-step-description,
+    .field-name-field-fc-step-name,
+    .field-name-field-fc-step-show-title
+      +px-rem(padding,  0,  .75)
+
+    #field-fc-step-highlight-add-more-wrapper
+      +px-rem(margin-bottom, 2)
+
+    .has-tip.top,
+    .field-edit-link,
+    #edit-body-und-0-format
+      display: none
+      +hide
+
+    label
+      +font-size(1)
+      margin: 0
+      font-weight: normal
+      float: left
+      width: 20%
+      margin-right: 1em
+      margin-top: .2em
+
+    label,
+    input
+      +box-sizing(border-box)
+
+    label
+      +font-size(1)
+      margin: 0
+      font-weight: normal
+      float: left
+      width: 20%
+      margin-right: 1em
+      margin-top: .2em
+
+    input,
+    textarea,
+    .grippie
+      float: right
+      width: 76%
+      margin: 0
+
+    #edit-field-fc-step-show-title-und
+      width: 10%
+      margin-right: 66%
+      margin-top: .5em
+
+  .group-fc-step-selenium
+    +px-rem(margin, 1, 0)
+
+    & > legend
+      border: 0
+
+    .fieldset-legend
+      +font-museo-500
+      +font-size(1.2)
+      text-align: left
+
+      a
+        color: #4d4d4d
+
+    .fieldset-wrapper
+      +px-rem(padding, .45, .75)
+      +border-radius(.35em)
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+      color: #6f6f6f
+      background-color: #f6f6f6
+      position: relative
+
+      & > div > div > div
+        +px-rem(margin-bottom, .5)
+        +clearfix
+
+      & > div:last-of-type  > div > div
+        margin: 0
+
+  #edit-field-fc-step-name
+    display: none
+
+  .form-submit:after
+    +font-icomoon
+    content: "\e017"
+    margin-left: .5em
+
+  .back.button
+    margin-right: .75em

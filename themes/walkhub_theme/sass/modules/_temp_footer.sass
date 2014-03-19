@@ -1,0 +1,143 @@
+// ---------------------
+// Footer Variables
+// ---------------------
+#footer_logo,
+#footer_logo_svg
+  width: 100%
+  height: auto
+
+#footer_logo
+  +opacity(.6)
+
+#footermain
+  +box-shadow(inset 0px 1px 2px 0px rgba($color-black,0.01))
+  background-color: $color-grey-light
+  border-top: 1px solid darken($color-grey-light, 5%)
+  color: darken($color-grey-light, 30%)
+  margin-top: 2%
+
+  .row,
+  ul
+    margin-bottom: 0
+
+  h2
+    color: lighten(#222222, 30%)
+
+  .footer-third
+    & > section:nth-child(2)
+      +px-rem(margin-top, 1)
+
+      a
+        +mp0
+        display: inline-block
+        margin-right: .25em
+        color: darken($color-grey-light, 50%)
+        +opacity(.65)
+        +font-size(1)
+        vertical-align: top
+
+        i
+          +font-size(1)
+
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6)
+          +px-rem(padding-top, .05)
+
+          i
+            font-size: 120%
+
+        &:hover
+          +opacity(1)
+
+#footer
+  +px-rem(padding, 2, 0, 2, 0)
+
+  ul
+    li
+      +px-rem(padding-left, .5)
+      +transition($transition-base)
+      border-left: 1px solid #e6e6e6
+      list-style-type: none
+
+      a
+        +font-size(.9)
+        color: darken($color-grey-light, 30%)
+
+      &:hover
+        border-left: 1px solid darken($color-grey-light, 20%)
+
+        a
+          color: darken($color-grey-light, 50%)
+
+
+  .logo
+    +transition($transition-base)
+    +opacity(.65)
+    display: block
+    text-align: right
+
+    &:hover
+      +opacity(1)
+
+  #footer_logo
+    +max-screen($size-768)
+      width: 100%
+      height: auto
+
+#copyright
+  +text-shadow(1px 1px 3px rgba($color-black,1))
+  +box-shadow(inset 0px 5px 5px 0px rgba($color-black,0.25))
+  background: #2a2a2a image-url('low_contrast_linen.png') top left repeat
+  padding: 1.25em 0 1.25em 0
+  color: $color-white
+  border-top:  1px solid $color-black
+
+  p
+    +mp0
+
+  a
+    color: $color-white
+
+    &:hover
+      text-decoration: underline
+
+  +hdpi(2)
+    background: #2a2a2a image-url('low_contrast_linen_@2X.png') top left repeat
+
+  .row
+    margin-bottom: 0
+
+  .cr-f
+    +font-size(.9)
+
+    +max-screen($size-768)
+      text-align: center
+
+  .cr-s
+    +font-size(.9)
+    line-height: 1.6em
+
+    +min-screen($size-768)
+      text-align: right
+
+    +max-screen($size-768)
+      +px-rem(padding-top, .75)
+      text-align: center
+
+  ul,
+  nav
+    +mp0
+    list-style-type: none
+
+    li
+      +mp0
+      +px-rem(margin-right, .25)
+      display: inline-block
+
+      &:after
+        content: '|'
+        +px-rem(margin-left, .5)
+
+      &:last-of-type:after
+        content: ''

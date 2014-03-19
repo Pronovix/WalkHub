@@ -1,0 +1,51 @@
+#breadcrumb
+  +mp0
+  +box-shadow(inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01))
+  background-color: #fafafa
+  border-bottom: 1px solid #ededed
+  color: #adadad
+
+  ul
+    +px-rem(margin, .75, 0)
+
+    li
+      +font-size(.8)
+      display: inline-block
+
+      a
+        color: $color-text
+
+        &:hover
+          text-decoration: underline
+
+  .breadcrumbs
+    li
+      &:after
+        +font-icomoon
+        +font-size(.55,1.2)
+        content: "\f054"
+        color: $color-text
+        +px-rem(margin, 0, .65, 0, .5)
+
+      &:last-of-type:after
+        content: ""
+        +mp0
+
+  .share
+    text-align: right
+
+    li
+      +px-rem(margin-right, .5)
+
+    a
+      &.gl:hover
+        color: $color-social-google-plus
+
+      &.li:hover
+        color: $color-social-linkedin
+
+      &.fb:hover
+        color: $color-social-facebook
+
+      &.tw:hover
+        color: $color-social-twitter

@@ -1,0 +1,28 @@
+// ---------------------
+// Fonts declare
+// ---------------------
++declare-font-face('pt_sansregular', 'PTS55F-webfont', 200)
++declare-font-face('Museo500', 'Museo500-Regular-webfont', 200)
++declare-font-face('icomoon', 'icomoon', 200)
+
+// ---------------------
+// Fonts mixin
+// ---------------------
+=font-pt-sansregular
+  font-family: 'pt_sansregular', Arial, Helvetica, sans-serif
+  font-weight: 200
+
+=font-museo-500
+  font-family: 'Museo500', Arial, Helvetica, sans-serif
+  font-weight: 200
+
+=font-icomoon
+  font-family: 'icomoon'
+  speak: none
+  content: attr(data-icon)
+  font-weight: normal
+  font-style: normal
+  text-decoration: inherit
+  -webkit-font-smoothing: antialiased
+  *margin-right: .3em // Internet Explorer font rendering hack
+

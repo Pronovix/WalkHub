@@ -1,0 +1,184 @@
+a
+  +transition($transition-base)
+  color: rgba(#055c8e,.8)
+
+  &:hover
+    cursor: pointer
+    color: #055c8e
+
+  &:focus
+    outline: none
+
+img, object, embed
+  max-width: 100%
+  height: auto
+
+object, embed
+  height: 100%
+
+*:focus
+  outline: 0
+
+img
+  -ms-interpolation-mode: bicubic
+
+.left
+  float: left !important
+
+.right
+  float: right !important
+
+.text-left
+  text-align: left !important
+
+.text-right
+  text-align: right !important
+
+.text-center
+  text-align: center !important
+
+.text-justify
+  text-align: justify !important
+
+.hide
+  display: none
+
+.logged-in
+  h1
+    margin-top: 1.75em
+
+  .main.columns
+    position: relative
+
+.button-group
+  +font-size(.8)
+  position: absolute
+  top: 0
+  right: 0.9375em
+  z-index: 31
+
+  li
+    a
+      +opacity(.5)
+      +sassy-button("simple", 10px, 19px, #f4f4f5)
+      +font-size(.65)
+      +border-radius(.35em)
+      padding: .45em .85em
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+      color: #6f6f6f
+      vertical-align: bottom
+      margin-right: .45em
+      padding: .4em 1em
+
+      &.active
+        +opacity(1)
+
+      &:hover,
+      &:active
+        +opacity(1)
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+        color: #6f6f6f
+
+    &:last-of-type a
+      margin-right: 0
+
+.panel.callout
+  +font-size(.75)
+  +border-radius(5px)
+
+  p:last-of-type
+    margin-bottom: 0
+
+// buttons
+.not-logged-in
+  .button-group
+    position: static
+
+button,
+.button,
+.btn
+  +sassy-button("simple", 10px, 19px, #f4f4f5)
+  +font-size(.8)
+  +border-radius(.35em)
+  padding: .45em .85em
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+  color: #6f6f6f
+  vertical-align: bottom
+
+  i
+    font-size: 80%
+
+  &:hover,
+  &:active
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+    color: #6f6f6f
+
+  &.small
+    font-size: 75%
+    font-style: italic
+
+// Call To action button
+.cta
+  +font-size(1)
+  +font-museo-500
+  +border-radius(.65em)
+  +transition($transition-base)
+  +box-shadow(inset 0px 0px 10px 0px rgba($color-white,.35),inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15))
+  background-color: #3b8acd
+  +filter-gradient(#3b8acd, #035787, vertical)
+  +background-image(linear-gradient(top,  #3b8acd 0%,#035787 100%))
+  display: inline-block
+  padding: .45em .85em .35em
+  border: 1px solid #005b9a
+  color: #ffffff
+  +text-shadow(1px 1px 1px rgba(#000, 0.75))
+
+  &:after
+    +font-icomoon
+
+  &:hover
+    background-color: lighten(#3b8acd, 5%)
+    +filter-gradient(lighten(#3b8acd, 5%), lighten(#035787, 5%), vertical)
+    +background-image(linear-gradient(top,  lighten(#3b8acd, 5%) 0%,lighten(#035787, 5%) 100%))
+
+  &:active
+    background: #035787
+    +box-shadow(inset 0px -3px 1px rgba(255, 255, 255, .15))
+
+/* Default Link Styles
+a
+  text-decoration: none
+  line-height: inherit
+  &:hover, &:focus
+    color: #2795b6
+
+  img
+    border: none
+
+/* Default paragraph styles
+p
+  font-family: inherit
+  font-weight: normal
+  margin-bottom: 1.25em
+  text-rendering: optimizeLegibility
+
+  aside
+    +font-size(1)
+    font-style: italic
+
+/* Default header styles
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small
+  font-size: 60%
+  color: #6f6f6f
+  line-height: 0
+
+html.js input.form-autocomplete
+  background-image: image_url('throbber.gif')
+  background-position: 100% 9px
+  background-repeat: no-repeat
+  +transition(none)
+
+html.js input.throbbing
+  +transition(none)
+  background-position: 100% -12px

@@ -1,0 +1,65 @@
+// Settings --------------------------------------------------------------
+// Susy & Compass use HTML hacks to support IE 6 and 7. You can turn that off:
+// $legacy-support-for-ie6 : false
+$legacy-support-for-ie7: true
+
+// ---------------------
+// Compass include
+// ---------------------
+@import 'compass/support'
+@import 'compass/utilities/general/clearfix'
+@import 'compass/utilities/sprites'
+@import 'compass/css3'
+@import 'compass/layout'
+
+// ---------------------
+// Normalize include
+// ---------------------
+@import "normalize"
+
+// ---------------------
+// Mixins include
+// ---------------------
+// Import our mixins early so they can be used by other partials.
+@import "mixins/mixins"
+
+// ---------------------
+// Variables include
+// ---------------------
+@import "variables-project"
+
+// ---------------------
+// Grid include
+// ---------------------
+@import "grid/foundation"
+
+// ---------------------
+// BASE include
+// ---------------------
+// Init file contains required imports. Here's where we include normalize,
+// foundation and also compass.
+
+// Styling for elements.
+@import "typo/typo"
+
+// ---------------------
+// Mixins include
+// ---------------------
+@import "modules/modules"
+
+// ---------------------
+// Page Style include
+// ---------------------
+@import "page/page"
+
+// ---------------------
+// View Style include
+// ---------------------
+@import "view/view"
+
+// ---------------------
+// dialog Style include
+// ---------------------
+@import "dialog/walkthrough-start-dialog"
+
+

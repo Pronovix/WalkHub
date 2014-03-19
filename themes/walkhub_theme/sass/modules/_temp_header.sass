@@ -1,0 +1,70 @@
+header#main-header
+  +text-shadow(1px 1px 3px rgba($color-black,1))
+  +box-shadow(inset 0px -5px 5px 0px rgba($color-black,0.25))
+  background: #2a2a2a image-url('low_contrast_linen.png') top left repeat
+  padding: 1.25em 0 1.25em 0
+  color: $color-white
+  border-top:  1px solid $color-black
+
+  +hdpi(2)
+    background: #2a2a2a image-url('low_contrast_linen_@2X.png') top left repeat
+
+  .menu
+    +mp0
+    text-align: right
+    margin-top: 2em
+
+    li
+      +mp0
+      +px-rem(margin-right, 1)
+      list-style-type: none
+      display: inline-block
+
+      &:last-of-type
+        margin: 0
+
+      a
+        +font-size(1.4)
+        color: $color-white
+
+#main_logo_svg
+  float: left
+  display: block
+  max-width: 6.25em
+
+#main_logo_link
+  padding-left: 0.9375em
+  padding-right: 0.9375em
+  display: block
+
+
+// Mobile Menu position override
+.top-bar-section .has-dropdown.moved > .dropdown
+  +max-screen(940px)
+    top: 44px
+
+.top-bar-section .dropdown
+  +min-screen(940px)
+    li
+      a
+        background: lighten(#000000, 10%)
+        border-top: #000000 solid 1px
+        border-bottom: lighten(#000000, 15%) solid 1px
+
+      &.first a
+        -webkit-border-top-left-radius: .35em
+        -webkit-border-top-right-radius: .35em
+        -moz-border-radius-topleft: .35em
+        -moz-border-radius-topright: .35em
+        border-top-left-radius: .35em
+        border-top-right-radius: .35em
+        border-top: 0
+
+      &.last a
+        -webkit-border-bottom-right-radius: .35em
+        -webkit-border-bottom-left-radius: .35em
+        -moz-border-radius-bottomright: .35em
+        -moz-border-radius-bottomleft: .35em
+        border-bottom-right-radius: .35em
+        border-bottom-left-radius: .35em
+        border-bottom: 0

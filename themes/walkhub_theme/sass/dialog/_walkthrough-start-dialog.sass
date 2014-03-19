@@ -1,0 +1,93 @@
+.walkthrough-start-dialog
+  padding-bottom: 0
+  padding-top: 0
+
+  fieldset
+    padding-bottom: 0
+
+  form
+    label:last-of-type
+      width: 70px
+      float: left
+
+    .button
+      display: block
+      margin: .5em 0
+      +font-size(.7)
+      color: #222222
+      position: relative
+
+      &:after
+        position: absolute
+        top: .05em
+        right: .05em
+        +font-icomoon
+        +font-size(1.5, 1.5)
+        content: "\e60e"
+
+    #useproxy
+      margin: 0
+      margin-top: 1em
+
+  .ui-dialog-titlebar
+    +border-radius(3px 3px 0 0)
+    +px-rem(margin, 0, -1, 1)
+    +px-rem(padding, 0.5, 1)
+    background-color: #f6f6f6
+    border-bottom: 1px solid #e5e4e4
+
+    .ui-dialog-title
+      +font-size(1)
+
+  .ui-widget-content,
+  .ui-widget-content p
+    +font-size(.75)
+
+    label
+      margin-top: 1em
+      margin-bottom: .1em
+
+      &:first-letter
+        text-transform: uppercase
+
+
+  #domain
+    margin: 0
+
+  .ui-dialog-buttonpane
+    +border-radius(0 0 3px 3px)
+    +px-rem(margin, 0, -1)
+    +px-rem(padding, 0.5, 1)
+    text-align: center
+    background-color: #f6f6f6
+    border-top: 1px solid #e5e4e4
+
+    .ui-dialog-buttonset
+      vertical-align: middle
+      float: none
+      margin: 0 auto
+
+      button
+        +mp0
+        @extend .button
+        +px-rem(padding, .45, .85, .35)
+
+        .ui-button-text
+          +mp0
+          +font-size(.7)
+
+        &:last-of-type
+          color: #222222
+
+        &:first-of-type
+          @extend .cta
+          +border-radius(0.35em)
+          +px-rem(padding, .45, .85, .35)
+          margin-right: .5em
+
+          &:hover,
+          &:active
+            color: #FFFFFF
+
+    .starter a
+      display: block

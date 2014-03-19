@@ -1,0 +1,186 @@
+.node-type-walkthrough
+  .main.columns
+    & > .action-links
+      li
+        text-align: center
+        list-style-type: none
+
+        a
+          margin: 1em 0
+          display: inline-block
+          @extend .cta
+
+          &:after
+            content: "\e600"
+            margin-left: .35em
+
+  .node-walkthrough
+
+    .wt-screening-widget-field
+      text-align: center
+
+      a
+        margin: 1em 0
+        display: inline-block
+        @extend .cta
+
+
+    .field-name-field-fc-steps
+      > .field-label
+        +font-museo-500
+        margin-bottom: 2%
+        +font-size(1.4)
+
+    .field-name-field-fc-step-description .field-label
+      +hide-text
+      display: none
+
+    .entity-field-collection-item
+      +px-rem(padding, .45rem, .75rem)
+      margin-bottom: 2%
+      +border-radius(.35em)
+      +text-shadow(1px 1px 1px rgba(255, 255, 255, 0.75))
+      color: #6f6f6f
+      background-color: #f6f6f6
+      position: relative
+      min-height: 41px
+
+      .content
+        margin-left: 2em
+
+        .wt-step-position
+          +font-size(1.25)
+          +px-rem(left, .65)
+          +px-rem(top, .5)
+          +px-rem(width, 1.5)
+          color: rgba(#6f6f6f, .6)
+          text-align: right
+          position: absolute
+
+        .walkthrough-step-screenshot
+          float: left
+          margin-right: 10px
+
+          img
+            border: 1px solid $color-grey-light
+
+          img:hover
+            border: 1px solid $color-black
+
+      .field-name-field-fc-step-name
+        +font-museo-500
+        +font-size(1.2)
+        padding-right: 3em
+
+        .field-label
+          +hide-text
+
+      .field-name-field-fc-step-command-1,
+      .field-name-field-fc-step-command-2,
+      .field-name-field-fc-step-command-3,
+      .field-name-field-fc-step-show-title,
+      .field-name-field-fc-step-highlight
+        clear: left
+        +font-size(1)
+        font-weight: normal
+
+        > .field-label
+          +font-size(1)
+          font-weight: normal
+          float: left
+          width: 8em
+          margin-right: 1em
+
+      .field-name-field-fc-step-show-title,
+      .field-name-field-fc-step-highlight,
+      .field-name-field-fc-step-command-1,
+      .field-name-field-fc-step-command-2,
+      .field-name-field-fc-step-command-3,
+      .field-name-field-fc-step-command-4,
+      .field-name-field-fc-step-command-5,
+      .field-name-field-fc-step-command-6,
+      .field-name-field-fc-step-command-7,
+      .field-name-field-fc-step-command-8,
+      .field-name-field-fc-step-command-9,
+      .field-name-field-fc-step-command-10
+        display: none
+
+    .field-collection-view.view-mode-full
+      position: relative
+
+      .field-collection-view-links
+        position: absolute
+        top: .5em
+        right: .5em
+        margin: 0
+
+        li
+          list-style-type: none
+
+          &.edit a
+            +sassy-button("simple", 10px, 19px, #f4f4f5)
+            +font-size(.8)
+            +border-radius(.35em)
+            padding: .45em .85em
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+            color: #6f6f6f
+            vertical-align: bottom
+
+            &:hover,
+            &:active
+              text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+              color: #6f6f6f
+
+            +font-size(.7)
+            margin: 0
+
+            &:after
+              +font-icomoon
+              content: "\e602"
+              margin-left: .45em
+
+        .delete
+          +hide-text
+
+    .field-name-field-fc-step-description
+      +px-rem(margin-top, .35)
+      +px-rem(padding-right, 3.5)
+
+    .description.field-collection-description,
+    .action-links-field-collection-add
+      +hide-text
+      display: none
+
+    .links.inline,
+    .links.inline li
+      +mp0
+      display: inline-block
+
+      a
+        +sassy-button("simple", 10px, 19px, #f4f4f5)
+        +font-size(.8)
+        +border-radius(.35em)
+        padding: .45em .85em
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+        color: #6f6f6f
+        vertical-align: bottom
+
+        &:hover,
+        &:active
+          text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
+          color: #6f6f6f
+
+        &:before
+          +font-icomoon
+          +font-size(.9)
+          display: inline-block
+          margin-right: .5em
+
+    .links.inline
+      float: right
+
+      li.flag-walkthrough_broken,
+      li.flag-mark_for_screening,
+      li.flag-subscribe_content
+        a
+          +font-size(.6)

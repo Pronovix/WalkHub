@@ -1,0 +1,37 @@
+// ---------------------
+// FAQ Page
+// ---------------------
+
+.node-type-walkhub-faq-page
+  .field-collection-view
+    +px-rem(margin-top, .5)
+
+    &:first-of-type
+      margin: 0
+
+  .field-name-field-walkhub-faq-questions
+    +font-size(1.25)
+    +transition($transition-base)
+    display: block
+    border-bottom: 1px solid $color-grey
+    position: relative
+
+    &:hover
+      border-color: $color-blue
+
+    &:after
+      +font-icomoon
+      +font-size(.8)
+      color: $color-text
+      position: absolute
+      content: "\f078"
+      top: .3em
+      right: .3em
+
+    &.active:after
+      content: "\f077"
+
+  .field-name-field-walkhub-faq-answer
+    +px-rem(padding-bottom, .5)
+    +px-rem(margin, .25, 0, .5, 0)
+    color: $color-text
