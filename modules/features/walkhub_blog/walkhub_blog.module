@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Walkhub blog feature.
+ */
+
+include_once 'walkhub_blog.features.inc';

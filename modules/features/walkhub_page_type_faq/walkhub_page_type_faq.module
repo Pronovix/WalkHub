@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Walkhub Page type - FAQ feature.
+ */
+
+include_once 'walkhub_page_type_faq.features.inc';

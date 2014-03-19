@@ -1,0 +1,166 @@
+<?php
+/**
+ * @file
+ * Code for the Walkhub Collections feature.
+ */
+
+include_once 'walkhub_collections.features.inc';
+
+/**
+ * Implements hook_services_resources().
+ */
+function walkhub_collections_services_resources() {
+  $resources = array();
+
+  $resources['walkhub-collection'] = array(
+    'retrieve' => array(
+      'callback' => '_walkhub_collection_retrieve',
+      'args' => array(
+        array(
+          'name' => 'collectionid',
+          'optional' => FALSE,
+          'source' => array('path' => 0),
+          'type' => 'string',
+        )
+      ),
+      'access callback' => '_walkhub_collection_resource_access',
+      'access arguments' => array('view'),
+      'access arguments append' => TRUE,
+    ),
+    'index' => array(
+      'callback' => '_walkhub_collection_index',
+      'access callback' => 'user_is_logged_in',
+      'args' => array(
+        array(
+          'name' => 'uid',
+          'type' => 'int',
+          'source' => array('param' => 'uid'),
+          'optional' => TRUE,
+          'default value' => 0,
+        )
+      ),
+    ),
+  );
+
+  return $resources;
+}
+
+class WalkhubWalkthroughCollection implements WalkhubObject {
+
+  /**
+   * @filter none
+   */
+  public $type = 'private';
+
+  /**
+   * @filter none
+   */
+  public $uuid;
+
+  /**
+   * @filter check_plain
+   */
+  public $title;
+
+  /**
+   * @filter none
+   */
+  public $branding;
+
+  public function __construct(stdClass $node = NULL) {
+    if ($node) {
+      module_load_include('inc', 'walkhub');
+      $this->uuid = $node->uuid;
+      $this->title = $node->title;
+      $this->branding = walkhub_field_get_references('node', $node, 'field_branding');
+      $this->branding = $this->branding ? reset($this->branding) : NULL;
+    }
+  }
+
+  /**
+   * Applies the contents of this container object to an existing entity.
+   *
+   * @param stdClass $entity
+   */
+  public function applyOnEntity($entity) {
+    // TODO: Implement applyOnEntity() method.
+  }
+}
+
+class WalkhubWalkthroughPublicCollection extends WalkhubWalkthroughCollection {
+  /**
+   * @filter none
+   */
+  public $type = 'public';
+}
+
+function _walkhub_collections_serialize_safely($node) {
+  module_load_include('inc', 'walkhub');
+  $class = $node->type === 'walkthrough_public_collection' ? (new WalkhubWalkthroughPublicCollection($node)) : (new WalkhubWalkthroughCollection($node));
+  return walkhub_serialize_safely($class);
+}
+
+function _walkhub_collection_retrieve($uuid) {
+  module_load_include('inc', 'walkhub');
+  $node = _walkhub_node_retrieve($uuid, array('walkthrough_collection', 'walkthrough_public_collection'));
+  return $node ? _walkhub_collections_serialize_safely($node) : $node;
+}
+
+function _walkhub_collection_resource_access($op, $args) {
+  module_load_include('inc', 'walkhub');
+  return _walkhub_node_resource_access(array('walkthrough_collection', 'walkthrough_public_collection'), $op, $args);
+}
+
+function _walkhub_collection_index($uid = 0) {
+  global $user;
+  module_load_include('inc', 'walkhub');
+
+  if ($uid === 0 || $uid === $user->uid) {
+    $queryuid = $user->uid;
+  }
+  elseif (user_access('administer users')) {
+    $queryuid = $uid;
+  }
+  else {
+    throw new ServicesException('Forbidden', 403);
+  }
+
+  $nids = db_query('SELECT DISTINCT gid FROM {og_membership} WHERE etid = :uid AND entity_type = :entity_type AND group_type = :group_type AND state = 1', array(
+    ':uid' => $queryuid,
+    ':entity_type' => 'user',
+    ':group_type' => 'node',
+  ))->fetchCol();
+
+  return array_values(array_filter(array_map('_walkhub_collections_serialize_safely', node_load_multiple($nids))));
+}
+
+/**
+ * Implements hook_walkhub_listing_alter().
+ */
+function walkhub_collections_walkhub_listing_alter(EntityFieldQuery $q) {
+  module_load_include('inc', 'walkhub');
+  $group = isset($_GET['collection']) ? $_GET['collection'] : NULL;
+  if ($group !== NULL) { // if collection parameter is given
+    if ($group) { // group UUID given
+      $node = _walkhub_node_retrieve($group, array('walkthrough_collection', 'walkthrough_public_collection'));
+      // no need to check for $node, exception will be thrown
+      $q->fieldCondition('og_group_ref', 'target_id', $node->nid);
+    }
+    else { // no group UUID given; the result must not be in any groups
+      $q->addTag('walkhub_collections_not_in_group');
+    }
+  }
+
+  if (isset($q->entityConditions['bundle']) &&
+      ($q->entityConditions['bundle']['value'] === 'walkthrough_collection' || $q->entityConditions['bundle']['value'] === 'walkthrough_public_collection')) {
+    $q->entityCondition('bundle', array('walkthrough_collection', 'walkthrough_public_collection'), 'IN');
+  }
+}
+
+/**
+ * Implements hook_query_TAG_alter().
+ */
+function walkhub_collections_query_walkhub_collections_not_in_group_alter(SelectQueryInterface $query) {
+  $query->leftJoin('og_membership', 'membership', 'node.nid = membership.etid AND membership.entity_type = :entity_type');
+  $query->isNull('membership.gid');
+}

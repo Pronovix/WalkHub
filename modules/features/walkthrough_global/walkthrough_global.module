@@ -1,0 +1,165 @@
+<?php
+/**
+ * @file
+ * Code for the Walkthrough global feature.
+ */
+
+include_once 'walkthrough_global.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function walkthrough_global_form_walkhub_configuration_form_alter(&$form, &$form_state) {
+  $form['walkthrough_global_secret_key'] = array(
+    '#title' => t('Registration service private key'),
+    '#description' => t('This key is used to identify every request sent by the iOS app.'),
+    '#type' => 'textarea',
+    '#default_value' => variable_get('walkthrough_global_secret_key', NULL),
+  );
+}
+
+/**
+ * Implements hook_services_resources().
+ */
+function walkthrough_global_services_resources() {
+  $resources = array();
+
+  $resources['walkhub-user'] = array(
+    'actions' => array(
+      'registration' => array(
+        'help' => 'Create a new user account.',
+        'callback' => '_walkthrough_global_resource_registration',
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'username',
+            'type' => 'string',
+            'description' => 'A valid username',
+            'source' => array(
+              'data' => 'username',
+            ),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'mail',
+            'type' => 'string',
+            'description' => 'A valid e-mail',
+            'source' => array(
+              'data' => 'mail',
+            ),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'password',
+            'type' => 'string',
+            'description' => 'A valid password',
+            'source' => array(
+              'data' => 'password',
+            ),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'token',
+            'type' => 'string',
+            'description' => 'A valid token to filter out robots.',
+            'source' => array(
+              'data' => 'token',
+            ),
+            'optional' => FALSE,
+          ),
+        ),
+        'access callback' => '_walkthrough_global_resource_registration_access',
+        'file' => array(
+          'type' => 'inc',
+          'module' => 'walkthrough_global',
+          'name' => 'walkthrough_global.services',
+        ),
+      ),
+    ),
+  );
+
+  return $resources;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function walkthrough_global_permission() {
+  return array(
+    'clone accessible content' => array(
+      'title' => t('Clone content you can access'),
+    ),
+  );
+}
+/**
+ * Implements hook_access_alter().
+ */
+function walkthrough_global_clone_access_alter(&$access, &$node) {
+  global $user;
+  $access = FALSE;
+
+  //Check general requirements for a node if it's cloneable
+  if (_clone_is_permitted($node->type) && node_access('view', $node) && node_access('create', $node->type)) {
+    //Check for 'clone accessible content' specific requirements
+    $access = (user_access('clone accessible content') && node_access('update', $node));
+  }
+}
+
+function _clone_is_permitted($type) {
+  $omitted = variable_get('clone_omitted', array());
+  return empty($omitted[$type]);
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function walkthrough_global_menu_alter(&$items) {
+  // Redirect field_collection view pages to parent node
+  foreach (field_info_fields() as $field) {
+    if ($field['type'] == 'field_collection')  {
+      $path = field_collection_field_get_path($field);
+      if (isset($items["{$path}/%field_collection_item"])) {
+        $items["{$path}/%field_collection_item"]['page callback'] = 'walkthrough_global_field_collection_item_page_redirect';
+      }
+    }
+  }
+}
+
+function walkthrough_global_field_collection_item_page_redirect($field_collection_item) {
+  $item_id = $field_collection_item->item_id;
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'walkthrough')
+    ->fieldCondition('field_fc_steps', 'value', $item_id)
+    ->range(0,1);
+
+
+  $result = $query->execute();
+
+  if ($result) {
+    foreach (array_keys($result['node']) as $nid) {
+      drupal_goto('node/' . $nid);
+    }
+  }
+}
+
+/**
+ * Access callback to prevent the robots creating new account using this endpoint.
+ */
+function _walkthrough_global_resource_registration_access($username, $mail, $password, $token) {
+  // Get the secret key.
+  $secret_key = variable_get('walkthrough_global_secret_key', NULL);
+
+  // Check that every necessary variable exists.
+  if (!is_null($secret_key)) {
+    // Concatenate the username, mail and password after the secret key
+    $secret_key .= $username . $mail . $password;
+    // Check that the two hash is the same.
+    if ($token == sha1($secret_key)) {
+      return TRUE;
+    }
+  }
+
+  return FALSE;
+}

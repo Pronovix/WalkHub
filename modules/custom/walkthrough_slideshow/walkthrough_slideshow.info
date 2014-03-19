@@ -1,0 +1,6 @@
+name = Walkthrough Slideshow
+core = 7.x
+package = Walkthrough
+
+dependencies[] = field
+dependencies[] = walkhub

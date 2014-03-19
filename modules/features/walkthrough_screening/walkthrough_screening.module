@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Walkthrough Screening feature.
+ */
+
+include_once 'walkthrough_screening.features.inc';

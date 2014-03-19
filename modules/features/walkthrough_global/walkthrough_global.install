@@ -1,0 +1,577 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the minimal installation profile.
+ */
+
+
+/**
+ * Install callback for enabling the Walktrough theme.
+ */
+function walkthrough_global_update_7001() {
+  // Udpated Walkhub theme Turn on (update ZURB)
+  $themes = array(
+    'theme_default' => 'walkhub',
+    'admin_theme' => 'seven',
+  );
+  theme_enable($themes);
+
+  foreach ($themes as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  variable_set('node_admin_theme', FALSE);
+
+  // Disable the default Walkhub default theme (old zurb turn off)
+  theme_disable(array('walkhub_theme'));
+}
+
+/**
+ * The site theme has been renamed.
+ * Change the default theme to walkhub_theme.
+ */
+function walkthrough_global_update_7002() {
+  $themes = array(
+    'theme_default' => 'walkhub_theme',
+  );
+  theme_enable($themes);
+  variable_set('theme_default', 'walkhub_theme');
+}
+
+/**
+ * Enable captcha and recaptcha modules.
+ */
+function walkthrough_global_update_7003() {
+  module_enable(array('captcha', 'recaptcha'));
+}
+
+/**
+ * Enable recaptcha on user_register_form.
+ */
+function walkthrough_global_update_7004() {
+  $query = db_update('captcha_points')
+      ->condition('form_id', 'user_register_form')
+      ->fields(array(
+        'module' => 'recaptcha',
+        'captcha_type' => 'reCAPTCHA',
+      ))
+      ->execute();
+}
+
+/**
+ * Rename Test content type to screening.
+ */
+function walkthrough_global_update_7005() {
+  walkhub_features_revert(array('walkthrough_tests'));
+}
+
+/**
+ * Disable walkthrough_tests and enable walkthrough_screening features.
+ * Also delete the Test content type.
+ */
+function walkthrough_global_update_7006() {
+  node_type_delete('test');
+
+  if( module_exists('walkthrough_tests')) {
+    module_disable(array('walkthrough_tests'));
+    drupal_uninstall_modules(array('walkthrough_tests'));
+  }
+
+  features_install_modules(array('walkthrough_screening'));
+}
+
+/**
+ * Enable Token module for MetaTag
+ */
+function walkthrough_global_update_7007() {
+  $module_list = array('token');
+  module_enable($module_list);
+
+  return 'Token has been enabled.';
+}
+
+/**
+ * Enable MetaTag module for the share functionality,
+ * also features save attached for the proper settings
+ */
+function walkthrough_global_update_7008() {
+  $module_list = array('metatag, metatag_dc, metatag_opengraph, metatag_twitter_cards, metatag_views');
+  module_enable($module_list);
+
+  return 'Metatag has been enabled with all the requested submodules';
+}
+
+/**
+ * Turning on Page Types: FAQ, NEWS
+ */
+function walkthrough_global_update_7009() {
+  features_install_modules(array('walkhub_page_type_faq', 'walkhub_page_type_news'));
+}
+
+/**
+ * Delete the test content type and nodes. Also uninstall the walkthrough_tests feature.
+ */
+function walkthrough_global_update_7010() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node');
+  $query->entityCondition('bundle', 'test');
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+  }
+
+  node_type_delete('test');
+
+  if( module_exists('walkthrough_tests')) {
+    module_disable(array('walkthrough_tests'));
+    drupal_uninstall_modules(array('walkthrough_tests'));
+  }
+}
+
+/**
+ * Enable Page content type.
+ */
+function walkthrough_global_update_7011() {
+  features_install_modules(array('walkthrough_page_type_page'));
+}
+
+/**
+ * Convert screenshot image fileds to field collection items.
+ */
+function walkthrough_global_update_7012(&$sandbox) {
+  if (empty($sandbox['total'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['last_nid'] = 0;
+
+    // Forcefully revert all components of Walkthrough Screening feature.
+    if (($feature = features_load_feature('walkthrough_screening', TRUE))) {
+      foreach (array_keys($feature->info['features']) as $component) {
+        if (features_hook($component, 'features_revert')) {
+          features_revert(array('walkthrough_screening' => array($component)));
+        }
+      }
+    }
+
+    // Count the total number of the screening nodes.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'screening')
+      ->count();
+    $sandbox['total'] = $query->execute();
+  }
+
+  // Get the next 10 walhtrough node.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'screening')
+    ->propertyCondition('nid', $sandbox['last_nid'], '>')
+    ->propertyOrderBy('nid')
+    ->range(0, 10);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $screening_nodes = entity_load('node', $nids);
+
+    foreach ($screening_nodes as $screening_node) {
+      // Get image fields.
+      $images = field_get_items('node', $screening_node, 'field_screening_screenshots');
+
+      if ($images) {
+        // Load the step nodes to get the stored data.
+        foreach ($images as $image) {
+          // Store the field collection values.
+          $values = array();
+          $values['field_name'] = 'field_screening_fc_screenshots';
+          $values['field_fc_screenshots_screenshot'][$screening_node->language][0] = $image;
+
+          // Create the field collection entry and associate it with the node.
+          $step_entity = entity_create('field_collection_item', $values);
+          $step_entity->setHostEntity('node', $screening_node);
+          $step_entity->save();
+        }
+      }
+      // Store the last node id and update progress.
+      $sandbox['last_nid'] = $screening_node->nid;
+      $sandbox['progress']++;
+    }
+  }
+
+  // Set the finished variable based on the current progress status.
+  $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
+
+  return t('Screenshot images have been converted to field collection items.');
+}
+
+/**
+ * Delete Screenshot image field.
+ */
+function walkthrough_global_update_7013() {
+  field_delete_field('field_screening_screenshots');
+  $limit = variable_get('field_purge_batch_size', 10);
+  field_purge_batch($limit);
+
+  return t('The Screenshot image field has been deleted.');
+}
+
+/**
+ * Enable admin menu modules.
+ */
+function walkthrough_global_update_7014() {
+  $admin_menu_modules = array(
+    'admin_menu_toolbar',
+    'admin_menu',
+  );
+  module_enable($admin_menu_modules);
+}
+
+/**
+ * Revert Walkthrough permission feature.
+ */
+function walkthrough_global_update_7015() {
+  walkhub_features_revert(array('walkthrough_permissions'));
+}
+
+/**
+ * Remove walkthrough menu from the bottom on the admin interface.
+ */
+function walkthrough_global_update_7016() {
+    db_update('block')
+      ->fields(array(
+        'region' => -1,
+    ))
+      ->condition('delta', array('management', 'navigation', 'user-menu'), 'in')
+      ->condition('theme', 'seven', '=')
+      ->execute();
+}
+
+/**
+ * Remove br from full html text filter.
+ */
+function walkthrough_global_update_7017() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
+
+/**
+ * Delete step content type.
+ */
+function walkthrough_global_update_7018(&$sandbox) {
+  if (empty($sandbox['total'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['last_nid'] = 0;
+
+    // Count the total number of the step nodes.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'step')
+      ->count();
+    $sandbox['total'] = $query->execute();
+  }
+
+  // Get the next 50 step node.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'step')
+    ->propertyCondition('nid', $sandbox['last_nid'], '>')
+    ->propertyOrderBy('nid')
+    ->range(0, 50);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    // Delete them.
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+
+    // Store the last node id and update progress.
+    $sandbox['last_nid'] = max($nids);
+    $sandbox['progress']+= count($nids);
+  }
+
+  // Set the finished variable based on the current progress status.
+  $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
+
+  if ($sandbox['progress'] == $sandbox['total']) {
+    node_type_delete('step');
+  }
+
+  return t('Removed step content type.');
+}
+
+/**
+ * Revert walkthrough screening feature.
+ */
+function walkthrough_global_update_7019() {
+  walkhub_features_revert(array('walkthrough_screening'));
+  return t('Walkthrough Screening feature is reverted.');
+}
+
+/**
+ * Change the walkthrough content type prerequisite field label.
+ */
+function walkthrough_global_update_7020() {
+  walkhub_features_revert(array('walkhub'));
+  return t('Walkhub feature has been reverted.');
+}
+
+/**
+ * Enable the node clone module.
+ */
+function walkthrough_global_update_7021() {
+  module_enable(array('clone'));
+}
+
+/**
+ * Remove jQuery CDN setting.
+ */
+function walkthrough_global_update_7022() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
+
+/**
+ * Enable the walkhub_screening_queue module.
+ */
+function walkthrough_global_update_7023() {
+  module_enable(array('walkhub_screening_queue'));
+  return t('Walkhub screening queue module has been enabled.');
+}
+
+/**
+ * Enable OAuth modules.
+ */
+function walkthrough_global_update_7024() {
+  $modules = array(
+    'oauth_common',
+    'oauth_common_providerui',
+    'services_oauth',
+  );
+
+  module_enable($modules);
+  return t('Enabled OAuth modules.');
+}
+
+/**
+ * Revert overridden features.
+ */
+function walkthrough_global_update_7025() {
+  $features_to_revert = array(
+    'walkhub_collections',
+    'walkthrough_global',
+    'walkthrough_screening',
+  );
+  walkhub_features_revert($features_to_revert);
+
+  return t('Walkhub Features reverted.');
+}
+
+/**
+ * Enable notifications.
+ */
+function walkthrough_global_update_7026() {
+  $modules = array(
+    'message',
+    'message_notify',
+    'rules',
+  );
+
+  module_enable($modules);
+  features_install_modules(array('walkthrough_notification'));
+}
+
+/**
+ * Enable Subscriptions.
+ */
+function walkthrough_global_update_7027() {
+  features_install_modules(array('walkthrough_notification'));
+
+  return t('Subscriptions has been enabled.');
+}
+
+/**
+ * Revert walkhub feature.
+ */
+function walkthrough_global_update_7028() {
+  $features_to_revert = array('walkhub');
+  walkhub_features_revert($features_to_revert);
+
+  return t('Walkhub Features reverted.');
+}
+
+/**
+ * Enable Views Field View module.
+ */
+function walkthrough_global_update_7029() {
+  $modules = array(
+    'views_field_view',
+  );
+
+  module_enable($modules);
+  return t('Enabled Views Field View module.');
+}
+
+/**
+ * Enable Walkhub User Dashboard feature module.
+ */
+function walkthrough_global_update_7030() {
+  features_install_modules(array('walkhub_user_dashboard'));
+
+  return t('Enabled Walkhub User Dashboard feature module.');
+}
+
+/**
+ * Set use proxy flags
+ */
+function walkthrough_global_update_7031(&$sandbox) {
+  $use_proxy = 1;
+
+  if (variable_get('walkhub_use_proxy', FALSE)) {
+    $use_proxy = 1;
+  } else {
+    $use_proxy = 0;
+  }
+
+  if (empty($sandbox['total'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['last_nid'] = 0;
+    $sandbox['total'] = _walkthrough_global_get_number_of_walkthrough_nodes();
+  }
+
+  // Get the next 50 walkthrough node.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'walkthrough')
+    ->propertyCondition('nid', $sandbox['last_nid'], '>')
+    ->propertyOrderBy('nid')
+    ->range(0, 50);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $walkthrough_nodes = entity_load('node', $nids);
+
+    foreach ($walkthrough_nodes as $walkthrough_node) {
+      $walkthrough_node->field_play_via_proxy[LANGUAGE_NONE][0]['value'] = $use_proxy;
+      node_save($walkthrough_node);
+
+      // Store the last node id and update progress.
+      $sandbox['last_nid'] = max($nids);
+      $sandbox['progress']++;
+    }
+  }
+  // Set the finished variable based on the current progress status.
+  $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
+
+  $message = 'Update returned with the following result: Variable named walkhub_use_proxy was ';
+
+  if ($sandbox['progress'] == $sandbox['total']) {
+    variable_del('walkhub_use_proxy');
+    $message = $message . 'deleted. ';
+
+  } else {
+    $message = $message . 'NOT deleted. ';
+  }
+
+  $message = $message . 'On all walkthrough nodes proxy was ';
+
+  if ($use_proxy) {
+    $message = $message . 'enabled. ';
+  } else {
+    $message = $message . 'disabled. ';
+  }
+
+  return t($message);
+}
+
+function _walkthrough_global_get_number_of_walkthrough_nodes() {
+  $result = db_select('node', 'n')
+    ->fields('n')
+    ->condition('type', 'walkthrough')
+    ->execute();
+
+  return $result->rowCount();
+}
+
+/**
+ * Enable CKEditor module.
+ */
+function walkthrough_global_update_7032() {
+  $modules = array(
+    'ckeditor',
+  );
+
+  module_enable($modules);
+  return t('Enabled CKEditor module.');
+}
+
+/**
+ * Enable Walkhub blog feature
+ */
+function walkthrough_global_update_7033() {
+  features_install_modules(array('walkhub_blog'));
+  walkhub_features_revert(array('walkhub_blog'));
+
+  return t('Enabled Walkhub blog feature module.');
+}
+
+/**
+ * Adds terms in Blog category taxonomy vocabulary.
+ */
+function walkthrough_global_update_7034() {
+  _walkthrough_global_add_blog_taxonomy_terms();
+}
+
+/**
+ * Helper function to add Blog taxonomy terms.
+ */
+function _walkthrough_global_add_blog_taxonomy_terms() {
+  $blog_category_vocabulary =  taxonomy_vocabulary_machine_name_load('blog_category');
+  $vid = $blog_category_vocabulary->vid;
+
+  $terms = array('Demo', 'Test', 'Documentation');
+  foreach ($terms as $term) {
+    $term_object = new stdClass();
+    $term_object->name = $term;
+    $term_object->vid = $vid;
+    taxonomy_term_save($term_object);
+  }
+
+  return t('Added terms to Blog category vocabulary');
+}
+
+/**
+ * Revert permissions feature.
+ */
+function walkthrough_global_update_7035() {
+
+  features_install_modules(array('better_formats'));
+
+  walkhub_features_revert(array('walkthrough_permissions'));
+}
+
+/**
+ * Enable browserclass module.
+ */
+function walkthrough_global_update_7036() {
+  module_enable(array('browserclass'));
+
+  return t('Enabled Browser class module');
+}
+
+/**
+ * Enable browserclass module.
+ */
+function walkthrough_global_update_7037() {
+  $walkhub_comments = array('walkhub_comments');
+
+  module_enable($walkhub_comments);
+  features_install_modules($walkhub_comments);
+
+  return t('Enabled Walkhub comments module');
+}

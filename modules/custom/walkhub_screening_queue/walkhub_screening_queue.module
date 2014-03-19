@@ -1,0 +1,205 @@
+<?php
+/**
+ * @file
+ * Back-end logic implementation for the screening queue feature.
+ */
+
+
+/**
+ * Implements hook_permission().
+ */
+function walkhub_screening_queue_permission() {
+  return array(
+    'mark any content for screening' => array(
+      'title' => t('Mark any content for screening'),
+    ),
+    'mark own content for screening' => array(
+      'title' => t('Mark own content for screening'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_flag_access().
+ */
+function walkhub_screening_queue_flag_access($flag, $entity_id, $action, $account) {
+  // Load the mark for screening flag by machine name.
+  $mark_for_screening = flag_get_flag('mark_for_screening');
+
+  if (!empty($mark_for_screening) && $flag->fid == $mark_for_screening->fid) {
+    // Check that the current user has access to mark any content for screening.
+    if (user_access('mark any content for screening', $account)) {
+      return TRUE;
+    }
+
+    // Check that the current user has access to mark any content for screening.
+    $entity = entity_load($flag->entity_type, array($entity_id));
+    if (reset($entity)->uid == $account->uid && user_access('mark own content for screening', $account)) {
+      return TRUE;
+    }
+
+    return FALSE;
+  }
+}
+
+/**
+ * Implements hook_flag_flag().
+ */
+function walkhub_screening_queue_flag_flag($flag, $entity_id, $account, $flagging) {
+  // Load the mark for screening flag by machine name.
+  $mark_for_screening = flag_get_flag('mark_for_screening');
+
+  if (!empty($mark_for_screening) && $flag->fid == $mark_for_screening->fid) {
+    global $user;
+    // Update the mark for screening flag marked by user reference field.
+    $flagging->field_marked_by[LANGUAGE_NONE][0]['target_id'] = $user->uid;
+    field_attach_update('flagging', $flagging);
+  }
+}
+
+/**
+ * Implements hook_flag_unflag().
+ */
+function walkhub_screening_queue_flag_unflag($flag, $entity_id, $account, $flagging) {
+  // Load the mark for screening flag by machine name.
+  $mark_for_screening = flag_get_flag('mark_for_screening');
+
+  if (!empty($mark_for_screening) && $flag->fid == $mark_for_screening->fid) {
+    // Unset the mark for screening flag marked by user reference field.
+    unset($flagging->field_marked_by);
+    field_attach_update('flagging', $flagging);
+  }
+}
+
+/**
+ * Implements hook_services_resources().
+ */
+function walkhub_screening_queue_services_resources() {
+  $resources = array();
+  $file_path = array(
+    'type' => 'inc',
+    'module' => 'walkhub_screening_queue',
+    'name' => 'walkhub_screening_queue.services',
+  );
+
+  $access_callback_path = array(
+    'type' => 'inc',
+    'module' => 'services',
+    'name' => 'resources/node_resource',
+  );
+
+  $resources['walkhub-walkthrough-screening-queue'] = array(
+    'index' => array(
+      'callback' => 'walkhub_screening_queue_get_queue',
+      'file' => $file_path,
+      'access arguments' => array('access content'),
+      'args' => array(),
+    ),
+  );
+
+  $resources['walkhub-screening'] = array(
+    'operations' => array(
+      'create' => array(
+        'help' => 'Create a screening node',
+        'file' => $file_path,
+        'callback' => 'walkhub_screening_queue_create_screening',
+        'args' => array(
+          array(
+            'name' => 'title',
+            'optional' => FALSE,
+            'source' => array(
+              'data' => 'title',
+            ),
+            'description' => 'The node title',
+            'type' => 'string',
+          ),
+          array(
+            'name' => 'language',
+            'optional' => TRUE,
+            'source' => array(
+              'data' => 'language',
+            ),
+            'description' => 'The node language',
+            'type' => 'string',
+            'default value' => NULL,
+          ),
+          array(
+            'name' => 'referenced_walkthrough',
+            'optional' => TRUE,
+            'source' => array(
+              'data' => 'referenced_walkthrough',
+            ),
+            'description' => 'Referenced walkthrough',
+            'type' => 'string',
+          ),
+        ),
+        'access callback' => '_node_resource_access',
+        'access arguments' => array('create', array(0 => array('type' => 'screening'))),
+        'access arguments append' => TRUE,
+        'access callback file' => $access_callback_path,
+      ),
+      'update' => array(
+        'help' => 'Update a screening node',
+        'file' => $file_path,
+        'callback' => 'walkhub_screening_queue_update_screening',
+        'access callback' => '_walkhub_screening_queue_resource_access',
+        'access arguments' => array('update'),
+        'access arguments append' => TRUE,
+        'access callback file' => $file_path,
+        'args' => array(
+          array(
+            'name' => 'uuid',
+            'optional' => FALSE,
+            'type' => 'string',
+            'description' => 'The screening node uuid',
+            'source' => array(
+              'path' => 0,
+            ),
+          ),
+          array(
+            'name' => 'time',
+            'optional' => TRUE,
+            'type' => 'int',
+            'description' => 'How long the screening execution took.',
+            'default value' => NULL,
+            'source' => array(
+              'data' => 'time',
+            ),
+          ),
+          array(
+            'name' => 'junit',
+            'optional' => TRUE,
+            'type' => 'string',
+            'description' => 'The last test result.',
+            'default value' => NULL,
+            'source' => array(
+              'data' => 'junit',
+            ),
+          ),
+          array(
+            'name' => 'screenshots',
+            'optional' => TRUE,
+            'type' => 'array',
+            'description' => 'The screenshot with a base64 encoded png files, and step references.',
+            'default value' => array(),
+            'source' => array(
+              'data' => 'screenshots',
+            ),
+          ),
+          array(
+            'name' => 'result',
+            'optional' => TRUE,
+            'type' => 'string',
+            'description' => 'If the screening was successful or not.',
+            'default value' => NULL,
+            'source' => array(
+              'data' => 'result',
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+
+  return $resources;
+}

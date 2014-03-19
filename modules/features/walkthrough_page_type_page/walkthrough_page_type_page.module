@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Walkthrough Page type - Page feature.
+ */
+
+include_once 'walkthrough_page_type_page.features.inc';
