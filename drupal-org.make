@@ -116,22 +116,3 @@ projects[views][version] = "3.7"
 projects[views_field_view][subdir] = "contrib"
 projects[views_field_view][version] = "1.1"
 
-;projects[walkhub][type] = "module"
-;projects[walkhub][download][type] = "git"
-;projects[walkhub][download][url] = "https://github.com/dennisinteractive/WalkHub-module.git"
-;projects[walkhub][subdir] = contrib
-
-;projects[walkhub_client][type] = "module"
-;projects[walkhub_client][download][type] = "git"
-;projects[walkhub_client][download][url] = "https://github.com/dennisinteractive/Drupal-WalkHub-client.git"
-;projects[walkhub_client][subdir] = contrib
-
-; Themes
-;projects[zurb-foundation][version] = "4.0-beta1"
-
-; Libraries
-;libraries[resources][type] = "module"
-;libraries[resources][download][type] = "git"
-;libraries[resources][download][url] = "https://github.com/dennisinteractive/WalkHub-resources.git"
-;libraries[resources][subdir] = walkhub
-
