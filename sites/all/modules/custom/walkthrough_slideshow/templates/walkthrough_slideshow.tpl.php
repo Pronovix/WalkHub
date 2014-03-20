@@ -56,6 +56,7 @@
 </div>
 <div id="hidden-center">
 <!--Embed code-->
+  <?php if ($share_dialog && $embed_code): ?>
   <div id="embed-code">
     <button id="close"><i class="icon-remove-sign"></i></button>
     <?php echo $embed_code; ?>
@@ -81,6 +82,7 @@
       </a>
     </div>
   </div>
+  <?php endif; ?>
 </div>
 <!--Control Bar-->
 <div id="controls-wrapper">
@@ -104,9 +106,11 @@
       </a>
     </div>
     <div class="button-wrapper float-right">
+      <?php if ($share_dialog && $embed_code): ?>
       <a id="share">
         <i class="icon-share"></i>
       </a>
+      <?php endif; ?>
       <a id="fullscreen">
         <i class="icon-fullscreen"></i>
       </a>
