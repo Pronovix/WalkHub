@@ -28,8 +28,11 @@ function f_install_build() {
 
 function f_install_site() {
   echo
-  echo "[Info] Everything ready. Now you can install your distro site. If you want to use drush, this is syntax:"
-  echo "drush si -y walkhub --db-url=\"mysql://root@localhost/walkhub\" --site-name=\"WalkHub\" --account-name=admin --account-pass=password --sites-subdir=default"
+  echo "[Info] Now you can install your distro site using your browser. If you want to use drush, you can use the commands below"
+  echo "drush si -y walkthrough --db-url=\"mysql://root@localhost/walkhub\" --site-name=\"WalkHub\" --account-name=admin --account-pass=password --sites-subdir=default"
+  echo Drupal login details:
+  echo user: admin
+  echo pass: password
   echo
 }
 
@@ -38,5 +41,3 @@ f_install_build
 f_install_site
 
 echo Done
-
-
