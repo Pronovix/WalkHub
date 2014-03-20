@@ -3,26 +3,29 @@ Walkhub
 
 Prerequisites
 
-Git
-Drush
+- Git
+- Drush
 
 Installation
 
-  - Go to the folder where you want to install the Distro i.e.
-    $ cd /Users/Shared
+  - Go to the folder where you want to install the Distro e.g.
+  
+    cd /Users/Shared
 
-  - Copy and paste this into your shell to install everything:
-    $ curl -L -s http://goo.gl/dXUbub | bash
+  - Copy and paste the following command into your shell terminal to install everything. This will create a folder with the name walkhub inside your chosen installation directory:
+  
+    curl -L -s http://goo.gl/dXUbub | bash
   
     What it will do:
+
     - Clone Drupal from drupal.org
     - Clone WalkHub repo
     - Build a Distro that contains a profile called walkthrough
     - Run build script that will download Drush if necessary, build the site.
     
-  - Now you can install your distro site using your browser. If you want to use drush, you can use the commands below.
-
-    Change the parameters as necessary:
+  - Now you can install your distro site using your browser. Alternatively, if you want to use drush, you can use the commands below, changing the parameters as necessary:
     
-    $ cd walkhub/sites/default/
-    $ drush si -y walkhub --db-url="mysql://root@localhost/walkhub" --site-name="WalkHub" --account-name=admin --account-pass=password --sites-subdir=default
+    cd walkhub/sites/default/
+
+    drush si -y walkthrough --db-url="mysql://root@localhost/walkhub" --site-name="WalkHub" --account-name=admin --account-pass=password --sites-subdir=default
+
