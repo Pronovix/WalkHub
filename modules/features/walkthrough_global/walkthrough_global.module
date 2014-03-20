@@ -10,11 +10,21 @@ include_once 'walkthrough_global.features.inc';
  * Implements hook_form_FORM_ID_alter().
  */
 function walkthrough_global_form_walkhub_configuration_form_alter(&$form, &$form_state) {
-  $form['walkthrough_global_secret_key'] = array(
+  $walkthrough_global_secret_key = variable_get('walkthrough_global_secret_key', NULL);
+
+  $form['ios'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('iOS app'),
+    '#collapsible' => TRUE,
+    '#collapsed' => empty($walkthrough_global_secret_key),
+    '#weight' => 5,
+  );
+
+  $form['ios']['walkthrough_global_secret_key'] = array(
     '#title' => t('Registration service private key'),
     '#description' => t('This key is used to identify every request sent by the iOS app.'),
     '#type' => 'textarea',
-    '#default_value' => variable_get('walkthrough_global_secret_key', NULL),
+    '#default_value' => $walkthrough_global_secret_key,
   );
 }
 

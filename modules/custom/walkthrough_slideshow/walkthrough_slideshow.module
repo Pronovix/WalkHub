@@ -328,24 +328,54 @@ function walkthrough_slideshow_get_iframe_content($node) {
     $slides[] = $file;
   }
 
-  // Get the embed code.
-  $embed = theme('walkthrough_slideshow_iframe',
-    array('width' => 400, 'height' => 300, 'source' => url('walkthrough/' . $walkthrough->nid . '/slideshow', array('absolute' => TRUE))));
-
   // Create variables to client side.
-  $vars = array(
+  $slideshow_variables = array(
     'slides_json' => json_encode($slides),
-    'link' => l($walkthrough->title, 'node/' . $walkthrough->nid, array('attributes' => array('target' => '_blank'))),
-    'start_url' => url('node/' . $walkthrough->nid . '/start', array('absolute' => TRUE)),
-    'embed_code' => _walkthrough_slideshow_embed($embed),
+    'share_dialog' => variable_get('walkthrough_slideshow_sharing', TRUE),
   );
-  return $vars;
+
+  if ($walkthrough) {
+    $show_walkthrough_title = variable_get('walkthrough_slideshow_show_link_to_walkthrough', TRUE);
+    if ($show_walkthrough_title) {
+      $slideshow_variables['link'] = l($walkthrough->title, 'node/' . $walkthrough->nid, array('attributes' => array('target' => '_blank')));
+    }
+
+    $slideshow_variables['start_url'] = url('node/' . $walkthrough->nid . '/start', array('absolute' => TRUE));
+    $slideshow_variables['embed_code'] = _walkthrough_slideshow_embed($walkthrough);
+  }
+
+  return $slideshow_variables;
+}
+
+/**
+ * Helper function to get the embed code for the slideshow for a walkthrough.
+ *
+ * @param $walkthrough
+ * @return string
+ */
+function _walkthrough_slideshow_get_embed_code_variables($walkthrough) {
+  $embed_code_variables = array(
+    'width' => 400,
+    'height' => 300,
+  );
+  $embed_code_variables['source'] = url('walkthrough/' . $walkthrough->nid . '/slideshow', array('absolute' => TRUE));
+  $embed_code = theme('walkthrough_slideshow_iframe', $embed_code_variables);
+
+  return $embed_code;
 }
 
 /**
  * Gives back the HTML code which will display the embed code.
+ *
+ * @param $walkthrough
+ *   Walkthrough to render the embed code for.
+ *
+ * @return string
+ *   Embed code.
  */
-function _walkthrough_slideshow_embed($embed_code) {
+function _walkthrough_slideshow_embed($walkthrough) {
+  $embed_code = _walkthrough_slideshow_get_embed_code_variables($walkthrough);
+
   $form = array(
     'embed' => array(
       '#type' => 'textarea',
@@ -461,4 +491,31 @@ function walkthrough_slideshow_latest_content($walkthrough) {
 
   // Return the page content.
   print $output;
+}
+
+/**
+ * Implements hook_form_FORMID_alter().
+ *
+ * Adds slideshow settings to the walkhub settings form.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function walkthrough_slideshow_form_walkhub_configuration_form_alter(&$form, &$form_state) {
+  $form['walkthrough_slideshow'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Slideshow'),
+  );
+
+  $form['walkthrough_slideshow']['walkthrough_slideshow_sharing'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Social sharing'),
+    '#default_value' => variable_get('walkthrough_slideshow_sharing', TRUE),
+  );
+
+  $form['walkthrough_slideshow']['walkthrough_slideshow_show_link_to_walkthrough'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show link to walkthrough'),
+    '#default_value' => variable_get('walkthrough_slideshow_show_link_to_walkthrough', TRUE),
+  );
 }
