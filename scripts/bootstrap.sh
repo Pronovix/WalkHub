@@ -9,7 +9,7 @@ TMP_DIR="/tmp/walkhub"
 
 rm -rf walkhub
 rm -rf ${TMP_DIR}
-git clone --recursive --branch master https://github.com/dennisinteractive/WalkHub.git ${TMP_DIR}
+git clone --recursive --branch master https://github.com/pronovix/WalkHub.git ${TMP_DIR}
 
 if [ -d ${TMP_DIR} ]; then
   echo "[Info] Bootstrap has finished installation."
