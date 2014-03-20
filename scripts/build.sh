@@ -14,7 +14,7 @@ function f_install_drush() {
          sudo /usr/local/drush/drush --version
          ;;
        *)
-         echo "[Info] You need to build the site using Drush i.e. /usr/local/drush/drush make --prepare-install build-walkhub.make ${INSTALL_DIR}"
+         echo "[Info] You need to build the site using Drush i.e. /usr/local/drush/drush make --prepare-install /tmp/walkhub/build-walkhub.make ${INSTALL_DIR}"
          exit
          ;;
      esac
@@ -23,7 +23,7 @@ function f_install_drush() {
 
 function f_install_build() {
   echo "[Info] Build site"
-  /usr/local/drush/drush make --prepare-install build-walkhub.make ${INSTALL_DIR}
+  /usr/local/drush/drush make --prepare-install /tmp/walkhub/build-walkhub.make ${INSTALL_DIR}
 }
 
 function f_install_site() {
