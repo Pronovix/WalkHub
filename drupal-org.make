@@ -56,8 +56,11 @@ projects[flag][version] = "3.2"
 projects[google_analytics][subdir] = "contrib"
 projects[google_analytics][version] = "1.3"
 
-projects[jquery_update][subdir] = "contrib"
-projects[jquery_update][version] = "2.3-alpha1"
+projects[jquery_update][type] = "module"
+projects[jquery_update][download][type] = "git"
+projects[jquery_update][download][url] = "http://git.drupal.org/project/jquery_update.git"
+projects[jquery_update][download][revision] = "65eecb0f1fc69cf6831a66440f72e33a1effb1f3"
+projects[jquery_update][subdir] = contrib
 
 projects[legal][subdir] = "contrib"
 projects[legal][version] = "1.4"
