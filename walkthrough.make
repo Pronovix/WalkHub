@@ -38,7 +38,7 @@ libraries[bigscreen][download][tag] = "v2.0.4"
 libraries[supersized][type] = "module"
 libraries[supersized][download][type] = "git"
 libraries[supersized][download][url] = "https://github.com/buildinternet/supersized.git"
-libraries[supersized][download][tag] = "v3.2"
+libraries[supersized][download][revision] = "2ccedfdb011df7f05a7264b843fde442b9912c5b"
 
 ; Themes
 ; ------
