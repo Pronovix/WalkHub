@@ -293,15 +293,23 @@ function walkthrough_slideshow_generate_iframe_content($node) {
 }
 
 /**
- * Return the variables array to be able to render the slideshow.
+ * Get the screenshot images in order from a walkthrough screening.
  *
- * @param $node
+ * @param $screening_node
+ *   Screening node.
+ *
  * @return array
+ *   Image field collections in order.
  */
-function walkthrough_slideshow_get_iframe_content($node) {
+function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
+  $walkthrough = field_get_items('node', $screening_node, 'field_screening_walkthrough');
+  $walkthrough = node_load($walkthrough[0]['target_id']);
+
+  $steps = $walkthrough->field_fc_steps['und'];
+
   $images = array();
   // Get the images from the field collection items.
-  $screenshot_collections = field_get_items('node', $node, 'field_screening_fc_screenshots');
+  $screenshot_collections = field_get_items('node', $screening_node, 'field_screening_fc_screenshots');
   foreach ($screenshot_collections as $screenshot_collection) {
     $collection_entity = entity_load('field_collection_item', array($screenshot_collection['value']));
     // The collection is deleted.
@@ -311,9 +319,34 @@ function walkthrough_slideshow_get_iframe_content($node) {
     $collection_entity = current($collection_entity);
     $collection_image = field_get_items('field_collection_item', $collection_entity, 'field_fc_screenshots_screenshot');
     if ($collection_image) {
-      $images[] = current($collection_image);
+      $index = $collection_entity->field_fc_screenshots_step['und'][0]['target_id'];
+      $images[$index] = current($collection_image);
     }
   }
+
+  // Sort images by the steps of the walkthrough.
+  // It is not enough to call sort($images) here as the $steps might not be in
+  // order (e.g.: if reordered on the walkthrough node).
+  $sorted_images = array();
+  foreach ($steps as $step) {
+    $index = $step['value'];
+
+    if ($images[$index]) {
+      $sorted_images[] = $images[$index];
+    }
+  }
+
+  return $sorted_images;
+}
+
+/**
+ * Return the variables array to be able to render the slideshow.
+ *
+ * @param $node
+ * @return array
+ */
+function walkthrough_slideshow_get_iframe_content($node) {
+  $images = _walkthrough_slideshow_get_screenshots_in_order($node);
 
   // Get referenced walkthrough object.
   $walkthrough = field_get_items('node', $node, 'field_screening_walkthrough');
