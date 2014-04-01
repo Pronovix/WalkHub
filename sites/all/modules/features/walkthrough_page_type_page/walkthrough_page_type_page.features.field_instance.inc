@@ -47,6 +47,7 @@ function walkthrough_page_type_page_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'blog_entry_text_format' => 0,
           'full_html' => 'full_html',
           'plain_text' => 'plain_text',
         ),
@@ -54,6 +55,9 @@ function walkthrough_page_type_page_field_default_field_instances() {
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'blog_entry_text_format' => array(
+              'weight' => 0,
+            ),
             'full_html' => array(
               'weight' => 0,
             ),
@@ -64,7 +68,7 @@ function walkthrough_page_type_page_field_default_field_instances() {
         ),
       ),
       'display_summary' => 1,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
