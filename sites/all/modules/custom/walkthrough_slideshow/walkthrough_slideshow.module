@@ -333,8 +333,13 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
 
     if ($images[$index]) {
       $sorted_images[] = $images[$index];
+      unset($images[$index]);
     }
   }
+
+  // Add remaining images with missing or wrong step references.
+  // This is necessary for hand-uploaded slideshows.
+  $sorted_images += $images;
 
   return $sorted_images;
 }
