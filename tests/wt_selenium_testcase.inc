@@ -337,17 +337,6 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     $element->value($full_filepath);
     $this->pause(1000);
   }
-
-  /**
-   * Tests that the admin page is not accessible for anonymous users.
-   */
-  public function testAdminPageIsInaccessibleForAnonymous() {
-    $this->url('user/logout');
-
-    $this->url('admin');
-    $text = mock($this->byCssSelector('body'))->text();
-    $this->assertTrue($text && strpos($text, 'Access denied') !== FALSE);
-  }
 }
 
 function mock($obj) {

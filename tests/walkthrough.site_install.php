@@ -92,5 +92,16 @@ class WalkthroughSiteInstall extends WalkhubSeleniumTestCase {
     //$this->verifyTextPresent("Walkhub (default theme)");
   }
 
+  /**
+   * Tests that the admin page is not accessible for anonymous users.
+   */
+  public function testAdminPageIsInaccessibleForAnonymous() {
+    $this->url('user/logout');
+
+    $this->url('admin');
+    $text = mock($this->byCssSelector('body'))->text();
+    $this->assertTrue($text && strpos($text, 'Access denied') !== FALSE);
+  }
+
 }
 
