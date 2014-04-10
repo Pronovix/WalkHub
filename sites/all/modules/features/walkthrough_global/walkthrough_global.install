@@ -582,3 +582,10 @@ function walkthrough_global_update_7037() {
 function walkthrough_global_update_7038() {
   walkhub_features_revert(array('walkhub'));
 }
+
+/**
+ * Rever Walkhub permission feature.
+ */
+function walkthrough_global_update_7039() {
+  walkhub_features_revert(array('walkthrough_permissions'));
+}
