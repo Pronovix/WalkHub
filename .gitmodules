@@ -1,9 +1,6 @@
 [submodule "sites/all/modules/custom/walkhub"]
 	path = sites/all/modules/custom/walkhub
 	url = git@github.com:Pronovix/WalkHub-module.git
-[submodule "tests/pronovix-selenium-testcase"]
-	path = tests/pronovix-selenium-testcase
-	url = git@github.com:Pronovix/Pronovix-Selenium-Testcase.git
 [submodule "resources"]
 	path = resources
 	url = git@github.com:Pronovix/WalkHub-resources.git
