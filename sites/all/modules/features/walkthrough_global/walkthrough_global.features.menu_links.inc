@@ -27,7 +27,7 @@ function walkthrough_global_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -42,
+    'weight' => -48,
     'customized' => 1,
   );
   // Exported menu link: main-menu_contact:node/82
@@ -44,7 +44,7 @@ function walkthrough_global_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -43,
+    'weight' => -47,
     'customized' => 1,
   );
   // Exported menu link: main-menu_documentation:node/3738
@@ -61,8 +61,8 @@ function walkthrough_global_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 1,
     'expanded' => 0,
-    'weight' => -45,
-    'customized' => 0,
+    'weight' => -49,
+    'customized' => 1,
   );
   // Exported menu link: main-menu_faq:node/80
   $menu_links['main-menu_faq:node/80'] = array(
@@ -81,7 +81,7 @@ function walkthrough_global_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -44,
+    'weight' => -42,
     'customized' => 1,
   );
   // Exported menu link: main-menu_for-developers:node/3742
@@ -119,7 +119,7 @@ function walkthrough_global_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -50,
     'customized' => 1,
   );
   // Exported menu link: main-menu_log-in:user
@@ -139,7 +139,7 @@ function walkthrough_global_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -50,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: main-menu_open-source:node/81
@@ -159,7 +159,7 @@ function walkthrough_global_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -45,
     'customized' => 1,
   );
   // Exported menu link: main-menu_pricing:node/79
@@ -179,7 +179,7 @@ function walkthrough_global_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => -44,
     'customized' => 1,
   );
   // Exported menu link: main-menu_resources:node/78
@@ -199,7 +199,7 @@ function walkthrough_global_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -43,
     'customized' => 1,
   );
   // Exported menu link: main-menu_style-guide:node/3740
