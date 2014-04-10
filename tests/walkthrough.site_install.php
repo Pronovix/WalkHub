@@ -39,12 +39,10 @@ class WalkthroughSiteInstall extends WalkhubSeleniumTestCase {
   public function testFileSystemSettings() {
     $this->adminLogin();
 
-    $this->url('admin/config/media/file-system', SELENIUM_EXPECT_ERROR);
-    $this->waitForPageToLoad(300000);
+    $this->url('admin/config/media/file-system');
 
     // Save file system settings.
     $this->byId('edit-submit')->click();
-    $this->waitForPageToLoad(30000);
   }
 
   /**
@@ -54,7 +52,6 @@ class WalkthroughSiteInstall extends WalkhubSeleniumTestCase {
     $this->adminLogin();
 
     $this->url("admin/structure/features");
-    $this->waitForPageToLoad(300000);
     $this->byLinkText('Walkthrough')->click();
     // Pause for 10 seconds, so the feature statuses are loaded.
     $this->pause(10000);
@@ -71,7 +68,6 @@ class WalkthroughSiteInstall extends WalkhubSeleniumTestCase {
     $this->adminLogin();
 
     $this->url("admin/people/permissions/roles");
-    $this->waitForPageToLoad(30000);
 
     $roles = array(
       'anonymous user',
@@ -91,7 +87,6 @@ class WalkthroughSiteInstall extends WalkhubSeleniumTestCase {
     $this->adminLogin();
 
     $this->url("admin/appearance");
-    $this->waitForPageToLoad(30000, SELENIUM_EXPECT_ERROR);
 
     // @todo!
     //$this->verifyTextPresent("Walkhub (default theme)");

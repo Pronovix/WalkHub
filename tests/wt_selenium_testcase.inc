@@ -8,11 +8,7 @@
 
 require_once 'vendor/autoload.php';
 
-/**
- * Expect error message on page load.
- * @see PxSeleniumTestCase::waitForPageToLoad().
- */
-define('SELENIUM_EXPECT_ERROR', TRUE);
+// @Todo Check for drupal error messages on page load.
 
 /**
  * Default Drupal roles.
@@ -165,35 +161,6 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
   }
 
   /**
-   * Override function to check for Drupal error messages.
-   *
-   * @param int $timeout
-   *   Timeout interval in milliseconds.
-   * @param bool $expectError
-   *   (Optional) Expect error on page load.
-   *   Set to true when the error message is intentional, e.g.: testing failed
-   *   user login.
-   */
-  protected function waitForPageToLoad($timeout, $expectError = FALSE) {
-    return;
-    $this->timeouts()->implicitWait($timeout);
-    if (!$expectError) {
-      try {
-        if (($warning = $this->byCssSelector('div.messages.warning'))) {
-          $this->assertElementNotPresent($warning, 'No warning message found on page');
-        }
-      } catch (Exception $e) {
-      }
-      try {
-        if (($error = $this->byCssSelector('div.messages.error'))) {
-          $this->assertElementNotPresent($error, 'No error message found on page');
-        }
-      } catch (Exception $e) {
-      }
-    }
-  }
-
-  /**
    * Helper function to log in as admin.
    */
   protected function adminLogin() {
@@ -232,7 +199,6 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
 
     // Create new user with all the roles available.
     $this->url('admin/people/create');
-    $this->waitForPageToLoad(30000);
     if ($this->isElementExists($this->byId('edit-name'))) {
       mock($this->byId('edit-name'))->value($account->username);
     }
@@ -258,7 +224,6 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     }
 
     mock($this->byId('edit-submit'))->click();
-    $this->waitForPageToLoad(30000);
 
     return $account;
   }
@@ -273,7 +238,6 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
    */
   protected function login($username, $password) {
     $this->url('user/logout');
-    $this->waitForPageToLoad(90000, SELENIUM_EXPECT_ERROR);
     $this->url('user/login');
 
     $user = mock($this->byId('edit-name'));
@@ -285,7 +249,6 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     $pass->value($password);
 
     mock($this->byId('edit-submit'))->click();
-    $this->waitForPageToLoad(30000, SELENIUM_EXPECT_ERROR);
   }
 
   /**
@@ -380,7 +343,6 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
    */
   public function testAdminPageIsInaccessibleForAnonymous() {
     $this->url('user/logout');
-    $this->waitForPageToLoad(30000, SELENIUM_EXPECT_ERROR);
 
     $this->url('admin');
     $text = mock($this->byCssSelector('body'))->text();
