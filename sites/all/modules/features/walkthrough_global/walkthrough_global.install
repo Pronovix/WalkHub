@@ -589,3 +589,10 @@ function walkthrough_global_update_7038() {
 function walkthrough_global_update_7039() {
   walkhub_features_revert(array('walkthrough_permissions'));
 }
+
+/**
+ * Rever Walkhub blog menu button entry.
+ */
+function walkthrough_global_update_7040() {
+  walkhub_features_revert(array('walkthrough_global'));
+}
