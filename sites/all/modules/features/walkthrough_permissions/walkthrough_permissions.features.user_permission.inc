@@ -65,15 +65,6 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'access devel information'.
-  $permissions['access devel information'] = array(
-    'name' => 'access devel information',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'access own authorizations'.
   $permissions['access own authorizations'] = array(
     'name' => 'access own authorizations',
@@ -1072,15 +1063,6 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'execute php code'.
-  $permissions['execute php code'] = array(
-    'name' => 'execute php code',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'export any walkthrough'.
   $permissions['export any walkthrough'] = array(
     'name' => 'export any walkthrough',
@@ -1449,15 +1431,6 @@ function walkthrough_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'comment',
-  );
-
-  // Exported permission: 'switch users'.
-  $permissions['switch users'] = array(
-    'name' => 'switch users',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'devel',
   );
 
   // Exported permission: 'unflag mark_for_screening'.
