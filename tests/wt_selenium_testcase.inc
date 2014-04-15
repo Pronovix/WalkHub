@@ -328,6 +328,17 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
 
     return $this->assertFalse($text_present, $message);
   }
+
+  /**
+   * Assert that the Drupal site title is of a value.
+   *
+   * @param $text
+   *   Text to compare the title to.
+   */
+  public function assertSiteTitle($text) {
+    $element = $this->byId('page-title');
+    $this->assertTextPresent($text, $element);
+  }
 }
 
 function mock($obj) {
