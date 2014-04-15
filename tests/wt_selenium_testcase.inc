@@ -314,6 +314,20 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     $element->value($full_filepath);
     $this->pause(1000);
   }
+
+  public function verifyTextPresent($text, $message = '') {
+    $source = $this->source();
+    $text_present = (strpos($source, $text) !== FALSE);
+
+    return $this->assertTrue($text_present, $message);
+  }
+
+  public function verifyTextNotPresent($text, $message = '') {
+    $source = $this->source();
+    $text_present = (strpos($source, $text) !== FALSE);
+
+    return $this->assertFalse($text_present, $message);
+  }
 }
 
 function mock($obj) {

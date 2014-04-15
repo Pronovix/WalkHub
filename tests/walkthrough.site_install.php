@@ -23,9 +23,8 @@ class WalkthroughSiteInstall extends WalkhubSeleniumTestCase {
   public function testFeaturesNotDisabled() {
     $this->walkthroughFeaturesAdminPage();
 
-    // Make sure no modules are disabled.
-    // @Todo
-    //$this->verifyTextNotPresent('Disabled');
+    // Make sure no features are disabled.
+    $this->verifyTextNotPresent('Disabled');
   }
 
   /**
@@ -75,8 +74,7 @@ class WalkthroughSiteInstall extends WalkhubSeleniumTestCase {
     );
 
     foreach ($roles as $role) {
-      // @Todo!
-      //$this->verifyTextPresent($role);
+      $this->verifyTextPresent($role);
     }
   }
 
@@ -88,8 +86,7 @@ class WalkthroughSiteInstall extends WalkhubSeleniumTestCase {
 
     $this->url("admin/appearance");
 
-    // @todo!
-    //$this->verifyTextPresent("Walkhub (default theme)");
+    $this->verifyTextPresent("Walkhub  (default theme)");
   }
 
   /**
