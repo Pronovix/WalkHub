@@ -280,8 +280,6 @@ function walkthrough_get_latest_screening_from_walkthrough($walkthrough) {
  * Give back the raw html code of the slideshow page. It will be placed into an iframe.
  *
  * @param $node
- * @param $width
- * @param $height
  *
  * @return string
  */
@@ -293,7 +291,10 @@ function walkthrough_slideshow_generate_iframe_content($node) {
 }
 
 /**
- * Get the screenshot images in order from a walkthrough screening.
+ * Get the screenshot images in the order of steps from a walkthrough screening.
+ *
+ * Images without step references will appear after images with referenced
+ * steps.
  *
  * @param $screening_node
  *   Screening node.
@@ -305,10 +306,12 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
   $walkthrough = field_get_items('node', $screening_node, 'field_screening_walkthrough');
   $walkthrough = node_load($walkthrough[0]['target_id']);
 
-  $steps = $walkthrough->field_fc_steps['und'];
+  $steps = field_get_items('node', $walkthrough, 'field_fc_steps');
 
-  $images = array();
   // Get the images from the field collection items.
+  $images = array();
+  $images_without_steps = array();
+
   $screenshot_collections = field_get_items('node', $screening_node, 'field_screening_fc_screenshots');
   foreach ($screenshot_collections as $screenshot_collection) {
     $collection_entity = entity_load('field_collection_item', array($screenshot_collection['value']));
@@ -316,18 +319,31 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
     if (!$collection_entity) {
       continue;
     }
+
     $collection_entity = current($collection_entity);
     $collection_image = field_get_items('field_collection_item', $collection_entity, 'field_fc_screenshots_screenshot');
     if ($collection_image) {
       $index = $collection_entity->field_fc_screenshots_step['und'][0]['target_id'];
-      $images[$index] = current($collection_image);
+      if ($index) {
+        $images[$index] = current($collection_image);
+      } else {
+        $images_without_steps[] = current($collection_image);
+      }
     }
+
+  }
+
+  // Append images without steps.
+  $last_index = (empty($images)) ? 0 : max(array_keys($images));
+  foreach($images_without_steps as $image) {
+    $images[$last_index++] = $image;
   }
 
   // Sort images by the steps of the walkthrough.
   // It is not enough to call sort($images) here as the $steps might not be in
   // order (e.g.: if reordered on the walkthrough node).
   $sorted_images = array();
+
   foreach ($steps as $step) {
     $index = $step['value'];
 
