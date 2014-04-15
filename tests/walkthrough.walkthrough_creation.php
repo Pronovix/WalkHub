@@ -4,18 +4,20 @@
  * Test Walkthrough creation processes.
  */
 
-require_once 'pronovix-selenium-testcase/px_selenium_testcase.inc';
+require_once './vendor/autoload.php';
+require_once './wt_selenium_testcase.inc';
 
-class WalkthroughCreation extends PxSeleniumTestCase {
+class WalkthroughCreation extends WalkhubSeleniumTestCase {
 
   public function testEmptyWalkthroughCreation() {
     $this->adminLogin();
 
-    $this->open("/node/add/walkthrough");
-    $this->type("id=edit-title", "Test empty walkthrough");
-    $this->click("id=edit-submit");
-    $this->waitForPageToLoad(30000);
-    $this->assertEquals("Test empty walkthrough", $this->getText("id=page-title"));
+    $this->url("/node/add/walkthrough");
+    $this->byId('edit-title')->value('Test empty walkthrough');
+    $this->byId("edit-submit")->click();
+
+    $title = $this->byId('page-title')->text();
+    $this->assertEquals("Test empty walkthrough", $title);
   }
 
   /**
@@ -33,17 +35,17 @@ class WalkthroughCreation extends PxSeleniumTestCase {
     if (!empty($exploded_url[2]) && is_numeric($exploded_url[2])) {
       $nid = $exploded_url[2];
       // Create a walkthrough
-      $this->open("/node/add/walkthrough");
-      $this->type("id=edit-title", $title);
+      $this->url("/node/add/walkthrough");
+      $this->byId('edit-value')->value($title);
 
       // Set the prerequisite field to point at the previously created walkthrough.
-      $this->type("id=edit-field-prerequisites-und-0-target-id", "Test empty Walkthrough ({$nid})");
+      $this->byId("edit-field-prerequisites-und-0-target-id")->value("Test empty Walkthrough ({$nid})");
       $this->click("id=edit-submit");
-      $this->waitForPageToLoad(30000);
 
-      $this->assertEquals($title, $this->getText("id=page-title"));
+      $title = $this->byId('page-title')->text();
+      $this->assertEquals($title, $title);
 
-      $this->click("link=Start walkthrough");
+      $this->byLinkText('Start walkthrough')->click();
       sleep(2);
 
       $this->verifyTextPresent("Test empty walkthrough");

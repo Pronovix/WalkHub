@@ -4,9 +4,11 @@
  * Test Walkthrough playing processes.
  */
 
-require_once 'pronovix-selenium-testcase/px_selenium_testcase.inc';
 
-class WalkthroughPlaying extends PxSeleniumTestCase {
+require_once './vendor/autoload.php';
+require_once './wt_selenium_testcase.inc';
+
+class WalkthroughPlaying extends WalkhubSeleniumTestCase {
 
   public function provider() {
     // scan walkthroughs/ directory
@@ -49,15 +51,14 @@ class WalkthroughPlaying extends PxSeleniumTestCase {
 
     $this->frame($this->byCssSelector('#ui-id-2'));
 
-    for ($i = 0, $steps = $this->numberOfSteps($test) - 1; $i < $steps; $i++) {
-      sleep(1);
-      mock($this->byCssSelector('.joyride-next-tip'))->click();
+    $steps = $this->numberOfSteps($test);
+    for ($i = 0; $i <= $steps; $i++) {
+      mock($this->byCssSelector('.wtbubble-next'))->click();
+      sleep(10);
     }
 
-
-    $text = mock($this->byCssSelector('.joyride-content-wrapper'))->text();
-    $this->assertTrue($text && (strpos($text, 'This is the end of this walkthrough.') !== FALSE),
-      'Walkthrough is not finished correctly');
+    $finish_button = $this->byLinkText('Finish');
+    $this->assertTrue((bool)$finish_button, 'Walkthrough did not finish correctly');
   }
 
   protected function numberOfSteps($test) {
@@ -65,36 +66,7 @@ class WalkthroughPlaying extends PxSeleniumTestCase {
     $doc->loadHTML($test);
     $xpath = new DOMXpath($doc);
     $elements = $xpath->query('//tbody/tr');
-    return $elements ? $elements->length : NULL;
+    return $elements ? $elements->length-2 : NULL;
   }
-
-//  /**
-//   * Tests if a simple walkthrough on pronovix.com starts (via the proxy).
-//   */
-//  public function testWalkthroughPlaying() {
-//    $title = $this->randomString();
-//    $this->adminLogin();
-//
-//    $this->click("link=Import Walkthrough");
-//    $this->waitForPageToLoad("30000");
-//
-//    $this->type("id=edit-selenium-code", file_get_contents("walkthroughs/pronovix.html"));
-//    $this->click("id=edit-next");
-//    $this->waitForPageToLoad("30000");
-//
-//    $this->type("id=edit-title", $title);
-//    $this->type("id=edit-body", $this->randomString());
-//    $this->click("id=edit-save");
-//    $this->waitForPageToLoad("30000");
-//
-//    $this->assertEquals($title, $this->getText("id=page-title"));
-//
-//    $this->click("link=Start walkthrough");
-//    $this->waitForElementPresent("//button[@type='button']", "30000");
-//    $this->click("//button[@type='button']");
-//
-//    $this->waitForElementPresent("css=div.joyride-content-wrapper", "30000");
-//  }
-
 }
 

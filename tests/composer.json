@@ -1,8 +1,13 @@
 {
-  "name": "pronovix/pronovix-selenium-testcase",
-  "description": "",
-  "require": {
-    "phpunit/phpunit": "3.7.*",
-    "phpunit/phpunit-selenium": "1.3.*"
-  }
+    "name": "pronovix/walkhub-tests",
+    "description": "Test framework for WalkHub",
+    "authors": [
+        {
+            "name": "Kornel Lugosi",
+            "email": "coornail@gmail.com"
+        }
+    ],
+    "require": {
+        "sauce/sausage": ">=0.4.0"
+    }
 }
