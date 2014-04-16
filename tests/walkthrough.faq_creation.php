@@ -26,11 +26,13 @@ class CreateFaq extends WalkhubSeleniumTestCase {
     $element->click();
     $element->clear();
     $element->value($title);
+
     // setElementText
     $element = $this->byId("edit-field-walkhub-questions-und-0-field-walkhub-faq-questions-und-0-value");
     $element->click();
     $element->clear();
     $element->value("test question");
+
     // setElementText
     $element = $this->byId("edit-field-walkhub-questions-und-0-field-walkhub-faq-answer-und-0-value");
     $element->click();
