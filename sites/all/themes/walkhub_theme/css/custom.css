@@ -5076,29 +5076,32 @@ input.pure-input-rounded, .pure-input-rounded { border-radius: 2em; padding: 0.5
 .columns.sidebar .post-data { border: 0; margin: 0; }
 
 /* line 96, ../sass/page/_nody-type-blog.sass */
+.blog-entry-subtitle { margin-top: -15px; }
+
+/* line 99, ../sass/page/_nody-type-blog.sass */
 .post-data { font-size: 8px; line-height: 11.6px; font-size: 0.8rem; line-height: 1.16rem; margin: 0; padding: 0; border-bottom: 1px solid #e3e3e3; color: #bdbdbd; list-style-type: none; }
-/* line 103, ../sass/page/_nody-type-blog.sass */
-.post-data li { display: inline-block; }
 /* line 106, ../sass/page/_nody-type-blog.sass */
+.post-data li { display: inline-block; }
+/* line 109, ../sass/page/_nody-type-blog.sass */
 .post-data li:after { margin: 0 2.5px; margin: 0 0.25rem; content: "|"; }
-/* line 110, ../sass/page/_nody-type-blog.sass */
+/* line 113, ../sass/page/_nody-type-blog.sass */
 .post-data li:last-of-type:after { content: ""; display: none; margin: 0; }
-/* line 116, ../sass/page/_nody-type-blog.sass */
+/* line 119, ../sass/page/_nody-type-blog.sass */
 .post-data .tag a { display: inline-block; margin: 0 2.5px; margin: 0 0.25rem; }
-/* line 120, ../sass/page/_nody-type-blog.sass */
-.post-data .tag a:after { content: ","; }
 /* line 123, ../sass/page/_nody-type-blog.sass */
+.post-data .tag a:after { content: ","; }
+/* line 126, ../sass/page/_nody-type-blog.sass */
 .post-data .tag a:last-of-type:after { content: ""; }
 
-/* line 126, ../sass/page/_nody-type-blog.sass */
+/* line 129, ../sass/page/_nody-type-blog.sass */
 .box { -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; padding: 7.5px 7.5px 7.5px 20px; padding: 0.75rem 0.75rem 0.75rem 2rem; background-color: #e3e3e3; position: relative; }
-/* line 133, ../sass/page/_nody-type-blog.sass */
+/* line 136, ../sass/page/_nody-type-blog.sass */
 .box.l-grey { background-color: #fafafa; color: #6f6f6f; }
-/* line 137, ../sass/page/_nody-type-blog.sass */
-.box.l-grey h3 { color: #6f6f6f; }
 /* line 140, ../sass/page/_nody-type-blog.sass */
+.box.l-grey h3 { color: #6f6f6f; }
+/* line 143, ../sass/page/_nody-type-blog.sass */
 .box h3 { margin-left: -12.5px; margin-left: -1.25rem; margin-top: 0; text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75); }
-/* line 145, ../sass/page/_nody-type-blog.sass */
+/* line 148, ../sass/page/_nody-type-blog.sass */
 .box i { top: 29px; top: 2.9rem; left: 7.5px; left: 0.75rem; position: absolute; }
 
 /* line 4, ../sass/page/_node-walkthrough.sass */
