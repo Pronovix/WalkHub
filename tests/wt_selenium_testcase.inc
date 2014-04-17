@@ -13,9 +13,12 @@ require_once 'vendor/autoload.php';
 /**
  * Default Drupal roles.
  */
-define('PX_SELENIUM_ROLE_ANONYMOUS_USER', 1);
-define('PX_SELENIUM_ROLE_AUTHENTICATED_USER', 2);
-define('PX_SELENIUM_BROWSER', 'firefox');
+define('WALKHUB_SELENIUM_ROLE_ANONYMOUS_USER', 1);
+define('WALKHUB_SELENIUM_ROLE_AUTHENTICATED_USER', 2);
+
+
+define('WALKHUB_SELENIUM_EXPECT_XSS', TRUE);
+define('WALKHUB_SELENIUM_DO_NOT_EXPECT_XSS', FALSE);
 
 /**
  * Singleton class for storing environment variables about the selenium
@@ -25,7 +28,6 @@ class LocalSeleniumSettings {
   protected $base_url = '';
   protected $admin_username = '';
   protected $admin_password = '';
-  protected $browser = 'firefox';
 
   /**
    * @return string
@@ -79,16 +81,60 @@ class LocalSeleniumSettings {
     $this->base_url = SELENIUM_SETTINGS_BASE_URL;
     $this->admin_username = SELENIUM_SETTINGS_ADMIN_USERNAME;
     $this->admin_password = SELENIUM_SETTINGS_ADMIN_PASSWORD;
-    $this->browser = SELENIUM_SETTINGS_BROWSER;
   }
 }
 
 abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
   protected $settings;
 
+  /**
+   * Currently supported browsers:
+   * - Firefox latest
+   * - Chrome latest
+   * - Safari 7
+   * - Internet Explorer 8-11
+   */
   public static $browsers = array(
     array(
-      'browserName' => PX_SELENIUM_BROWSER,
+      'browserName' => 'firefox',
+    ),
+    array(
+      'browserName' => 'chrome',
+    ),
+    array(
+      'browserName' => 'safari',
+      'desiredCapabilities' => array(
+        'platform' => 'OS X 10.9',
+        'version' => '7',
+      ),
+    ),
+    array(
+      'browserName' => 'internet explorer',
+      'desiredCapabilities' => array(
+        'platform' => 'Windows 7',
+        'version' => 8,
+      ),
+    ),
+    array(
+      'browserName' => 'internet explorer',
+      'desiredCapabilities' => array(
+        'platform' => 'Windows 7',
+        'version' => 9,
+      ),
+    ),
+    array(
+      'browserName' => 'internet explorer',
+      'desiredCapabilities' => array(
+        'platform' => 'Windows 7',
+        'version' => 10,
+      ),
+    ),
+    array(
+      'browserName' => 'internet explorer',
+      'desiredCapabilities' => array(
+        'platform' => 'Windows 7',
+        'version' => 11,
+      ),
     ),
   );
 
@@ -231,36 +277,42 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
   /**
    * Get a random string.
    *
+   * The random string is tries an XSS attack by default. This is because
+   * selenium halts on popups by default, so we can make sure that all our
+   * output is sanitized.
+   *
    * @see user_password()
    *
    * @param int $length
    *   Length of the random string to generate.
    *
+   * @param bool $expect_xss
+   *   TRUE if generate string without an XSS attack.
+   *
    * @return string
    *   Random string.
    */
-  protected function randomString($length = 10) {
-    // This variable contains the list of allowable characters for the
-    // password. Note that the number 0 and the letter 'O' have been
-    // removed to avoid confusion between the two. The same is true
-    // of 'I', 1, and 'l'.
-    $allowable_characters = 'abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  protected function randomString($length = 10, $expect_xss = WALKHUB_SELENIUM_DO_NOT_EXPECT_XSS) {
+    $allowable_characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789';
 
     // Zero-based count of characters in the allowable list:
     $len = strlen($allowable_characters) - 1;
 
-    // Declare the password as a blank string.
-    $pass = '';
+    $string = '';
 
     // Loop the number of times specified by $length.
     for ($i = 0; $i < $length; $i++) {
 
       // Each iteration, pick a random character from the
       // allowable string and append it to the password:
-      $pass .= $allowable_characters[mt_rand(0, $len)];
+      $string .= $allowable_characters[mt_rand(0, $len)];
     }
 
-    return $pass;
+    if ($expect_xss) {
+      return $string;
+    }
+
+    return "<script>alert('$string');</script>";
   }
 
   /**
@@ -327,6 +379,17 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     $text_present = (strpos($source, $text) !== FALSE);
 
     return $this->assertFalse($text_present, $message);
+  }
+
+  /**
+   * Assert that the Drupal site title is of a value.
+   *
+   * @param $text
+   *   Text to compare the title to.
+   */
+  public function assertSiteTitle($text) {
+    $element = $this->byId('page-title');
+    $this->assertTextPresent($text, $element);
   }
 }
 
