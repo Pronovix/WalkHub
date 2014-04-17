@@ -79,6 +79,9 @@
  * @ingroup themeable
  */
 ?>
+<?php if (isset($variables['field_subtitle'][0]['safe_value'])): ?>
+  <h2 class="blog-entry-subtitle"><?php echo $variables['field_subtitle'][0]['safe_value']; ?></h2>
+<?php endif; ?>
 <ul class="post-data">
   <li>
     <i class="fa fa-clock-o"></i>
