@@ -12,7 +12,7 @@ class CreatePage extends WalkhubSeleniumTestCase {
   /**
    * Recorded steps.
    */
-  public function testCreateBlog() {
+  public function testCreatePage() {
     $this->adminLogin();
     $test = $this; // Workaround for anonymous function scopes in PHP < v5.4.
     $session = $this->prepareSession(); // Make the session available.
