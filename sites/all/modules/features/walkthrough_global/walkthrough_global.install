@@ -602,7 +602,6 @@ function walkthrough_global_update_7040() {
  */
 function walkthrough_global_update_7041() {
   $features_block_custom_table_values = _walkthrough_recreate_front_page_featured_block_contents();
-  $query = db_update('block_custom')->fields(array('body', 'info', 'format'))->condition('info', 'Front Page Heading', '=');
-  $query->values($features_block_custom_table_values);
+  $query = db_update('block_custom')->fields($features_block_custom_table_values)->condition('info', 'Front Page Heading', '=');
   $query->execute();
 }
