@@ -74,3 +74,26 @@ function walkthrough_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
+/**
+ * Get Front Page heading block data for install and update processes.
+ *
+ * @return array
+ *   Front Page heading block data.
+ */
+function _walkthrough_recreate_front_page_featured_block_contents() {
+  $full_html = 'full_html';
+
+  $block_custom_table_values = array(
+      'body' => '<div class="small-12 small-centered large-6 large-uncentered columns">
+                 <h2>WalkHub is a user guide for the Internet.<br> Created by people like you,<br> free to use &amp; under an open license.</h2>
+                 <p>WalkHub is built by a community of documentarians that contribute and maintain Walkthrough tutorials about web pages, forms, blogs, community sites, web applications or generally anything that can be done in a browser*, all over the Internet.</p>
+                 <p>Next time you need to explain how to do something online, do so in a Walkthrough tutorial: It’s faster and easier than screenshots or videos. And your work will contribute to humanity’s knowledge of the Internet.</p>
+                 </div>
+                 <div class="small-12 small-centered large-6 large-uncentered columns">
+                 <iframe src="https://docs.google.com/presentation/d/120BUHuPey_Dgdac_QsNilO3lZl1DTP-9iQNtR4brwps/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="480" height="320" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="margin-left: auto; margin-right: auto; display: block;"></iframe>
+                 </div>',
+      'info' => 'Front Page Heading',
+      'format' => $full_html
+  );
+  return $block_custom_table_values;
+}

@@ -596,3 +596,13 @@ function walkthrough_global_update_7039() {
 function walkthrough_global_update_7040() {
   walkhub_features_revert(array('walkthrough_global'));
 }
+
+/**
+ * Update Front Page heading block data.
+ */
+function walkthrough_global_update_7041() {
+  $features_block_custom_table_values = _walkthrough_recreate_front_page_featured_block_contents();
+  $query = db_update('block_custom')->fields(array('body', 'info', 'format'))->condition('info', 'Front Page Heading', '=');
+  $query->values($features_block_custom_table_values);
+  $query->execute();
+}

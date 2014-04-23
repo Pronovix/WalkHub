@@ -330,35 +330,7 @@ function _walkthrough_add_additional_blocks_and_referencing_records() {
       'info' => 'Mailchimp signupform',
       'format' => $full_html,
     ),
-    array(
-      'body' => '<div class="small-8 columns">
-                 <h1>Automated documentation, tests & demos</h1>
-                 <h2>It is very painful to update your tests and documentation every time you change something in your web application. What if you could get automatically updated documentation & functional tests for free?</h2>
-                 <a class="cta big" href="http://eepurl.com/uYjy9" title="Get an invite" rel="follow"><p>Get an invite</p><small>Sign up for our mailing list</small> <i class="icon-pencil"></i></a>
-                 </div>
-                 <div class="small-4 columns">
-                 <div class="box-container">
-                 <div class="box blue">
-                 <h4>Walkthrough</h4>
-                 <i class="rounded"> = </i>
-                 </div>
-                 <div class="box">
-                 <h6>Demo</h6>
-                 <small>that shows that it works</small>
-                 </div>
-                 <div class="box">
-                 <h6>Test</h6>
-                 <small>that verifies if it still works</small>
-                 </div>
-                 <div class="box">
-                 <h6>Documentation</h6>
-                 <small>that explains how it works</small>
-                 </div>
-                 </div>
-                 </div>',
-      'info' => 'Front Page Heading',
-      'format' => $full_html,
-    ),
+    _walkthrough_recreate_front_page_featured_block_contents(),
     array(
       'body' => '<div class="row">
                  <div class="small-12 columns">
