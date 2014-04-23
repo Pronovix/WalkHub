@@ -143,6 +143,8 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
   public function setUp() {
     parent::setUp();
     $this->setSeleniumServerRequestsTimeout(120000);
+    $this->prepareSession();
+    $this->timeouts()->implicitWait(10000);
   }
 
   /**
