@@ -98,7 +98,6 @@ class WalkthroughSiteInstall extends WalkhubSeleniumTestCase {
     $this->url('user/logout');
 
     $this->url('admin');
-    $text = mock($this->byCssSelector('body'))->text();
-    $this->assertTrue($text && strpos($text, 'Access denied') !== FALSE);
+    $this->assertSiteTitle('Access denied');
   }
 }
