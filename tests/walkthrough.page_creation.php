@@ -29,12 +29,6 @@ class CreatePage extends WalkhubSeleniumTestCase {
     $element->clear();
     $element->value($title);
 
-    // setElementText
-    $element = $this->byId("edit-body-und-0-value");
-    $element->click();
-    $element->clear();
-    $element->value($body);
-
     // clickElement
     $this->byId("edit-submit")->click();
 
