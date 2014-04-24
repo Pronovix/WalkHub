@@ -12,6 +12,7 @@
   var plumber = require('gulp-plumber');
   var csso = require('gulp-csso');
   var cmq = require('gulp-combine-media-queries');
+  var svgmin = require('gulp-svgmin');
 
   var paths = {
     sass: ["sass/custom.sass"],
@@ -44,8 +45,11 @@
       .pipe(gulp.dest('css'));
   });
 
-  gulp.task('build', ['buildsass']);
-  gulp.watch('.tmp/*.css', function(){gulp.run('process-css');});
+  gulp.task('svgmin', function() {
+    return gulp.src('**/*.svg')
+      .pipe(svgmin())
+      .pipe(gulp.dest('./'));
+  });
 
   gulp.task('clean', function () {
     return gulp.src(['walkthrough.css'])
@@ -53,4 +57,6 @@
   });
 
   gulp.task('default', ['build']);
+  gulp.task('build', ['buildsass']);
+  gulp.watch('.tmp/*.css', function(){gulp.run('process-css');});
 })();
