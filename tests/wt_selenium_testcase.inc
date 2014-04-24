@@ -101,6 +101,7 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     array(
       'browserName' => 'chrome',
     ),
+    /*
     array(
       'browserName' => 'safari',
       'desiredCapabilities' => array(
@@ -136,6 +137,7 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
         'version' => 11,
       ),
     ),
+    */
   );
 
   public function setUp() {
