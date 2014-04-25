@@ -69,7 +69,9 @@ function walkthrough_install_tasks() {
  */
 function walkthrough_add_taxonomy_terms() {
   module_load_include('install', 'walkthrough_global');
-  _walkthrough_global_add_blog_taxonomy_terms();
+  if (module_exists('walkhub_blog')) {
+    _walkthrough_global_add_blog_taxonomy_terms();
+  }
 }
 
 /**
@@ -110,7 +112,6 @@ function walkthrough_install_features() {
 function _walkthrough_get_walkthrough_features() {
   return array(
     'walkhub',
-    'walkhub_blog',
     'walkhub_branding',
     'walkhub_collections',
     'walkhub_page_type_faq',
