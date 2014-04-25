@@ -610,7 +610,7 @@ function walkthrough_global_update_7041() {
  * Turning on Page Type: Walkhub key feature.
  */
 function walkthrough_global_update_7042() {
-  $key_features = array('walkhub_page_type_key_features');
+  $key_features = array('walkhub_key_feature');
 
   module_enable($key_features);
   features_install_modules($key_features);

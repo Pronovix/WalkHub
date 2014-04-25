@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * walkhub_page_type_key_features.features.field_base.inc
+ * walkhub_key_feature.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function walkhub_page_type_key_features_field_default_field_bases() {
+function walkhub_key_feature_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_whkf_body'

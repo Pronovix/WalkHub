@@ -1,9 +1,9 @@
-name = Walkhub Page type - Key Features
-description = Key featrues content type
+name = Walkhub key feature
+description = Walkhub key features content type
 core = 7.x
 package = Walkthrough
 version = 7.x-0.1
-project = walkhub_page_type_key_features
+project = walkhub_key_feature
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = field_collection

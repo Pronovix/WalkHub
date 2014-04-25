@@ -123,7 +123,7 @@ function _walkthrough_get_walkthrough_features() {
     'walkthrough_permissions',
     'walkthrough_screening',
     'walkthrough_sets',
-    'walkhub_page_type_key_features',
+    'walkhub_key_feature',
   );
 }
 

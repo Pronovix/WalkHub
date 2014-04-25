@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * walkhub_page_type_key_features.features.inc
+ * walkhub_key_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function walkhub_page_type_key_features_ctools_plugin_api($module = NULL, $api = NULL) {
+function walkhub_key_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -16,7 +16,7 @@ function walkhub_page_type_key_features_ctools_plugin_api($module = NULL, $api =
 /**
  * Implements hook_node_info().
  */
-function walkhub_page_type_key_features_node_info() {
+function walkhub_key_feature_node_info() {
   $items = array(
     'walkhub_key_feature' => array(
       'name' => t('Walkhub key feature'),

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * walkhub_page_type_key_features.features.field_instance.inc
+ * walkhub_key_feature.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function walkhub_page_type_key_features_field_default_field_instances() {
+function walkhub_key_feature_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-walkhub_key_feature-field_whkf_body'

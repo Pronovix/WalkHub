@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * walkhub_page_type_key_features.strongarm.inc
+ * walkhub_key_feature.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function walkhub_page_type_key_features_strongarm() {
+function walkhub_key_feature_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
