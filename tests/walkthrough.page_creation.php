@@ -12,7 +12,7 @@ class CreatePage extends WalkhubSeleniumTestCase {
   /**
    * Recorded steps.
    */
-  public function testCreateBlog() {
+  public function testCreatePage() {
     $this->adminLogin();
     $test = $this; // Workaround for anonymous function scopes in PHP < v5.4.
     $session = $this->prepareSession(); // Make the session available.
@@ -28,12 +28,6 @@ class CreatePage extends WalkhubSeleniumTestCase {
     $element->click();
     $element->clear();
     $element->value($title);
-
-    // setElementText
-    $element = $this->byId("edit-body-und-0-value");
-    $element->click();
-    $element->clear();
-    $element->value($body);
 
     // clickElement
     $this->byId("edit-submit")->click();
