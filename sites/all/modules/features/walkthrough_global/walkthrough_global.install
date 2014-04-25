@@ -605,3 +605,15 @@ function walkthrough_global_update_7041() {
   $query = db_update('block_custom')->fields($features_block_custom_table_values)->condition('info', 'Front Page Heading', '=');
   $query->execute();
 }
+
+/**
+ * Turning on Page Type: Walkhub key feature.
+ */
+function walkthrough_global_update_7042() {
+  $key_features = array('walkhub_key_feature');
+
+  module_enable($key_features);
+  features_install_modules($key_features);
+
+  return t('Enabled Walkhub key features content type.');
+}
