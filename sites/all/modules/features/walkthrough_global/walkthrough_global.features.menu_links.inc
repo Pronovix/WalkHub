@@ -122,17 +122,17 @@ function walkthrough_global_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_log-in:user
-  $menu_links['main-menu_log-in:user'] = array(
+  // Exported menu link: main-menu_log-in:user/login
+  $menu_links['main-menu_log-in:user/login'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'user',
-    'router_path' => 'user',
+    'link_path' => 'user/login',
+    'router_path' => 'user/login',
     'link_title' => 'Log in',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'main-menu_log-in:user',
+      'identifier' => 'main-menu_log-in:user/login',
     ),
     'module' => 'menu',
     'hidden' => 0,
