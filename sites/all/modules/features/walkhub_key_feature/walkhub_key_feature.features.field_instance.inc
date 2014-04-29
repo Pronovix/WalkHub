@@ -10,6 +10,218 @@
 function walkhub_key_feature_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_whkf_exmaple_media-field_whkf_example_media_demo_wt'
+  $field_instances['field_collection_item-field_whkf_exmaple_media-field_whkf_example_media_demo_wt'] = array(
+    'bundle' => 'field_whkf_exmaple_media',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The full embed code of the Walkthrough.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_whkf_example_media_demo_wt',
+    'label' => 'Demo Walkthrough embed code',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'blog_entry_text_format' => 'blog_entry_text_format',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'blog_entry_text_format' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 35,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_whkf_exmaple_media-field_whkf_example_media_image'
+  $field_instances['field_collection_item-field_whkf_exmaple_media-field_whkf_example_media_image'] = array(
+    'bundle' => 'field_whkf_exmaple_media',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_whkf_example_media_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_whkf_exmaple_media-field_whkf_example_media_title'
+  $field_instances['field_collection_item-field_whkf_exmaple_media-field_whkf_example_media_title'] = array(
+    'bundle' => 'field_whkf_exmaple_media',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This is shown above the image/video/demo walkthrough',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_whkf_example_media_title',
+    'label' => 'Title',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'blog_entry_text_format' => 'blog_entry_text_format',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'blog_entry_text_format' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_whkf_exmaple_media-field_whkf_example_media_youtube'
+  $field_instances['field_collection_item-field_whkf_exmaple_media-field_whkf_example_media_youtube'] = array(
+    'bundle' => 'field_whkf_exmaple_media',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The ID of the video to ember (https://www.youtube.com/watch?v=[this is the ID])',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_whkf_example_media_youtube',
+    'label' => 'YouTube video',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'blog_entry_text_format' => 'blog_entry_text_format',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'blog_entry_text_format' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 34,
+    ),
+  );
+
   // Exported field_instance: 'node-walkhub_key_feature-field_whkf_body'
   $field_instances['node-walkhub_key_feature-field_whkf_body'] = array(
     'bundle' => 'walkhub_key_feature',
@@ -317,13 +529,20 @@ function walkhub_key_feature_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Add various media types to the end of the feature description. It can be an Image, a YouTube video or a Demo Walkthrough.');
   t('Body');
+  t('Demo Walkthrough embed code');
   t('Exmaples Media');
   t('Features with lower weights will appear before others. Weights can be negative.');
   t('Icon');
+  t('Image');
   t('Short description');
+  t('The ID of the video to ember (https://www.youtube.com/watch?v=[this is the ID])');
+  t('The full embed code of the Walkthrough.');
   t('The icon of to feature to be shown on the listing page and on the top of the extracted feature page.');
   t('This is a one sentence short description.');
+  t('This is shown above the image/video/demo walkthrough');
+  t('Title');
   t('Weight');
+  t('YouTube video');
 
   return $field_instances;
 }
