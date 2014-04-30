@@ -607,10 +607,32 @@ function walkthrough_global_update_7041() {
 }
 
 /**
- * Update Front Page featured walkthroughs data.
+ * Turning on Page Type: Walkhub key feature.
  */
 function walkthrough_global_update_7042() {
+  $key_features = array('walkhub_key_feature');
+
+  module_enable($key_features);
+  features_install_modules($key_features);
+
+  return t('Enabled Walkhub key features content type.');
+}
+
+/**
+ * Revert walkthrough_global feature.
+ */
+function walkthrough_global_update_7043() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
+
+/**
+ * Update Front Page featured walkthroughs data.
+ */
+function walkthrough_global_update_7044() {
   $featured_walkthroughs_custom_table_values = _walkthrough_recreate_front_page_featured_walkthroughs_contents();
   $query = db_update('block_custom')->fields($featured_walkthroughs_custom_table_values)->condition('info', 'Sample WT Top', '=');
   $query->execute();
 }
+

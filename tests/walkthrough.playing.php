@@ -54,7 +54,6 @@ class WalkthroughPlaying extends WalkhubSeleniumTestCase {
     $steps = $this->numberOfSteps($test);
     for ($i = 0; $i <= $steps; $i++) {
       mock($this->byCssSelector('.wtbubble-next'))->click();
-      sleep(10);
     }
 
     $finish_button = $this->byLinkText('Finish');
