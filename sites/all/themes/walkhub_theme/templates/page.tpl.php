@@ -82,9 +82,7 @@
     <!--/.featured -->
     <section id="featured">
       <div class="row">
-        <div class="large-12 columns">
-          <?php print render($page['featured']); ?>
-        </div>
+        <?php print render($page['featured']); ?>
       </div>
     </section>
     <!--/.l-featured -->
