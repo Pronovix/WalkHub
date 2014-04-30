@@ -99,3 +99,34 @@ function _walkthrough_recreate_front_page_featured_block_contents() {
   );
   return $block_custom_table_values;
 }
+
+/**
+ * Get Front Page featured walkthroughs block data for install and update processes.
+ *
+ * @return array
+ *   Front page featured walkthroughs block data.
+ */
+function _walkthrough_recreate_front_page_featured_walkthroughs_contents() {
+  $full_html = 'full_html';
+
+  $block_custom_table_values = array(
+    'body' => '<div class="row">
+               <div class="small-12 columns">
+               <h3>Featured Walktroughs</h3>
+               </div>
+               <div class="small-12 large-6 columns">
+               <div class="wt-container">
+               <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+               </div>
+               </div>
+               <div class="small-12 large-6 columns">
+               <div class="wt-container">
+               <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3352" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
+               </div>
+               </div>
+               </div>',
+    'info' => 'Sample WT Top',
+    'format' => $full_html,
+  );
+  return $block_custom_table_values;
+}

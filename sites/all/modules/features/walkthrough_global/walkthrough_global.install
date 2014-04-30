@@ -605,3 +605,12 @@ function walkthrough_global_update_7041() {
   $query = db_update('block_custom')->fields($features_block_custom_table_values)->condition('info', 'Front Page Heading', '=');
   $query->execute();
 }
+
+/**
+ * Update Front Page featured walkthroughs data.
+ */
+function walkthrough_global_update_7042() {
+  $featured_walkthroughs_custom_table_values = _walkthrough_recreate_front_page_featured_walkthroughs_contents();
+  $query = db_update('block_custom')->fields($featured_walkthroughs_custom_table_values)->condition('info', 'Sample WT Top', '=');
+  $query->execute();
+}
