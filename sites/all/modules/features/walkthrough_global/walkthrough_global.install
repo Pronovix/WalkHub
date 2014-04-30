@@ -617,3 +617,12 @@ function walkthrough_global_update_7042() {
 
   return t('Enabled Walkhub key features content type.');
 }
+
+/**
+ * Revert walkthrough_global feature.
+ */
+function walkthrough_global_update_7043() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
