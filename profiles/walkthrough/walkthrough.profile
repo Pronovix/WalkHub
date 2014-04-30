@@ -90,7 +90,9 @@ function _walkthrough_recreate_front_page_featured_block_contents() {
                  <p>Next time you need to explain how to do something online, do so in a Walkthrough tutorial: It’s faster and easier than screenshots or videos. And your work will contribute to humanity’s knowledge of the Internet.</p>
                  </div>
                  <div class="small-12 small-centered large-6 large-uncentered columns">
+                 <div class="wt-container">
                  <iframe src="https://docs.google.com/presentation/d/120BUHuPey_Dgdac_QsNilO3lZl1DTP-9iQNtR4brwps/embed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="480" height="320" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="margin-left: auto; margin-right: auto; display: block;"></iframe>
+                 </div>
                  </div>',
       'info' => 'Front Page Heading',
       'format' => $full_html
