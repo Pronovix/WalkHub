@@ -2,3 +2,5 @@
 humans.txt
 robots.txt
 .sass-cache
+.tmp
+node_modules
