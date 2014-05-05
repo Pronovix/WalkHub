@@ -626,3 +626,13 @@ function walkthrough_global_update_7043() {
 
   return t('Walkhub Global feature reverted.');
 }
+
+/**
+ * Update Front Page featured walkthroughs data.
+ */
+function walkthrough_global_update_7044() {
+  $featured_walkthroughs_custom_table_values = _walkthrough_recreate_front_page_featured_walkthroughs_contents();
+  $query = db_update('block_custom')->fields($featured_walkthroughs_custom_table_values)->condition('info', 'Sample WT Top', '=');
+  $query->execute();
+}
+

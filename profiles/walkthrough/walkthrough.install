@@ -332,25 +332,7 @@ function _walkthrough_add_additional_blocks_and_referencing_records() {
       'format' => $full_html,
     ),
     _walkthrough_recreate_front_page_featured_block_contents(),
-    array(
-      'body' => '<div class="row">
-                 <div class="small-12 columns">
-                 <h3>Featured Walktroughs</h3>
-                 </div>
-                 <div class="small-6 columns">
-                 <div class="wt-container">
-                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
-                 </div>
-                 </div>
-                 <div class="small-6 columns">
-                 <div class="wt-container">
-                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3352" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
-                 </div>
-                 </div>
-                 </div>',
-      'info' => 'Sample WT Top',
-      'format' => $full_html,
-    ),
+    _walkthrough_recreate_front_page_featured_walkthroughs_contents(),
     array(
       'body' => '<div class="row">
                  <div class="small-12 columns">
