@@ -651,3 +651,10 @@ function walkthrough_global_update_7045() {
 function walkthrough_global_update_7046() {
   walkhub_features_revert(array('walkthrough_permissions'));
 }
+
+/**
+ * Rever 'Walkhub key feature' feature.
+ */
+function walkthrough_global_update_7047() {
+  walkhub_features_revert(array('walkhub_key_feature'));
+}
