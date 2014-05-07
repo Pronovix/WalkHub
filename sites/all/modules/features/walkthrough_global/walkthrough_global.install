@@ -636,3 +636,11 @@ function walkthrough_global_update_7044() {
   $query->execute();
 }
 
+/**
+ * Update Front Page heading block data.
+ */
+function walkthrough_global_update_7045() {
+  $features_block_custom_table_values = _walkthrough_recreate_front_page_featured_block_contents();
+  $query = db_update('block_custom')->fields($features_block_custom_table_values)->condition('info', 'Front Page Heading', '=');
+  $query->execute();
+}
