@@ -607,6 +607,13 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create walkhub_key_feature content'.
+  $permissions['create walkhub_key_feature content'] = array(
+    'name' => 'create walkhub_key_feature content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create walkhub_news content'.
   $permissions['create walkhub_news content'] = array(
     'name' => 'create walkhub_news content',
@@ -697,6 +704,13 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any walkhub_key_feature content'.
+  $permissions['delete any walkhub_key_feature content'] = array(
+    'name' => 'delete any walkhub_key_feature content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any walkhub_news content'.
   $permissions['delete any walkhub_news content'] = array(
     'name' => 'delete any walkhub_news content',
@@ -775,6 +789,13 @@ function walkthrough_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own walkhub_key_feature content'.
+  $permissions['delete own walkhub_key_feature content'] = array(
+    'name' => 'delete own walkhub_key_feature content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -898,6 +919,13 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any walkhub_key_feature content'.
+  $permissions['edit any walkhub_key_feature content'] = array(
+    'name' => 'edit any walkhub_key_feature content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any walkhub_news content'.
   $permissions['edit any walkhub_news content'] = array(
     'name' => 'edit any walkhub_news content',
@@ -994,6 +1022,13 @@ function walkthrough_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own walkhub_key_feature content'.
+  $permissions['edit own walkhub_key_feature content'] = array(
+    'name' => 'edit own walkhub_key_feature content',
+    'roles' => array(),
     'module' => 'node',
   );
 

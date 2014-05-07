@@ -644,3 +644,10 @@ function walkthrough_global_update_7045() {
   $query = db_update('block_custom')->fields($features_block_custom_table_values)->condition('info', 'Front Page Heading', '=');
   $query->execute();
 }
+
+/**
+ * Rever Walkhub permission feature.
+ */
+function walkthrough_global_update_7046() {
+  walkhub_features_revert(array('walkthrough_permissions'));
+}
