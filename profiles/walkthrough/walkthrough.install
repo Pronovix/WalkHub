@@ -13,7 +13,6 @@
  */
 function walkthrough_install() {
   _walkthrough_add_additional_blocks();
-  _walkthrough_add_additional_blocks_and_referencing_records();
 }
 
 /**
@@ -70,7 +69,9 @@ function walkthrough_install_tasks() {
  */
 function walkthrough_add_taxonomy_terms() {
   module_load_include('install', 'walkthrough_global');
-  _walkthrough_global_add_blog_taxonomy_terms();
+  if (module_exists('walkhub_blog')) {
+    _walkthrough_global_add_blog_taxonomy_terms();
+  }
 }
 
 /**
@@ -111,7 +112,6 @@ function walkthrough_install_features() {
 function _walkthrough_get_walkthrough_features() {
   return array(
     'walkhub',
-    'walkhub_blog',
     'walkhub_branding',
     'walkhub_collections',
     'walkhub_page_type_faq',
@@ -311,164 +311,6 @@ function _walkthrough_add_additional_blocks() {
         'delta' => $record['delta'],
         'theme' => $record['theme'],
       ))
-      ->fields($record)
-      ->execute();
-  }
-}
-
-function _walkthrough_add_additional_blocks_and_referencing_records() {
-  $walkhub_theme = 'walkhub_theme';
-  $full_html = 'full_html';
-
-  $block_custom_table_values = array(
-    array(
-      'body' => 'The Walkthrough workshop is finished, so it\'s no longer possible to create an account. If you want to <a href="http://eepurl.com/uYjy9">get a notification about the next workshop</a> or just want to stay informed about the project <a href="http://eepurl.com/uYjy9">sign up for our newsletter at http://eepurl.com/uYjy9</a>.',
-      'info' => 'WalkHub invitations are closed again',
-      'format' => $full_html,
-    ),
-    array(
-      'body' => '<!-- Begin MailChimp Signup Form --><link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">',
-      'info' => 'Mailchimp signupform',
-      'format' => $full_html,
-    ),
-    _walkthrough_recreate_front_page_featured_block_contents(),
-    _walkthrough_recreate_front_page_featured_walkthroughs_contents(),
-    array(
-      'body' => '<div class="row">
-                 <div class="small-12 columns">
-                 <h3>Walktroughs</h3>
-                 </div>
-                 <div class="small-6 columns">
-                 <div class="wt-container">
-                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
-                 </div>
-                 </div>
-                 <div class="small-6 columns">
-                 <div class="wt-container">
-                 <iframe id="walkthrough-slideshow-iframe" frameborder="0" width="400" height="300" src="http://walkhub.net/walkthrough/slideshow/3224" allowfullscreen=""> Your browser doesn\'t support iframes.</iframe>
-                 </div>
-                 </div>
-                 </div>',
-      'info' => 'Walktroughts bottom',
-      'format' => $full_html,
-    ),
-    array(
-      'body' => '<div class="row">
-                 <div class="small-4 columns">
-                 <h3>Is your documentation up to date?</h3>
-                 <p>Whenever something changes on your web application, it is really painful to update all the screenshot and videos you\'ve included in your documentation. Instead of helping your users, outdated documentation will confuse your users.</p>
-                 <p>WalkHub automatically tests if your documentation is still up to date. You can even make it automatically regenerate all your screenshots when you update your site.</p>
-                 </div>
-                 <div class="small-4 columns">
-                 <h3>Do you like giving demos?</h3>
-                 <p>Developers don\'t like demos: you loose days waiting until agendas fit and spend hours preparing. Demos easily fail and sometimes need to be repeated. But worst of all at the end of the process you have nothing to show for all that work.</p>
-                 <p>On WalkHub a demo is a guided Walkthrough that runs on top of a site. Through commenting it\'s possible to automate the feedback and sign off process. Walkthroughs can be reused for testing and documentation.</p>
-                 </p>
-                 </div>
-                 <div class="small-4 columns">
-                 <h3>Are you testing all your features?</h3>
-                 <p>Tests are stored as code in a code repository, this means that testing becomes a fairly technical job that requires a developer and that is untransparent to a project manager. Only in some of the best funded projects is the test coverage verified.A Walkthrough starts as a test recorded with Selenium IDE. Something that doesn\'t require any technical knowledge.</p>
-                 </div>
-                 </div>',
-      'info' => 'Bottom Content',
-      'format' => $full_html,
-    ),
-  );
-
-  $query = db_insert('block_custom')->fields(array('body', 'info', 'format'));
-  foreach ($block_custom_table_values as $record) {
-    $query->values($record);
-  }
-  $query->execute();
-
-  $block_table_values = array(
-    array(
-      'module' => 'block',
-      'delta' => '1',
-      'theme' => $walkhub_theme,
-      'status' => 1,
-      'weight' => -10,
-      'region' => 'highlighted',
-      'custom' => 0,
-      'visibility' => 1,
-      'pages' => 'user',
-      'title' => 'WalkHub closed for signups',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'block',
-      'delta' => '2',
-      'theme' => $walkhub_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'signup',
-      'custom' => 0,
-      'visibility' => 1,
-      'pages' => '<front>',
-      'title' => '<none>',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'block',
-      'delta' => '3',
-      'theme' => $walkhub_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'featured',
-      'custom' => 0,
-      'visibility' => 1,
-      'pages' => '<front>',
-      'title' => '<none>',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'block',
-      'delta' => '4',
-      'theme' => $walkhub_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'news',
-      'custom' => 0,
-      'visibility' => 1,
-      'pages' => '',
-      'title' => '<none>',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'block',
-      'delta' => '5',
-      'theme' => $walkhub_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'news-bottom',
-      'custom' => 0,
-      'visibility' => 1,
-      'pages' => '',
-      'title' => '<none>',
-      'cache' => -1,
-    ),
-    array(
-      'module' => 'block',
-      'delta' => '6',
-      'theme' => $walkhub_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'content-bottom',
-      'custom' => 0,
-      'visibility' => 1,
-      'pages' => '',
-      'title' => '<none>',
-      'cache' => -1,
-    ),
-  );
-
-  $merge_query = db_merge('block');
-
-  foreach ($block_table_values as $record) {
-    $merge_query
-      ->key((array('module' => $record['module'],
-        'delta' =>  $record['delta'],
-        'theme' =>  $record['theme'])))
       ->fields($record)
       ->execute();
   }
