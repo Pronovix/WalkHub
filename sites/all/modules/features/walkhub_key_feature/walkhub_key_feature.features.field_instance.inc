@@ -257,15 +257,73 @@ function walkhub_key_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-walkhub_key_feature-field_whkf_weight'
+  $field_instances['node-walkhub_key_feature-field_whkf_weight'] = array(
+    'bundle' => 'walkhub_key_feature',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Features with lower weights will appear before others. Weights can be negative.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 7,
+      ),
+      'entity_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_whkf_weight',
+    'label' => 'Weight',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 3,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Add various media types to the end of the feature description. It can be an Image, a YouTube video or a Demo Walkthrough.');
   t('Body');
   t('Exmaples Media');
+  t('Features with lower weights will appear before others. Weights can be negative.');
   t('Icon');
   t('Short description');
   t('The icon of to feature to be shown on the listing page and on the top of the extracted feature page.');
   t('This is a one sentence short description.');
+  t('Weight');
 
   return $field_instances;
 }

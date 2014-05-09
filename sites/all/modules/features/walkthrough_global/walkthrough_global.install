@@ -658,3 +658,10 @@ function walkthrough_global_update_7046() {
 function walkthrough_global_update_7047() {
   walkhub_features_revert(array('walkhub_key_feature'));
 }
+
+/**
+ * Revert 'Walkhub key feature' feature.
+ */
+function walkthrough_global_update_7048() {
+  walkhub_features_revert(array('walkhub_key_feature'));
+}
