@@ -31,7 +31,7 @@ function walkhub_key_feature_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'small-6 large-3 columns feature';
+  $handler->display->display_options['style_options']['row_class'] = 'small-6 columns feature';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
@@ -58,6 +58,10 @@ function walkhub_key_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Weight (field_whkf_weight) */
+  $handler->display->display_options['sorts']['field_whkf_weight_value']['id'] = 'field_whkf_weight_value';
+  $handler->display->display_options['sorts']['field_whkf_weight_value']['table'] = 'field_data_field_whkf_weight';
+  $handler->display->display_options['sorts']['field_whkf_weight_value']['field'] = 'field_whkf_weight_value';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
