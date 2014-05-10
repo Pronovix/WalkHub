@@ -674,7 +674,6 @@ function walkthrough_global_update_7049() {
   $query = db_update('block')
     ->fields(array('status',$my_walkthroughs_block_content['status']))
     ->condition('theme', $my_walkthroughs_block_content['theme'], '=')
-    ->condition('module', $my_walkthroughs_block_content['module'], '=')
     ->condition('delta', $my_walkthroughs_block_content['delta'], '=');
   $query->execute();
 }
