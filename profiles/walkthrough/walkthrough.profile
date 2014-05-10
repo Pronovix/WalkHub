@@ -130,3 +130,29 @@ function _walkthrough_recreate_front_page_featured_walkthroughs_contents() {
   );
   return $block_custom_table_values;
 }
+
+/**
+ *  Get 'My walkthroughs' block data with status disabled.
+ *
+ * @return array
+ *   Array of 'My walkthroughs' block data.
+ */
+function _walkthrough_remove_my_walkthroughs_block_from_left_sidebar() {
+  $walkhub_theme = 'walkhub_theme';
+
+  $block = array(
+    'module' => 'views',
+    'delta' => 'my_walkthroughs-block',
+    'theme' => $walkhub_theme,
+    'status' => 0,
+    'weight' => -3,
+    'region' => 'sidebar_first',
+    'custom' => 0,
+    'visibility' => 0,
+    'pages' => 'my-content\\r\\n<front>',
+    'title' => '<none>',
+    'cache' => -1,
+  );
+
+  return $block;
+}

@@ -287,19 +287,7 @@ function _walkthrough_add_additional_blocks() {
       'title' => '',
       'cache' => -1,
     ),
-    array(
-      'module' => 'views',
-      'delta' => 'my_walkthroughs-block',
-      'theme' => $walkhub_theme,
-      'status' => 1,
-      'weight' => -3,
-      'region' => 'sidebar_first',
-      'custom' => 0,
-      'visibility' => 0,
-      'pages' => 'my-content\\r\\n<front>',
-      'title' => '<none>',
-      'cache' => -1,
-    ),
+    _walkthrough_remove_my_walkthroughs_block_from_left_sidebar(),
   );
 
   $merge_query = db_merge('block');
