@@ -665,3 +665,15 @@ function walkthrough_global_update_7047() {
 function walkthrough_global_update_7048() {
   walkhub_features_revert(array('walkhub_key_feature'));
 }
+
+/**
+ * Remove 'My Walkthroughs' block from left sidebar.
+ */
+function walkthrough_global_update_7049() {
+  $my_walkthroughs_block_content = _walkthrough_remove_my_walkthroughs_block_from_left_sidebar();
+  $query = db_update('block')
+    ->fields(array('status',$my_walkthroughs_block_content['status']))
+    ->condition('theme', $my_walkthroughs_block_content['theme'], '=')
+    ->condition('delta', $my_walkthroughs_block_content['delta'], '=');
+  $query->execute();
+}
