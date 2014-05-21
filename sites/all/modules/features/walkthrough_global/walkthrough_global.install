@@ -677,3 +677,10 @@ function walkthrough_global_update_7049() {
     ->condition('delta', $my_walkthroughs_block_content['delta'], '=');
   $query->execute();
 }
+
+/**
+ * Revert 'Walkhub key feature' feature.
+ */
+fucntion walkthrough_global_update_7050() {
+  walkhub_features_revert(array('walkhub_key_feature'));
+}
