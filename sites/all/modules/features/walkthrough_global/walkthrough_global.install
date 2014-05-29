@@ -686,10 +686,10 @@ function walkthrough_global_update_7050() {
 }
 
 /**
- * Revert 'Walkhub collections' feature.
+ * Revert 'Walkhub collections' and "Global" feature.
  */
 function walkthrough_global_update_7051() {
-  walkhub_features_revert(array('walkhub_collections'));
+  walkhub_features_revert(array('walkhub_collections', 'walkthrough_global'));
 }
 
 /**
