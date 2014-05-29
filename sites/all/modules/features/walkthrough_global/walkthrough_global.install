@@ -691,3 +691,23 @@ function walkthrough_global_update_7050() {
 function walkthrough_global_update_7051() {
   walkhub_features_revert(array('walkhub_collections'));
 }
+
+/**
+ * Delete public and private collections.
+ */
+function walkthrough_global_update_7052() {
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN');
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+  }
+
+  node_type_delete('walkthrough_public_collection');
+  node_type_delete('walkthrough_collection');
+}
