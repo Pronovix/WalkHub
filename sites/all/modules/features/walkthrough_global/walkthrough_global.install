@@ -711,3 +711,20 @@ function walkthrough_global_update_7052() {
   node_type_delete('walkthrough_public_collection');
   node_type_delete('walkthrough_collection');
 }
+
+/**
+ * Set the collection block's place.
+ */
+function walkthrough_global_update_7053() {
+  db_merge('block')
+    ->key(array(
+      'module' => 'views',
+      'delta' => 'collection_content-block_1',
+      'theme' => 'walkhub_theme'))
+    ->fields(array(
+      'status' => 1,
+      'region' => 'content',
+      'weight' => 1,
+    ))
+    ->execute();
+}
