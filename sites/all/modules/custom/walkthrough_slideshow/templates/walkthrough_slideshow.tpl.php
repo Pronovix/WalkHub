@@ -30,7 +30,6 @@
 <!--Title Bar-->
 <div class="reveal">
   <div class="slides">
-    <?php $images = json_decode($slides_json); ?>
     <?php foreach($images as $key => $image): ?>
 
       <section data-background="<?php if (isset($image->image)) { echo $image->image; } ?>">

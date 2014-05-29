@@ -52,7 +52,7 @@
   });
 
   gulp.task('clean', function () {
-    return gulp.src(['walkthrough.css'])
+    return gulp.src(['walkthrough_slideshow.css'])
       .pipe(clean());
   });
 

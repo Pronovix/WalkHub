@@ -28,7 +28,7 @@ function walkthrough_slideshow_menu() {
   $items['walkthrough/slideshow/%node'] = array(
     'title' => 'walkthrough iframe',
     'access arguments' => array('access content'),
-    'page callback' => 'walkthrough_slideshow_generate_defalult_widget_iframe_content',
+    'page callback' => 'walkthrough_slideshow_generate_default_widget_iframe_content',
     'page arguments' => array(2),
   );
 
@@ -70,10 +70,11 @@ function walkthrough_slideshow_theme() {
       'path' => drupal_get_path('module', 'walkthrough_slideshow') . '/templates',
       'template' => 'walkthrough_slideshow',
       'variables' => array(
-        'slides_json' => '[]',
         'link' => '',
         'start_url' => '',
         'embed_code' => '',
+        'images' => array(),
+        'share_dialog' => '',
       ),
     ),
   );
@@ -269,7 +270,7 @@ function walkthrough_get_latest_screening_from_walkthrough($walkthrough) {
  *
  * @return string
  */
-function walkthrough_slideshow_generate_defalult_widget_iframe_content($node) {
+function walkthrough_slideshow_generate_default_widget_iframe_content($node) {
   $vars = walkthrough_slideshow_get_iframe_content($node);
 
   // Return the page content.
@@ -336,7 +337,7 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
 
     $fc_step = field_collection_item_load($index);
     $stepinfo = array();
-    switch ($fc_step->field_fc_step_command_1['und'][0]['value']) {
+    switch ($fc_step->field_fc_step_command_1['und'][0]['safe_value']) {
       case "click":
       case "clickAndWait":
         $stepinfo['action'] = "click";
@@ -350,9 +351,9 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
         $stepinfo['action'] = "select";
         break;
       default:
-        $stepinfo['action'] = $fc_step->field_fc_step_command_1['und'][0]['value'];
+        $stepinfo['action'] = $fc_step->field_fc_step_command_1['und'][0]['safe_value'];
     }
-    $stepinfo['description'] = $fc_step->field_fc_step_description['und'][0]['value'];
+    $stepinfo['description'] = $fc_step->field_fc_step_description['und'][0]['safe_value'];
 
     if ($images[$index]) {
       $images[$index]['stepinfo'] = $stepinfo;
@@ -401,7 +402,7 @@ function walkthrough_slideshow_get_iframe_content($node) {
 
   // Create variables to client side.
   $slideshow_variables = array(
-    'slides_json' => json_encode($slides),
+    'images' => $slides,
     'share_dialog' => variable_get('walkthrough_slideshow_sharing', TRUE),
   );
 
@@ -560,7 +561,7 @@ function walkthrough_slideshow_latest_content($walkthrough) {
     $output = theme('walkthrough_slideshow', $vars);
   }
   else {
-    walkthrough_slideshow_generate_defalult_widget_iframe_content($walkthrough);
+    walkthrough_slideshow_generate_default_widget_iframe_content($walkthrough);
   }
 
   // Return the page content.
