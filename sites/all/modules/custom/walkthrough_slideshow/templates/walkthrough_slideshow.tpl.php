@@ -33,12 +33,12 @@
     <?php $images = json_decode($slides_json); ?>
     <?php foreach($images as $key => $image): ?>
 
-      <section data-background="<?php if (isset($image->image)) { echo preg_replace('/127\.0\.0\.1\.xip\.io/','net',$image->image); } ?>">
+      <section data-background="<?php if (isset($image->image)) { echo $image->image; } ?>">
         <?php if (!isset($image->image)): ?>
           <table>
             <tr>
               <td class="action-icon">
-                <div><i class="action icon-action-<?php echo $image->action; ?>"></i></div>
+                <i class="action icon-action-<?php echo $image->action; ?>"></i>
               </td>
               <td class="action-description">
                 <p><?php echo $image->description; ?></p>

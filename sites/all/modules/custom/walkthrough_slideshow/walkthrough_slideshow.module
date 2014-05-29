@@ -28,7 +28,7 @@ function walkthrough_slideshow_menu() {
   $items['walkthrough/slideshow/%node'] = array(
     'title' => 'walkthrough iframe',
     'access arguments' => array('access content'),
-    'page callback' => 'walkthrough_slideshow_generate_iframe_content',
+    'page callback' => 'walkthrough_slideshow_generate_defalult_widget_iframe_content',
     'page arguments' => array(2),
   );
 
@@ -269,7 +269,7 @@ function walkthrough_get_latest_screening_from_walkthrough($walkthrough) {
  *
  * @return string
  */
-function walkthrough_slideshow_generate_iframe_content($node) {
+function walkthrough_slideshow_generate_defalult_widget_iframe_content($node) {
   $vars = walkthrough_slideshow_get_iframe_content($node);
 
   // Return the page content.
@@ -312,7 +312,8 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
       $index = $collection_entity->field_fc_screenshots_step['und'][0]['target_id'];
       if ($index) {
         $images[$index] = current($collection_image);
-      } else {
+      }
+      else {
         $images_without_steps[] = current($collection_image);
       }
     }
@@ -357,7 +358,8 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
       $images[$index]['stepinfo'] = $stepinfo;
       $sorted_images[] = $images[$index];
       unset($images[$index]);
-    } else {
+    }
+    else {
       if ($stepinfo['action'] != "open") {
         $sorted_images[] = array('stepinfo' => $stepinfo);
       }
@@ -556,8 +558,9 @@ function walkthrough_slideshow_latest_content($walkthrough) {
   if ($screening) {
     $vars = walkthrough_slideshow_get_iframe_content($screening);
     $output = theme('walkthrough_slideshow', $vars);
-  } else {
-    walkthrough_slideshow_generate_iframe_content($walkthrough);
+  }
+  else {
+    walkthrough_slideshow_generate_defalult_widget_iframe_content($walkthrough);
   }
 
   // Return the page content.
