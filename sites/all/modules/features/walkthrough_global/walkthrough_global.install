@@ -725,6 +725,8 @@ function walkthrough_global_update_7053() {
       'status' => 1,
       'region' => 'content',
       'weight' => 1,
+      'pages' => '',
+      'title' => '',
     ))
     ->execute();
 }
