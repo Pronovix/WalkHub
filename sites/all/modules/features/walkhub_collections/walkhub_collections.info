@@ -66,6 +66,7 @@ features[variable][] = menu_parent_collection
 features[variable][] = node_options_collection
 features[variable][] = node_preview_collection
 features[variable][] = node_submitted_collection
+features[views_view][] = collection_content
 features[views_view][] = public_collections
 features_exclude[dependencies][options] = options
 features_exclude[dependencies][ctools] = ctools
