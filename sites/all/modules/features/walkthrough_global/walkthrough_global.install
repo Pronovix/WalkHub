@@ -684,3 +684,10 @@ function walkthrough_global_update_7049() {
 function walkthrough_global_update_7050() {
   walkhub_features_revert(array('walkhub_key_feature'));
 }
+
+/**
+ * Revert 'Walkhub collections' feature.
+ */
+function walkthrough_global_update_7051() {
+  walkhub_features_revert(array('walkhub_collections'));
+}
