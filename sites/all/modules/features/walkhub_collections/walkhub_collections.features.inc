@@ -14,20 +14,19 @@ function walkhub_collections_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function walkhub_collections_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function walkhub_collections_node_info() {
   $items = array(
-    'walkthrough_collection' => array(
-      'name' => t('Private Collection'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-    'walkthrough_public_collection' => array(
-      'name' => t('Public Collection'),
+    'collection' => array(
+      'name' => t('Collection'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
