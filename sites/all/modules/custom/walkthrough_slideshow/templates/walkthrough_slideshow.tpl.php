@@ -12,21 +12,14 @@
   <title><?php echo t('Walkthrough Slideshow'); ?></title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
   <link rel="stylesheet"
+        href="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('reveal.js'); ?>/css/reveal.min.css"
+        type="text/css" media="screen"/>
+  <link rel="stylesheet"
         href="<?php echo $GLOBALS['base_url'] . '/' . drupal_get_path('module', 'walkthrough_slideshow'); ?>/walkthrough_slideshow.css"
         type="text/css" media="screen"/>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-  <!--[if !IE|IE 11]-->
-  <script type="text/javascript" src="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('bigscreen'); ?>/bigscreen.min.js"></script>
-  <!--[endif]-->
   <script type="text/javascript"
-          src="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('supersized'); ?>/slideshow/js/jquery.easing.min.js"></script>
-  <script type="text/javascript"
-          src="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('supersized'); ?>/slideshow/js/supersized.3.2.7.min.js"></script>
-  <script type="text/javascript"
-          src="<?php echo $GLOBALS['base_url'] . '/' . drupal_get_path('module', 'walkthrough_slideshow'); ?>/js/supersized.shuttered.js"></script>
-  <script>
-    Walkthrough_slideshow = <?php echo $slides_json; ?>;
-  </script>
+          src="<?php echo $GLOBALS['base_url'] . '/' . libraries_get_path('reveal.js'); ?>/js/reveal.min.js"></script>
   <script type="text/javascript"
           src="<?php echo $GLOBALS['base_url'] . '/' . drupal_get_path('module', 'walkthrough_slideshow'); ?>/js/walkthrough_slideshow.js"></script>
   <script type="text/javascript">
@@ -34,14 +27,28 @@
   </script>
 </head>
 <body class="<?php print implode(' ', browserclass_get_classes()); ?>">
-<!--Thumbnail Navigation-->
-<div id="prevthumb"></div>
-<div id="nextthumb"></div>
-<div id="thumb-tray" class="load-item">
-  <div id="thumb-back"></div>
-  <div id="thumb-forward"></div>
-</div>
 <!--Title Bar-->
+<div class="reveal">
+  <div class="slides">
+    <?php foreach($images as $key => $image): ?>
+
+      <section data-background="<?php if (isset($image->image)) { echo $image->image; } ?>">
+        <?php if (!isset($image->image)): ?>
+          <table>
+            <tr>
+              <td class="action-icon">
+                <i class="action icon-action-<?php echo $image->action; ?>"></i>
+              </td>
+              <td class="action-description">
+                <p><?php echo $image->description; ?></p>
+              </td>
+            </tr>
+          </table>
+        <?php endif; ?>
+      </section>
+    <?php endforeach; ?>
+  </div>
+</div>
 <div id="title-bar" class="cf">
   <div class="cont">
     <div class="title">
@@ -57,7 +64,7 @@
 <div id="hidden-center">
 <!--Embed code-->
   <?php if ($share_dialog && $embed_code): ?>
-  <div id="embed-code">
+    <div id="embed-code">
     <button id="close"><i class="icon-remove-sign"></i></button>
     <?php echo $embed_code; ?>
     <div class="share">
@@ -95,10 +102,10 @@
       <a id="firstslide" class="load-item">
         <i class="icon-double-angle-left"></i>
       </a>
-      <a id="prevslide" class="load-item">
+      <a id="prevslide" class="load-item navigate-left">
         <i class="icon-angle-left"></i>
       </a>
-      <a id="nextslide" class="load-item">
+      <a id="nextslide" class="load-item navigate-right">
         <i class="icon-angle-right"></i>
       </a>
       <a id="lastslide" class="load-item">
@@ -107,7 +114,7 @@
     </div>
     <div class="button-wrapper float-right">
       <?php if ($share_dialog && $embed_code): ?>
-      <a id="share">
+        <a id="share">
         <i class="icon-share"></i>
       </a>
       <?php endif; ?>
@@ -117,5 +124,37 @@
     </div>
   </div>
 </div>
+<script>
+  Reveal.initialize({
+    controls: false,
+    progress: false,
+    slideNumber: false,
+    history: false,
+    keyboard: true,
+    overview: false,
+    center: true,
+    touch: true,
+    loop: false,
+    rtl: false,
+    fragments: true,
+    embedded: false,
+    autoSlide: 0,
+    autoSlideStoppable: true,
+    mouseWheel: false,
+    hideAddressBar: true,
+    previewLinks: false,
+    transition: 'none',
+    transitionSpeed: 'default',
+    backgroundTransition: 'none',
+    viewDistance: 3,
+    parallaxBackgroundImage: '',
+    parallaxBackgroundSize: '',
+    width: 1000,
+    height: 640,
+    margin: 0.1,
+    minScale: 0.2,
+    maxScale: 100.0
+  });
+</script>
 </body>
 </html>

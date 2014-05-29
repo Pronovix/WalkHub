@@ -28,7 +28,7 @@ function walkthrough_slideshow_menu() {
   $items['walkthrough/slideshow/%node'] = array(
     'title' => 'walkthrough iframe',
     'access arguments' => array('access content'),
-    'page callback' => 'walkthrough_slideshow_generate_iframe_content',
+    'page callback' => 'walkthrough_slideshow_generate_default_widget_iframe_content',
     'page arguments' => array(2),
   );
 
@@ -70,10 +70,11 @@ function walkthrough_slideshow_theme() {
       'path' => drupal_get_path('module', 'walkthrough_slideshow') . '/templates',
       'template' => 'walkthrough_slideshow',
       'variables' => array(
-        'slides_json' => '[]',
         'link' => '',
         'start_url' => '',
         'embed_code' => '',
+        'images' => array(),
+        'share_dialog' => '',
       ),
     ),
   );
@@ -83,29 +84,15 @@ function walkthrough_slideshow_theme() {
  * Implements hook_libraries_info().
  */
 function walkthrough_slideshow_libraries_info() {
-  // Add BigScreen to the libraries.
-  $libraries['bigscreen'] = array(
-    'name' => 'Big Screen',
-    'vendor url' => 'http://brad.is/coding/BigScreen/',
-    'download url' => 'http://brad.is/coding/BigScreen/',
-    'machine name' => 'bigscreen',
+  // Add Reveal.js to the libraries.
+  $libraries['revealjs'] = array(
+    'name' => 'Reveal.js',
+    'vendor url' => 'http://lab.hakim.se/reveal-js/',
+    'download url' => 'https://github.com/hakimel/reveal.js',
+    'machine name' => 'revealjs',
     'files' => array(
-      'js' => array('bigscreen.min.js'),
-    ),
-  );
-
-  // Add Supersized to the libraries.
-  $libraries['supersized_slideshow'] = array(
-    'name' => 'Supersized Slideshow',
-    'vendor url' => 'http://buildinternet.com/project/supersized/',
-    'download url' => 'http://buildinternet.com/project/supersized/download.html',
-    'machine name' => 'supersized',
-    'path' => 'slideshow/js',
-    'files' => array(
-      'js' => array(
-        'supersized.3.2.7.min.js',
-        'jquery.easing.min.js',
-      ),
+      'js' => array('reveal.min.js'),
+      'css' => array("reveal.min.css")
     ),
   );
 
@@ -283,7 +270,7 @@ function walkthrough_get_latest_screening_from_walkthrough($walkthrough) {
  *
  * @return string
  */
-function walkthrough_slideshow_generate_iframe_content($node) {
+function walkthrough_slideshow_generate_default_widget_iframe_content($node) {
   $vars = walkthrough_slideshow_get_iframe_content($node);
 
   // Return the page content.
@@ -326,7 +313,8 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
       $index = $collection_entity->field_fc_screenshots_step['und'][0]['target_id'];
       if ($index) {
         $images[$index] = current($collection_image);
-      } else {
+      }
+      else {
         $images_without_steps[] = current($collection_image);
       }
     }
@@ -347,9 +335,35 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
   foreach ($steps as $step) {
     $index = $step['value'];
 
+    $fc_step = field_collection_item_load($index);
+    $stepinfo = array();
+    switch ($fc_step->field_fc_step_command_1['und'][0]['safe_value']) {
+      case "click":
+      case "clickAndWait":
+        $stepinfo['action'] = "click";
+        break;
+      case "type":
+      case "sendKeys":
+        $stepinfo['action'] = "type";
+        break;
+      case "select":
+      case "selectAndWait":
+        $stepinfo['action'] = "select";
+        break;
+      default:
+        $stepinfo['action'] = $fc_step->field_fc_step_command_1['und'][0]['safe_value'];
+    }
+    $stepinfo['description'] = $fc_step->field_fc_step_description['und'][0]['safe_value'];
+
     if ($images[$index]) {
+      $images[$index]['stepinfo'] = $stepinfo;
       $sorted_images[] = $images[$index];
       unset($images[$index]);
+    }
+    else {
+      if ($stepinfo['action'] != "open") {
+        $sorted_images[] = array('stepinfo' => $stepinfo);
+      }
     }
   }
 
@@ -377,14 +391,18 @@ function walkthrough_slideshow_get_iframe_content($node) {
   $slides = array();
   foreach ($images as $image) {
     $file = new stdClass();
-    $file->image = file_create_url($image['uri']);
+    if ($image['uri']) {
+      $file->image = file_create_url($image['uri']);
+    }
     $file->title = $image['title'];
+    $file->action = $image['stepinfo']['action'];
+    $file->description = $image['stepinfo']['description'];
     $slides[] = $file;
   }
 
   // Create variables to client side.
   $slideshow_variables = array(
-    'slides_json' => json_encode($slides),
+    'images' => $slides,
     'share_dialog' => variable_get('walkthrough_slideshow_sharing', TRUE),
   );
 
@@ -541,6 +559,9 @@ function walkthrough_slideshow_latest_content($walkthrough) {
   if ($screening) {
     $vars = walkthrough_slideshow_get_iframe_content($screening);
     $output = theme('walkthrough_slideshow', $vars);
+  }
+  else {
+    walkthrough_slideshow_generate_default_widget_iframe_content($walkthrough);
   }
 
   // Return the page content.
