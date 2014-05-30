@@ -177,20 +177,6 @@ function walkthrough_global_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'clone_reset_walkthrough_collection';
-  $strongarm->value = 0;
-  $export['clone_reset_walkthrough_collection'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'clone_reset_walkthrough_public_collection';
-  $strongarm->value = 0;
-  $export['clone_reset_walkthrough_public_collection'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'clone_reset_walkthrough_set';
   $strongarm->value = 0;
   $export['clone_reset_walkthrough_set'] = $strongarm;

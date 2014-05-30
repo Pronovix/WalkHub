@@ -32,15 +32,5 @@ function walkthrough_global_metatag_export_default() {
     ),
   );
 
-  // Exported Metatag config instance: node:walkthrough_public_collection.
-  $config['node:walkthrough_public_collection'] = array(
-    'instance' => 'node:walkthrough_public_collection',
-    'config' => array(
-      'twitter:creator' => array(
-        'value' => '@WalkHub',
-      ),
-    ),
-  );
-
   return $config;
 }

@@ -684,3 +684,49 @@ function walkthrough_global_update_7049() {
 function walkthrough_global_update_7050() {
   walkhub_features_revert(array('walkhub_key_feature'));
 }
+
+/**
+ * Revert 'Walkhub collections' and "Global" feature.
+ */
+function walkthrough_global_update_7051() {
+  walkhub_features_revert(array('walkhub_collections', 'walkthrough_global'));
+}
+
+/**
+ * Delete public and private collections.
+ */
+function walkthrough_global_update_7052() {
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN');
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+  }
+
+  node_type_delete('walkthrough_public_collection');
+  node_type_delete('walkthrough_collection');
+}
+
+/**
+ * Set the collection block's place.
+ */
+function walkthrough_global_update_7053() {
+  db_merge('block')
+    ->key(array(
+      'module' => 'views',
+      'delta' => 'collection_content-block_1',
+      'theme' => 'walkhub_theme'))
+    ->fields(array(
+      'status' => 1,
+      'region' => 'content',
+      'weight' => 1,
+      'pages' => '',
+      'title' => '',
+    ))
+    ->execute();
+}
