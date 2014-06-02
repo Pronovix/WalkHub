@@ -4,3 +4,4 @@ package = Walkthrough
 
 dependencies[] = field
 dependencies[] = walkhub
+dependencies[] = walkthrough_screening
