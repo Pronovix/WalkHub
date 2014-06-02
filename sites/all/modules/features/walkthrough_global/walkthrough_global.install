@@ -726,3 +726,10 @@ function walkthrough_global_update_7054() {
   walkhub_features_revert(array('walkhub_collections'));
   node_access_rebuild();
 }
+
+/**
+ * Enable Chosen module.
+ */
+function walkthrough_global_update_7055() {
+  module_enable(array('chosen'));
+}
