@@ -217,6 +217,9 @@ function walkhub_theme_preprocess_node(&$vars) {
   $view_mode = $vars['view_mode'];
   $vars['theme_hook_suggestions'][] = 'node__'. $view_mode;
   $vars['theme_hook_suggestions'][] = 'node__'. $contenttype . '__' . $view_mode;
+  if ($contenttype == "walkthrough" && $view_mode == "teaser") {
+    $vars['user_can_edit_walkthrough'] = node_access('update', $node);
+  }
 }
 
 

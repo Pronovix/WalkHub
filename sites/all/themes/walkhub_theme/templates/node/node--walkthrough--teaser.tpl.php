@@ -77,21 +77,21 @@
 ?>
 
 <div id="<?php print $node->type; ?> node-<?php print $node->nid; ?>" class="walkthrough-listing-item row <?php print $classes; ?>"<?php print $attributes; ?>>
-    <div class="small-12 large-5 columns">
-        <div class="wt-container">
-            <iframe frameborder="0" width="400" height="300" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/walkthrough/<?php echo $nid; ?>/slideshow" allowfullscreen="">
-                Your browser doesn't support iframes.
-            </iframe>
-        </div>
+  <div class="small-12 large-5 columns">
+    <div class="wt-container">
+      <iframe frameborder="0" width="400" height="300" src="<?php echo url('walkthrough/' . $nid . '/slideshow'); ?>" allowfullscreen="">
+        Your browser doesn't support iframes.
+      </iframe>
     </div>
-    <div class="small-12 large-7 columns">
-        <h2 class="title small-12 columns"><a href="<?php echo $node_url; ?>"><?php echo $title; ?></a></h2>
-        <p class="info columns">created by <strong><?php echo $user->name; ?></strong> on <?php echo date("F j, Y", $created); ?></p>
-        <p class="description small-12 columns"><?php echo $body[0]['safe_value']; ?></p>
-        <div class="small-12 columns">
-            <?php if (node_access("update", $node)): ?>
-                <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/node/<?php echo $nid; ?>/edit"><i class="icon-pencil"></i> Edit this Walkthrough</a>
-            <?php endif; ?>
-        </div>
+  </div>
+  <div class="small-12 large-7 columns">
+    <h2 class="title small-12 columns"><a href="<?php echo $node_url; ?>"><?php echo $title; ?></a></h2>
+    <div class="info columns">created by <strong><?php echo $user->name; ?></strong> on <?php echo format_date($created, 'custom', 'F j, Y'); ?></div>
+    <p class="description small-12 columns"><?php echo $body[0]['safe_value']; ?></p>
+    <div class="small-12 columns">
+      <?php if ($user_can_edit_walkthrough): ?>
+        <?php echo l('<i class="icon-pencil"></i> Edit this Walkthrough</a>', 'node/' . $nid . '/edit', array("html" => true)); ?>
+      <?php endif; ?>
     </div>
+  </div>
 </div>
