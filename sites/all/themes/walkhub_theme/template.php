@@ -213,10 +213,13 @@ function walkhub_theme_js_alter(&$js) {
  */
 function walkhub_theme_preprocess_node(&$vars) {
   $node = $vars['node'];
-  $contenttype = $vars['type'];
+  $content_type = $vars['type'];
   $view_mode = $vars['view_mode'];
   $vars['theme_hook_suggestions'][] = 'node__'. $view_mode;
-  $vars['theme_hook_suggestions'][] = 'node__'. $contenttype . '__' . $view_mode;
+  $vars['theme_hook_suggestions'][] = 'node__'. $content_type . '__' . $view_mode;
+  if ($content_type == "walkthrough" && $view_mode == "teaser") {
+    $vars['user_can_edit_walkthrough'] = node_access('update', $node);
+  }
 }
 
 
