@@ -6550,7 +6550,7 @@ h6 small {
 /* line 176, ../sass/typo/_typography.sass */
 
 html.js input.form-autocomplete {
-	background-image: url('../images/throbber.gif?1397133345');
+	background-image: url('../images/throbber.gif?1401440124');
 	background-position: 100% 9px;
 	background-repeat: no-repeat;
 	-webkit-transition: none;
@@ -9843,7 +9843,7 @@ div.messages ul li {
 /* line 74, ../sass/modules/_admin.sass */
 
 #tabs:after {
-	background-image: url('../images/mask.png?1397133345');
+	background-image: url('../images/mask.png?1401440124');
 	position: absolute;
 	width: 100%;
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=6500);
@@ -9990,7 +9990,7 @@ header#main-header {
 	-webkit-box-shadow: inset 0px -5px 5px 0px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: inset 0px -5px 5px 0px rgba(0, 0, 0, 0.25);
 	box-shadow: inset 0px -5px 5px 0px rgba(0, 0, 0, 0.25);
-	background: #2a2a2a url('../images/low_contrast_linen.png?1397133345') top left repeat;
+	background: #2a2a2a url('../images/low_contrast_linen.png?1401440124') top left repeat;
 	padding: 1.25em 0 1.25em 0;
 	color: white;
 	border-top: 1px solid black;
@@ -10057,7 +10057,7 @@ header#main-header .menu li a {
 	padding: 2.5rem 0 1.5rem;
 	overflow: hidden;
 	background-color: black;
-	background-image: url('../images/office.jpg?1397133345');
+	background-image: url('../images/office.jpg?1401440124');
 	background-position: top center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -10074,7 +10074,7 @@ header#main-header .menu li a {
 #featured:before {
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
 	opacity: 0.7;
-	background: rgba(0, 0, 0, 0.75) url('../images/mask.png?1397133345') repeat top center;
+	background: rgba(0, 0, 0, 0.75) url('../images/mask.png?1401440124') repeat top center;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -10783,7 +10783,7 @@ a.cta:hover,
 	padding: 2.5rem 0 1.5rem;
 	margin-bottom: -2%;
 	text-align: center;
-	background-image: url('../images/signup.jpg?1397133345');
+	background-image: url('../images/signup.jpg?1401440124');
 	background-repeat: no-repeat;
 	background-position: bottom center;
 	position: relative;
@@ -11022,7 +11022,7 @@ a.cta:hover,
 	-webkit-box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 	box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
-	background: #2a2a2a url('../images/low_contrast_linen.png?1397133345') top left repeat;
+	background: #2a2a2a url('../images/low_contrast_linen.png?1401440124') top left repeat;
 	padding: 1.25em 0 1.25em 0;
 	color: white;
 	border-top: 1px solid black;
@@ -11665,7 +11665,7 @@ input.pure-input-rounded,
 
 .ui-widget-content {
 	border: 1px solid #aaaaaa;
-	background: white url('../images/ui-bg_flat_75_ffffff_40x100.png?1397133345') 50% 50% repeat-x;
+	background: white url('../images/ui-bg_flat_75_ffffff_40x100.png?1401440124') 50% 50% repeat-x;
 	color: #222222;
 }
 
@@ -11757,7 +11757,7 @@ input.pure-input-rounded,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
 	border: 1px solid #fcefa1;
-	background: #fbf9ee url('../images/ui-bg_glass_55_fbf9ee_1x400.png?1397133345') 50% 50% repeat-x;
+	background: #fbf9ee url('../images/ui-bg_glass_55_fbf9ee_1x400.png?1401440124') 50% 50% repeat-x;
 	color: #363636;
 }
 
@@ -11775,7 +11775,7 @@ input.pure-input-rounded,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
 	border: 1px solid #cd0a0a;
-	background: #fef1ec url('../images/ui-bg_glass_95_fef1ec_1x400.png?1397133345') 50% 50% repeat-x;
+	background: #fef1ec url('../images/ui-bg_glass_95_fef1ec_1x400.png?1401440124') 50% 50% repeat-x;
 	color: #cd0a0a;
 }
 
@@ -12935,7 +12935,7 @@ input.pure-input-rounded,
 /* line 645, ../sass/modules/_jquery_ui_theme.sass */
 
 .ui-widget-overlay {
-	background: rgba(0, 0, 0, 0.75) url('../images/mask.png?1397133345') 50% 50% repeat;
+	background: rgba(0, 0, 0, 0.75) url('../images/mask.png?1401440124') 50% 50% repeat;
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
 	opacity: 0.85;
 }
@@ -12943,7 +12943,7 @@ input.pure-input-rounded,
 /* line 649, ../sass/modules/_jquery_ui_theme.sass */
 
 .ui-widget-shadow {
-	background: #aaaaaa url('../images/ui-bg_flat_0_aaaaaa_40x100.png?1397133345') 50% 50% repeat-x;
+	background: #aaaaaa url('../images/ui-bg_flat_0_aaaaaa_40x100.png?1401440124') 50% 50% repeat-x;
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
 	opacity: 0.3;
 	margin: -80px 0 0 -80px;
@@ -13493,6 +13493,38 @@ input.pure-input-rounded,
 .row.image-container {
 	margin-bottom: 10px;
 	margin-bottom: 1rem;
+}
+
+/* line 1, ../sass/page/_node-walkthrough-teaser.sass */
+
+.walkthrough-listing-item {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+/* line 5, ../sass/page/_node-walkthrough-teaser.sass */
+
+.walkthrough-listing-item h2 {
+	margin-bottom: 0;
+}
+
+/* line 8, ../sass/page/_node-walkthrough-teaser.sass */
+
+.walkthrough-listing-item:hover {
+	background-color: #eeeeee;
+}
+
+/* line 11, ../sass/page/_node-walkthrough-teaser.sass */
+
+.walkthrough-listing-item .info {
+	margin-bottom: 0.75em;
+}
+
+/* line 14, ../sass/page/_node-walkthrough-teaser.sass */
+
+.walkthrough-listing-item .wt-container {
+	margin: 0;
+	border: 1px solid #999999;
 }
 
 /* line 4, ../sass/page/_node-walkthrough.sass */
@@ -17356,13 +17388,13 @@ div.switch {
 /* line 1, ../sass/modules/_temp_header.sass */
 
 header#main-header {
-	background: #2a2a2a url('../images/low_contrast_linen_@2X.png?1397133345') top left repeat;
+	background: #2a2a2a url('../images/low_contrast_linen_@2X.png?1401440124') top left repeat;
 }
 
 /* line 88, ../sass/modules/_temp_footer.sass */
 
 #copyright {
-	background: #2a2a2a url('../images/low_contrast_linen_@2X.png?1397133345') top left repeat;
+	background: #2a2a2a url('../images/low_contrast_linen_@2X.png?1401440124') top left repeat;
 }
 
 }
