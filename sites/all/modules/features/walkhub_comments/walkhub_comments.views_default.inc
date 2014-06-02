@@ -12,7 +12,7 @@ function walkhub_comments_views_default_views() {
 
   $view = new view();
   $view->name = 'steps_for_walkthrough';
-  $view->description = '';
+  $view->description = 'This view needs to be fixed, it returns an empty set on purpose.';
   $view->tag = 'default';
   $view->base_table = 'field_collection_item';
   $view->human_name = 'Steps for walkthrough';
@@ -45,11 +45,23 @@ function walkhub_comments_views_default_views() {
   $handler->display->display_options['fields']['field_fc_step_name']['table'] = 'field_data_field_fc_step_name';
   $handler->display->display_options['fields']['field_fc_step_name']['field'] = 'field_fc_step_name';
   $handler->display->display_options['fields']['field_fc_step_name']['relationship'] = 'field_fc_screenshots_step_target_id';
+  /* Contextual filter: Field: Default Parameters (field_parameters:revision_id) */
+  $handler->display->display_options['arguments']['field_parameters_revision_id']['id'] = 'field_parameters_revision_id';
+  $handler->display->display_options['arguments']['field_parameters_revision_id']['table'] = 'field_data_field_parameters';
+  $handler->display->display_options['arguments']['field_parameters_revision_id']['field'] = 'field_parameters_revision_id';
+  $handler->display->display_options['arguments']['field_parameters_revision_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_parameters_revision_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_parameters_revision_id']['default_argument_options']['argument'] = '-1';
+  $handler->display->display_options['arguments']['field_parameters_revision_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_parameters_revision_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_parameters_revision_id']['summary_options']['items_per_page'] = '25';
 
   /* Display: Entity Reference */
   $handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'entityreference_style';
   $handler->display->display_options['style_options']['search_fields'] = array(
