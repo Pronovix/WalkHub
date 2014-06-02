@@ -710,3 +710,11 @@ function walkthrough_global_update_7052() {
     ))
     ->execute();
 }
+
+/**
+ * Revert walkhub comments feature.
+ */
+function walkthrough_global_update_7053() {
+  walkhub_features_revert(array('walkhub_comments'));
+}
+
