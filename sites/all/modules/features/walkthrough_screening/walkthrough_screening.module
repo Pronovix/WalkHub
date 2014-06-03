@@ -5,3 +5,24 @@
  */
 
 include_once 'walkthrough_screening.features.inc';
+
+/**
+ * Loads a walkthrough screening node.
+ *
+ * This function is useful for hook_menu() implementations.
+ *
+ * @param int $nid
+ *   Node id.
+ *
+ * @return bool|stdClass
+ *   If the node exists, and it is a screening node, it returns the node object, else FALSE.
+ */
+function _walkthrough_screening_node_load($nid) {
+  $node = node_load($nid);
+
+  if ($node && $node->type === 'screening') {
+    return $node;
+  }
+
+  return FALSE;
+}
