@@ -5,6 +5,7 @@ dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = list
 dependencies[] = og
+dependencies[] = og_access
 dependencies[] = og_ui
 dependencies[] = strongarm
 dependencies[] = text
