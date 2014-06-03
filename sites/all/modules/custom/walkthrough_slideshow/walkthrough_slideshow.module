@@ -367,15 +367,12 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
     );
     if (isset($fc_step->field_fc_step_command_1)) {
       switch ($fc_step->field_fc_step_command_1[LANGUAGE_NONE][0]['safe_value']) {
-        case "click":
         case "clickAndWait":
           $stepinfo['action'] = "click";
           break;
-        case "type":
         case "sendKeys":
           $stepinfo['action'] = "type";
           break;
-        case "select":
         case "selectAndWait":
           $stepinfo['action'] = "select";
           break;
