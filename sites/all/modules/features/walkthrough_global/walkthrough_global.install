@@ -718,3 +718,11 @@ function walkthrough_global_update_7053() {
   walkhub_features_revert(array('walkhub_comments'));
 }
 
+/**
+ * Revert walkhub collections feature.
+ */
+function walkthrough_global_update_7054() {
+  // Enable og access module and rebuild permissions.
+  walkhub_features_revert(array('walkhub_collections'));
+  node_access_rebuild();
+}
