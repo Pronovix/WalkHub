@@ -23,6 +23,7 @@
     var sassConfig = {
       css: '.tmp',
       sass: 'sass',
+      style: 'compact',
     };
 
     if (args.debug) {

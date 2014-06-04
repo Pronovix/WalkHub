@@ -10,6 +10,7 @@ dependencies[] = better_formats
 dependencies[] = block
 dependencies[] = browserclass
 dependencies[] = captcha
+dependencies[] = chosen
 dependencies[] = ckeditor
 dependencies[] = clone
 dependencies[] = color_field
