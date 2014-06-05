@@ -86,7 +86,7 @@
   </div>
   <div class="small-12 large-7 columns">
     <h2 class="title small-12 columns"><a href="<?php echo $node_url; ?>"><?php echo $title; ?></a></h2>
-    <div class="info columns"><?php echo t("created by <strong>@name</strong> on @date", array("@name" => $user->name, "@date" => format_date($created, 'custom', 'F j, Y'))); ?></div>
+    <div class="info columns"><?php echo t("created by <strong>@name</strong> on @date", array("@name" => $node->name, "@date" => format_date($created, 'custom', 'F j, Y'))); ?></div>
     <p class="description small-12 columns"><?php echo $body[0]['safe_value']; ?></p>
     <div class="small-12 columns">
       <?php if ($user_can_edit_walkthrough): ?>
