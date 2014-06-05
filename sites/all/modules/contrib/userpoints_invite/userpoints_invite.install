@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Installation file for userpoints_invite module.
+ */
+
+if (!defined('USERPOINTS_INVITE_REGISTER')) {
+  define('USERPOINTS_INVITE_REGISTER',         'userpoints_invite_register');
+}
+if (!defined('USERPOINTS_INVITE_REGISTER_INVITER')) {
+  define('USERPOINTS_INVITE_REGISTER_INVITER', 'userpoints_invite_register_inviter');
+}
+if (!defined('USERPOINTS_INVITE_REGISTER_INVITEE')) {
+  define('USERPOINTS_INVITE_REGISTER_INVITEE', 'userpoints_invite_register_invitee');
+}
+/**
+ * An update schema - renames the USERPOINTS_INVITE_REGISTER variable to USERPOINTS_INVITE_REGISTER_INVITER
+ */
+function userpoints_invite_update_1() {
+  $var = variable_get(USERPOINTS_INVITE_REGISTER, 'unset');
+  if ($var != 'unset') {
+    variable_del(USERPOINTS_INVITE_REGISTER);
+    variable_set(USERPOINTS_INVITE_REGISTER_INVITER, $var);
+  }
+}

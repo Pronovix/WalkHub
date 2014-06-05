@@ -1,0 +1,204 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function invite_schema() {
+  $schema = array();
+
+  $schema['invite'] = array(
+    'description' => 'The base table for invites.',
+    'fields' => array(
+      'iid' => array(
+        'description' => 'The primary identifier for the invite.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'reg_code' => array(
+        'description' => 'Stores the issued registration code.',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'type' => array(
+        'description' => 'The type (bundle) of this invite.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'uid' => array(
+        'description' => 'ID of Drupal user creator.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'invitee' => array(
+        'description' => 'Drupal uid of the invitee upon registration.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'created' => array(
+        'description' => 'The Unix timestamp when the invite was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'expiry' => array(
+        'description' => 'The Unix timestamp when the invite will expire.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'joined' => array(
+        'description' => 'Will be filled with the time the invite was accepted upon registration.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'canceled' => array(
+        'description' => 'The Unix timestamp when the invite has been withdrawn.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'data' => array(
+        'description' => 'Stores auxiliary data.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'serialize' => TRUE,
+      ),
+    ),
+    'primary key' => array('iid'),
+    'indexes' => array(
+      'invitee' => array('invitee'),
+    ),
+    'foreign keys' => array(
+      'user' => array(
+        'table' => 'users',
+        'columns' => array('uid' => 'uid'),
+      ),
+    ),
+  );
+
+  $schema['invite_type'] = array(
+    'description' => 'Stores information about all defined invite types.',
+    'fields' => array(
+      'itid' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique invite type ID.',
+      ),
+      'type' => array(
+        'description' => 'The machine-readable name of this type.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'label' => array(
+        'description' => 'The human-readable name of this type.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'description' => array(
+        'description' => 'A brief description of this type.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'medium',
+        'translatable' => TRUE,
+      ),
+      'data' => array(
+        'description' => 'Stores auxiliary data.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'serialize' => TRUE,
+      ),
+    ) + entity_exportable_schema_fields(),
+    'primary key' => array('itid'),
+    'unique keys' => array(
+      'type' => array('type'),
+    ),
+  );
+
+  $schema['invite_sending_controller'] = array(
+    'fields' => array(
+      'type' => array(
+        'description' => 'The machine-readable name of Invite Type.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'module' => array(
+        'description' => 'Module, which implements this controller.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'name' => array(
+        'description' => 'The machine-readable name of this sending controller.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+    ),
+    'unique keys' => array(
+      'invite_type_controller' => array('type', 'name'),
+    ),
+    'foreign keys' => array(
+      'invite_type' => array(
+        'table' => 'invite_type',
+        'columns' => array('type' => 'type'),
+      ),
+    ),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function invite_install() {
+  // Set default expiry time 30 days
+  variable_set('invite_default_expiry_time', 30);
+}
+
+/**
+ * Implements hook_install().
+ */
+function invite_uninstall() {
+  // Set default expiry time 30 days
+  variable_del('invite_default_expiry_time');
+  $variables = db_select('variable', 'v')
+    ->fields('v')
+    ->condition('name', 'invite_type_%', 'LIKE')
+    ->execute();
+  foreach ($variables as $variable) {
+    variable_del($variable->name);
+  }
+}
+
+/**
+ * Implements update from 2.x version to 4.x
+ */
+function invite_update_7400() {
+  db_rename_table('invite', 'invite_2x');
+  db_rename_table('invite_notifications', 'invite_notifications_2x');
+
+  // Create tables.
+  $schema = invite_schema();
+  foreach ($schema as $table_name => $specs) {
+    db_create_table($table_name, $specs);
+  }
+
+  // We unable move the data because invite_by_email should be installed.
+  // So all data transfer will be moved
+  variable_set('invite_version_updated', TRUE);
+  variable_set('invite_default_expiry_time', 30);
+
+  drupal_set_message(t('Invite was successfully installed. You could migrate !link.', array('!link' => l('old invites', 'admin/config/people/invite/migrate'))));
+}
