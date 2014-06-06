@@ -733,3 +733,139 @@ function walkthrough_global_update_7054() {
 function walkthrough_global_update_7055() {
   module_enable(array('chosen'));
 }
+
+/**
+ * Migrate old WT collections to the new one.
+ */
+function walkthrough_global_update_7056(&$sandbox) {
+  if (empty($sandbox['total'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['last_nid'] = 0;
+
+    // Count the total number of the trip nodes.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN')
+      ->count();
+    $sandbox['total'] = $query->execute();
+  }
+
+  // Get the next 10 trip node.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN')
+    ->propertyCondition('nid', $sandbox['last_nid'], '>')
+    ->propertyOrderBy('nid')
+    ->range(0, 10);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $nodes = entity_load('node', $nids);
+
+    foreach ($nodes as $node) {
+      // Init properties.
+      $collection_node = new stdClass();
+      $collection_node->type = 'collection';
+      $collection_node->title = $node->title;
+      node_object_prepare($collection_node);
+      // Inherited properties.
+      $collection_node->uid = $node->uid;
+      $collection_node->status = $node->status;
+      $collection_node->comment = $node->comment;
+      $collection_node->promote = $node->promote;
+      $collection_node->stickey = $node->stickey;
+      $collection_node->language = $node->language;
+      $collection_node->created = $node->created;
+      // OG related fields.
+      $collection_node->{OG_ACCESS_FIELD}[$node->language][] = array(
+        'value' => $node->type == 'walkthrough_public_collection' ? 0 : 1,
+      );
+      $collection_node->{OG_GROUP_FIELD} = $node->{OG_GROUP_FIELD};
+      $collection_node->name = $node->name;
+      // Save new node.
+      node_save($collection_node);
+
+      // Get the memberships (user, node and other entities)
+      $query = new EntityFieldQuery();
+      $result = $query
+        ->entityCondition('entity_type', 'og_membership')
+        ->propertyCondition('gid', $node->nid, '=')
+        ->execute();
+
+      if (!empty($result['og_membership'])) {
+        $relation_etids = array_keys($result['og_membership']);
+        $relation_entities = entity_load('og_membership', $relation_etids);
+
+        // Create a new membership with the new collection.
+        foreach ($relation_entities as $entity) {
+          // Avoid double membership error.
+          if ($entity->entity_type == 'user' && $entity->etid == $collection_node->uid) {
+            continue;
+          }
+          $og_membership = og_membership_create($entity->group_type, $collection_node->nid, $entity->entity_type, $entity->etid, $entity->field_name);
+          $og_membership->save();
+
+          if ($entity->entity_type == 'user') {
+            // Check what is the new rid of the group. Role id's are different
+            // in group content types so we have to search it by name.
+            $user_roles = og_get_user_roles($entity->group_type, $entity->gid, $entity->etid, FALSE);
+            $new_og_roles = og_roles($entity->group_type, $entity->bundle, $collection_node->nid, FALSE, FALSE);
+            foreach ($user_roles as $role_name) {
+              $new_rid = array_search($role_name, $new_og_roles);
+              if ($new_rid !== FALSE) {
+                og_role_grant($entity->group_type, $collection_node->nid, $entity->etid, $new_rid);
+              }
+            }
+          }
+        }
+      }
+
+      // Store the last node id and update progress.
+      $sandbox['last_nid'] = $node->nid;
+      $sandbox['progress']++;
+    }
+  }
+
+  // Set the finished variable based on the current progress status.
+  $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
+
+  return t('The old collections are migrated to the new one.');
+}
+
+/**
+ * Delete public and private collections.
+ */
+function walkthrough_global_update_7057() {
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN');
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+  }
+
+  node_type_delete('walkthrough_public_collection');
+  node_type_delete('walkthrough_collection');
+
+  // Reset the node/add menu items because they get stuck in the navigation. We
+  // can't use menu_get_item() because the item does not really exist and the
+  // returned value will broke menu_reset_item() function.
+  $query = db_select('menu_links', 'ml');
+  $query->leftJoin('menu_router', 'm', 'm.path = ml.router_path');
+  $query->fields('ml');
+  // Weight should be taken from {menu_links}, not {menu_router}.
+  $query->addField('ml', 'weight', 'link_weight');
+  $query->fields('m');
+  $query->condition('ml.link_path', array('node/add/walkthrough-public-collection', 'node/add/walkthrough-collection'), 'IN');
+  $result = $query->execute();
+  while ($item = $result->fetchAssoc()) {
+    $item['weight'] = $item['link_weight'];
+    _menu_link_translate($item);
+    menu_reset_item($item);
+  }
+}
