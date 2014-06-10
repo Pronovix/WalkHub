@@ -742,7 +742,7 @@ function walkthrough_global_update_7056(&$sandbox) {
     $sandbox['progress'] = 0;
     $sandbox['last_nid'] = 0;
 
-    // Count the total number of the trip nodes.
+    // Count the total number of the old collection nodes.
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN')
@@ -750,7 +750,7 @@ function walkthrough_global_update_7056(&$sandbox) {
     $sandbox['total'] = $query->execute();
   }
 
-  // Get the next 10 trip node.
+  // Get the next 10 old collection nodes.
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN')
