@@ -1,0 +1,54 @@
+<?php
+
+function invite_notifications_schema() {
+  $schema['invite_notifications'] = array(
+    'description' => 'Stores notifications for invite module.',
+    'fields' => array(
+      'mid' => array(
+        'description' => 'Unique index of message.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'description' => 'Stores the user id to be notified.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'status' => array(
+        'description' => 'Should the message be shown or no.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'iid' => array(
+        'description' => 'Invitation ID.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'inviter' => array(
+        'description' => 'Stores the user id of the inviter.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'invitee' => array(
+        'description' => 'Stores the user id of the invitee.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'message_type' => array(
+        'description' => 'Message type (used for rendering).',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('mid'),
+  );
+
+  return $schema;
+}

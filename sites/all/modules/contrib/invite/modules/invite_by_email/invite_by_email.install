@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function invite_by_email_install() {
+  variable_set('invite_default_mail_body', t(<<<TEMPLATE
+[invite:inviter:name] has invited you to join [site:name] at [site:url].
+
+To become a member of [site:name], click the link below or paste it into the address bar of your browser.
+
+[invite:invite-accept-link]
+TEMPLATE
+  ));
+
+  variable_set('invite_default_mail_subject', t('[invite:inviter:name] has sent you an invite!'));
+
+  $types = array(
+    array(
+      'type' => 'invite_by_email',
+      'module' => 'invite_by_email',
+      'invite_sending_controller' => array(
+        'invite_by_email' => 'invite_by_email',
+      ),
+      'label' => st('Invite by e-mail'),
+      'description' => st('Invitation by e-mail.'),
+    ),
+  );
+
+  foreach ($types as $type) {
+    $invite_type = entity_get_info($type['type']);
+    if (empty($invite_type)) {
+      $invite_type = entity_create('invite_type', $type);
+      if ($invite_type) {
+        $invite_type->invite_sending_controller = $type['invite_sending_controller'];
+        invite_type_save($invite_type);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function invite_by_email_uninstall() {
+  db_delete('invite_sending_controller')
+    ->condition('name', 'invite_by_email')
+    ->execute();
+
+  $fields = array(
+    'field_invitation_email_address',
+    'field_invitation_email_subject',
+    'field_invitation_email_body',
+  );
+
+  foreach ($fields as $field) {
+    field_delete_field($field);
+  }
+}

@@ -1,0 +1,716 @@
+<?php
+
+define('INVITE_SESSION_CODE',   'invite_code');
+define('INVITE_SESSION_FAILED', 'invite_failed');
+define('INVITE_SESSION_ADMIN',  'invite_admin_filter');
+
+/**
+ * Implements hook_entity_info().
+ */
+function invite_entity_info() {
+  $return = array(
+    'invite' => array(
+      'label' => t('Invite'),
+      'entity class' => 'Invite',
+      'controller class' => 'InviteController',
+      'base table' => 'invite',
+      'fieldable' => TRUE,
+      'entity keys' => array(
+        'id' => 'iid',
+        'bundle' => 'type',
+      ),
+      'bundle keys' => array(
+        'bundle' => 'type',
+      ),
+      'bundles' => array(),
+      'load hook' => 'invite_load',
+      'view modes' => array(
+        'full' => array(
+          'label' => t('Default'),
+          'custom settings' => FALSE,
+        ),
+      ),
+      'label callback' => 'entity_class_label',
+      'uri callback' => 'entity_class_uri',
+      'module' => 'invite',
+      'access callback' => 'invite_access',
+      'metadata controller class' => 'InviteMetadataController',
+    ),
+  );
+
+  $return['invite_type'] = array(
+    'label' => t('Invite Type'),
+    'entity class' => 'InviteType',
+    'controller class' => 'InviteTypeController',
+    'base table' => 'invite_type',
+    'fieldable' => FALSE,
+    'bundle of' => 'invite',
+    'exportable' => TRUE,
+    'entity keys' => array(
+      'id' => 'itid',
+      'name' => 'type',
+      'label' => 'label',
+    ),
+    'module' => 'invite',
+    // Enable the entity API's admin UI.
+    'admin ui' => array(
+      'path' => 'admin/structure/invite-types',
+      'file' => 'includes/invite.admin.inc',
+      'controller class' => 'InviteTypeUIController',
+    ),
+    'access callback' => 'invite_type_access',
+  );
+  return $return;
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function invite_entity_info_alter(&$entity_info) {
+  foreach (invite_get_types() as $type => $info) {
+    $entity_info['invite']['bundles'][$type] = array(
+      'label' => $info->label,
+      'admin' => array(
+        'path' => 'admin/structure/invite-types/manage/%invite_type',
+        'real path' => 'admin/structure/invite-types/manage/' . $type,
+        'bundle argument' => 4,
+      ),
+    );
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ *
+ * @return array
+ */
+function invite_block_info() {
+  $blocks = array();
+  foreach (invite_get_types() as $type => $info) {
+    $blocks['invite_add_' . $type] = array(
+      'info' => t('Create invite @type.', array('@type' => $info->label)),
+    );
+  }
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * @param $delta
+ * @return mixed
+ */
+function invite_block_view($delta) {
+  $type = str_replace('invite_add_', '', $delta);
+  // Return empty block for users who have no appropriate permissions.
+  if (!(user_access('create any invite entities') || user_access('create ' . $type . ' entity'))) {
+    return NULL;
+  }
+
+  module_load_include('inc', 'invite', 'includes/invite.admin');
+
+  $invite_type = invite_get_types($type);
+
+  $invite = entity_create('invite', array('type' => $type));
+  $block['subject'] = t('Create @name', array('@name' => entity_label('invite_type', $invite_type)));
+
+  $block['content'] = drupal_get_form('invite_form', $invite);
+
+  return $block;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function invite_menu() {
+  $items = array();
+  $items['invite/add'] = array(
+    'title' => 'Add Invite',
+    'page callback' => 'invite_admin_add_page',
+    'access arguments' => array('create invites'),
+    'file' => 'includes/invite.admin.inc',
+    'type' => MENU_LOCAL_ACTION,
+    'tab_parent' => 'invite',
+    'tab_root' => 'invite',
+  );
+
+  $invite_uri = 'invite/%invite';
+  $invite_uri_argument_position = 1;
+
+  $items[$invite_uri] = array(
+    'title callback' => 'entity_label',
+    'title arguments' => array('invite', $invite_uri_argument_position),
+    'page callback' => 'invite_view',
+    'page arguments' => array($invite_uri_argument_position),
+    'access callback' => 'entity_access',
+    'access arguments' => array('view', 'invite', $invite_uri_argument_position),
+    'file' => 'includes/invite.pages.inc',
+  );
+
+  $items[$invite_uri . '/view'] = array(
+    'title' => 'View',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+
+  $items[$invite_uri . '/delete'] = array(
+    'title' => 'Delete invite',
+    'title callback' => 'invite_label',
+    'title arguments' => array($invite_uri_argument_position),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('invite_delete_form', $invite_uri_argument_position),
+    'access callback' => 'entity_access',
+    'access arguments' => array('edit', 'invite', $invite_uri_argument_position),
+    'file' => 'includes/invite.admin.inc',
+  );
+
+  $items[$invite_uri . '/edit'] = array(
+    'title' => 'Edit',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('invite_form', $invite_uri_argument_position),
+    'access callback' => 'entity_access',
+    'access arguments' => array('edit', 'invite', $invite_uri_argument_position),
+    'file' => 'includes/invite.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+  );
+
+  foreach (invite_get_types() as $type => $info) {
+    $items['invite/add/' . $type] = array(
+      'title' => 'Add invite',
+      'page callback' => 'invite_add',
+      'page arguments' => array(2),
+      'access callback' => 'invite_access',
+      'access arguments' => array('create', $type),
+      'file' => 'includes/invite.admin.inc',
+    );
+  }
+
+  // Admin menu items
+  $items['admin/config/people/invite'] = array(
+    'title' => 'Invite',
+    'description' => 'Modify invitation settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('invite_settings_form'),
+    'access arguments' => array('administer invitations'),
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 10,
+    'file' => 'includes/invite.admin.inc',
+  );
+
+  $items['admin/config/people/invite/common'] = array(
+    'title' => 'Invite',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => 10,
+  );
+
+  // Frontend menu items
+  $items['invite/accept/%invite_by_code'] = array(
+    'page callback' => 'invite_accept',
+    'page arguments' => array(2),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/invite.pages.inc',
+  );
+
+  $items['invite/withdraw/%invite_by_code'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('invite_withdraw_form', 2),
+    'access callback' => 'invite_withdraw_access',
+    'access arguments' => array(2),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/invite.pages.inc',
+  );
+
+  $items['invite/resend/%invite_by_code'] = array(
+    'title' => 'Resend invitation',
+    'page callback' => 'invite_resend',
+    'page arguments' => array(2),
+    'access arguments' => array('send invitations'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/invite.pages.inc',
+  );
+
+  if (variable_get('invite_version_updated', TRUE)) {
+    $items['admin/config/people/invite/migrate'] = array(
+      'title' => 'Migrate',
+      'description' => 'Migrate version 2.x invites.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('invite_migrate_form'),
+      'access arguments' => array('administer invitations'),
+      'type' => MENU_LOCAL_TASK,
+      'weight' => 20,
+      'file' => 'includes/invite.admin.inc',
+    );
+
+  }
+
+  return $items;
+}
+
+/**
+ * Access callback for invite type.
+ *
+ * @param $invite
+ *   Either an invite entity or in case $op is 'create' either an entity or
+ *   an invite type name.
+ *
+ * @return bool
+ *
+ * @see entity_access()
+ */
+function invite_access($op, $invite = NULL, $account = NULL, $entity_type = NULL) {
+  global $user;
+  if (!isset($account)) {
+    $account = $user;
+  }
+  switch ($op) {
+    case 'create':
+      $type = isset($invite) && is_object($invite) ? $invite->type : $invite;
+      return user_access('administer invite entities', $account)
+      || user_access('create any invite entities', $account)
+      || user_access('create ' . $type . ' entity');
+    case 'view':
+      return user_access('administer invite entities', $account)
+      || user_access('view any invite entities', $account)
+      || ($invite->uid == $account->uid);
+    case 'edit':
+      return user_access('administer invite entities')
+      || user_access('edit any invite entities')
+      || isset($invite) && (user_access('edit own invite entities') && ($invite->uid == $account->uid));
+    case 'withdraw':
+      return user_access('withdraw invitations')
+      || isset($invite) && (user_access('edit own invite entities') && ($invite->invitee == $account->uid));
+  }
+  return TRUE;
+}
+
+/**
+ * Access callback for withdraw confirmation form.
+ *
+ * @param Invite $invite
+ *   The invitations to be withdrawn.
+ *
+ * @return bool
+ *   Is user have access or no.
+ */
+function invite_withdraw_access($invite) {
+  global $user;
+
+  if (!$invite->joined ) {
+    $permission = 'withdraw own invitations';
+  }
+  else {
+    $permission = 'withdraw own accepted invitations';
+  }
+
+  if (($invite->uid == $user->uid && user_access($permission)) || user_access('administer invitations')) {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Access callback for task Type.
+ */
+function invite_type_access($op, $entity = NULL) {
+  return user_access('administer invite types');
+}
+
+
+/**
+ * Implements hook_permission().
+ */
+function invite_permission() {
+  $permissions = array(
+    'administer invitations' => array(
+      'title' => t('Administer invitations'),
+      'description' => t('Administer all invitations'),
+      'restrict access' => TRUE,
+    ),
+    'administer invite types' => array(
+      'title' => t('Administer invite types'),
+      'description' => t('Allows users to configure invite types and their fields.'),
+      'restrict access' => TRUE,
+    ),
+
+    'create any invite entities' => array(
+      'title' => t('Create any invites'),
+      'description' => t('Allows users to create invites of any type.'),
+      'restrict access' => FALSE,
+    ),
+
+    'view any invite entities' => array(
+      'title' => t('View any invites'),
+      'description' => t('Allows users to view invites.'),
+      'restrict access' => TRUE,
+    ),
+
+    'edit any invite entities' => array(
+      'title' => t('Edit any invites'),
+      'description' => t('Allows users to edit any invites.'),
+      'restrict access' => TRUE,
+    ),
+
+    'edit own invite entities' => array(
+      'title' => t('Edit own invites'),
+      'description' => t('Allows users to edit own invites.'),
+      'restrict access' => FALSE,
+    ),
+
+    'withdraw own invitations' => array(
+      'title' => t('Withdraw own invitations'),
+      'description' => t('Allows users to withdraw own invitations.'),
+      'restrict access' => FALSE,
+    ),
+    'withdraw own accepted invitations' => array(
+      'title' => t('Withdraw own accepted invitations'),
+      'description' => t('Allows users to edit own invites.'),
+      'restrict access' => FALSE,
+    ),
+  );
+
+  foreach (invite_get_types() as $invite_type) {
+    $permissions['create ' . $invite_type->type . ' entity'] = array(
+      'title' => t('%name create new invites.', array('%name' => $invite_type->label)),
+      'description' => '',
+      'restrict access' => FALSE,
+    );
+  }
+
+  return $permissions;
+}
+
+/**
+ * Loads Invite by registration code.
+ *
+ * @param string $reg_code
+ * @return Invite
+ */
+function invite_by_code_load($reg_code) {
+  $invites = invite_load_multiple(FALSE, array('reg_code' => $reg_code));
+  return reset($invites);
+}
+
+/**
+ * Loads Invite using information stored in session.
+ *
+ * @return bool|Invite
+ */
+function invite_load_from_session() {
+  if (isset($_SESSION[INVITE_SESSION_CODE])) {
+    $invite = invite_by_code_load($_SESSION[INVITE_SESSION_CODE]);
+  }
+  // Legacy url support (user/register/regcode).
+  elseif (arg(0) == 'user' && arg(1) == 'register' && $reg_code = arg(2)) {
+    if ($invite = invite_by_code_load($reg_code)) {
+      $_SESSION[INVITE_SESSION_CODE] = $invite->reg_code;
+    }
+  }
+
+  if (!empty($invite)) {
+    return $invite;
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Loads Invite by Id.
+ *
+ * @param int $iid
+ * @param bool $reset
+ * @return mixed
+ */
+function invite_load($iid, $reset = FALSE) {
+  $invites = invite_load_multiple(array($iid), array(), $reset);
+  return reset($invites);
+}
+
+/**
+ * Load multiple invites based on certain conditions.
+ *
+ * @param array|bool $iids
+ * @param array $conditions
+ * @param bool $reset
+ * @return mixed
+ */
+function invite_load_multiple($iids, $conditions = array(), $reset = FALSE) {
+  return entity_load('invite', $iids, $conditions, $reset);
+}
+
+/**
+ * Saves Invite
+ *
+ * @param Invite $invite
+ * @return bool
+ */
+function invite_save($invite) {
+  return entity_save('invite', $invite);
+}
+
+/**
+ * Delete single invite.
+ *
+ * @param Invite $invite
+ */
+function invite_delete($invite) {
+  entity_delete('invite', entity_id('invite' ,$invite));
+}
+
+/**
+ * Delete multiple invites.
+ *
+ * @param array $invite_ids
+ */
+function invite_delete_multiple($invite_ids) {
+  entity_delete_multiple('invite', $invite_ids);
+}
+
+/**
+ * Implements hook_insert().
+ *
+ * @param Invite $entity
+ */
+function invite_invite_insert($entity) {
+  if ($entity->sendInvite()) {
+    if ($entity->sendNotification) {
+      drupal_set_message(t('Invitation was sent'));
+    }
+  }
+  else {
+    if ($entity->sendNotification) {
+      drupal_set_message(t('Failed to send a message.'), 'error');
+    }
+  }
+}
+
+/**
+ * Callback for getting properties of an Invite.
+ *
+ * @param Invite $entity
+ * @param array $options
+ * @param $name
+ * @param $entity_type
+ * @return string
+ */
+function invite_metadata_entity_get_properties($entity, array $options, $name, $entity_type) {
+  $invite = entity_metadata_wrapper('invite', $entity);
+  switch ($name) {
+    case 'invite_accept_link':
+      $result = url('invite/accept/' . $invite->reg_code->value(), array('absolute' => TRUE));
+      break;
+    case 'invite_withdraw_link':
+      $result = url('invite/withdraw/' . $invite->reg_code->value(), array('absolute' => TRUE));
+      break;
+    case 'invite_resend_link':
+      $result = url('invite/resend/' . $invite->reg_code->value(), array('absolute' => TRUE));
+      break;
+    case 'status':
+      $result = $entity->status(TRUE);
+      break;
+    default:
+      $result = '';
+  }
+
+  return $result;
+}
+
+/**
+ * Load Invite Type.
+ *
+ * @param string $invite_type_name
+ * @return array|mixed
+ */
+function invite_type_load($invite_type_name) {
+  return invite_get_types($invite_type_name);
+}
+
+/**
+ * List of Invite Types.
+ *
+ * @param string $type_name
+ * @return array|mixed
+ */
+function invite_get_types($type_name = NULL) {
+  $types = entity_load_multiple_by_name('invite_type', isset($type_name) ? array($type_name) : FALSE);
+  return isset($type_name) ? reset($types) : $types;
+}
+
+/**
+ * Saves Invite Type entity.
+ *
+ * @param InviteType $invite_type
+ */
+function invite_type_save($invite_type) {
+  entity_save('invite_type', $invite_type);
+}
+
+/**
+ * Deletes single Invite type.
+ *
+ * @param InviteType $invite_type
+ */
+function invite_type_delete($invite_type) {
+  entity_delete('invite_type', entity_id('invite_type', $invite_type));
+}
+
+/**
+ * Delete multiple Invite types.
+ *
+ * @param array|string $invite_type_ids
+ */
+function invite_type_delete_multiple($invite_type_ids) {
+  entity_delete_multiple('invite_type', $invite_type_ids);
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function invite_views_api() {
+  return array(
+    'api' => '3.0',
+    'path' => drupal_get_path('module', 'invite') . '/views',
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter.
+ *
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
+function invite_form_user_login_block_alter(&$form, &$form_state, $form_id) {
+  invite_form_user_login_alter($form, $form_state, $form_id);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter.
+ *
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
+function invite_form_user_login_alter(&$form, &$form_state, $form_id) {
+  $invite = invite_load_from_session();
+  global $user;
+
+  if ($invite && $invite->status() == INVITE_VALID && (!$invite->invitee || $invite->invitee == $user->uid)) {
+    $form_state['invite'] = $invite;
+    $form['#submit'][] = 'invite_form_user_login_submit';
+  }
+}
+
+/**
+ * Submit handler for user_login form.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function invite_form_user_login_submit($form, &$form_state) {
+  if (!empty($form_state['invite'])) {
+    $invite = $form_state['invite'];
+    $invite->invitee = $GLOBALS['user']->uid;
+    $invite->joined = REQUEST_TIME;
+    entity_save('invite', $invite);
+
+    if (isset($_SESSION)) {
+      unset($_SESSION[INVITE_SESSION_CODE]);
+    }
+  }
+}
+
+/**
+ * Implements hook_user_insert.
+ *
+ * @param $edit
+ * @param $account
+ * @param $category
+ */
+function invite_user_insert(&$edit, $account, $category) {
+  $invite = invite_load_from_session();
+  if ($invite && empty($invite->invitee) && $invite->status() == INVITE_VALID) {
+    $invite->invitee = $account->uid;
+    $invite->joined = REQUEST_TIME;
+    entity_save('invite', $invite);
+
+    if (isset($_SESSION)) {
+      unset($_SESSION[INVITE_SESSION_CODE]);
+    }
+  }
+}
+
+/**
+ * Implements hook_invite_update().
+ */
+function invite_invite_update($invite) {
+  // When invite has been accepted, trigger accept hook.
+  if (isset($invite->original) && !$invite->original->joined && $invite->joined) {
+    $account = $invite->invitee();
+    module_invoke_all('invite_accept', $invite, $account);
+    if (module_exists('rules')) {
+      rules_invoke_event('invite_accept', $invite, $account);
+    }
+    drupal_set_message(t('You have accepted the invitation from !user.', array('!user' => theme('username', array('account' => $invite->inviter())))));
+  }
+}
+
+/**
+ * Implements hook_user_presave().
+ */
+function invite_user_presave(&$edit, $account, $category) {
+  if ($account->is_new && !empty($account->mail)) {
+    $invite = invite_load_from_session();
+
+    if ($invite) {
+      $roles = invite_target_roles($invite, $edit);
+
+      if ($roles) {
+        if (!isset($edit['roles']) || !is_array($edit['roles'])) {
+          $edit['roles'] = array();
+        }
+        foreach ($roles as $role) {
+          $edit['roles'][$role] = $role;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Determine target roles based on the roles of an inviter.
+ *
+ * @param Invite $invite
+ *   An invite object.
+ * @param $account
+ *   The user for whom the role is being determined.
+ * @return array
+ *   Array of target roles for an invited user.
+ */
+function invite_target_roles($invite, $account) {
+  $targets = array();
+
+  $invite = entity_metadata_wrapper('invite', $invite);
+  $inviter = user_load($invite->inviter->uid->value());
+  // Add roles of inviter.
+  $roles = array_intersect($inviter->roles, user_roles(TRUE, 'send invitations'));
+
+  // Add a dummy entry to retrieve the default target role setting.
+  $roles['default'] = 'default';
+
+  // Map to configured target roles.
+  foreach ($roles as $rid => $role) {
+    $target = variable_get('invite_target_role_' . $rid, DRUPAL_AUTHENTICATED_RID);
+    if ($target != DRUPAL_AUTHENTICATED_RID) {
+      $targets[$target] = $target;
+    }
+  }
+
+  drupal_alter('invite_target_roles', $targets, $invite, $account);
+
+  return $targets;
+}
