@@ -735,7 +735,7 @@ function walkthrough_global_update_7055() {
 }
 
 /**
- * Revert Global" feature.
+ * Revert "Walkhub" feature.
  */
 function walkthrough_global_update_7056() {
   walkhub_features_revert(array('walkhub'));
