@@ -8,6 +8,7 @@
 ?>
 <div id="walkthrough-node-edit-form">
   <?php print render($form['title']); ?>
+  <?php print render($form['field_severity_of_the_change']); ?>
   <?php print render($form['body']); ?>
   <label class="preq"><?php print t ('Prerequisites'); ?></label>
   <?php print render($form['field_prerequisites']); ?>
