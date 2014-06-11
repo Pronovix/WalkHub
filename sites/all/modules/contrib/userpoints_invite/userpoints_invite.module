@@ -1,0 +1,157 @@
+<?php
+
+/**
+ * @file
+ * This module allows users to earn points when they invite someone, or when the
+ * invitee registers.
+ */
+
+define('USERPOINTS_INVITE_INVITE',                     'userpoints_invite_invite');
+define('USERPOINTS_INVITE_REGISTER_INVITER',           'userpoints_invite_register_inviter');
+define('USERPOINTS_INVITE_REGISTER_INVITEE',           'userpoints_invite_register_invitee');
+define('USERPOINTS_INVITE_REGISTER_REMOVE_ON_DELETE',  'userpoints_invite_register_remove_on_delete');
+
+/**
+ * Implements hook_userpoints().
+ */
+function userpoints_invite_userpoints($op, $params = array()) {
+  switch ($op) {
+    case 'setting':
+      $group = 'invite';
+      $form[$group] = array(
+        '#type'        => 'fieldset',
+        '#collapsible' => TRUE,
+        '#collapsed'   => TRUE,
+        '#title'       => t('!Points for invite (requires the invite module)', userpoints_translation()),
+        '#group'       => 'settings_additional',
+      );
+
+      $form[$group][USERPOINTS_INVITE_INVITE] = array(
+        '#type'          => 'textfield',
+        '#title'         => t('!Points for inviting a user', userpoints_translation()),
+        '#default_value' => variable_get(USERPOINTS_INVITE_INVITE, 0),
+        '#size'          => 5,
+        '#maxlength'     => 5,
+      );
+
+      $form[$group][USERPOINTS_INVITE_REGISTER_INVITER] = array(
+        '#type'          => 'textfield',
+        '#title'         => t('!Points awarded to inviter when invited user registers', userpoints_translation()),
+        '#default_value' => variable_get(USERPOINTS_INVITE_REGISTER_INVITER, 0),
+        '#size'          => 5,
+        '#maxlength'     => 5,
+      );
+
+      $form[$group][USERPOINTS_INVITE_REGISTER_INVITEE] = array(
+        '#type'          => 'textfield',
+        '#title'         => t('!Points awarded to invitee when invited user registers', userpoints_translation()),
+        '#default_value' => variable_get(USERPOINTS_INVITE_REGISTER_INVITEE, 0),
+        '#size'          => 5,
+        '#maxlength'     => 5,
+      );
+
+      $form[$group][USERPOINTS_INVITE_REGISTER_REMOVE_ON_DELETE] = array(
+        '#type'          => 'checkbox',
+        '#title'         => t('!Points issued to inviter to be removed when user is deleted?', userpoints_translation()),
+        '#default_value' => variable_get(USERPOINTS_INVITE_REGISTER_REMOVE_ON_DELETE, 0),
+      );
+
+      $form[$group]['userpoints_invite_tid'] = array(
+        '#type'          => 'select',
+        '#title'         => t('Category'),
+        '#default_value' => variable_get('userpoints_invite_tid', 0),
+        '#options'       => userpoints_get_categories(),
+        '#description'   => t('Invites will be assigned to this category. You can modify what categories are available by modifying the <a href="!url">Userpoints taxonomy</a>.',
+          array('!url' => url('admin/content/taxonomy/' . variable_get(USERPOINTS_CATEGORY_DEFAULT_VID, '')))),
+      );
+
+      return $form;
+  }
+}
+
+/**
+ * Implements hook_invite_send().
+ */
+function userpoints_invite_invite_send($invite) {
+  $points = variable_get(USERPOINTS_INVITE_INVITE, 0);
+  $params = array(
+    'points'      => $points,
+    'uid'         => $invite->uid,
+    'operation'   => 'invite send',
+    'entity_id'   => $invite->uid,
+    'entity_type' => 'user',
+    'tid'         => variable_get('userpoints_invite_tid', 0),
+    'reference'   => 'userpoints_invite'
+  );
+  userpoints_userpointsapi($params);
+}
+
+/**
+ * Implements hook_invite_withdraw().
+ */
+function userpoints_invite_invite_withdraw($invite) {
+  $points = -variable_get(USERPOINTS_INVITE_INVITE, 0);
+  $params = array(
+    'points'      => $points,
+    'uid'         => $invite->uid,
+    'operation'   => 'invite withdraw',
+    'entity_id'   => $invite->uid,
+    'entity_type' => 'user',
+    'tid'         => variable_get('userpoints_invite_tid', 0),
+    'reference'   => 'userpoints_invite'
+  );
+  userpoints_userpointsapi($params);
+}
+
+/**
+ * Implements hook_invite_accept().
+ */
+function userpoints_invite_invite_accept($invite, $account) {
+  $op = 'register';
+  $points = variable_get(USERPOINTS_INVITE_REGISTER_INVITER, 0);
+  $params = array(
+    'points'      => $points,
+    'uid'         => $invite->uid,
+    'operation'   => 'invite ' . $op . ' invited ' . $account->uid,
+    'entity_id'   => $invite->uid,
+    'entity_type' => 'user',
+    'tid'         => variable_get('userpoints_invite_tid', 0),
+    'reference'   => 'userpoints_invite',
+  );
+
+  userpoints_userpointsapi($params);
+
+  $points = variable_get(USERPOINTS_INVITE_REGISTER_INVITEE, 0);
+  $params = array(
+    'points'      => $points,
+    'uid'         => $account->uid,
+    'operation'   => 'invite ' . $op . ' invited by ' . $account->uid,
+    'entity_id'   => $account->uid,
+    'entity_type' => 'user',
+    'tid'         => variable_get('userpoints_invite_tid', 0),
+    'reference'   => 'userpoints_invite'
+  );
+
+  userpoints_userpointsapi($params);
+}
+
+/**
+ * Implements hook_user_delete().
+ */
+function userpoints_invite_user_delete($account) {
+  if (variable_get(USERPOINTS_INVITE_REGISTER_REMOVE_ON_DELETE, TRUE)) {
+    $uid = db_query("SELECT uid FROM {userpoints_txn} WHERE operation = :op ORDER BY time_stamp DESC LIMIT 1", array(':op' => 'invite register invited ' . $account->uid))->fetchField();
+    if ($uid) {
+      $params = array(
+        'points'      => -(variable_get(USERPOINTS_INVITE_INVITE, 0) + variable_get(USERPOINTS_INVITE_REGISTER_INVITER, 0)),
+        'uid'         => $uid,
+        'operation'   => 'invited user ' . $account->uid . ' deleted',
+        'entity_id'   => $uid,
+        'entity_type' => 'user',
+        'tid'         => variable_get('userpoints_invite_tid', 0),
+        'reference'   => 'userpoints_invite'
+      );
+      userpoints_userpointsapi($params);
+    }
+  }
+}

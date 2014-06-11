@@ -1,0 +1,196 @@
+<?php
+
+function invite_notifications_init() {
+  global $user;
+
+  if ($user->uid == 0) {
+    return FALSE;
+  }
+
+  if (isset($user->data['notification_received'])) {
+    $result = db_select('invite_notifications')
+      ->fields('invite_notifications')
+      ->condition('uid', $user->uid)
+      ->condition('status', 1)
+      ->execute()
+      ->fetchAll();
+    foreach ($result as $row) {
+      drupal_set_message(invite_notifications_get_message($row->message_type, $row), 'status', FALSE);
+    }
+    $result = db_query('SELECT count(*) FROM {invite_notifications} WHERE uid = :uid and status = :status', array(
+      ':uid' => $user->uid,
+      ':status' => 1
+    ))->fetchField();
+    if ($result == 0) {
+      user_save($user, array('data' => array('notification_received' => FALSE)));
+    }
+  }
+}
+
+/**
+ *
+ *
+ * @return array
+ */
+function invite_notifications_invite_sending_controller() {
+  return array(
+    'label' => t('In-site notification'),
+  );
+}
+
+function invite_notifications_get_message($message_type, $params) {
+  $message = $params;
+  $invitee = user_load($message->invitee);
+  $inviter = user_load($message->inviter);
+  $invitation = invite_load($message->iid);
+
+  $result = FALSE;
+  switch ($message_type) {
+    case 'inviter_notification':
+      $result = t('!user (@email) has joined!', array(
+        '!user' => theme('username', array('account' => $invitee)),
+        '@email' => $invitee->mail,
+      ));
+      db_update('invite_notifications')
+        ->fields(array(
+          'status' => 0,
+        ))
+        ->condition('iid', $invitation->iid, '=')
+        ->execute();
+      break;
+    case 'registered_user_notification':
+      $result = t('!user sent you invitation. You could !accept or !withdrawn it.', array(
+        '!user' => theme('username', array('account' => $inviter)),
+        '@email' => $invitee->mail,
+        '!accept' => l('accept', 'invite/accept/' . $invitation->reg_code),
+        '!withdrawn' => l('withdraw', 'invite/withdraw/' . $invitation->reg_code),
+      ));
+      break;
+  }
+
+  return $result;
+}
+
+function invite_notifications_theme() {
+  return array(
+    'invite_inviter_notification' => array(
+      'render element' => 'message',
+    ),
+    'invite_registered_user_notification' => array(
+      'render element' => 'message',
+    ),
+  );
+}
+
+function theme_invite_inviter_notification($variables) {
+}
+
+function theme_invite_registered_user_notification($variables) {
+  $message = $variables['message'];
+  $invitee = user_load($message->inviter);
+  $invitation = invite_load($message->iid);
+  return array(
+    'message' => array(
+      '#type' => 'markup',
+      '#markup' => t('!user sent you invitation. You could !accept or !withdrawn it.', array(
+        '!user' => theme('username', array('account' => $invitee)),
+        '@email' => $invitee->mail,
+        '!accept' => l('accept', 'invite/accept/' . $invitation->reg_code),
+        '!withdrawn' => l('accept', 'invite/withdraw/' . $invitation->reg_code),
+      )),
+    )
+  );
+}
+
+/**
+ * Implements hook_invite_accept().
+ *
+ * @param Invite $invite
+ */
+function invite_notifications_invite_accept($invite) {
+  global $user;
+  $message = array(
+    'iid' => $invite->iid,
+    'uid' => $invite->uid,
+    'inviter' => $invite->uid,
+    'invitee' => $invite->invitee,
+    'message_type' => 'inviter_notification',
+  );
+
+  // Flag the inviting user, this triggers status notifications and
+  // saves us some queries otherwise.
+  if (drupal_write_record('invite_notifications', $message) == SAVED_NEW) {
+    $inviter = user_load($invite->uid);
+    user_save($inviter, array('data' => array('notification_received' => TRUE)));
+
+    $invitee = user_load($invite->invitee);
+    user_save($invitee, array('data' => array('notification_received' => FALSE)));
+    db_update('invite_notifications')
+      ->fields(array(
+      'status' => 0,
+    ))
+      ->condition('iid', $invite->iid, '=')
+      ->execute();
+
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ *
+ * @param Invite $invite
+ * @param $type
+ */
+function invite_notifications_entity_insert($invite, $type) {
+  global $user;
+  if (!empty($invite->invitee) && ($invite->status() == INVITE_VALID)) {
+    $message = array(
+      'iid' => $invite->iid,
+      'uid' => $invite->invitee,
+      'inviter' => $invite->uid,
+      'invitee' => $invite->invitee,
+      'message_type' => 'registered_user_notification',
+    );
+
+    // Flag the inviting user, this triggers status notifications and
+    // saves us some queries otherwise.
+    if (drupal_write_record('invite_notifications', $message) == SAVED_NEW) {
+      user_save($invite->invitee(), array('data' => array('notification_received' => TRUE)));
+    }
+  }
+}
+
+/**
+ * @param Invite $invite
+ */
+function invite_notifications_invite_withdraw($invite) {
+  $uid = db_select('invite_notifications')
+    ->fields('invite_notifications', array('uid'))
+    ->condition('iid', $invite->iid)
+    ->execute()
+    ->fetchField();
+
+  db_delete('invite_notifications')
+    ->condition('iid', $invite->iid)
+    ->execute();
+
+  $user = user_load($uid);
+  if (!_invite_notifications_user_messages($user)) {
+    user_save($user, array('data' => array('notification_received' => FALSE)));
+  }
+}
+
+/**
+ * Helper function to retrieve notifications for user.
+ *
+ * @param $user
+ * @return bool
+ */
+function _invite_notifications_user_messages($user) {
+  $result = db_query('SELECT * FROM {invite_notifications} WHERE uid = :uid and status = :status', array(
+    ':uid' => $user->uid,
+    ':status' => 1
+  ))->fetchAll();
+
+  return (!empty($result)) ? $result : FALSE;
+}

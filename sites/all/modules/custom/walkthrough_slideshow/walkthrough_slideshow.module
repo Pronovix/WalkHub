@@ -365,7 +365,7 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
       'action' => '',
       'description' => '',
     );
-    if (isset($fc_step->field_fc_step_command_1)) {
+    if (!empty($fc_step->field_fc_step_command_1)) {
       switch ($fc_step->field_fc_step_command_1[LANGUAGE_NONE][0]['safe_value']) {
         case "clickAndWait":
           $stepinfo['action'] = "click";
@@ -380,7 +380,7 @@ function _walkthrough_slideshow_get_screenshots_in_order($screening_node) {
           $stepinfo['action'] = $fc_step->field_fc_step_command_1[LANGUAGE_NONE][0]['safe_value'];
       }
     }
-    if (isset($fc_step->field_fc_step_description)) {
+    if (!empty($fc_step->field_fc_step_description)) {
       $stepinfo['description'] = $fc_step->field_fc_step_description[LANGUAGE_NONE][0]['safe_value'];
     }
 
