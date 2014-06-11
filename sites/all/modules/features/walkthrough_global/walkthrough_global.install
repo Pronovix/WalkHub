@@ -869,3 +869,10 @@ function walkthrough_global_update_7057() {
     menu_reset_item($item);
   }
 }
+
+/**
+* Revert "Walkhub" feature.
+*/
+function walkthrough_global_update_7058() {
+  walkhub_features_revert(array('walkhub'));
+}
