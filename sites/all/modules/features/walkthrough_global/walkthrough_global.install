@@ -733,3 +733,10 @@ function walkthrough_global_update_7054() {
 function walkthrough_global_update_7055() {
   module_enable(array('chosen'));
 }
+
+/**
+ * Revert Global" feature.
+ */
+function walkthrough_global_update_7056() {
+  walkhub_features_revert(array('walkthrough_global'));
+}
