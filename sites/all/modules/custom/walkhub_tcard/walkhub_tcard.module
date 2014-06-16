@@ -25,7 +25,7 @@ function walkhub_tcard_tokens($type, $tokens, array $data = array(), array $opti
           if ($screening_loaded = walkthrough_get_latest_screening_from_walkthrough($walkthrough_loaded)) {
             $screenshots = _walkthrough_slideshow_get_screenshots_in_order($screening_loaded);
             if (isset($screenshots[1])) {
-              $image = file_create_url(image_style_path('twitter_image_style', $screenshots[1]['uri']));
+              $image = image_style_url('twitter_image_style', $screenshots[1]['uri']);
             }
           }
 
