@@ -851,23 +851,6 @@ function walkthrough_global_update_7057() {
 
   node_type_delete('walkthrough_public_collection');
   node_type_delete('walkthrough_collection');
-
-  // Reset the node/add menu items because they get stuck in the navigation. We
-  // can't use menu_get_item() because the item does not really exist and the
-  // returned value will broke menu_reset_item() function.
-  $query = db_select('menu_links', 'ml');
-  $query->leftJoin('menu_router', 'm', 'm.path = ml.router_path');
-  $query->fields('ml');
-  // Weight should be taken from {menu_links}, not {menu_router}.
-  $query->addField('ml', 'weight', 'link_weight');
-  $query->fields('m');
-  $query->condition('ml.link_path', array('node/add/walkthrough-public-collection', 'node/add/walkthrough-collection'), 'IN');
-  $result = $query->execute();
-  while ($item = $result->fetchAssoc()) {
-    $item['weight'] = $item['link_weight'];
-    _menu_link_translate($item);
-    menu_reset_item($item);
-  }
 }
 
 /**
