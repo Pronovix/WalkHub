@@ -1,12 +1,9 @@
-name = Metatag: Panels
-description = Provides Metatag integration within the Panels interface.
-package = SEO
+name = Metatag:Devel
+description = Provides development / debugging functionality for the Metatag module. Integrates with Devel Generate.
+package = Development
 core = 7.x
-
-dependencies[] = ctools
+tags[] = developer
 dependencies[] = metatag
-dependencies[] = panels
-dependencies[] = token
 
 ; Information added by Drupal.org packaging script on 2014-01-19
 version = "7.x-1.0-beta9"
