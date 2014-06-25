@@ -1,0 +1,43 @@
+<?php
+/**
+ * Implements hook_token_info().
+ */
+function walkhub_tcard_token_info() {
+  $info['tokens']['node']['wt_twitter_screenshot'] = array (
+    'name' => t('Walkthrough Twitter Card image'),
+    'description' => t('The image to show on twitter card.'),
+    'needs=data' => 'node'
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function walkhub_tcard_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+  if ($type == 'node') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'wt_twitter_screenshot':
+          $walkthrough_loaded = $data['node'];
+          if ($screening_loaded = walkthrough_get_latest_screening_from_walkthrough($walkthrough_loaded)) {
+            $screenshots = _walkthrough_slideshow_get_screenshots_in_order($screening_loaded);
+            $image = file_create_url(image_style_path('twitter_image_style', $screenshots[1]['uri']));
+            if (!isset($screenshots[1])) {
+              $theme_path = drupal_get_path('theme', 'walkhub_theme');
+              global $base_url;
+              $image = $base_url.'/'.$theme_path.'/images/walkhub-logo-light.svg';
+            }
+          } else {
+            $theme_path = drupal_get_path('theme', 'walkhub_theme');
+            global $base_url;
+            $image = $base_url.'/'.$theme_path.'/images/walkhub-logo-light.svg';
+          }
+          $replacements[$original] = $image;
+        break;
+      }
+    }
+  }
+  return $replacements;
+}
