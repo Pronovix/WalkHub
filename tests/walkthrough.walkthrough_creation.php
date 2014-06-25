@@ -15,7 +15,7 @@ class WalkthroughCreation extends WalkhubSeleniumTestCase {
     $this->url("/node/add/walkthrough");
     $this->byId('edit-title')->value('Test empty walkthrough');
     $this->byId('edit-field-severity-of-the-change-und')->value();
-    $this->select($this->byId('edit-field-severity-of-the-change-und'))->selectOptionByLabel('No changes (tour)');
+    $this->select($this->byId('edit-field-severity-of-the-change-und'))->selectOptionByLabel('does not change anything (tour)');
 
     $this->byId("edit-submit")->click();
 
@@ -43,7 +43,7 @@ class WalkthroughCreation extends WalkhubSeleniumTestCase {
 
       // Set the prerequisite field to point at the previously created walkthrough.
       $this->byId("edit-field-prerequisites-und-0-target-id")->value("Test empty Walkthrough ({$nid})");
-      $this->select($this->byId('edit-field-severity-of-the-change-und'))->selectOptionByLabel('No changes (tour)');
+      $this->select($this->byId('edit-field-severity-of-the-change-und'))->selectOptionByLabel('does not change anything (tour)');
       $this->click("id=edit-submit");
 
       $title = $this->byId('page-title')->text();

@@ -37,7 +37,7 @@ class WalkthroughPlaying extends WalkhubSeleniumTestCase {
 
     mock($this->byId('edit-title'))->value($title);
     mock($this->byId('edit-body'))->value($this->randomString());
-    $this->select($this->byId('edit-severity'))->selectOptionByLabel('No changes (tour)');
+    $this->select($this->byId('edit-severity'))->selectOptionByLabel('does not change anything (tour)');
     mock($this->byId('edit-save'))->click();
 
     $this->assertEquals($title, mock($this->byId('page-title'))->text());
