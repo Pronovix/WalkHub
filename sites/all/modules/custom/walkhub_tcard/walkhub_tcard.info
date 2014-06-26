@@ -1,0 +1,4 @@
+name = WalkHub Twitter Card Helper
+description = WalkHub Specific module for twitter cards
+package = Walkthrough
+core = 7.x
