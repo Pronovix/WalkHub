@@ -72,3 +72,5 @@ dependencies[] = views_ui
 dependencies[] = walkhub_client
 dependencies[] = walkhub_screening_queue
 dependencies[] = walkthrough_slideshow
+dependencies[] = imagecache_actions
+dependencies[] = walkhub_tcard

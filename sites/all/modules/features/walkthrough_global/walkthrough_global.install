@@ -859,3 +859,11 @@ function walkthrough_global_update_7057() {
 function walkthrough_global_update_7058() {
   walkhub_features_revert(array('walkhub'));
 }
+
+/**
+ * Enable imagecache_actions and walkhub_tcard modules.
+ */
+function walkthrough_global_update_7059() {
+  module_enable(array('imagecache_actions', 'walkhub_tcard'));
+  return 'Image cache actions, and Walkhub twitter card modules has been enabled.';
+}
