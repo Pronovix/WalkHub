@@ -46,9 +46,9 @@ class WalkthroughPlaying extends WalkhubSeleniumTestCase {
     $wu = new PHPUnit_Extensions_Selenium2TestCase_WaitUntil($this);
     $self = $this;
     $wu->run(function () use ($self) {
-      return ($item = $self->byXPath('//button[@type=\'button\']')) ? $item : NULL;
+      return ($item = $self->byXPath('//div[contains(@class, "walkthrough-start-dialog")]//button[@type="button"]')) ? $item : NULL;
     }, 30000);
-    mock($this->byXPath("//button[@type='button']"))->click();
+    mock($this->byXPath('//div[contains(@class, "walkthrough-start-dialog")]//button[@type="button"]'))->click();
 
     $this->frame($this->byCssSelector('#ui-id-2'));
 
