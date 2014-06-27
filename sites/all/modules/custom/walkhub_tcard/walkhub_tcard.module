@@ -31,7 +31,7 @@ function walkhub_tcard_tokens($type, $tokens, array $data = array(), array $opti
 
           if (!$image) {
             $theme_path = drupal_get_path('theme', 'walkhub_theme');
-            $image = url("{$theme_path}/images/walkhub-logo-light.svg", array('absolute' => TRUE));
+            $image = url("{$theme_path}/images/walkhub-logo-light.jpg", array('absolute' => TRUE));
           }
 
           $replacements[$original] = $image;
