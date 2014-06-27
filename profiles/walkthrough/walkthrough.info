@@ -74,3 +74,5 @@ dependencies[] = walkhub_screening_queue
 dependencies[] = walkthrough_slideshow
 dependencies[] = imagecache_actions
 dependencies[] = walkhub_tcard
+dependencies[] = metatag_twitter_cards
+dependencies[] = imagecache_canvasactions
