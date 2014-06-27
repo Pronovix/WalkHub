@@ -55,3 +55,52 @@ function walkthrough_global_flag_default_flags() {
   return $flags;
 
 }
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function walkthrough_global_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: twitter_image_style.
+  $styles['twitter_image_style'] = array(
+    'name' => 'twitter_image_style',
+    'label' => 'Twitter image style',
+    'effects' => array(
+      1 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 720,
+          'height' => 442,
+        ),
+        'weight' => 1,
+      ),
+      2 => array(
+        'label' => 'Overlay (watermark)',
+        'help' => 'Choose the file image you wish to use as an overlay, and position it in a layer on top of the canvas.',
+        'effect callback' => 'canvasactions_file2canvas_effect',
+        'dimensions passthrough' => TRUE,
+        'form callback' => 'canvasactions_file2canvas_form',
+        'summary theme' => 'canvasactions_file2canvas_summary',
+        'module' => 'imagecache_canvasactions',
+        'name' => 'canvasactions_file2canvas',
+        'data' => array(
+          'xpos' => 0,
+          'ypos' => 0,
+          'alpha' => 100,
+          'path' => 'sites/all/modules/custom/walkhub_tcard/images/icaction_gu_001i.png',
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  return $styles;
+}

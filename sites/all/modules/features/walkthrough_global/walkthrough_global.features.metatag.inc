@@ -24,10 +24,21 @@ function walkthrough_global_metatag_export_default() {
           'nosnippet' => 0,
           'noodp' => 0,
           'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
         ),
+      ),
+      'twitter:card' => array(
+        'value' => 'photo',
       ),
       'twitter:creator' => array(
         'value' => '@WalkHub',
+      ),
+      'twitter:creator:id' => array(
+        'value' => 1226273473,
+      ),
+      'twitter:image' => array(
+        'value' => '[node:wt_twitter_screenshot]',
       ),
     ),
   );
