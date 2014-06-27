@@ -867,3 +867,11 @@ function walkthrough_global_update_7059() {
   module_enable(array('imagecache_actions', 'walkhub_tcard'));
   return 'Image cache actions, and Walkhub twitter card modules has been enabled.';
 }
+
+/**
+ * Enable imagecache_actions - canvas actions and metatag - metatag twitter cards modules.
+ */
+function walkthrough_global_update_7060() {
+  module_enable(array('metatag_twitter_cards', 'imagecache_canvasactions'));
+  return 'Image cache actions - Canvas actions, and Metatag - twitter cards modules has been enabled.';
+}
