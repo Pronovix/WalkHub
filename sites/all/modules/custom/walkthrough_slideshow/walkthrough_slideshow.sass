@@ -29,6 +29,12 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+.icon-check:before
+  content: "\f00c"
+
+.icon-warning:before
+  content: "\f071"
+
 .icon-arrow-left:before
   content: "\e611"
 
@@ -251,6 +257,22 @@ img
     top: 0
     right: 10px
     float: right
+
+  .warning
+    position: absolute
+    top: 60px
+    width: 96.3%
+    margin: 10px 1.25%
+    padding: 0.6%
+    z-index: 15
+
+    &.level-0
+      background-color: #00aa00
+      color: #ffffff
+
+    &.level-1, &.level-2
+      background-color: #fe9800
+      color: #ffffff
 
 #startWT
   text-decoration: none
