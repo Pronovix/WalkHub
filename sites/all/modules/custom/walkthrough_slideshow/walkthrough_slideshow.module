@@ -435,10 +435,26 @@ function walkthrough_slideshow_get_iframe_content($screening_node) {
     $slides[] = $file;
   }
 
+  $severity = field_info_field('field_severity_of_the_change');
+  $severity_instance = field_info_instance('node', 'field_severity_of_the_change', 'walkthrough');
+  switch ($walkthrough->field_severity_of_the_change['und'][0]['value']) {
+    case "0":
+      $pre_severity_markup = '<i class="icon-check"></i> ';
+      break;
+    case 1:
+    case 2:
+      $pre_severity_markup = '<i class="icon-warning"></i> ';
+      break;
+    default:
+      $pre_severity_markup = "";
+  }
+
   // Create variables to client side.
   $slideshow_variables = array(
     'images' => $slides,
     'share_dialog' => variable_get('walkthrough_slideshow_sharing', TRUE),
+    'severity_of_change' => $walkthrough->field_severity_of_the_change['und'][0]['value'],
+    'severity_of_change_markup' => $pre_severity_markup . " <strong>" . $severity_instance['label'] . ' ' . $severity['settings']['allowed_values'][$walkthrough->field_severity_of_the_change['und'][0]['value']]. "</strong>",
   );
 
   if ($walkthrough) {
