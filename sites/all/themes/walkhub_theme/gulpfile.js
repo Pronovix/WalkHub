@@ -13,37 +13,25 @@
   var csso = require('gulp-csso');
   var cmq = require('gulp-combine-media-queries');
   var svgmin = require('gulp-svgmin');
+  var minifycss = require('gulp-minify-css');
 
   var paths = {
     sass: ["sass/custom.sass"],
   };
 
-
   gulp.task('buildsass', function () {
     var sassConfig = {
-      css: '.tmp',
+      css: 'css',
       sass: 'sass',
-      style: 'compact',
+      project: __dirname
     };
 
-    if (args.debug) {
-      sassConfig.style = 'expanded';
-    }
-
     return gulp.src(paths.sass)
-      .pipe(plumber())
       .pipe(compass(sassConfig))
-      .pipe(gulp.dest('.tmp'));
-  });
-
-  // Processing css must happen in a separate step:
-  // https://github.com/appleboy/gulp-compass/issues/2
-  gulp.task('process-css', function() {
-    gulp.src(['.tmp/*.css'])
-      .pipe(cmq({log: true}))
-      .pipe(gulp.dest('css'))
       .pipe(csso())
-      .pipe(gulp.dest('css'));
+      .pipe(cmq({log: true}))
+      .pipe(gulpif(!args.debug, minifycss()))
+      .pipe(gulp.dest("css"));
   });
 
   gulp.task('svgmin', function() {
