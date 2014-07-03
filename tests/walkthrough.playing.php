@@ -30,7 +30,7 @@ class WalkthroughPlaying extends WalkhubSeleniumTestCase {
 
     $this->adminLogin();
 
-    mock($this->byLinkText('Import Walkthrough'))->click();
+    $this->url('walkthrough/import');
 
     mock($this->byId('edit-selenium-code'))->value($test);
     mock($this->byId('edit-next'))->click();
