@@ -24,14 +24,7 @@ function walkthrough_slideshow_menu() {
     'access arguments' => array('view', 1),
     'page callback' => 'walkthrough_slideshow_latest_content',
     'page arguments' => array(1),
-  );
-
-  $items['walkthrough/slideshow/%_walkthrough_screening_node'] = array(
-    'title' => 'walkthrough iframe',
-    'access callback' => 'node_access',
-    'access arguments' => array('view', 2),
-    'page callback' => 'walkthrough_slideshow_generate_default_widget_iframe_content',
-    'page arguments' => array(2),
+    'type' => MENU_CALLBACK,
   );
 
   $items['walkthrough/%walkhub_walkthrough_node/%/current-screenshot'] = array(
@@ -40,6 +33,7 @@ function walkthrough_slideshow_menu() {
     'access arguments' => array('view', 1),
     'page callback' => 'walkthrough_slideshow_step_screenshot',
     'page arguments' => array(1, 2),
+    'type' => MENU_CALLBACK,
   );
 
   return $items;
@@ -180,7 +174,7 @@ function walkthrough_slideshow_field_formatter_view($entity_type, $entity, $fiel
           '#theme' => 'walkthrough_slideshow_iframe',
           '#width' => $settings['width'],
           '#height' => $settings['height'],
-          '#source' => url('walkthrough/slideshow/' . $entity->nid, array('absolute' => TRUE)),
+          '#source' => url("walkthrough/{$entity->nid}/slideshow", array('absolute' => TRUE)),
         );
       }
       break;
@@ -230,25 +224,17 @@ function walkthrough_slideshow_node_view($node, $view_mode, $langcode) {
   // Only add if the view mode is for a full view, although we
   // could control this via the Field UI too using 'hidden'.
   if ($node->type === 'walkthrough') {
-    $markup = _walkthrough_slideshow_insert_latest_screening_node_widget($node);
+    $widget = array(
+      '#prefix' => '<div class="wt-screening-widget-field">',
+      '#suffix' => '</div>',
+    );
 
-    // If screening exists, add the permalink too.
-    if ($markup) {
-      $markup .= l(t('Screening'), 'walkthrough/' . $node->nid . '/slideshow',
-        array(
-          'attributes' => array(
-            'class' => array('wt-screening-permalink'),
-            'target' => '_blank',
-          )
-        )
-      );
+    $widget_content = _walkthrough_slideshow_insert_latest_screening_node_widget($node);
+    if ($widget_content) {
+      $widget += $widget_content;
     }
 
-    $node->content['walkthrough_screening_widget'] = array(
-      '#markup' => $markup,
-      '#prefix' => '<div class="wt-screening-widget-field">',
-      '#suffix' => '</div>' ,
-    );
+    $node->content['walkthrough_screening_widget'] = $widget;
   }
 }
 
@@ -256,13 +242,18 @@ function walkthrough_slideshow_node_view($node, $view_mode, $langcode) {
  * Provides the embed code for the matching screening node
  */
 function _walkthrough_slideshow_insert_latest_screening_node_widget($walkthrough) {
+  $widget = array();
+
   $screening = walkthrough_get_latest_screening_from_walkthrough($walkthrough);
   if ($screening) {
-    $source = url('walkthrough/slideshow/' . $screening->nid, array('absolute' => TRUE));
-    return theme('walkthrough_slideshow_iframe', array('width' => 400, 'height' => 300, 'source' => $source));
+    $source = url("walkthrough/{$walkthrough->nid}/slideshow", array('absolute' => TRUE));
+    $widget['#theme'] = 'walkthrough_slideshow_iframe';
+    $widget['#width'] = 400;
+    $widget['#height'] = 300;
+    $widget['#source'] = $source;
   }
 
-  return '';
+  return $widget;
 }
 
 function walkthrough_get_latest_screening_from_walkthrough($walkthrough) {
@@ -519,24 +510,26 @@ function walkthrough_slideshow_field_collection_item_view($field_collection_item
     $screening_field = walkthrough_slideshow_get_screening_item_by_step($field_collection_item->item_id);
 
     if (isset($screening_field)) {
-      $image = field_get_items('field_collection_item', $screening_field, WALKTHROUGH_FIELD_SCREENING_SCREENSHOT);
-      $image = reset($image);
-      $thumbnail = theme('image_style', array('path' => $image['uri'], 'style_name' => 'thumbnail'));
+      $images = field_get_items('field_collection_item', $screening_field, WALKTHROUGH_FIELD_SCREENING_SCREENSHOT);
+      if (is_array($images)) {
+        $image = reset($images);
+        $thumbnail = theme('image_style', array('path' => $image['uri'], 'style_name' => 'thumbnail'));
 
-      $field_collection_item->content['screenshot'] = array(
-        '#theme' => 'link',
-        '#text' => $thumbnail,
-        '#path' => 'walkthrough/' . $field_collection_item->hostEntityId() . '/' . $step . '/current-screenshot',
-        '#options' => array(
-          'attributes' => array(
-            'class' => 'walkthrough-step-screenshot',
-            'target' => '_blank',
-            'title' => t('Links to the latest screenshot of step @step.', array('@step' => $step)),
+        $field_collection_item->content['screenshot'] = array(
+          '#theme' => 'link',
+          '#text' => $thumbnail,
+          '#path' => 'walkthrough/' . $field_collection_item->hostEntityId() . '/' . $step . '/current-screenshot',
+          '#options' => array(
+            'attributes' => array(
+              'class' => 'walkthrough-step-screenshot',
+              'target' => '_blank',
+              'title' => t('Links to the latest screenshot of step @step.', array('@step' => $step)),
+            ),
+            'html' => TRUE,
           ),
-          'html' => TRUE,
-        ),
-        '#weight' => -10,
-      );
+          '#weight' => -10,
+        );
+      }
     }
   }
 }
@@ -595,8 +588,10 @@ function walkthrough_slideshow_get_screening_item_by_step($step_id) {
     ->execute();
 
   if (isset($result['field_collection_item'])) {
-    $item_id = reset(array_keys($result['field_collection_item']));
-    return reset(entity_load('field_collection_item', array($item_id)));
+    $item_keys = array_keys($result['field_collection_item']);
+    $item_id = reset($item_keys);
+    $items = entity_load('field_collection_item', array($item_id));
+    return reset($items);
   }
   return NULL;
 }
