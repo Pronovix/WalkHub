@@ -875,3 +875,11 @@ function walkthrough_global_update_7060() {
   module_enable(array('metatag_twitter_cards', 'imagecache_canvasactions'));
   return 'Image cache actions - Canvas actions, and Metatag - twitter cards modules has been enabled.';
 }
+
+/**
+ * Revert walkthrough_screening feature to modify "Mark for screening" button.
+ */
+function walkthrough_global_update_7061() {
+  walkhub_features_revert(array("walkthrough_screening"));
+  return "walkthrough_screening feature reverted.";
+}

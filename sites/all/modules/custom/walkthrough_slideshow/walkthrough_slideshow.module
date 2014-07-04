@@ -61,6 +61,7 @@ function walkthrough_slideshow_theme() {
         'width' => NULL,
         'height' => NULL,
         'source' => NULL,
+        'mark_for_screening_button' => NULL,
       ),
     ),
     'walkthrough_slideshow' => array(
@@ -242,6 +243,8 @@ function walkthrough_slideshow_node_view($node, $view_mode, $langcode) {
 function _walkthrough_slideshow_insert_latest_screening_node_widget($walkthrough) {
   $widget = array();
 
+  $screening_flag_link = flag_create_link('mark_for_screening');
+
   $screening = walkthrough_get_latest_screening_from_walkthrough($walkthrough);
   if ($screening) {
     $source = url("walkthrough/{$walkthrough->nid}/slideshow", array('absolute' => TRUE));
@@ -249,6 +252,7 @@ function _walkthrough_slideshow_insert_latest_screening_node_widget($walkthrough
     $widget['#width'] = 400;
     $widget['#height'] = 300;
     $widget['#source'] = $source;
+    $widget['#mark_for_screening_button'] = $screening_flag_link;
   }
 
   return $widget;
