@@ -61,6 +61,7 @@ function walkthrough_slideshow_theme() {
         'width' => NULL,
         'height' => NULL,
         'source' => NULL,
+        'mark_for_screening_button' => NULL,
       ),
     ),
     'walkthrough_slideshow' => array(
@@ -221,8 +222,6 @@ function walkthrough_slideshow_node_insert($node) {
  * Implements hook_node_view().
  */
 function walkthrough_slideshow_node_view($node, $view_mode, $langcode) {
-  // Only add if the view mode is for a full view, although we
-  // could control this via the Field UI too using 'hidden'.
   if ($node->type === 'walkthrough') {
     $widget = array(
       '#prefix' => '<div class="wt-screening-widget-field">',
@@ -239,10 +238,12 @@ function walkthrough_slideshow_node_view($node, $view_mode, $langcode) {
 }
 
 /**
- * Provides the embed code for the matching screening node
+ * Provides the embed code for the matching screening node.
  */
 function _walkthrough_slideshow_insert_latest_screening_node_widget($walkthrough) {
   $widget = array();
+
+  $screening_flag_link = flag_create_link('mark_for_screening');
 
   $screening = walkthrough_get_latest_screening_from_walkthrough($walkthrough);
   if ($screening) {
@@ -251,6 +252,7 @@ function _walkthrough_slideshow_insert_latest_screening_node_widget($walkthrough
     $widget['#width'] = 400;
     $widget['#height'] = 300;
     $widget['#source'] = $source;
+    $widget['#mark_for_screening_button'] = $screening_flag_link;
   }
 
   return $widget;
@@ -273,20 +275,6 @@ function walkthrough_get_latest_screening_from_walkthrough($walkthrough) {
   }
 
   return FALSE;
-}
-
-/**
- * Give back the raw html code of the slideshow page. It will be placed into an iframe.
- *
- * @param $screening_node
- *
- * @return string
- */
-function walkthrough_slideshow_generate_default_widget_iframe_content($screening_node) {
-  $vars = walkthrough_slideshow_get_iframe_content($screening_node);
-
-  // Return the page content.
-  print theme('walkthrough_slideshow', $vars);
 }
 
 /**
