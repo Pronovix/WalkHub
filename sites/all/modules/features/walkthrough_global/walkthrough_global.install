@@ -890,3 +890,10 @@ function walkthrough_global_update_7061() {
 function walkthrough_global_update_7062() {
   walkhub_features_revert(array('walkthrough_permissions'));
 }
+
+/**
+ * Revert Walkthrough global feature.
+ */
+function walkthrough_global_update_7063() {
+  walkhub_features_revert(array('walkthrough_global'));
+}
