@@ -28,7 +28,8 @@ class WalkthroughPlaying extends WalkhubSeleniumTestCase {
 
     $title = $this->randomString();
 
-    $this->adminLogin();
+    $account = $this->createUser();
+    $this->login($account->username, $account->password);
 
     $this->url('walkthrough/import');
 
