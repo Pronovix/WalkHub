@@ -883,3 +883,10 @@ function walkthrough_global_update_7061() {
   walkhub_features_revert(array("walkthrough_screening"));
   return "walkthrough_screening feature reverted.";
 }
+
+/**
+ * Revert Walkthrough permissions feature.
+ */
+function walkthrough_global_update_7062() {
+  walkhub_features_revert(array('walkthrough_permissions'));
+}
