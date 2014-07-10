@@ -40,7 +40,11 @@ class WalkthroughPlaying extends WalkhubSeleniumTestCase {
     $this->select($this->byId('edit-severity'))->selectOptionByLabel('does not change anything (tour)');
     mock($this->byId('edit-save'))->click();
 
+    // Walkthrough has been created.
     $this->assertEquals($title, mock($this->byId('page-title'))->text());
+
+    // Test screenshotting flag.
+    $this->byLinkText('Create screenshots')->click();
 
     mock($this->byLinkText('Start walkthrough'))->click();
     $wu = new PHPUnit_Extensions_Selenium2TestCase_WaitUntil($this);

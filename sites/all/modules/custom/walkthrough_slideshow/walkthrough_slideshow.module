@@ -238,12 +238,24 @@ function walkthrough_slideshow_node_view($node, $view_mode, $langcode) {
 }
 
 /**
+ * Implements hook_node_view_alter().
+ *
+ * Hides the mark from screening button from the links.
+ * @see _walkthrough_slideshow_insert_latest_screening_node_widget()
+ */
+function walkthrough_slideshow_node_view_alter(&$build) {
+  if ($build['#node']->type === 'walkthrough') {
+    unset($build['links']['flag']['#links']['flag-mark_for_screening']);
+  }
+}
+
+/**
  * Provides the embed code for the matching screening node.
  */
 function _walkthrough_slideshow_insert_latest_screening_node_widget($walkthrough) {
   $widget = array();
 
-  $screening_flag_link = flag_create_link('mark_for_screening');
+  $screening_flag_link = flag_create_link('mark_for_screening', $walkthrough->nid);
 
   $screening = walkthrough_get_latest_screening_from_walkthrough($walkthrough);
   if ($screening) {

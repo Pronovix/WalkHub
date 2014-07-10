@@ -27,7 +27,8 @@ function walkthrough_screening_flag_default_flags() {
     'title' => 'Mark for screening',
     'global' => 1,
     'types' => array(
-      0 => 'walkthrough_set',
+      0 => 'walkthrough',
+      1 => 'walkthrough_set',
     ),
     'flag_short' => 'Create screenshots',
     'flag_long' => 'Add to the screening queue',

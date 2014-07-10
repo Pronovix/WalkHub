@@ -63,6 +63,7 @@ function _walkthrough_get_overridden_features() {
     'walkhub_branding',
     'walkthrough_global',
     'walkthrough_permissions',
+    'walkthrough_screening',
   );
 }
 /**
