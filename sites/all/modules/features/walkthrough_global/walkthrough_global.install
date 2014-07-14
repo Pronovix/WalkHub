@@ -890,12 +890,3 @@ function walkthrough_global_update_7061() {
 function walkthrough_global_update_7062() {
   walkhub_features_revert(array('walkthrough_permissions'));
 }
-
-/**
- * Enable walkthrough_sharelink module.
- */
-function walkthrough_global_update_7063() {
-  module_enable(array('walkthrough_sharelink'));
-  return 'Enabled Walkthrough sharelink module.';
-}
-
