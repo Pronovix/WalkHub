@@ -60,11 +60,6 @@
       </a>
     </div>
   </div>
-  <?php if ($severity_of_change !== NULL): ?>
-    <div class="warning level-<?php echo $severity_of_change; ?>">
-      <?php echo $severity_of_change_markup; ?>
-    </div>
-  <?php endif; ?>
 </div>
 <div id="hidden-center">
 <!--Embed code-->
