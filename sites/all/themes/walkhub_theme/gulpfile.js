@@ -35,7 +35,7 @@
       }))
       .pipe(gulpif(!args.debug, csso()))
       .pipe(gulpif(!args.debug, cmq({log: true})))
-      .pipe(gulpif(!args.debug, minifycss()))
+      .pipe(gulpif(!args.debug, minifycss({keepSpecialComments: 0})))
       .pipe(gulp.dest("css"));
   });
 
