@@ -42,12 +42,11 @@ function walkhub_key_feature_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<div class="row">
   <div class="small-12 large-8 columns">
     <h2>Open source, built on Drupal</h2>
-    <p>WalkHub intorduces a new Walkthrough tutorial documentation format specifically designed for the internet. WalkHub is open source, you can freely use our code to make a documentation portal that gets you the following features:
+    <p>WalkHub introduces a new Walkthrough tutorial documentation format specifically designed for the internet. WalkHub is open source, you can freely use our code to make a documentation portal that gets you the following features:
     </p>
   </div>
   <div class="small-12 large-4 button-container columns">
-    <a href="#" class="tiny button">Fork Walkhub on GitHub</a>
-    <a href="#" class="tiny button">Download from drupal.org</a>
+    <a href="https://github.com/Pronovix/WalkHub" class="tiny button">Fork Walkhub on GitHub</a>
   </div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
