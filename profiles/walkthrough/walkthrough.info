@@ -44,6 +44,7 @@ dependencies[] = menu
 dependencies[] = message
 dependencies[] = message_notify
 dependencies[] = metatag
+dependencies[] = metatag_opengraph
 dependencies[] = metatag_twitter_cards
 dependencies[] = node
 dependencies[] = number

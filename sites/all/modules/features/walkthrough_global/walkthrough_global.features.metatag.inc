@@ -28,6 +28,9 @@ function walkthrough_global_metatag_export_default() {
           'notranslate' => 0,
         ),
       ),
+      'og:image' => array(
+        'value' => '[node:wt_twitter_screenshot]',
+      ),
       'twitter:card' => array(
         'value' => 'photo',
       ),
