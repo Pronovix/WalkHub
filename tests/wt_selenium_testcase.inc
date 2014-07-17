@@ -214,9 +214,7 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
    */
   protected function createUser(array $roles = array(), array $groups = array()) {
     $account = new stdClass();
-    $account->username = $this->randomString();
-    $account->first_name = $this->randomString();
-    $account->surname = $this->randomString();
+    $account->username = $this->randomString(10, WALKHUB_SELENIUM_EXPECT_XSS);
     $account->email = "{$account->username}@test.test";
     $account->password = $this->randomString();
     $account->roles = $roles;
@@ -232,9 +230,6 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     mock($this->byId('edit-mail'))->value($account->email);
     mock($this->byId('edit-pass-pass1'))->value($account->password);
     mock($this->byId('edit-pass-pass2'))->value($account->password);
-
-    mock($this->byId('edit-field-profile-first-name-und-0-value'))->value($account->first_name);
-    mock($this->byId('edit-field-profile-surname-und-0-value'))->value($account->surname);
 
     // Add roles.
     if (!empty($roles)) {
