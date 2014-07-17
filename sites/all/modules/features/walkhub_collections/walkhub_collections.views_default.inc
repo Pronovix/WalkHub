@@ -125,6 +125,13 @@ function walkhub_collections_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'collection' => 'collection',
   );
+  /* Filter criterion: Content: Group visibility (group_access) */
+  $handler->display->display_options['filters']['group_access_value']['id'] = 'group_access_value';
+  $handler->display->display_options['filters']['group_access_value']['table'] = 'field_data_group_access';
+  $handler->display->display_options['filters']['group_access_value']['field'] = 'group_access_value';
+  $handler->display->display_options['filters']['group_access_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

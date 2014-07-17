@@ -1,12 +1,14 @@
 name = Walkhub Collections
 core = 7.x
 package = Walkthrough
+dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = list
 dependencies[] = og
 dependencies[] = og_access
 dependencies[] = og_ui
+dependencies[] = options
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views

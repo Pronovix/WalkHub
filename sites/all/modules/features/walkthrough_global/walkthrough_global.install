@@ -897,3 +897,11 @@ function walkthrough_global_update_7062() {
 function walkthrough_global_update_7063() {
   walkhub_features_revert(array('walkthrough_global'));
 }
+
+/**
+ * Revert Walkhub collections feature.
+ */
+function walkthrough_global_update_7064() {
+  walkhub_features_revert(array('walkhub_collections'));
+}
+
