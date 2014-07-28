@@ -52,4 +52,6 @@
 
   gulp.task('default', ['build']);
   gulp.task('build', ['buildsass']);
+
+  gulp.watch('sass/**/*.sass', ['buildsass']);
 })();
