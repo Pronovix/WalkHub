@@ -16,6 +16,9 @@
 
   .node-walkthrough
 
+    &.node-unpublished
+      background-color: #ffffff
+
     .wt-screening-widget-field
       text-align: right
 
@@ -196,3 +199,30 @@
 
 .wt-severity-2
   color: red
+
+.walkthrough-sharelink-container
+  margin: 0 0 10px 0
+
+  .button
+    &.small
+      font-style: normal
+
+  .sharing-notice
+    margin: 0
+    +font-size(.8)
+
+    &.private
+      font-style: italic
+      color: #555555
+
+  .switch
+    +switch-style($switch-paddle-bg, rgba(0, 0 , 0, .1), rgba(0, 0, 0, .1), 0, true)
+    width: 50px
+    display: inline-block
+    margin: 0 5px
+    position: relative
+    top: 5px
+
+  .walkthrough-status-text
+    display: inline-block
+    margin: 0 0 6px 0
