@@ -80,3 +80,4 @@ dependencies[] = walkhub_client
 dependencies[] = walkhub_screening_queue
 dependencies[] = walkhub_tcard
 dependencies[] = walkthrough_slideshow
+dependencies[] = walkthrough_sharelink
