@@ -47,7 +47,7 @@ class WalkthroughPlaying extends WalkhubSeleniumTestCase {
     // Test screenshotting flag.
     $this->byLinkText('Create screenshots')->click();
 
-    mock($this->byLinkText('Start walkthrough'))->click();
+    mock($this->byLinkText('Play'))->click();
     $wu = new PHPUnit_Extensions_Selenium2TestCase_WaitUntil($this);
     $self = $this;
     $wu->run(function () use ($self) {
