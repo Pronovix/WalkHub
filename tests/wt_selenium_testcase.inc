@@ -98,10 +98,10 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     array(
       'browserName' => 'firefox',
     ),
+    /*
     array(
       'browserName' => 'chrome',
     ),
-    /*
     array(
       'browserName' => 'safari',
       'desiredCapabilities' => array(
