@@ -225,16 +225,16 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     // Create new user with all the roles available.
     $this->url('admin/people/create');
     if ($this->isElementExists($this->byId('edit-name'))) {
-      mock($this->byId('edit-name'))->value($account->username);
+      $this->byId('edit-name')->value($account->username);
     }
-    mock($this->byId('edit-mail'))->value($account->email);
-    mock($this->byId('edit-pass-pass1'))->value($account->password);
-    mock($this->byId('edit-pass-pass2'))->value($account->password);
+    $this->byId('edit-mail')->value($account->email);
+    $this->byId('edit-pass-pass1')->value($account->password);
+    $this->byId('edit-pass-pass2')->value($account->password);
 
     // Add roles.
     if (!empty($roles)) {
       foreach ($roles as $rid) {
-        mock($this->byId("edit-roles-{$rid}"))->click();
+        $this->byId("edit-roles-{$rid}")->click();
       }
     }
 
@@ -245,7 +245,7 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
       }
     }
 
-    mock($this->byId('edit-submit'))->click();
+    $this->byId('edit-submit')->click();
 
     return $account;
   }
@@ -262,15 +262,15 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
     $this->url('user/logout');
     $this->url('user/login');
 
-    $user = mock($this->byId('edit-name'));
+    $user = $this->byId('edit-name');
     $user->click();
     $user->value($username);
 
-    $pass = mock($this->byId('edit-pass'));
+    $pass = $this->byId('edit-pass');
     $pass->click();
     $pass->value($password);
 
-    mock($this->byId('edit-submit'))->click();
+    $this->byId('edit-submit')->click();
   }
 
   /**
@@ -392,45 +392,3 @@ abstract class WalkhubSeleniumTestCase extends Sauce\Sausage\WebDriverTestCase {
   }
 }
 
-function mock($obj) {
-  return new Mocker($obj);
-}
-
-/**
- * Class Mocker
- *
- * Some commonly used methods to avoid false negative warnings with static type checkers.
- * @method value()
- * @method click()
- * @method text()
- */
-class Mocker {
-  protected $obj;
-
-  public function __construct($obj) {
-    $this->obj = $obj;
-  }
-
-  public function __toString() {
-    if ($this->obj === NULL) {
-      return "NULL";
-    }
-    if (is_object($this->obj)) {
-      return get_class($this->obj);
-    }
-    if (is_scalar($this->obj)) {
-      return (string) $this->obj;
-    }
-
-    return "Unkown value";
-  }
-
-  public function __call($name, $arguments) {
-    if ($this->obj && is_object($this->obj) && (method_exists($this->obj, $name) || method_exists($this->obj, '__call'))) {
-      return call_user_func_array(array($this->obj, $name), $arguments);
-    }
-    else {
-      throw new PHPUnit_Framework_ExpectationFailedException("Method {$name} does not exists on {$this}.");
-    }
-  }
-}

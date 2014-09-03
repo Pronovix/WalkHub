@@ -33,33 +33,33 @@ class WalkthroughPlaying extends WalkhubSeleniumTestCase {
 
     $this->url('walkthrough/import');
 
-    mock($this->byId('edit-selenium-code'))->value($test);
-    mock($this->byId('edit-next'))->click();
+    $this->byId('edit-selenium-code')->value($test);
+    $this->byId('edit-next')->click();
 
-    mock($this->byId('edit-title'))->value($title);
-    mock($this->byId('edit-body'))->value($this->randomString());
+    $this->byId('edit-title')->value($title);
+    $this->byId('edit-body')->value($this->randomString());
     $this->select($this->byId('edit-severity'))->selectOptionByLabel('does not change anything (tour)');
-    mock($this->byId('edit-save'))->click();
+    $this->byId('edit-save')->click();
 
     // Walkthrough has been created.
-    $this->assertEquals($title, mock($this->byId('page-title'))->text());
+    $this->assertEquals($title, $this->byId('page-title')->text());
 
     // Test screenshotting flag.
     $this->byLinkText('Create screenshots')->click();
 
-    mock($this->byLinkText('Play'))->click();
+    $this->byLinkText('Play')->click();
     $wu = new PHPUnit_Extensions_Selenium2TestCase_WaitUntil($this);
     $self = $this;
     $wu->run(function () use ($self) {
       return ($item = $self->byXPath('//div[contains(@class, "walkthrough-start-dialog")]//button[@type="button"]')) ? $item : NULL;
     }, 30000);
-    mock($this->byXPath('//div[contains(@class, "walkthrough-start-dialog")]//button[@type="button"]'))->click();
+    $this->byXPath('//div[contains(@class, "walkthrough-start-dialog")]//button[@type="button"]')->click();
 
     $this->frame($this->byCssSelector('#ui-id-2'));
 
     $steps = $this->numberOfSteps($test);
     for ($i = 0; $i <= $steps; $i++) {
-      mock($this->byCssSelector('.wtbubble-next'))->click();
+      $this->byCssSelector('.wtbubble-next')->click();
     }
 
     $finish_button = $this->byLinkText('Finish');
