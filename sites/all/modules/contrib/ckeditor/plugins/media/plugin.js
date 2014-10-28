@@ -27,12 +27,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
               data.node = data.node.$;
             }
             if (selection.getType() == CKEDITOR.SELECTION_TEXT) {
-              if (CKEDITOR.env.ie) {
-                data.content = selection.getNative().createRange().text;
-              }
-              else {
-                data.content = selection.getNative().toString();
-              }
+              data.content = selection.getSelectedText();
             }
             else if (data.node) {
               // content is supposed to contain the "outerHTML".

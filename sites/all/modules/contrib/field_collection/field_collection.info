@@ -5,12 +5,13 @@ dependencies[] = entity
 files[] = field_collection.test
 files[] = field_collection.info.inc
 files[] = views/field_collection_handler_relationship.inc
+files[] = field_collection.migrate.inc
 configure = admin/structure/field-collections
 package = Fields
 
-; Information added by drupal.org packaging script on 2012-12-25
-version = "7.x-1.0-beta5"
+; Information added by Drupal.org packaging script on 2014-03-13
+version = "7.x-1.0-beta7"
 core = "7.x"
 project = "field_collection"
-datestamp = "1356475963"
+datestamp = "1394731106"
 

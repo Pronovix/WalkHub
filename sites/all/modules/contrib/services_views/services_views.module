@@ -68,7 +68,7 @@ function services_views_services_resources() {
         'description' => 'The total number of entries to list.',
         'source' => array('param' => 'limit'),
         'optional' => TRUE,
-        'default value' => 10,
+        'default value' => -1,
       ),
       'format_output' => array(
         'name' => 'format_output',
@@ -89,76 +89,19 @@ function services_views_services_resources() {
     ),
   );
 
-  $resources['views']['index'] = array(
-    'help' => 'Retrieves a view.',
-    'file' => array(
-      'type' => 'inc',
-      'module' => 'services_views',
-      'name' => 'services_views.resource',
-    ),
-    'callback' => 'services_views_index',
-    'access arguments' => array('access content'),
-    'args' => array(
-      'name' => array(
-        'name' => 'name',
-        'type' => 'string',
-        'description' => 'The name of the view',
-        'source' => array('param' => 'name'),
-        'optional' => TRUE,
-        'default value' => '',
-      ),
-      'description' => array(
-        'name' => 'description',
-        'type' => 'string',
-        'description' => 'The description of the view',
-        'source' => array('param' => 'description'),
-        'optional' => TRUE,
-        'default value' => '',
-      ),
-      'tag' => array(
-        'name' => 'tag',
-        'type' => 'string',
-        'description' => 'The tag of the view',
-        'source' => array('param' => 'tag'),
-        'optional' => TRUE,
-        'default value' => '',
-      ),
-      'base_table' => array(
-        'name' => 'base_table',
-        'type' => 'string',
-        'description' => 'The base table of the view',
-        'source' => array('param' => 'base_table'),
-        'optional' => TRUE,
-        'default value' => '',
-      ),
-      'human_name' => array(
-        'name' => 'human_name',
-        'type' => 'string',
-        'description' => 'The human name of the view',
-        'source' => array('param' => 'human_name'),
-        'optional' => TRUE,
-        'default value' => '',
-      ),
-    ),
-  );
-
   // Retrieve all views that have "services" display.
-  $results = db_query('SELECT vv.name, vd.id FROM {views_display} AS vd LEFT JOIN {views_view} AS vv ON vd.vid = vv.vid WHERE vd.display_plugin = :display_name', array(':display_name' => 'services'))->fetchAll();
-  foreach ($results as $result) {
-    $view_name = $result->name;
-    $view_display = $result->id;
-    $view = views_get_view($view_name);
+  $views = views_get_enabled_views();
+  foreach ($views as $view_name => $view) {
+    foreach ($view->display as $view_display => $display) {
+      if ($display->display_plugin !== 'services') {
+        continue;
+      }
 
-    $path = isset($view->display[$view_display]->display_options['path']) ?
-      $view->display[$view_display]->display_options['path'] : NULL;
+      $path = $display->display_options['path'];
 
-    if ($path) {
       $resources[$path] = array();
       $resources[$path]['index'] = array(
-        'view info' => array(
-          'view_name' => $view_name,
-          'display_id' => $view_display
-        ),
+        'view info' => array('view_name' => $view_name, 'display_id' => $view_display),
         'help' => filter_xss('View: ' . $view->human_name),
         'file' => array(
           'type' => 'inc',
@@ -166,11 +109,15 @@ function services_views_services_resources() {
           'name' => 'services_views.resource',
         ),
         'callback' => 'services_views_execute_view',
-        // Reuse services_views_access access callback.
+          // Reuse services_views_access access callback.
         'access callback' => 'services_views_access',
         'access arguments' => array(
           'view',
-          array('view_name' => $view_name, 'display_id' => $view_display)),
+          array(
+            'view_name' => $view_name,
+            'display_id' => $view_display,
+          ),
+        ),
       );
     }
   }
@@ -273,8 +220,10 @@ function services_views_field_formatter_info_alter(&$formatters) {
 
   $formatters['services'] = array(
     'label' => t('Services Raw'),
+    'description' => t('Formatter for Services to provide value as it is in entity object.'),
     'field types' => $field_types,
     'module' => 'services_views',
+    'settings' => array(),
   );
 }
 

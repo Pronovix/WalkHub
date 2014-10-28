@@ -19,6 +19,15 @@ function field_collection_help($path, $arg) {
 }
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ */
+function field_collection_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools') {
+    return 'ctools/' . $plugin;
+  }
+}
+
+/**
  * Implements hook_entity_info().
  */
 function field_collection_entity_info() {
@@ -63,6 +72,11 @@ function field_collection_entity_info() {
         'access arguments' => array('administer field collections'),
       ),
     );
+  }
+
+  if (module_exists('entitycache')) {
+    $return['field_collection_item']['field cache'] = FALSE;
+    $return['field_collection_item']['entity cache'] = TRUE;
   }
 
   return $return;
@@ -879,13 +893,37 @@ function field_collection_field_settings_form($field, $instance) {
 }
 
 /**
- * Implements hook_field_presave().
+ * Implements hook_field_insert().
+ */
+function field_collection_field_insert($host_entity_type, $host_entity, $field, $instance, $langcode, &$items) {
+  foreach ($items as &$item) {
+    if (isset($item['entity'])) {
+      if ($entity = field_collection_field_get_entity($item)) {
+        if (!empty($entity->is_new)) {
+          $entity->setHostEntity($host_entity_type, $host_entity, LANGUAGE_NONE, FALSE);
+        }
+        $entity->save(TRUE);
+        $item = array(
+          'value' => $entity->item_id,
+          'revision_id' => $entity->revision_id,
+        );
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_update().
  *
+ * Care about removed field collection items.
  * Support saving field collection items in @code $item['entity'] @endcode. This
  * may be used to seamlessly create field collection items during host-entity
  * creation or to save changes to the host entity and its collections at once.
  */
-function field_collection_field_presave($host_entity_type, $host_entity, $field, $instance, $langcode, &$items) {
+function field_collection_field_update($host_entity_type, $host_entity, $field, $instance, $langcode, &$items) {
+  $items_original = !empty($host_entity->original->{$field['field_name']}[$langcode]) ? $host_entity->original->{$field['field_name']}[$langcode] : array();
+  $original_by_id = array_flip(field_collection_field_item_to_ids($items_original));
+
   foreach ($items as &$item) {
     // In case the entity has been changed / created, save it and set the id.
     // If the host entity creates a new revision, save new item-revisions as
@@ -917,19 +955,6 @@ function field_collection_field_presave($host_entity_type, $host_entity, $field,
         );
       }
     }
-  }
-}
-
-/**
- * Implements hook_field_update().
- *
- * Care about removed field collection items.
- */
-function field_collection_field_update($entity_type, $entity, $field, $instance, $langcode, &$items) {
-  $items_original = !empty($entity->original->{$field['field_name']}[$langcode]) ? $entity->original->{$field['field_name']}[$langcode] : array();
-  $original_by_id = array_flip(field_collection_field_item_to_ids($items_original));
-
-  foreach ($items as $item) {
     unset($original_by_id[$item['value']]);
   }
 
@@ -939,7 +964,7 @@ function field_collection_field_update($entity_type, $entity, $field, $instance,
 
     // If we are creating a new revision, the old-items should be kept but get
     // marked as archived now.
-    if (!empty($entity->revision)) {
+    if (!empty($host_entity->revision)) {
       db_update('field_collection_item')
         ->fields(array('archived' => 1))
         ->condition('item_id', $ids, 'IN')
@@ -947,8 +972,8 @@ function field_collection_field_update($entity_type, $entity, $field, $instance,
     }
     else {
       // Delete unused field collection items now.
-      foreach (field_collection_item_load_multiple($ids) as $item) {
-        $item->deleteRevision(TRUE);
+      foreach (field_collection_item_load_multiple($ids) as $un_item) {
+        $un_item->deleteRevision(TRUE);
       }
     }
   }
@@ -958,8 +983,9 @@ function field_collection_field_update($entity_type, $entity, $field, $instance,
  * Implements hook_field_delete().
  */
 function field_collection_field_delete($entity_type, $entity, $field, $instance, $langcode, &$items) {
+  $ids = field_collection_field_item_to_ids($items);
   // Also delete all embedded entities.
-  if ($ids = field_collection_field_item_to_ids($items)) {
+  if ($ids && field_info_field($field['field_name'])) {
     // We filter out entities that are still being referenced by other
     // host-entities. This should never be the case, but it might happened e.g.
     // when modules cloned a node without knowing about field-collection.
@@ -1656,11 +1682,13 @@ function field_collection_field_widget_embed_validate($element, &$form_state, $c
     foreach ($element['#field_collection_required_elements'] as &$elements) {
 
       // Copied from _form_validate().
+      // #1676206: Modified to support options widget.
       if (isset($elements['#needs_validation'])) {
         $is_empty_multiple = (!count($elements['#value']));
         $is_empty_string = (is_string($elements['#value']) && drupal_strlen(trim($elements['#value'])) == 0);
         $is_empty_value = ($elements['#value'] === 0);
-        if ($is_empty_multiple || $is_empty_string || $is_empty_value) {
+        $is_empty_option = (isset($elements['#options']['_none']) && $elements['#value'] == '_none');
+        if ($is_empty_multiple || $is_empty_string || $is_empty_value || $is_empty_option) {
           if (isset($elements['#title'])) {
             form_error($elements, t('!name field is required.', array('!name' => $elements['#title'])));
           }
@@ -1770,15 +1798,41 @@ function field_collection_views_api() {
 }
 
 /**
- * Implements hook_features_pipe_component_alter() for fields.
+ * Implements hook_features_pipe_COMPONENT_alter() for field objects.
+ *
+ * This is used with Features v1.0 and v2.0 prior to beta2, newer releases
+ * separated the field_base from the field_instance so this won't be used.
+ *
+ * @see field_collection_features_pipe_field_instance_alter().
  */
 function field_collection_features_pipe_field_alter(&$pipe, $data, $export) {
+  // Skip this if Features has been updated to v2.0-beta2 or newer as it will
+  // use the separate field_instance integration instead.
+  if (!function_exists('field_instance_features_export_options')) {
+    // Add the fields of the field collection entity to the pipe.
+    foreach ($data as $identifier) {
+      if (($field = features_field_load($identifier)) && $field['field_config']['type'] == 'field_collection') {
+        $fields = field_info_instances('field_collection_item', $field['field_config']['field_name']);
+        foreach ($fields as $name => $field) {
+          $pipe['field'][] = "{$field['entity_type']}-{$field['bundle']}-{$field['field_name']}";
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_features_pipe_COMPONENT_alter() for field_instance objects.
+ *
+ * This is used with Features v2.0-beta2 and newer.
+ */
+function field_collection_features_pipe_field_instance_alter(&$pipe, $data, $export) {
   // Add the fields of the field collection entity to the pipe.
   foreach ($data as $identifier) {
     if (($field = features_field_load($identifier)) && $field['field_config']['type'] == 'field_collection') {
       $fields = field_info_instances('field_collection_item', $field['field_config']['field_name']);
       foreach ($fields as $name => $field) {
-        $pipe['field'][] = "{$field['entity_type']}-{$field['bundle']}-{$field['field_name']}";
+        $pipe['field_instance'][] = "{$field['entity_type']}-{$field['bundle']}-{$field['field_name']}";
       }
     }
   }
