@@ -113,12 +113,19 @@ class FieldCollectionBasicTestCase extends DrupalWebTestCase {
 
     // Test Revisions.
     list ($node, $item) = $this->createNodeWithFieldCollection();
+    $entity2 = entity_create('field_collection_item', array('field_name' => $this->field_name));
+    $node->{$this->field_name}[LANGUAGE_NONE][] = array('entity' => $entity2);
+    node_save($node);
+    $this->assertEqual($entity2->archived, FALSE, 'New field collection item with new content revision is not archived.');
 
     // Test saving a new revision of a node.
     $node->revision = TRUE;
     node_save($node);
     $item_updated = field_collection_item_load($node->{$this->field_name}[LANGUAGE_NONE][0]['value']);
     $this->assertNotEqual($item->revision_id, $item_updated->revision_id, 'Creating a new host entity revision creates a new field collection revision.');
+
+    // Test saving a new revision with a new field collection item.
+    $node->revision = TRUE;
 
     // Test saving the node without creating a new revision.
     $item = $item_updated;
@@ -210,6 +217,20 @@ class FieldCollectionBasicTestCase extends DrupalWebTestCase {
     $item = field_collection_item_load($item->item_id);
     $this->assertTrue($item, 'Removed field collection item still exists.');
     $this->assertTrue($item->archived, 'Removed field collection item is archived.');
+
+    // Test removing an old node revision. Make sure that the field collection
+    // is not removed
+    list ($node, $item) = $this->createNodeWithFieldCollection();
+    $node_vid = $node->vid;
+    $node->revision = TRUE;
+    node_save($node);
+    $node_vid2 = $node->vid;
+    $item_vid2 = $node->{$this->field_name}[LANGUAGE_NONE][0]['revision_id'];
+    node_revision_delete($node_vid);
+    $item2 = field_collection_item_revision_load($item_vid2);
+    $item_id2 = isset($item2->item_id) ? $item2->item_id : -1;
+    $this->assertEqual($item_id2, $item->item_id, 'Removing an old node revision does not delete newer field collection revisions');
+
   }
 
   /**
@@ -299,6 +320,42 @@ class FieldCollectionBasicTestCase extends DrupalWebTestCase {
 
     $this->drupalGet("node/$node->nid/revisions");
   }
+
+  /**
+   * Make sure that field_collection-entities are copied when host-entities do.
+   */
+  public function testCopyingEntities() {
+    list($node, $entity) = $this->createNodeWithFieldCollection();
+
+    // Create a copy of that node.
+    $node->nid = NULL;
+    $node->vid = NULL;
+    $node->is_new = TRUE;
+
+    node_save($node);
+    $item = $node->{$this->field_name}[LANGUAGE_NONE][0];
+    $this->assertNotEqual($entity->item_id, $item['value']);
+
+    // Do a php clone to the $node object and save it.
+    $node2 = clone $node;
+    $node2->nid = NULL;
+    $node2->is_new = TRUE;
+    $node2->vid = NULL;
+    node_save($node2);
+
+    $item2 = $node2->{$this->field_name}[LANGUAGE_NONE][0];
+    $this->assertNotEqual($item2['value'], $item['value']);
+
+    // Create another copy this time (needlessly) forcing a new revision.
+    $node->nid = NULL;
+    $node->vid = NULL;
+    $node->is_new = TRUE;
+    $node->revision = TRUE;
+    node_save($node);
+    $item3 = $node->{$this->field_name}[LANGUAGE_NONE][0];
+    $this->assertNotEqual($item['value'], $item3['value']);
+  }
+
 }
 
 
@@ -419,4 +476,105 @@ class FieldCollectionRulesIntegrationTestCase extends DrupalWebTestCase {
     $this->assertTrue(!empty($entity->item_id) && !empty($entity->revision_id), 'Field collection item has been saved by Rules and the host entity.');
     RulesLog::logger()->checkLog();
   }
+}
+
+/**
+ * Test using field collection with content that gets translated.
+ */
+class FieldCollectionContentTranslationTestCase extends DrupalWebTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Field collection content translation',
+      'description' => 'Tests using content under translation.',
+      'group' => 'Field types',
+      'dependencies' => array('translation'),
+    );
+  }
+
+  public function setUp() {
+    parent::setUp(array('field_collection', 'translation'));
+    // Create a field_collection field to use for the tests.
+    $this->field_name = 'field_test_collection';
+    $this->field = array('field_name' => $this->field_name, 'type' => 'field_collection', 'cardinality' => 4);
+    $this->field = field_create_field($this->field);
+    $this->field_id = $this->field['id'];
+
+    $this->instance = array(
+      'field_name' => $this->field_name,
+      'entity_type' => 'node',
+      'bundle' => 'article',
+      'label' => $this->randomName() . '_label',
+      'description' => $this->randomName() . '_description',
+      'weight' => mt_rand(0, 127),
+      'settings' => array(),
+      'widget' => array(
+        'type' => 'field_collection_embed',
+        'label' => 'Test',
+        'settings' => array(),
+      ),
+    );
+    $this->instance = field_create_instance($this->instance);
+
+    // Add a field to the collection.
+    $field = array(
+      'field_name' => 'field_text',
+      'type' => 'text',
+      'cardinality' => 1,
+      'translatable' => FALSE,
+    );
+    field_create_field($field);
+    $instance = array(
+      'entity_type' => 'field_collection_item',
+      'field_name' => 'field_text',
+      'bundle' => $this->field_name,
+      'label' => 'Test text field',
+      'widget' => array(
+        'type' => 'text_textfield',
+      ),
+    );
+    field_create_instance($instance);
+
+    $admin_user = $this->drupalCreateUser(array('administer languages', 'administer content types', 'access administration pages', 'create article content', 'edit any article content', 'translate content'));
+
+    $this->drupalLogin($admin_user);
+    // Add German language.
+    locale_add_language('de');
+
+    // Set "Article" content type to use multilingual support.
+    variable_set('language_content_type_article', TRANSLATION_ENABLED);
+  }
+
+  /**
+   * Ensure field collections are cloned to new entities on content translation.
+   */
+  public function testContentTranslation() {
+    // Create "Article" content.
+    $edit['title'] = $this->randomName();
+    $edit['body[' . LANGUAGE_NONE . '][0][value]'] = $this->randomName();
+    $edit['language'] = 'en';
+    $field_collection_name = 'field_test_collection[' . LANGUAGE_NONE . '][0][field_text][' . LANGUAGE_NONE . '][0][value]';
+    $edit[$field_collection_name] = $this->randomName();
+
+    $this->drupalPost('node/add/article', $edit, t('Save'));
+    $this->assertRaw(t('Article %title has been created.', array('%title' => $edit['title'])), 'Article created.');
+    $node1 = $this->drupalGetNodeByTitle($edit['title']);
+
+    $this->drupalGet('node/' . $node1->nid . '/edit');
+    $this->drupalGet('node/' . $node1->nid . '/translate');
+    $this->drupalGet('node/add/article', array('query' => array('translation' => $node1->nid, 'target' => 'de')));
+
+    // Suffix translations with the langcode.
+    unset($edit['language']);
+    $edit['title'] .= 'DE';
+    $edit[$field_collection_name] .= 'DE';
+    $this->drupalPost('node/add/article', $edit, t('Save'), array('query' => array('translation' => $node1->nid, 'target' => 'de')));
+    $node2 = $this->drupalGetNodeByTitle($edit['title']);
+
+    // Ensure that our new node is the translation of the first one.
+    $this->assertEqual($node1->nid, $node2->tnid, 'Succesfully created translation.');
+    // And check to see that their field collections are different.
+    $this->assertNotEqual($node1->field_test_collection, $node2->field_test_collection, 'Field collections between translation source and translation differ.');
+  }
+
 }
