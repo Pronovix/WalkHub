@@ -4,10 +4,11 @@
   overflow: hidden
   background-color: #000000
   background-image: image_url('devdays.jpg')
-  background-position: center -120px
+  background-position: center -260px
   +background-size(cover)
   position: relative
   +box-shadow(inset 0px -10px 20px 0px rgba(0,0,0,0.15))
+  min-height: 400px
 
   &:before
     +opacity(.7)
@@ -21,7 +22,10 @@
     display: block
     width: 100%
 
+  & .columns
+    text-align: center
   // New Boxes
+
   .box-container
     text-align: center
 
@@ -70,10 +74,14 @@
   h2
     color: $color-white
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.85)
-
+  h2
+    font-size: 1.9rem
+    line-height: 42px
   p
     color: $color-white
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.85)
+    font-size: 1.2rem
+    margin-bottom: 5em
 
     p
       margin-bottom: 0
