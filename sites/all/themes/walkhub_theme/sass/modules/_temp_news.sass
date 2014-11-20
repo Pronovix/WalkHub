@@ -1,3 +1,15 @@
+.section-title
+  text-align: center
+  font-size: 18px
+  display: block
+
+h3
+  margin: 35px 0 10px
+  text-transform: uppercase
+
+.space
+  margin-bottom: 60px
+
 #content-bottom
   +mp0
   +px-rem(padding, 1.5, 0)
@@ -5,16 +17,14 @@
 #news,
 #news-bottom
   +mp0
-  +box-shadow(inset 0px 1px 2px 0px rgba(0, 0, 0, 0.01))
   +px-rem(padding, 1.5, 0)
-  background-color: #fafafa
-  border-bottom: 1px solid #ededed
-  border-top: 1px solid #ededed
   color: #adadad
 
   .wt-container
     +border-radius(3px)
-
+  p
+    color: rgb(71, 71, 71)
+    font-size: 12px
   h2
     +font-size(1.5)
 
@@ -24,19 +34,22 @@
   ul
     +clearfix
     +mp0
+  h6
+    font-weight: bold
+    i
+      font-size: 22px
+      margin-right: 5px
+      position: relative
+      top: 3px
 
   li
-    list-style-type: none
-    float: left
-    width: 48%
-    margin: 0 1%
-    display: block
-    background: #FFF
-    border: 1px solid #ededed
-    overflow: hidden
-    position: relative
-    +border-radius(3px)
-    +box-shadow(0 1px 0 rgba(#000, .35))
+    background: url(../images/orange-theme-images/list-arrow.png) no-repeat 5px 5px
+    list-style: none
+    margin: 0
+    padding: 0 0 0 24px
+    color: #474747
+    font: 12px/1.7 'Lucida Sans Unicode', 'Lucida Grande', sans-serif
+    line-height: 23px
 
     .wt-container
       +border-radius(3px 3px 0 0)
@@ -73,7 +86,7 @@
       right: .3em
       width: 1.5em
       color: $color-white
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.75)
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75)
       text-align: center
       background-color: #3b8acd
       border: 1px solid #005b9a
@@ -85,5 +98,5 @@
       .month
         +font-size(.65)
 
-  img
-    +border-radius(3px 0 0 3px)
+.large-3
+  text-align: center

@@ -206,8 +206,8 @@ $em-base: 16px !default;
 
 // We use these to control various global styles
 $body-bg: #fff !default;
-$body-font-color: #222 !default;
-$body-font-family: "pt_sansregular", Arial, Helvetica, sans-serif;
+$body-font-color: #474747 !default;
+$body-font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 $body-font-weight: normal !default;
 $body-font-style: normal !default;
 
@@ -308,7 +308,15 @@ $cursor-text-value: text !default;
     line-height: 1; // Set to $base-line-height to take on browser default of 150%
     position: relative;
     cursor: $cursor-default-value;
+    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+    -webkit-text-size-adjust: 100%;
+
   }
+::selection {
+  background: #f15a23;
+  color: #fff;
+  text-shadow: none;
+}
 
 a:hover { cursor: $cursor-pointer-value; }
 

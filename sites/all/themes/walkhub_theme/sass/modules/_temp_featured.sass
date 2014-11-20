@@ -1,14 +1,65 @@
+#back-to-top
+  background: url(../images/orange-theme-images/arrow-up-large.png) no-repeat center center
+  background-color: rgb(221, 221, 221)
+  background-color: rgba(221, 221, 221, .7)
+  bottom: 20px
+  color: transparent
+  display: none
+  font: 0/0 a
+  height: 46px
+  position: fixed
+  right: 20px
+  text-shadow: none
+  -webkit-transition: all .2s ease
+  -moz-transition: all .2s ease
+  -ms-transition: all .2s ease
+  -o-transition: all .2s ease
+  transition: all .2s ease
+  width: 45px
+  z-index: 100
+#back-to-top:hover
+  background-color: #f15a23
+.button
+  background: #f15a23
+  border: none
+  border-radius: 0
+  color: $color-white
+  cursor: pointer
+  font-weight: 400
+  height: auto
+  overflow: visible
+  padding: 7px 20px
+  -webkit-transition: background-color .2s ease
+  -moz-transition: background-color .2s ease
+  -ms-transition: background-color .2s ease
+  -o-transition: background-color .2s ease
+  transition: background-color .2s ease
+  width: auto
+  text-shadow: none
+  box-shadow: none
+
+  &:hover
+    background: #3a3a3a !important
+    text-shadow: none
+    color: white
+  a
+    color: $color-white
+
 #featured
   +mp0
   +px-rem(padding, 2.5, 0, 1.5)
-  overflow: hidden
   background-color: #000000
   background-image: image_url('devdays.jpg')
   background-position: center -260px
   +background-size(cover)
   position: relative
-  +box-shadow(inset 0px -10px 20px 0px rgba(0,0,0,0.15))
+  +box-shadow(inset 0px -10px 20px 0px rgba(0, 0, 0, 0.15))
   min-height: 400px
+
+  .record
+    text-align: center
+    font-size: 16px
+    color: lightgrey
 
   &:before
     +opacity(.7)
@@ -25,7 +76,26 @@
   & .columns
     text-align: center
   // New Boxes
+  .slide-content
+    background: rgb(0, 0, 0)
+    /* Fallback for old IE */
+    filter: alpha(opacity=60)
+    /* Fallback for old IE */
+    background: rgba(0, 0, 0, .6)
+    top: 10px
+    display: block
+    left: 10px
+    margin: 0
+    overflow: hidden
+    padding: 20px 20px 20px
+    position: absolute
+    width: 470px
+    z-index: 2
 
+    .button
+      font-size: 23px
+      display: block
+      text-align: center
   .box-container
     text-align: center
 
@@ -42,7 +112,7 @@
       &.blue
         background-color: #3b8acd
         +filter-gradient(#3b8acd, #035787, vertical)
-        +background-image(linear-gradient(top,  #3b8acd 0%,#035787 100%))
+        +background-image(linear-gradient(top, #3b8acd 0%, #035787 100%))
         +text-shadow(1px 1px 1px rgba(#000, 0.75))
         color: #ffffff
 
@@ -57,7 +127,7 @@
           display: block
           width: 1em
           height: 1em
-          +font-size(1.5,1.4)
+          +font-size(1.5, 1.4)
           margin: 0 auto
           font-style: normal
           position: static
@@ -73,15 +143,11 @@
   h1,
   h2
     color: $color-white
-    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.85)
   h2
     font-size: 1.9rem
     line-height: 42px
   p
     color: $color-white
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.85)
-    font-size: 1.2rem
-    margin-bottom: 5em
 
     p
       margin-bottom: 0
@@ -91,10 +157,8 @@
       display: block
 
     i
-      position: absolute
-      top: 0.7em
-      right: 0.4em
-      +font-size(1.2)
+      +font-size(1.4)
+      margin-right: 10PX
 
     &:hover
       i,
