@@ -56,6 +56,7 @@ function field_collection_entity_info() {
        ),
     ),
     'access callback' => 'field_collection_item_access',
+    'deletion callback' => 'field_collection_item_delete',
     'metadata controller class' => 'FieldCollectionItemMetadataController'
   );
 
@@ -331,6 +332,35 @@ class FieldCollectionItemEntity extends Entity {
   }
 
   /**
+   * Updates the wrapped host entity object.
+   *
+   * @param $entity
+   */
+  public function updateHostEntity($entity) {
+    $this->fetchHostDetails();
+    list($recieved_id) = entity_extract_ids($this->hostEntityType, $entity);
+
+    if ($this->isInUse()) {
+      $current_id = $this->hostEntityId;
+    }
+    else {
+      $current_host = entity_revision_load($this->hostEntityType, $this->hostEntityRevisionId);
+      list($current_id) = entity_extract_ids($this->hostEntityType, $current_host);
+    }
+
+    if ($current_id == $recieved_id) {
+      $this->hostEntity = $entity;
+      $delta = $this->delta();
+      if (isset($entity->{$this->field_name}[$this->langcode][$delta]['entity'])) {
+        $entity->{$this->field_name}[$this->langcode][$delta]['entity'] = $entity;
+      }
+    }
+    else {
+      throw new Exception('The host entity cannot be changed.');
+    }
+  }
+
+  /**
    * Returns the host entity, which embeds this field collection item.
    */
   public function hostEntity() {
@@ -434,7 +464,7 @@ class FieldCollectionItemEntity extends Entity {
    * Determines the language code under which the item is stored.
    */
   public function langcode() {
-    if ($this->delta() != NULL) {
+    if ($this->delta() !== NULL) {
       return $this->langcode;
     }
   }
@@ -536,23 +566,19 @@ class FieldCollectionItemEntity extends Entity {
    * delete the collection item from archived revisions too. Instead, we delete
    * the current default revision and archive the field collection.
    *
-   * If no revisions are left or the host is not revisionable, the whole item
-   * is deleted.
    */
   public function deleteRevision($skip_host_update = FALSE) {
     if (!$this->revision_id) {
       return;
     }
-    $info = entity_get_info($this->hostEntityType());
-    if (empty($info['entity keys']['revision']) || !$this->hostEntity()) {
-      return $this->delete();
-    }
+
     if (!$skip_host_update) {
       // Just remove the item from the host, which cares about deleting the
       // item (depending on whether the update creates a new revision).
       $this->deleteHostEntityReference();
     }
-    elseif (!$this->isDefaultRevision()) {
+
+    if (!$this->isDefaultRevision()) {
       entity_revision_delete('field_collection_item', $this->revision_id);
     }
     // If deleting the default revision, take care!
@@ -797,6 +823,14 @@ function field_collection_item_access($op, FieldCollectionItemEntity $item = NUL
 }
 
 /**
+ * Deletion callback
+ */
+function field_collection_item_delete($id) {
+  $fci = field_collection_item_load($id);
+  $fci->delete();
+}
+
+/**
  * Implements hook_theme().
  */
 function field_collection_theme() {
@@ -880,12 +914,12 @@ function field_collection_field_settings_form($field, $instance) {
     '#type' => 'checkbox',
     '#title' => t('Hide blank items'),
     '#default_value' => $field['settings']['hide_blank_items'],
-    '#description' => t("A blank item is always added to any multivalued field's form. If checked, any additional blank items are hidden except of the first item which is always shown."),
+    '#description' => t("A blank item is always added to any unlimited valued field's form. If checked, any additional blank items are hidden except of the first item which is always shown."),
     '#weight' => 10,
     '#states' => array(
-      // Hide the setting if the cardinality is 1.
-      'invisible' => array(
-        ':input[name="field[cardinality]"]' => array('value' => '1'),
+      // Show the setting if the cardinality is -1.
+      'visible' => array(
+        ':input[name="field[cardinality]"]' => array('value' => '-1'),
       ),
     ),
   );
@@ -897,17 +931,25 @@ function field_collection_field_settings_form($field, $instance) {
  */
 function field_collection_field_insert($host_entity_type, $host_entity, $field, $instance, $langcode, &$items) {
   foreach ($items as &$item) {
-    if (isset($item['entity'])) {
-      if ($entity = field_collection_field_get_entity($item)) {
-        if (!empty($entity->is_new)) {
-          $entity->setHostEntity($host_entity_type, $host_entity, LANGUAGE_NONE, FALSE);
-        }
-        $entity->save(TRUE);
-        $item = array(
-          'value' => $entity->item_id,
-          'revision_id' => $entity->revision_id,
-        );
+    if ($entity = field_collection_field_get_entity($item)) {
+      if (!empty($host_entity->is_new) && empty($entity->is_new)) {
+        // If the host entity is new but we have a field_collection that is not
+        // new, it means that its host is being cloned. Thus we need to clone
+        // the field collection entity as well.
+        $new_entity = clone $entity;
+        $new_entity->item_id = NULL;
+        $new_entity->revision_id = NULL;
+        $new_entity->is_new = TRUE;
+        $entity = $new_entity;
       }
+      if (!empty($entity->is_new)) {
+        $entity->setHostEntity($host_entity_type, $host_entity, LANGUAGE_NONE, FALSE);
+      }
+      $entity->save(TRUE);
+      $item = array(
+        'value' => $entity->item_id,
+        'revision_id' => $entity->revision_id,
+      );
     }
   }
 }
@@ -921,6 +963,12 @@ function field_collection_field_insert($host_entity_type, $host_entity, $field, 
  * creation or to save changes to the host entity and its collections at once.
  */
 function field_collection_field_update($host_entity_type, $host_entity, $field, $instance, $langcode, &$items) {
+  // Prevent workbench moderation from deleting field collections on node_save()
+  // during workbench_moderation_store(), when $host_entity->revision == 0.
+  if (!empty($host_entity->workbench_moderation['updating_live_revision'])) {
+    return;
+  }
+
   $items_original = !empty($host_entity->original->{$field['field_name']}[$langcode]) ? $host_entity->original->{$field['field_name']}[$langcode] : array();
   $original_by_id = array_flip(field_collection_field_item_to_ids($items_original));
 
@@ -939,6 +987,13 @@ function field_collection_field_update($host_entity_type, $host_entity, $field, 
         // If the host entity is saved as new revision, do the same for the item.
         if (!empty($host_entity->revision)) {
           $entity->revision = TRUE;
+          // Without this cache clear entity_revision_is_default will
+          // incorrectly return false here when creating a new published revision
+          if (!isset($cleared_host_entity_cache)) {
+            list($entity_id) = entity_extract_ids($host_entity_type, $host_entity);
+            entity_get_controller($host_entity_type)->resetCache(array($entity_id));
+            $cleared_host_entity_cache = true;
+          }
           $is_default = entity_revision_is_default($host_entity_type, $host_entity);
           // If an entity type does not support saving non-default entities,
           // assume it will be saved as default.
@@ -973,6 +1028,7 @@ function field_collection_field_update($host_entity_type, $host_entity, $field, 
     else {
       // Delete unused field collection items now.
       foreach (field_collection_item_load_multiple($ids) as $un_item) {
+        $un_item->updateHostEntity($host_entity);
         $un_item->deleteRevision(TRUE);
       }
     }
@@ -1232,7 +1288,6 @@ function field_collection_field_formatter_view($entity_type, $entity, $field, $i
 
     case 'field_collection_view':
 
-      $element['#attached']['css'][] = drupal_get_path('module', 'field_collection') . '/field_collection.theme.css';
       $view_mode = !empty($display['settings']['view_mode']) ? $display['settings']['view_mode'] : 'full';
       foreach ($items as $delta => $item) {
         if ($field_collection = field_collection_field_get_entity($item)) {
@@ -1259,6 +1314,9 @@ function field_collection_field_formatter_view($entity_type, $entity, $field, $i
         }
       }
       field_collection_field_formatter_links($element, $entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      if (!empty($items) || !empty($element['#suffix'])) {
+        $element['#attached']['css'][] = drupal_get_path('module', 'field_collection') . '/field_collection.theme.css';
+      }
       break;
 
     case 'field_collection_fields':
@@ -1280,6 +1338,7 @@ function field_collection_field_formatter_view($entity_type, $entity, $field, $i
  */
 function field_collection_field_formatter_links(&$element, $entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $settings = $display['settings'];
+  $allow_create_item = FALSE;
 
   if ($settings['add'] && ($field['cardinality'] == FIELD_CARDINALITY_UNLIMITED || count($items) < $field['cardinality'])) {
     // Check whether the current is allowed to create a new item.
@@ -1287,6 +1346,7 @@ function field_collection_field_formatter_links(&$element, $entity_type, $entity
     $field_collection_item->setHostEntity($entity_type, $entity, LANGUAGE_NONE, FALSE);
 
     if (field_collection_item_access('create', $field_collection_item)) {
+      $allow_create_item = TRUE;
       $path = field_collection_field_get_path($field);
       list($id) = entity_extract_ids($entity_type, $entity);
       $element['#suffix'] = '';
@@ -1301,14 +1361,16 @@ function field_collection_field_formatter_links(&$element, $entity_type, $entity
     }
   }
   // If there is no add link, add a special class to the last item.
-  if (empty($element['#suffix'])) {
-    $index = count(element_children($element)) - 1;
-    $element[$index]['#attributes']['class'][] = 'field-collection-view-final';
-  }
+  if (!empty($items) || $allow_create_item) {
+    if (empty($element['#suffix'])) {
+      $index = count(element_children($element)) - 1;
+      $element[$index]['#attributes']['class'][] = 'field-collection-view-final';
+    }
 
-  $element += array('#prefix' => '', '#suffix' => '');
-  $element['#prefix'] .= '<div class="field-collection-container clearfix">';
-  $element['#suffix'] .= '</div>';
+    $element += array('#prefix' => '', '#suffix' => '');
+    $element['#prefix'] .= '<div class="field-collection-container clearfix">';
+    $element['#suffix'] .= '</div>';
+  }
 
   return $element;
 }
@@ -1382,13 +1444,13 @@ function field_collection_field_widget_form(&$form, &$form_state, $field, $insta
 
       $field_state = field_form_get_state($field_parents, $field_name, $language, $form_state);
 
-      if (!empty($field['settings']['hide_blank_items']) && $delta == $field_state['items_count'] && $delta > 0) {
+      if (field_collection_hide_blank_items($field) && $delta == $field_state['items_count'] && $delta > 0) {
         // Do not add a blank item. Also see
         // field_collection_field_attach_form() for correcting #max_delta.
         $recursion--;
         return FALSE;
       }
-      elseif (!empty($field['settings']['hide_blank_items']) && $field_state['items_count'] == 0) {
+      elseif (field_collection_hide_blank_items($field) && $field_state['items_count'] == 0) {
         // We show one item, so also specify that as item count. So when the
         // add button is pressed the item count will be 2 and we show to items.
         $field_state['items_count'] = 1;
@@ -1405,6 +1467,7 @@ function field_collection_field_widget_form(&$form, &$form_state, $field, $insta
         // load.
         if (empty($field_collection_item)) {
           $field_collection_item = entity_create('field_collection_item', array('field_name' => $field_name));
+          $field_collection_item->setHostEntity($element['#entity_type'], $element['#entity']);
         }
 
         // Put our entity in the form state, so FAPI callbacks can access it.
@@ -1453,7 +1516,7 @@ function field_collection_field_attach_form($entity_type, $entity, &$form, &$for
   foreach (field_info_instances($entity_type, $form['#bundle']) as $field_name => $instance) {
     $field = field_info_field($field_name);
 
-    if ($field['type'] == 'field_collection' && $field['settings']['hide_blank_items']
+    if ($field['type'] == 'field_collection' && field_collection_hide_blank_items($field)
         && field_access('edit', $field, $entity_type) && $instance['widget']['type'] == 'field_collection_embed') {
 
       $element_langcode = $form[$field_name]['#language'];
@@ -1481,7 +1544,7 @@ function field_collection_remove_js() {
     unset($_POST['ajax_html_ids']);
   }
 
-  list($form, $form_state) = ajax_get_form();
+  list($form, $form_state, $form_id, $form_build_id, $commands) = ajax_get_form();
   drupal_process_form($form['#form_id'], $form, $form_state);
 
   // Get the information on what we're removing.
@@ -1489,11 +1552,10 @@ function field_collection_remove_js() {
   // Go two levels up in the form, to the whole widget.
   $element = drupal_array_get_nested_value($form, array_slice($button['#array_parents'], 0, -3));
   // Now send back the proper AJAX command to replace it.
+  $commands[] = ajax_command_replace('#' . $element['#id'], drupal_render($element));
   $return = array(
     '#type' => 'ajax',
-    '#commands' => array(
-      ajax_command_replace('#' . $element['#id'], drupal_render($element))
-    ),
+    '#commands' => $commands,
   );
 
   // Because we're doing this ourselves, messages aren't automatic. We have
@@ -1512,9 +1574,9 @@ function field_collection_remove_js() {
  * When a remove button is submitted, we need to find the item that it
  * referenced and delete it. Since field UI has the deltas as a straight
  * unbroken array key, we have to renumber everything down. Since we do this
- * we *also* need to move all the deltas around in the $form_state['values']
- * and $form_state['input'] so that user changed values follow. This is a bit
- * of a complicated process.
+ * we *also* need to move all the deltas around in the $form_state['values'],
+ * $form_state['input'], and $form_state['field'] so that user changed values
+ * follow. This is a bit of a complicated process.
  */
 function field_collection_remove_submit($form, &$form_state) {
   $button = $form_state['triggering_element'];
@@ -1540,6 +1602,7 @@ function field_collection_remove_submit($form, &$form_state) {
     $moving_element = drupal_array_get_nested_value($form, $old_element_address);
     $moving_element_value = drupal_array_get_nested_value($form_state['values'], $old_element_address);
     $moving_element_input = drupal_array_get_nested_value($form_state['input'], $old_element_address);
+    $moving_element_field = drupal_array_get_nested_value($form_state['field']['#parents'], $old_element_address);
 
     // Tell the element where it's being moved to.
     $moving_element['#parents'] = $new_element_address;
@@ -1547,6 +1610,7 @@ function field_collection_remove_submit($form, &$form_state) {
     // Move the element around.
     form_set_value($moving_element, $moving_element_value, $form_state);
     drupal_array_set_nested_value($form_state['input'], $moving_element['#parents'], $moving_element_input);
+    drupal_array_set_nested_value($form_state['field']['#parents'], $moving_element['#parents'], $moving_element_field);
 
     // Move the entity in our saved state.
     if (isset($field_state['entity'][$i + 1])) {
@@ -1690,7 +1754,7 @@ function field_collection_field_widget_embed_validate($element, &$form_state, $c
         $is_empty_option = (isset($elements['#options']['_none']) && $elements['#value'] == '_none');
         if ($is_empty_multiple || $is_empty_string || $is_empty_value || $is_empty_option) {
           if (isset($elements['#title'])) {
-            form_error($elements, t('!name field is required.', array('!name' => $elements['#title'])));
+            form_error($elements, t('@name field is required.', array('@name' => $elements['#title'])));
           }
           else {
             form_error($elements);
@@ -1914,5 +1978,21 @@ function field_collection_devel_generate($object, $field, $instance, $bundle) {
 
   $field_collection->save(TRUE);
 
-  return array('value' => $field_collection->item_id);
+  return array(
+    'value' => $field_collection->item_id,
+    'revision_id' => $field_collection->revision_id,
+  );
+}
+
+/**
+ * Determines if the additional blank items should be displayed or not.
+ *
+ * @param array $field
+ *   The field info array.
+ *
+ * @return bool
+ *   TRUE if the additional blank items should be hidden, and FALSE if not.
+ */
+function field_collection_hide_blank_items($field) {
+  return !empty($field['settings']['hide_blank_items']) && $field['cardinality'] == FIELD_CARDINALITY_UNLIMITED;
 }
