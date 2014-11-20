@@ -179,14 +179,13 @@ $microformat-abbr-font-decoration: none !default;
 
   /* Default header styles */
   h1, h2, h3, h4, h5, h6 {
-    font-family: $header-font-family;
-    font-weight: $header-font-weight;
-    font-style: $header-font-style;
-    color: $header-font-color;
+
     text-rendering: $header-text-rendering;
-    margin-top: $header-top-margin;
-    margin-bottom: $header-bottom-margin;
     line-height: $header-line-height - em-calc(3);
+    color: #474747;
+    font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-weight: 400;
+    margin-bottom: 15px;
 
     small {
       font-size: $small-font-size;

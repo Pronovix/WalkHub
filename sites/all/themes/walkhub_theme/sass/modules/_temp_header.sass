@@ -1,13 +1,29 @@
-header#main-header
-  +text-shadow(1px 1px 3px rgba($color-black,1))
-  +box-shadow(inset 0px -5px 5px 0px rgba($color-black,0.25))
-  background: #2a2a2a image-url('low_contrast_linen.png') top left repeat
-  padding: 1.25em 0 1.25em 0
-  color: $color-white
-  border-top:  1px solid $color-black
+.main-slogen
+  text-align: center
+  padding: 20px 0px
+  font-size: 28px
 
-  +hdpi(2)
-    background: #2a2a2a image-url('low_contrast_linen_@2X.png') top left repeat
+.login-container
+  background-color: #474747
+  text-align: right
+  padding: 6px 0px 6px 0px
+  border-bottom: 6px solid #333333
+
+  a
+    background: #f15a23
+    color: #fff
+    padding: 0px 15px
+    font-size: 12px
+    margin: 10px
+
+header.l-header-region
+  height: 0px
+
+header#main-header
+  background: $color-white
+  color: $color-white
+  border-top: 1px solid $color-black
+  min-height: 86px
 
   .menu
     +mp0
@@ -31,13 +47,55 @@ header#main-header
   float: left
   display: block
   max-width: 6.25em
+  margin-top: 15px
+
+nav.top-bar
+  min-height: 86px
+  border-bottom: 1px solid #efefef
 
 #main_logo_link
   padding-left: 0.9375em
   padding-right: 0.9375em
   display: block
-
-
+//override default menu styles
+#main-menu
+  margin: -6px 0 0
+  padding: 0px
+  a
+    border-top: 6px solid transparent
+    color: #3a3a3a
+    font-size: 12px
+    font-weight: 800
+    display: block
+    letter-spacing: -0.08px
+    padding: 26px 20px 40px
+    position: relative
+    text-align: center
+    text-transform: uppercase
+    border-bottom: 1px solid transparent
+    z-index: 98
+    &:hover
+      border-bottom-color: #f15a23
+      border-top-color: #f15a23
+      color: #f15a23
+      background: #f8f8f8
+    &::after
+      color: #aeaeae
+      content: attr(title)
+      font-size: 11px
+      font-style: italic
+      font-weight: 400
+      display: block
+      line-height: 0
+      margin: 3px 0 -3px
+      text-align: center
+      text-transform: lowercase
+  .has-dropdown
+    a::after
+      width: auto
+      position: absolute
+      top: 40px
+      left: -15px
 // Mobile Menu position override
 .top-bar-section .has-dropdown.moved > .dropdown
   +max-screen(940px)
