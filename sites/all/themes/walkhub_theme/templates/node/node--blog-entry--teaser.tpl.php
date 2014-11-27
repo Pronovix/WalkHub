@@ -117,10 +117,9 @@
 
     <p>
       <?php
-      $content = substr(render($content['body']), 0, 400);
-      $textcontent = strip_tags($content);
+      $textcontent = strip_tags(render($content['body']));
       print $textcontent;
-      ?>...
+      ?>
     </p>
   </div>
 </div>

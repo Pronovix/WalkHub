@@ -43,6 +43,14 @@ header#main-header
         +font-size(1.4)
         color: $color-white
 
++max-screen(940px)
+  #main-menu
+    a
+      color: white !important
+
+      &:hover
+        color: #000000 !important
+
 #main_logo_svg
   float: left
   display: block
@@ -57,10 +65,21 @@ nav.top-bar
   padding-left: 0.9375em
   padding-right: 0.9375em
   display: block
+  img
+    width: 100px
+    float: left
+    display: block
+    max-width: 6.25em
+    margin-top: 15px
 //override default menu styles
 #main-menu
   margin: -6px 0 0
   padding: 0px
+  .active
+    border-bottom-color: #f15a23
+    border-top-color: #f15a23
+    color: #f15a23
+    background: #f8f8f8
   a
     border-top: 6px solid transparent
     color: #3a3a3a
@@ -79,6 +98,7 @@ nav.top-bar
       border-top-color: #f15a23
       color: #f15a23
       background: #f8f8f8
+
     &::after
       color: #aeaeae
       content: attr(title)
@@ -95,34 +115,46 @@ nav.top-bar
       width: auto
       position: absolute
       top: 40px
-      left: -15px
+      left: -5px
+    a:first-child
+      padding: 26px 20px 40px 32px
+
 // Mobile Menu position override
 .top-bar-section .has-dropdown.moved > .dropdown
   +max-screen(940px)
     top: 44px
+    li
+      a
+        color: white !important
+      &:hover a
+        color: #000000 !important
 
 .top-bar-section .dropdown
+  .parent-link.js-generated
+    display: none
   +min-screen(940px)
     li
       a
         background: lighten(#000000, 10%)
+        color: white !important
         border-top: #000000 solid 1px
         border-bottom: lighten(#000000, 15%) solid 1px
 
       &.first a
-        -webkit-border-top-left-radius: .35em
-        -webkit-border-top-right-radius: .35em
-        -moz-border-radius-topleft: .35em
-        -moz-border-radius-topright: .35em
-        border-top-left-radius: .35em
-        border-top-right-radius: .35em
         border-top: 0
 
       &.last a
-        -webkit-border-bottom-right-radius: .35em
-        -webkit-border-bottom-left-radius: .35em
-        -moz-border-radius-bottomright: .35em
-        -moz-border-radius-bottomleft: .35em
-        border-bottom-right-radius: .35em
-        border-bottom-left-radius: .35em
         border-bottom: 0
+
+      &:hover a
+        color: #000000 !important
+
+#main-menu
+  li
+    .dropdown
+      li
+        a
+          padding: 26px 25px 26px !important
+
+        .parent-link.js-generated
+          display: none !important
