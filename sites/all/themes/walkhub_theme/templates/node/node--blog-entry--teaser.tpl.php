@@ -120,6 +120,7 @@
       $textcontent = strip_tags(render($content['body']));
       print $textcontent;
       ?>
+
     </p>
   </div>
 </div>
