@@ -5,6 +5,8 @@
 
   .blog.image
     +px-rem(margin, 1, 0, 2)
+    img
+      width: 100%
 
   .attachment
     +px-rem(margin-top, 2)
@@ -12,7 +14,6 @@
     .file
       +font-size(.75)
       display: block
-
 
 // ---------------------
 // Teaser View Mode
@@ -27,11 +28,13 @@
   float: left
   display: block
 
+.post-image.preview
+
 .post-image
-  width: 40%
+  width: 33%
 
 .post-content
-  width: 60%
+  width: 67%
   +px-rem(padding-left, 1.5)
 
   h2
@@ -149,3 +152,19 @@
     +px-rem(top, 2.9)
     +px-rem(left, .75)
     position: absolute
+
+//pager override
+
+.pager
+
+  li
+
+    a
+      background-color: #f15a23 !important
+      color: white !important
+      text-transform: uppercase
+      background-image: none !important
+      border-radius: 0 !important
+      border: none !important
+      text-shadow: none !important
+
