@@ -68,15 +68,15 @@ scripts[] = js/orange_theme/custom.js
 scripts[] = js/orange_theme/jquery.jcarousel.min.js
 ; scripts[] = js/vendor/select2/select2.js
 ;Orange theme scripts
-scripts[] = js/orange_theme/selectivizr-and-extra-selectors.min.js
-scripts[] = js/orange_theme/respond.min.js
-scripts[] = js/orange_theme/jquery.easing-1.3.min.js
+;scripts[] = js/orange_theme/selectivizr-and-extra-selectors.min.js
+;scripts[] = js/orange_theme/respond.min.js
+;scripts[] = js/orange_theme/jquery.easing-1.3.min.js
 scripts[] = js/orange_theme/jquery.fancybox.pack.js
-scripts[] = js/orange_theme/jquery.smartStartSlider.min.js
+;scripts[] = js/orange_theme/jquery.smartStartSlider.min.js
 scripts[] = js/orange_theme/jquery.jcarousel.min.js
 scripts[] = js/orange_theme/jquery.cycle.all.min.js
-scripts[] = js/orange_theme/jquery.isotope.min.js
-scripts[] = js/orange_theme/audioplayerv1.min.js
+;scripts[] = js/orange_theme/jquery.isotope.min.js
+;scripts[] = js/orange_theme/audioplayerv1.min.js
 
 
 ; This section lists the regions defined in the page.tpl.php. The name in

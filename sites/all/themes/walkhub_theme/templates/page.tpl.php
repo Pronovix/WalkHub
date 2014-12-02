@@ -17,7 +17,7 @@
       <?php endif; ?>
         <nav class="top-bar clearfix"<?php print $top_bar_options; ?>>
           <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" id="main_logo_link">
-            <img src="<?php echo drupal_get_path('theme', 'walkhub_theme'); ?>/images/orange-theme-images//placeholders/walkhub.jpg">
+            <img src="<?php $path = drupal_get_path('theme', 'walkhub_theme'); echo $path; ?>/images/orange-theme-images/placeholders/walkhub.jpg">
           </a>
           <ul class="title-area">
             <li class="toggle-topbar menu-icon"><a href="#"><span><?php print $top_bar_menu_text; ?></span></a></li>
