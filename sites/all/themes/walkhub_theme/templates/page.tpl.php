@@ -17,7 +17,7 @@
       <?php endif; ?>
         <nav class="top-bar clearfix"<?php print $top_bar_options; ?>>
           <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" id="main_logo_link">
-            <img src="<?php $path = drupal_get_path('theme', 'walkhub_theme'); echo $path; ?>/images/orange-theme-images/placeholders/walkhub.jpg">
+            <img src="<?php $path = path_to_theme(); $base =  $GLOBALS['base_url']; echo $base.'/'; echo $path; ?>/images/orange-theme-images/placeholders/walkhub.jpg">
           </a>
           <ul class="title-area">
             <li class="toggle-topbar menu-icon"><a href="#"><span><?php print $top_bar_menu_text; ?></span></a></li>
@@ -315,8 +315,8 @@
           <nav id="footer-nav" class="clearfix">
 
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="contact-us.html">Contact</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
 
           </nav>
@@ -325,7 +325,7 @@
           <ul class="contact-info">
             <li class="address">H-6724 Szeged, Zoltán str. 6. Hungary<br>B-9940 Sleidinge, Akkerken 6. Belgium</li>
             <li class="phone">+36 62 648 005</li>
-            <li class="email"><a href="mailto:contact@companyname.com">Help: kata@pronovix.com </a><br>
+            <li class="email"><a href="mailto:kata@pronovix.com">Help: kata@pronovix.com </a><br>
               <a href="mailto:kristof@pronovix.com">Sales: kristof@pronovix.com </a></li>
           </ul>
           <!-- end .contact-info -->
