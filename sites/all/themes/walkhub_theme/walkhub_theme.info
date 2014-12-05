@@ -70,7 +70,7 @@ scripts[] = js/orange_theme/jquery.jcarousel.min.js
 ;Orange theme scripts
 ;scripts[] = js/orange_theme/selectivizr-and-extra-selectors.min.js
 ;scripts[] = js/orange_theme/respond.min.js
-;scripts[] = js/orange_theme/jquery.easing-1.3.min.js
+scripts[] = js/orange_theme/jquery.easing-1.3.min.js
 scripts[] = js/orange_theme/jquery.fancybox.pack.js
 ;scripts[] = js/orange_theme/jquery.smartStartSlider.min.js
 scripts[] = js/orange_theme/jquery.jcarousel.min.js

@@ -3999,28 +3999,30 @@ nav.top-bar { min-height: 86px; border-bottom: 1px solid #efefef; }
 #main-menu .has-dropdown a::after { width: auto; position: absolute; top: 40px; left: -5px; }
 /* line 119, ../sass/modules/_temp_header.sass */
 #main-menu .has-dropdown a:first-child { padding: 26px 20px 40px 32px; }
+/* line 121, ../sass/modules/_temp_header.sass */
+#main-menu .has-dropdown a.active { color: #000000 !important; }
 
-@media screen and (max-width: 939px) { /* line 123, ../sass/modules/_temp_header.sass */
+@media screen and (max-width: 939px) { /* line 125, ../sass/modules/_temp_header.sass */
   .top-bar-section .has-dropdown.moved > .dropdown { top: 44px; }
-  /* line 127, ../sass/modules/_temp_header.sass */
-  .top-bar-section .has-dropdown.moved > .dropdown li a { color: white !important; }
   /* line 129, ../sass/modules/_temp_header.sass */
+  .top-bar-section .has-dropdown.moved > .dropdown li a { color: white !important; }
+  /* line 131, ../sass/modules/_temp_header.sass */
   .top-bar-section .has-dropdown.moved > .dropdown li:hover a { color: #000000 !important; } }
 
-/* line 133, ../sass/modules/_temp_header.sass */
+/* line 135, ../sass/modules/_temp_header.sass */
 .top-bar-section .dropdown .parent-link.js-generated { display: none; }
-@media screen and (min-width: 940px) { /* line 137, ../sass/modules/_temp_header.sass */
+@media screen and (min-width: 940px) { /* line 139, ../sass/modules/_temp_header.sass */
   .top-bar-section .dropdown li a { background: #1a1a1a; color: white !important; border-top: #000000 solid 1px; border-bottom: #262626 solid 1px; }
-  /* line 143, ../sass/modules/_temp_header.sass */
+  /* line 145, ../sass/modules/_temp_header.sass */
   .top-bar-section .dropdown li.first a { border-top: 0; }
-  /* line 146, ../sass/modules/_temp_header.sass */
+  /* line 148, ../sass/modules/_temp_header.sass */
   .top-bar-section .dropdown li.last a { border-bottom: 0; }
-  /* line 149, ../sass/modules/_temp_header.sass */
+  /* line 151, ../sass/modules/_temp_header.sass */
   .top-bar-section .dropdown li:hover a { color: #000000 !important; } }
 
-/* line 156, ../sass/modules/_temp_header.sass */
+/* line 158, ../sass/modules/_temp_header.sass */
 #main-menu li .dropdown li a { padding: 26px 25px 26px !important; }
-/* line 159, ../sass/modules/_temp_header.sass */
+/* line 161, ../sass/modules/_temp_header.sass */
 #main-menu li .dropdown li .parent-link.js-generated { display: none !important; }
 
 /* line 1, ../sass/modules/_temp_featured.sass */
