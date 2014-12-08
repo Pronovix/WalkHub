@@ -50,7 +50,7 @@
   +px-rem(padding, 2.5, 0, 1.5)
   background-color: #000000
   background-image: image_url('devdays.jpg')
-  background-position: center -260px
+  background-position: center -220px
   +background-size(cover)
   position: relative
   +box-shadow(inset 0px -10px 20px 0px rgba(0, 0, 0, 0.15))
@@ -164,3 +164,23 @@
       i,
       small
         color: $color-white
+
+@media only screen and (max-width: 1080px)
+  #featured
+    background-position: center -120px
+    .slide-content
+      left: 40px
+
+@media only screen and (max-width: 910px)
+  #featured
+    min-height: 350px
+    background-position: center -120px
+
+@media only screen and (max-width: 830px)
+  #featured
+    min-height: 260px
+    background-position: center -20px
+
+    .slide-content
+      left: 30px
+      top: -20px
