@@ -4029,6 +4029,12 @@ nav.top-bar { min-height: 86px; border-bottom: 1px solid #efefef; }
 /* line 166, ../sass/modules/_temp_header.sass */
 #main-menu li .dropdown li .parent-link.js-generated { display: none !important; }
 
+@media screen and (max-width: 759px) { /* line 170, ../sass/modules/_temp_header.sass */
+  .post-image.preview { float: none !important; width: 100% !important; }
+  /* line 174, ../sass/modules/_temp_header.sass */
+  .post-image.preview img { width: 100% !important; margin-bottom: 15px; }
+  /* line 178, ../sass/modules/_temp_header.sass */
+  .post-content { width: 100% !important; padding-left: 0px !important; } }
 /* line 1, ../sass/modules/_temp_featured.sass */
 #back-to-top { background: url(../images/orange-theme-images/arrow-up-large.png) no-repeat center center; background-color: #dddddd; background-color: rgba(221, 221, 221, 0.7); bottom: 20px; color: transparent; display: none; font: 0/0 a; height: 46px; position: fixed; right: 20px; text-shadow: none; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -ms-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease; width: 45px; z-index: 100; }
 
