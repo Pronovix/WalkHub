@@ -287,7 +287,7 @@ function imagecache_actions_calculate_offset($keyword, $value, $base_size, $laye
 
   // Handle keyword-number cases like top+50% or bottom-100px,
   // @see imagecache_actions_keyword_filter().
-  if (preg_match('/^(.+)([\+\-])(\d+)([^\d]*)$/', $value, $results)) {
+  if (preg_match('/^([a-z]+) *([+-]) *(\d+)((px|%)?)$/', $value, $results)) {
     list(, $value_key, $value_mod, $mod_value, $mod_unit) = $results;
     if ($mod_unit == '%') {
       $mod_value = $mod_value / 100 * $base_size;
@@ -400,7 +400,7 @@ function imagecache_actions_hex2rgba($hex) {
  */
 function imagecache_actions_keyword_filter($value, $base_size, $layer_size) {
   // See above for the patterns this matches
-  if (! preg_match('/([a-z]*)([\+\-]?)(\d*)([^\d]*)/', $value, $results) ) {
+  if (!preg_match('/([a-z]*) *([+-]?) *(\d*)((px|%)?)/', $value, $results) ) {
     trigger_error("imagecache_actions had difficulty parsing the string '$value' when calculating position. Please check the syntax.", E_USER_WARNING);
   }
   list(, $keyword, $plusminus, $value, $unit) = $results;
