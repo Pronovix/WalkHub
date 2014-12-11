@@ -6,6 +6,13 @@
 
 include_once 'walkthrough_screening.features.inc';
 
+define('WALKTHROUGH_SCREENING_TOKEN', 'walkthrough_screening_token');
+
+define('WALKTHROUGH_SCREENING_STATE_UNSCHEDULED', 'unscheduled');
+define('WALKTHROUGH_SCREENING_STATE_DAILY', 'daily');
+define('WALKTHROUGH_SCREENING_STATE_WEEKLY', 'weekly');
+define('WALKTHROUGH_SCREENING_STATE_MONTHLY', 'monthly');
+
 /**
  * Loads a walkthrough screening node.
  *
@@ -25,4 +32,247 @@ function _walkthrough_screening_node_load($nid) {
   }
 
   return FALSE;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function walkthrough_screening_menu() {
+  $items = [];
+
+  $items['node/%walkhub_walkthrough_node/schedule/%/%/%'] = [
+    'title' => 'Schedule walkthrough',
+    'page callback' => 'walkthrough_screening_schedule_page',
+    'page arguments' => [1, 3, 4, 5],
+    'access callback' => 'node_access',
+    'access arguments' => ['update', 1],
+    'type' => MENU_CALLBACK,
+  ];
+
+  return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function walkthrough_screening_cron() {
+  $last_run = variable_get('cron_last');
+
+  $nids = db_select('screening_schedule', 's')
+    ->fields('s', ['nid'])
+    ->condition('next', REQUEST_TIME, '<')
+    ->condition('next', $last_run, '>=')
+    ->orderBy('next')
+    ->execute()
+    ->fetchCol();
+
+  node_load_multiple($nids); // cache warmup
+
+  $flag = flag_get_flag('mark_for_screening');
+
+  foreach ($nids as $nid) {
+    $node = node_load($nid);
+    if (!$flag->flag('flag', $nid, user_load($node->uid))) {
+      watchdog('walkthrough_screening', 'Flagging failed on %nid (%title)', [
+        '%nid' => $node->nid,
+        '%title' => $node->title,
+      ], WATCHDOG_ERROR);
+    }
+
+    walkthrough_screening_schedule($node);
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function walkthrough_screening_node_update($node) {
+  if ($node->type === 'walkthrough') {
+    walkthrough_screening_schedule($node);
+  }
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function walkthrough_screening_node_insert($node) {
+  if ($node->type === 'walkthrough') {
+    walkthrough_screening_schedule($node);
+  }
+}
+
+/**
+ * Schedules a walkthough node for screening.
+ *
+ * @param stdClass $walkthrough_node
+ *   A node with walkthrough content type.
+ */
+function walkthrough_screening_schedule($walkthrough_node) {
+  if (empty($walkthrough_node->field_screening_schedule[LANGUAGE_NONE])) {
+    return;
+  }
+
+  foreach ($walkthrough_node->field_screening_schedule[LANGUAGE_NONE] as $time) {
+    $t = new DateTime($time['value'], new DateTimeZone('UTC'));
+    $ts = $t->format('U');
+    if ($ts > REQUEST_TIME) {
+      _walkthrough_screening_save_next($walkthrough_node->nid, $ts);
+      break;
+    }
+  }
+}
+
+/**
+ * Saves the next screening schedule.
+ *
+ * @param int $walkthrough_nid
+ *   Node id of a walkthrough node.
+ * @param int $time
+ *   Timestamp of the next screening.
+ */
+function _walkthrough_screening_save_next($walkthrough_nid, $time) {
+  db_merge('screening_schedule')
+    ->key([
+      'nid' => $walkthrough_nid,
+    ])
+    ->fields([
+      'next' => $time,
+    ])
+    ->execute();
+}
+
+/**
+ * Page callback for 'node/%walkhub_walkthrough_node/schedule/%/%/%'.
+ */
+function walkthrough_screening_schedule_page($node, $js, $op, $token) {
+  static $days = [
+    1 => 'MO',
+    2 => 'TU',
+    3 => 'WE',
+    4 => 'TH',
+    5 => 'FR',
+    6 => 'SA',
+    7 => 'SU',
+  ];
+
+  if (!drupal_valid_token($token, WALKTHROUGH_SCREENING_TOKEN)) {
+    drupal_access_denied();
+    return;
+  }
+
+  if ($op !== 'daily' && $op !== 'weekly' && $op !== 'monthly') {
+    drupal_not_found();
+    return;
+  }
+
+  if (!empty($node->field_screening_schedule[$node->language]) && $op === _walkthrough_screening_get_frequency_from_rrule($node->field_screening_schedule[$node->language][0]['rrule'])) {
+    $node->field_screening_schedule = [];
+  }
+  else {
+    $date = date('Y-m-d H:00:00');
+    $rawday = date('N');
+    $day = $days[$rawday];
+    $monthday = date('d');
+    $rrule = NULL;
+    switch ($op) {
+      case 'daily': $rrule = 'RRULE:FREQ=DAILY;INTERVAL=1;COUNT=100;WKST=MO'; break;
+      case 'weekly': $rrule = "RRULE:FREQ=WEEKLY;INTERVAL=1;BYDAY={$day};COUNT=100;WKST=MO"; break;
+      case 'monthly': $rrule = "RRULE:FREQ=MONTHLY;INTERVAL=1;BYMONTHDAY={$monthday};COUNT=100;WKST=MO"; break;
+    }
+
+    $item = [
+      'value' => $date,
+      'value2' => $date,
+      'rrule' => $rrule,
+      'date_type' => 'datetime',
+      'timezone' => date_default_timezone(),
+      'timezone_db' => 'UTC',
+    ];
+
+    $value = date_repeat_build_dates($rrule, NULL, field_info_field('field_screening_schedule'), $item);
+
+    $node->field_screening_schedule = [
+      $node->language => $value,
+    ];
+  }
+
+  node_save($node);
+
+  if ($js === 'nojs') {
+    drupal_goto("node/{$node->nid}");
+  } else {
+    $widget = _walkthrough_screening_get_widget($node->nid, $op);
+    $page = [
+      '#type' => 'ajax',
+      '#commands' => [
+        ajax_command_replace('ul.screening-schedule', drupal_render($widget)),
+      ],
+    ];
+    ajax_deliver($page);
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function walkthrough_screening_node_view($node, $view_mode, $langcode) {
+  if ($node->type !== 'walkthrough' || $view_mode !== 'full' || !node_access('update', $node)) {
+    return;
+  }
+
+  $freq = NULL;
+  if (!empty($node->field_screening_schedule[$node->language])) {
+    $rrule = $node->field_screening_schedule[$node->language][0]['rrule'];
+    $freq = _walkthrough_screening_get_frequency_from_rrule($rrule);
+  }
+
+  $node->content['scheduling'] = _walkthrough_screening_get_widget($node->nid, $freq);
+}
+
+/**
+ * Parses the frequency from an RRULE.
+ *
+ * @param string $rrule
+ * @return string|null
+ */
+function _walkthrough_screening_get_frequency_from_rrule($rrule) {
+  static $freqs = [
+    'DAILY' => 'daily',
+    'WEEKLY' => 'weekly',
+    'MONTHLY' => 'monthly',
+  ];
+
+  foreach ($freqs as $rrule_code => $frequency) {
+    if (strpos($rrule, "FREQ={$rrule_code}") !== FALSE) {
+      return $frequency;
+    }
+  }
+
+  return NULL;
+}
+
+/**
+ * Generates a widget for the walkthrough screening scheduling buttons.
+ *
+ * @param int $nid
+ *   Walkthrough ID to schedule.
+ * @param string $state
+ *   Current scheduling state of the walkthrough (WALKTHROUGH_SCREENING_STATE_UNSCHEDULED,
+ *   WALKTHROUGH_SCREENING_STATE_DAILY, WALKTHROUGH_SCREENING_STATE_WEEKLY, WALKTHROUGH_SCREENING_STATE_MONTHLY).
+ * @return array
+ *   Render array.
+ */
+function _walkthrough_screening_get_widget($nid, $state) {
+  $token = drupal_get_token(WALKTHROUGH_SCREENING_TOKEN);
+  return [
+    '#theme' => 'item_list',
+    '#attributes' => [
+      'class' => ['screening-schedule'],
+    ],
+    '#items' => [
+      l(t('Daily'), "node/{$nid}/schedule/nojs/daily/{$token}", ['attributes' => ['class' => array_merge(['use-ajax'], $state === 'daily' ? ['checked'] : [])]]),
+      l(t('Weekly'), "node/{$nid}/schedule/nojs/weekly/{$token}", ['attributes' => ['class' => array_merge(['use-ajax'], $state === 'weekly' ? ['checked'] : [])]]),
+      l(t('Monthly'), "node/{$nid}/schedule/nojs/monthly/{$token}", ['attributes' => ['class' => array_merge(['use-ajax'], $state === 'monthly' ? ['checked'] : [])]]),
+    ],
+  ];
 }
