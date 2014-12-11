@@ -55,7 +55,7 @@ $topbar-menu-icon-color-toggled: #888 !default;
 // Transitions and breakpoint styles
 $topbar-transition-speed: 300ms !default;
 // Using em-calc for the below breakpoint causes issues with top bar
-$topbar-breakpoint: 940px !default; // Change to 9999px for always mobile layout
+$topbar-breakpoint: 840px !default; // Change to 9999px for always mobile layout
 $topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})" !default;
 
 // Divider Styles
@@ -154,6 +154,9 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
     // Menu toggle button on small devices
     .toggle-topbar {
       position: absolute;
+      background-color: #f15a23;
+      padding: 0px 10px;
+      border-radius: 3px;
       #{$opposite-direction}: 0;
       top: 0;
 
@@ -172,12 +175,11 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
       // Adding the class "menu-icon" will add the 3-line icon people love and adore.
       &.menu-icon {
         #{$opposite-direction}: $topbar-height / 3;
-        padding-#{$default-float}: 40px;
-        margin-top: .65em;
+        margin-top: 1.75em;
 
         a {
           text-indent: -48px;
-          width: 34px;
+          width: 65px;
           height: 34px;
           line-height: 33px;
           padding: 0;
@@ -242,13 +244,13 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
       display: block;
       font-size: $em-base;
       margin: 0;
-      @include min-screen(940px) {
+      @include min-screen(840px) {
         float: right !important;
         padding-left: 0.9375em;
         padding-right: 0.9375em;
       }
 
-      @include max-screen(940px) {
+      @include max-screen(840px) {
         @include box-shadow(inset 0px 0px 5px 0px rgba(0,0,0,0.75));
         background: $topbar-dropdown-bg;
         margin-top: .5em;

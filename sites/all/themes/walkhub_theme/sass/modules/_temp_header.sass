@@ -22,7 +22,6 @@ header.l-header-region
 header#main-header
   background: $color-white
   color: $color-white
-  border-top: 1px solid $color-black
   min-height: 86px
 
   .menu
@@ -43,13 +42,19 @@ header#main-header
         +font-size(1.4)
         color: $color-white
 
-+max-screen(940px)
++max-screen(840px)
   #main-menu
+    margin: 18px 0 0 !important
     a
       color: white !important
 
       &:hover
         color: #000000 !important
+
++max-screen(1310px)
+  #record-a-walkthrough-button
+    width: 300px
+    margin-top: 10px
 
 #main_logo_svg
   float: left
@@ -160,3 +165,17 @@ nav.top-bar
 
         .parent-link.js-generated
           display: none !important
+
++max-screen(760px)
+  .post-image.preview
+    float: none !important
+    width: 100% !important
+
+    img
+      width: 100% !important
+      margin-bottom: 15px
+
+  .post-content
+    width: 100% !important
+    padding-left: 0px !important
+
