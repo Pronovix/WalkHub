@@ -7,6 +7,30 @@
 include_once 'walkthrough_global.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function walkthrough_global_menu() {
+  $items = [];
+
+  $items['useredit'] = [
+    'title' => 'User edit',
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'walkthrough_global_user_redirect',
+    'type' => MENU_CALLBACK,
+  ];
+
+  return $items;
+}
+
+/**
+ * Page callback for 'useredit'.
+ */
+function walkthrough_global_user_redirect() {
+  global $user;
+  drupal_goto("user/{$user->uid}/edit");
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function walkthrough_global_form_walkhub_configuration_form_alter(&$form, &$form_state) {
