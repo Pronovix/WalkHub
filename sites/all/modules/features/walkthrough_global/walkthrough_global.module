@@ -34,9 +34,6 @@ function walkthrough_global_user_redirect() {
  */
 function walkthrough_global_block_info() {
 
-  if (user_is_logged_in()) {
-  return [];
-}else{
   $blocks['login_button_block'] = array(
     'info' => t('The upper login button'),
     'status' => TRUE,
@@ -139,9 +136,6 @@ function walkthrough_global_block_info() {
 
   return $blocks;
 }
-/**
-* end of hook_block_info().
-*/
 
 /**
 * Implements hook_block_view().
@@ -149,13 +143,17 @@ function walkthrough_global_block_info() {
 function walkthrough_global_block_view($delta = '') {
   $block = array();
   switch ($delta) {
+    
     case 'login_button_block':
+      if (user_is_logged_in()) {
+        return [];
+      }else{
       $block['subject'] = t('Upper login line');
       $block['content'] = [
         '#theme' => 'login_button_output',
         '#title' => t('Upper login button'),
         '#content' => 'static content',
-      ];
+      ];}
       break;
 
     case 'main_header_content':
@@ -163,7 +161,7 @@ function walkthrough_global_block_view($delta = '') {
         '#theme' => 'main_header_content_output',
         '#content' => 'static content',
       ];
-    break;
+      break;
 
     case 'why_choose_walkhub':
       $block['content'] = [
@@ -230,9 +228,7 @@ function walkthrough_global_block_view($delta = '') {
   }
   return $block;
 }
-/**
-* end of hook_block_view().
-*/
+
 
 /**
 * Implements hook_block_theme().
@@ -329,9 +325,6 @@ function walkthrough_global_theme() {
     ),
   );
 }
-/**
-* end of hook_block_theme().
-*/
 
 /**
  * Implements hook_form_FORM_ID_alter().
