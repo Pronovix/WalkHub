@@ -55,7 +55,7 @@ $topbar-menu-icon-color-toggled: #888 !default;
 // Transitions and breakpoint styles
 $topbar-transition-speed: 300ms !default;
 // Using em-calc for the below breakpoint causes issues with top bar
-$topbar-breakpoint: 840px !default; // Change to 9999px for always mobile layout
+$topbar-breakpoint: 960px !default; // Change to 9999px for always mobile layout
 $topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})" !default;
 
 // Divider Styles
@@ -244,13 +244,13 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
       display: block;
       font-size: $em-base;
       margin: 0;
-      @include min-screen(840px) {
+      @include min-screen(960px) {
         float: right !important;
         padding-left: 0.9375em;
         padding-right: 0.9375em;
       }
 
-      @include max-screen(840px) {
+      @include max-screen(960px) {
         @include box-shadow(inset 0px 0px 5px 0px rgba(0,0,0,0.75));
         background: $topbar-dropdown-bg;
         margin-top: .5em;
