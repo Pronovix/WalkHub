@@ -29,6 +29,304 @@ function walkthrough_global_user_redirect() {
   global $user;
   drupal_goto("user/{$user->uid}/edit");
 }
+/**
+ * Implements hook_block_info().
+ */
+function walkthrough_global_block_info() {
+
+  $blocks['login_button_block'] = array(
+    'info' => t('The upper login button'),
+    'status' => TRUE,
+    'region' => 'header',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'pages' => '',
+  );
+
+  $blocks['main_header_content'] = array(
+    'info' => t('This is the main header content'),
+    'status' => TRUE,
+    'region' => 'Featured',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['why_choose_walkhub'] = array(
+    'info' => t('Why choose walkhub content'),
+    'status' => TRUE,
+    'region' => 'news',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['guide_tours'] = array(
+    'info' => t('Guide tours content'),
+    'status' => TRUE,
+    'region' => 'news',
+    'weight' => 1,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['zigg_zagg_content'] = array(
+    'info' => t('Guide tours'),
+    'status' => TRUE,
+    'region' => 'news',
+    'weight' => 2,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['call_to_action_first'] = array(
+    'info' => t('Call to action line'),
+    'status' => TRUE,
+    'region' => 'call-to-action-first',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['tweet_list'] = array(
+    'info' => t('Tweet list'),
+    'status' => TRUE,
+    'region' => 'tweets',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['portfolio'] = array(
+    'info' => t('Portfolio items'),
+    'status' => TRUE,
+    'region' => 'portfolio',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['companies'] = array(
+    'info' => t('Companies who trust us'),
+    'status' => TRUE,
+    'region' => 'trusted-by',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'pages' => '',
+  );
+
+  $blocks['call_to_action_bottom_line'] = array(
+    'info' => t('Call to action bottom'),
+    'status' => TRUE,
+    'region' => 'call-to-action',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'pages' => '',
+  );
+
+  $blocks['sign_up'] = array(
+    'info' => t('Sign up button'),
+    'status' => TRUE,
+    'region' => 'signup',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'pages' => '',
+  );
+
+
+  return $blocks;
+}
+
+/**
+* Implements hook_block_view().
+*/
+function walkthrough_global_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+
+    case 'login_button_block':
+      if (user_is_logged_in()) {
+        return [];
+      }
+      else {
+        $block['subject'] = t('Upper login line');
+        $block['content'] = [
+          '#theme' => 'login_button_output',
+          '#title' => t('Upper login button'),
+          '#content' => 'static content',
+        ];
+      }
+      break;
+
+    case 'main_header_content':
+      $block['content'] = [
+        '#theme' => 'main_header_content_output',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'why_choose_walkhub':
+      $block['content'] = [
+        '#theme' => 'why_choose_walkhub',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'guide_tours':
+      $block['content'] = [
+        '#theme' => 'guide_tours',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'zigg_zagg_content':
+      $block['content'] = [
+        '#theme' => 'zigg_zagg_content',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'call_to_action_first':
+      $block['content'] = [
+        '#theme' => 'call_to_action_first',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'tweet_list':
+      $block['content'] = [
+        '#theme' => 'tweet_list',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'portfolio':
+      $block['content'] = [
+        '#theme' => 'portfolio',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'companies':
+      $block['content'] = [
+        '#theme' => 'companies',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'call_to_action_bottom_line':
+      $block['content'] = [
+        '#theme' => 'call_to_action_bottom_line',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'sign_up':
+      $block['content'] = [
+        '#theme' => 'sign_up',
+        '#content' => 'static content',
+      ];
+      break;
+  }
+  return $block;
+}
+
+
+/**
+* Implements hook_block_theme().
+*/
+function walkthrough_global_theme() {
+  return array(
+    'login_button_output' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'login_button',
+    ),
+    'main_header_content_output' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'main_header_content',
+    ),
+    'why_choose_walkhub' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'why_choose_walkhub',
+    ),
+    'guide_tours' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'guide_tours',
+    ),
+    'zigg_zagg_content' => array(
+    'variables' => array(
+      'title' => NULL,
+      'content' => NULL,
+      'popular_content' => NULL,
+      ),
+    'template' => 'zigg_zagg_content',
+    ),
+    'call_to_action_first' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'call_to_action_first',
+    ),
+    'tweet_list' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'tweet_list',
+    ),
+    'portfolio' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'portfolio',
+    ),
+    'companies' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'companies',
+    ),
+    'call_to_action_bottom_line' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'call_to_action_bottom_line',
+    ),
+    'sign_up' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'sign_up',
+    ),
+  );
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
