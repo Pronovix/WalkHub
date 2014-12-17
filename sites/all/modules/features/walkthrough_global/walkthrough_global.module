@@ -148,13 +148,14 @@ function walkthrough_global_block_view($delta = '') {
       if (user_is_logged_in()) {
         return [];
       }
-      else {
-      $block['subject'] = t('Upper login line');
-      $block['content'] = [
-        '#theme' => 'login_button_output',
-        '#title' => t('Upper login button'),
-        '#content' => 'static content',
-      ];}
+      else  {
+        $block['subject'] = t('Upper login line');
+        $block['content'] = [
+          '#theme' => 'login_button_output',
+          '#title' => t('Upper login button'),
+          '#content' => 'static content',
+        ];
+      }
       break;
 
     case 'main_header_content':
