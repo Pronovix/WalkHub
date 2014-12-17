@@ -148,7 +148,7 @@ function walkthrough_global_block_view($delta = '') {
       if (user_is_logged_in()) {
         return [];
       }
-      else  {
+      else {
         $block['subject'] = t('Upper login line');
         $block['content'] = [
           '#theme' => 'login_button_output',
