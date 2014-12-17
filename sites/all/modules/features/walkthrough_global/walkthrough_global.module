@@ -29,481 +29,474 @@ function walkthrough_global_user_redirect() {
   global $user;
   drupal_goto("user/{$user->uid}/edit");
 }
-
-/*
- * This is the beginning where i implement my custom blocks
+/**
+ * Implements hook_block_info().
  */
 function walkthrough_global_block_info() {
 
   if (user_is_logged_in()) {
-    return [];
+  return [];
+}else{
+  $blocks['login_button_block'] = array(
+    'info' => t('The upper login button'),
+    'status' => TRUE,
+    'region' => 'header',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'pages' => '',
+  );
+
+  $blocks['main_header_content'] = array(
+    'info' => t('This is the main header content'),
+    'status' => TRUE,
+    'region' => 'Featured',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['why_choose_walkhub'] = array(
+    'info' => t('Why choose walkhub content'),
+    'status' => TRUE,
+    'region' => 'news',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['guide_tours'] = array(
+    'info' => t('Guide tours content'),
+    'status' => TRUE,
+    'region' => 'news',
+    'weight' => 1,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['zigg_zagg_content'] = array(
+    'info' => t('Guide tours'),
+    'status' => TRUE,
+    'region' => 'news',
+    'weight' => 2,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['call_to_action_first'] = array(
+    'info' => t('Call to action line'),
+    'status' => TRUE,
+    'region' => 'call-to-action-first',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['tweet_list'] = array(
+    'info' => t('Tweet list'),
+    'status' => TRUE,
+    'region' => 'tweets',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['portfolio'] = array(
+    'info' => t('Portfolio items'),
+    'status' => TRUE,
+    'region' => 'portfolio',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  $blocks['companies'] = array(
+    'info' => t('Companies who trust us'),
+    'status' => TRUE,
+    'region' => 'trusted-by',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'pages' => '',
+  );
+
+  $blocks['call_to_action_bottom_line'] = array(
+    'info' => t('Call to action bottom'),
+    'status' => TRUE,
+    'region' => 'call-to-action',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'pages' => '',
+  );
+
+  $blocks['sign_up'] = array(
+    'info' => t('Sign up button'),
+    'status' => TRUE,
+    'region' => 'signup',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'pages' => '',
+  );
+
+
+  return $blocks;
+}
+/**
+* end of hook_block_info().
+*/
+
+/**
+* Implements hook_block_view().
+*/
+function walkthrough_global_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'login_button_block':
+      $block['subject'] = t('Upper login line');
+      $block['content'] = [
+        '#theme' => 'login_button_output',
+        '#title' => t('Upper login button'),
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'main_header_content':
+      $block['content'] = [
+        '#theme' => 'main_header_content_output',
+        '#content' => 'static content',
+      ];
+    break;
+
+    case 'why_choose_walkhub':
+      $block['content'] = [
+        '#theme' => 'why_choose_walkhub',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'guide_tours':
+      $block['content'] = [
+        '#theme' => 'guide_tours',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'zigg_zagg_content':
+      $block['content'] = [
+        '#theme' => 'zigg_zagg_content',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'call_to_action_first':
+      $block['content'] = [
+        '#theme' => 'call_to_action_first',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'tweet_list':
+      $block['content'] = [
+        '#theme' => 'tweet_list',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'portfolio':
+      $block['content'] = [
+        '#theme' => 'portfolio',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'companies':
+      $block['content'] = [
+        '#theme' => 'companies',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'call_to_action_bottom_line':
+      $block['content'] = [
+        '#theme' => 'call_to_action_bottom_line',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'sign_up':
+      $block['content'] = [
+        '#theme' => 'sign_up',
+        '#content' => 'static content',
+      ];
+      break;
   }
-  else {
-    $blocks['login_button_block'] = array(
-      'info' => t('The upper login button'),
-      'status' => TRUE,
-      'region' => 'header',
-      'weight' => 0,
-      'visibility' => BLOCK_VISIBILITY_NOTLISTED,
-      'pages' => '',
-    );}
+  return $block;
+}
+/**
+* end of hook_block_view().
+*/
 
-    $blocks['main_header_content'] = array(
-      'info' => t('This is the main header content'),
-      'status' => TRUE,
-      'region' => 'Featured',
-      'weight' => 0,
-      'visibility' => BLOCK_VISIBILITY_LISTED,
-      'pages' => '<front>',
-    );
-
-    $blocks['why_choose_walkhub'] = array(
-      'info' => t('Why choose walkhub content'),
-      'status' => TRUE,
-      'region' => 'news',
-      'weight' => 0,
-      'visibility' => BLOCK_VISIBILITY_LISTED,
-      'pages' => '<front>',
-    );
-
-    $blocks['guide_tours'] = array(
-      'info' => t('Guide tours content'),
-      'status' => TRUE,
-      'region' => 'news',
-      'weight' => 1,
-      'visibility' => BLOCK_VISIBILITY_LISTED,
-      'pages' => '<front>',
-    );
-
-    $blocks['zigg_zagg_content'] = array(
-      'info' => t('Guide tours'),
-      'status' => TRUE,
-      'region' => 'news',
-      'weight' => 2,
-      'visibility' => BLOCK_VISIBILITY_LISTED,
-      'pages' => '<front>',
-    );
-
-    $blocks['call_to_action_first'] = array(
-      'info' => t('Call to action line'),
-      'status' => TRUE,
-      'region' => 'call-to-action-first',
-      'weight' => 0,
-      'visibility' => BLOCK_VISIBILITY_LISTED,
-      'pages' => '<front>',
-    );
-
-    $blocks['tweet_list'] = array(
-      'info' => t('Tweet list'),
-      'status' => TRUE,
-      'region' => 'tweets',
-      'weight' => 0,
-      'visibility' => BLOCK_VISIBILITY_LISTED,
-      'pages' => '<front>',
-    );
-
-    $blocks['portfolio'] = array(
-      'info' => t('Portfolio items'),
-      'status' => TRUE,
-      'region' => 'portfolio',
-      'weight' => 0,
-      'visibility' => BLOCK_VISIBILITY_LISTED,
-      'pages' => '<front>',
-    );
-
-    $blocks['companies'] = array(
-      'info' => t('Companies who trust us'),
-      'status' => TRUE,
-      'region' => 'trusted-by',
-      'weight' => 0,
-      'visibility' => BLOCK_VISIBILITY_NOTLISTED,
-      'pages' => '',
-    );
-
-    $blocks['call_to_action_bottom_line'] = array(
-      'info' => t('Call to action bottom'),
-      'status' => TRUE,
-      'region' => 'call-to-action',
-      'weight' => 0,
-      'visibility' => BLOCK_VISIBILITY_NOTLISTED,
-      'pages' => '',
-    );
-
-    $blocks['sign_up'] = array(
-      'info' => t('Sign up button'),
-      'status' => TRUE,
-      'region' => 'signup',
-      'weight' => 0,
-      'visibility' => BLOCK_VISIBILITY_NOTLISTED,
-      'pages' => '',
-    );
-
-
-    return $blocks;
-  }
-  /*
-   * implementing the hook block view
-   */
-  function walkthrough_global_block_view($delta = '') {
-    $block = array();
-    switch ($delta) {
-      case 'login_button_block':
-        $block['subject'] = t('Upper login line');
-        $block['content'] = [
-          '#theme' => 'login_button_output',
-          '#title' => t('Upper login button'),
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'main_header_content':
-        $block['content'] = [
-          '#theme' => 'main_header_content_output',
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'why_choose_walkhub':
-        $block['content'] = [
-          '#theme' => 'why_choose_walkhub',
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'guide_tours':
-        $block['content'] = [
-          '#theme' => 'guide_tours',
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'zigg_zagg_content':
-        $block['content'] = [
-          '#theme' => 'zigg_zagg_content',
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'call_to_action_first':
-        $block['content'] = [
-          '#theme' => 'call_to_action_first',
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'tweet_list':
-        $block['content'] = [
-          '#theme' => 'tweet_list',
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'portfolio':
-        $block['content'] = [
-          '#theme' => 'portfolio',
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'companies':
-        $block['content'] = [
-          '#theme' => 'companies',
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'call_to_action_bottom_line':
-        $block['content'] = [
-          '#theme' => 'call_to_action_bottom_line',
-          '#content' => 'static content',
-        ];
-        break;
-
-      case 'sign_up':
-        $block['content'] = [
-          '#theme' => 'sign_up',
-          '#content' => 'static content',
-        ];
-        break;
-    }
-    return $block;
-  }
-
-  ;
-
-  /*
-   * end ofimplementing the hook block view
-   */
-
-  /*
-   * implementing the hook theme
-   */
-
-  function walkthrough_global_theme() {
-    return array(
-      'login_button_output' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'login_button',
+/**
+* Implements hook_block_theme().
+*/
+function walkthrough_global_theme() {
+  return array(
+    'login_button_output' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-      'main_header_content_output' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'main_header_content',
+      'template' => 'login_button',
+    ),
+    'main_header_content_output' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-      'why_choose_walkhub' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'why_choose_walkhub',
+      'template' => 'main_header_content',
+    ),
+    'why_choose_walkhub' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-      'guide_tours' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'guide_tours',
+      'template' => 'why_choose_walkhub',
+    ),
+    'guide_tours' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-      'zigg_zagg_content' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'zigg_zagg_content',
+      'template' => 'guide_tours',
+    ),
+    'zigg_zagg_content' => array(
+    'variables' => array(
+      'title' => NULL,
+      'content' => NULL,
+      'popular_content' => NULL,
       ),
-      'call_to_action_first' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'call_to_action_first',
+    'template' => 'zigg_zagg_content',
+    ),
+    'call_to_action_first' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-      'tweet_list' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'tweet_list',
+      'template' => 'call_to_action_first',
+    ),
+    'tweet_list' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-      'portfolio' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'portfolio',
+      'template' => 'tweet_list',
+    ),
+    'portfolio' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-      'companies' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'companies',
+      'template' => 'portfolio',
+    ),
+    'companies' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-      'call_to_action_bottom_line' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'call_to_action_bottom_line',
+      'template' => 'companies',
+    ),
+    'call_to_action_bottom_line' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-      'sign_up' => array(
-        'variables' => array(
-          'title' => NULL,
-          'content' => NULL,
-          'popular_content' => NULL,
-        ),
-        'template' => 'sign_up',
+      'template' => 'call_to_action_bottom_line',
+    ),
+    'sign_up' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
       ),
-    );
-  }
+      'template' => 'sign_up',
+    ),
+  );
+}
+/**
+* end of hook_block_theme().
+*/
 
-  /*
-   * end of implementing the hook theme
-   */
-  /*
-   * this is the end of my custom block section
-   */
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function walkthrough_global_form_walkhub_configuration_form_alter(&$form, &$form_state) {
+  $walkthrough_global_secret_key = variable_get('walkthrough_global_secret_key', NULL);
 
-  /**
-   * Implements hook_form_FORM_ID_alter().
-   */
-  function walkthrough_global_form_walkhub_configuration_form_alter(&$form, &$form_state) {
-    $walkthrough_global_secret_key = variable_get('walkthrough_global_secret_key', NULL);
+  $form['ios'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('iOS app'),
+    '#collapsible' => TRUE,
+    '#collapsed' => empty($walkthrough_global_secret_key),
+    '#weight' => 5,
+  );
 
-    $form['ios'] = array(
-      '#type' => 'fieldset',
-      '#title' => t('iOS app'),
-      '#collapsible' => TRUE,
-      '#collapsed' => empty($walkthrough_global_secret_key),
-      '#weight' => 5,
-    );
+  $form['ios']['walkthrough_global_secret_key'] = array(
+    '#title' => t('Registration service private key'),
+    '#description' => t('This key is used to identify every request sent by the iOS app.'),
+    '#type' => 'textarea',
+    '#default_value' => $walkthrough_global_secret_key,
+  );
+}
 
-    $form['ios']['walkthrough_global_secret_key'] = array(
-      '#title' => t('Registration service private key'),
-      '#description' => t('This key is used to identify every request sent by the iOS app.'),
-      '#type' => 'textarea',
-      '#default_value' => $walkthrough_global_secret_key,
-    );
-  }
+/**
+ * Implements hook_services_resources().
+ */
+function walkthrough_global_services_resources() {
+  $resources = array();
 
-  /**
-   * Implements hook_services_resources().
-   */
-  function walkthrough_global_services_resources() {
-    $resources = array();
-
-    $resources['walkhub-user'] = array(
-      'actions' => array(
-        'registration' => array(
-          'help' => 'Create a new user account.',
-          'callback' => '_walkthrough_global_resource_registration',
-          'access arguments append' => TRUE,
-          'args' => array(
-            array(
-              'name' => 'username',
-              'type' => 'string',
-              'description' => 'A valid username',
-              'source' => array(
-                'data' => 'username',
-              ),
-              'optional' => FALSE,
+  $resources['walkhub-user'] = array(
+    'actions' => array(
+      'registration' => array(
+        'help' => 'Create a new user account.',
+        'callback' => '_walkthrough_global_resource_registration',
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'username',
+            'type' => 'string',
+            'description' => 'A valid username',
+            'source' => array(
+              'data' => 'username',
             ),
-            array(
-              'name' => 'mail',
-              'type' => 'string',
-              'description' => 'A valid e-mail',
-              'source' => array(
-                'data' => 'mail',
-              ),
-              'optional' => FALSE,
-            ),
-            array(
-              'name' => 'password',
-              'type' => 'string',
-              'description' => 'A valid password',
-              'source' => array(
-                'data' => 'password',
-              ),
-              'optional' => FALSE,
-            ),
-            array(
-              'name' => 'token',
-              'type' => 'string',
-              'description' => 'A valid token to filter out robots.',
-              'source' => array(
-                'data' => 'token',
-              ),
-              'optional' => FALSE,
-            ),
+            'optional' => FALSE,
           ),
-          'access callback' => '_walkthrough_global_resource_registration_access',
-          'file' => array(
-            'type' => 'inc',
-            'module' => 'walkthrough_global',
-            'name' => 'walkthrough_global.services',
+          array(
+            'name' => 'mail',
+            'type' => 'string',
+            'description' => 'A valid e-mail',
+            'source' => array(
+              'data' => 'mail',
+            ),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'password',
+            'type' => 'string',
+            'description' => 'A valid password',
+            'source' => array(
+              'data' => 'password',
+            ),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'token',
+            'type' => 'string',
+            'description' => 'A valid token to filter out robots.',
+            'source' => array(
+              'data' => 'token',
+            ),
+            'optional' => FALSE,
           ),
         ),
+        'access callback' => '_walkthrough_global_resource_registration_access',
+        'file' => array(
+          'type' => 'inc',
+          'module' => 'walkthrough_global',
+          'name' => 'walkthrough_global.services',
+        ),
       ),
-    );
+    ),
+  );
 
-    return $resources;
+  return $resources;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function walkthrough_global_permission() {
+  return array(
+    'clone accessible content' => array(
+      'title' => t('Clone content you can access'),
+    ),
+  );
+}
+/**
+ * Implements hook_access_alter().
+ */
+function walkthrough_global_clone_access_alter(&$access, &$node) {
+  global $user;
+  $access = FALSE;
+
+  //Check general requirements for a node if it's cloneable
+  if (_clone_is_permitted($node->type) && node_access('view', $node) && node_access('create', $node->type)) {
+    //Check for 'clone accessible content' specific requirements
+    $access = (user_access('clone accessible content') && node_access('update', $node));
   }
+}
 
-  /**
-   * Implements hook_permission().
-   */
-  function walkthrough_global_permission() {
-    return array(
-      'clone accessible content' => array(
-        'title' => t('Clone content you can access'),
-      ),
-    );
-  }
+function _clone_is_permitted($type) {
+  $omitted = variable_get('clone_omitted', array());
+  return empty($omitted[$type]);
+}
 
-  /**
-   * Implements hook_access_alter().
-   */
-  function walkthrough_global_clone_access_alter(&$access, &$node) {
-    global $user;
-    $access = FALSE;
-
-    //Check general requirements for a node if it's cloneable
-    if (_clone_is_permitted($node->type) && node_access('view', $node) && node_access('create', $node->type)) {
-      //Check for 'clone accessible content' specific requirements
-      $access = (user_access('clone accessible content') && node_access('update', $node));
-    }
-  }
-
-  function _clone_is_permitted($type) {
-    $omitted = variable_get('clone_omitted', array());
-    return empty($omitted[$type]);
-  }
-
-  /**
-   * Implements hook_menu_alter().
-   */
-  function walkthrough_global_menu_alter(&$items) {
-    // Redirect field_collection view pages to parent node
-    foreach (field_info_fields() as $field) {
-      if ($field['type'] == 'field_collection') {
-        $path = field_collection_field_get_path($field);
-        if (isset($items["{$path}/%field_collection_item"])) {
-          $items["{$path}/%field_collection_item"]['page callback'] = 'walkthrough_global_field_collection_item_page_redirect';
-        }
+/**
+ * Implements hook_menu_alter().
+ */
+function walkthrough_global_menu_alter(&$items) {
+  // Redirect field_collection view pages to parent node
+  foreach (field_info_fields() as $field) {
+    if ($field['type'] == 'field_collection')  {
+      $path = field_collection_field_get_path($field);
+      if (isset($items["{$path}/%field_collection_item"])) {
+        $items["{$path}/%field_collection_item"]['page callback'] = 'walkthrough_global_field_collection_item_page_redirect';
       }
     }
   }
+}
 
-  function walkthrough_global_field_collection_item_page_redirect($field_collection_item) {
-    $item_id = $field_collection_item->item_id;
-    $query = new EntityFieldQuery();
-    $query
-      ->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', 'walkthrough')
-      ->fieldCondition('field_fc_steps', 'value', $item_id)
-      ->range(0, 1);
+function walkthrough_global_field_collection_item_page_redirect($field_collection_item) {
+  $item_id = $field_collection_item->item_id;
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'walkthrough')
+    ->fieldCondition('field_fc_steps', 'value', $item_id)
+    ->range(0,1);
 
 
-    $result = $query->execute();
+  $result = $query->execute();
 
-    if ($result) {
-      foreach (array_keys($result['node']) as $nid) {
-        drupal_goto('node/' . $nid);
-      }
+  if ($result) {
+    foreach (array_keys($result['node']) as $nid) {
+      drupal_goto('node/' . $nid);
+    }
+  }
+}
+
+/**
+ * Access callback to prevent the robots creating new account using this endpoint.
+ */
+function _walkthrough_global_resource_registration_access($username, $mail, $password, $token) {
+  // Get the secret key.
+  $secret_key = variable_get('walkthrough_global_secret_key', NULL);
+
+  // Check that every necessary variable exists.
+  if (!is_null($secret_key)) {
+    // Concatenate the username, mail and password after the secret key
+    $secret_key .= $username . $mail . $password;
+    // Check that the two hash is the same.
+    if ($token == sha1($secret_key)) {
+      return TRUE;
     }
   }
 
-  /**
-   * Access callback to prevent the robots creating new account using this endpoint.
-   */
-  function _walkthrough_global_resource_registration_access($username, $mail, $password, $token) {
-    // Get the secret key.
-    $secret_key = variable_get('walkthrough_global_secret_key', NULL);
-
-    // Check that every necessary variable exists.
-    if (!is_null($secret_key)) {
-      // Concatenate the username, mail and password after the secret key
-      $secret_key .= $username . $mail . $password;
-      // Check that the two hash is the same.
-      if ($token == sha1($secret_key)) {
-        return TRUE;
-      }
-    }
-
-    return FALSE;
-  }
+  return FALSE;
+}
