@@ -133,6 +133,15 @@ function walkthrough_global_block_info() {
     'pages' => '',
   );
 
+  $blocks['pricing_page_content'] = array(
+    'info' => t('Tables and content for pricing page'),
+    'status' => TRUE,
+    'region' => 'content',
+    'weight' => 0,
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => 'pricing',
+  );
+
 
   return $blocks;
 }
@@ -224,6 +233,13 @@ function walkthrough_global_block_view($delta = '') {
     case 'sign_up':
       $block['content'] = [
         '#theme' => 'sign_up',
+        '#content' => 'static content',
+      ];
+      break;
+
+    case 'pricing_page_content':
+      $block['content'] = [
+        '#theme' => 'pricing_page_content',
         '#content' => 'static content',
       ];
       break;
@@ -324,6 +340,14 @@ function walkthrough_global_theme() {
         'popular_content' => NULL,
       ),
       'template' => 'sign_up',
+    ),
+    'pricing_page_content' => array(
+      'variables' => array(
+        'title' => NULL,
+        'content' => NULL,
+        'popular_content' => NULL,
+      ),
+      'template' => 'pricing_page_content',
     ),
   );
 }

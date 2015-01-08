@@ -18,7 +18,7 @@ function walkthrough_global_menu_default_menu_links() {
     'link_title' => 'Collections',
     'options' => array(
       'attributes' => array(
-        'title' => '',
+        'title' => 'walkthrough collections',
       ),
       'identifier' => 'main-menu_collections:public-collections',
     ),
@@ -43,7 +43,7 @@ function walkthrough_global_menu_default_menu_links() {
       'identifier' => 'main-menu_home:<front>',
     ),
     'module' => 'menu',
-    'hidden' => 0,
+    'hidden' => 1,
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
@@ -63,7 +63,7 @@ function walkthrough_global_menu_default_menu_links() {
       'identifier' => 'main-menu_log-in:user/login',
     ),
     'module' => 'menu',
-    'hidden' => 0,
+    'hidden' => 1,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,

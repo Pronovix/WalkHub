@@ -85,8 +85,8 @@ function walkthrough_global_image_default_styles() {
       2 => array(
         'label' => 'Overlay (watermark)',
         'help' => 'Choose the file image you wish to use as an overlay, and position it in a layer on top of the canvas.',
-        'effect callback' => 'canvasactions_file2canvas_effect',
         'dimensions passthrough' => TRUE,
+        'effect callback' => 'canvasactions_file2canvas_effect',
         'form callback' => 'canvasactions_file2canvas_form',
         'summary theme' => 'canvasactions_file2canvas_summary',
         'module' => 'imagecache_canvasactions',
