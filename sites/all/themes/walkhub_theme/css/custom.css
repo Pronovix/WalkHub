@@ -4551,10 +4551,11 @@ footer a { color: #868686; }
 
 /* line 160, ../sass/modules/_temp_pricing.sass */
 .legend.hidden { display: none; }
+
 /* line 163, ../sass/modules/_temp_pricing.sass */
-.legend.hidden .screenshots { margin-top: 12px; }
+.screenshots { margin-top: 12px; }
 /* line 166, ../sass/modules/_temp_pricing.sass */
-.legend.hidden .screenshots .second { margin: 18px 0px 14px 0px; }
+.screenshots .second { margin: 18px 0px 14px 0px; }
 
 /* Tooltips! */
 /* Base styles for the element that has a tooltip */
