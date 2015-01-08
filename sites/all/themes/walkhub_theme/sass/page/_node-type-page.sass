@@ -64,3 +64,41 @@ ol
 
   main.row.l-main
     height: 60px
+
+.screening-schedule
+  ul
+
+  li
+    float: left
+    list-style: none
+    width: 33%
+    text-align: center
+    background-color: #f15a23
+    padding: 5px 0px
+    position: relative
+
+    &:hover
+      background-color: #474747
+  .active
+    background-color: #474747
+    a
+      color: #ffffff
+      display: block
+    .ajax-progress
+      position: absolute
+      right: 5px
+      top: 8px
+  .first
+    margin-right: 4px
+  .last
+    margin-left: 4px
+
+.item-list
+  margin-bottom: 20px
+.item-list:after
+  visibility: hidden
+  display: block
+  font-size: 0
+  content: " "
+  clear: both
+  height: 0
