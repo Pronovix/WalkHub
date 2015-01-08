@@ -1,0 +1,319 @@
+.sign_up_btn
+  background-color: #f15a23
+  display: block
+  padding: 8px
+  width: 475px
+  margin: 0px auto
+  text-decoration: none
+  text-align: center
+  color: white
+
+  &:hover
+    background-color: #474747
+    color: white
+.price_table
+  margin-top: 40px
+.highlighted
+  margin: -20px 0px 0px 0px
+  position: relative
+  z-index: 101
+  box-shadow: 0px 0px 5px #e5e5e5
+  .head
+    padding: 50px 15px 30px 15px!important
+    background-color: #474747 !important
+    color: #ffffff !important
+    h5
+      color: white !important
+.gold
+  .line
+    background-color: #FCB520
+.silver
+  .line
+    background-color: #000000
+.bronze
+  .line
+    background-color: #FCB520
+.blue
+  .line
+    background-color: #474747
+.regular
+  border-left: 4px solid #e5e5e5 !important
+  .line
+    background-color: #f9fafa
+    margin: 0px !important
+    width: 100% !important
+    height: 7px !important
+  .price_button
+    background-color: #7E7C7C !important
+    &:hover
+      background-color: #d3d3d3 !important
+.blue
+  .price_button
+    background-color: #474747 !important
+    &:hover
+      background-color: #474747 !important
+.legend
+  border: none !important
+  text-align: right
+  p
+    margin-bottom: 1px
+    font-size: 12px
+    padding-right: 10px
+  span
+    padding: 10px 10px 10px 0px
+    display: block
+    line-height: 16px
+    i
+      cursor: pointer
+      color: #e5e5e5
+      &:hover
+        color: #474747
+  .walkthrough
+    margin-top: 315px
+.screen_separate_helper
+  display: none
+.column
+  float: left
+  border: 1px solid #e5e5e5
+  width: 18%
+  margin-left: -1px
+  padding: 0px
+  background-color: white
+
+  .line
+    height: 8px
+    margin-top: -1px
+    width: 101%
+    margin-left: -1px
+
+  .body
+    font-size: 12px
+    padding: 20px 15px
+
+    .separated
+      margin-bottom: 15px
+    span
+      padding: 10px 0px 10px 0px
+      display: block
+      line-height: 16px
+    strong
+      font-size: 16px
+      font-family: arial, sans-serif !important
+      color: #f15a23
+  .head
+    padding: 30px 15px
+    border-bottom: 1px solid #e5e5e5
+    background: #f9fafa
+    text-align: center
+
+    h5
+      margin-bottom: 10px
+      margin-top: 0px
+      text-transform: uppercase
+      font-weight: bold
+    .enterprice
+      font-size: 12px !important
+      font-weight: bold
+      padding-top: 5px
+    .price
+      -webkit-font-smoothing: auto
+      margin-bottom: 20px
+      font-size: 36px
+      height: 36px
+      display: block
+      abbr
+        font-size: 14px
+        line-height: 16px
+        vertical-align: top
+        border-bottom: none !important
+      i
+        font-size: 12px
+    .sort_desc
+      font-size: 12px
+      line-height: 16px
+      display: block
+      height: 100px
+
+    .price_button
+      font-weight: bold
+      text-transform: uppercase
+      color: #ffffff
+      font-size: 16px
+      background-color: #f15a23
+      padding: 0px 20px
+      display: block
+      height: 45px
+      line-height: 45px
+      &:hover
+        background-color: #474747
+        color: white
+    .not_high
+      line-height: 16px
+      padding-top: 7px
+      i
+        text-transform: lowercase
+        font-style: normal
+.column:last-child
+  float: left !important
+.legend
+  width: 10% !important
+.legend.hidden
+  display: none
+
+  .screenshots
+    margin-top: 12px
+
+    .second
+      margin: 18px 0px 14px 0px
+
+/**
+ * Tooltips!
+ */
+
+/* Base styles for the element that has a tooltip */
+[data-tooltip],
+.tooltip
+  position: relative
+  cursor: pointer
+
+/* Base styles for the entire tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after
+  position: absolute
+  visibility: hidden
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)
+  opacity: 0
+  -webkit-transform: translate3d(0, 0, 0)
+  -moz-transform:    translate3d(0, 0, 0)
+  transform:         translate3d(0, 0, 0)
+  pointer-events: none
+
+/* Show the entire tooltip on hover and focus */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after
+  visibility: visible
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100)
+  opacity: 1
+
+/* Base styles for the tooltip's directional arrow */
+.tooltip:before,
+[data-tooltip]:before
+  z-index: 1001
+  border: 6px solid transparent
+  background: transparent
+  content: ""
+
+/* Base styles for the tooltip's content area */
+.tooltip:after,
+[data-tooltip]:after
+  z-index: 1000
+  padding: 8px
+  width: 260px
+  background-color: #000
+  background-color: hsla(0, 0%, 20%, 0.9)
+  color: #fff
+  content: attr(data-tooltip)
+  font-size: 14px
+  line-height: 1.2
+
+/* Directions */
+
+/* Top (default) */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after,
+.tooltip-top:before,
+.tooltip-top:after
+  bottom: 100%
+  left: 50%
+
+
+[data-tooltip]:before,
+.tooltip:before,
+.tooltip-top:before
+  margin-left: -6px
+  margin-bottom: -12px
+  border-top-color: #000
+  border-top-color: hsla(0, 0%, 20%, 0.9)
+
+/* Horizontally align top/bottom tooltips */
+[data-tooltip]:after,
+.tooltip:after,
+.tooltip-top:after
+  margin-left: -80px
+
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after,
+.tooltip-top:hover:before,
+.tooltip-top:hover:after,
+.tooltip-top:focus:before,
+.tooltip-top:focus:after
+  -webkit-transform: translateY(-12px)
+  -moz-transform:    translateY(-12px)
+  transform:         translateY(-12px)
+
+
+
+/* Right */
+.tooltip-right:before,
+.tooltip-right:after
+  bottom: 60%
+  left: 100%
+
+.tooltip-right:before
+  margin-bottom: 0
+  margin-left: -12px
+  border-top-color: transparent
+  border-right-color: #000
+  border-right-color: hsla(0, 0%, 20%, 0.9)
+
+
+.tooltip-right:hover:before,
+.tooltip-right:hover:after,
+.tooltip-right:focus:before,
+.tooltip-right:focus:after
+  -webkit-transform: translateX(12px)
+  -moz-transform:    translateX(12px)
+  transform:         translateX(12px)
+
+
+/* Move directional arrows down a bit for left/right tooltips */
+.tooltip-left:before,
+.tooltip-right:before
+  top: 3px
+
+
+/* Vertically center tooltip content for left/right tooltips */
+.tooltip-left:after,
+.tooltip-right:after
+  margin-left: 0
+  margin-bottom: -16px
+
++max-screen(910px)
+  .screen_separate_helper
+    display: block
+  .column
+    width: 70%
+    margin-bottom: 50px
+  .legend
+    width: 30% !important
+  .legend.hidden
+    display: block

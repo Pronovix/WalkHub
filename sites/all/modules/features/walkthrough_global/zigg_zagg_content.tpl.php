@@ -31,7 +31,7 @@
     </div>
   </div>
   <div class="large-3 columns">
-    <img src="<?php $path = $GLOBALS['base_url'].'/'.path_to_theme();  echo $path; ?>/images/placeholders/2.png">
+    <img src="<?php $path = $GLOBALS['base_url'].'/'.drupal_get_path('theme', $GLOBALS['theme_key']);  echo $path; ?>/images/placeholders/2.png">
   </div>
 </div>
 <div class="space"></div>
@@ -104,6 +104,6 @@
     </div>
   </div>
   <div class="large-3 columns">
-    <img src="<?php $path = $GLOBALS['base_url'].'/'.path_to_theme();  echo $path; ?>/images/placeholders/1.jpg">
+    <img src="<?php $path = $GLOBALS['base_url'].'/'.drupal_get_path('theme', $GLOBALS['theme_key']);  echo $path; ?>/images/placeholders/1.jpg">
   </div>
 </div>

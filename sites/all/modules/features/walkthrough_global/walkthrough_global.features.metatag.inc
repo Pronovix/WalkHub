@@ -40,7 +40,7 @@ function walkthrough_global_metatag_export_default() {
       'twitter:creator:id' => array(
         'value' => 1226273473,
       ),
-      'twitter:image' => array(
+      'twitter:image:src' => array(
         'value' => '[node:wt_twitter_screenshot]',
       ),
     ),
