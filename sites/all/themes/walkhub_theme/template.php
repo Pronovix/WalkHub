@@ -1,5 +1,5 @@
-<?php
 
+<?php
 /**
  * Apple Touch Icons
  */
@@ -308,3 +308,4 @@ function walkhub_theme_preprocess_walkthrough_set_node_form($vars) {
   $path = drupal_get_path('theme', 'walkhub_theme');
   drupal_add_js($path . '/js/page/node-walkthrough-set-form-edit.js');
 }
+
