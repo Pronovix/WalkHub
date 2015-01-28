@@ -365,7 +365,7 @@
 
     <ul>
       <li>WalkHub &copy; 2014</li>
-      <li><a href="#">Terms & conditions</a></li>
+      <li><a href="#">Terms &amp; conditions</a></li>
     </ul>
 
   </div>
