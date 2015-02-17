@@ -1,0 +1,172 @@
+<?php
+
+/**
+ * Implements hook_requirements().
+ */
+function quickedit_requirements($phase) {
+  $requirements = array();
+
+  if ($phase == 'runtime') {
+    $libraries = array(
+      'underscore' => 'Underscore',
+      'backbone' => 'Backbone',
+    );
+    module_load_include('inc', 'quickedit', 'includes/libraries');
+    foreach ($libraries as $lib => $label) {
+      $requirements['quickedit_libraries_' . $lib] = array(
+        'title' => t('Quick Edit: @library library', array('@library' => $label)),
+        'value' => t('The @library library is not present', array('@library' => $label)),
+        'severity' => REQUIREMENT_ERROR,
+      );
+      if (function_exists('libraries_detect')) {
+        if (($library = libraries_detect($lib)) && !empty($library['installed'])) {
+          $requirements['quickedit_libraries_' . $lib]['value'] = t('@version (@variant)', array(
+            '@version' => $library['version'],
+            // @todo This is problematic, because there is no way to enforce a
+            //   certain variant.
+            '@variant' => _quickedit_libraries_get_preferred_variant_name($library),
+          ));
+          $requirements['quickedit_libraries_' . $lib]['severity'] = REQUIREMENT_OK;
+        }
+        elseif (!empty($library['error'])) {
+          $requirements['quickedit_libraries_' . $lib]['description'] = $library['error message'];
+        }
+      }
+    }
+
+    if (module_exists('ckeditor')) {
+      $requirements['quickedit_libraries_ckeditor'] = array(
+        'title' => t('Quick Edit: CKEditor library'),
+        'value' => t('Exists, compatible and correct location'),
+        'severity' => REQUIREMENT_OK,
+      );
+
+      $ckeditor_version = _ckeditor_requirements_getinstalledversion();
+      if (version_compare($ckeditor_version, '4.2.0') == -1) {
+        $requirements['quickedit_libraries_ckeditor']['value'] = t('The CKEditor library is too old, please update to 4.2 or newer!');
+        $requirements['quickedit_libraries_ckeditor']['severity'] = REQUIREMENT_ERROR;
+      }
+      if ($ckeditor_version == '%VERSION%') {
+        $requirements['quickedit_libraries_ckeditor']['value'] = t('Exists, but is a development version');
+        $requirements['quickedit_libraries_ckeditor']['description'] = t('You are using the source version of CKEditor <strong>at your own risk</strong>, in case of using an outdated version some things may not work as expected. The latest stable version of CKEditor (an optimized release version) is recommended.');
+        $requirements['quickedit_libraries_ckeditor']['severity'] = REQUIREMENT_WARNING;
+      }
+
+      if (!libraries_get_path('ckeditor')) {
+        $requirements['quickedit_libraries_ckeditor']['value'] = t('Install the CKEditor library in a standard location. (!doc)', array('!doc' => l(t('Documentation'), 'https://drupal.org/node/1440066', array('external' => TRUE))));
+        $requirements['quickedit_libraries_ckeditor']['severity'] = REQUIREMENT_ERROR;
+      }
+
+      $ckeditor_js = file_get_contents(libraries_get_path('ckeditor') . '/ckeditor.js');
+
+      // Without the "Shared Space" plugin, Quick Edit cannot nicely integrate
+      // CKEditor into in-place editing.
+      $requirements['quickedit_libraries_ckeditor_sharedspace'] = array(
+        'title' => t('Quick Edit: CKEditor\'s "Shared Space" plugin is included'),
+        'value' => t('<a href="!sharedspace-url">"Shared Space"</a> CKEditor plugin missing', array('!sharedspace-url' => 'http://ckeditor.com/addon/sharedspace')),
+        'description' => t('This plugin is essential for CKEditor to work with in-place editing.<br>Please <a href="!builder-url">create a custom build</a> of CKEditor that includes this plugin.', array('!builder-url' => 'http://ckeditor.com/builder')),
+        'severity' => REQUIREMENT_ERROR,
+      );
+      if (FALSE !== strpos($ckeditor_js, 'CKEDITOR.plugins.add("sharedspace"')) {
+        $requirements['quickedit_libraries_ckeditor_sharedspace']['value'] = t('Included');
+        $requirements['quickedit_libraries_ckeditor_sharedspace']['severity'] = REQUIREMENT_OK;
+        unset($requirements['quickedit_libraries_ckeditor_sharedspace']['description']);
+      }
+
+      // If the "Source" button is used in any of the CKEditor "profiles", then
+      // also ensure that the "Source Dialog" plugin is available, because it
+      // will be necessary for in-place editing.
+      module_load_include('inc', 'ckeditor', 'includes/ckeditor.admin');
+      $source_button_found = FALSE;
+      $profiles = ckeditor_profiles_compile();
+      foreach ($profiles as $format => $profile) {
+        if (FALSE !== strpos($profile['toolbar'], "'Source'")) {
+          $source_button_found = TRUE;
+        }
+      }
+      if ($source_button_found) {
+        $requirements['quickedit_libraries_ckeditor_sourcedialog'] = array(
+          'title' => t('Quick Edit: CKEditor\'s "Source" button is used'),
+          'value' => t('<a href="!sourcedialog-url">"Source Dialog"</a> CKEditor plugin missing', array('!sourcedialog-url' => 'http://ckeditor.com/addon/sourcedialog')),
+          'description' => t('This plugin is necessary to keep the "edit source" functionality while in-place editing.<br>Please <a href="!builder-url">create a custom build</a> of CKEditor that includes this plugin.', array('!builder-url' => 'http://ckeditor.com/builder')),
+          'severity' => REQUIREMENT_ERROR,
+        );
+        if (FALSE !== strpos($ckeditor_js, 'CKEDITOR.plugins.add("sourcedialog"')) {
+          $requirements['quickedit_libraries_ckeditor_sourcedialog']['value'] = t('"Source Dialog" CKEditor plugin included');
+          $requirements['quickedit_libraries_ckeditor_sourcedialog']['severity'] = REQUIREMENT_OK;
+          unset($requirements['quickedit_libraries_ckeditor_sourcedialog']['description']);
+        }
+      }
+    }
+
+    // Best-effort check that the theme is compatible.
+    $query = new EntityFieldQuery();
+    $query
+      ->entityCondition('entity_type', 'node')
+      ->propertyCondition('status', 1)
+      ->range(0, 1);
+    $result = $query->execute();
+    if (isset($result['node'])) {
+      $requirements['quickedit_theme'] = array(
+        'title' => t('Quick Edit: theme compatibility'),
+        'value' => t('The theme appears compatible'),
+        'severity' => REQUIREMENT_OK,
+      );
+
+      // Request the first published node's HTML.
+      $node_ids = array_keys($result['node']);
+      $node_id = $node_ids[0];
+      $response = drupal_http_request(url('node/' . $node_id, array('absolute' => TRUE)));
+
+      // Prevent false negatives for the theme compatibility check.
+      if (isset($response->error) && $response->error) {
+        $requirements['quickedit_theme']['value'] = '<strong>' . t('Could not determine compatibility.') . '</strong>';
+        $requirements['quickedit_theme']['description'] = t('When a site does not allow anonymous users to access content, requires HTTP authentication or something similar, Quick Edit module is unable to automatically determine compatibility');
+        return $requirements;
+      }
+
+      $dom = new \DOMDocument();
+      @$dom->loadHTML($response->data);
+      $xpath = new \DOMXPath($dom);
+
+      $errors = array();
+
+      // There should be at least one DOM element with a
+      // data-quickedit-entity-id attribute that begins with "node/<node ID>".
+      // "at least one" because there may be multiple entities on this page.
+      if ($xpath->query("//*[starts-with(@data-quickedit-entity-id, 'node/" . $node_id . "')]")->length == 0) {
+        $errors[] = t("Quick Edit's attributes on entities are missing");
+      }
+
+      // There should be at least as many DOM elements with a
+      // data-quickedit-field-id attribute that begin with "node/<node ID>" as
+      // there are visible fields in the default view mode. "at least as many",
+      // because it is impossible for code to know whether the "date" and
+      // "author" fields are visible, but also because there may be multiple
+      // entities on the page.
+      $bundle = $result['node'][$node_id]->type;
+      $instances = field_info_instances('node', $bundle);
+      $visible_field_count = 0;
+      $node = entity_load_single('node', $node_id);
+      foreach ($instances as $field_id => $instance) {
+        if (!empty($node->$field_id) && $instance['display']['default']['type'] != 'hidden') {
+          $visible_field_count++;
+        }
+      }
+      $node_type = node_type_get_type($bundle);
+      if ($node_type->has_title) {
+        $visible_field_count++;
+      }
+      if ($xpath->query("//*[starts-with(@data-quickedit-field-id, 'node/" . $node_id . "')]")->length < $visible_field_count) {
+        $errors[] = t("Quick Edit's attributes on fields are missing");
+      }
+
+      if ($errors) {
+        $requirements['quickedit_theme']['value'] = theme('item_list', array('items' => $errors));
+        $requirements['quickedit_theme']['severity'] = REQUIREMENT_ERROR;
+      }
+    }
+  }
+
+  return $requirements;
+}

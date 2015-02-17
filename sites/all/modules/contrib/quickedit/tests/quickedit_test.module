@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Helper module for the Quick Edit tests.
+ */
+
+/**
+ * Implements hook_quickedit_render_field().
+ */
+function quickedit_test_quickedit_render_field($entity_type, $entity, $field_name, $view_mode_id, $langcode) {
+  $field = field_view_field($entity_type, $entity, $field_name);
+  $field['#prefix'] = '<div class="quickedit-test-wrapper">';
+  $field['#suffix'] = '</div>';
+  return $field;
+}
+
