@@ -1698,26 +1698,26 @@ label.error { color: #c60f13; }
   /* line 460, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after { border: none; content: "\00bb"; top: 1em; margin-top: -7px; right: 5px; }
   /* line 472, ../sass/grid/foundation/components/_top-bar.scss */
-  .top-bar-section .dropdown { left: 0; top: auto; background: transparent; min-width: 100%; }
-  /* line 479, ../sass/grid/foundation/components/_top-bar.scss */
+  .top-bar-section .dropdown { left: 0; top: auto; background: transparent; min-width: 100%; left: -11px; }
+  /* line 480, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li a { color: #fff; line-height: 1; white-space: nowrap; padding: 7px 15px; background: #1e1e1e; }
-  /* line 487, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 488, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li label { white-space: nowrap; background: #1e1e1e; }
-  /* line 493, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 494, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li .dropdown { left: 100%; top: 0; }
-  /* line 500, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 501, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] { border-bottom: none; border-top: none; border-right: solid 1px #2b2b2b; border-left: solid 1px black; clear: none; height: 45px; width: 0; }
-  /* line 511, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 512, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section .has-form { background: #111; padding: 0 15px; height: 45px; }
-  /* line 519, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 520, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section ul.right li .dropdown { left: auto; right: 0; }
-  /* line 523, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 524, ../sass/grid/foundation/components/_top-bar.scss */
   .top-bar-section ul.right li .dropdown li .dropdown { right: 100%; }
-  /* line 533, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 534, ../sass/grid/foundation/components/_top-bar.scss */
   .no-js .top-bar-section ul li:hover > a { color: #fff; }
-  /* line 538, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 539, ../sass/grid/foundation/components/_top-bar.scss */
   .no-js .top-bar-section ul li:active > a { background: #090909; color: #fff; }
-  /* line 546, ../sass/grid/foundation/components/_top-bar.scss */
+  /* line 547, ../sass/grid/foundation/components/_top-bar.scss */
   .no-js .top-bar-section .has-dropdown:hover > .dropdown { display: block; } }
 @-webkit-keyframes rotate { from { -webkit-transform: rotate(0deg); }
   to { -webkit-transform: rotate(360deg); } }
@@ -4645,6 +4645,12 @@ footer a { color: #868686; }
 /* line 320, ../sass/modules/_temp_pricing.sass */
 .none_in_pack { color: darkgrey; }
 
+@media screen and (max-width: 629px) { /* line 324, ../sass/modules/_temp_pricing.sass */
+  .column.legend { width: 15% !important; }
+  /* line 326, ../sass/modules/_temp_pricing.sass */
+  .column.topper, .column.regular, .column.blue { width: 80% !important; }
+  /* line 328, ../sass/modules/_temp_pricing.sass */
+  .column.legend.hidden { display: block !important; } }
 /* line 2, ../sass/modules/_edit_forms.sass */
 input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"] { -moz-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75); -webkit-box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75); box-shadow: inset 0 1px 3px rgba(221, 221, 221, 0.75); -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; -moz-transition: all 0.25s ease-in; -o-transition: all 0.25s ease-in; -webkit-transition: all 0.25s ease-in; transition: all 0.25s ease-in; font-size: 8.3px; line-height: 12.035px; font-size: 0.83rem; line-height: 1.2035rem; padding: 5px 6px; padding: 0.5rem 0.6rem; margin-bottom: 10px; margin-bottom: 1rem; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; display: inline-block; border: 1px solid #ccc; width: 100%; }
 /* line 27, ../sass/modules/_edit_forms.sass */

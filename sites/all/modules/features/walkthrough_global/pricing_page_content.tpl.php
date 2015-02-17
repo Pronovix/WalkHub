@@ -38,7 +38,7 @@
       <div class="price">
         <abbr>$</abbr>95<i>/month</i>
       </div>
-      <a href="" class="price_button">BUY</a>
+      <a href="https://pronovix.chargify.com/subscribe/y6xkckqk/premium" class="price_button">BUY</a>
     </div>
     <div class="body">
       <span>Playable</span>
@@ -91,7 +91,7 @@
       <div class="price">
         <abbr>$</abbr>48<i>/month</i>
       </div>
-      <a href="" class="price_button not_high">TRY <i>for 30 days</i> /BUY</a>
+      <a href="https://pronovix.chargify.com/subscribe/4v5dhp4n/standard" class="price_button not_high">TRY <i>for 30 days</i> /BUY</a>
     </div>
     <div class="body">
       <span>Playable</span>
@@ -144,7 +144,7 @@
       <div class="price">
         <abbr>$</abbr>18<i>/month</i>
       </div>
-      <a href="" class="price_button">BUY</a>
+      <a href="https://pronovix.chargify.com/subscribe/7yph7pm9/basic" class="price_button">BUY</a>
     </div>
     <div class="body">
       <span>Playable</span>
@@ -197,7 +197,7 @@
         <div class="price">
           <abbr>$</abbr>0<i>/month</i>
         </div>
-        <a href="" class="price_button">Sign up</a>
+        <a href="/user/register" class="price_button">Sign up</a>
       </div>
       <div class="body">
         <span>Playable</span>
@@ -251,7 +251,7 @@
       <div class="price enterprice">
         <span>Get in touch for a special offer</span>
       </div>
-      <a href="" class="price_button">CONTACT</a>
+      <a href="mailto:kata@pronovix.com" class="price_button">CONTACT</a>
     </div>
     <div class="body">
       <span>Playable</span>
