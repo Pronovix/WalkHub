@@ -161,12 +161,6 @@
 
   <main role="main" class="row l-main">
     <div class="<?php print $main_grid; ?> main columns">
-      <?php /* if (!empty($page['highlighted'])): ?>
-        <div class="highlight panel callout">
-          <?php print render($page['highlighted']); ?>
-        </div>
-      <?php endif;*/ ?>
-
       <?php if ($messages && !$zurb_foundation_messages_modal): ?>
         <!--/.l-messages -->
         <section class="l-messages">
