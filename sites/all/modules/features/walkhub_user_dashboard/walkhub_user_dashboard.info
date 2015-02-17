@@ -1,10 +1,12 @@
 name = Walkhub User Dashboard
 core = 7.x
 package = Walkthrough
+dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = menu
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
+features[fe_block_settings][] = menu-menu-user-account-menu
 features[features_api][] = api:2
 features[menu_custom][] = menu-user-account-menu
 features[menu_links][] = menu-user-account-menu_add-content:walkthrough/record
@@ -14,4 +16,3 @@ features[menu_links][] = menu-user-account-menu_my-content:my-content
 features[menu_links][] = menu-user-account-menu_my-profile:user
 features[views_view][] = dashboard
 features_exclude[dependencies][ctools] = ctools
-mtime = 1391097553
