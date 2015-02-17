@@ -1,0 +1,7 @@
+/**
+ * This is a work-around for this Drupal 7 core bug: https://drupal.org/node/1102156.
+ * @todo Remove this once https://drupal.org/node/1102156 is committed.
+ */
+div.contextual-links-wrapper.contextual-links-processed {
+  z-index: 450;
+}
