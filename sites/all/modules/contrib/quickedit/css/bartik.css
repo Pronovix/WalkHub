@@ -1,0 +1,28 @@
+/**
+ * This is a work-around to prevent Bartik's CSS to influence Quick Edit's styling.
+ *
+ * @see https://drupal.org/node/2149261
+ */
+
+/**
+ * @group https://drupal.org/node/2149261
+ */
+.quickedit-form-container .fieldset-wrapper {
+  margin-top: 0;
+}
+.quickedit-form-container .filter-wrapper {
+  padding-top: 0;
+}
+.quickedit-form-container .filter-wrapper .form-item label {
+  margin: 0;
+}
+.quickedit-form-container .filter-wrapper .filter-help {
+  padding-left: 0;
+  padding-right: 0;
+}
+.quickedit-form-container .filter-wrapper .form-type-select {
+  padding-left: 0;
+}
+/**
+ * @endgroup
+ */

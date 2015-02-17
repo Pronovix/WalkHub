@@ -1,0 +1,949 @@
+<?php
+
+/**
+ * @file
+ * Provides in-place content editing functionality for fields.
+ *
+ * The Quick Edit module makes content editable in-place. Rather than having to
+ * visit a separate page to edit content, it may be edited in-place.
+ *
+ * Technically, this module adds classes and data- attributes to fields and
+ * entities, enabling them for in-place editing.
+ */
+
+// Load filter system metadata additions.
+module_load_include('inc', 'quickedit', 'includes/filter');
+
+// Load node module "extra fields" support.
+module_load_include('inc', 'quickedit', 'includes/node');
+
+// Load Panelizer support.
+module_load_include('inc', 'quickedit', 'includes/panelizer');
+
+/**
+ * Implements hook_menu().
+ */
+function quickedit_menu() {
+  $items = array();
+  $items['quickedit/metadata'] = array(
+    'access arguments' => array('access in-place editing'),
+    'page callback' => 'quickedit_metadata',
+    'file' => 'includes/pages.inc',
+    'type' => MENU_CALLBACK,
+  );
+  $items['quickedit/attachments'] = array(
+    'access arguments' => array('access in-place editing'),
+    'page callback' => 'quickedit_attachments',
+    'file' => 'includes/pages.inc',
+    'delivery callback' => 'ajax_deliver',
+    'theme callback' => 'ajax_base_page_theme',
+    'type' => MENU_CALLBACK,
+  );
+  $items['quickedit/form/%/%/%/%/%'] = array(
+    'access arguments' => array('access in-place editing'),
+    'page callback' => 'quickedit_field_edit',
+    'page arguments' => array(2, 3, 4, 5, 6),
+    'file' => 'includes/pages.inc',
+    'delivery callback' => 'ajax_deliver',
+    'theme callback' => 'ajax_base_page_theme',
+    'type' => MENU_CALLBACK,
+  );
+  $items['quickedit/entity/%/%'] = array(
+    'access arguments' => array('access in-place editing'),
+    'page callback' => 'quickedit_entity_save',
+    'page arguments' => array(2, 3),
+    'file' => 'includes/pages.inc',
+    'delivery callback' => 'ajax_deliver',
+    'theme callback' => 'ajax_base_page_theme',
+    'type' => MENU_CALLBACK,
+  );
+  $items['quickedit/ckeditor/%/%/%/%/%'] = array(
+    'access arguments' => array('access in-place editing'),
+    'page callback' => 'quickedit_ckeditor_get_untransformed_text',
+    'page arguments' => array(2, 3, 4, 5, 6),
+    'file' => 'includes/pages.inc',
+    'delivery callback' => 'ajax_deliver',
+    'theme callback' => 'ajax_base_page_theme',
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function quickedit_permission() {
+  return array(
+    'access in-place editing' => array(
+      'title' => t('Access in-place editing'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_page_build().
+ *
+ * Adds the quickedit library to the page for any user who has the 'access
+ * in-place editing' permission.
+ */
+function quickedit_page_build(&$page) {
+  if (!user_access('access in-place editing')) {
+    return;
+  }
+
+  // In-place editing is only supported on the front-end.
+  if (path_is_admin(current_path())) {
+    return;
+  }
+
+  // Incredibly ugly hack to support Panelizer overrides using Page Manager.
+  // @see includes/panelizer.inc/quickedit_ctools_render_alter()
+  global $quickedit_workaround_for_fundamentally_broken_page_manager;
+  if ($quickedit_workaround_for_fundamentally_broken_page_manager) {
+    // Change from
+    //   <div class="contextual-links-wrapper">
+    // to
+    //   <div class="contextual-links-wrapper" data-quickedit-is-contextual-region-for-entity>
+    $page['content']['system_main']['#attributes']['data-quickedit-is-contextual-region-for-entity'] = '';
+  }
+
+  // Abuse the 'page_top' region for attaching our libraries.
+  $page['page_top']['#attached']['library'][] = array('quickedit', 'quickedit');
+
+  // Certain themes don't add region wrappers, so we can't assume region
+  // wrappers are present. Therefore, Quick Edit must inject its own
+  // alternative: start and end markers for the "content" region.
+  $page['content']['#theme_wrappers'][] = 'quickedit_wrap_content_region';
+
+  // Provide the user ID and permissions hash in Drupal.settings to allow
+  // JavaScript code to maintain client-side caches.
+  // @see Drupal 8's user_page_build()
+  // @see Drupal 8's \Drupal\user\PermissionsHash
+  // @see https://drupal.org/node/2005644
+  global $user;
+  $roles = array_keys($user->roles);
+  $serialized_roles = implode(',', $roles);
+  if ($cache = cache_get("quickedit_user_permissions_hash:$serialized_roles", 'cache_page')) {
+    $permissions_hash = $cache->data;
+  }
+  else {
+    $permissions_hash = hash('sha256', drupal_get_hash_salt() . serialize(user_role_permissions($user->roles)));
+    // Use the 'cache_page' bin along with CACHE_TEMPORARY, because the submit
+    // callback for the form responsible for changing user permissions calls
+    // cache_clear_all() without arguments, which clears the page cache, and
+    // hence it will also clear this cache entry.
+    cache_set("quickedit_user_permissions_hash:$serialized_roles", $permissions_hash, 'cache_page', CACHE_TEMPORARY);
+  }
+  $page['page_top']['#attached']['js'][] = array(
+    'type' => 'setting',
+    'data' => array('quickedit' => array('user' => array(
+      'uid' => $user->uid,
+      'permissionsHash' => $permissions_hash,
+    ))),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function quickedit_theme() {
+  return array(
+    'quickedit_wrap_content_region' => array(
+      'render element' => 'element',
+    ),
+    'quickedit_wrap_field' => array(
+      'variables' => array('value' => NULL, 'quickedit_field_id' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_library().
+ */
+function quickedit_library() {
+  $path = drupal_get_path('module', 'quickedit');
+  $options = array(
+    'scope' => 'footer',
+  );
+  $libraries['quickedit'] = array(
+    'title' => 'Quick Edit: in-place editing',
+    'website' => 'http://drupal.org/project/quickedit',
+    'version' => VERSION,
+    'js' => array(
+      // Core.
+      $path . '/js/quickedit.js' => $options,
+      $path . '/js/util.js' => $options,
+      // Models.
+      $path . '/js/models/BaseModel.js' => $options,
+      $path . '/js/models/AppModel.js' => $options,
+      $path . '/js/models/EntityModel.js' => $options,
+      $path . '/js/models/FieldModel.js' => $options,
+      $path . '/js/models/EditorModel.js' => $options,
+      // Views.
+      $path . '/js/views/AppView.js' => $options,
+      $path . '/js/views/FieldDecorationView.js' => $options,
+      $path . '/js/views/EntityDecorationView.js' => $options,
+      $path . '/js/views/EntityToolbarView.js' => $options,
+      $path . '/js/views/ContextualLinkView.js' => $options,
+      $path . '/js/views/FieldToolbarView.js' => $options,
+      $path . '/js/views/EditorView.js' => $options,
+      $path . '/js/views/ModalView.js' => $options,
+      // Other.
+      $path . '/js/theme.js' => $options,
+      // Monkey-patch in jQuery UI 1.10 Position at $.fn.position_quickedit.
+      $path . '/js/jquery/ducktape.position.js' => $options,
+      // Basic settings.
+      array(
+        'data' => array(
+          'quickedit' => array(
+            'metadataURL' => url('quickedit/metadata'),
+            'attachmentsURL' => url('quickedit/attachments'),
+            'fieldFormURL' => url('quickedit/form/!entity_type/!id/!field_name/!langcode/!view_mode'),
+            'entitySaveURL' => url('quickedit/entity/!entity_type/!id'),
+            'rerenderProcessedTextURL' => url('quickedit/text/!entity_type/!id/!field_name/!langcode/!view_mode'),
+            'context' => 'body',
+          )
+        ),
+        'type' => 'setting',
+      ),
+    ),
+    'css' => array(
+      $path . '/css/contextual-zindex-fix-1102156.css' => array(),
+      $path . '/css/quickedit.module.css' => array(),
+      $path . '/css/quickedit.theme.css' => array(),
+      $path . '/css/quickedit.icons.css' => array(),
+    ),
+    'dependencies' => array(
+      array('system', 'jquery'),
+      array('system', 'jquery.once'),
+      array('quickedit', 'underscore'),
+      array('quickedit', 'backbone'),
+      array('system', 'jquery.form'),
+      array('system', 'ui.position'),
+      array('system', 'drupal.form'),
+      array('system', 'drupal.ajax'),
+    ),
+  );
+
+  $libraries['quickedit.inPlaceEditor.form'] = array(
+    'title' => 'Form in-place editor',
+    'version' => VERSION,
+    'js' => array(
+      $path . '/js/editors/formEditor.js' => $options,
+    ),
+    'dependencies' => array(
+      array('quickedit', 'quickedit'),
+    ),
+  );
+  $libraries['quickedit.inPlaceEditor.plainText'] = array(
+    'title' => 'Plain text in-place editor',
+    'version' => VERSION,
+    'js' => array(
+      $path . '/js/editors/plainTextEditor.js' => $options,
+    ),
+    'dependencies' => array(
+      array('quickedit', 'quickedit'),
+    ),
+  );
+
+  if (module_exists('ckeditor')) {
+    $libraries['quickedit.inPlaceEditor.ckeditor'] = array(
+      'title' => 'CKEditor formatted text in-place editor',
+      'version' => VERSION,
+      'js' => array(
+        $path . '/js/editors/formattedTextEditor.js' => array('weight' => 3) + $options,
+        array(
+          'type' => 'setting',
+          'data' => array(
+            'quickedit' => array(
+              'ckeditor' => array(
+                'getUntransformedTextURL' => url('quickedit/ckeditor/!entity_type/!id/!field_name/!langcode/!view_mode'),
+              ),
+            )
+          )
+        ),
+        // CKEditor.module sadly does not implement hook_library(), so we must
+        // indicate here that we want it to be loaded.
+        ckeditor_library_path('url') . '/ckeditor/ckeditor.js' => array('weight' => 4) +  $options,
+      ),
+      'dependencies' => array(
+        array('quickedit', 'quickedit'),
+        array('system', 'drupal.ajax'),
+      ),
+    );
+  }
+
+  module_load_include('inc', 'quickedit', 'includes/libraries');
+
+  $libraries['underscore'] = _quickedit_convert_libraries_to_library(libraries_detect('underscore'), array(
+    'group' => JS_LIBRARY,
+    'weight' => -20,
+  ));
+
+  $libraries['backbone'] = _quickedit_convert_libraries_to_library(libraries_detect('backbone'), array(
+    'group' => JS_LIBRARY,
+    'weight' => -19,
+  ));
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_field_attach_view_alter().
+ */
+function quickedit_field_attach_view_alter(&$output, $context) {
+  // Special case for this special mode.
+  if ($context['display'] == 'quickedit-render-without-transformation-filters') {
+    $children = element_children($output);
+    $field = reset($children);
+    $langcode = $output[$field]['#language'];
+    foreach (array_keys($output[$field]['#items']) as $item) {
+      $text      = $output[$field]['#items'][$item]['value'];
+      $format_id = $output[$field]['#items'][$item]['format'];
+      $wrapped_and_untransformed = check_markup2($text, $format_id, $langcode, FALSE, array(FILTER_TYPE_TRANSFORM_REVERSIBLE, FILTER_TYPE_TRANSFORM_IRREVERSIBLE));
+      $output[$field][$item]['#markup'] = $wrapped_and_untransformed;
+    }
+  }
+}
+
+/**
+ * Provides metadata of all registered "extra fields".
+ *
+ * All parameters are optional. You can use them to only retrieve metadata that
+ * is relevant for your particular use case.
+ *
+ * @param $entity_type
+ *   Retrieves all "extra fields" metadata for this entity type.
+ * @param $field_name
+ *   Retrieves the "extra fields" metadata for this entity type and field.
+ * @param $key
+ *   Retrieves one key of "extra fields" metadata for this entity type and field.
+ * @param bool $reset
+ *   Resets this function's internal cache when set to TRUE.
+ *
+ * @return array
+ *
+ * @see hook_quickedit_extra_fields_info()
+ * @see hook_quickedit_extra_fields_info_alter()
+ */
+function quickedit_extra_field_info($entity_type = NULL, $field_name = NULL, $key = NULL, $reset = FALSE) {
+  $extra_fields = &drupal_static(__FUNCTION__, NULL);
+  if (!$extra_fields || $reset) {
+    $extra_fields = module_invoke_all('quickedit_extra_fields_info');
+    drupal_alter('quickedit_extra_fields_info', $editors);
+  }
+
+  if (isset($entity_type)) {
+    if (isset($field_name)) {
+      if (isset($key)) {
+        return $extra_fields[$entity_type][$field_name][$key];
+      }
+      return $extra_fields[$entity_type][$field_name];
+    }
+    return $extra_fields[$entity_type];
+  }
+
+  return $extra_fields;
+}
+
+/**
+ * Indicates whether a field is an "extra field".
+ *
+ * @param $entity_type
+ *   Machine name of the entity.
+ * @param $field_name
+ *   Entity's field name that is being checked.
+ *
+ * @return bool
+ *
+ * @see hook_quickedit_extra_field_info()
+ */
+function _quickedit_is_extra_field($entity_type, $field_name) {
+  $extra_fields = quickedit_extra_field_info();
+  return isset($extra_fields[$entity_type][$field_name]);
+}
+
+/**
+ * Implements hook_preprocess_field().
+ *
+ * This is the main entry point for marking up a field as in-place editable.
+ */
+function quickedit_preprocess_field(&$variables) {
+  $element = $variables['element'];
+
+  // Quick Edit module only supports view modes, not dynamically defined "display
+  // options" (which field_view_field() always names the "_custom_display" view
+  // mode).
+  // @see field_view_field()
+  // @see https://drupal.org/node/2120335
+  // However, we do support Panelizer, and Panelizer always uses a custom view
+  // mode when rendering field panes, in all of its own "view modes".
+  // @see includes/panelizer.inc
+  if ($element['#view_mode'] === '_custom_display' && !isset($element['#object']->panelizer)) {
+    return;
+  }
+
+  // Some fields might be rendered through theme_field()
+  // but are not Field API fields, e.g. Display Suite fields.
+  if (!empty($element['#skip_edit'])) {
+    return;
+  }
+
+  $entity_type = $element['#entity_type'];
+
+  // The 'comment' entity type will never support in-place editing, since it
+  // doesn't get Contextual Links.
+  if ($entity_type === 'comment') {
+    return;
+  }
+
+  // For now, Quick Edit only supports 'node' entities. Therefor, don't annotate
+  // fields of other entity types with Quick Edit's metadata.
+  // @todo https://drupal.org/node/2168725
+  if ($entity_type != 'node') {
+    return;
+  }
+
+  $field_name = $element['#field_name'];
+  $language = $element['#language'];
+  $view_mode = $element['#view_mode'];
+  $entity = $element['#object'];
+  list($id, $vid, $bundle) = entity_extract_ids($entity_type, $entity);
+
+  // Support for field-collection fields.
+  if ($entity_type === 'field_collection_item') {
+    $host_entity = field_collection_item_get_host_entity($element['#object']);
+
+    // When this field_collection_item entity is rendered as a field inside its
+    // host entity, we should not mark up its fields; the field_collection_item
+    // entity as a whole will already be in-place editable (since the entity is
+    // considered a field in this contect); it does not make sense to make
+    // fields within a field editable.
+    if (isset($host_entity->value()->entity_view_prepared)) {
+      return;
+    }
+  }
+
+  // Panelizer support; see explanation at the top of this function.
+  // @see includes/panelizer.inc
+  if ($element['#view_mode'] === '_custom_display' && isset($element['#object']->panelizer)) {
+    $view_mode = _panelizer_generate_quickedit_viewmode($element['#object']);
+  }
+
+  // Provide metadata through data- attributes.
+  $variables['attributes_array']['data-quickedit-field-id'] = "$entity_type/$id/$field_name/$language/$view_mode";
+}
+
+/**
+ * Implements hook_preprocess_page().
+ *
+ * Wraps title field when viewing a node page to make it in-place editable.
+ */
+function quickedit_preprocess_page(&$variables) {
+  // If we don't have a node object to work with, return early to avoid
+  // processing.
+  if (empty($variables['node'])) {
+    return;
+  }
+
+  // On full node pages the title of the node becomes the page title so we
+  // must handle it differently. In this case, we add a wrapper around the
+  // title with the required attributes to enable in-place editability.
+  $node = $variables['node'];
+  $node_type = node_type_get_type($node->type);
+  if ($node_type->has_title) {
+    $language = !empty($node->language) ? $node->language : LANGUAGE_NONE;
+    $variables['title'] = quickedit_wrap_pseudofield(drupal_get_title(), "node/$node->nid/title/$language/full");
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * Sets data-quickedit-entity-id attribute.
+ * Takes care of wrapping title, author, and created date for in-place
+ * editability.
+ */
+function quickedit_preprocess_node(&$variables) {
+  $entity_type = $variables['elements']['#entity_type'];
+  $entity = $variables['elements']['#node'];
+  $view_mode = $variables['elements']['#view_mode'];
+
+  list($id, $vid, $bundle) = entity_extract_ids($entity_type, $entity);
+  $language = !empty($entity->language) ? $entity->language : LANGUAGE_NONE;
+  $quickedit_id_suffix = "$language/$view_mode";
+
+  // Set data-quickedit-entity-id attribute.
+  $node = $variables['elements']['#node'];
+  $variables['attributes_array']['data-quickedit-entity-id'] = 'node/' . $node->nid;
+
+  // Pseudo-field: title.
+  $node_type = node_type_get_type($bundle);
+  if ($node_type->has_title && !empty($entity->title)) {
+    $variables['title'] = quickedit_wrap_pseudofield($entity->title, "node/$id/title/$quickedit_id_suffix");
+  }
+
+  // Pseudo-fields: author (name) and created date (authoring date).
+  if ($variables['display_submitted']) {
+    $variables['name'] = quickedit_wrap_pseudofield($variables['name'], "node/$id/author/$quickedit_id_suffix", TRUE);
+    $variables['date'] = quickedit_wrap_pseudofield($variables['date'], "node/$id/created/$quickedit_id_suffix", TRUE);
+    $variables['submitted'] = t('Submitted by !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['date']));
+  }
+}
+
+/**
+ * Implements hook_node_view_alter().
+ *
+ * For in-place editing, it's necessary for contextual links to always exist,
+ * even when the node is being displayed on its own page.
+ */
+function quickedit_node_view_alter(&$build) {
+  if (!isset($build['#contextual_links']['node'])) {
+    $build['#contextual_links']['node'] = array('node', array($build['#node']->nid));
+  }
+}
+
+/**
+ * Implements hook_preprocess_panels_pane().
+ *
+ * When a node is added as a pane, get it's view mode to build
+ * data-quickedit-field-id properly.
+ */
+function quickedit_preprocess_panels_pane(&$variables) {
+  // If we don't have a node object to work with, return early to avoid
+  // processing.
+  // Note: This convoluted check is required because the expression
+  // $variables['content']['#node'] is being interpreted as "the first character
+  // of the string in $variables['content']" in panes that contain 'content' as
+  // a string, rather than an array. Bleh.
+  if (!isset($variables['content']['#node']) || !is_object($variables['content']['#node'])) {
+    return;
+  }
+
+  $node = $variables['content']['#node'];
+  $language = !empty($node->language) ? $node->language : LANGUAGE_NONE;
+  $view_mode = !empty($variables['pane']->configuration['build_mode']) ? $variables['pane']->configuration['build_mode'] : 'default';
+  $quickedit_id_suffix = "$language/$view_mode";
+
+  // Set data-quickedit-is-contextual-region-for-entity attribute, to indicate
+  // that this Panels pane contains an in-place editable entity, yet the
+  // contextual region is not the DOM element of that entity itself, but this
+  // Panels pane. The data-quickedit-entity-id attribute is already being set on
+  // the node's DOM element, since Panels just uses the standard render
+  // pipeline.
+  $variables['attributes_array']['data-quickedit-is-contextual-region-for-entity'] = '';
+
+  $node_type = node_type_get_type($node->type);
+  if ($node_type->has_title) {
+    // Title needs some special handling. Only wraps it when it hasn't been
+    // overridden. There is no way to update the panels configuration in Quick
+    // Edit module currently.
+    $configuration = $variables['pane']->configuration;
+    if (!$configuration['override_title']) {
+      $variables['title'] = quickedit_wrap_pseudofield($variables['title'], "node/$node->nid/title/$quickedit_id_suffix");
+    }
+  }
+}
+
+/**
+ * Discovers all available editors by invoking hook_quickedit_editor_info().
+ *
+ * @param bool $reset
+ *   Reset the editor info static cache.
+ *
+ * @return array
+ *   An associative array keyed on editor ID.
+ *
+ * @see Drupal 8's Quick Edit's EditorManager
+ */
+function quickedit_editor_list($reset = FALSE) {
+  $editors = &drupal_static(__FUNCTION__, NULL);
+  if (!$editors || $reset) {
+    $editors = module_invoke_all('quickedit_editor_info');
+    drupal_alter('quickedit_editor_info', $editors);
+  }
+
+  return $editors;
+}
+
+/**
+ * Helper to get a single editor info array.
+ *
+ * @param $editor
+ *   Machine name of the editor we return the editor.
+ *
+ * @return mixed
+ *   False if the editor is not found.
+ *   Info array for the editor.
+ */
+function quickedit_editor_get($editor) {
+  $list = quickedit_editor_list();
+  return !empty($list[$editor]) ? $list[$editor] : FALSE;
+}
+
+/**
+ * Implements hook_quickedit_editor_info().
+ *
+ * @see Drupal 8's \Drupal\quickedit\Plugin\InPlaceEditorManager.
+ * @see Drupal 8's \Drupal\quickedit\Plugin\InPlaceEditorInterface.
+ */
+function quickedit_quickedit_editor_info() {
+  $editors = array();
+  $path = drupal_get_path('module', 'quickedit') . '/InPlaceEditors';
+  $editors['form'] = array(
+    'file' => $path . '/formEditor.php',
+    'class' => 'FormEditor',
+  );
+  $editors['plain_text'] = array(
+    'file' => $path . '/plainTextEditor.php',
+    'class' => 'PlainTextEditor',
+  );
+  if (module_exists('ckeditor')) {
+    $editors['ckeditor'] = array(
+      'alternativeTo' => array('plain_text'),
+      'file' => $path . '/CKEditor.php',
+      'class' => 'CKEditor',
+    );
+  }
+  return $editors;
+}
+
+/**
+ * Helper to get a get an instance of an in-place editor plugin class.
+ *
+ * @param string $editor_id
+ *   ID of the in-place editor plugin.
+ * @param bool $reset
+ *   Whether to reset the static cache of in-place editor plugin objects.
+ *
+ * @return QuickEditInPlaceEditorInterface
+ *   An in-place editor plugin object.
+ */
+function _quickedit_get_editor_plugin($editor_id, $reset = FALSE) {
+  $editors = quickedit_editor_list();
+
+  $plugins = &drupal_static(__FUNCTION__, NULL);
+  if (!$plugins || $reset) {
+    foreach ($editors as $editor_plugin_id => $editor) {
+      require_once $editor['file'];
+      $plugins[$editor_plugin_id] = new $editor['class'];
+    }
+  }
+
+  return $plugins[$editor_id];
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ *
+ * Make sure our alter hook is run after jquery update (and after all the others
+ * for that matter).
+ */
+function quickedit_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'library_alter') {
+    // Move our hook implementation to the bottom.
+    $group = $implementations['quickedit'];
+    unset($implementations['quickedit']);
+    $implementations['quickedit'] = $group;
+  }
+}
+
+/**
+ * Implements hook_library_alter().
+ *
+ * Backport a couple of things from jQuery that are required by CreateJS/VIE.
+ */
+function quickedit_library_alter(&$libraries, $module) {
+  $jquery_version = &drupal_static(__FUNCTION__, NULL);
+  if ($module == 'system') {
+    $jquery_version = $libraries['jquery']['version'];
+  }
+  if ($jquery_version && $module == 'quickedit') {
+    $path = drupal_get_path('module', 'quickedit');
+    // If the version of jQuery is old, we need to add `addBack`.
+    if ($jquery_version < '1.8') {
+      $libraries['quickedit']['js'][$path . '/js/jquery/ducktape.addback.js'] = array('group' => JS_LIBRARY);
+    }
+    // If the version of jQuery is old, we need to add `on` and `off`.
+    if ($jquery_version < '1.7') {
+      $libraries['quickedit']['js'][$path . '/js/jquery/ducktape.events.js'] = array('group' => JS_LIBRARY);
+    }
+    // If the version of jQuery is old, we need to add `prop`.
+    if ($jquery_version < '1.6') {
+      $libraries['quickedit']['js'][$path . '/js/jquery/ducktape.prop.js'] = array('group' => JS_LIBRARY);
+    }
+    // If the version of jQuery is old, we need to add `deferred`.
+    if ($jquery_version < '1.5') {
+      $libraries['quickedit']['js'][$path . '/js/jquery/ducktape.deferred.js'] = array('group' => JS_LIBRARY);
+    }
+  }
+}
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ *
+ * Quick Edit extends the field formatter info hook metadata with the following
+ * keys:
+ * - quickedit: currently only contains one subkey 'editor' which indicates
+ *   which in-place editor should be used. Possible values are 'form',
+ *   'plain_text', 'disabled' or another in-place editor other than the ones
+ *   Quick Edit module provides.
+ *
+ * @see Drupal 8's quickedit_field_formatter_info_alter()
+ */
+function quickedit_field_formatter_info_alter(&$info) {
+  foreach ($info as $key => $settings) {
+    // Set in-place editor to 'form' if none is supplied.
+    if (empty($settings['settings']['quickedit'])) {
+      $info[$key]['settings']['quickedit'] = array('editor' => 'form');
+    }
+  }
+
+  // @see Drupal 8's \Drupal\text\Plugin\field\formatter\TextDefaultFormatter
+  // @see Drupal 8's \Drupal\text\Plugin\field\formatter\TextPlainFormatter
+  if (module_exists('text')) {
+    $info['text_default']['settings']['quickedit']['editor'] = 'plain_text';
+    $info['text_plain']['settings']['quickedit']['editor'] = 'plain_text';
+  }
+}
+
+/**
+ * Wraps the name pseudo-field attached to nodes.
+ *
+ * @param $name
+ *   The existing name value.
+ * @param $quickedit_field_id
+ *   The in-place editing field ID.
+ * @param $is_inline
+ *   Whether this pseudofield should be rendered as display:inline or not.
+ *
+ * @return
+ *   The fully-themed HTML output for the wrapped "name" pseudo-field.
+ */
+function quickedit_wrap_pseudofield($value, $quickedit_field_id, $is_inline = FALSE) {
+  return theme('quickedit_wrap_field', array('value' => $value, 'quickedit_field_id' => $quickedit_field_id, 'inline' => $is_inline));
+}
+
+/**
+ * Formats a field in a wrapper with the required metadata.
+ *
+ * Default tag is div because inline CKEditor will refuse to work on a span that
+ * is made contenteditable.
+ */
+function theme_quickedit_wrap_field($variables) {
+  $variables['attributes']['data-quickedit-field-id'] = $variables['quickedit_field_id'];
+  $el = 'div';
+  if ($variables['inline']) {
+    $el = 'span';
+  }
+  return '<'. $el . drupal_attributes($variables['attributes']) . '>' .  $variables['value'] . '</' . $el . '>';
+}
+
+/**
+ * Injects start and end markers before and after the content region.
+ *
+ * Certain themes don't add region wrappers, so we can't assume region
+ * wrappers are present. Therefore, Quick Edit must inject its own alternative:
+ * start and end markers for the "content" region.
+ */
+function theme_quickedit_wrap_content_region($variables) {
+  $element = $variables['element'];
+  return '<div data-quickedit-content-region-start></div>' . $element['#children'] . '<div data-quickedit-content-region-end></div>';
+}
+
+/**
+ * Implements hook_libraries_info().
+ *
+ * @see Libraries module.
+ */
+function quickedit_libraries_info() {
+  module_load_include('inc', 'quickedit', 'includes/libraries');
+
+  $libraries = array();
+
+  $common = array(
+    'version callback' => '_quickedit_libraries_get_version',
+    'variant order' => array('minified', 'source'),
+  );
+
+  $libraries['underscore'] = array(
+    'name' => 'Underscore',
+    'vendor url' => 'http://documentcloud.github.io/backbone/',
+    'download url' => 'https://github.com/jashkenas/underscore/archive/1.5.2.zip',
+    'version arguments' => array(
+      'variants' => array(
+        'source' => array(
+          'file' => 'underscore.js',
+          // @todo Document an actual example version string.
+          'pattern' => '#VERSION *\W *[\'\"]{1}(.*?)[\'\"]{1}#',
+          // In the unminified Underscore.js 1.5.2, the version is defined on
+          // line 68.
+          'lines' => 100,
+        ),
+        'minified' => array(
+          'file' => 'underscore-min.js',
+          'pattern' => '#VERSION *\W *[\'\"]{1}(.*?)[\'\"]{1}#',
+        ),
+      ),
+    ),
+    'versions' => array(
+      // Means ">=1.5.0": matches 1.5.0, 1.5.2, etc.
+      '1.5.0' => array(
+        'variants' => array(
+          'source' => array(
+            'files' => array(
+              'js' => array(
+                'underscore.js',
+              ),
+            ),
+            // Without a variant callback, the variant is assumed to be
+            // installed.
+            'variant callback' => '_quickedit_libraries_variant_exists',
+            'variant arguments' => array('underscore.js'),
+          ),
+          'minified' => array(
+            'files' => array(
+              'js' => array(
+                'underscore-min.js',
+              ),
+            ),
+            // Without a variant callback, the variant is assumed to be
+            // installed.
+            'variant callback' => '_quickedit_libraries_variant_exists',
+            'variant arguments' => array('underscore-min.js'),
+          ),
+        ),
+      ),
+    ),
+  );
+  $libraries['underscore'] += $common;
+
+  $libraries['backbone'] = array(
+    'name' => 'Backbone',
+    'vendor url' => 'http://documentcloud.github.io/backbone/',
+    'download url' => 'https://github.com/jashkenas/backbone/archive/1.1.0.zip',
+    'version arguments' => array(
+      'variants' => array(
+        'source' => array(
+          'file' => 'backbone.js',
+          // @todo Document an actual example version string.
+          'pattern' => '#VERSION *\W *[\'\"]{1}(.*?)[\'\"]{1}#',
+          // In the unminified Backbone.js 1.1.0, the version is defined on line
+          // 38.
+          'lines' => 50,
+        ),
+        'minified' => array(
+          'file' => 'backbone-min.js',
+          'pattern' => '#VERSION *\W *[\'\"]{1}(.*?)[\'\"]{1}#',
+        ),
+      ),
+    ),
+    'versions' => array(
+      // Means ">=1.0.0": matches 1.0.0, 1.1.0, etc.
+      '1.0.0' => array(
+        'variants' => array(
+          'source' => array(
+            'name' => 'Backbone',
+            'files' => array(
+              'js' => array(
+                'backbone.js',
+              ),
+            ),
+            // Without a variant callback, the variant is assumed to be
+            // installed.
+            'variant callback' => '_quickedit_libraries_variant_exists',
+            'variant arguments' => array('backbone.js'),
+            'dependencies' => array('underscore (>=1.5.0)'),
+          ),
+          'minified' => array(
+            'name' => 'Backbone',
+            'files' => array(
+              'js' => array(
+                'backbone-min.js',
+              ),
+            ),
+            // Without a variant callback, the variant is assumed to be
+            // installed.
+            'variant callback' => '_quickedit_libraries_variant_exists',
+            'variant arguments' => array('backbone-min.js'),
+            'dependencies' => array('underscore (>=1.5.0)'),
+          ),
+        ),
+      ),
+    ),
+  );
+  $libraries['backbone'] += $common;
+
+  return $libraries;
+}
+
+/**
+ * Implement hook_libraries_info_alter().
+ */
+function quickedit_libraries_info_alter(&$info) {
+  // underscore.module also declares library information for the underscore
+  // library, but does not include the 'variant order' key.
+  $info['underscore']['variant order'] = array('minified', 'source');
+}
+
+/**
+ * Generates an identifier to store an entity in TempStore while editing.
+ *
+ * Must be user-specific.
+ *
+ * @param string $entity_type
+ *   The type of the entity being in-place edited.
+ * @param int $entity_id
+ *   The ID of the entity being in-place edited.
+ *
+ * @return string
+ *   The user- and entity-specific TempStore identifier.
+ */
+function _quickedit_entity_tempstore_id($entity_type, $entity_id) {
+  global $user;
+  return $user->uid . '/' . $entity_type . '/' . $entity_id;
+}
+
+/**
+ * Saves an entity to TempStore.
+ *
+ * @param string $entity_type
+ *   The type of the entity being saved to TempStore.
+ * @param int $entity_id
+ *   The ID of the entity being saved to TempStore.
+ * @param stdClass $entity
+ *   The entity object being saved to TempStore.
+ */
+function _quickedit_entity_save_to_tempstore($entity_type, $entity_id, $entity) {
+  ctools_include('object-cache');
+  $tempstore_id = _quickedit_entity_tempstore_id($entity_type, $entity_id);
+  ctools_object_cache_set('quickedit', $tempstore_id, $entity);
+}
+
+/**
+ * Implements hook_css_alter().
+ *
+ * @see css/bartik.css
+ * @see https://drupal.org/node/2149261#comment-8290547
+ */
+function quickedit_css_alter(&$css) {
+  $bartik_style_css = drupal_get_path('theme', 'bartik') . '/css/style.css';
+  if (isset($css[$bartik_style_css])) {
+    $bartik_fix_css = drupal_get_path('module', 'quickedit') . '/css/bartik.css';
+    $css[$bartik_fix_css] = array(
+      'data' => $bartik_fix_css,
+      // Same properties as quickedit.(module|theme|icons).css, except for weight.
+      'group' => 100,
+      'type' => 'file',
+      'weight' => 1.00,
+      'every_page' => FALSE,
+      'media' => 'all',
+      'preprocess' => TRUE,
+      'browsers' => array(
+        'IE' => TRUE,
+        '!IE' => TRUE,
+      ),
+    );
+  }
+}
