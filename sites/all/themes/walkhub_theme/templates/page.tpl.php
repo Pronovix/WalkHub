@@ -2,9 +2,13 @@
 <div role="document" class="page">
 
   <?php if (!empty($page['header'])): ?>
+  <div class="login-container">
+  <div class="row">
     <?php
-      print render($page['header']);
+    print render($page['header']);
     ?>
+    </div>
+    </div>
   <?php endif; ?>
 
   <!--.l-header region -->
@@ -157,12 +161,6 @@
 
   <main role="main" class="row l-main">
     <div class="<?php print $main_grid; ?> main columns">
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlight panel callout">
-          <?php print render($page['highlighted']); ?>
-        </div>
-      <?php endif; ?>
-
       <?php if ($messages && !$zurb_foundation_messages_modal): ?>
         <!--/.l-messages -->
         <section class="l-messages">
@@ -361,8 +359,7 @@
 
     <ul>
       <li>WalkHub &copy; 2014</li>
-      <li><a href="#">Legal Notice</a></li>
-      <li><a href="#">Terms</a></li>
+      <li><a href="#">Terms &amp; conditions</a></li>
     </ul>
 
   </div>

@@ -1,3 +1,38 @@
+.login-container
+  ul
+    margin-bottom: 0px
+    list-style: none
+    .last
+      position: relative
+      ul
+        position: absolute
+        z-index: 101
+        list-style: none
+        right: 0px
+        margin-left: 0px
+        width: 100%
+        display: none
+        background-color: #f15a23
+        li
+          padding: 5px 0px 5px 0px
+          width: 100%
+          float: none !important
+
+          a
+            background-color: transparent
+            width: 100%
+            display: block
+        li:hover
+          background-color: #333333
+    .expanded:hover
+      ul
+        display: block
+.login-container
+  .menu > li
+    float: right
+.login-container
+  .menu > .last
+    margin-right: 5px
 .main-slogen
   text-align: center
   padding: 20px 0px
@@ -14,7 +49,6 @@
     color: #fff
     padding: 0px 15px
     font-size: 12px
-    margin: 10px
 
 header.l-header-region
   height: 0px

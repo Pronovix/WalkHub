@@ -474,6 +474,7 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
         top: auto;
         background: transparent;
         min-width: 100%;
+        left: -11px;
 
         li {
           a {

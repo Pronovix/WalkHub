@@ -38,7 +38,7 @@
       <div class="price">
         <abbr>$</abbr>95<i>/month</i>
       </div>
-      <a href="" class="price_button">BUY</a>
+      <a href="https://pronovix.chargify.com/subscribe/y6xkckqk/premium" class="price_button">BUY</a>
     </div>
     <div class="body">
       <span>Playable</span>
@@ -91,7 +91,7 @@
       <div class="price">
         <abbr>$</abbr>48<i>/month</i>
       </div>
-      <a href="" class="price_button not_high">TRY <i>for 30 days</i> /BUY</a>
+      <a href="https://pronovix.chargify.com/subscribe/4v5dhp4n/standard" class="price_button not_high">TRY <i>for 30 days</i> /BUY</a>
     </div>
     <div class="body">
       <span>Playable</span>
@@ -139,12 +139,12 @@
     <div class="head">
       <h5 class="name">Basic</h5>
 
-      <p class="sort_desc">A single user, small Walkthrough creation package, without automated testing.</p>
+      <p class="sort_desc">A single user, small Walkthrough creation package, automated testing.</p>
 
       <div class="price">
         <abbr>$</abbr>18<i>/month</i>
       </div>
-      <a href="" class="price_button">BUY</a>
+      <a href="https://pronovix.chargify.com/subscribe/7yph7pm9/basic" class="price_button">BUY</a>
     </div>
     <div class="body">
       <span>Playable</span>
@@ -153,8 +153,8 @@
       <span>Chainable</span>
       <span>Private</span>
       <span>Reusable</span>
-      <span class="separated">Exportable</span>
-      <span class="none_in_pack">Collaborative <b><strong>0</strong><br>users</b></span>
+      <span>Exportable</span>
+      <span class="none_in_pack separated">Collaborative <b><strong>0</strong><br>users</b></span>
       <span>Automated for <b><strong>50</strong> walkthroughs</b></span>
       <span>Update for up to <b><strong>50</strong> walkthroughs</b></span>
       <span class="separated">Embeddable widget</span>
@@ -164,8 +164,8 @@
       <span>Professional content support <b><br>75$/hour</b></span>
     </div>
   </div>
-  <div class="screen_separate_helper clearfix"></div>
-  <div class="column legend hidden">
+  <div class="screen_separate_helper clearfix first_step"></div>
+  <div class="column legend first_legend hidden">
     <div class="walkthrough"><p>Walkthrough</p>
       <span class="tooltip-right" data-tooltip="Walkthroughs can be played on any website through our proxy or site plugin."><i class="fa fa-question-circle" ></i></span>
       <span class="tooltip-right" data-tooltip="A record-then-annotate process reduces the time it takes to create Walkthroughs."><i class="fa fa-question-circle"></i></span>
@@ -197,7 +197,7 @@
         <div class="price">
           <abbr>$</abbr>0<i>/month</i>
         </div>
-        <a href="" class="price_button">Sign up</a>
+        <a href="/user/register" class="price_button">Sign up</a>
       </div>
       <div class="body">
         <span>Playable</span>
@@ -206,8 +206,8 @@
         <span>Chainable</span>
         <span>Private</span>
         <span>Reusable</span>
-        <span class="separated">Exportable</span>
-        <span class="none_in_pack">Collaborative <b><strong>0</strong><br>users</b></span>
+        <span>Exportable</span>
+        <span class="none_in_pack separated">Collaborative <b><strong>0</strong><br>users</b></span>
         <span class="none_in_pack">Automated for <b><strong>0</strong> walkthroughs</b></span>
         <span class="none_in_pack">Update for up to <b><strong>0</strong> walkthroughs</b></span>
         <span class="none_in_pack separated">Embeddable widget</span>
@@ -251,7 +251,7 @@
       <div class="price enterprice">
         <span>Get in touch for a special offer</span>
       </div>
-      <a href="" class="price_button">CONTACT</a>
+      <a href="mailto:kata@pronovix.com" class="price_button">CONTACT</a>
     </div>
     <div class="body">
       <span>Playable</span>
@@ -260,8 +260,8 @@
       <span>Chainable</span>
       <span>Private</span>
       <span>Reusable</span>
-      <span class="separated">Exportable</span>
-      <span>Collaborative <b><strong>Unlimited</strong> users</b></span>
+      <span>Exportable</span>
+      <span class="separated">Collaborative <b><strong>Unlimited</strong><br>users</b></span>
       <span>Automated for <b><strong>Unlimited</strong></b></span>
       <span>Update for up to <b><strong>Unlimited</strong></b></span>
       <span class="separated">Embeddable widget</span>

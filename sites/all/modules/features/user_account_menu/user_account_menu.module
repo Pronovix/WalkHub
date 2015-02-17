@@ -1,0 +1,53 @@
+<?php
+/**
+ * @file
+ * teszt_feature.features.menu_links.inc
+ */
+
+/**
+ * Implements hook_menu_default_menu_links().
+ */
+function user_account_menu_menu_default_menu_links_alter(&$links) {
+  $menu_links = array();
+
+  // Exported menu link: menu-walkhub-copyright-menu_terms--conditions:node/3246
+  $menu_links['user_account_menu--Record Walkthrough'] = array(
+    'menu_name' => 'menu-walkhub-copyright-menu',
+    'link_path' => 'node/3246',
+    'router_path' => 'node/%',
+    'link_title' => 'Terms & Conditions',
+    'options' => array(
+      'identifier' => 'menu-walkhub-copyright-menu_terms--conditions:node/3246',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 0,
+  );
+
+  $menu_links['menu-walkhub-copyright-menu_terms--conditions:node/3246'] = array(
+    'menu_name' => 'menu-walkhub-copyright-menu',
+    'link_path' => 'node/3246',
+    'router_path' => 'node/%',
+    'link_title' => 'Terms & Conditions',
+    'options' => array(
+      'identifier' => 'menu-walkhub-copyright-menu_terms--conditions:node/3246',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 0,
+  );
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Terms & Conditions');
+
+
+  return $menu_links;
+}
