@@ -23,13 +23,12 @@ function walkhub_user_dashboard_menu_default_menu_links() {
       'identifier' => 'menu-user-account-menu_add-content:walkthrough/record',
     ),
     'module' => 'menu',
-    'hidden' => 1,
+    'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -50,
     'customized' => 1,
-    'parent_identifier' => 'menu-user-account-menu_my-account:<front>',
   );
   // Exported menu link: menu-user-account-menu_log-out:user/logout
   $menu_links['menu-user-account-menu_log-out:user/logout'] = array(
