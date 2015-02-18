@@ -19,7 +19,9 @@ function walkhub_user_dashboard_default_fe_block_settings() {
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 2,
+    ),
     'themes' => array(
       'seven' => array(
         'region' => '',
@@ -31,7 +33,7 @@ function walkhub_user_dashboard_default_fe_block_settings() {
         'region' => 'header',
         'status' => 1,
         'theme' => 'walkhub_theme',
-        'weight' => -29,
+        'weight' => -28,
       ),
     ),
     'title' => '',

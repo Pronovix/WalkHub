@@ -4056,6 +4056,25 @@ nav.top-bar { min-height: 86px; border-bottom: 1px solid #efefef; }
   .post-image.preview img { width: 100% !important; margin-bottom: 15px; }
   /* line 212, ../sass/modules/_temp_header.sass */
   .post-content { width: 100% !important; padding-left: 0px !important; } }
+/* line 218, ../sass/modules/_temp_header.sass */
+.block-menu-menu-user-account-menu ul li:hover a { background-color: #333333; }
+
+/* line 223, ../sass/modules/_temp_header.sass */
+.block-menu-menu-user-account-menu .menu .first { position: relative; }
+
+/* line 227, ../sass/modules/_temp_header.sass */
+.block-menu-menu-user-account-menu .menu ul { position: absolute; z-index: 101; list-style: none; right: 0px; margin-left: 0px; width: 100%; display: none; }
+/* line 235, ../sass/modules/_temp_header.sass */
+.block-menu-menu-user-account-menu .menu ul li { float: none !important; width: 100%; text-align: center; }
+/* line 240, ../sass/modules/_temp_header.sass */
+.block-menu-menu-user-account-menu .menu ul li a { display: block; width: 100%; text-align: center; padding: 5px 0px; background-color: #f15a23; }
+
+/* line 250, ../sass/modules/_temp_header.sass */
+.block-menu-menu-user-account-menu .menu .first:hover ul { display: block; }
+
+/* line 257, ../sass/modules/_temp_header.sass */
+.block-menu-menu-user-account-menu .menu .first ul li:hover a { background-color: #f15a23 !important; }
+
 /* line 1, ../sass/modules/_temp_featured.sass */
 #back-to-top { background: url(../images/orange-theme-images/arrow-up-large.png) no-repeat center center; background-color: #dddddd; background-color: rgba(221, 221, 221, 0.7); bottom: 20px; color: transparent; display: none; font: 0/0 a; height: 46px; position: fixed; right: 20px; text-shadow: none; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -ms-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease; width: 45px; z-index: 100; }
 
