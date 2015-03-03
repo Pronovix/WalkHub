@@ -59,20 +59,17 @@ img
 
   li
     a
-      +sassy-button("simple", 10px, 19px, #f4f4f5)
       +font-size(.65)
-      +border-radius(.35em)
       padding: .45em .85em
-      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
-      color: #6f6f6f
+      color: white
       vertical-align: bottom
       margin-right: .45em
       padding: .4em 1em
+      background-color: #f15a23
 
       &.active
-        @include sassy-button-style("inset", darken(#f4f4f5, 30%))
-        color: darken(#6f6f6f, 50%)
-        background: darken(#f4f4f5, 30%)
+        color: white
+        background: #474747
 
     &:last-of-type a
       margin-right: 0
@@ -94,21 +91,20 @@ img
 button,
 .button,
 .btn
-  +sassy-button("simple", 10px, 19px, #f4f4f5)
   +font-size(.8)
-  +border-radius(.35em)
   padding: .45em .85em
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
-  color: #6f6f6f
+  color: white
   vertical-align: bottom
+  background-color: #f15a23
+  border: none
 
   i
     font-size: 80%
 
   &:hover,
   &:active
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
-    color: #6f6f6f
+    background-color: #474747
+    color: white
 
   &.small
     font-size: 75%
@@ -118,25 +114,18 @@ button,
 .cta
   +font-size(1)
   +font-museo-500
-  +border-radius(.65em)
   +transition($transition-base)
-  +box-shadow(inset 0px 0px 10px 0px rgba($color-white,.35),inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15))
-  background-color: #3b8acd
-  +filter-gradient(#3b8acd, #035787, vertical)
-  +background-image(linear-gradient(top,  #3b8acd 0%,#035787 100%))
+  background-color: #f15a23
   display: inline-block
   padding: .45em .85em .35em
-  border: 1px solid #005b9a
   color: #ffffff
-  +text-shadow(1px 1px 1px rgba(#000, 0.75))
 
   &:after
     +font-icomoon
 
   &:hover
-    background-color: lighten(#3b8acd, 5%)
-    +filter-gradient(lighten(#3b8acd, 5%), lighten(#035787, 5%), vertical)
-    +background-image(linear-gradient(top,  lighten(#3b8acd, 5%) 0%,lighten(#035787, 5%) 100%))
+    background-color: #474747
+    color: white
 
   &:active
     background: #035787
