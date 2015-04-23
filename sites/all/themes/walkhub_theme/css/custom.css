@@ -3791,7 +3791,7 @@ ul.pagination li, ul.pager li { margin-left: 5px; margin-left: 0.5rem; float: no
 /* line 15, ../sass/typo/_typo_pagination.sass */
 ul.pagination li:first-of-type, ul.pager li:first-of-type { margin: 0; }
 
-/* @file Styles for system messages. */
+/** @file Styles for system messages. */
 /* line 5, ../sass/modules/_system_message.sass */
 div { /* LTR */ }
 /* line 6, ../sass/modules/_system_message.sass */
@@ -4467,7 +4467,7 @@ footer a { color: #868686; }
 /* line 2, ../sass/modules/_temp_trusted-by.sass */
 #trusted-by ul { list-style: none; }
 /* line 4, ../sass/modules/_temp_trusted-by.sass */
-#trusted-by ul li { margin-left: 30px; float: left; height: 70px; line-height: 70px; }
+#trusted-by ul li { margin-left: 50px; float: left; height: 70px; line-height: 70px; }
 /* line 10, ../sass/modules/_temp_trusted-by.sass */
 #trusted-by ul li img { width: 100px; }
 /* line 13, ../sass/modules/_temp_trusted-by.sass */
@@ -4579,7 +4579,7 @@ footer a { color: #868686; }
 /* line 166, ../sass/modules/_temp_pricing.sass */
 .screenshots .second { margin: 18px 0px 14px 0px; }
 
-/* Tooltips! */
+/** Tooltips! */
 /* Base styles for the element that has a tooltip */
 /* line 174, ../sass/modules/_temp_pricing.sass */
 [data-tooltip], .tooltip { position: relative; cursor: pointer; }
