@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ * Contains ReCaptcha.
+ */
+
+/**
+ * Test cases for ReCaptcha module UI.
+ */
+class ReCaptchaAdminUITestCase extends ReCaptchaBaseTestCase {
+
+  /**
+   * Drupal path of the (general) CAPTCHA admin page
+   */
+  const RECAPTCHA_ADMIN_PATH = 'admin/config/people/captcha/recaptcha';
+
+  public static function getInfo() {
+    return array(
+      'name' => 'ReCaptcha admin UI test',
+      'group' => 'reCAPTCHA',
+      'description' => 'Tests reCaptcha admin UI'
+    );
+  }
+
+  /**
+   * Test access to the admin pages.
+   */
+  function testAdminAccess() {
+    $this->drupalLogin($this->normal_user);
+    $this->drupalGet(self::RECAPTCHA_ADMIN_PATH);
+    file_put_contents('tmp.simpletest.html', $this->drupalGetContent());
+    $this->assertText(t('Access denied'), 'Normal users should not be able to access the CAPTCHA admin pages', 'CAPTCHA');
+    $this->assertResponse(403);
+
+    $this->drupalLogin($this->admin_user);
+    $this->drupalGet(self::RECAPTCHA_ADMIN_PATH);
+    $this->assertResponse(200);
+    $this->assertField('recaptcha_server_status_check_interval');
+
+
+    // Update the interval and make sure it get saved properly.
+    $edit = array(
+      'recaptcha_server_status_check_interval' => 20,
+      'recaptcha_public_key' => '6LekT84SAAAAAE0AqDpG5IrtKoyr7OOiE82MtXgJ',
+      'recaptcha_private_key' => '6LekT84SAAAAAE0AqDpG5IrtKoyr7OOiE81MtXgJ',
+    );
+    $this->drupalPost(NULL, $edit, t('Save configuration'));
+    $this->assertText(t('The configuration options have been saved.'));
+    $this->assertFieldByName('recaptcha_server_status_check_interval', 20);
+  }
+
+}
