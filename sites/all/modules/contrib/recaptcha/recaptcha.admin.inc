@@ -32,6 +32,13 @@ function recaptcha_admin_settings() {
     '#description' => t('The private key given to you when you <a href="@url" target="_blank">register for reCAPTCHA</a>.', array('@url' => url(recaptcha_get_signup_url($_SERVER['SERVER_NAME'], variable_get('site_name', ''))))),
     '#required' => TRUE,
   );
+  $form['recaptcha_server_status_check_interval'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Captcha server check interval'),
+    '#default_value' => variable_get('recaptcha_server_status_check_interval', 5),
+    '#description' => t('Number of minutes to cache reCAPTCHA server status.'),
+    '#size' => 10,
+  );
   $form['recaptcha_ajax_api'] = array(
     '#type' => 'checkbox',
     '#title' => t('AJAX API'),

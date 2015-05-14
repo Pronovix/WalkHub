@@ -27,7 +27,7 @@ CONFIGURATION
        admin/config/people/captcha/recaptcha
 
 3. Register for a public and private reCAPTCHA key at:
-       https://www.google.com/recaptcha/whyrecaptcha
+       https://www.google.com/recaptcha/admin/create
 
 4. Input the keys into the reCAPTCHA settings. The rest of
    the settings should be fine as their defaults.
