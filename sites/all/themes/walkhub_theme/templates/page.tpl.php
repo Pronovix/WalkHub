@@ -359,7 +359,8 @@
 
     <ul>
       <li>WalkHub &copy; 2014</li>
-      <li><a href="#">Terms &amp; conditions</a></li>
+      <li><a href="/node/3246">Terms &amp; conditions</a></li>
+      <li><?php print l(t('Community champions'), 'node/7922'); ?></li>
     </ul>
 
   </div>
