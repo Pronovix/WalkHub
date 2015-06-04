@@ -4060,7 +4060,7 @@ nav.top-bar { min-height: 86px; border-bottom: 1px solid #efefef; }
 #back-to-top:hover { background-color: #f15a23; }
 
 /* line 22, ../sass/modules/_temp_featured.sass */
-.button, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button { background: #f15a23; border: none; border-radius: 0; color: #FFFFFF; cursor: pointer; font-weight: 400; height: auto; overflow: visible; padding: 7px 20px; -webkit-transition: background-color 0.2s ease; -moz-transition: background-color 0.2s ease; -ms-transition: background-color 0.2s ease; -o-transition: background-color 0.2s ease; transition: background-color 0.2s ease; width: auto; text-shadow: none; box-shadow: none; }
+.button, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button { background: #f15a23; border: none; border-radius: 0; color: #FFFFFF; cursor: pointer; font-weight: 400; height: auto; overflow: visible; padding: 0.45em 0.85em; -webkit-transition: background-color 0.2s ease; -moz-transition: background-color 0.2s ease; -ms-transition: background-color 0.2s ease; -o-transition: background-color 0.2s ease; transition: background-color 0.2s ease; width: auto; text-shadow: none; box-shadow: none; }
 /* line 41, ../sass/modules/_temp_featured.sass */
 .button:hover, .ui-state-default:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover { background: #3a3a3a !important; text-shadow: none; color: white; }
 /* line 45, ../sass/modules/_temp_featured.sass */
@@ -4807,7 +4807,7 @@ input[type="radio"], input[type="checkbox"] { clear: left; float: left; margin-b
 .ui-widget-header a { color: #6f6f6f; }
 
 /* line 31, ../sass/modules/_jquery_ui_theme.sass */
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #d3d3d3; font-weight: 400; color: #555; }
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { background-color: rgba(221, 221, 221, 0.7); font-weight: 400; color: #555; }
 
 /* line 39, ../sass/modules/_jquery_ui_theme.sass */
 .ui-state-default a { color: #555; text-decoration: none; }
@@ -4852,9 +4852,9 @@ input[type="radio"], input[type="checkbox"] { clear: left; float: left; margin-b
 .ui-icon { width: 16px; height: 16px; background: transparent; }
 
 /* line 97, ../sass/modules/_jquery_ui_theme.sass */
-.ui-widget-content .ui-icon, .ui-widget-header .ui-icon, .ui-state-default .ui-icon, .ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-state-active .ui-icon, .ui-state-highlight .ui-icon, .ui-state-error .ui-icon, .ui-state-error-text .ui-icon { margin: 0; padding: 0; background: transparent; text-indent: 0; left: 1px; top: 2px; }
+.ui-widget-content .ui-icon, .ui-widget-header .ui-icon, .ui-state-default .ui-icon, .ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-state-active .ui-icon, .ui-state-highlight .ui-icon, .ui-state-error .ui-icon, .ui-state-error-text .ui-icon { margin: 0; padding: 0; background: transparent; text-indent: 0; left: 2px; top: 3px; }
 /* line 112, ../sass/modules/_jquery_ui_theme.sass */
-.ui-widget-content .ui-icon:before, .ui-widget-header .ui-icon:before, .ui-state-default .ui-icon:before, .ui-state-hover .ui-icon:before, .ui-state-focus .ui-icon:before, .ui-state-active .ui-icon:before, .ui-state-highlight .ui-icon:before, .ui-state-error .ui-icon:before, .ui-state-error-text .ui-icon:before { font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; font-size: 7px; line-height: 10.15px; font-size: 0.7rem; line-height: 1.015rem; color: #6F6F6F; }
+.ui-widget-content .ui-icon:before, .ui-widget-header .ui-icon:before, .ui-state-default .ui-icon:before, .ui-state-hover .ui-icon:before, .ui-state-focus .ui-icon:before, .ui-state-active .ui-icon:before, .ui-state-highlight .ui-icon:before, .ui-state-error .ui-icon:before, .ui-state-error-text .ui-icon:before { font-family: "icomoon"; speak: none; content: attr(data-icon); font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: 0.3em; font-size: 7px; line-height: 10.15px; font-size: 0.7rem; line-height: 14px; color: white; }
 /* line 117, ../sass/modules/_jquery_ui_theme.sass */
 .ui-widget-content .ui-icon.ui-icon-closethick:before, .ui-widget-header .ui-icon.ui-icon-closethick:before, .ui-state-default .ui-icon.ui-icon-closethick:before, .ui-state-hover .ui-icon.ui-icon-closethick:before, .ui-state-focus .ui-icon.ui-icon-closethick:before, .ui-state-active .ui-icon.ui-icon-closethick:before, .ui-state-highlight .ui-icon.ui-icon-closethick:before, .ui-state-error .ui-icon.ui-icon-closethick:before, .ui-state-error-text .ui-icon.ui-icon-closethick:before { background: transparent; content: ""; display: block; }
 
@@ -6186,10 +6186,18 @@ ol li { font-size: 14px; }
 /* line 82, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button .ui-button-text { margin: 0; padding: 0; font-size: 7px; line-height: 10.15px; font-size: 0.7rem; line-height: 1.015rem; }
 /* line 86, ../sass/dialog/_walkthrough-start-dialog.sass */
-.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:last-of-type { color: #222222; }
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:last-of-type { color: white; }
 /* line 89, ../sass/dialog/_walkthrough-start-dialog.sass */
-.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type { -moz-border-radius: 0.35em; -webkit-border-radius: 0.35em; border-radius: 0.35em; padding: 4.5px 8.5px 3.5px; padding: 0.45rem 0.85rem 0.35rem; margin-right: 0.5em; }
+.walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type { padding: 4.5px 8.5px 3.5px; padding: 0.45rem 0.85rem 0.35rem; margin-right: 0.5em; }
 /* line 95, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:hover, .walkthrough-start-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-of-type:active { color: #FFFFFF; }
 /* line 99, ../sass/dialog/_walkthrough-start-dialog.sass */
 .walkthrough-start-dialog .ui-dialog-buttonpane .starter a { display: block; }
+
+#field-fc-steps-values .walkthrough-step-edit .step-title {background-color: rgba(221, 221, 221, 0.7); color: #626262}
+
+#field-fc-steps-values .walkthrough-step-edit .step-title h3{color: #626262}
+
+#field-fc-steps-values .walkthrough-step-edit .step-title:hover h3 {color: white}
+
+#edit-actions .back.button {margin-right: 10px; display: inline-block;}
