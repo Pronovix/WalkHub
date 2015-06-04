@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Contains ReCaptcha.
+ */
+
+/**
+ * Test cases for ReCaptcha module UI.
+ */
+class ReCaptchaServerStatusTestCase extends ReCaptchaBaseTestCase {
+
+  /**
+   * Drupal path of the (general) CAPTCHA admin page
+   */
+  const RECAPTCHA_ADMIN_PATH = 'admin/config/people/captcha/recaptcha';
+
+  public static function getInfo() {
+    return array(
+      'name' => 'ReCaptcha server status cache test',
+      'group' => 'reCAPTCHA',
+      'description' => 'Tests reCaptcha admin UI'
+    );
+  }
+
+  public function setup() {
+    parent::setUp();
+    include_once drupal_get_path('module', 'recaptcha') . '/recaptcha-php-1.11/recaptchalib.php';
+  }
+
+  public function testServerStatusCache() {
+    // No cache before status check.
+    $status_cache = cache_get('recaptcha_server_status');
+    $this->assertFalse($status_cache);
+
+    // Call status check to set Cache.
+    _recaptcha_server_is_up();
+
+    $status_cache = cache_get('recaptcha_server_status');
+    $this->assertNotNull($status_cache);
+  }
+
+}

@@ -11,57 +11,13 @@
  * Intercepts some requests and hotlinks/downloads the remote version.
  */
 function stage_file_proxy_init() {
-  // Make sure we're requesting a file in the files dir.
-  // Currently this only works for PUBLIC files.
-  $file_dir = _stage_file_proxy_file_dir();
-  if (strpos($_GET['q'], $file_dir) !== 0) {
+  if (drupal_is_cli()) {
     return;
   }
 
-  // If this is a advagg path, ignore it.
-  if (strpos($_GET['q'], '/advagg_') !== FALSE && module_exists('advagg')) {
-    return;
-  }
-
-  // Note if the origin server files location is different. This
-  // must be the exact path for the remote site's public file
-  // system path, and defaults to the local public file system path.
-  $remote_file_dir = trim(variable_get('stage_file_proxy_origin_dir', $file_dir), '/');
-
-  $relative_path = drupal_substr($_GET['q'], drupal_strlen($file_dir) + 1);
-
-  // Get the origin server.
-  $server = variable_get('stage_file_proxy_origin', NULL);
-
-  if ($server) {
-    // Is this imagecache? Request the root file and let imagecache resize.
-    if (variable_get('stage_file_proxy_use_imagecache_root', TRUE) && $original_path = _stage_file_proxy_image_style_path_original($relative_path, TRUE)) {
-      $relative_path = file_uri_target($original_path);
-      if (file_exists($original_path)) {
-        // Imagecache can generate it without our help.
-        return;
-      }
-    }
-
-    $query_parameters = drupal_get_query_parameters();
-
-    if (variable_get('stage_file_proxy_hotlink', FALSE)) {
-      $location = url("$server/$remote_file_dir/$relative_path", array(
-        'query' => $query_parameters,
-        'absolute' => TRUE,
-      ));
-      header("Location: $location");
-      exit;
-    }
-    elseif (_stage_file_proxy_fetch($server, $remote_file_dir, $relative_path)) {
-      // Refresh this request & let the web server work out mime type, etc.
-      $location = url("{$_GET['q']}", array('query' => $query_parameters));
-      header("Location: $location");
-      exit;
-    }
-    else {
-      watchdog('stage_file_proxy', 'Stage File Proxy encountered an unknown error by retrieving file @file', array('@file' => $server . '/' . drupal_encode_path($remote_file_dir . '/' . $relative_path)), WATCHDOG_ERROR);
-      drupal_not_found();
+  if ($uri = _stage_file_proxy_get_current_file_uri()) {
+    if ($new_uri = stage_file_proxy_process_file_uri($uri)) {
+      header("Location: " . file_create_url($new_uri));
       exit;
     }
   }
@@ -79,21 +35,11 @@ function stage_file_proxy_init() {
  *
  * @return bool
  *   Returns true if the content was downloaded, otherwise false.
+ *
+ * @deprecated Use stage_file_proxy_fetch_file() instead.
  */
 function _stage_file_proxy_fetch($server, $remote_file_dir, $relative_path) {
-  // Fetch remote file.
-  $url = $server . '/' . drupal_encode_path($remote_file_dir . '/' . $relative_path);
-  $response = drupal_http_request($url);
-  if ($response->code == 200) {
-    // Prepare local target directory and save downloaded file.
-    $file_dir = _stage_file_proxy_file_dir();
-    $target_dir = $file_dir . '/' . dirname($relative_path);
-    if (file_prepare_directory($target_dir, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS)) {
-      file_put_contents($file_dir . '/' . $relative_path, $response->data);
-      return TRUE;
-    }
-  }
-  return FALSE;
+  return (bool) stage_file_proxy_fetch_file($relative_path);
 }
 
 /**
@@ -119,17 +65,17 @@ function _stage_file_proxy_file_dir() {
 function _stage_file_proxy_image_style_path_original($uri, $style_only = TRUE) {
   $scheme = file_uri_scheme($uri);
   if ($scheme) {
-    $path = file_uri_target($uri);
+    $path = parse_url(file_uri_target($uri), PHP_URL_PATH);
   }
   else {
-    $path = $uri;
+    $path = parse_url($uri, PHP_URL_PATH);
     $scheme = file_default_scheme();
   }
 
   // It is a styles path, so we extract the different parts.
   if (strpos($path, 'styles') === 0) {
     // Then the path is like styles/[style_name]/[schema]/[original_path].
-    return preg_replace('/styles\/.*\/(.*)\/(.*)/U', '$1://$2', $path);
+    return preg_replace('/styles\/.+\/(.+)\/(.+)/U', '$1://$2', $path);
   }
   // Else it seems to be the original.
   elseif ($style_only == FALSE) {
@@ -253,4 +199,201 @@ function stage_file_proxy_admin_validate($form, &$form_state) {
   if (!is_numeric($sslversion)) {
     form_set_error('stage_file_proxy_sslversion', 'You must enter a number for the SSL version.');
   }
+}
+
+/**
+ * Fetches a normalized file URI from the current request.
+ *
+ * @param string $path
+ *   An optional path
+ *
+ * @return bool|string
+ *   A string containing the file URI, or FALSE if the current request is not
+ *   for a public file.
+ */
+function _stage_file_proxy_get_current_file_uri($path = NULL) {
+  if (!isset($path)) {
+    $path = $_GET['q'];
+  }
+
+  // Make sure we're requesting a file in the files dir.
+  // Currently this only works for PUBLIC files.
+  $file_dir = _stage_file_proxy_file_dir();
+  if (strpos($path, $file_dir) !== 0) {
+    return FALSE;
+  }
+
+  $uri = 'public://' . ltrim(drupal_substr($path, drupal_strlen($file_dir)), '/');
+  return $uri;
+}
+
+/**
+ * Fetches the remote URL for a stage file proxy-processed file.
+ *
+ * @todo Should this be run through check_url()?
+ *
+ * @param string $relative_path
+ *   The path to the requested resource relative to the files directory. This
+ *   may include a query string already.
+ * @param array $options
+ *   An optional array to pass through to url().
+ *
+ * @return bool|string
+ *   The remote URL or FALSE if an origin server is not provided.
+ */
+function stage_file_proxy_get_file_remote_url($relative_path, array $options = array()) {
+  $base_url = &drupal_static(__FUNCTION__);
+
+  if (!isset($base_url)) {
+    $base_url = FALSE;
+
+    if ($server = rtrim(variable_get('stage_file_proxy_origin'), '/')) {
+      $base_url = $server . '/';
+    }
+    if ($dir = trim(variable_get('stage_file_proxy_origin_dir', _stage_file_proxy_file_dir()), '/')) {
+      $base_url .= drupal_encode_path($dir) . '/';
+    }
+  }
+
+  if (empty($base_url)) {
+    return FALSE;
+  }
+
+  $url = $base_url . drupal_encode_path($relative_path);
+  $options += array('external' => TRUE);
+
+  // Pass through the current query string, if the file is the same as the
+  // current request.
+  if ($relative_path === $_GET['q']) {
+    $options['query'] = drupal_get_query_parameters();
+  }
+
+  return url($url, $options);
+}
+
+/**
+ * Downloads a public file from the origin site.
+ *
+ * @param string $relative_path
+ *   The path to the requested resource relative to the files directory.
+ * @param array $options
+ *   Additional options to pass through to url().
+ *
+ * @return string|bool
+ *   Returns the local path if the remote file was downloaded successfully, or
+ *   FALSE otherwise.
+ */
+function stage_file_proxy_fetch_file($relative_path, array $options = array()) {
+  $failures = &drupal_static(__FUNCTION__);
+
+  if (!isset($failures)) {
+    $failures = array();
+    if ($cache = cache_get('stage_file_proxy_fetch_url_failures')) {
+      $failures = $cache->data;
+    }
+  }
+
+  $url = stage_file_proxy_get_file_remote_url($relative_path, $options);
+
+  if (!empty($failures[$url])) {
+    return FALSE;
+  }
+
+  $destination = _stage_file_proxy_file_dir() . '/' . dirname($relative_path);
+  if (!file_prepare_directory($destination, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS)) {
+    watchdog('stage_file_proxy', 'Unable to prepare local directory @path.', array('@path' => $destination), WATCHDOG_ERROR);
+    return FALSE;
+  }
+
+  $destination = str_replace('///', '//', "$destination/") . drupal_basename($relative_path);
+
+  $result = drupal_http_request($url);
+  if ($result->code != 200) {
+    watchdog('stage_file_proxy', 'HTTP error @errorcode occurred when trying to fetch @remote.', array('@errorcode' => $result->code, '@remote' => $url), WATCHDOG_ERROR);
+    $failures[$url] = TRUE;
+    cache_set('stage_file_proxy_failures', $failures, 'cache', CACHE_TEMPORARY);
+    return FALSE;
+  }
+
+  $local = file_unmanaged_save_data($result->data, $destination, FILE_EXISTS_REPLACE);
+  if (!$local) {
+    watchdog('stage_file_proxy', '@remote could not be saved to @path.', array('@remote' => $url, '@path' => $destination), WATCHDOG_ERROR);
+    return FALSE;
+  }
+
+  return $local;
+}
+
+/**
+ * Checks to see if a file should be downloaded from the origin site.
+ *
+ * @param string $uri
+ *   A fully-qualified file URI.
+ *
+ * @return string|bool
+ *   A string containing the new location to the file if it was downloaded, or
+ *   FALSE if the file could not be processed with stage_file_proxy.
+ */
+function stage_file_proxy_process_file_uri($uri) {
+  // Prevent this function from being accidentally interpreted as a theme
+  // process hook (in which case the first parameter would be an array).
+  if (!is_string($uri)) {
+    return FALSE;
+  }
+
+  if (file_uri_scheme($uri) === 'public' && !is_file($uri)) {
+    // If this is a advagg path, ignore it.
+    if (strpos($uri, '/advagg_') !== FALSE && module_exists('advagg')) {
+      return FALSE;
+    }
+
+    $relative_path = file_uri_target($uri);
+    if ($proxy_url = stage_file_proxy_get_file_remote_url($relative_path)) {
+      // Check if hotlinking is enabled.
+      if (variable_get('stage_file_proxy_hotlink', FALSE)) {
+        return $proxy_url;
+      }
+
+      // Is this imagecache? Request the root file and let imagecache resize.
+      if (variable_get('stage_file_proxy_use_imagecache_root', TRUE) && $original_path = _stage_file_proxy_image_style_path_original($relative_path, TRUE)) {
+        if (is_file($original_path)) {
+          // image_style_deliver() can generate the derivative since the
+          // source file exists.
+          return FALSE;
+        }
+        else {
+          // Attempt to download the source of the requested derivative image.
+          stage_file_proxy_fetch_file(file_uri_target($original_path));
+          // Do not change the file's URL since we want to still direct the
+          // user to the image style derivative, instead of the source image.
+          return FALSE;
+        }
+      }
+
+      if ($local = stage_file_proxy_fetch_file($relative_path)) {
+        // If the file was downloaded successfully, then set the path to the
+        // now local version of the file. This result is different since it
+        // will not include the public:// scheme prefix.
+        return $local;
+      }
+    }
+  }
+
+  return FALSE;
+}
+
+/**
+ * Implements hook_file_url_alter().
+ */
+function stage_file_proxy_file_url_alter(&$url) {
+  stage_file_proxy_process_file_uri($url);
+}
+
+/**
+ * Implements hook_preprocess_picture().
+ */
+function template_preprocess_picture(&$variables) {
+  // Run the image path through the stage file proxy process before the call
+  // to image_load() makes everything fail in theme_picture().
+  stage_file_proxy_process_file_uri($variables['uri']);
 }

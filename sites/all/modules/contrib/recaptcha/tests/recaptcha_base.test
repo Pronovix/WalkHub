@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Contains ReCaptcha.
+ */
+
+/**
+ * Test cases for ReCaptcha module UI.
+ */
+abstract class ReCaptchaBaseTestCase extends DrupalWebTestCase {
+
+  /**
+   * User with various administrative permissions.
+   * @var object Drupal user
+   */
+  protected $admin_user;
+
+  /**
+   * Normal visitor with limited permissions
+   * @var object Drupal user;
+   */
+  protected $normal_user;
+
+  /**
+   * Drupal path of the (general) CAPTCHA admin page
+   */
+  const RECAPTCHA_ADMIN_PATH = 'admin/config/people/captcha/recaptcha';
+
+  /**
+   * Set up some required modules and users.
+   */
+  function setUp() {
+    parent::setUp('recaptcha');
+
+    // Create a normal user.
+    $permissions = array(
+      'access comments',
+      'post comments',
+      'skip comment approval',
+      'access content',
+      'create page content',
+      'edit own page content',
+    );
+    $this->normal_user = $this->drupalCreateUser($permissions);
+
+    // Create an admin user.
+    $permissions[] = 'administer CAPTCHA settings';
+    $permissions[] = 'skip CAPTCHA';
+    $permissions[] = 'administer permissions';
+    $permissions[] = 'administer content types';
+    $permissions[] = 'administer recaptcha';
+    $this->admin_user = $this->drupalCreateUser($permissions);
+  }
+
+}

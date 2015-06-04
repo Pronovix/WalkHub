@@ -15,3 +15,9 @@ function recaptcha_uninstall() {
     ->execute();
   cache_clear_all('variables', 'cache');
 }
+
+/**
+ * @todo The next time there is an update hook, that hook should run:
+ * variable_del('recaptcha_secure_connection');
+ * This removes a variable no longer in use due to https://drupal.org/node/1827922
+ */
