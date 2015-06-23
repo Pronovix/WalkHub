@@ -1,4 +1,15 @@
 .node-type-walkthrough
+
+  .field-collection-container
+    .field-item
+      .edit
+        a
+          background-color: #616163 !important
+
+      &:hover
+        a
+          background-color: #474747
+
   .main.columns
     & > .action-links
       li
@@ -13,6 +24,18 @@
           &:after
             content: "\e600"
             margin-left: .35em
+
+    .button-group
+      li
+        margin: 0 0 5px -1px
+        display: block
+
+        a
+          display: block
+          background-color: #616163
+
+        .active
+          background-color: #474747
 
   .title-container
     h1
@@ -205,6 +228,7 @@
       li.flag-subscribe_content
         a
           +font-size(.6)
+          background-color: #616163
 
 .wt-severity-0
   color: green
@@ -241,3 +265,8 @@
   .walkthrough-status-text
     display: inline-block
     margin: 0 0 6px 0
+
+  .walkthrough-sharelink
+    .button
+      display: inline-block
+      background-color: #616163

@@ -63,15 +63,20 @@
 
   &:before
     +opacity(.7)
-    background: rgba(#000, .75) image-url('mask.png') repeat top center
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70)
+    background-color: rgba(0,0,0,0.75)
+    background-image: image_url('mask.png')
+    background-repeat: repeat
+    background-position: top center
     position: absolute
     top: 0
     right: 0
     bottom: 0
     left: 0
-    content: ''
+    content: ""
     display: block
     width: 100%
+
 
   & .columns
     text-align: center
