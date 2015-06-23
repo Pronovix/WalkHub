@@ -243,9 +243,10 @@
         overflow: hidden
         text-overflow: ellipsis
         height: 2.55em
+        background-color: rgba(221, 221, 221, 0.7)
 
         h3
-          color: white
+          color: #626262
           +font-size(.9)
           margin-right: .25em
           display: inline-block
@@ -254,10 +255,17 @@
           overflow: hidden
           text-overflow: ellipsis
           height: 2.6em
+
+        &:hover
+          h3
+            color: white
       .le
         float: left
         width: 46%
         margin-right: 4%
+
+        .form-checkbox
+          margin-top: 8px
 
       .ri
         float: right
@@ -281,5 +289,87 @@
     #field-proxy-warning-message-add-more-wrapper
       margin-left: 24%
       +px-rem(margin-bottom, 1)
+
+  .field-name-field-play-via-proxy
+    .form-checkbox
+      margin-top: 4px
+
+  .field-name-field-screening-schedule
+    margin-top: 30px
+
+    #repeat-settings-fieldset
+      label,
+      .field-prefix
+        margin-bottom: 5px
+
+    .container-inline
+      input[type='text']
+        margin: 5px 0px
+
+    legend
+      padding-bottom: 5px
+
+    .form-item-field-screening-schedule-und-0-rrule-show-exceptions,
+    .date-float,
+    .date-clear
+      .form-checkbox
+        margin-top: 4px
+
+    .date-no-float,
+    .widget-date_select,
+    .date-repeat
+      .form-item
+        margin-right: 5px
+
+        .chosen-single
+          border: none
+          border-radius: 0px
+          background: none
+          box-shadow: none
+
+
+    .widget-date_select
+      input[type='radio']
+        margin: 40px 10px 0px 0px
+
+  .form-actions
+    button
+      padding: .45em .85em !important
+      margin-right: 0px !important
+      margin-bottom: 5px
+
+    .back
+      display: inline-block
+      padding: .45em .85em !important
+      margin-right: 5px !important
+      margin-bottom: 5px
+
+  .field-name-field-prerequisites,
+  #edit-actions
+    a,button
+      background-color: #616163
+
+  #advset,
+  #callopse,
+  #parameters
+    background-color: #616163
+    display: inline-block
+
+  #edit-actions
+    #edit-submit
+      background-color: #f15a23
+
+  .field-name-field-prerequisites
+    .draggable
+      .field-multiple-drag
+        vertical-align: top
+
+        a
+          background-color: transparent
+
+  .field-widget-field-collection-embed
+    .field-add-more-submit
+      background-color: #616163
+
 .step-title button.clearfix.jquery-once-3-processed
   background-color: darkgray !important

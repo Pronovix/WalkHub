@@ -2,7 +2,7 @@
 
   <ul class="projects-carousel clearfix">
     <li>
-      <p><a href="https://twitter.com/btopro/status/493956598055043072"><span class="dropcap"><img alt="" class="avatar js-action-profile-avatar" src="https://pbs.twimg.com/profile_images/534930493293068288/Hwy2cwEY_bigger.jpeg" /></span> I do believe we'll be having someone documenting the living snot out of things soon… all visually / text, no video… all via <strong>@WalkHub</strong> </a></p>
+      <p><a href="https://twitter.com/btopro/status/493956598055043072"><span class="dropcap"><img class="avatar js-action-profile-avatar" src="https://pbs.twimg.com/profile_images/603927405594451969/0vhhgmAg_bigger.png" alt=""></span> I do believe we'll be having someone documenting the living snot out of things soon… all visually / text, no video… all via <strong>@WalkHub</strong> </a></p>
     </li>
     <li>
       <p><a href="https://twitter.com/Dan_Blick/status/486593405120970753 "><span class="dropcap"><img alt="" class="avatar js-action-profile-avatar" src="https://pbs.twimg.com/profile_images/378800000638002183/e6388b44edcc11c2dc7d525139192b23_bigger.jpeg" /></span> Tried <strong>@WalkHub</strong>; pretty rad. Sort of an automated Guiders-JS? RT <strong>@WalkHub</strong>: Create tutorials <strong>#documentation #Drupal</strong> </a></p>
