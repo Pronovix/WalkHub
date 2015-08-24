@@ -27,8 +27,9 @@ function walkhub_user_dashboard_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -48,
     'customized' => 1,
+    'parent_identifier' => 'menu-user-account-menu_my-content:my-content',
   );
   // Exported menu link: menu-user-account-menu_my-content:my-content
   $menu_links['menu-user-account-menu_my-content:my-content'] = array(
@@ -45,8 +46,8 @@ function walkhub_user_dashboard_menu_default_menu_links() {
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
+    'has_children' => 1,
+    'expanded' => 1,
     'weight' => -50,
     'customized' => 1,
   );
@@ -67,15 +68,16 @@ function walkhub_user_dashboard_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -50,
     'customized' => 1,
+    'parent_identifier' => 'menu-user-account-menu_my-content:my-content',
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Log out');
   t('My content');
   t('My profile');
-
 
   return $menu_links;
 }
